@@ -1,0 +1,14 @@
+# General
+*.tar
+*.gz
+*.DS_Store
+.nfs*
+._*
+*.pyc
+*.egg-info
+*.sublime-workspace
+*.sublime-project
+
+# project
+dist
+node_modules
