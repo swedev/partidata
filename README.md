@@ -42,7 +42,7 @@ Har lagt till attribut `uuid` och `name` för enklare hantering i kod och datast
   });
 ```
 
-### /parti/<name>.json
+### /parti/\<name\>.json
 
 JSON-data för varje enskilt parti ska skapas och kommer ligga i t ex `/parti/miljopartiet-de-grona.json`.
 
