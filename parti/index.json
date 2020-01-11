@@ -1,0 +1,2481 @@
+[
+  {
+    "beteckning": "20% skattepartiet",
+    "filnamn": "20--skattepartiet",
+    "kod": "1365",
+    "uuid": "ee50921a-e848-42d6-803e-9d5275ed21b6"
+  },
+  {
+    "beteckning": "Åhuspartiet",
+    "filnamn": "ahuspartiet",
+    "forkortning": "ÅHP",
+    "kod": "0205",
+    "uuid": "ec774af6-5b29-4068-beb5-10d07e62a062",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Äkta demokrati",
+    "filnamn": "akta-demokrati",
+    "kod": "1407",
+    "uuid": "420eb709-4088-4eba-a59f-83ca92fe9f9f"
+  },
+  {
+    "beteckning": "Aktiv samling - Bodenalternativet",
+    "kod": "1373",
+    "uuid": "7677e088-6467-4a45-99b3-3483f4ef26f7",
+    "filnamn": "aktiv-samling-bodenalternativet"
+  },
+  {
+    "beteckning": "Ale - demokraterna",
+    "filnamn": "ale-demokraterna",
+    "forkortning": "ADK",
+    "kod": "0139",
+    "uuid": "5b6ad59e-fa87-467b-b143-e35c13ad728b",
+    "valmyndigheten_registreringsdatum": "2017-12-01"
+  },
+  {
+    "beteckning": "Allians för Frihet",
+    "kod": "1394",
+    "uuid": "2a688dfe-e5df-4060-93b1-1c75ae9bddea",
+    "filnamn": "allians-for-frihet"
+  },
+  {
+    "beteckning": "Allians för Sverige",
+    "filnamn": "allians-for-sverige",
+    "kod": "1423",
+    "uuid": "8c940e3f-b10a-4642-aa25-ff89505535b8"
+  },
+  {
+    "beteckning": "Allt för Ragunda",
+    "filnamn": "allt-for-ragunda",
+    "forkortning": "AfR",
+    "kod": "0497",
+    "uuid": "d62d3e66-de61-4897-a3d9-5511cd9c529b",
+    "valmyndigheten_registreringsdatum": "2015-05-06"
+  },
+  {
+    "beteckning": "Älska Svedala",
+    "filnamn": "alska-svedala",
+    "forkortning": "ÄS",
+    "kod": "1379",
+    "uuid": "ea3d9524-730d-437d-a74e-5b1412f40c7d",
+    "valmyndigheten_registreringsdatum": "2019-01-11"
+  },
+  {
+    "beteckning": "Alternativ 2000",
+    "kod": "0202",
+    "uuid": "204fff92-1e5b-4652-a68a-5d9ee2abfe20",
+    "filnamn": "alternativ-2000"
+  },
+  {
+    "beteckning": "Alternativ för Sverige",
+    "filnamn": "alternativ-for-sverige",
+    "forkortning": "AfS",
+    "kod": "1325",
+    "uuid": "3f7caf00-f50b-4ce3-b135-04492de827b1",
+    "valmyndigheten_registreringsdatum": "2018-02-23"
+  },
+  {
+    "beteckning": "Alternativet",
+    "filnamn": "alternativet",
+    "forkortning": "Alt",
+    "kod": "1284",
+    "uuid": "74cf42dc-1c73-4a54-8a20-71a71cce6723",
+    "valmyndigheten_registreringsdatum": "2017-11-02"
+  },
+  {
+    "beteckning": "Alvesta Alternativet",
+    "filnamn": "alvesta-alternativet",
+    "forkortning": "ALV",
+    "kod": "0124",
+    "uuid": "c27c54ce-4d48-40aa-97a7-d7708f4c16df",
+    "valmyndigheten_registreringsdatum": "1995-08-23"
+  },
+  {
+    "beteckning": "Ändrings partiet revolution",
+    "filnamn": "andrings-partiet-revolution",
+    "kod": "1404",
+    "uuid": "88ad8b1d-d574-4ff7-bffc-1630c01345ab"
+  },
+  {
+    "beteckning": "Ångfärjepartiet",
+    "filnamn": "angfarjepartiet",
+    "forkortning": "Ångf",
+    "kod": "1162",
+    "uuid": "9d104e69-89ce-4090-bdad-8ae3435b8663",
+    "valmyndigheten_registreringsdatum": "2014-03-07"
+  },
+  {
+    "beteckning": "Arbetarepartiet-Socialdemokraterna",
+    "filnamn": "arbetarepartiet-socialdemokraterna",
+    "forkortning": "S",
+    "kod": "0002",
+    "uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd",
+    "valmyndigheten_registreringsdatum": "2017-11-02"
+  },
+  {
+    "beteckning": "Arbetarpartiet tidigare Rättvisepartiet Offensiv",
+    "kod": "1181",
+    "uuid": "081727ef-2708-4eda-b098-6e5a7809f2ce",
+    "filnamn": "arbetarpartiet-tidigare-rattvisepartiet-offensiv"
+  },
+  {
+    "beteckning": "Åselepartiet",
+    "filnamn": "aselepartiet",
+    "forkortning": "ÅSP",
+    "kod": "0185",
+    "uuid": "91a0fcf9-1c39-43df-980d-1aa8080054a0",
+    "valmyndigheten_registreringsdatum": "2006-03-07"
+  },
+  {
+    "beteckning": "Åseles framtid",
+    "filnamn": "aseles-framtid",
+    "forkortning": "ÅF",
+    "kod": "1354",
+    "uuid": "c496cc38-e576-4646-bf3f-f8e76d561c56",
+    "valmyndigheten_registreringsdatum": "2018-03-09"
+  },
+  {
+    "beteckning": "ASYL.NUPARTIET",
+    "filnamn": "asyl-nupartiet",
+    "kod": "1420",
+    "uuid": "ab4a2576-9338-4da7-98d0-dfeb324d4549",
+    "valmyndigheten_registreringsdatum": "2018-03-06"
+  },
+  {
+    "beteckning": "Bålstapartiet",
+    "kod": "0184",
+    "uuid": "25be4598-d568-46e2-89ea-b6614711c6db",
+    "filnamn": "balstapartiet"
+  },
+  {
+    "beteckning": "BARAPARTIET",
+    "filnamn": "barapartiet",
+    "forkortning": "BAP",
+    "kod": "1310",
+    "uuid": "1a5522db-9c9a-4c2e-8bc6-a5877671ed18",
+    "valmyndigheten_registreringsdatum": "2017-10-20"
+  },
+  {
+    "beteckning": "Barnpartiet",
+    "filnamn": "barnpartiet",
+    "kod": "1016",
+    "uuid": "f74e2503-2353-4442-a036-0c1894f55deb",
+    "valmyndigheten_registreringsdatum": "2010-03-04"
+  },
+  {
+    "beteckning": "Basinkomstpartiet",
+    "filnamn": "basinkomstpartiet",
+    "kod": "1372",
+    "uuid": "07ede108-4daa-4328-bde7-79b9de0086e0"
+  },
+  {
+    "beteckning": "Bästa Alternativet",
+    "filnamn": "basta-alternativet",
+    "forkortning": "B-ALT",
+    "kod": "1366",
+    "uuid": "b4c33957-dac8-4d56-b08a-19c877822487",
+    "valmyndigheten_registreringsdatum": "2018-03-29"
+  },
+  {
+    "beteckning": "Bästa för Sollentuna",
+    "filnamn": "basta-for-sollentuna",
+    "kod": "1283",
+    "uuid": "2a220fac-5a89-41fc-87aa-b2572acdb1b8",
+    "valmyndigheten_registreringsdatum": "2016-05-20"
+  },
+  {
+    "beteckning": "Bergshamrapartiet",
+    "filnamn": "bergshamrapartiet",
+    "forkortning": "BEP",
+    "kod": "1105",
+    "uuid": "7c5eb0ea-9c14-4780-a812-358ba6e93674",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Bevara akutsjukhusen",
+    "filnamn": "bevara-akutsjukhusen",
+    "forkortning": "BA",
+    "kod": "1355",
+    "uuid": "44273904-e60e-4323-885f-d7f4195e38d9",
+    "valmyndigheten_registreringsdatum": "2018-03-06"
+  },
+  {
+    "beteckning": "Bg-Demokrati",
+    "filnamn": "bg-demokrati",
+    "kod": "1375",
+    "uuid": "2f92086a-acb8-4a4e-b650-1fc00d1230a4"
+  },
+  {
+    "beteckning": "Bjärepartiet",
+    "filnamn": "bjarepartiet",
+    "forkortning": "BJP",
+    "kod": "0163",
+    "uuid": "45099053-dfc2-4b55-8eeb-8ab53b26f8a1",
+    "valmyndigheten_registreringsdatum": "2017-12-05"
+  },
+  {
+    "beteckning": "Bjorn",
+    "filnamn": "bjorn",
+    "kod": "0474",
+    "uuid": "78a46d0f-68f7-4cea-bb32-4c89951db82e",
+    "valmyndigheten_registreringsdatum": "2005-05-16"
+  },
+  {
+    "beteckning": "Bjuvspartiet",
+    "filnamn": "bjuvspartiet",
+    "kod": "1111",
+    "uuid": "fb29cd49-782b-482a-b5d6-03671ee2abf8",
+    "valmyndigheten_registreringsdatum": "2014-11-04"
+  },
+  {
+    "beteckning": "Bollnäspartiet",
+    "filnamn": "bollnaspartiet",
+    "forkortning": "Bollp",
+    "kod": "1013",
+    "uuid": "30aab0fe-85ab-47b1-85b0-5511e0a5da4d",
+    "valmyndigheten_registreringsdatum": "2010-03-26"
+  },
+  {
+    "beteckning": "Bopartiet",
+    "filnamn": "bopartiet",
+    "forkortning": "BOP",
+    "kod": "0117",
+    "uuid": "2915db45-e9a7-4cd4-9f93-d3f5ebf42bbe",
+    "valmyndigheten_registreringsdatum": "1986-05-06"
+  },
+  {
+    "beteckning": "Boråsvalet",
+    "filnamn": "borasvalet",
+    "forkortning": "Bov",
+    "kod": "1131",
+    "uuid": "3f69dec1-6ce6-4341-ac6b-0de8a76546d4",
+    "valmyndigheten_registreringsdatum": "2014-01-24"
+  },
+  {
+    "beteckning": "Boris",
+    "kod": "1381",
+    "uuid": "6de0d940-dd1c-458e-b8f9-4d7cc695ff7c",
+    "filnamn": "boris"
+  },
+  {
+    "beteckning": "Botkyrkapartiet",
+    "filnamn": "botkyrkapartiet",
+    "forkortning": "BP",
+    "kod": "0015",
+    "uuid": "85746d3e-59b5-4de5-bc1f-81aa2c3b655e",
+    "valmyndigheten_registreringsdatum": "1988-02-10"
+  },
+  {
+    "beteckning": "Brobyggarpartiet",
+    "kod": "1413",
+    "uuid": "fe6962ca-100f-4567-83ac-e8f8c83be714",
+    "filnamn": "brobyggarpartiet"
+  },
+  {
+    "beteckning": "BUS-partiet",
+    "filnamn": "bus-partiet",
+    "forkortning": "BUSP",
+    "kod": "1126",
+    "uuid": "8a7e75a6-a327-4a56-8540-f71fb283ae6f",
+    "valmyndigheten_registreringsdatum": "2013-11-06"
+  },
+  {
+    "beteckning": "Bygdepartiet",
+    "filnamn": "bygdepartiet",
+    "forkortning": "ByP",
+    "kod": "1053",
+    "uuid": "b578db7a-cd4b-4e6c-826e-d53a0e142069",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Centerpartiet",
+    "filnamn": "centerpartiet",
+    "forkortning": "C",
+    "kod": "0004",
+    "uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3",
+    "valmyndigheten_registreringsdatum": "2017-11-13"
+  },
+  {
+    "beteckning": "Common sense in Sweden",
+    "filnamn": "common-sense-in-sweden",
+    "kod": "1318",
+    "uuid": "b931129c-2ee1-41fa-9429-a841721d2205"
+  },
+  {
+    "beteckning": "Dalarnas Sjukvårdsparti",
+    "filnamn": "dalarnas-sjukvardsparti",
+    "forkortning": "dsp",
+    "kod": "0472",
+    "uuid": "4d11b150-8aa4-44e4-ac99-7378407b67e4",
+    "valmyndigheten_registreringsdatum": "2005-03-17"
+  },
+  {
+    "beteckning": "Dalsländska Separatistpartiet",
+    "kod": "1319",
+    "uuid": "a91b96ec-924f-40c8-8290-49227e2087d6",
+    "filnamn": "dalslandska-separatistpartiet"
+  },
+  {
+    "beteckning": "Demokraterna",
+    "filnamn": "demokraterna",
+    "forkortning": "DEM",
+    "kod": "1297",
+    "uuid": "45040bfa-87cf-44ec-aee8-f27724866aaf",
+    "valmyndigheten_registreringsdatum": "2018-03-16"
+  },
+  {
+    "beteckning": "Demokraterna i Göteborg",
+    "filnamn": "demokraterna-i-goteborg",
+    "kod": "1426",
+    "uuid": "f7464f0e-4e40-4085-a1fe-cce9d8d0fbb7"
+  },
+  {
+    "beteckning": "Demokraterna i Jönköping",
+    "kod": "1320",
+    "uuid": "25813075-2350-4f40-9397-1b34bcc8e6a9",
+    "filnamn": "demokraterna-i-jonkoping"
+  },
+  {
+    "beteckning": "Demokraterna i Norberg",
+    "filnamn": "demokraterna-i-norberg",
+    "forkortning": "DiN",
+    "kod": "1304",
+    "uuid": "42e96322-fb95-4088-a804-96c881a44d36",
+    "valmyndigheten_registreringsdatum": "2017-08-31"
+  },
+  {
+    "beteckning": "Demokraterna Knivsta",
+    "kod": "1427",
+    "uuid": "954a5df2-0f6b-4c83-8151-c02169fe77a6",
+    "filnamn": "demokraterna-knivsta"
+  },
+  {
+    "beteckning": "Demokrati Sverige",
+    "filnamn": "demokrati-sverige",
+    "kod": "1387",
+    "uuid": "572c2b80-8f8a-4f2b-86e0-e77bdc5f1303"
+  },
+  {
+    "beteckning": "Demokratirörelsen",
+    "filnamn": "demokratirorelsen",
+    "kod": "1314",
+    "uuid": "eabf35e4-7d57-4d57-8347-fc44ca74b0fd"
+  },
+  {
+    "beteckning": "Demokratisk Rättvisa",
+    "filnamn": "demokratisk-rattvisa",
+    "forkortning": "DemRä",
+    "kod": "1331",
+    "uuid": "98d8ea70-a5bf-4cf7-8aff-18c9f38f6f60",
+    "valmyndigheten_registreringsdatum": "2018-01-11"
+  },
+  {
+    "beteckning": "Demokratiska Sekulära Socialister Arbetarpartiet",
+    "filnamn": "demokratiska-sekulara-socialister-arbetarpartiet",
+    "forkortning": "Ar P",
+    "kod": "1180",
+    "uuid": "59e3d3d7-ca0c-4818-933e-9c6b7e04b1d1",
+    "valmyndigheten_registreringsdatum": "2019-01-12"
+  },
+  {
+    "beteckning": "DET LOKALA PARTIET I HEBY KOMMUN",
+    "filnamn": "det-lokala-partiet-i-heby-kommun",
+    "forkortning": "L-P",
+    "kod": "0103",
+    "uuid": "6dd658b6-76ca-4da0-bb37-8ba2c39d60fe",
+    "valmyndigheten_registreringsdatum": "2017-08-16"
+  },
+  {
+    "beteckning": "Det nya partiet",
+    "filnamn": "det-nya-partiet",
+    "kod": "1351",
+    "uuid": "b4ed6db1-6289-451e-9ce6-33116e46e76a"
+  },
+  {
+    "beteckning": "Direktdemokraterna",
+    "filnamn": "direktdemokraterna",
+    "forkortning": "DD",
+    "kod": "1150",
+    "uuid": "153c98fb-b712-4314-a922-9562253639c2",
+    "valmyndigheten_registreringsdatum": "2017-12-13"
+  },
+  {
+    "beteckning": "Djurens parti",
+    "filnamn": "djurens-parti",
+    "forkortning": "DjuP",
+    "kod": "1136",
+    "uuid": "e9f11067-9208-473c-9499-eed921f680a9",
+    "valmyndigheten_registreringsdatum": "2019-02-28"
+  },
+  {
+    "beteckning": "Dorotea Kommunlista",
+    "filnamn": "dorotea-kommunlista",
+    "forkortning": "DKL",
+    "kod": "0187",
+    "uuid": "1d68b83f-c8bd-4d5f-907f-b8ae516a3a22",
+    "valmyndigheten_registreringsdatum": "2017-12-22"
+  },
+  {
+    "beteckning": "Drevvikenpartiet",
+    "filnamn": "drevvikenpartiet",
+    "forkortning": "DP",
+    "kod": "0122",
+    "uuid": "8ed0b238-a343-4e3b-b3a5-4cd430e9d7ff",
+    "valmyndigheten_registreringsdatum": "2017-12-05"
+  },
+  {
+    "beteckning": "EMPA(R)TIET",
+    "filnamn": "empartiet",
+    "forkortning": "EMP",
+    "kod": "1333",
+    "uuid": "a8f1717a-818c-40d4-bfb3-f04dfd172e9f",
+    "valmyndigheten_registreringsdatum": "2018-01-29"
+  },
+  {
+    "beteckning": "EngelholmsPartiet",
+    "filnamn": "engelholmspartiet",
+    "forkortning": "EP",
+    "kod": "0986",
+    "uuid": "319daaea-c08a-4e2f-b8a5-c99b5fd9de6c",
+    "valmyndigheten_registreringsdatum": "2010-02-19"
+  },
+  {
+    "beteckning": "Enhet",
+    "filnamn": "enhet",
+    "forkortning": "ENH",
+    "kod": "0189",
+    "uuid": "4ed338ef-bbdd-4ff9-aaa9-b86c90a01e3e",
+    "valmyndigheten_registreringsdatum": "2018-02-26"
+  },
+  {
+    "beteckning": "EtableringsPartiet",
+    "filnamn": "etableringspartiet",
+    "kod": "1271",
+    "uuid": "7a8f8e52-e026-4d64-b8f8-9147182016f7",
+    "valmyndigheten_registreringsdatum": "2014-11-25"
+  },
+  {
+    "beteckning": "Europeiska Arbetarpartiet-EAP",
+    "filnamn": "europeiska-arbetarpartiet-eap",
+    "forkortning": "EAP",
+    "kod": "0029",
+    "uuid": "8c7f27e0-2da5-4594-89b7-b6d402e2b3aa",
+    "valmyndigheten_registreringsdatum": "1985-03-22"
+  },
+  {
+    "beteckning": "Falupartiet",
+    "filnamn": "falupartiet",
+    "forkortning": "FAP",
+    "kod": "0201",
+    "uuid": "07b1bc42-9681-47d6-89cd-59e0118a008a",
+    "valmyndigheten_registreringsdatum": "1994-03-02"
+  },
+  {
+    "beteckning": "Fängelsefritt Svedala Partiet",
+    "filnamn": "fangelsefritt-svedala-partiet",
+    "kod": "1358",
+    "uuid": "989ba5da-9cbc-4c5e-aaa0-143ab6d0e498",
+    "valmyndigheten_registreringsdatum": "2018-03-09"
+  },
+  {
+    "beteckning": "Feministiskt initiativ",
+    "filnamn": "feministiskt-initiativ",
+    "forkortning": "FI",
+    "kod": "0532",
+    "uuid": "611c7fae-c057-4e46-8fd9-c4507c36be62",
+    "valmyndigheten_registreringsdatum": "2017-11-02"
+  },
+  {
+    "beteckning": "Filipstadspartiet",
+    "kod": "1056",
+    "uuid": "c23f6f35-b56b-4e30-ad8e-07b071ae6400",
+    "filnamn": "filipstadspartiet"
+  },
+  {
+    "beteckning": "Final Partiet",
+    "filnamn": "final-partiet",
+    "kod": "1329",
+    "uuid": "831ff763-fc28-4d99-a9d8-5b973865e4eb"
+  },
+  {
+    "beteckning": "FN Parti art: 27",
+    "filnamn": "fn-parti-art--27",
+    "kod": "1425",
+    "uuid": "bf140eb2-9556-4cc6-acb5-4d7a30c3e45e"
+  },
+  {
+    "beteckning": "Fokus Bjärred",
+    "filnamn": "fokus-bjarred",
+    "forkortning": "FBj",
+    "kod": "1344",
+    "uuid": "082c3b14-65fb-499d-a8b7-37c29eaa55e0",
+    "valmyndigheten_registreringsdatum": "2018-03-12"
+  },
+  {
+    "beteckning": "Folkets Röst",
+    "kod": "1265",
+    "uuid": "8ae6ac00-f69a-42f8-9295-7d0f4139dd0a",
+    "filnamn": "folkets-rost"
+  },
+  {
+    "beteckning": "Folkets röst - VOX humana",
+    "filnamn": "folkets-rost-vox-humana",
+    "forkortning": "VOXH",
+    "kod": "0119",
+    "uuid": "b1599806-fc9a-45bb-87e5-42de210597b0",
+    "valmyndigheten_registreringsdatum": "1997-11-26"
+  },
+  {
+    "beteckning": "Folkets Väl",
+    "filnamn": "folkets-val",
+    "forkortning": "FOV",
+    "kod": "0126",
+    "uuid": "81c13f0b-134f-4337-95ad-9539165e9dbf",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Folkfronten",
+    "filnamn": "folkfronten",
+    "kod": "0828",
+    "uuid": "16b66321-7512-4c21-b0e6-8b9815721781",
+    "valmyndigheten_registreringsdatum": "2009-03-23"
+  },
+  {
+    "beteckning": "Folkhemmet i Hofors-Torsåker",
+    "kod": "0371",
+    "uuid": "784c81df-700c-46c6-9888-f206e0492d69",
+    "filnamn": "folkhemmet-i-hofors-torsaker"
+  },
+  {
+    "beteckning": "Folkhemmet Sverige",
+    "filnamn": "folkhemmet-sverige",
+    "kod": "1388",
+    "uuid": "a7568519-98b1-4af8-9f2a-a802e2ae1d35"
+  },
+  {
+    "beteckning": "Folkkampanjen för sjukvården",
+    "kod": "0285",
+    "uuid": "e9b71444-ae98-4388-bab5-617da46f248e",
+    "filnamn": "folkkampanjen-for-sjukvarden"
+  },
+  {
+    "beteckning": "Folkstyret",
+    "filnamn": "folkstyret",
+    "kod": "1317",
+    "uuid": "0b18e45a-c359-470d-90bd-91b355407169"
+  },
+  {
+    "beteckning": "Folkviljan Orust",
+    "filnamn": "folkviljan-orust",
+    "forkortning": "FPO",
+    "kod": "0204",
+    "uuid": "cc243f56-5c5a-4bd2-b649-0f685d0f7384",
+    "valmyndigheten_registreringsdatum": "2018-01-03"
+  },
+  {
+    "beteckning": "FörNyaLund",
+    "filnamn": "fornyalund",
+    "forkortning": "FöNyL",
+    "kod": "1135",
+    "uuid": "083558f5-89f8-4513-9ed1-6e5d309ec24a",
+    "valmyndigheten_registreringsdatum": "2018-03-26"
+  },
+  {
+    "beteckning": "Framstegspartiet",
+    "kod": "1224",
+    "uuid": "d7dfc45e-67bd-46a2-9b18-f5cc20960eb9",
+    "filnamn": "framstegspartiet"
+  },
+  {
+    "beteckning": "Framstegspartiet",
+    "kod": "1226",
+    "uuid": "0c775614-936c-43d2-b281-cb9967198934",
+    "filnamn": "framstegspartiet"
+  },
+  {
+    "beteckning": "Framstegspartiet",
+    "kod": "1223",
+    "uuid": "f98fed67-f15c-4dbc-92a8-275924925ade",
+    "filnamn": "framstegspartiet"
+  },
+  {
+    "beteckning": "FRAMTID I ALE",
+    "filnamn": "framtid-i-ale",
+    "forkortning": "FiA",
+    "kod": "1158",
+    "uuid": "990c2123-0bc0-4534-8a36-a638109fc503",
+    "valmyndigheten_registreringsdatum": "2017-10-17"
+  },
+  {
+    "beteckning": "Framtid i Jokkmokks kommun",
+    "filnamn": "framtid-i-jokkmokks-kommun",
+    "forkortning": "FJK",
+    "kod": "1014",
+    "uuid": "6a91678c-924b-45f6-a281-26a363dcbbd8",
+    "valmyndigheten_registreringsdatum": "2010-03-04"
+  },
+  {
+    "beteckning": "Framtid i Kalix",
+    "kod": "1164",
+    "uuid": "b6cccbf7-1836-4e17-a389-bd715299bb70",
+    "filnamn": "framtid-i-kalix"
+  },
+  {
+    "beteckning": "Framtid Öland",
+    "filnamn": "framtid-oland",
+    "forkortning": "FÖL",
+    "kod": "1142",
+    "uuid": "a6ed8e2b-6e19-4657-a083-ebe43a8d4a12",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Framtid S",
+    "filnamn": "framtid-s",
+    "forkortning": "FrS",
+    "kod": "1361",
+    "uuid": "655f6918-3cd2-40a5-819a-05ba458c1209",
+    "valmyndigheten_registreringsdatum": "2018-03-06"
+  },
+  {
+    "beteckning": "Framtidspartiet i Lekeberg",
+    "filnamn": "framtidspartiet-i-lekeberg",
+    "forkortning": "FL",
+    "kod": "0997",
+    "uuid": "4cf12d91-1c02-4fb0-86ce-8c7cd122ba50",
+    "valmyndigheten_registreringsdatum": "2010-02-26"
+  },
+  {
+    "beteckning": "Framtidspartiet Sverige",
+    "filnamn": "framtidspartiet-sverige",
+    "kod": "0450",
+    "uuid": "7f975e6b-1fa1-4d96-8c0d-6c7732306351",
+    "valmyndigheten_registreringsdatum": "2004-01-30"
+  },
+  {
+    "beteckning": "Fria Demokraterna",
+    "filnamn": "fria-demokraterna",
+    "forkortning": "FD",
+    "kod": "1280",
+    "uuid": "da251d4e-1f74-42de-b440-91cac1078bc1",
+    "valmyndigheten_registreringsdatum": "2017-10-20"
+  },
+  {
+    "beteckning": "Fria Stockholmare",
+    "filnamn": "fria-stockholmare",
+    "forkortning": "FS",
+    "kod": "1156",
+    "uuid": "8adf7deb-d476-4bb5-bab8-b6696777d0b9",
+    "valmyndigheten_registreringsdatum": "2018-03-13"
+  },
+  {
+    "beteckning": "Fucking Åmål",
+    "kod": "1392",
+    "uuid": "dd5c8509-a332-4be8-b299-58fef42a5b7d",
+    "filnamn": "fucking-amal"
+  },
+  {
+    "beteckning": "Futurum Sverige",
+    "filnamn": "futurum-sverige",
+    "kod": "1363",
+    "uuid": "c4a3ff36-564b-46f6-81db-96ae77bfff77",
+    "valmyndigheten_registreringsdatum": "2018-03-21"
+  },
+  {
+    "beteckning": "Generation Utveckling",
+    "filnamn": "generation-utveckling",
+    "kod": "1406",
+    "uuid": "c31e131c-ff24-4f29-b3fa-58afcbc3dddc"
+  },
+  {
+    "beteckning": "Götenes framtid",
+    "filnamn": "gotenes-framtid",
+    "forkortning": "GÖF",
+    "kod": "0094",
+    "uuid": "d60a251d-9a0c-4867-8971-444f9a006eb8",
+    "valmyndigheten_registreringsdatum": "2018-02-08"
+  },
+  {
+    "beteckning": "GPS - Grönt Perspektiv i Sundsvall",
+    "filnamn": "gps-gront-perspektiv-i-sundsvall",
+    "forkortning": "GPS",
+    "kod": "1134",
+    "uuid": "b12c6352-4b9f-42fb-8743-77114e5496b7",
+    "valmyndigheten_registreringsdatum": "2014-02-04"
+  },
+  {
+    "beteckning": "Grythyttelistan",
+    "kod": "1069",
+    "uuid": "b9180254-2586-4112-a98b-bf84618217a8",
+    "filnamn": "grythyttelistan"
+  },
+  {
+    "beteckning": "Gula Partiet",
+    "filnamn": "gula-partiet",
+    "kod": "1173",
+    "uuid": "821df78a-261b-4612-8e95-f3d10b3acd2a",
+    "valmyndigheten_registreringsdatum": "2012-09-11"
+  },
+  {
+    "beteckning": "Habodemokraterna",
+    "filnamn": "habodemokraterna",
+    "forkortning": "HaDem",
+    "kod": "1287",
+    "uuid": "3571a393-94b0-4aeb-b092-f3dabc9b6f5e",
+    "valmyndigheten_registreringsdatum": "2017-01-16"
+  },
+  {
+    "beteckning": "HANINGEPARTIET",
+    "filnamn": "haningepartiet",
+    "kod": "1272",
+    "uuid": "c1338d92-1a30-45f2-8244-2c339eff16de",
+    "valmyndigheten_registreringsdatum": "2017-10-11"
+  },
+  {
+    "beteckning": "Härjedalspartiet",
+    "filnamn": "harjedalspartiet",
+    "forkortning": "Härjp",
+    "kod": "1106",
+    "uuid": "9f7fabe1-2a28-4fb9-88b8-de3cd17a8020",
+    "valmyndigheten_registreringsdatum": "2012-03-27"
+  },
+  {
+    "beteckning": "Hela Edas Lista",
+    "kod": "0160",
+    "uuid": "13b80d5f-37ce-48c0-b342-347b39e3c2b9",
+    "filnamn": "hela-edas-lista"
+  },
+  {
+    "beteckning": "Hela Sunne",
+    "filnamn": "hela-sunne",
+    "forkortning": "HS",
+    "kod": "1113",
+    "uuid": "407ebcac-23d1-4b6e-b030-d009163bccbe",
+    "valmyndigheten_registreringsdatum": "2013-06-14"
+  },
+  {
+    "beteckning": "Hela Vara kommuns bästa",
+    "filnamn": "hela-vara-kommuns-basta",
+    "forkortning": "hvkb",
+    "kod": "1342",
+    "uuid": "ae7d2e8b-4cc0-49e9-a27a-109546278c8f",
+    "valmyndigheten_registreringsdatum": "2018-02-08"
+  },
+  {
+    "beteckning": "Hjärupspartiet",
+    "kod": "1186",
+    "uuid": "c2278989-28fa-4302-b49b-83635c8569ee",
+    "filnamn": "hjarupspartiet"
+  },
+  {
+    "beteckning": "Hoforspartiet",
+    "kod": "1215",
+    "uuid": "ef75b8d8-8909-4f89-84c6-e7ff7bb70a7f",
+    "filnamn": "hoforspartiet"
+  },
+  {
+    "beteckning": "Högerpartiet de konservativa",
+    "filnamn": "hogerpartiet-de-konservativa",
+    "kod": "0452",
+    "uuid": "94d45816-6e28-4736-becf-008e039e3bc0",
+    "valmyndigheten_registreringsdatum": "2004-03-11"
+  },
+  {
+    "beteckning": "Huddingepartiet",
+    "filnamn": "huddingepartiet",
+    "forkortning": "HP",
+    "kod": "0028",
+    "uuid": "f056d271-b6d1-4b0b-98dc-f2c71f00138c",
+    "valmyndigheten_registreringsdatum": "2018-03-12"
+  },
+  {
+    "beteckning": "Humandemokraterna",
+    "filnamn": "humandemokraterna",
+    "kod": "1176",
+    "uuid": "3e104b52-ee22-4e36-a1e0-7ea04d03b59b"
+  },
+  {
+    "beteckning": "iGov.Direct®",
+    "filnamn": "igov-direct-",
+    "kod": "1316",
+    "uuid": "d6046b77-aa01-44ec-94ad-14898afb571a"
+  },
+  {
+    "beteckning": "Initiativet",
+    "filnamn": "initiativet",
+    "forkortning": "INI",
+    "kod": "1374",
+    "uuid": "07b403b7-3b9b-4a22-844e-9f0fa516d57b",
+    "valmyndigheten_registreringsdatum": "2018-03-27"
+  },
+  {
+    "beteckning": "iP-IDROTTSPARTIET-Rädda Stadshagens IP!",
+    "filnamn": "ip-idrottspartiet-radda-stadshagens-ip-",
+    "kod": "1416",
+    "uuid": "b066a1e7-8be7-43aa-918b-df6684b353f9"
+  },
+  {
+    "beteckning": "Jämtlands Väl Bräcke",
+    "kod": "1327",
+    "uuid": "e9f9bec8-09ff-483e-a484-d31babfd06ef",
+    "filnamn": "jamtlands-val-bracke"
+  },
+  {
+    "beteckning": "Jämtlands Väl Krokom",
+    "filnamn": "jamtlands-val-krokom",
+    "forkortning": "JVK",
+    "kod": "1312",
+    "uuid": "511fcae2-33c6-4280-807f-2cfb3dae576a",
+    "valmyndigheten_registreringsdatum": "2017-12-22"
+  },
+  {
+    "beteckning": "Jour Strömstad",
+    "filnamn": "jour-stromstad",
+    "kod": "1324",
+    "uuid": "ed52f7e6-711c-4a94-ac7c-af60f3e6c5fc",
+    "valmyndigheten_registreringsdatum": "2017-12-13"
+  },
+  {
+    "beteckning": "Judisk Kamp",
+    "kod": "1054",
+    "uuid": "b1a18970-2141-4e28-9c68-5f4c7438ef22",
+    "filnamn": "judisk-kamp"
+  },
+  {
+    "beteckning": "Kalixpartiet",
+    "filnamn": "kalixpartiet",
+    "forkortning": "KXP",
+    "kod": "0141",
+    "uuid": "a2607113-2daa-4c79-8166-3d6e49b71423",
+    "valmyndigheten_registreringsdatum": "1997-09-17"
+  },
+  {
+    "beteckning": "Karlskronapartiet",
+    "filnamn": "karlskronapartiet",
+    "forkortning": "Kap",
+    "kod": "1139",
+    "uuid": "c96d2f6e-81ed-4a1c-89f5-a60058222f85",
+    "valmyndigheten_registreringsdatum": "2014-02-24"
+  },
+  {
+    "beteckning": "Karlstadpartiet Livskvalitet",
+    "filnamn": "karlstadpartiet-livskvalitet",
+    "forkortning": "KDL",
+    "kod": "1350",
+    "uuid": "d28154f7-af47-4248-9363-d38fd26aef61",
+    "valmyndigheten_registreringsdatum": "2018-03-27"
+  },
+  {
+    "beteckning": "Karlstads Framtid",
+    "kod": "1159",
+    "uuid": "4049bd73-9f9d-42ac-85ff-f4db21dd8845",
+    "filnamn": "karlstads-framtid"
+  },
+  {
+    "beteckning": "Klassiskt liberala partiet",
+    "filnamn": "klassiskt-liberala-partiet",
+    "forkortning": "KLP",
+    "kod": "0638",
+    "uuid": "6537fb90-7ac9-4385-b554-3074b9e60b1a",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Knegarkampanjen",
+    "filnamn": "knegarkampanjen",
+    "forkortning": "KNEG",
+    "kod": "1168",
+    "uuid": "b60ad164-adce-4c69-9438-074670153ab4",
+    "valmyndigheten_registreringsdatum": "2014-03-07"
+  },
+  {
+    "beteckning": "Knivsta.Nu",
+    "filnamn": "knivsta-nu",
+    "forkortning": "KNU",
+    "kod": "0303",
+    "uuid": "2cdb7e51-30e9-479b-b7f7-2d33cf915b73",
+    "valmyndigheten_registreringsdatum": "2018-01-29"
+  },
+  {
+    "beteckning": "Kommunal Samling",
+    "filnamn": "kommunal-samling",
+    "forkortning": "KOSA",
+    "kod": "1121",
+    "uuid": "0b9990ce-999d-4628-9634-d16188729059",
+    "valmyndigheten_registreringsdatum": "2013-10-01"
+  },
+  {
+    "beteckning": "Kommundemokraterna",
+    "filnamn": "kommundemokraterna",
+    "forkortning": "KoDe",
+    "kod": "1338",
+    "uuid": "e782cd26-8d46-482f-b4f1-2b688fc9105b",
+    "valmyndigheten_registreringsdatum": "2018-02-08"
+  },
+  {
+    "beteckning": "Kommunens Bästa",
+    "kod": "1107",
+    "uuid": "78589060-901b-472c-8731-1f454caae3df",
+    "filnamn": "kommunens-basta"
+  },
+  {
+    "beteckning": "Kommunens Bästa (partipolitiskt obunden lista)",
+    "filnamn": "kommunens-basta-partipolitiskt-obunden-lista",
+    "forkortning": "KB",
+    "kod": "0521",
+    "uuid": "093e978b-c8cb-4383-a002-49a4ea34778d",
+    "valmyndigheten_registreringsdatum": "2006-03-07"
+  },
+  {
+    "beteckning": "Kommunens Röst",
+    "filnamn": "kommunens-rost",
+    "kod": "1302",
+    "uuid": "44a507e9-3733-41ec-8eb7-dbad2c7c84be",
+    "valmyndigheten_registreringsdatum": "2017-06-22"
+  },
+  {
+    "beteckning": "Kommunens Röst ",
+    "kod": "1395",
+    "uuid": "f6d76476-a944-4706-ae7f-d054e4991d1f",
+    "filnamn": "kommunens-rost-"
+  },
+  {
+    "beteckning": "Kommunens Väl",
+    "filnamn": "kommunens-val",
+    "forkortning": "KV",
+    "kod": "0040",
+    "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",
+    "valmyndigheten_registreringsdatum": "2003-05-14"
+  },
+  {
+    "beteckning": "Kommunens Väl",
+    "filnamn": "kommunens-val",
+    "forkortning": "KV",
+    "kod": "0040",
+    "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",
+    "valmyndigheten_registreringsdatum": "2003-05-14"
+  },
+  {
+    "beteckning": "Kommunens Väl",
+    "filnamn": "kommunens-val",
+    "forkortning": "KV",
+    "kod": "0040",
+    "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",
+    "valmyndigheten_registreringsdatum": "2003-05-14"
+  },
+  {
+    "beteckning": "Kommunens Väl",
+    "filnamn": "kommunens-val",
+    "forkortning": "KV",
+    "kod": "0040",
+    "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",
+    "valmyndigheten_registreringsdatum": "2003-05-14"
+  },
+  {
+    "beteckning": "Kommunisterna",
+    "filnamn": "kommunisterna",
+    "forkortning": "Komm.",
+    "kod": "0672",
+    "uuid": "55cdd0ac-6e10-42df-adf7-02db7dea7607",
+    "valmyndigheten_registreringsdatum": "2010-03-12"
+  },
+  {
+    "beteckning": "Kommunistiska Partiet",
+    "filnamn": "kommunistiska-partiet",
+    "forkortning": "K",
+    "kod": "0471",
+    "uuid": "7d9b57e7-f172-4042-8a2e-ad18c5da6245",
+    "valmyndigheten_registreringsdatum": "2018-03-16"
+  },
+  {
+    "beteckning": "Kommunlistan",
+    "filnamn": "kommunlistan",
+    "forkortning": "KL",
+    "kod": "0512",
+    "uuid": "452aff7e-40d4-44b5-9193-b8e9b006a6da",
+    "valmyndigheten_registreringsdatum": "2006-01-10"
+  },
+  {
+    "beteckning": "Kommunlistan",
+    "filnamn": "kommunlistan",
+    "forkortning": "KL",
+    "kod": "0512",
+    "uuid": "452aff7e-40d4-44b5-9193-b8e9b006a6da",
+    "valmyndigheten_registreringsdatum": "2006-01-10"
+  },
+  {
+    "beteckning": "Kommunlistan",
+    "filnamn": "kommunlistan",
+    "forkortning": "KL",
+    "kod": "0512",
+    "uuid": "452aff7e-40d4-44b5-9193-b8e9b006a6da",
+    "valmyndigheten_registreringsdatum": "2006-01-10"
+  },
+  {
+    "beteckning": "Kommunlistan",
+    "filnamn": "kommunlistan",
+    "forkortning": "KL",
+    "kod": "0512",
+    "uuid": "452aff7e-40d4-44b5-9193-b8e9b006a6da",
+    "valmyndigheten_registreringsdatum": "2006-01-10"
+  },
+  {
+    "beteckning": "Kommunpartiet",
+    "filnamn": "kommunpartiet",
+    "forkortning": "KomP",
+    "kod": "0546",
+    "uuid": "8411e120-1d68-4435-bc7c-0f529b6d642a",
+    "valmyndigheten_registreringsdatum": "2018-04-10"
+  },
+  {
+    "beteckning": "Kommunpartiet - Vansbro",
+    "filnamn": "kommunpartiet-vansbro",
+    "forkortning": "Kp",
+    "kod": "0990",
+    "uuid": "27a67552-e814-43e1-9cbb-c2165d273e4e",
+    "valmyndigheten_registreringsdatum": "2010-02-19"
+  },
+  {
+    "beteckning": "KommunPartiet Mellerud",
+    "filnamn": "kommunpartiet-mellerud",
+    "forkortning": "KiM",
+    "kod": "0593",
+    "uuid": "f2803c86-56ec-4d6f-bb99-6e847357b5f8",
+    "valmyndigheten_registreringsdatum": "2017-12-08"
+  },
+  {
+    "beteckning": "Konsensus - För Vadstenas Bästa",
+    "filnamn": "konsensus-for-vadstenas-basta",
+    "forkortning": "Kons",
+    "kod": "1258",
+    "uuid": "35324e37-4fa4-4a29-9370-e75708476d5a",
+    "valmyndigheten_registreringsdatum": "2018-03-06"
+  },
+  {
+    "beteckning": "Kosmopolitiska Partiet",
+    "filnamn": "kosmopolitiska-partiet",
+    "kod": "1405",
+    "uuid": "7536db62-669c-4425-8f3b-4d6eb50d2287"
+  },
+  {
+    "beteckning": "Kristdemokraterna",
+    "filnamn": "kristdemokraterna",
+    "forkortning": "KD",
+    "kod": "0068",
+    "uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
+    "valmyndigheten_registreringsdatum": "2017-11-02"
+  },
+  {
+    "beteckning": "Kristianstadsbygdens Framtid",
+    "filnamn": "kristianstadsbygdens-framtid",
+    "forkortning": "KF",
+    "kod": "0442",
+    "uuid": "6ab877ef-e77c-4236-bbcf-f3b511fb29b1",
+    "valmyndigheten_registreringsdatum": "2003-05-14"
+  },
+  {
+    "beteckning": "Kristna Värdepartiet",
+    "filnamn": "kristna-vardepartiet",
+    "kod": "1140",
+    "uuid": "c39ee49a-2a58-423d-836d-c97a2d9d8fcd"
+  },
+  {
+    "beteckning": "Kungsbackaborna",
+    "filnamn": "kungsbackaborna",
+    "forkortning": "Kbabo",
+    "kod": "1036",
+    "uuid": "4eee1cd3-a349-4c74-937c-3b7149b78d4e",
+    "valmyndigheten_registreringsdatum": "2017-12-05"
+  },
+  {
+    "beteckning": "KvillePartiet",
+    "kod": "1398",
+    "uuid": "ffffc6da-c7d7-4e1e-9934-343907af3db0",
+    "filnamn": "kvillepartiet"
+  },
+  {
+    "beteckning": "Laholmspartiet",
+    "filnamn": "laholmspartiet",
+    "forkortning": "Lap",
+    "kod": "0418",
+    "uuid": "05ac49a3-fa54-4d3a-8938-f947b380987f",
+    "valmyndigheten_registreringsdatum": "2017-12-22"
+  },
+  {
+    "beteckning": "Landsbygdens framtid i Bräcke",
+    "kod": "1172",
+    "uuid": "bdb4c62d-0dff-48b3-9be6-7783bc7d8889",
+    "filnamn": "landsbygdens-framtid-i-bracke"
+  },
+  {
+    "beteckning": "Landsbygdspartiet Oberoende",
+    "filnamn": "landsbygdspartiet-oberoende",
+    "forkortning": "LPo",
+    "kod": "1011",
+    "uuid": "e39bddbe-ce7d-4c63-a677-b5c1a3046ebd",
+    "valmyndigheten_registreringsdatum": "2017-12-08"
+  },
+  {
+    "beteckning": "LÅNGEN&CO",
+    "filnamn": "langen-amp-co",
+    "kod": "1345",
+    "uuid": "d9d8dcc8-eeea-48e5-b5a5-8c0633233e3c"
+  },
+  {
+    "beteckning": "LÅNGEN&CO",
+    "kod": "1345",
+    "uuid": "8cec933d-eb34-45aa-87e6-32f363b680b5",
+    "filnamn": "langen-co"
+  },
+  {
+    "beteckning": "Liberal Vision Åmål",
+    "filnamn": "liberal-vision-amal",
+    "forkortning": "LibVÅ",
+    "kod": "1353",
+    "uuid": "bd4fff22-4d31-4d12-9abc-adc5fed355ee",
+    "valmyndigheten_registreringsdatum": "2018-03-06"
+  },
+  {
+    "beteckning": "Liberalerna (tidigare Folkpartiet)",
+    "filnamn": "liberalerna-tidigare-folkpartiet",
+    "forkortning": "L",
+    "kod": "0003",
+    "uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0",
+    "valmyndigheten_registreringsdatum": "2017-11-13"
+  },
+  {
+    "beteckning": "Lidingöpartiet",
+    "filnamn": "lidingopartiet",
+    "forkortning": "LP",
+    "kod": "0019",
+    "uuid": "14af0084-697b-4fec-b085-df63f90c9465",
+    "valmyndigheten_registreringsdatum": "2018-04-10"
+  },
+  {
+    "beteckning": "Lifepartiet",
+    "filnamn": "lifepartiet",
+    "kod": "1155",
+    "uuid": "22f28ecd-8bb9-4740-9a62-11c85d8fc061",
+    "valmyndigheten_registreringsdatum": "2014-03-07"
+  },
+  {
+    "beteckning": "Listan för Miljö och Omtanke, Örkelljunga",
+    "kod": "1057",
+    "uuid": "c5514ebe-b4e2-4ee6-a875-1b2f26870bee",
+    "filnamn": "listan-for-miljo-och-omtanke--orkelljunga"
+  },
+  {
+    "beteckning": "Ljusdalsbygdens parti",
+    "filnamn": "ljusdalsbygdens-parti",
+    "forkortning": "LjP",
+    "kod": "0535",
+    "uuid": "62970bde-1b67-469b-954a-33078773b42b",
+    "valmyndigheten_registreringsdatum": "2017-10-17"
+  },
+  {
+    "beteckning": "Lokalpartiet BoA",
+    "filnamn": "lokalpartiet-boa",
+    "forkortning": "BoA",
+    "kod": "0667",
+    "uuid": "77f0a0cd-c3c5-42ca-86a3-08759e95900d",
+    "valmyndigheten_registreringsdatum": "2017-06-02"
+  },
+  {
+    "beteckning": "LOTTOKRATIN",
+    "filnamn": "lottokratin",
+    "kod": "0518",
+    "uuid": "29097cd1-6172-4321-bb78-a77cf7bfcb3a"
+  },
+  {
+    "beteckning": "Lysekilspartiet",
+    "filnamn": "lysekilspartiet",
+    "forkortning": "LP.NU",
+    "kod": "0248",
+    "uuid": "5b6a8475-6d85-466e-a34f-008852c173f7",
+    "valmyndigheten_registreringsdatum": "2014-01-16"
+  },
+  {
+    "beteckning": "Malålistan",
+    "filnamn": "malalistan",
+    "forkortning": "ML",
+    "kod": "0525",
+    "uuid": "94de475b-521e-4fd6-b5e2-16eeacde72b4",
+    "valmyndigheten_registreringsdatum": "2006-02-23"
+  },
+  {
+    "beteckning": "Malmfältens Väl",
+    "filnamn": "malmfaltens-val",
+    "forkortning": "MV",
+    "kod": "0509",
+    "uuid": "0487b4e2-d2a2-4ae9-9f92-e511d3687dab",
+    "valmyndigheten_registreringsdatum": "2013-10-15"
+  },
+  {
+    "beteckning": "Malung-Sälenpartiet",
+    "kod": "0516",
+    "uuid": "1f2b1723-551e-47f0-a10f-0a7961031451",
+    "filnamn": "malung-salenpartiet"
+  },
+  {
+    "beteckning": "Mariefredspartiet",
+    "kod": "0637",
+    "uuid": "9a93d96f-9082-4d57-b46b-f5e2b052da04",
+    "filnamn": "mariefredspartiet"
+  },
+  {
+    "beteckning": "MariestadsPartiet",
+    "filnamn": "mariestadspartiet",
+    "forkortning": "MaP",
+    "kod": "0331",
+    "uuid": "8d8034b7-d41c-404b-8895-42e5d752bebc",
+    "valmyndigheten_registreringsdatum": "2002-03-13"
+  },
+  {
+    "beteckning": "Markbygdspartiet",
+    "kod": "0161",
+    "uuid": "aca2a7c0-395b-4d61-a630-b75f327aad94",
+    "filnamn": "markbygdspartiet"
+  },
+  {
+    "beteckning": "Marks Oberoende Demokrater, MOD",
+    "filnamn": "marks-oberoende-demokrater--mod",
+    "forkortning": "MOD",
+    "kod": "0722",
+    "uuid": "18bc4293-c7ac-4245-b5a2-8d041a9b3112",
+    "valmyndigheten_registreringsdatum": "2008-01-15"
+  },
+  {
+    "beteckning": "Medborgarnas Politiska Parti i Sverige",
+    "filnamn": "medborgarnas-politiska-parti-i-sverige",
+    "forkortning": "MPPS",
+    "kod": "1367",
+    "uuid": "245b9ede-33f6-4ae4-853c-898724a87900",
+    "valmyndigheten_registreringsdatum": "2018-03-29"
+  },
+  {
+    "beteckning": "Medborgarpartiet",
+    "filnamn": "medborgarpartiet",
+    "forkortning": "MedP",
+    "kod": "1299",
+    "uuid": "dc646f81-a2b4-44d3-8d5f-1e1802de6601",
+    "valmyndigheten_registreringsdatum": "2017-08-23"
+  },
+  {
+    "beteckning": "Medborgarpartiet",
+    "filnamn": "medborgarpartiet",
+    "forkortning": "MedP",
+    "kod": "1299",
+    "uuid": "dc646f81-a2b4-44d3-8d5f-1e1802de6601",
+    "valmyndigheten_registreringsdatum": "2017-08-23"
+  },
+  {
+    "beteckning": "Medborgarresan",
+    "filnamn": "medborgarresan",
+    "kod": "1330",
+    "uuid": "b0cf48a4-435b-4ec9-b448-b1f71246fd8b"
+  },
+  {
+    "beteckning": "Medborgerlig Samling",
+    "filnamn": "medborgerlig-samling",
+    "forkortning": "MED",
+    "kod": "1296",
+    "uuid": "68b3e558-d0bb-4ac7-b833-a5b30a542800",
+    "valmyndigheten_registreringsdatum": "2019-02-26"
+  },
+  {
+    "beteckning": "Miljödemokraterna",
+    "kod": "1383",
+    "uuid": "81977980-9553-4fa9-8ed7-7687fa9b5959",
+    "filnamn": "miljodemokraterna"
+  },
+  {
+    "beteckning": "Miljöpartiet de gröna",
+    "filnamn": "miljopartiet-de-grona",
+    "forkortning": "MP",
+    "kod": "0055",
+    "uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
+    "valmyndigheten_registreringsdatum": "2017-11-02"
+  },
+  {
+    "beteckning": "Mitt Göinge",
+    "filnamn": "mitt-goinge",
+    "forkortning": "MG",
+    "kod": "1337",
+    "uuid": "db6631d4-61a1-4068-b426-66d75fe39ea1",
+    "valmyndigheten_registreringsdatum": "2018-02-26"
+  },
+  {
+    "beteckning": "Moderaterna",
+    "filnamn": "moderaterna",
+    "forkortning": "M",
+    "kod": "0001",
+    "uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476",
+    "valmyndigheten_registreringsdatum": "2017-11-13"
+  },
+  {
+    "beteckning": "Modern Sweden",
+    "filnamn": "modern-sweden",
+    "kod": "1380",
+    "uuid": "a9b37976-6cf6-4aba-876c-7148a1d4b969"
+  },
+  {
+    "beteckning": "Morapartiet",
+    "filnamn": "morapartiet",
+    "forkortning": "MOP",
+    "kod": "0197",
+    "uuid": "3c442003-5859-4ff9-a322-86898ba54e13",
+    "valmyndigheten_registreringsdatum": "1994-03-22"
+  },
+  {
+    "beteckning": "Mosebackedemokraterna",
+    "kod": "0976",
+    "uuid": "759b6807-f012-41d8-969b-93ce1d839a30",
+    "filnamn": "mosebackedemokraterna"
+  },
+  {
+    "beteckning": "Mullsjö Framtid",
+    "kod": "0639",
+    "uuid": "91a14e9f-ab4c-4b2e-b4bf-ee634138ff7d",
+    "filnamn": "mullsjo-framtid"
+  },
+  {
+    "beteckning": "Nackalistan",
+    "filnamn": "nackalistan",
+    "forkortning": "NL",
+    "kod": "0543",
+    "uuid": "eeb297f7-5159-48b2-b6c0-ab92ebc9fa28",
+    "valmyndigheten_registreringsdatum": "2018-01-15"
+  },
+  {
+    "beteckning": "NATURENS PARTI SANNING RÄTTVISA KÄRLEK",
+    "filnamn": "naturens-parti-sanning-rattvisa-karlek",
+    "kod": "1281",
+    "uuid": "e62f64e1-7b26-4a5e-93e7-637112a6e9ca",
+    "valmyndigheten_registreringsdatum": "2017-05-08"
+  },
+  {
+    "beteckning": "NKS Nya Koalitionssamlingen",
+    "filnamn": "nks-nya-koalitionssamlingen",
+    "kod": "1340",
+    "uuid": "89ad9bef-dc40-4bd3-a70e-441ab8ee4103",
+    "valmyndigheten_registreringsdatum": "2018-03-13"
+  },
+  {
+    "beteckning": "Norapartiet",
+    "filnamn": "norapartiet",
+    "forkortning": "NOR",
+    "kod": "0985",
+    "uuid": "1d7a2ecf-cd6c-478d-b6c6-95ff6e97c359",
+    "valmyndigheten_registreringsdatum": "2017-12-08"
+  },
+  {
+    "beteckning": "nordanstigspartiet.se",
+    "filnamn": "nordanstigspartiet-se",
+    "forkortning": "nop",
+    "kod": "1343",
+    "uuid": "38456bd0-8569-4c27-a4b5-fec604e0f381",
+    "valmyndigheten_registreringsdatum": "2018-02-16"
+  },
+  {
+    "beteckning": "Nordiska motståndsrörelsen",
+    "filnamn": "nordiska-motstandsrorelsen",
+    "forkortning": "NMR",
+    "kod": "1273",
+    "uuid": "c7ce3542-587c-4d95-8e2a-d63f91b11bc9",
+    "valmyndigheten_registreringsdatum": "2015-07-09"
+  },
+  {
+    "beteckning": "Nordmarkspartiet",
+    "filnamn": "nordmarkspartiet",
+    "forkortning": "N",
+    "kod": "1072",
+    "uuid": "896772f7-8ca8-4ee3-9111-3e66278bcf17",
+    "valmyndigheten_registreringsdatum": "2010-06-18"
+  },
+  {
+    "beteckning": "Normaldemokraterna",
+    "filnamn": "normaldemokraterna",
+    "kod": "1124",
+    "uuid": "7d941341-bac1-4610-a5c0-75e5f4d67f48",
+    "valmyndigheten_registreringsdatum": "2013-10-28"
+  },
+  {
+    "beteckning": "Norrländska Välfärdspartiet",
+    "filnamn": "norrlandska-valfardspartiet",
+    "kod": "1313",
+    "uuid": "1396159c-ac3b-48cd-82a2-b53e40e37a5c",
+    "valmyndigheten_registreringsdatum": "2017-11-30"
+  },
+  {
+    "beteckning": "Norrlandspartiet",
+    "filnamn": "norrlandspartiet",
+    "kod": "1378",
+    "uuid": "eaadd374-35f6-45da-acc4-4254289c77db",
+    "valmyndigheten_registreringsdatum": "2017-05-29"
+  },
+  {
+    "beteckning": "NPP Nya Pensions Partiet",
+    "filnamn": "npp-nya-pensions-partiet",
+    "kod": "1399",
+    "uuid": "1de65e35-d734-4941-a5de-d2b3edba6470"
+  },
+  {
+    "beteckning": "numen kärlekspartiet",
+    "filnamn": "numen-karlekspartiet",
+    "kod": "1415",
+    "uuid": "70799b6d-249c-4cdd-8f0f-415bf39d77b2"
+  },
+  {
+    "beteckning": "NY REFORM",
+    "filnamn": "ny-reform",
+    "kod": "1385",
+    "uuid": "85ccc38a-0fc7-4a55-b1f3-1db7d6c062b6"
+  },
+  {
+    "beteckning": "Nya bjornska partiet",
+    "filnamn": "nya-bjornska-partiet",
+    "kod": "1418",
+    "uuid": "d356e679-91d5-4b18-a2b5-8867475116ca"
+  },
+  {
+    "beteckning": "Nya Danderydspartiet",
+    "kod": "1419",
+    "uuid": "9f737d9d-260a-4ebd-8600-b473fd3cb655",
+    "filnamn": "nya-danderydspartiet"
+  },
+  {
+    "beteckning": "Nya Kirunapartiet",
+    "filnamn": "nya-kirunapartiet",
+    "forkortning": "NKP",
+    "kod": "1326",
+    "uuid": "6639e412-737a-4308-992f-76b4f021910e",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Nya Kommunpartiet Eslöv",
+    "filnamn": "nya-kommunpartiet-eslov",
+    "forkortning": "NKE",
+    "kod": "0988",
+    "uuid": "98e02aed-bbc7-410e-ae7e-77e2a9109fe7",
+    "valmyndigheten_registreringsdatum": "2010-02-19"
+  },
+  {
+    "beteckning": "Nya Listan i Vellinge",
+    "kod": "0989",
+    "uuid": "b5a8367b-9763-49e6-942b-49a342ac0736",
+    "filnamn": "nya-listan-i-vellinge"
+  },
+  {
+    "beteckning": "nya Ny Demokrati",
+    "filnamn": "nya-ny-demokrati",
+    "kod": "1391",
+    "uuid": "b4a0631c-8576-4bb6-880e-05972a7f952b"
+  },
+  {
+    "beteckning": "Nya Ulricehamn",
+    "kod": "1157",
+    "uuid": "2def9db4-ffba-4858-a406-b76008c36853",
+    "filnamn": "nya-ulricehamn"
+  },
+  {
+    "beteckning": "Nybyggarpartiet",
+    "filnamn": "nybyggarpartiet",
+    "forkortning": "NB",
+    "kod": "0984",
+    "uuid": "8f5f1ddd-b111-4ae5-a327-4b7d367ca142",
+    "valmyndigheten_registreringsdatum": "2010-02-19"
+  },
+  {
+    "beteckning": "Nykvarnspartiet",
+    "filnamn": "nykvarnspartiet",
+    "forkortning": "NP",
+    "kod": "0123",
+    "uuid": "d8c7d408-37c1-439c-a48d-805e00b4af49",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Nystart Enköping (NE)",
+    "filnamn": "nystart-enkoping-ne",
+    "forkortning": "NE",
+    "kod": "1143",
+    "uuid": "f4f9b691-9eea-4cd7-906a-bbebb07a9c42",
+    "valmyndigheten_registreringsdatum": "2017-12-08"
+  },
+  {
+    "beteckning": "OBEROENDE REALISTER",
+    "filnamn": "oberoende-realister",
+    "forkortning": "OR",
+    "kod": "1305",
+    "uuid": "8463491f-4a86-4bfd-91d2-12d58ff5e223",
+    "valmyndigheten_registreringsdatum": "2017-11-02"
+  },
+  {
+    "beteckning": "Ödeshögs Partiet",
+    "filnamn": "odeshogs-partiet",
+    "forkortning": "ÖHGP",
+    "kod": "1049",
+    "uuid": "a58232ce-38c7-4991-9b96-9179e0d9b4b6",
+    "valmyndigheten_registreringsdatum": "2014-01-16"
+  },
+  {
+    "beteckning": "Ölandspartiet",
+    "filnamn": "olandspartiet",
+    "forkortning": "Öland",
+    "kod": "0336",
+    "uuid": "c79c8c7f-d06b-44f2-8749-de54938de492",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Ölandspartiet södra",
+    "filnamn": "olandspartiet-sodra",
+    "forkortning": "Ölp",
+    "kod": "0554",
+    "uuid": "40214df8-8f99-464f-8cdf-d803e7167f60",
+    "valmyndigheten_registreringsdatum": "2014-02-25"
+  },
+  {
+    "beteckning": "Omsorg för alla",
+    "filnamn": "omsorg-for-alla",
+    "forkortning": "Ofa",
+    "kod": "1369",
+    "uuid": "221f498a-d6cc-457b-bba7-f65f69a9f960",
+    "valmyndigheten_registreringsdatum": "2018-03-06"
+  },
+  {
+    "beteckning": "Omsorgspartiet i Arboga",
+    "filnamn": "omsorgspartiet-i-arboga",
+    "forkortning": "OPA",
+    "kod": "0335",
+    "uuid": "97e7e07e-7af2-4c39-8807-c7c18d60a5d1",
+    "valmyndigheten_registreringsdatum": "2002-04-05"
+  },
+  {
+    "beteckning": "Öpartiet",
+    "filnamn": "opartiet",
+    "forkortning": "Ö",
+    "kod": "0498",
+    "uuid": "10366f60-a96a-48f2-b248-5e3ece19e338",
+    "valmyndigheten_registreringsdatum": "2018-01-29"
+  },
+  {
+    "beteckning": "Opinion",
+    "filnamn": "opinion",
+    "forkortning": "OPi",
+    "kod": "1129",
+    "uuid": "6d796e1b-ae89-46ba-932a-be2bc09a753b",
+    "valmyndigheten_registreringsdatum": "2014-01-09"
+  },
+  {
+    "beteckning": "Öppna Göteborg!",
+    "filnamn": "oppna-goteborg-",
+    "kod": "1130",
+    "uuid": "04322f22-a4de-432a-9a68-be4845d2e4de",
+    "valmyndigheten_registreringsdatum": "2014-01-09"
+  },
+  {
+    "beteckning": "Öppna Hela Lerum",
+    "kod": "1163",
+    "uuid": "b61c947d-c5d9-481c-bedf-66ab406aac8e",
+    "filnamn": "oppna-hela-lerum"
+  },
+  {
+    "beteckning": "Örebropartiet",
+    "filnamn": "orebropartiet",
+    "forkortning": "ÖrP",
+    "kod": "1152",
+    "uuid": "4719f829-c6f3-43b9-aaee-db26d645007d",
+    "valmyndigheten_registreringsdatum": "2014-03-07"
+  },
+  {
+    "beteckning": "Orustpartiet (OP)",
+    "filnamn": "orustpartiet-op",
+    "forkortning": "(OP)",
+    "kod": "1104",
+    "uuid": "2f00d90b-2195-4bb4-9575-4324dfabb7f2",
+    "valmyndigheten_registreringsdatum": "2011-12-21"
+  },
+  {
+    "beteckning": "Österåkerspartiet",
+    "filnamn": "osterakerspartiet",
+    "forkortning": "ÖP",
+    "kod": "0150",
+    "uuid": "2130f9f3-4dbe-4019-9e9d-34e06d9754a1",
+    "valmyndigheten_registreringsdatum": "1994-09-06"
+  },
+  {
+    "beteckning": "Österlenpartiet",
+    "filnamn": "osterlenpartiet",
+    "forkortning": "ÖstP",
+    "kod": "0422",
+    "uuid": "6675260d-0e34-4c06-842e-98312374dc21",
+    "valmyndigheten_registreringsdatum": "2002-08-13"
+  },
+  {
+    "beteckning": "Ostkustens Framtid",
+    "kod": "1382",
+    "uuid": "bb1a5f6d-8662-4b8c-9e1e-8cd020f451f3",
+    "filnamn": "ostkustens-framtid"
+  },
+  {
+    "beteckning": "Övertorneås Fria Alternativ",
+    "filnamn": "overtorneas-fria-alternativ",
+    "forkortning": "ÖFA",
+    "kod": "1068",
+    "uuid": "3bd219fb-835a-4d0d-8d26-5f99bdb79381",
+    "valmyndigheten_registreringsdatum": "2018-03-26"
+  },
+  {
+    "beteckning": "Papepartiet",
+    "filnamn": "papepartiet",
+    "kod": "1408",
+    "uuid": "48be121c-0c48-4153-88a0-691fc6d255b0"
+  },
+  {
+    "beteckning": "Partiet Folkomröstning",
+    "filnamn": "partiet-folkomrostning",
+    "kod": "1371",
+    "uuid": "89fd5b8d-a2c5-4d86-9acf-6b77b3f85bf9"
+  },
+  {
+    "beteckning": "Partiet för Norbergs Framtid",
+    "filnamn": "partiet-for-norbergs-framtid",
+    "forkortning": "PNF",
+    "kod": "1137",
+    "uuid": "144fe5cd-0d20-4b11-bd0e-24fa1c9d4438",
+    "valmyndigheten_registreringsdatum": "2014-02-21"
+  },
+  {
+    "beteckning": "Partiet Horisont",
+    "filnamn": "partiet-horisont",
+    "kod": "1368",
+    "uuid": "a53d194a-f771-44b3-b9a4-2f9c22ecb230",
+    "valmyndigheten_registreringsdatum": "2018-03-06"
+  },
+  {
+    "beteckning": "Partiet Vändpunkt",
+    "filnamn": "partiet-vandpunkt",
+    "forkortning": "PV",
+    "kod": "1430",
+    "uuid": "12e19db2-0113-4146-ae1f-c84d52016103",
+    "valmyndigheten_registreringsdatum": "2019-02-28"
+  },
+  {
+    "beteckning": "Partiett",
+    "kod": "1377",
+    "uuid": "3e686571-a068-490b-b453-1b4f336bacfa",
+    "filnamn": "partiett"
+  },
+  {
+    "beteckning": "Pensionärspartiet i Nynäshamns kommun",
+    "filnamn": "pensionarspartiet-i-nynashamns-kommun",
+    "forkortning": "PP(N)",
+    "kod": "0527",
+    "uuid": "ac2f677a-f96e-41fd-869e-0a7ab2c24745",
+    "valmyndigheten_registreringsdatum": "2014-02-25"
+  },
+  {
+    "beteckning": "Perstorps Framtid",
+    "filnamn": "perstorps-framtid",
+    "forkortning": "PF",
+    "kod": "0971",
+    "uuid": "1eee2b77-0a39-4eb9-8b98-43b9628875a9",
+    "valmyndigheten_registreringsdatum": "2009-11-04"
+  },
+  {
+    "beteckning": "Piratpartiet",
+    "filnamn": "piratpartiet",
+    "forkortning": "PP",
+    "kod": "0524",
+    "uuid": "e6be8b6a-9385-4918-847a-dee620802595",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Politiskt Alternativ",
+    "filnamn": "politiskt-alternativ",
+    "forkortning": "PA",
+    "kod": "0983",
+    "uuid": "35c4f62f-3e79-4dbe-9ae4-b76aa4052b86",
+    "valmyndigheten_registreringsdatum": "2010-02-19"
+  },
+  {
+    "beteckning": "POPULISTERNA",
+    "filnamn": "populisterna",
+    "kod": "1347",
+    "uuid": "686dd12d-5dea-424b-854c-477d4291a865"
+  },
+  {
+    "beteckning": "Raggarpartiet",
+    "filnamn": "raggarpartiet",
+    "kod": "1389",
+    "uuid": "10f4e511-458e-4851-a994-a304ff94e78a"
+  },
+  {
+    "beteckning": "RÄTT VÄG för Gullspångs kommun",
+    "kod": "1222",
+    "uuid": "805429e4-e3f9-4294-8d09-0b2df610886f",
+    "filnamn": "ratt-vag-for-gullspangs-kommun"
+  },
+  {
+    "beteckning": "Rättvis Demokrati",
+    "filnamn": "rattvis-demokrati",
+    "forkortning": "rd",
+    "kod": "0473",
+    "uuid": "c31b9463-3618-48b3-8a7d-f1c5b46261e6",
+    "valmyndigheten_registreringsdatum": "2005-03-22"
+  },
+  {
+    "beteckning": "Rättvisa i Flen",
+    "kod": "1370",
+    "uuid": "a6ce3f75-6751-4373-928d-3cdaeb2a0e4a",
+    "filnamn": "rattvisa-i-flen"
+  },
+  {
+    "beteckning": "Rättvisa Rörelse Partiet",
+    "filnamn": "rattvisa-rorelse-partiet",
+    "forkortning": "RRP",
+    "kod": "1362",
+    "uuid": "59fbdd58-38df-4cb8-9800-628c91046ec9",
+    "valmyndigheten_registreringsdatum": "2018-04-09"
+  },
+  {
+    "beteckning": "Rättvisepartiet Socialisterna",
+    "filnamn": "rattvisepartiet-socialisterna",
+    "forkortning": "RS",
+    "kod": "0131",
+    "uuid": "ce076c0a-bef8-401e-a65c-6882a0d384c0",
+    "valmyndigheten_registreringsdatum": "2017-12-05"
+  },
+  {
+    "beteckning": "Realistpartiet",
+    "filnamn": "realistpartiet",
+    "forkortning": "REAL",
+    "kod": "1151",
+    "uuid": "c3388f52-cd86-4212-ad8c-80c7156cc57e",
+    "valmyndigheten_registreringsdatum": "2018-01-23"
+  },
+  {
+    "beteckning": "Reformist Neutral Partiet",
+    "filnamn": "reformist-neutral-partiet",
+    "kod": "1202",
+    "uuid": "a14014ab-2a43-49e5-ad22-584c246aa0fd"
+  },
+  {
+    "beteckning": "Regionens framtid",
+    "filnamn": "regionens-framtid",
+    "forkortning": "Rf",
+    "kod": "1311",
+    "uuid": "0ea2696f-8b09-4eed-b02a-828239729b1a",
+    "valmyndigheten_registreringsdatum": "2018-02-26"
+  },
+  {
+    "beteckning": "Riksdemokraterna för Sverige",
+    "filnamn": "riksdemokraterna-for-sverige",
+    "kod": "1279",
+    "uuid": "6613a0a3-015b-4dfa-bfe3-9d0bf77f82b4",
+    "valmyndigheten_registreringsdatum": "2015-05-07"
+  },
+  {
+    "beteckning": "Romelepartiet Skåne",
+    "filnamn": "romelepartiet-skane",
+    "forkortning": "RoPa",
+    "kod": "1339",
+    "uuid": "d11853ce-4206-4b7a-a222-2d107200dca1",
+    "valmyndigheten_registreringsdatum": "2018-02-16"
+  },
+  {
+    "beteckning": "Ronnebypartiet",
+    "filnamn": "ronnebypartiet",
+    "forkortning": "ROP",
+    "kod": "0183",
+    "uuid": "66187f91-2cc5-4f83-b976-87ac13346da2",
+    "valmyndigheten_registreringsdatum": "2010-03-04"
+  },
+  {
+    "beteckning": "Rönningepartiet",
+    "filnamn": "ronningepartiet",
+    "forkortning": "R",
+    "kod": "1080",
+    "uuid": "a653fd03-0c6a-41a3-8260-24a5ca4f441c",
+    "valmyndigheten_registreringsdatum": "2018-01-03"
+  },
+  {
+    "beteckning": "Rosa Drömmar",
+    "filnamn": "rosa-drommar",
+    "kod": "1409",
+    "uuid": "b6b9bcc1-068f-4bb1-bc64-cdf1c32bf8c3"
+  },
+  {
+    "beteckning": "Roslagens oberoende parti",
+    "filnamn": "roslagens-oberoende-parti",
+    "forkortning": "ROOP",
+    "kod": "1128",
+    "uuid": "34fddde3-58bd-4390-8239-6b822fa7e313",
+    "valmyndigheten_registreringsdatum": "2018-01-22"
+  },
+  {
+    "beteckning": "Roslagspartiet",
+    "filnamn": "roslagspartiet",
+    "forkortning": "ROSP",
+    "kod": "0465",
+    "uuid": "be71ef20-ecb1-4702-8cdd-98686556b98b",
+    "valmyndigheten_registreringsdatum": "2017-12-08"
+  },
+  {
+    "beteckning": "Salas bästa",
+    "filnamn": "salas-basta",
+    "forkortning": "SBÄ",
+    "kod": "0973",
+    "uuid": "121acbe1-ec5f-4964-bd94-6f4c94a52302",
+    "valmyndigheten_registreringsdatum": "2009-12-18"
+  },
+  {
+    "beteckning": "Sámelistu/Samelistan Partipolitiskt obunden",
+    "kod": "1073",
+    "uuid": "13bf33dd-7b58-4757-893a-47ea5a12e399",
+    "filnamn": "samelistu-samelistan-partipolitiskt-obunden"
+  },
+  {
+    "beteckning": "Samernas Väl",
+    "filnamn": "samernas-val",
+    "forkortning": "SV",
+    "kod": "0080",
+    "uuid": "b77b63e0-84fa-4a87-97bb-8d72146ae208",
+    "valmyndigheten_registreringsdatum": "2006-03-07"
+  },
+  {
+    "beteckning": "Samverkan Sandhem Mullsjö (SSM)",
+    "kod": "1390",
+    "uuid": "436e693c-e6ee-4b3e-8eec-6964710d1970",
+    "filnamn": "samverkan-sandhem-mullsjo-ssm"
+  },
+  {
+    "beteckning": "Seniorpartiet",
+    "filnamn": "seniorpartiet",
+    "kod": "0470",
+    "uuid": "8ab621eb-f774-4428-a3d8-d8dbe713a448",
+    "valmyndigheten_registreringsdatum": "2004-08-03"
+  },
+  {
+    "beteckning": "Sigtunapartiet Samling för Sigtuna",
+    "filnamn": "sigtunapartiet-samling-for-sigtuna",
+    "forkortning": "SFS",
+    "kod": "0009",
+    "uuid": "18b7efcb-527c-4886-8b8a-9ae9d68de88f",
+    "valmyndigheten_registreringsdatum": "1999-04-06"
+  },
+  {
+    "beteckning": "Sjöbopartiet",
+    "filnamn": "sjobopartiet",
+    "forkortning": "SJP",
+    "kod": "0172",
+    "uuid": "57a2224c-71dd-4d74-aae4-b53e097cdc20",
+    "valmyndigheten_registreringsdatum": "1991-03-27"
+  },
+  {
+    "beteckning": "Sjukvårdspartiet",
+    "filnamn": "sjukvardspartiet",
+    "forkortning": "SJV",
+    "kod": "0193",
+    "uuid": "394593f1-a26f-4271-a0ff-e3e9c5df8b86",
+    "valmyndigheten_registreringsdatum": "2017-05-23"
+  },
+  {
+    "beteckning": "Sjukvårdspartiet - Västernorrland",
+    "filnamn": "sjukvardspartiet-vasternorrland",
+    "forkortning": "SJVP",
+    "kod": "0196",
+    "uuid": "2dde7f18-4339-490a-abaf-43e4eb53205c",
+    "valmyndigheten_registreringsdatum": "2017-12-22"
+  },
+  {
+    "beteckning": "Sjukvårdspartiet - Västmanland",
+    "filnamn": "sjukvardspartiet-vastmanland",
+    "forkortning": "SjvU",
+    "kod": "0500",
+    "uuid": "8d5a5e59-3c8d-43e8-a4c5-90957816cf12",
+    "valmyndigheten_registreringsdatum": "2005-11-07"
+  },
+  {
+    "beteckning": "Sjukvårdspartiet - Västra Götaland",
+    "filnamn": "sjukvardspartiet-vastra-gotaland",
+    "forkortning": "SPVG",
+    "kod": "0447",
+    "uuid": "d4884d96-9160-4f1d-bb0f-b2a0efe7cbba",
+    "valmyndigheten_registreringsdatum": "2018-01-03"
+  },
+  {
+    "beteckning": "Sjukvårdspartiet Bollnäs",
+    "kod": "0590",
+    "uuid": "488e603e-503c-4acf-88b0-e2e903cca577",
+    "filnamn": "sjukvardspartiet-bollnas"
+  },
+  {
+    "beteckning": "Sjukvårdspartiet Gävleborg",
+    "filnamn": "sjukvardspartiet-gavleborg",
+    "forkortning": "SJPG",
+    "kod": "0249",
+    "uuid": "091e3961-b5f2-419b-8f6c-54fc7579e30c",
+    "valmyndigheten_registreringsdatum": "2017-11-30"
+  },
+  {
+    "beteckning": "Sjukvårdspartiet i Jönköpings län",
+    "filnamn": "sjukvardspartiet-i-jonkopings-lan",
+    "forkortning": "SJPJ",
+    "kod": "1293",
+    "uuid": "a57335f0-563a-42f5-98d0-8ccd1b11f140",
+    "valmyndigheten_registreringsdatum": "2017-03-09"
+  },
+  {
+    "beteckning": "Sjukvårdspartiet i Värmland",
+    "filnamn": "sjukvardspartiet-i-varmland",
+    "forkortning": "SjvV",
+    "kod": "0250",
+    "uuid": "d6511d4e-1b9d-4f3c-89ff-4533300f46fc",
+    "valmyndigheten_registreringsdatum": "2017-12-05"
+  },
+  {
+    "beteckning": "SKÅNEPARTIET",
+    "filnamn": "skanepartiet",
+    "forkortning": "SKÅ",
+    "kod": "0054",
+    "uuid": "96fa352b-a7d2-4bd0-bab9-37ab6c479d54",
+    "valmyndigheten_registreringsdatum": "1979-05-15"
+  },
+  {
+    "beteckning": "Skol och Landsbygdspartiet",
+    "filnamn": "skol-och-landsbygdspartiet",
+    "forkortning": "SkolP",
+    "kod": "1216",
+    "uuid": "73d0ba2b-b024-4515-ad75-fbab558fb9ee",
+    "valmyndigheten_registreringsdatum": "2017-12-18"
+  },
+  {
+    "beteckning": "Sköldkörtelpartiet",
+    "filnamn": "skoldkortelpartiet",
+    "kod": "1359",
+    "uuid": "4cdb24ff-2c49-4457-86c7-00661e381429",
+    "valmyndigheten_registreringsdatum": "2018-03-09"
+  },
+  {
+    "beteckning": "Skolpartiet Göteborg",
+    "filnamn": "skolpartiet-goteborg",
+    "kod": "1397",
+    "uuid": "75c520b2-651f-4a82-b58f-631b65fb3ce1"
+  },
+  {
+    "beteckning": "Skolpartiet i Österåker",
+    "filnamn": "skolpartiet-i-osteraker",
+    "forkortning": "SPÖ",
+    "kod": "1145",
+    "uuid": "06a5f81d-ae11-496f-b222-2145e509d257",
+    "valmyndigheten_registreringsdatum": "2014-02-25"
+  },
+  {
+    "beteckning": "SkurupsPartiet",
+    "filnamn": "skurupspartiet",
+    "forkortning": "SkuP",
+    "kod": "1285",
+    "uuid": "cc204154-12cf-416e-9269-289400cb7334",
+    "valmyndigheten_registreringsdatum": "2016-06-02"
+  },
+  {
+    "beteckning": "Sociala Partiet (SP)",
+    "filnamn": "sociala-partiet-sp",
+    "kod": "0522",
+    "uuid": "640f040a-56c2-4b75-a240-733fa0eefd94",
+    "valmyndigheten_registreringsdatum": "2009-02-11"
+  },
+  {
+    "beteckning": "Socialisterna-Välfärdspartiet",
+    "filnamn": "socialisterna-valfardspartiet",
+    "forkortning": "S-V",
+    "kod": "0977",
+    "uuid": "9897ef04-abc4-4226-b74b-016a2f9e56a0",
+    "valmyndigheten_registreringsdatum": "2010-02-15"
+  },
+  {
+    "beteckning": "Socialistiska Partiet",
+    "filnamn": "socialistiska-partiet",
+    "forkortning": "SOC.P",
+    "kod": "0074",
+    "uuid": "460d9564-c80d-4f42-a95a-518c956746c1",
+    "valmyndigheten_registreringsdatum": "1985-02-18"
+  },
+  {
+    "beteckning": "SOCIALLIBERALERNA",
+    "filnamn": "socialliberalerna",
+    "kod": "1421",
+    "uuid": "fe52faa5-e88c-4fae-a2c4-4c3e0ef83ab8"
+  },
+  {
+    "beteckning": "Söderslättspartiet",
+    "filnamn": "soderslattspartiet",
+    "forkortning": "SÖS",
+    "kod": "1006",
+    "uuid": "e7ac6421-62bc-4ef3-aa5b-326acb0811bb",
+    "valmyndigheten_registreringsdatum": "2010-03-04"
+  },
+  {
+    "beteckning": "SoL-partiet Sölvesborg och Lister",
+    "filnamn": "sol-partiet-solvesborg-och-lister",
+    "forkortning": "SoL",
+    "kod": "1257",
+    "uuid": "0d562b39-da62-425d-bd18-869277f706b4",
+    "valmyndigheten_registreringsdatum": "2018-01-22"
+  },
+  {
+    "beteckning": "Solens Frihetsparti",
+    "filnamn": "solens-frihetsparti",
+    "kod": "1346",
+    "uuid": "b9432471-caff-4eee-b6a8-35427487a8a6",
+    "valmyndigheten_registreringsdatum": "2018-03-28"
+  },
+  {
+    "beteckning": "Solidaritet, Arbete, Fred, Ekologi, SAFE",
+    "filnamn": "solidaritet--arbete--fred--ekologi--safe",
+    "forkortning": "SAFE",
+    "kod": "0174",
+    "uuid": "2c038150-7436-41b5-975e-c745ecbebc14",
+    "valmyndigheten_registreringsdatum": "1991-03-05"
+  },
+  {
+    "beteckning": "Sollentunapartiet",
+    "filnamn": "sollentunapartiet",
+    "forkortning": "SPA",
+    "kod": "0046",
+    "uuid": "284326c6-e8bd-4864-aa4c-b681444f1490",
+    "valmyndigheten_registreringsdatum": "2018-06-26"
+  },
+  {
+    "beteckning": "Solnapartiet",
+    "filnamn": "solnapartiet",
+    "kod": "1286",
+    "uuid": "9d142618-dec4-4780-b3a9-9261a5d9c3e1",
+    "valmyndigheten_registreringsdatum": "2017-10-20"
+  },
+  {
+    "beteckning": "Sorundanet Nynäshamns kommunparti",
+    "filnamn": "sorundanet-nynashamns-kommunparti",
+    "forkortning": "SN",
+    "kod": "0519",
+    "uuid": "51ed83cb-d87b-48e8-b6b2-f5a8f0491624",
+    "valmyndigheten_registreringsdatum": "2017-12-08"
+  },
+  {
+    "beteckning": "SOS-Ställ Om Sverige, Söderhamnsinitiativet",
+    "filnamn": "sos-stall-om-sverige--soderhamnsinitiativet",
+    "forkortning": "SOS",
+    "kod": "1360",
+    "uuid": "4b2c8870-d6e5-402a-a4ed-7f68d098869b",
+    "valmyndigheten_registreringsdatum": "2018-03-09"
+  },
+  {
+    "beteckning": "Spektral demokrati",
+    "filnamn": "spektral-demokrati",
+    "kod": "1376",
+    "uuid": "eb01a434-c644-417f-bb5f-14d86e053ce3"
+  },
+  {
+    "beteckning": "SPI Välfärden",
+    "filnamn": "spi-valfarden",
+    "forkortning": "SPI",
+    "kod": "0107",
+    "uuid": "8a4715a7-04d9-4238-8edc-5f00300089f6",
+    "valmyndigheten_registreringsdatum": "2013-07-02"
+  },
+  {
+    "beteckning": "Sportpartiet",
+    "filnamn": "sportpartiet",
+    "forkortning": "SPP",
+    "kod": "0998",
+    "uuid": "035eb206-2fa5-4ba4-8226-33e08a5d425d",
+    "valmyndigheten_registreringsdatum": "2010-02-26"
+  },
+  {
+    "beteckning": "Staffanstorpspartiet",
+    "filnamn": "staffanstorpspartiet",
+    "forkortning": "SP",
+    "kod": "0513",
+    "uuid": "0206e185-1582-43fa-9841-c9f6f7d9653b",
+    "valmyndigheten_registreringsdatum": "2006-01-10"
+  },
+  {
+    "beteckning": "Stenungsundspartiet",
+    "filnamn": "stenungsundspartiet",
+    "forkortning": "St",
+    "kod": "1323",
+    "uuid": "c4592c7f-15b8-4f0b-a0a7-eea1ca935643",
+    "valmyndigheten_registreringsdatum": "2018-01-16"
+  },
+  {
+    "beteckning": "Stockholmspartiet",
+    "filnamn": "stockholmspartiet",
+    "kod": "0555",
+    "uuid": "1ad05d4a-8c99-472c-9205-5fb65344d4ed",
+    "valmyndigheten_registreringsdatum": "2006-03-07"
+  },
+  {
+    "beteckning": "Storforsdemokraterna",
+    "kod": "1402",
+    "uuid": "f89fd097-d0bf-4174-8474-40e24abc9e2f",
+    "filnamn": "storforsdemokraterna"
+  },
+  {
+    "beteckning": "Strängnäspartiet",
+    "filnamn": "strangnaspartiet",
+    "forkortning": "STRP",
+    "kod": "0176",
+    "uuid": "a118a3da-939b-47ec-93c2-1e314818bc7c",
+    "valmyndigheten_registreringsdatum": "1990-01-30"
+  },
+  {
+    "beteckning": "Sundbybergs Lokalparti (SLP)",
+    "filnamn": "sundbybergs-lokalparti-slp",
+    "forkortning": "SLP",
+    "kod": "1348",
+    "uuid": "0c5525dc-1f2d-4825-ad75-6f43df31907a",
+    "valmyndigheten_registreringsdatum": "2018-03-12"
+  },
+  {
+    "beteckning": "Sundsvallspartiet",
+    "filnamn": "sundsvallspartiet",
+    "forkortning": "SDL",
+    "kod": "1165",
+    "uuid": "0651b1bc-cdc5-4bcb-871d-c6f582c3c2bd",
+    "valmyndigheten_registreringsdatum": "2014-03-13"
+  },
+  {
+    "beteckning": "Svensk Jobbdemokrati",
+    "filnamn": "svensk-jobbdemokrati",
+    "kod": "1414",
+    "uuid": "03be0cda-c149-4b32-89b5-c6c4068e6093"
+  },
+  {
+    "beteckning": "Svenska Folkhemspartiet",
+    "filnamn": "svenska-folkhemspartiet",
+    "forkortning": "SF",
+    "kod": "1301",
+    "uuid": "dc43e9e9-957d-4851-900b-98461a174ffd",
+    "valmyndigheten_registreringsdatum": "2017-06-27"
+  },
+  {
+    "beteckning": "Sverige ut ur EU/Frihetliga Rättvisepartiet (FRP)",
+    "filnamn": "sverige-ut-ur-eu-frihetliga-rattvisepartiet-frp",
+    "kod": "1384",
+    "uuid": "98d922e8-41f7-46bc-91e0-1cf62eebb579"
+  },
+  {
+    "beteckning": "Sverigedemokraterna",
+    "filnamn": "sverigedemokraterna",
+    "forkortning": "SD",
+    "kod": "0110",
+    "uuid": "b9af6417-6861-40ff-b0a5-3c1fab176496",
+    "valmyndigheten_registreringsdatum": "2017-11-30"
+  },
+  {
+    "beteckning": "Sverigepartiet",
+    "filnamn": "sverigepartiet",
+    "kod": "1396",
+    "uuid": "96fcf42b-0ce4-4a03-8196-963420a9b505"
+  },
+  {
+    "beteckning": "Sveriges Kommunistiska Parti (SKP)",
+    "filnamn": "sveriges-kommunistiska-parti-skp",
+    "kod": "1063",
+    "uuid": "136e2fd9-2f99-41b6-94a7-ae5ccddb7093"
+  },
+  {
+    "beteckning": "Sveriges Nationella Demokratiska Parti",
+    "filnamn": "sveriges-nationella-demokratiska-parti",
+    "kod": "0339",
+    "uuid": "617f16c5-dd2f-4c10-a838-01c2b308c8a6",
+    "valmyndigheten_registreringsdatum": "2002-04-09"
+  },
+  {
+    "beteckning": "Technopartiet",
+    "filnamn": "technopartiet",
+    "kod": "1400",
+    "uuid": "57611daa-1330-40c1-8806-3d06a2f0f3d3"
+  },
+  {
+    "beteckning": "Timråpartiet",
+    "filnamn": "timrapartiet",
+    "forkortning": "TimP",
+    "kod": "1322",
+    "uuid": "bd67893c-6cd0-4d19-a06c-f99484952917",
+    "valmyndigheten_registreringsdatum": "2017-12-05"
+  },
+  {
+    "beteckning": "Tingsrydsalternativet",
+    "filnamn": "tingsrydsalternativet",
+    "forkortning": "TIA",
+    "kod": "1133",
+    "uuid": "11f9b277-29f8-4a27-8894-7adb51cf335c",
+    "valmyndigheten_registreringsdatum": "2014-01-29"
+  },
+  {
+    "beteckning": "TJÖRNPARTIET",
+    "kod": "1196",
+    "uuid": "3f42e34b-1a4a-43df-b00a-6b38b6a297ae",
+    "filnamn": "tjornpartiet"
+  },
+  {
+    "beteckning": "TJUSTPARTIET",
+    "kod": "1201",
+    "uuid": "e7c098fd-bb81-4cce-a9a3-278d7b7ef6f9",
+    "filnamn": "tjustpartiet"
+  },
+  {
+    "beteckning": "Tomas Lindström",
+    "kod": "1401",
+    "uuid": "9ff9d785-3cad-46dd-b33a-8a0ea09793c4",
+    "filnamn": "tomas-lindstrom"
+  },
+  {
+    "beteckning": "Tomelillapartiet",
+    "filnamn": "tomelillapartiet",
+    "forkortning": "TomP",
+    "kod": "1334",
+    "uuid": "71382aa3-f2e3-4bce-85d5-eda2b31f595a",
+    "valmyndigheten_registreringsdatum": "2018-01-22"
+  },
+  {
+    "beteckning": "Trollhättans Framtid",
+    "filnamn": "trollhattans-framtid",
+    "forkortning": "ThnF",
+    "kod": "1278",
+    "uuid": "30cf6f9d-b1df-4b33-a99d-3cedf3e191b4",
+    "valmyndigheten_registreringsdatum": "2018-02-26"
+  },
+  {
+    "beteckning": "Tryggare Sverige",
+    "filnamn": "tryggare-sverige",
+    "kod": "1328",
+    "uuid": "380011b6-5ef1-4d1c-86c3-891dde016a78"
+  },
+  {
+    "beteckning": "TRYGGHETSPARTIET",
+    "filnamn": "trygghetspartiet",
+    "forkortning": "TRP",
+    "kod": "1309",
+    "uuid": "c1b28696-4325-48c1-b40c-f8e530278dd0",
+    "valmyndigheten_registreringsdatum": "2017-10-20"
+  },
+  {
+    "beteckning": "Tullingepartiet",
+    "filnamn": "tullingepartiet",
+    "forkortning": "TuP",
+    "kod": "0711",
+    "uuid": "c0fec9af-ef73-43ec-9748-c82d98ab4514",
+    "valmyndigheten_registreringsdatum": "2017-12-04"
+  },
+  {
+    "beteckning": "Uddevallapartiet",
+    "kod": "1076",
+    "uuid": "cdbb43bf-f8da-4c29-9980-7681eada9d62",
+    "filnamn": "uddevallapartiet"
+  },
+  {
+    "beteckning": "Unionspartiet",
+    "filnamn": "unionspartiet",
+    "forkortning": "Union",
+    "kod": "1148",
+    "uuid": "83dd748a-bd97-412c-87c7-51ae9b5fb196",
+    "valmyndigheten_registreringsdatum": "2014-03-28"
+  },
+  {
+    "beteckning": "Upplands sjukvårdsparti",
+    "filnamn": "upplands-sjukvardsparti",
+    "forkortning": "USP",
+    "kod": "0213",
+    "uuid": "5d9c0cf0-f668-43a6-bbab-6dde4c91e56d",
+    "valmyndigheten_registreringsdatum": "1999-11-24"
+  },
+  {
+    "beteckning": "Uppvidingedemokraterna",
+    "filnamn": "uppvidingedemokraterna",
+    "kod": "1442",
+    "uuid": "9017e7c6-3ab7-42fd-9c2a-a25c91807b18",
+    "valmyndigheten_registreringsdatum": "2019-12-20"
+  },
+  {
+    "beteckning": "Utveckling och Progressiv för Sverige partiet (U.P.S)",
+    "filnamn": "utveckling-och-progressiv-for-sverige-partiet-u-p-s",
+    "kod": "1386",
+    "uuid": "a77788c8-b421-433a-ba94-78eae2520a0c"
+  },
+  {
+    "beteckning": "Utvecklingspartiet",
+    "filnamn": "utvecklingspartiet",
+    "forkortning": "UtvP",
+    "kod": "0978",
+    "uuid": "cefdf9df-76d1-450c-8f74-f52523758486",
+    "valmyndigheten_registreringsdatum": "2018-01-15"
+  },
+  {
+    "beteckning": "Vägvalet",
+    "filnamn": "vagvalet",
+    "forkortning": "VägV",
+    "kod": "1138",
+    "uuid": "e35dbd0f-1df9-4dd5-97d8-8b82cdde0498",
+    "valmyndigheten_registreringsdatum": "2018-03-12"
+  },
+  {
+    "beteckning": "VALDI2018",
+    "filnamn": "valdi2018",
+    "kod": "1422",
+    "uuid": "103aea17-5063-4fe0-bc0a-bafe286349fe"
+  },
+  {
+    "beteckning": "Valsamverkanspartiet",
+    "filnamn": "valsamverkanspartiet",
+    "kod": "1332",
+    "uuid": "05cd1b5e-e1cf-4066-b5d8-f8ee476e7467"
+  },
+  {
+    "beteckning": "Vänsterpartiet",
+    "filnamn": "vansterpartiet",
+    "forkortning": "V",
+    "kod": "0005",
+    "uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a",
+    "valmyndigheten_registreringsdatum": "2017-11-02"
+  },
+  {
+    "beteckning": "VÅR FRAMTID - KLIPPAN",
+    "filnamn": "var-framtid-klippan",
+    "forkortning": "VFK",
+    "kod": "1393",
+    "uuid": "635ee374-fdd4-4bfd-afaa-83668895fcd5",
+    "valmyndigheten_registreringsdatum": "2019-10-04"
+  },
+  {
+    "beteckning": "Vår Framtids politiska utskott",
+    "filnamn": "var-framtids-politiska-utskott",
+    "forkortning": "VFÅ",
+    "kod": "1166",
+    "uuid": "4057e1cb-59cc-4157-b34f-3fac649dc325",
+    "valmyndigheten_registreringsdatum": "2014-03-13"
+  },
+  {
+    "beteckning": "Vård för Pengarna",
+    "filnamn": "vard-for-pengarna",
+    "forkortning": "VåfP",
+    "kod": "1122",
+    "uuid": "4ef9af41-d2fa-475f-834b-4d722f3c8914",
+    "valmyndigheten_registreringsdatum": "2017-10-17"
+  },
+  {
+    "beteckning": "Vårdpartiet i Skåne",
+    "filnamn": "vardpartiet-i-skane",
+    "kod": "1119",
+    "uuid": "f7e321ee-3b91-4471-915f-b876da4169f0",
+    "valmyndigheten_registreringsdatum": "2013-09-17"
+  },
+  {
+    "beteckning": "VÅRT KIRUNA",
+    "kod": "1410",
+    "uuid": "457685a6-4bad-48bb-a5dd-907e0b7cf069",
+    "filnamn": "vart-kiruna"
+  },
+  {
+    "beteckning": "Vårt land - Sverige",
+    "filnamn": "vart-land-sverige",
+    "kod": "1412",
+    "uuid": "ddbf6667-caa6-4a38-8705-7fbae6eb9619"
+  },
+  {
+    "beteckning": "VÅRT NORRBOTTEN",
+    "kod": "1411",
+    "uuid": "5db775a3-83ab-48c0-8a68-95ed83590ad8",
+    "filnamn": "vart-norrbotten"
+  },
+  {
+    "beteckning": "Väsbys Bästa",
+    "filnamn": "vasbys-basta",
+    "forkortning": "VB",
+    "kod": "1154",
+    "uuid": "b00bc532-e725-4f3b-9e0a-57ff456e6de1",
+    "valmyndigheten_registreringsdatum": "2018-01-18"
+  },
+  {
+    "beteckning": "Västjämtlands Väl",
+    "filnamn": "vastjamtlands-val",
+    "forkortning": "VV",
+    "kod": "0982",
+    "uuid": "c102184c-f0ee-49c9-9250-ab9197f171a1",
+    "valmyndigheten_registreringsdatum": "2018-01-03"
+  },
+  {
+    "beteckning": "Västra Initiativet",
+    "filnamn": "vastra-initiativet",
+    "forkortning": "VSKB",
+    "kod": "1002",
+    "uuid": "58bd344e-7f53-4c58-97f8-891bbe655d30",
+    "valmyndigheten_registreringsdatum": "2018-01-15"
+  },
+  {
+    "beteckning": "Växjöpartiet",
+    "kod": "1403",
+    "uuid": "5768c10d-266f-4969-96fb-c2a90adfb33a",
+    "filnamn": "vaxjopartiet"
+  },
+  {
+    "beteckning": "Vetlanda framåtanda",
+    "filnamn": "vetlanda-framatanda",
+    "forkortning": "VF",
+    "kod": "0993",
+    "uuid": "91ea834e-a512-48ba-bccc-a7e8bfd1dc75",
+    "valmyndigheten_registreringsdatum": "2010-02-26"
+  },
+  {
+    "beteckning": "Vi i Verkligheten Ronneby (ViV)",
+    "filnamn": "vi-i-verkligheten-ronneby-viv",
+    "forkortning": "ViV",
+    "kod": "1341",
+    "uuid": "321e4b97-efee-4982-9a14-3a1514b2009f",
+    "valmyndigheten_registreringsdatum": "2018-02-08"
+  },
+  {
+    "beteckning": "Vi Socialkonservativa",
+    "filnamn": "vi-socialkonservativa",
+    "kod": "1349",
+    "uuid": "df442bd9-a5e9-4768-a13b-be5c483be837"
+  },
+  {
+    "beteckning": "Vingåkerspartiet - VTL",
+    "filnamn": "vingakerspartiet-vtl",
+    "forkortning": "VTL",
+    "kod": "0301",
+    "uuid": "1ec14dc8-616b-4948-9f91-f739d2f59c78",
+    "valmyndigheten_registreringsdatum": "2018-01-30"
+  },
+  {
+    "beteckning": "Visiona",
+    "filnamn": "visiona",
+    "kod": "1417",
+    "uuid": "c6f0774a-12d5-49dd-b756-30c601b71bce"
+  },
+  {
+    "beteckning": "Waxholmspartiet - borgerligt alternativ",
+    "filnamn": "waxholmspartiet-borgerligt-alternativ",
+    "forkortning": "WAX",
+    "kod": "1116",
+    "uuid": "60c5adea-ea43-43cf-8ca7-d102a01bcad1",
+    "valmyndigheten_registreringsdatum": "2013-11-05"
+  },
+  {
+    "beteckning": "Westbopartiet",
+    "filnamn": "westbopartiet",
+    "forkortning": "WeP",
+    "kod": "1335",
+    "uuid": "e19a05b1-3db0-4f2a-8389-2c2e4d482fe8",
+    "valmyndigheten_registreringsdatum": "2018-01-29"
+  },
+  {
+    "beteckning": "Westerwikspartiet",
+    "filnamn": "westerwikspartiet",
+    "forkortning": "VDM",
+    "kod": "0027",
+    "uuid": "b28ca28d-463b-429a-b732-de43333f9096",
+    "valmyndigheten_registreringsdatum": "2015-11-13"
+  }
+]

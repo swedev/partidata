@@ -1,0 +1,119 @@
+{
+  "filnamn": "gotenes-framtid",
+  "forkortning": "GÖF",
+  "kandidatlistor": [
+    {
+      "kandidater": [
+        {
+          "alder": 55,
+          "hemvist": "Lundsbrunn",
+          "namn": "Anders Månsson",
+          "ovrigt": "mättekniker"
+        },
+        {
+          "alder": 57,
+          "hemvist": "Hällekis",
+          "namn": "Clemens Nordentoft",
+          "ovrigt": "snickare"
+        },
+        {
+          "alder": 26,
+          "hemvist": "Källby",
+          "namn": "Johan Månsson",
+          "ovrigt": "säljare/skribent"
+        },
+        {
+          "alder": 59,
+          "hemvist": "Lundsbrunn",
+          "namn": "Håkan Ernklev",
+          "ovrigt": "egenföretagare"
+        },
+        {
+          "alder": 73,
+          "hemvist": "Fullösa",
+          "namn": "Gunilla Sundbeck",
+          "ovrigt": "distriktssköterska"
+        },
+        {
+          "alder": 67,
+          "hemvist": "Götene",
+          "namn": "Lars Jansson",
+          "ovrigt": "ämneslärare"
+        },
+        {
+          "alder": 65,
+          "hemvist": "Kinne-Kleva",
+          "namn": "Bengt Karlsson",
+          "ovrigt": "pensionär"
+        },
+        {
+          "alder": 44,
+          "hemvist": "Husaby",
+          "namn": "Ylva Werjefelt",
+          "ovrigt": "personlig assistent"
+        },
+        {
+          "alder": 52,
+          "hemvist": "Lundsbrunn",
+          "namn": "Karin Ernklev",
+          "ovrigt": "lärare"
+        },
+        {
+          "alder": 52,
+          "hemvist": "Götene",
+          "namn": "Titti Fabritius",
+          "ovrigt": "kommunikationsvetare"
+        },
+        {
+          "alder": 48,
+          "hemvist": "Lundsbrunn",
+          "namn": "Henrik Arvidsson",
+          "ovrigt": "besiktningstekniker"
+        },
+        {
+          "alder": 36,
+          "hemvist": "Lundsbrunn",
+          "namn": "Catherine Strand",
+          "ovrigt": "ämneslärare"
+        },
+        {
+          "alder": 57,
+          "hemvist": "Ledsjö",
+          "namn": "Lilian Svensson",
+          "ovrigt": "kontorist"
+        },
+        {
+          "alder": 31,
+          "hemvist": "Källby",
+          "namn": "Emelie Jonsson",
+          "ovrigt": "tandsköterska"
+        },
+        {
+          "alder": 41,
+          "hemvist": "Forshem",
+          "namn": "Jimmy Karlsson",
+          "ovrigt": "mejeriarbetare"
+        }
+      ],
+      "kommun": {
+        "kod": "1471",
+        "namn": "Götene",
+        "uuid": "acbb9c35-0975-43d7-81ea-f1f88448433f"
+      },
+      "lan": {
+        "kod": "14",
+        "namn": "Västra Götalands län",
+        "uuid": "3b4f61e0-476d-4d01-afc9-c647bf26d78f"
+      },
+      "listnummer": "15186",
+      "region": "Götene Kommun",
+      "val": "K"
+    }
+  ],
+  "partibeteckning": "Götenes framtid",
+  "partikod": "94",
+  "uuid": "d60a251d-9a0c-4867-8971-444f9a006eb8",
+  "val": [
+    "K"
+  ]
+}

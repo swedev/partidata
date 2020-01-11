@@ -1,0 +1,268 @@
+[
+  {
+    "kod": "10",
+    "namn": "Blekinge län",
+    "partier": [
+      {
+        "beteckning": "SoL-partiet Sölvesborg och Lister",
+        "kod": "1257",
+        "uuid": "0d562b39-da62-425d-bd18-869277f706b4"
+      }
+    ],
+    "uuid": "d1b1cbf1-5bfa-444c-80d7-b6df6922ec73"
+  },
+  {
+    "kod": "20",
+    "namn": "Dalarnas län",
+    "partier": [
+      {
+        "beteckning": "Dalarnas Sjukvårdsparti",
+        "kod": "0472",
+        "uuid": "4d11b150-8aa4-44e4-ac99-7378407b67e4"
+      },
+      {
+        "beteckning": "Folkkampanjen för sjukvården",
+        "kod": "0285",
+        "uuid": "e9b71444-ae98-4388-bab5-617da46f248e"
+      },
+      {
+        "beteckning": "Medborgarnas Politiska Parti i Sverige",
+        "kod": "1367",
+        "uuid": "245b9ede-33f6-4ae4-853c-898724a87900"
+      }
+    ],
+    "uuid": "70552270-7b38-40e5-a04b-4310dbcef137"
+  },
+  {
+    "kod": "21",
+    "namn": "Gävleborgs län",
+    "partier": [
+      {
+        "beteckning": "Sjukvårdspartiet Gävleborg",
+        "kod": "0249",
+        "uuid": "091e3961-b5f2-419b-8f6c-54fc7579e30c"
+      }
+    ],
+    "uuid": "18007297-0122-4f9e-b714-40566a06c124"
+  },
+  {
+    "kod": "13",
+    "namn": "Hallands län",
+    "partier": [
+      {
+        "beteckning": "Kungsbackaborna",
+        "kod": "1036",
+        "uuid": "4eee1cd3-a349-4c74-937c-3b7149b78d4e"
+      }
+    ],
+    "uuid": "afd9954e-ad38-45ba-aee0-e1bdc270fe7a"
+  },
+  {
+    "kod": "23",
+    "namn": "Jämtlands län",
+    "partier": [],
+    "uuid": "9748af1a-173e-4157-8e60-5098b249d4bd"
+  },
+  {
+    "kod": "06",
+    "namn": "Jönköpings län",
+    "partier": [
+      {
+        "beteckning": "Bevara akutsjukhusen",
+        "kod": "1355",
+        "uuid": "44273904-e60e-4323-885f-d7f4195e38d9"
+      },
+      {
+        "beteckning": "EMPA(R)TIET",
+        "kod": "1333",
+        "uuid": "a8f1717a-818c-40d4-bfb3-f04dfd172e9f"
+      },
+      {
+        "beteckning": "Sjukvårdspartiet i Jönköpings län",
+        "kod": "1293",
+        "uuid": "a57335f0-563a-42f5-98d0-8ccd1b11f140"
+      }
+    ],
+    "uuid": "e973b394-3b14-40fe-b191-dc0f8bb42693"
+  },
+  {
+    "kod": "08",
+    "namn": "Kalmar län",
+    "partier": [
+      {
+        "beteckning": "Bästa Alternativet",
+        "kod": "1366",
+        "uuid": "b4c33957-dac8-4d56-b08a-19c877822487"
+      }
+    ],
+    "uuid": "ef9734e8-b7c5-4ce8-83ed-b9a1c474845f"
+  },
+  {
+    "kod": "07",
+    "namn": "Kronobergs län",
+    "partier": [
+      {
+        "beteckning": "Rättvisa Rörelse Partiet",
+        "kod": "1362",
+        "uuid": "59fbdd58-38df-4cb8-9800-628c91046ec9"
+      }
+    ],
+    "uuid": "37917d34-e8d3-4d7e-aa8b-e5bb4cec2b5b"
+  },
+  {
+    "kod": "25",
+    "namn": "Norrbottens län",
+    "partier": [
+      {
+        "beteckning": "Rättvisepartiet Socialisterna",
+        "kod": "0131",
+        "uuid": "ce076c0a-bef8-401e-a65c-6882a0d384c0"
+      },
+      {
+        "beteckning": "Sjukvårdspartiet",
+        "kod": "0193",
+        "uuid": "394593f1-a26f-4271-a0ff-e3e9c5df8b86"
+      },
+      {
+        "beteckning": "VÅRT NORRBOTTEN",
+        "kod": "1411",
+        "uuid": "5db775a3-83ab-48c0-8a68-95ed83590ad8"
+      }
+    ],
+    "uuid": "fc30c897-b6bd-4469-9c53-f11b7f891784"
+  },
+  {
+    "kod": "12",
+    "namn": "Skåne län",
+    "partier": [
+      {
+        "beteckning": "Alternativet",
+        "kod": "1284",
+        "uuid": "74cf42dc-1c73-4a54-8a20-71a71cce6723"
+      }
+    ],
+    "uuid": "5bc9ccfd-502c-4dc2-8bdc-f0ffe31e1bf9"
+  },
+  {
+    "kod": "01",
+    "namn": "Stockholms län",
+    "partier": [
+      {
+        "beteckning": "Mosebackedemokraterna",
+        "kod": "0976",
+        "uuid": "759b6807-f012-41d8-969b-93ce1d839a30"
+      }
+    ],
+    "uuid": "a2b7f4b9-fca5-44bd-ab29-07c5ffb4cd19"
+  },
+  {
+    "kod": "04",
+    "namn": "Södermanlands län",
+    "partier": [
+      {
+        "beteckning": "Vård för Pengarna",
+        "kod": "1122",
+        "uuid": "4ef9af41-d2fa-475f-834b-4d722f3c8914"
+      }
+    ],
+    "uuid": "2144ea12-b597-417b-9538-19f03d796ca7"
+  },
+  {
+    "kod": "03",
+    "namn": "Uppsala län",
+    "partier": [],
+    "uuid": "2b11bac4-2c58-47f0-89f4-1bfcc95261ea"
+  },
+  {
+    "kod": "17",
+    "namn": "Värmlands län",
+    "partier": [
+      {
+        "beteckning": "Sjukvårdspartiet i Värmland",
+        "kod": "0250",
+        "uuid": "d6511d4e-1b9d-4f3c-89ff-4533300f46fc"
+      }
+    ],
+    "uuid": "5f668277-fcac-48b1-b800-b63ac1547f39"
+  },
+  {
+    "kod": "24",
+    "namn": "Västerbottens län",
+    "partier": [
+      {
+        "beteckning": "Arbetarpartiet tidigare Rättvisepartiet Offensiv",
+        "kod": "1181",
+        "uuid": "081727ef-2708-4eda-b098-6e5a7809f2ce"
+      }
+    ],
+    "uuid": "2dfef326-f1eb-40db-9eb1-fbb5f27854af"
+  },
+  {
+    "kod": "22",
+    "namn": "Västernorrlands län",
+    "partier": [
+      {
+        "beteckning": "Sjukvårdspartiet - Västernorrland",
+        "kod": "0196",
+        "uuid": "2dde7f18-4339-490a-abaf-43e4eb53205c"
+      }
+    ],
+    "uuid": "a014b247-2c25-4d66-a57f-62bfed14af17"
+  },
+  {
+    "kod": "19",
+    "namn": "Västmanlands län",
+    "partier": [],
+    "uuid": "d21a9140-01fe-4999-8ce9-3e68683df165"
+  },
+  {
+    "kod": "14",
+    "namn": "Västra Götalands län",
+    "partier": [
+      {
+        "beteckning": "Demokraterna",
+        "kod": "1297",
+        "uuid": "45040bfa-87cf-44ec-aee8-f27724866aaf"
+      },
+      {
+        "beteckning": "Regionens framtid",
+        "kod": "1311",
+        "uuid": "0ea2696f-8b09-4eed-b02a-828239729b1a"
+      },
+      {
+        "beteckning": "Rättvisepartiet Socialisterna",
+        "kod": "0131",
+        "uuid": "ce076c0a-bef8-401e-a65c-6882a0d384c0"
+      },
+      {
+        "beteckning": "Seniorpartiet",
+        "kod": "0470",
+        "uuid": "8ab621eb-f774-4428-a3d8-d8dbe713a448"
+      },
+      {
+        "beteckning": "Sjukvårdspartiet - Västra Götaland",
+        "kod": "0447",
+        "uuid": "d4884d96-9160-4f1d-bb0f-b2a0efe7cbba"
+      }
+    ],
+    "uuid": "3b4f61e0-476d-4d01-afc9-c647bf26d78f"
+  },
+  {
+    "kod": "18",
+    "namn": "Örebro län",
+    "partier": [
+      {
+        "beteckning": "Örebropartiet",
+        "kod": "1152",
+        "uuid": "4719f829-c6f3-43b9-aaee-db26d645007d"
+      }
+    ],
+    "uuid": "8e56eef6-a180-4020-a2a8-9b861356f661"
+  },
+  {
+    "kod": "05",
+    "namn": "Östergötlands län",
+    "partier": [],
+    "uuid": "afe3e75f-4739-47d7-9d02-23e859418e63"
+  }
+]

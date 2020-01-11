@@ -23,29 +23,33 @@ Tillgängliggöra data om alla Sveriges politiska partier på ett öppet och tra
 
 ## Tillgänglig data
 
-### partilista.json
+### parti/index.json
 
-Baserad på XML-filen som går att ladda ner på val.se:<br />
-https://www.val.se/for-partier/partibeteckning/registrerade-partibeteckningar.html
+Baserad på XML-filen som går att ladda ner på val.se:<br />https://www.val.se/for-partier/partibeteckning/registrerade-partibeteckningar.html
 
-Har lagt till attribut `uuid` och `name` för enklare hantering i kod och datastrukturer.
+Kompletterad med partier som registrerat deltagande i val till landstingsfullmäktige och kommunfullmäktige 2018. Har lagt till attribut `uuid` och `filnamn` för enklare hantering i kod och datastrukturer. Se `toFileName` i `./utils.js`.
 
-`name` har genererats på följande sätt:
-
-```js
-  partier.forEach(parti => {
-    parti.name = _.deburr(parti.partibeteckning)
-      .toLowerCase()
-      .replace(' - ', '-')
-      .replace(/[)(]/g, '')
-      .replace(/[^a-z0-9]/g, '-');
-  });
-```
-
-### /parti/\<name\>.json
+### parti/\<filnamn\>.json
 
 JSON-data för varje enskilt parti ska skapas och kommer ligga i t ex `/parti/miljopartiet-de-grona.json`.
 
+### regioner/index.json
+
+Koder för län och kommuner år 2020. Genererad utifrån:<br/>https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/lan-och-kommuner/lan-och-kommuner-i-kodnummerordning/
+
+### val/\<year\>/partideltagande/\<valtyp\>.json
+
+Partier som registrerat deltagande i val för angivna året.
+
+> Om ett parti anmäler deltagande i val till riksdagen gäller anmälan också för:
+> * val till region- och kommunfullmäktige i hela landet och,
+> * nästa kommande val till Europaparlamentet.
+
+Läs mer på: https://www.val.se/for-partier/anmal-deltagande.html
+
+### val/\<year\>/kandidatlistor/\<parti.filnamn\>.json
+
+Kandidatlistor per parti i alla val för angivna året. För tillfället endast ett utkast.
 
 ## Bidra
 

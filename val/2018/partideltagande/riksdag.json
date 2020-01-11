@@ -1,0 +1,397 @@
+[
+  {
+    "beteckning": "Allians för Sverige",
+    "kod": "1423",
+    "uuid": "8c940e3f-b10a-4642-aa25-ff89505535b8"
+  },
+  {
+    "beteckning": "Alternativ för Sverige",
+    "kod": "1325",
+    "uuid": "3f7caf00-f50b-4ce3-b135-04492de827b1"
+  },
+  {
+    "beteckning": "Arbetarepartiet-Socialdemokraterna",
+    "kod": "0002",
+    "uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd"
+  },
+  {
+    "beteckning": "ASYL.NUPARTIET",
+    "kod": "1420",
+    "uuid": "ab4a2576-9338-4da7-98d0-dfeb324d4549"
+  },
+  {
+    "beteckning": "Basinkomstpartiet",
+    "kod": "1372",
+    "uuid": "07ede108-4daa-4328-bde7-79b9de0086e0"
+  },
+  {
+    "beteckning": "Bg-Demokrati",
+    "kod": "1375",
+    "uuid": "2f92086a-acb8-4a4e-b650-1fc00d1230a4"
+  },
+  {
+    "beteckning": "Centerpartiet",
+    "kod": "0004",
+    "uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3"
+  },
+  {
+    "beteckning": "Common sense in Sweden",
+    "kod": "1318",
+    "uuid": "b931129c-2ee1-41fa-9429-a841721d2205"
+  },
+  {
+    "beteckning": "Demokraterna i Göteborg",
+    "kod": "1426",
+    "uuid": "f7464f0e-4e40-4085-a1fe-cce9d8d0fbb7"
+  },
+  {
+    "beteckning": "Demokratirörelsen",
+    "kod": "1314",
+    "uuid": "eabf35e4-7d57-4d57-8347-fc44ca74b0fd"
+  },
+  {
+    "beteckning": "Demokrati Sverige",
+    "kod": "1387",
+    "uuid": "572c2b80-8f8a-4f2b-86e0-e77bdc5f1303"
+  },
+  {
+    "beteckning": "Det nya partiet",
+    "kod": "1351",
+    "uuid": "b4ed6db1-6289-451e-9ce6-33116e46e76a"
+  },
+  {
+    "beteckning": "Direktdemokraterna",
+    "kod": "1150",
+    "uuid": "153c98fb-b712-4314-a922-9562253639c2"
+  },
+  {
+    "beteckning": "Djurens parti",
+    "kod": "1136",
+    "uuid": "e9f11067-9208-473c-9499-eed921f680a9"
+  },
+  {
+    "beteckning": "Enhet",
+    "kod": "0189",
+    "uuid": "4ed338ef-bbdd-4ff9-aaa9-b86c90a01e3e"
+  },
+  {
+    "beteckning": "Europeiska Arbetarpartiet-EAP",
+    "kod": "0029",
+    "uuid": "8c7f27e0-2da5-4594-89b7-b6d402e2b3aa"
+  },
+  {
+    "beteckning": "Feministiskt initiativ",
+    "kod": "0532",
+    "uuid": "611c7fae-c057-4e46-8fd9-c4507c36be62"
+  },
+  {
+    "beteckning": "Final Partiet",
+    "kod": "1329",
+    "uuid": "831ff763-fc28-4d99-a9d8-5b973865e4eb"
+  },
+  {
+    "beteckning": "FN Parti art: 27",
+    "kod": "1425",
+    "uuid": "bf140eb2-9556-4cc6-acb5-4d7a30c3e45e"
+  },
+  {
+    "beteckning": "Folkhemmet Sverige",
+    "kod": "1388",
+    "uuid": "a7568519-98b1-4af8-9f2a-a802e2ae1d35"
+  },
+  {
+    "beteckning": "Folkstyret",
+    "kod": "1317",
+    "uuid": "0b18e45a-c359-470d-90bd-91b355407169"
+  },
+  {
+    "beteckning": "Generation Utveckling",
+    "kod": "1406",
+    "uuid": "c31e131c-ff24-4f29-b3fa-58afcbc3dddc"
+  },
+  {
+    "beteckning": "Gula Partiet",
+    "kod": "1173",
+    "uuid": "821df78a-261b-4612-8e95-f3d10b3acd2a"
+  },
+  {
+    "beteckning": "Humandemokraterna",
+    "kod": "1176",
+    "uuid": "3e104b52-ee22-4e36-a1e0-7ea04d03b59b"
+  },
+  {
+    "beteckning": "iGov.Direct®",
+    "kod": "1316",
+    "uuid": "d6046b77-aa01-44ec-94ad-14898afb571a"
+  },
+  {
+    "beteckning": "Initiativet",
+    "kod": "1374",
+    "uuid": "07b403b7-3b9b-4a22-844e-9f0fa516d57b"
+  },
+  {
+    "beteckning": "iP-IDROTTSPARTIET-Rädda Stadshagens IP!",
+    "kod": "1416",
+    "uuid": "b066a1e7-8be7-43aa-918b-df6684b353f9"
+  },
+  {
+    "beteckning": "Klassiskt liberala partiet",
+    "kod": "0638",
+    "uuid": "6537fb90-7ac9-4385-b554-3074b9e60b1a"
+  },
+  {
+    "beteckning": "Kosmopolitiska Partiet",
+    "kod": "1405",
+    "uuid": "7536db62-669c-4425-8f3b-4d6eb50d2287"
+  },
+  {
+    "beteckning": "Kristdemokraterna",
+    "kod": "0068",
+    "uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a"
+  },
+  {
+    "beteckning": "Kristna Värdepartiet",
+    "kod": "1140",
+    "uuid": "c39ee49a-2a58-423d-836d-c97a2d9d8fcd"
+  },
+  {
+    "beteckning": "Landsbygdspartiet Oberoende",
+    "kod": "1011",
+    "uuid": "e39bddbe-ce7d-4c63-a677-b5c1a3046ebd"
+  },
+  {
+    "beteckning": "Liberalerna (tidigare Folkpartiet)",
+    "kod": "0003",
+    "uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0"
+  },
+  {
+    "beteckning": "LOTTOKRATIN",
+    "kod": "0518",
+    "uuid": "29097cd1-6172-4321-bb78-a77cf7bfcb3a"
+  },
+  {
+    "beteckning": "LÅNGEN&CO",
+    "kod": "1345",
+    "uuid": "d9d8dcc8-eeea-48e5-b5a5-8c0633233e3c"
+  },
+  {
+    "beteckning": "Medborgarresan",
+    "kod": "1330",
+    "uuid": "b0cf48a4-435b-4ec9-b448-b1f71246fd8b"
+  },
+  {
+    "beteckning": "Medborgerlig Samling",
+    "kod": "1296",
+    "uuid": "68b3e558-d0bb-4ac7-b833-a5b30a542800"
+  },
+  {
+    "beteckning": "Miljöpartiet de gröna",
+    "kod": "0055",
+    "uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133"
+  },
+  {
+    "beteckning": "Moderaterna",
+    "kod": "0001",
+    "uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476"
+  },
+  {
+    "beteckning": "Modern Sweden",
+    "kod": "1380",
+    "uuid": "a9b37976-6cf6-4aba-876c-7148a1d4b969"
+  },
+  {
+    "beteckning": "Nordiska motståndsrörelsen",
+    "kod": "1273",
+    "uuid": "c7ce3542-587c-4d95-8e2a-d63f91b11bc9"
+  },
+  {
+    "beteckning": "Norrlandspartiet",
+    "kod": "1378",
+    "uuid": "eaadd374-35f6-45da-acc4-4254289c77db"
+  },
+  {
+    "beteckning": "NPP Nya Pensions Partiet",
+    "kod": "1399",
+    "uuid": "1de65e35-d734-4941-a5de-d2b3edba6470"
+  },
+  {
+    "beteckning": "numen kärlekspartiet",
+    "kod": "1415",
+    "uuid": "70799b6d-249c-4cdd-8f0f-415bf39d77b2"
+  },
+  {
+    "beteckning": "Nya bjornska partiet",
+    "kod": "1418",
+    "uuid": "d356e679-91d5-4b18-a2b5-8867475116ca"
+  },
+  {
+    "beteckning": "nya Ny Demokrati",
+    "kod": "1391",
+    "uuid": "b4a0631c-8576-4bb6-880e-05972a7f952b"
+  },
+  {
+    "beteckning": "NY REFORM",
+    "kod": "1385",
+    "uuid": "85ccc38a-0fc7-4a55-b1f3-1db7d6c062b6"
+  },
+  {
+    "beteckning": "Papepartiet",
+    "kod": "1408",
+    "uuid": "48be121c-0c48-4153-88a0-691fc6d255b0"
+  },
+  {
+    "beteckning": "Partiet Folkomröstning",
+    "kod": "1371",
+    "uuid": "89fd5b8d-a2c5-4d86-9acf-6b77b3f85bf9"
+  },
+  {
+    "beteckning": "Piratpartiet",
+    "kod": "0524",
+    "uuid": "e6be8b6a-9385-4918-847a-dee620802595"
+  },
+  {
+    "beteckning": "POPULISTERNA",
+    "kod": "1347",
+    "uuid": "686dd12d-5dea-424b-854c-477d4291a865"
+  },
+  {
+    "beteckning": "Raggarpartiet",
+    "kod": "1389",
+    "uuid": "10f4e511-458e-4851-a994-a304ff94e78a"
+  },
+  {
+    "beteckning": "Reformist Neutral Partiet",
+    "kod": "1202",
+    "uuid": "a14014ab-2a43-49e5-ad22-584c246aa0fd"
+  },
+  {
+    "beteckning": "Rosa Drömmar",
+    "kod": "1409",
+    "uuid": "b6b9bcc1-068f-4bb1-bc64-cdf1c32bf8c3"
+  },
+  {
+    "beteckning": "Sjöbopartiet",
+    "kod": "0172",
+    "uuid": "57a2224c-71dd-4d74-aae4-b53e097cdc20"
+  },
+  {
+    "beteckning": "Skolpartiet Göteborg",
+    "kod": "1397",
+    "uuid": "75c520b2-651f-4a82-b58f-631b65fb3ce1"
+  },
+  {
+    "beteckning": "SKÅNEPARTIET",
+    "kod": "0054",
+    "uuid": "96fa352b-a7d2-4bd0-bab9-37ab6c479d54"
+  },
+  {
+    "beteckning": "Sociala Partiet (SP)",
+    "kod": "0522",
+    "uuid": "640f040a-56c2-4b75-a240-733fa0eefd94"
+  },
+  {
+    "beteckning": "SOCIALLIBERALERNA",
+    "kod": "1421",
+    "uuid": "fe52faa5-e88c-4fae-a2c4-4c3e0ef83ab8"
+  },
+  {
+    "beteckning": "Spektral demokrati",
+    "kod": "1376",
+    "uuid": "eb01a434-c644-417f-bb5f-14d86e053ce3"
+  },
+  {
+    "beteckning": "Svensk Jobbdemokrati",
+    "kod": "1414",
+    "uuid": "03be0cda-c149-4b32-89b5-c6c4068e6093"
+  },
+  {
+    "beteckning": "Sverigedemokraterna",
+    "kod": "0110",
+    "uuid": "b9af6417-6861-40ff-b0a5-3c1fab176496"
+  },
+  {
+    "beteckning": "Sverigepartiet",
+    "kod": "1396",
+    "uuid": "96fcf42b-0ce4-4a03-8196-963420a9b505"
+  },
+  {
+    "beteckning": "Sveriges Kommunistiska Parti (SKP)",
+    "kod": "1063",
+    "uuid": "136e2fd9-2f99-41b6-94a7-ae5ccddb7093"
+  },
+  {
+    "beteckning": "Sverige ut ur EU/Frihetliga Rättvisepartiet (FRP)",
+    "kod": "1384",
+    "uuid": "98d922e8-41f7-46bc-91e0-1cf62eebb579"
+  },
+  {
+    "beteckning": "Technopartiet",
+    "kod": "1400",
+    "uuid": "57611daa-1330-40c1-8806-3d06a2f0f3d3"
+  },
+  {
+    "beteckning": "Tryggare Sverige",
+    "kod": "1328",
+    "uuid": "380011b6-5ef1-4d1c-86c3-891dde016a78"
+  },
+  {
+    "beteckning": "TRYGGHETSPARTIET",
+    "kod": "1309",
+    "uuid": "c1b28696-4325-48c1-b40c-f8e530278dd0"
+  },
+  {
+    "beteckning": "Utveckling och Progressiv för Sverige partiet (U.P.S)",
+    "kod": "1386",
+    "uuid": "a77788c8-b421-433a-ba94-78eae2520a0c"
+  },
+  {
+    "beteckning": "VALDI2018",
+    "kod": "1422",
+    "uuid": "103aea17-5063-4fe0-bc0a-bafe286349fe"
+  },
+  {
+    "beteckning": "Valsamverkanspartiet",
+    "kod": "1332",
+    "uuid": "05cd1b5e-e1cf-4066-b5d8-f8ee476e7467"
+  },
+  {
+    "beteckning": "Visiona",
+    "kod": "1417",
+    "uuid": "c6f0774a-12d5-49dd-b756-30c601b71bce"
+  },
+  {
+    "beteckning": "Vi Socialkonservativa",
+    "kod": "1349",
+    "uuid": "df442bd9-a5e9-4768-a13b-be5c483be837"
+  },
+  {
+    "beteckning": "Vårt land - Sverige",
+    "kod": "1412",
+    "uuid": "ddbf6667-caa6-4a38-8705-7fbae6eb9619"
+  },
+  {
+    "beteckning": "Vägvalet",
+    "kod": "1138",
+    "uuid": "e35dbd0f-1df9-4dd5-97d8-8b82cdde0498"
+  },
+  {
+    "beteckning": "Vänsterpartiet",
+    "kod": "0005",
+    "uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a"
+  },
+  {
+    "beteckning": "Äkta demokrati",
+    "kod": "1407",
+    "uuid": "420eb709-4088-4eba-a59f-83ca92fe9f9f"
+  },
+  {
+    "beteckning": "Ändrings partiet revolution",
+    "kod": "1404",
+    "uuid": "88ad8b1d-d574-4ff7-bffc-1630c01345ab"
+  },
+  {
+    "beteckning": "20% skattepartiet",
+    "kod": "1365",
+    "uuid": "ee50921a-e848-42d6-803e-9d5275ed21b6"
+  }
+]

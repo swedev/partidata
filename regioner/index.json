@@ -1,0 +1,1599 @@
+[
+  {
+    "kod": "01",
+    "namn": "Stockholms län",
+    "uuid": "a2b7f4b9-fca5-44bd-ab29-07c5ffb4cd19",
+    "kommuner": [
+      {
+        "kod": "0114",
+        "namn": "Upplands Väsby",
+        "uuid": "49dc6df1-9f1c-4311-8dd2-64bf9e2c2d1f"
+      },
+      {
+        "kod": "0115",
+        "namn": "Vallentuna",
+        "uuid": "6a11bdb8-322c-4ce6-b583-8d2af5a8eafe"
+      },
+      {
+        "kod": "0117",
+        "namn": "Österåker",
+        "uuid": "532246db-a48b-43e4-9202-e77d3adee85f"
+      },
+      {
+        "kod": "0120",
+        "namn": "Värmdö",
+        "uuid": "0c4627ee-6bc1-4614-bc7d-d6d03daaa730"
+      },
+      {
+        "kod": "0123",
+        "namn": "Järfälla",
+        "uuid": "166c9688-9ca4-4d6b-bce7-4f501ec95b72"
+      },
+      {
+        "kod": "0125",
+        "namn": "Ekerö",
+        "uuid": "4cb44541-49cf-417e-86eb-bbd272555647"
+      },
+      {
+        "kod": "0126",
+        "namn": "Huddinge",
+        "uuid": "2ad8bede-a238-4131-86cc-ed987bc1a62d"
+      },
+      {
+        "kod": "0127",
+        "namn": "Botkyrka",
+        "uuid": "bc66d0a6-a9dd-4d59-abcb-34513d9afd71"
+      },
+      {
+        "kod": "0128",
+        "namn": "Salem",
+        "uuid": "0f4e2a23-8940-43b7-9edc-c711b16b4aee"
+      },
+      {
+        "kod": "0136",
+        "namn": "Haninge",
+        "uuid": "6a2d9718-8670-43cd-9c46-f19423a624e7"
+      },
+      {
+        "kod": "0138",
+        "namn": "Tyresö",
+        "uuid": "45de764b-55c0-41f9-af3e-b459eec46470"
+      },
+      {
+        "kod": "0139",
+        "namn": "Upplands-Bro",
+        "uuid": "4f3f8637-05af-49dc-8b50-04da62390d8b"
+      },
+      {
+        "kod": "0140",
+        "namn": "Nykvarn",
+        "uuid": "0ba07e09-a0d7-4e28-be60-deec9a1d2d47"
+      },
+      {
+        "kod": "0160",
+        "namn": "Täby",
+        "uuid": "e5ee11aa-4923-4934-a82b-47074e24ea9a"
+      },
+      {
+        "kod": "0162",
+        "namn": "Danderyd",
+        "uuid": "3daf221c-a23c-4833-8331-dcf5b16f72e3"
+      },
+      {
+        "kod": "0163",
+        "namn": "Sollentuna",
+        "uuid": "24a2eb1d-c146-40bf-b7b9-8ba2b7c0dca9"
+      },
+      {
+        "kod": "0180",
+        "namn": "Stockholm",
+        "uuid": "97cd31e9-2a83-4808-8990-fa191134cab1"
+      },
+      {
+        "kod": "0181",
+        "namn": "Södertälje",
+        "uuid": "59cfee2c-6c2f-40ae-a982-fc9e0df0d2eb"
+      },
+      {
+        "kod": "0182",
+        "namn": "Nacka",
+        "uuid": "e863414a-f446-4063-ae8b-7be69d69c5fb"
+      },
+      {
+        "kod": "0183",
+        "namn": "Sundbyberg",
+        "uuid": "66f27f11-e81f-4f66-b300-ca83270595b0"
+      },
+      {
+        "kod": "0184",
+        "namn": "Solna",
+        "uuid": "9cf2884c-64fe-46fe-95cb-d74526a898aa"
+      },
+      {
+        "kod": "0186",
+        "namn": "Lidingö",
+        "uuid": "b3af0e67-fc46-439e-afb1-c39c331f10af"
+      },
+      {
+        "kod": "0187",
+        "namn": "Vaxholm",
+        "uuid": "273899dc-e355-4320-b3d6-b126270ad5f2"
+      },
+      {
+        "kod": "0188",
+        "namn": "Norrtälje",
+        "uuid": "f9b933fe-e4e3-4449-a600-4ec81336b174"
+      },
+      {
+        "kod": "0191",
+        "namn": "Sigtuna",
+        "uuid": "b975e7da-6204-4c88-a9fc-469ea2ba6237"
+      },
+      {
+        "kod": "0192",
+        "namn": "Nynäshamn",
+        "uuid": "e2e95f43-6402-4064-84a7-e1daa0570f60"
+      }
+    ]
+  },
+  {
+    "kod": "03",
+    "namn": "Uppsala län",
+    "uuid": "2b11bac4-2c58-47f0-89f4-1bfcc95261ea",
+    "kommuner": [
+      {
+        "kod": "0305",
+        "namn": "Håbo",
+        "uuid": "c957c9d6-b720-4695-b067-ccc9e1ad746e"
+      },
+      {
+        "kod": "0319",
+        "namn": "Älvkarleby",
+        "uuid": "d36d72b1-7e00-4c86-b33f-20e48166a745"
+      },
+      {
+        "kod": "0330",
+        "namn": "Knivsta",
+        "uuid": "05b00945-6178-46f1-bd47-99297b25af38"
+      },
+      {
+        "kod": "0331",
+        "namn": "Heby",
+        "uuid": "b5d97993-b0ef-4b93-9698-bddc7f3b0957"
+      },
+      {
+        "kod": "0360",
+        "namn": "Tierp",
+        "uuid": "c0b3a4db-ec15-46ef-8522-deab3b0978d3"
+      },
+      {
+        "kod": "0380",
+        "namn": "Uppsala",
+        "uuid": "efe52437-2bd8-4a1d-8a1b-596bcb8f45d6"
+      },
+      {
+        "kod": "0381",
+        "namn": "Enköping",
+        "uuid": "cb033ee6-3037-4018-bbda-8ea43aad5cbe"
+      },
+      {
+        "kod": "0382",
+        "namn": "Östhammar",
+        "uuid": "bb11e63b-e588-4213-b0e8-ed703bbb20fa"
+      }
+    ]
+  },
+  {
+    "kod": "04",
+    "namn": "Södermanlands län",
+    "uuid": "2144ea12-b597-417b-9538-19f03d796ca7",
+    "kommuner": [
+      {
+        "kod": "0428",
+        "namn": "Vingåker",
+        "uuid": "9eadb553-08a4-43a0-a6d5-40a5389de269"
+      },
+      {
+        "kod": "0461",
+        "namn": "Gnesta",
+        "uuid": "6791e5df-931c-4e02-b3d4-988d0bdb6327"
+      },
+      {
+        "kod": "0480",
+        "namn": "Nyköping",
+        "uuid": "bffa4fbe-abd0-4795-9b3d-6d25052404a2"
+      },
+      {
+        "kod": "0481",
+        "namn": "Oxelösund",
+        "uuid": "bbbc4206-4dc7-48fd-8aed-dc28bbdc919b"
+      },
+      {
+        "kod": "0482",
+        "namn": "Flen",
+        "uuid": "de86dc19-0e90-41d9-ad99-fe4aed0bd80d"
+      },
+      {
+        "kod": "0483",
+        "namn": "Katrineholm",
+        "uuid": "cca7df8f-6544-4971-b742-5f55160182c9"
+      },
+      {
+        "kod": "0484",
+        "namn": "Eskilstuna",
+        "uuid": "c912d0a8-2546-4805-93f3-434af0252248"
+      },
+      {
+        "kod": "0486",
+        "namn": "Strängnäs",
+        "uuid": "c4559e45-861d-451a-be38-3d2efeb098fe"
+      },
+      {
+        "kod": "0488",
+        "namn": "Trosa",
+        "uuid": "e75f6408-ea8f-4641-847a-e4cfb74f5c07"
+      }
+    ]
+  },
+  {
+    "kod": "05",
+    "namn": "Östergötlands län",
+    "uuid": "afe3e75f-4739-47d7-9d02-23e859418e63",
+    "kommuner": [
+      {
+        "kod": "0509",
+        "namn": "Ödeshög",
+        "uuid": "58ddfb2e-f6f3-4caf-b7c9-367fd04b9a7b"
+      },
+      {
+        "kod": "0512",
+        "namn": "Ydre",
+        "uuid": "3f881348-baae-4eea-bbc4-8fc49e6eda8c"
+      },
+      {
+        "kod": "0513",
+        "namn": "Kinda",
+        "uuid": "c8167248-cfee-47f9-8513-9532bdffcf2b"
+      },
+      {
+        "kod": "0560",
+        "namn": "Boxholm",
+        "uuid": "e65cd269-b901-4bda-876a-99500393a5a0"
+      },
+      {
+        "kod": "0561",
+        "namn": "Åtvidaberg",
+        "uuid": "d354b883-c22e-4639-ab94-ae23b300562d"
+      },
+      {
+        "kod": "0562",
+        "namn": "Finspång",
+        "uuid": "d0eddd5c-24ce-4ab8-a713-e0f00b5fdf83"
+      },
+      {
+        "kod": "0563",
+        "namn": "Valdemarsvik",
+        "uuid": "3abf663a-b028-476b-ae64-f755dac609cc"
+      },
+      {
+        "kod": "0580",
+        "namn": "Linköping",
+        "uuid": "ecb468f9-985d-4e94-8442-266a6caa4861"
+      },
+      {
+        "kod": "0581",
+        "namn": "Norrköping",
+        "uuid": "74e6baaa-dc95-4504-8a55-859502c625c4"
+      },
+      {
+        "kod": "0582",
+        "namn": "Söderköping",
+        "uuid": "af3153fd-06e1-4191-90a9-3d9c9091ee3a"
+      },
+      {
+        "kod": "0583",
+        "namn": "Motala",
+        "uuid": "f58db692-0937-43ed-ae09-18ea79680204"
+      },
+      {
+        "kod": "0584",
+        "namn": "Vadstena",
+        "uuid": "d268e773-d640-4353-bfb4-18ab4cc9084b"
+      },
+      {
+        "kod": "0586",
+        "namn": "Mjölby",
+        "uuid": "f61835d5-8ce8-4a30-a627-b75f5a0c8b7d"
+      }
+    ]
+  },
+  {
+    "kod": "06",
+    "namn": "Jönköpings län",
+    "uuid": "e973b394-3b14-40fe-b191-dc0f8bb42693",
+    "kommuner": [
+      {
+        "kod": "0604",
+        "namn": "Aneby",
+        "uuid": "05b02220-ba5e-475d-b1b5-175457b255b3"
+      },
+      {
+        "kod": "0617",
+        "namn": "Gnosjö",
+        "uuid": "5b06a856-2695-4571-acdc-d647b9b078e7"
+      },
+      {
+        "kod": "0642",
+        "namn": "Mullsjö",
+        "uuid": "1138c84e-6af3-40d0-9ff1-36be5073d8dd"
+      },
+      {
+        "kod": "0643",
+        "namn": "Habo",
+        "uuid": "e83aa44f-c56a-4899-8520-54f320ac31a9"
+      },
+      {
+        "kod": "0662",
+        "namn": "Gislaved",
+        "uuid": "9892bb1d-df11-4ab5-b592-dddd4dfd5352"
+      },
+      {
+        "kod": "0665",
+        "namn": "Vaggeryd",
+        "uuid": "148633a0-ec12-42b4-ae97-175f1e4ef384"
+      },
+      {
+        "kod": "0680",
+        "namn": "Jönköping",
+        "uuid": "d4889fa1-68f4-4457-bc92-4f7501ff0959"
+      },
+      {
+        "kod": "0682",
+        "namn": "Nässjö",
+        "uuid": "f61b892a-8e4c-496d-b719-ab78debdb6c2"
+      },
+      {
+        "kod": "0683",
+        "namn": "Värnamo",
+        "uuid": "871ebe4b-91b7-4aae-890f-f7f15f4050dc"
+      },
+      {
+        "kod": "0684",
+        "namn": "Sävsjö",
+        "uuid": "16a427da-27d5-4ed1-97c7-2ff411c21cf0"
+      },
+      {
+        "kod": "0685",
+        "namn": "Vetlanda",
+        "uuid": "2e7f22d0-2f9f-4041-939a-77ae41b25923"
+      },
+      {
+        "kod": "0686",
+        "namn": "Eksjö",
+        "uuid": "42c46cd3-f701-4158-a02c-e76dd7069b0a"
+      },
+      {
+        "kod": "0687",
+        "namn": "Tranås",
+        "uuid": "1c272fca-37d9-4e1c-b4a6-465682152c0d"
+      }
+    ]
+  },
+  {
+    "kod": "07",
+    "namn": "Kronobergs län",
+    "uuid": "37917d34-e8d3-4d7e-aa8b-e5bb4cec2b5b",
+    "kommuner": [
+      {
+        "kod": "0760",
+        "namn": "Uppvidinge",
+        "uuid": "0322bb02-3a00-4623-8c88-8c52f68577f3"
+      },
+      {
+        "kod": "0761",
+        "namn": "Lessebo",
+        "uuid": "a0a41f7c-fca6-4bde-aec9-9da4fe024190"
+      },
+      {
+        "kod": "0763",
+        "namn": "Tingsryd",
+        "uuid": "e02b5ca5-5f5b-44cd-bbce-c9d4e0372f03"
+      },
+      {
+        "kod": "0764",
+        "namn": "Alvesta",
+        "uuid": "b5390d86-d98a-4a15-9300-20fc50079b8d"
+      },
+      {
+        "kod": "0765",
+        "namn": "Älmhult",
+        "uuid": "e18102df-2bc3-4a1b-93ec-dd27fc0f7318"
+      },
+      {
+        "kod": "0767",
+        "namn": "Markaryd",
+        "uuid": "00ef8598-9e00-437c-8427-71bdc9727c39"
+      },
+      {
+        "kod": "0780",
+        "namn": "Växjö",
+        "uuid": "db8da743-7e8c-4da4-9c9f-5906d46c9fa7"
+      },
+      {
+        "kod": "0781",
+        "namn": "Ljungby",
+        "uuid": "2fe56166-9d75-4886-9add-1ae55175824c"
+      }
+    ]
+  },
+  {
+    "kod": "08",
+    "namn": "Kalmar län",
+    "uuid": "ef9734e8-b7c5-4ce8-83ed-b9a1c474845f",
+    "kommuner": [
+      {
+        "kod": "0821",
+        "namn": "Högsby",
+        "uuid": "2cd8616d-f4a1-438a-bf57-99097d3dd08d"
+      },
+      {
+        "kod": "0834",
+        "namn": "Torsås",
+        "uuid": "3adea534-f40a-425c-b392-3ee7d7debe50"
+      },
+      {
+        "kod": "0840",
+        "namn": "Mörbylånga",
+        "uuid": "67625e6e-f684-4944-842b-5141d8e0896d"
+      },
+      {
+        "kod": "0860",
+        "namn": "Hultsfred",
+        "uuid": "1729b58a-1756-4ab3-ae73-cb2dba1b60e7"
+      },
+      {
+        "kod": "0861",
+        "namn": "Mönsterås",
+        "uuid": "f7b3ea77-4a65-46fc-bf95-4ac8f2be60c8"
+      },
+      {
+        "kod": "0862",
+        "namn": "Emmaboda",
+        "uuid": "32c6d0e6-f966-4cc7-8ccb-870d43e9f7f4"
+      },
+      {
+        "kod": "0880",
+        "namn": "Kalmar",
+        "uuid": "a2940457-c27e-4738-a4e6-2fb05cd6db72"
+      },
+      {
+        "kod": "0881",
+        "namn": "Nybro",
+        "uuid": "fb4599e4-fc24-42bd-a353-d4154fc2a3ca"
+      },
+      {
+        "kod": "0882",
+        "namn": "Oskarshamn",
+        "uuid": "961ef964-84dd-41dd-b1d2-51ff3abfd98a"
+      },
+      {
+        "kod": "0883",
+        "namn": "Västervik",
+        "uuid": "fbca2459-aafd-4118-aa2a-b4cdf41b5994"
+      },
+      {
+        "kod": "0884",
+        "namn": "Vimmerby",
+        "uuid": "045b64e4-90d8-423d-9150-2ada0d3ac709"
+      },
+      {
+        "kod": "0885",
+        "namn": "Borgholm",
+        "uuid": "e125ae16-322d-4673-a574-b68e5ef21d72"
+      }
+    ]
+  },
+  {
+    "kod": "09",
+    "namn": "Gotlands län",
+    "uuid": "ed4cfd67-c88d-4780-b54b-848023d9d258",
+    "kommuner": [
+      {
+        "kod": "0980",
+        "namn": "Gotland",
+        "uuid": "471820fa-a5f0-4e26-8a4f-99b7ff0aac6e"
+      }
+    ]
+  },
+  {
+    "kod": "10",
+    "namn": "Blekinge län",
+    "uuid": "d1b1cbf1-5bfa-444c-80d7-b6df6922ec73",
+    "kommuner": [
+      {
+        "kod": "1060",
+        "namn": "Olofström",
+        "uuid": "cf2bf04a-13cc-4285-9dce-83d16257965e"
+      },
+      {
+        "kod": "1080",
+        "namn": "Karlskrona",
+        "uuid": "b2fabcfd-02a6-49c3-9a87-49b3650b1814"
+      },
+      {
+        "kod": "1081",
+        "namn": "Ronneby",
+        "uuid": "33fbf41e-74b0-431f-a0fe-ab660e0c03c5"
+      },
+      {
+        "kod": "1082",
+        "namn": "Karlshamn",
+        "uuid": "b7899b48-a246-4ed4-ab17-6b4a07d2533b"
+      },
+      {
+        "kod": "1083",
+        "namn": "Sölvesborg",
+        "uuid": "d8ed5706-b01a-4109-b774-cf62341dcfd5"
+      }
+    ]
+  },
+  {
+    "kod": "12",
+    "namn": "Skåne län",
+    "uuid": "5bc9ccfd-502c-4dc2-8bdc-f0ffe31e1bf9",
+    "kommuner": [
+      {
+        "kod": "1214",
+        "namn": "Svalöv",
+        "uuid": "977c3bbd-1692-4c5e-bdc0-947d5a10aa71"
+      },
+      {
+        "kod": "1230",
+        "namn": "Staffanstorp",
+        "uuid": "a943aa6a-8886-4f3a-adf4-3a4c4e77411e"
+      },
+      {
+        "kod": "1231",
+        "namn": "Burlöv",
+        "uuid": "e260c55a-491e-4e11-bfdd-fc9671980d11"
+      },
+      {
+        "kod": "1233",
+        "namn": "Vellinge",
+        "uuid": "06786dd7-36c8-4a78-9e7f-e2d455a346f1"
+      },
+      {
+        "kod": "1256",
+        "namn": "Östra Göinge",
+        "uuid": "5bd28ad4-bb7c-4588-ae6b-79bdbfc3d3fd"
+      },
+      {
+        "kod": "1257",
+        "namn": "Örkelljunga",
+        "uuid": "a5eebb34-8e0b-4c38-bf29-e19c4d32dc41"
+      },
+      {
+        "kod": "1260",
+        "namn": "Bjuv",
+        "uuid": "3b497d91-2273-4334-ad15-d85dfd5c09af"
+      },
+      {
+        "kod": "1261",
+        "namn": "Kävlinge",
+        "uuid": "f31df0a7-90e0-4878-9206-60ea919f9dfb"
+      },
+      {
+        "kod": "1262",
+        "namn": "Lomma",
+        "uuid": "445b8476-39fe-4701-adea-ad981a1917f1"
+      },
+      {
+        "kod": "1263",
+        "namn": "Svedala",
+        "uuid": "0694afe2-659f-46b4-b455-01d6817972d1"
+      },
+      {
+        "kod": "1264",
+        "namn": "Skurup",
+        "uuid": "44c816a7-33bf-4452-b833-e1e6ee45e599"
+      },
+      {
+        "kod": "1265",
+        "namn": "Sjöbo",
+        "uuid": "a6592bd6-0384-4826-9fe9-0c7dcd5fbf35"
+      },
+      {
+        "kod": "1266",
+        "namn": "Hörby",
+        "uuid": "4cc172e3-cbe3-415e-82ae-1eed9cd01533"
+      },
+      {
+        "kod": "1267",
+        "namn": "Höör",
+        "uuid": "ac090551-23ed-4159-85ba-baf3f8457d26"
+      },
+      {
+        "kod": "1270",
+        "namn": "Tomelilla",
+        "uuid": "bf507451-e5ba-4a0c-b7a6-d789a6a571bc"
+      },
+      {
+        "kod": "1272",
+        "namn": "Bromölla",
+        "uuid": "6f1b8b74-bd7f-4587-af07-bebd64ef3259"
+      },
+      {
+        "kod": "1273",
+        "namn": "Osby",
+        "uuid": "13dcab01-bd75-40bf-8ef5-84d2d8daf873"
+      },
+      {
+        "kod": "1275",
+        "namn": "Perstorp",
+        "uuid": "a061d8c9-40db-43e9-81f8-e1bfb0763c6d"
+      },
+      {
+        "kod": "1276",
+        "namn": "Klippan",
+        "uuid": "ba27dd73-bfa2-4534-9159-af42ca4ed631"
+      },
+      {
+        "kod": "1277",
+        "namn": "Åstorp",
+        "uuid": "82d643c8-1ab9-407e-9119-6a1c41141fba"
+      },
+      {
+        "kod": "1278",
+        "namn": "Båstad",
+        "uuid": "ef2e5b6b-7575-4625-8a87-8dc1ba0b0153"
+      },
+      {
+        "kod": "1280",
+        "namn": "Malmö",
+        "uuid": "498cf599-1393-4100-816d-41d3bd1f1f4c"
+      },
+      {
+        "kod": "1281",
+        "namn": "Lund",
+        "uuid": "0c2f5ccb-73ae-4458-94f9-24e712330d74"
+      },
+      {
+        "kod": "1282",
+        "namn": "Landskrona",
+        "uuid": "0e160cda-5d72-4a73-af35-e1eca4a3fe84"
+      },
+      {
+        "kod": "1283",
+        "namn": "Helsingborg",
+        "uuid": "9a8b8d39-dc2f-4057-b889-64c8d1621715"
+      },
+      {
+        "kod": "1284",
+        "namn": "Höganäs",
+        "uuid": "5231d4cd-1f82-49d4-bd77-1b65e51f20ec"
+      },
+      {
+        "kod": "1285",
+        "namn": "Eslöv",
+        "uuid": "8c8d24bc-d966-4938-a223-433f7740a6cc"
+      },
+      {
+        "kod": "1286",
+        "namn": "Ystad",
+        "uuid": "83aa2bab-06ed-468c-b67b-91879a63a094"
+      },
+      {
+        "kod": "1287",
+        "namn": "Trelleborg",
+        "uuid": "a607e5d6-4139-4d2f-829b-1e40ccafaa0b"
+      },
+      {
+        "kod": "1290",
+        "namn": "Kristianstad",
+        "uuid": "ab96ee36-d2f7-43fd-b389-9544e11158a5"
+      },
+      {
+        "kod": "1291",
+        "namn": "Simrishamn",
+        "uuid": "557789e9-0f2b-4c7f-afad-62c44708244b"
+      },
+      {
+        "kod": "1292",
+        "namn": "Ängelholm",
+        "uuid": "7067599a-3cda-48e4-a9c2-0a570248421e"
+      },
+      {
+        "kod": "1293",
+        "namn": "Hässleholm",
+        "uuid": "fbe7fd31-6a79-41e8-8df8-a8eb14fddd63"
+      }
+    ]
+  },
+  {
+    "kod": "13",
+    "namn": "Hallands län",
+    "uuid": "afd9954e-ad38-45ba-aee0-e1bdc270fe7a",
+    "kommuner": [
+      {
+        "kod": "1315",
+        "namn": "Hylte",
+        "uuid": "1131f94b-8298-4f39-a31e-b8ddff047479"
+      },
+      {
+        "kod": "1380",
+        "namn": "Halmstad",
+        "uuid": "519d7771-6663-4483-83d1-1f5205441773"
+      },
+      {
+        "kod": "1381",
+        "namn": "Laholm",
+        "uuid": "f5ee4965-7eed-41f7-83b9-64d0d6f1fc98"
+      },
+      {
+        "kod": "1382",
+        "namn": "Falkenberg",
+        "uuid": "55a5b346-04ba-43a0-bfc8-744bf7c14bb5"
+      },
+      {
+        "kod": "1383",
+        "namn": "Varberg",
+        "uuid": "bee304b8-588b-44cc-bc7b-f51d8b3f59ea"
+      },
+      {
+        "kod": "1384",
+        "namn": "Kungsbacka",
+        "uuid": "75f5af75-dca7-44d0-9ec9-2262b89a80bf"
+      }
+    ]
+  },
+  {
+    "kod": "14",
+    "namn": "Västra Götalands län",
+    "uuid": "3b4f61e0-476d-4d01-afc9-c647bf26d78f",
+    "kommuner": [
+      {
+        "kod": "1401",
+        "namn": "Härryda",
+        "uuid": "1f39dea0-7b2e-40ae-8623-30870959f7f6"
+      },
+      {
+        "kod": "1402",
+        "namn": "Partille",
+        "uuid": "76e4a0c3-c568-474d-841c-1958966efe6d"
+      },
+      {
+        "kod": "1407",
+        "namn": "Öckerö",
+        "uuid": "c097bd58-b719-4217-a208-df4116308bb3"
+      },
+      {
+        "kod": "1415",
+        "namn": "Stenungsund",
+        "uuid": "c69f244c-ffdb-40b7-9d45-fcb5bf35638b"
+      },
+      {
+        "kod": "1419",
+        "namn": "Tjörn",
+        "uuid": "9e98b2ee-daed-488b-9ed7-e045c44e057a"
+      },
+      {
+        "kod": "1421",
+        "namn": "Orust",
+        "uuid": "0ed7c6f7-21d0-4c89-a871-ab2a96be39dd"
+      },
+      {
+        "kod": "1427",
+        "namn": "Sotenäs",
+        "uuid": "5aad48bf-2182-4b19-88b2-99a6fdf6d0a6"
+      },
+      {
+        "kod": "1430",
+        "namn": "Munkedal",
+        "uuid": "8846ce12-b48e-4fab-9fd4-a84fe5a609b5"
+      },
+      {
+        "kod": "1435",
+        "namn": "Tanum",
+        "uuid": "67a593ed-bfd1-4ce3-a2ab-244fb8e96ffc"
+      },
+      {
+        "kod": "1438",
+        "namn": "Dals-Ed",
+        "uuid": "dbf4ce69-ab6d-4e3b-8da2-625e8223dc6b"
+      },
+      {
+        "kod": "1439",
+        "namn": "Färgelanda",
+        "uuid": "91432d23-e129-4e03-9182-c755dc170cf7"
+      },
+      {
+        "kod": "1440",
+        "namn": "Ale",
+        "uuid": "f3ee799b-be10-4ba8-9547-25c7744d632b"
+      },
+      {
+        "kod": "1441",
+        "namn": "Lerum",
+        "uuid": "c70acc18-9f01-44f3-8ecc-ec4358d166d5"
+      },
+      {
+        "kod": "1442",
+        "namn": "Vårgårda",
+        "uuid": "757fffa4-5a60-4efe-983f-6be126ff46e1"
+      },
+      {
+        "kod": "1443",
+        "namn": "Bollebygd",
+        "uuid": "98a24011-d059-4b55-b57b-d619762690ea"
+      },
+      {
+        "kod": "1444",
+        "namn": "Grästorp",
+        "uuid": "9e8df451-d352-488a-98c0-a77534232089"
+      },
+      {
+        "kod": "1445",
+        "namn": "Essunga",
+        "uuid": "3cc8f7c0-7fb3-4273-9132-ab233a1f0158"
+      },
+      {
+        "kod": "1446",
+        "namn": "Karlsborg",
+        "uuid": "cd278811-5a87-485e-9fc4-44fdf96459e8"
+      },
+      {
+        "kod": "1447",
+        "namn": "Gullspång",
+        "uuid": "cd3aeb7f-a2a0-4696-b6f1-b9190a4b250b"
+      },
+      {
+        "kod": "1452",
+        "namn": "Tranemo",
+        "uuid": "77e74e20-45df-430e-8827-042e55a2e2ee"
+      },
+      {
+        "kod": "1460",
+        "namn": "Bengtsfors",
+        "uuid": "cee78644-212d-4b52-a678-f43ed8458c4e"
+      },
+      {
+        "kod": "1461",
+        "namn": "Mellerud",
+        "uuid": "4e1b0a6d-e495-4e0f-b5c9-dc6729edddb5"
+      },
+      {
+        "kod": "1462",
+        "namn": "Lilla Edet",
+        "uuid": "b6d64766-6340-4a03-a8df-d395103d3a3b"
+      },
+      {
+        "kod": "1463",
+        "namn": "Mark",
+        "uuid": "2e2af08e-3b91-4a70-8ae7-b8164b8ac4c2"
+      },
+      {
+        "kod": "1465",
+        "namn": "Svenljunga",
+        "uuid": "451b4319-d79d-4573-a50e-8ee3926a41f0"
+      },
+      {
+        "kod": "1466",
+        "namn": "Herrljunga",
+        "uuid": "257432d8-5389-47ca-8139-b84f568ab5e8"
+      },
+      {
+        "kod": "1470",
+        "namn": "Vara",
+        "uuid": "092a4540-b27b-4132-a4d0-fd35cdc72b0f"
+      },
+      {
+        "kod": "1471",
+        "namn": "Götene",
+        "uuid": "acbb9c35-0975-43d7-81ea-f1f88448433f"
+      },
+      {
+        "kod": "1472",
+        "namn": "Tibro",
+        "uuid": "a778b91f-7f12-47d4-b9c1-09effb771113"
+      },
+      {
+        "kod": "1473",
+        "namn": "Töreboda",
+        "uuid": "2501a24e-3d48-4e84-8e7a-d526a0de2514"
+      },
+      {
+        "kod": "1480",
+        "namn": "Göteborg",
+        "uuid": "7f083901-5d2d-4da4-a505-88d5575aa6ff"
+      },
+      {
+        "kod": "1481",
+        "namn": "Mölndal",
+        "uuid": "27f6a474-9069-4fe0-9442-c8141d8bcc79"
+      },
+      {
+        "kod": "1482",
+        "namn": "Kungälv",
+        "uuid": "718f5190-cf4a-4605-bc11-73a8ccada7ed"
+      },
+      {
+        "kod": "1484",
+        "namn": "Lysekil",
+        "uuid": "c1876a55-cb1d-4a66-bcc4-920fa5d62554"
+      },
+      {
+        "kod": "1485",
+        "namn": "Uddevalla",
+        "uuid": "04b96e2e-416e-44e2-82b8-60523a9cab6b"
+      },
+      {
+        "kod": "1486",
+        "namn": "Strömstad",
+        "uuid": "7f709efb-2182-4733-b45c-6ca0e38975eb"
+      },
+      {
+        "kod": "1487",
+        "namn": "Vänersborg",
+        "uuid": "8e20a4b2-0b2d-46b0-9b10-b0ec3fd6a555"
+      },
+      {
+        "kod": "1488",
+        "namn": "Trollhättan",
+        "uuid": "767d117e-7c2b-4faf-af45-cac93e7a987d"
+      },
+      {
+        "kod": "1489",
+        "namn": "Alingsås",
+        "uuid": "f7e652b9-f6c8-4830-bee4-98709d7af036"
+      },
+      {
+        "kod": "1490",
+        "namn": "Borås",
+        "uuid": "245083bf-3a8d-4e51-b5f1-a51a50e92fc8"
+      },
+      {
+        "kod": "1491",
+        "namn": "Ulricehamn",
+        "uuid": "bbaac091-c85b-4150-823e-c8545eb4b2f9"
+      },
+      {
+        "kod": "1492",
+        "namn": "Åmål",
+        "uuid": "25a43480-cdad-41b3-b88e-a9a6e0070aa9"
+      },
+      {
+        "kod": "1493",
+        "namn": "Mariestad",
+        "uuid": "12e87132-8620-4877-a6f4-8d0163068987"
+      },
+      {
+        "kod": "1494",
+        "namn": "Lidköping",
+        "uuid": "684e2789-1e90-4fd6-a3ab-8d091166a39c"
+      },
+      {
+        "kod": "1495",
+        "namn": "Skara",
+        "uuid": "98c8b653-dd9e-4e14-b75c-68f46d235b4b"
+      },
+      {
+        "kod": "1496",
+        "namn": "Skövde",
+        "uuid": "0511a550-1010-4f93-8894-327f16c9b056"
+      },
+      {
+        "kod": "1497",
+        "namn": "Hjo",
+        "uuid": "1b39a175-7a89-4aed-9fc1-8b368dbbd780"
+      },
+      {
+        "kod": "1498",
+        "namn": "Tidaholm",
+        "uuid": "e471bf66-6921-4d71-8f93-96269167529b"
+      },
+      {
+        "kod": "1499",
+        "namn": "Falköping",
+        "uuid": "d5584f61-9c9a-4580-8306-2938eab36aea"
+      }
+    ]
+  },
+  {
+    "kod": "17",
+    "namn": "Värmlands län",
+    "uuid": "5f668277-fcac-48b1-b800-b63ac1547f39",
+    "kommuner": [
+      {
+        "kod": "1715",
+        "namn": "Kil",
+        "uuid": "140ed86c-d35b-41c6-ab0c-badad576d708"
+      },
+      {
+        "kod": "1730",
+        "namn": "Eda",
+        "uuid": "06e85a40-7fb8-4b24-9618-40ae8e625e30"
+      },
+      {
+        "kod": "1737",
+        "namn": "Torsby",
+        "uuid": "967f0bc7-b3a5-4a37-b749-7a1c0f56060b"
+      },
+      {
+        "kod": "1760",
+        "namn": "Storfors",
+        "uuid": "3c79b349-6658-48ec-8680-74c029fd98ff"
+      },
+      {
+        "kod": "1761",
+        "namn": "Hammarö",
+        "uuid": "d1b50a6d-1403-4e36-9884-a2d4482a0102"
+      },
+      {
+        "kod": "1762",
+        "namn": "Munkfors",
+        "uuid": "eecd3492-ee63-4fda-a08b-4a18090d9741"
+      },
+      {
+        "kod": "1763",
+        "namn": "Forshaga",
+        "uuid": "e5744e55-0f2c-4408-8bd0-4e7a77f31ac3"
+      },
+      {
+        "kod": "1764",
+        "namn": "Grums",
+        "uuid": "4e60a312-a145-4086-892b-4112709ed444"
+      },
+      {
+        "kod": "1765",
+        "namn": "Årjäng",
+        "uuid": "7827c55b-6893-40f2-a36b-9caf2aaaf447"
+      },
+      {
+        "kod": "1766",
+        "namn": "Sunne",
+        "uuid": "322a4e96-953e-4895-aeac-a2cd11746ece"
+      },
+      {
+        "kod": "1780",
+        "namn": "Karlstad",
+        "uuid": "fd172464-e550-4e3b-b784-51eb7a3fe9de"
+      },
+      {
+        "kod": "1781",
+        "namn": "Kristinehamn",
+        "uuid": "e552db9c-52e7-4889-8388-a64ec737c91d"
+      },
+      {
+        "kod": "1782",
+        "namn": "Filipstad",
+        "uuid": "e37a1f1e-5c9b-4862-b216-de9ca53d45ac"
+      },
+      {
+        "kod": "1783",
+        "namn": "Hagfors",
+        "uuid": "21733bb2-e7cc-4314-8822-ce623edcef9a"
+      },
+      {
+        "kod": "1784",
+        "namn": "Arvika",
+        "uuid": "8acae3f6-1acc-41b4-8c3d-6dc2723467be"
+      },
+      {
+        "kod": "1785",
+        "namn": "Säffle",
+        "uuid": "4415f396-424f-48ff-8e3c-82215a991837"
+      }
+    ]
+  },
+  {
+    "kod": "18",
+    "namn": "Örebro län",
+    "uuid": "8e56eef6-a180-4020-a2a8-9b861356f661",
+    "kommuner": [
+      {
+        "kod": "1814",
+        "namn": "Lekeberg",
+        "uuid": "090af699-332b-481e-9fa5-d49f7159a2b6"
+      },
+      {
+        "kod": "1860",
+        "namn": "Laxå",
+        "uuid": "68344351-774c-45bf-809a-21dc20837e6f"
+      },
+      {
+        "kod": "1861",
+        "namn": "Hallsberg",
+        "uuid": "cebe46fd-473d-4d2b-8d7c-fbad2d017cf1"
+      },
+      {
+        "kod": "1862",
+        "namn": "Degerfors",
+        "uuid": "99331f0b-e9e3-4e34-ac10-1cb68fa706ec"
+      },
+      {
+        "kod": "1863",
+        "namn": "Hällefors",
+        "uuid": "3384444d-0513-47b4-b393-5668b8952b28"
+      },
+      {
+        "kod": "1864",
+        "namn": "Ljusnarsberg",
+        "uuid": "fe89a969-e14a-4d45-bdd5-6efb6e848c23"
+      },
+      {
+        "kod": "1880",
+        "namn": "Örebro",
+        "uuid": "a7a93355-ff3f-40b6-811a-311b10685125"
+      },
+      {
+        "kod": "1881",
+        "namn": "Kumla",
+        "uuid": "a4932bbf-f166-42a5-95fa-e01d935ea575"
+      },
+      {
+        "kod": "1882",
+        "namn": "Askersund",
+        "uuid": "776a01d9-aed4-4327-af9d-2dcfb4befe90"
+      },
+      {
+        "kod": "1883",
+        "namn": "Karlskoga",
+        "uuid": "60d42436-9ddb-4334-b2ea-071a3d760388"
+      },
+      {
+        "kod": "1884",
+        "namn": "Nora",
+        "uuid": "af33adc8-5094-482a-b2de-db560c5e6378"
+      },
+      {
+        "kod": "1885",
+        "namn": "Lindesberg",
+        "uuid": "c60d756c-215a-4661-a547-c78da7a34430"
+      }
+    ]
+  },
+  {
+    "kod": "19",
+    "namn": "Västmanlands län",
+    "uuid": "d21a9140-01fe-4999-8ce9-3e68683df165",
+    "kommuner": [
+      {
+        "kod": "1904",
+        "namn": "Skinnskatteberg",
+        "uuid": "9d75bcde-4ba4-48f7-8cd6-2478ee1b0897"
+      },
+      {
+        "kod": "1907",
+        "namn": "Surahammar",
+        "uuid": "496c9f35-e02a-4d3f-9929-6fda11d14de2"
+      },
+      {
+        "kod": "1960",
+        "namn": "Kungsör",
+        "uuid": "45f99e59-ea6a-44af-96e8-03544b4a74ce"
+      },
+      {
+        "kod": "1961",
+        "namn": "Hallstahammar",
+        "uuid": "0b01b8fb-493b-4e73-9cc2-d4eb132c953c"
+      },
+      {
+        "kod": "1962",
+        "namn": "Norberg",
+        "uuid": "4350a618-e42b-4bfd-b27f-36a540ee1280"
+      },
+      {
+        "kod": "1980",
+        "namn": "Västerås",
+        "uuid": "9b26e830-f603-4283-aa52-98a0c0de283c"
+      },
+      {
+        "kod": "1981",
+        "namn": "Sala",
+        "uuid": "ac4f4718-9cb1-46a0-9132-2879d10fb06e"
+      },
+      {
+        "kod": "1982",
+        "namn": "Fagersta",
+        "uuid": "961e8a71-fbe4-4074-9307-ec33d2995760"
+      },
+      {
+        "kod": "1983",
+        "namn": "Köping",
+        "uuid": "ae93834c-7791-4226-819a-4cf3bf1ee282"
+      },
+      {
+        "kod": "1984",
+        "namn": "Arboga",
+        "uuid": "f28e483f-9feb-4098-b618-5c1ce0571869"
+      }
+    ]
+  },
+  {
+    "kod": "20",
+    "namn": "Dalarnas län",
+    "uuid": "70552270-7b38-40e5-a04b-4310dbcef137",
+    "kommuner": [
+      {
+        "kod": "2021",
+        "namn": "Vansbro",
+        "uuid": "db052eff-86bc-4ec7-a804-2396e0287543"
+      },
+      {
+        "kod": "2023",
+        "namn": "Malung-Sälen",
+        "uuid": "5e9f8abf-22a4-4615-a9e7-029613b7851e"
+      },
+      {
+        "kod": "2026",
+        "namn": "Gagnef",
+        "uuid": "c9f4b070-963b-499e-8f5d-d7ccdc29e59b"
+      },
+      {
+        "kod": "2029",
+        "namn": "Leksand",
+        "uuid": "b1221b1a-6c36-4dac-bbce-412e5819f364"
+      },
+      {
+        "kod": "2031",
+        "namn": "Rättvik",
+        "uuid": "3879addb-f442-47f2-9778-6da5416ebd0c"
+      },
+      {
+        "kod": "2034",
+        "namn": "Orsa",
+        "uuid": "42dc9ed3-5f76-408e-b942-45548f584cb1"
+      },
+      {
+        "kod": "2039",
+        "namn": "Älvdalen",
+        "uuid": "c7fbbacc-daf8-4988-898c-447c0018b49c"
+      },
+      {
+        "kod": "2061",
+        "namn": "Smedjebacken",
+        "uuid": "a3e7cce1-2460-4e51-ac11-98bbc869940f"
+      },
+      {
+        "kod": "2062",
+        "namn": "Mora",
+        "uuid": "862a9c38-d42a-46da-8acd-dade1a91cd18"
+      },
+      {
+        "kod": "2080",
+        "namn": "Falun",
+        "uuid": "957b7d56-f212-4510-a100-ea640467e153"
+      },
+      {
+        "kod": "2081",
+        "namn": "Borlänge",
+        "uuid": "dd2b9678-9669-420e-bfa9-d20952b32679"
+      },
+      {
+        "kod": "2082",
+        "namn": "Säter",
+        "uuid": "8fb6c11f-9900-4d28-8fb3-7ee186120128"
+      },
+      {
+        "kod": "2083",
+        "namn": "Hedemora",
+        "uuid": "6e4022fb-9d1b-4ecd-afe2-cdc43755affe"
+      },
+      {
+        "kod": "2084",
+        "namn": "Avesta",
+        "uuid": "6b2231a5-ba3c-43f0-b030-a3ad1d0f2773"
+      },
+      {
+        "kod": "2085",
+        "namn": "Ludvika",
+        "uuid": "f7a0f16f-059f-4915-89a9-cfa283728f62"
+      }
+    ]
+  },
+  {
+    "kod": "21",
+    "namn": "Gävleborgs län",
+    "uuid": "18007297-0122-4f9e-b714-40566a06c124",
+    "kommuner": [
+      {
+        "kod": "2101",
+        "namn": "Ockelbo",
+        "uuid": "89b8512f-19f6-4f85-968e-62a33252c964"
+      },
+      {
+        "kod": "2104",
+        "namn": "Hofors",
+        "uuid": "5655215d-4ce9-4c26-b377-d84b571fb50b"
+      },
+      {
+        "kod": "2121",
+        "namn": "Ovanåker",
+        "uuid": "a890158a-c54a-4ecd-8a19-3bdda9708c40"
+      },
+      {
+        "kod": "2132",
+        "namn": "Nordanstig",
+        "uuid": "a967086f-eb4a-4a5b-b58f-8ff736c67f6c"
+      },
+      {
+        "kod": "2161",
+        "namn": "Ljusdal",
+        "uuid": "a00912f0-6e82-403f-9535-accede0f583c"
+      },
+      {
+        "kod": "2180",
+        "namn": "Gävle",
+        "uuid": "797c82c3-d9fc-4c51-8160-1037697aa6dd"
+      },
+      {
+        "kod": "2181",
+        "namn": "Sandviken",
+        "uuid": "074d97f3-8a75-409d-a844-c8787f64c2ec"
+      },
+      {
+        "kod": "2182",
+        "namn": "Söderhamn",
+        "uuid": "c27e5f74-75a1-4de1-8f70-dac81f4157e3"
+      },
+      {
+        "kod": "2183",
+        "namn": "Bollnäs",
+        "uuid": "4f90db89-da1e-401d-851d-751ecbd93b13"
+      },
+      {
+        "kod": "2184",
+        "namn": "Hudiksvall",
+        "uuid": "3feb5720-5197-4b2b-9280-e187e76a8be1"
+      }
+    ]
+  },
+  {
+    "kod": "22",
+    "namn": "Västernorrlands län",
+    "uuid": "a014b247-2c25-4d66-a57f-62bfed14af17",
+    "kommuner": [
+      {
+        "kod": "2260",
+        "namn": "Ånge",
+        "uuid": "8ebf19b3-2597-403f-b685-29c5de6431ad"
+      },
+      {
+        "kod": "2262",
+        "namn": "Timrå",
+        "uuid": "643664e7-4667-4cfe-b8a5-3db35cad52e4"
+      },
+      {
+        "kod": "2280",
+        "namn": "Härnösand",
+        "uuid": "4fddf1fc-6a27-48b6-a14a-97a19867ec3f"
+      },
+      {
+        "kod": "2281",
+        "namn": "Sundsvall",
+        "uuid": "841418c6-4a7a-49fc-8b83-5f134547e30c"
+      },
+      {
+        "kod": "2282",
+        "namn": "Kramfors",
+        "uuid": "ae40213c-e091-43a2-819e-19358d88090c"
+      },
+      {
+        "kod": "2283",
+        "namn": "Sollefteå",
+        "uuid": "55da1b4a-891a-4f58-980c-9d43766e0a59"
+      },
+      {
+        "kod": "2284",
+        "namn": "Örnsköldsvik",
+        "uuid": "ab2b9686-58d9-4c03-a334-81f2682d89b2"
+      }
+    ]
+  },
+  {
+    "kod": "23",
+    "namn": "Jämtlands län",
+    "uuid": "9748af1a-173e-4157-8e60-5098b249d4bd",
+    "kommuner": [
+      {
+        "kod": "2303",
+        "namn": "Ragunda",
+        "uuid": "aa7f40f1-9e0b-4cfd-9423-f13e2341bacc"
+      },
+      {
+        "kod": "2305",
+        "namn": "Bräcke",
+        "uuid": "292aeacc-84d1-4aa0-98dd-079021ee7e21"
+      },
+      {
+        "kod": "2309",
+        "namn": "Krokom",
+        "uuid": "0193d517-637a-4667-9730-a8dea6f8ba01"
+      },
+      {
+        "kod": "2313",
+        "namn": "Strömsund",
+        "uuid": "d30fa5d8-673c-4f77-a0f2-957a2186a352"
+      },
+      {
+        "kod": "2321",
+        "namn": "Åre",
+        "uuid": "5963f36e-fdb5-41ad-b585-a2542ef9a089"
+      },
+      {
+        "kod": "2326",
+        "namn": "Berg",
+        "uuid": "67e71613-3067-47f3-b2aa-b879067203f2"
+      },
+      {
+        "kod": "2361",
+        "namn": "Härjedalen",
+        "uuid": "39f92d3b-95d6-4d5b-9988-0c559dcb55b5"
+      },
+      {
+        "kod": "2380",
+        "namn": "Östersund",
+        "uuid": "d529b0a8-be10-4757-a18f-ae24529da077"
+      }
+    ]
+  },
+  {
+    "kod": "24",
+    "namn": "Västerbottens län",
+    "uuid": "2dfef326-f1eb-40db-9eb1-fbb5f27854af",
+    "kommuner": [
+      {
+        "kod": "2401",
+        "namn": "Nordmaling",
+        "uuid": "d388bef9-f8c9-4c80-a9f4-9f1ea656535e"
+      },
+      {
+        "kod": "2403",
+        "namn": "Bjurholm",
+        "uuid": "dc1c67ae-f03e-45ef-9566-535816af9737"
+      },
+      {
+        "kod": "2404",
+        "namn": "Vindeln",
+        "uuid": "3e48cd4e-aa56-4377-a36b-6ecbe64d6d72"
+      },
+      {
+        "kod": "2409",
+        "namn": "Robertsfors",
+        "uuid": "f016ebe0-bcd3-4856-978c-88fdef3e0c0b"
+      },
+      {
+        "kod": "2417",
+        "namn": "Norsjö",
+        "uuid": "b61a3b69-d49d-4fc9-9102-a38122d71075"
+      },
+      {
+        "kod": "2418",
+        "namn": "Malå",
+        "uuid": "69a0ceb5-93ef-4f41-9c3b-188b60ea4963"
+      },
+      {
+        "kod": "2421",
+        "namn": "Storuman",
+        "uuid": "a98854f9-48bc-4aa4-bd55-d73ba13ccbc2"
+      },
+      {
+        "kod": "2422",
+        "namn": "Sorsele",
+        "uuid": "673c59aa-1005-485f-b895-cd5607c673c0"
+      },
+      {
+        "kod": "2425",
+        "namn": "Dorotea",
+        "uuid": "ae5c6a2f-56a8-4c32-b422-15575f9cdf60"
+      },
+      {
+        "kod": "2460",
+        "namn": "Vännäs",
+        "uuid": "81278624-fa3d-4d25-9188-7fd71be2c6bb"
+      },
+      {
+        "kod": "2462",
+        "namn": "Vilhelmina",
+        "uuid": "3e86f9ff-1d59-4718-b30e-cff95736d51a"
+      },
+      {
+        "kod": "2463",
+        "namn": "Åsele",
+        "uuid": "c9f4677b-bb56-41df-9641-38d07f051724"
+      },
+      {
+        "kod": "2480",
+        "namn": "Umeå",
+        "uuid": "35c708db-2dd4-4b38-909e-75ea0b563250"
+      },
+      {
+        "kod": "2481",
+        "namn": "Lycksele",
+        "uuid": "d2f60747-d15f-46db-bce6-4fa6687409ee"
+      },
+      {
+        "kod": "2482",
+        "namn": "Skellefteå",
+        "uuid": "23d7d17b-24b1-4883-824a-4267774fcf1e"
+      }
+    ]
+  },
+  {
+    "kod": "25",
+    "namn": "Norrbottens län",
+    "uuid": "fc30c897-b6bd-4469-9c53-f11b7f891784",
+    "kommuner": [
+      {
+        "kod": "2505",
+        "namn": "Arvidsjaur",
+        "uuid": "a79c1135-e247-4f74-8552-65ce3ad4516e"
+      },
+      {
+        "kod": "2506",
+        "namn": "Arjeplog",
+        "uuid": "92c7b659-371f-447b-aeac-a751ff493f50"
+      },
+      {
+        "kod": "2510",
+        "namn": "Jokkmokk",
+        "uuid": "ff6ebced-9b20-435f-898f-18a936a84c38"
+      },
+      {
+        "kod": "2513",
+        "namn": "Överkalix",
+        "uuid": "b9143008-26ee-4c54-898b-26751805180a"
+      },
+      {
+        "kod": "2514",
+        "namn": "Kalix",
+        "uuid": "07498454-4cb3-45ff-b594-f5578f5ad7d7"
+      },
+      {
+        "kod": "2518",
+        "namn": "Övertorneå",
+        "uuid": "b9fda061-a577-47ac-bdeb-fc35993be670"
+      },
+      {
+        "kod": "2521",
+        "namn": "Pajala",
+        "uuid": "aaa11a09-096f-483c-896f-a581be1ca670"
+      },
+      {
+        "kod": "2523",
+        "namn": "Gällivare",
+        "uuid": "3a6cfd6e-9454-4731-8054-424df44fb863"
+      },
+      {
+        "kod": "2560",
+        "namn": "Älvsbyn",
+        "uuid": "8cd15aad-2337-4478-8c9f-f476ee6915bd"
+      },
+      {
+        "kod": "2580",
+        "namn": "Luleå",
+        "uuid": "4a75a222-3efa-4f7a-ad87-1ef5bd321fbc"
+      },
+      {
+        "kod": "2581",
+        "namn": "Piteå",
+        "uuid": "d808bac6-b26a-4036-8e42-a767f76a8052"
+      },
+      {
+        "kod": "2582",
+        "namn": "Boden",
+        "uuid": "47b6ea3c-7d54-43bf-bd8e-d33da238d70d"
+      },
+      {
+        "kod": "2583",
+        "namn": "Haparanda",
+        "uuid": "d3b67b7d-0502-4898-8c84-fcc59e646cc3"
+      },
+      {
+        "kod": "2584",
+        "namn": "Kiruna",
+        "uuid": "4ac58130-f7f9-45cb-a090-7d9ff06e01c0"
+      }
+    ]
+  }
+]
