@@ -1,10 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 
 import parties from 'data/parti/index.json';
 import Footer from 'src/components/Footer';
-import SverigesRiksdagSvg from 'public/img/sveriges_riksdag.svg';
 
 const groupedParties = new Map<string, Array<any>>();
 parties.forEach(parti => {
