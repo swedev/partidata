@@ -1,0 +1,25 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/scss/tables";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import "./lato";
+}
+
+$red:   #dc3545;
+$green: #4BB676;
+$blue:  #3b5dbf;
+$blue-dark: #092164;
+
+$theme-colors: (
+  red: $red,
+  green: $green,
+  blue: $blue,
+  blue-dark: $blue-dark
+);

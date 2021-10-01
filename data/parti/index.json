@@ -1,0 +1,1667 @@
+[
+  {
+    "uuid": "ee50921a-e848-42d6-803e-9d5275ed21b6",
+    "beteckning": "20% skattepartiet",
+    "filnamn": "20--skattepartiet"
+  },
+  {
+    "uuid": "ec774af6-5b29-4068-beb5-10d07e62a062",
+    "beteckning": "Åhuspartiet",
+    "filnamn": "ahuspartiet"
+  },
+  {
+    "uuid": "420eb709-4088-4eba-a59f-83ca92fe9f9f",
+    "beteckning": "Äkta demokrati",
+    "filnamn": "akta-demokrati"
+  },
+  {
+    "uuid": "7677e088-6467-4a45-99b3-3483f4ef26f7",
+    "beteckning": "Aktiv samling - Bodenalternativet",
+    "filnamn": "aktiv-samling-bodenalternativet"
+  },
+  {
+    "uuid": "5b6ad59e-fa87-467b-b143-e35c13ad728b",
+    "beteckning": "Ale - demokraterna",
+    "filnamn": "ale-demokraterna"
+  },
+  {
+    "uuid": "2a688dfe-e5df-4060-93b1-1c75ae9bddea",
+    "beteckning": "Allians för Frihet",
+    "filnamn": "allians-for-frihet"
+  },
+  {
+    "uuid": "8c940e3f-b10a-4642-aa25-ff89505535b8",
+    "beteckning": "Allians för Sverige",
+    "filnamn": "allians-for-sverige"
+  },
+  {
+    "uuid": "d62d3e66-de61-4897-a3d9-5511cd9c529b",
+    "beteckning": "Allt för Ragunda",
+    "filnamn": "allt-for-ragunda"
+  },
+  {
+    "uuid": "ea3d9524-730d-437d-a74e-5b1412f40c7d",
+    "beteckning": "Älska Svedala",
+    "filnamn": "alska-svedala"
+  },
+  {
+    "uuid": "204fff92-1e5b-4652-a68a-5d9ee2abfe20",
+    "beteckning": "Alternativ 2000",
+    "filnamn": "alternativ-2000"
+  },
+  {
+    "uuid": "3f7caf00-f50b-4ce3-b135-04492de827b1",
+    "beteckning": "Alternativ för Sverige",
+    "filnamn": "alternativ-for-sverige"
+  },
+  {
+    "uuid": "74cf42dc-1c73-4a54-8a20-71a71cce6723",
+    "beteckning": "Alternativet",
+    "filnamn": "alternativet"
+  },
+  {
+    "uuid": "c27c54ce-4d48-40aa-97a7-d7708f4c16df",
+    "beteckning": "Alvesta Alternativet",
+    "filnamn": "alvesta-alternativet"
+  },
+  {
+    "uuid": "88ad8b1d-d574-4ff7-bffc-1630c01345ab",
+    "beteckning": "Ändrings partiet revolution",
+    "filnamn": "andrings-partiet-revolution"
+  },
+  {
+    "uuid": "9d104e69-89ce-4090-bdad-8ae3435b8663",
+    "beteckning": "Ångfärjepartiet",
+    "filnamn": "angfarjepartiet"
+  },
+  {
+    "uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd",
+    "beteckning": "Arbetarepartiet-Socialdemokraterna",
+    "filnamn": "arbetarepartiet-socialdemokraterna"
+  },
+  {
+    "uuid": "081727ef-2708-4eda-b098-6e5a7809f2ce",
+    "beteckning": "Arbetarpartiet tidigare Rättvisepartiet Offensiv",
+    "filnamn": "arbetarpartiet-tidigare-rattvisepartiet-offensiv"
+  },
+  {
+    "uuid": "91a0fcf9-1c39-43df-980d-1aa8080054a0",
+    "beteckning": "Åselepartiet",
+    "filnamn": "aselepartiet"
+  },
+  {
+    "uuid": "c496cc38-e576-4646-bf3f-f8e76d561c56",
+    "beteckning": "Åseles framtid",
+    "filnamn": "aseles-framtid"
+  },
+  {
+    "uuid": "ab4a2576-9338-4da7-98d0-dfeb324d4549",
+    "beteckning": "ASYL.NUPARTIET",
+    "filnamn": "asyl-nupartiet"
+  },
+  {
+    "uuid": "25be4598-d568-46e2-89ea-b6614711c6db",
+    "beteckning": "Bålstapartiet",
+    "filnamn": "balstapartiet"
+  },
+  {
+    "uuid": "1a5522db-9c9a-4c2e-8bc6-a5877671ed18",
+    "beteckning": "BARAPARTIET",
+    "filnamn": "barapartiet"
+  },
+  {
+    "uuid": "f74e2503-2353-4442-a036-0c1894f55deb",
+    "beteckning": "Barnpartiet",
+    "filnamn": "barnpartiet"
+  },
+  {
+    "uuid": "07ede108-4daa-4328-bde7-79b9de0086e0",
+    "beteckning": "Basinkomstpartiet",
+    "filnamn": "basinkomstpartiet"
+  },
+  {
+    "uuid": "b4c33957-dac8-4d56-b08a-19c877822487",
+    "beteckning": "Bästa Alternativet",
+    "filnamn": "basta-alternativet"
+  },
+  {
+    "uuid": "2a220fac-5a89-41fc-87aa-b2572acdb1b8",
+    "beteckning": "Bästa för Sollentuna",
+    "filnamn": "basta-for-sollentuna"
+  },
+  {
+    "uuid": "7c5eb0ea-9c14-4780-a812-358ba6e93674",
+    "beteckning": "Bergshamrapartiet",
+    "filnamn": "bergshamrapartiet"
+  },
+  {
+    "uuid": "44273904-e60e-4323-885f-d7f4195e38d9",
+    "beteckning": "Bevara akutsjukhusen",
+    "filnamn": "bevara-akutsjukhusen"
+  },
+  {
+    "uuid": "2f92086a-acb8-4a4e-b650-1fc00d1230a4",
+    "beteckning": "Bg-Demokrati",
+    "filnamn": "bg-demokrati"
+  },
+  {
+    "uuid": "45099053-dfc2-4b55-8eeb-8ab53b26f8a1",
+    "beteckning": "Bjärepartiet",
+    "filnamn": "bjarepartiet"
+  },
+  {
+    "uuid": "78a46d0f-68f7-4cea-bb32-4c89951db82e",
+    "beteckning": "Bjorn",
+    "filnamn": "bjorn"
+  },
+  {
+    "uuid": "fb29cd49-782b-482a-b5d6-03671ee2abf8",
+    "beteckning": "Bjuvspartiet",
+    "filnamn": "bjuvspartiet"
+  },
+  {
+    "uuid": "30aab0fe-85ab-47b1-85b0-5511e0a5da4d",
+    "beteckning": "Bollnäspartiet",
+    "filnamn": "bollnaspartiet"
+  },
+  {
+    "uuid": "2915db45-e9a7-4cd4-9f93-d3f5ebf42bbe",
+    "beteckning": "Bopartiet",
+    "filnamn": "bopartiet"
+  },
+  {
+    "uuid": "3f69dec1-6ce6-4341-ac6b-0de8a76546d4",
+    "beteckning": "Boråsvalet",
+    "filnamn": "borasvalet"
+  },
+  {
+    "uuid": "6de0d940-dd1c-458e-b8f9-4d7cc695ff7c",
+    "beteckning": "Boris",
+    "filnamn": "boris"
+  },
+  {
+    "uuid": "85746d3e-59b5-4de5-bc1f-81aa2c3b655e",
+    "beteckning": "Botkyrkapartiet",
+    "filnamn": "botkyrkapartiet"
+  },
+  {
+    "uuid": "fe6962ca-100f-4567-83ac-e8f8c83be714",
+    "beteckning": "Brobyggarpartiet",
+    "filnamn": "brobyggarpartiet"
+  },
+  {
+    "uuid": "8a7e75a6-a327-4a56-8540-f71fb283ae6f",
+    "beteckning": "BUS-partiet",
+    "filnamn": "bus-partiet"
+  },
+  {
+    "uuid": "b578db7a-cd4b-4e6c-826e-d53a0e142069",
+    "beteckning": "Bygdepartiet",
+    "filnamn": "bygdepartiet"
+  },
+  {
+    "uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3",
+    "beteckning": "Centerpartiet",
+    "filnamn": "centerpartiet"
+  },
+  {
+    "uuid": "b931129c-2ee1-41fa-9429-a841721d2205",
+    "beteckning": "Common sense in Sweden",
+    "filnamn": "common-sense-in-sweden"
+  },
+  {
+    "uuid": "4d11b150-8aa4-44e4-ac99-7378407b67e4",
+    "beteckning": "Dalarnas Sjukvårdsparti",
+    "filnamn": "dalarnas-sjukvardsparti"
+  },
+  {
+    "uuid": "a91b96ec-924f-40c8-8290-49227e2087d6",
+    "beteckning": "Dalsländska Separatistpartiet",
+    "filnamn": "dalslandska-separatistpartiet"
+  },
+  {
+    "uuid": "45040bfa-87cf-44ec-aee8-f27724866aaf",
+    "beteckning": "Demokraterna",
+    "filnamn": "demokraterna"
+  },
+  {
+    "uuid": "f7464f0e-4e40-4085-a1fe-cce9d8d0fbb7",
+    "beteckning": "Demokraterna i Göteborg",
+    "filnamn": "demokraterna-i-goteborg"
+  },
+  {
+    "uuid": "25813075-2350-4f40-9397-1b34bcc8e6a9",
+    "beteckning": "Demokraterna i Jönköping",
+    "filnamn": "demokraterna-i-jonkoping"
+  },
+  {
+    "uuid": "42e96322-fb95-4088-a804-96c881a44d36",
+    "beteckning": "Demokraterna i Norberg",
+    "filnamn": "demokraterna-i-norberg"
+  },
+  {
+    "uuid": "954a5df2-0f6b-4c83-8151-c02169fe77a6",
+    "beteckning": "Demokraterna Knivsta",
+    "filnamn": "demokraterna-knivsta"
+  },
+  {
+    "uuid": "572c2b80-8f8a-4f2b-86e0-e77bdc5f1303",
+    "beteckning": "Demokrati Sverige",
+    "filnamn": "demokrati-sverige"
+  },
+  {
+    "uuid": "eabf35e4-7d57-4d57-8347-fc44ca74b0fd",
+    "beteckning": "Demokratirörelsen",
+    "filnamn": "demokratirorelsen"
+  },
+  {
+    "uuid": "98d8ea70-a5bf-4cf7-8aff-18c9f38f6f60",
+    "beteckning": "Demokratisk Rättvisa",
+    "filnamn": "demokratisk-rattvisa"
+  },
+  {
+    "uuid": "59e3d3d7-ca0c-4818-933e-9c6b7e04b1d1",
+    "beteckning": "Demokratiska Sekulära Socialister Arbetarpartiet",
+    "filnamn": "demokratiska-sekulara-socialister-arbetarpartiet"
+  },
+  {
+    "uuid": "6dd658b6-76ca-4da0-bb37-8ba2c39d60fe",
+    "beteckning": "DET LOKALA PARTIET I HEBY KOMMUN",
+    "filnamn": "det-lokala-partiet-i-heby-kommun"
+  },
+  {
+    "uuid": "b4ed6db1-6289-451e-9ce6-33116e46e76a",
+    "beteckning": "Det nya partiet",
+    "filnamn": "det-nya-partiet"
+  },
+  {
+    "uuid": "153c98fb-b712-4314-a922-9562253639c2",
+    "beteckning": "Direktdemokraterna",
+    "filnamn": "direktdemokraterna"
+  },
+  {
+    "uuid": "e9f11067-9208-473c-9499-eed921f680a9",
+    "beteckning": "Djurens parti",
+    "filnamn": "djurens-parti"
+  },
+  {
+    "uuid": "1d68b83f-c8bd-4d5f-907f-b8ae516a3a22",
+    "beteckning": "Dorotea Kommunlista",
+    "filnamn": "dorotea-kommunlista"
+  },
+  {
+    "uuid": "8ed0b238-a343-4e3b-b3a5-4cd430e9d7ff",
+    "beteckning": "Drevvikenpartiet",
+    "filnamn": "drevvikenpartiet"
+  },
+  {
+    "uuid": "a8f1717a-818c-40d4-bfb3-f04dfd172e9f",
+    "beteckning": "EMPA(R)TIET",
+    "filnamn": "empartiet"
+  },
+  {
+    "uuid": "319daaea-c08a-4e2f-b8a5-c99b5fd9de6c",
+    "beteckning": "EngelholmsPartiet",
+    "filnamn": "engelholmspartiet"
+  },
+  {
+    "uuid": "4ed338ef-bbdd-4ff9-aaa9-b86c90a01e3e",
+    "beteckning": "Enhet",
+    "filnamn": "enhet"
+  },
+  {
+    "uuid": "7a8f8e52-e026-4d64-b8f8-9147182016f7",
+    "beteckning": "EtableringsPartiet",
+    "filnamn": "etableringspartiet"
+  },
+  {
+    "uuid": "8c7f27e0-2da5-4594-89b7-b6d402e2b3aa",
+    "beteckning": "Europeiska Arbetarpartiet-EAP",
+    "filnamn": "europeiska-arbetarpartiet-eap"
+  },
+  {
+    "uuid": "07b1bc42-9681-47d6-89cd-59e0118a008a",
+    "beteckning": "Falupartiet",
+    "filnamn": "falupartiet"
+  },
+  {
+    "uuid": "989ba5da-9cbc-4c5e-aaa0-143ab6d0e498",
+    "beteckning": "Fängelsefritt Svedala Partiet",
+    "filnamn": "fangelsefritt-svedala-partiet"
+  },
+  {
+    "uuid": "611c7fae-c057-4e46-8fd9-c4507c36be62",
+    "beteckning": "Feministiskt initiativ",
+    "filnamn": "feministiskt-initiativ"
+  },
+  {
+    "uuid": "c23f6f35-b56b-4e30-ad8e-07b071ae6400",
+    "beteckning": "Filipstadspartiet",
+    "filnamn": "filipstadspartiet"
+  },
+  {
+    "uuid": "831ff763-fc28-4d99-a9d8-5b973865e4eb",
+    "beteckning": "Final Partiet",
+    "filnamn": "final-partiet"
+  },
+  {
+    "uuid": "bf140eb2-9556-4cc6-acb5-4d7a30c3e45e",
+    "beteckning": "FN Parti art: 27",
+    "filnamn": "fn-parti-art--27"
+  },
+  {
+    "uuid": "082c3b14-65fb-499d-a8b7-37c29eaa55e0",
+    "beteckning": "Fokus Bjärred",
+    "filnamn": "fokus-bjarred"
+  },
+  {
+    "uuid": "8ae6ac00-f69a-42f8-9295-7d0f4139dd0a",
+    "beteckning": "Folkets Röst",
+    "filnamn": "folkets-rost"
+  },
+  {
+    "uuid": "b1599806-fc9a-45bb-87e5-42de210597b0",
+    "beteckning": "Folkets röst - VOX humana",
+    "filnamn": "folkets-rost-vox-humana"
+  },
+  {
+    "uuid": "81c13f0b-134f-4337-95ad-9539165e9dbf",
+    "beteckning": "Folkets Väl",
+    "filnamn": "folkets-val"
+  },
+  {
+    "uuid": "16b66321-7512-4c21-b0e6-8b9815721781",
+    "beteckning": "Folkfronten",
+    "filnamn": "folkfronten"
+  },
+  {
+    "uuid": "784c81df-700c-46c6-9888-f206e0492d69",
+    "beteckning": "Folkhemmet i Hofors-Torsåker",
+    "filnamn": "folkhemmet-i-hofors-torsaker"
+  },
+  {
+    "uuid": "a7568519-98b1-4af8-9f2a-a802e2ae1d35",
+    "beteckning": "Folkhemmet Sverige",
+    "filnamn": "folkhemmet-sverige"
+  },
+  {
+    "uuid": "e9b71444-ae98-4388-bab5-617da46f248e",
+    "beteckning": "Folkkampanjen för sjukvården",
+    "filnamn": "folkkampanjen-for-sjukvarden"
+  },
+  {
+    "uuid": "0b18e45a-c359-470d-90bd-91b355407169",
+    "beteckning": "Folkstyret",
+    "filnamn": "folkstyret"
+  },
+  {
+    "uuid": "cc243f56-5c5a-4bd2-b649-0f685d0f7384",
+    "beteckning": "Folkviljan Orust",
+    "filnamn": "folkviljan-orust"
+  },
+  {
+    "uuid": "083558f5-89f8-4513-9ed1-6e5d309ec24a",
+    "beteckning": "FörNyaLund",
+    "filnamn": "fornyalund"
+  },
+  {
+    "uuid": "f98fed67-f15c-4dbc-92a8-275924925ade",
+    "beteckning": "Framstegspartiet",
+    "filnamn": "framstegspartiet-1223"
+  },
+  {
+    "uuid": "d7dfc45e-67bd-46a2-9b18-f5cc20960eb9",
+    "beteckning": "Framstegspartiet",
+    "filnamn": "framstegspartiet-1224"
+  },
+  {
+    "uuid": "0c775614-936c-43d2-b281-cb9967198934",
+    "beteckning": "Framstegspartiet",
+    "filnamn": "framstegspartiet-1226"
+  },
+  {
+    "uuid": "990c2123-0bc0-4534-8a36-a638109fc503",
+    "beteckning": "FRAMTID I ALE",
+    "filnamn": "framtid-i-ale"
+  },
+  {
+    "uuid": "6a91678c-924b-45f6-a281-26a363dcbbd8",
+    "beteckning": "Framtid i Jokkmokks kommun",
+    "filnamn": "framtid-i-jokkmokks-kommun"
+  },
+  {
+    "uuid": "b6cccbf7-1836-4e17-a389-bd715299bb70",
+    "beteckning": "Framtid i Kalix",
+    "filnamn": "framtid-i-kalix"
+  },
+  {
+    "uuid": "a6ed8e2b-6e19-4657-a083-ebe43a8d4a12",
+    "beteckning": "Framtid Öland",
+    "filnamn": "framtid-oland"
+  },
+  {
+    "uuid": "655f6918-3cd2-40a5-819a-05ba458c1209",
+    "beteckning": "Framtid S",
+    "filnamn": "framtid-s"
+  },
+  {
+    "uuid": "4cf12d91-1c02-4fb0-86ce-8c7cd122ba50",
+    "beteckning": "Framtidspartiet i Lekeberg",
+    "filnamn": "framtidspartiet-i-lekeberg"
+  },
+  {
+    "uuid": "7f975e6b-1fa1-4d96-8c0d-6c7732306351",
+    "beteckning": "Framtidspartiet Sverige",
+    "filnamn": "framtidspartiet-sverige"
+  },
+  {
+    "uuid": "da251d4e-1f74-42de-b440-91cac1078bc1",
+    "beteckning": "Fria Demokraterna",
+    "filnamn": "fria-demokraterna"
+  },
+  {
+    "uuid": "8adf7deb-d476-4bb5-bab8-b6696777d0b9",
+    "beteckning": "Fria Stockholmare",
+    "filnamn": "fria-stockholmare"
+  },
+  {
+    "uuid": "dd5c8509-a332-4be8-b299-58fef42a5b7d",
+    "beteckning": "Fucking Åmål",
+    "filnamn": "fucking-amal"
+  },
+  {
+    "uuid": "c4a3ff36-564b-46f6-81db-96ae77bfff77",
+    "beteckning": "Futurum Sverige",
+    "filnamn": "futurum-sverige"
+  },
+  {
+    "uuid": "c31e131c-ff24-4f29-b3fa-58afcbc3dddc",
+    "beteckning": "Generation Utveckling",
+    "filnamn": "generation-utveckling"
+  },
+  {
+    "uuid": "d60a251d-9a0c-4867-8971-444f9a006eb8",
+    "beteckning": "Götenes framtid",
+    "filnamn": "gotenes-framtid"
+  },
+  {
+    "uuid": "b12c6352-4b9f-42fb-8743-77114e5496b7",
+    "beteckning": "GPS - Grönt Perspektiv i Sundsvall",
+    "filnamn": "gps-gront-perspektiv-i-sundsvall"
+  },
+  {
+    "uuid": "b9180254-2586-4112-a98b-bf84618217a8",
+    "beteckning": "Grythyttelistan",
+    "filnamn": "grythyttelistan"
+  },
+  {
+    "uuid": "821df78a-261b-4612-8e95-f3d10b3acd2a",
+    "beteckning": "Gula Partiet",
+    "filnamn": "gula-partiet"
+  },
+  {
+    "uuid": "3571a393-94b0-4aeb-b092-f3dabc9b6f5e",
+    "beteckning": "Habodemokraterna",
+    "filnamn": "habodemokraterna"
+  },
+  {
+    "uuid": "c1338d92-1a30-45f2-8244-2c339eff16de",
+    "beteckning": "HANINGEPARTIET",
+    "filnamn": "haningepartiet"
+  },
+  {
+    "uuid": "9f7fabe1-2a28-4fb9-88b8-de3cd17a8020",
+    "beteckning": "Härjedalspartiet",
+    "filnamn": "harjedalspartiet"
+  },
+  {
+    "uuid": "13b80d5f-37ce-48c0-b342-347b39e3c2b9",
+    "beteckning": "Hela Edas Lista",
+    "filnamn": "hela-edas-lista"
+  },
+  {
+    "uuid": "407ebcac-23d1-4b6e-b030-d009163bccbe",
+    "beteckning": "Hela Sunne",
+    "filnamn": "hela-sunne"
+  },
+  {
+    "uuid": "ae7d2e8b-4cc0-49e9-a27a-109546278c8f",
+    "beteckning": "Hela Vara kommuns bästa",
+    "filnamn": "hela-vara-kommuns-basta"
+  },
+  {
+    "uuid": "c2278989-28fa-4302-b49b-83635c8569ee",
+    "beteckning": "Hjärupspartiet",
+    "filnamn": "hjarupspartiet"
+  },
+  {
+    "uuid": "ef75b8d8-8909-4f89-84c6-e7ff7bb70a7f",
+    "beteckning": "Hoforspartiet",
+    "filnamn": "hoforspartiet"
+  },
+  {
+    "uuid": "94d45816-6e28-4736-becf-008e039e3bc0",
+    "beteckning": "Högerpartiet de konservativa",
+    "filnamn": "hogerpartiet-de-konservativa"
+  },
+  {
+    "uuid": "f056d271-b6d1-4b0b-98dc-f2c71f00138c",
+    "beteckning": "Huddingepartiet",
+    "filnamn": "huddingepartiet"
+  },
+  {
+    "uuid": "3e104b52-ee22-4e36-a1e0-7ea04d03b59b",
+    "beteckning": "Humandemokraterna",
+    "filnamn": "humandemokraterna"
+  },
+  {
+    "uuid": "d6046b77-aa01-44ec-94ad-14898afb571a",
+    "beteckning": "iGov.Direct®",
+    "filnamn": "igov-direct-"
+  },
+  {
+    "uuid": "07b403b7-3b9b-4a22-844e-9f0fa516d57b",
+    "beteckning": "Initiativet",
+    "filnamn": "initiativet"
+  },
+  {
+    "uuid": "b066a1e7-8be7-43aa-918b-df6684b353f9",
+    "beteckning": "iP-IDROTTSPARTIET-Rädda Stadshagens IP!",
+    "filnamn": "ip-idrottspartiet-radda-stadshagens-ip-"
+  },
+  {
+    "uuid": "e9f9bec8-09ff-483e-a484-d31babfd06ef",
+    "beteckning": "Jämtlands Väl Bräcke",
+    "filnamn": "jamtlands-val-bracke"
+  },
+  {
+    "uuid": "511fcae2-33c6-4280-807f-2cfb3dae576a",
+    "beteckning": "Jämtlands Väl Krokom",
+    "filnamn": "jamtlands-val-krokom"
+  },
+  {
+    "uuid": "ed52f7e6-711c-4a94-ac7c-af60f3e6c5fc",
+    "beteckning": "Jour Strömstad",
+    "filnamn": "jour-stromstad"
+  },
+  {
+    "uuid": "b1a18970-2141-4e28-9c68-5f4c7438ef22",
+    "beteckning": "Judisk Kamp",
+    "filnamn": "judisk-kamp"
+  },
+  {
+    "uuid": "a2607113-2daa-4c79-8166-3d6e49b71423",
+    "beteckning": "Kalixpartiet",
+    "filnamn": "kalixpartiet"
+  },
+  {
+    "uuid": "c96d2f6e-81ed-4a1c-89f5-a60058222f85",
+    "beteckning": "Karlskronapartiet",
+    "filnamn": "karlskronapartiet"
+  },
+  {
+    "uuid": "d28154f7-af47-4248-9363-d38fd26aef61",
+    "beteckning": "Karlstadpartiet Livskvalitet",
+    "filnamn": "karlstadpartiet-livskvalitet"
+  },
+  {
+    "uuid": "4049bd73-9f9d-42ac-85ff-f4db21dd8845",
+    "beteckning": "Karlstads Framtid",
+    "filnamn": "karlstads-framtid"
+  },
+  {
+    "uuid": "6537fb90-7ac9-4385-b554-3074b9e60b1a",
+    "beteckning": "Klassiskt liberala partiet",
+    "filnamn": "klassiskt-liberala-partiet"
+  },
+  {
+    "uuid": "b60ad164-adce-4c69-9438-074670153ab4",
+    "beteckning": "Knegarkampanjen",
+    "filnamn": "knegarkampanjen"
+  },
+  {
+    "uuid": "2cdb7e51-30e9-479b-b7f7-2d33cf915b73",
+    "beteckning": "Knivsta.Nu",
+    "filnamn": "knivsta-nu"
+  },
+  {
+    "uuid": "0b9990ce-999d-4628-9634-d16188729059",
+    "beteckning": "Kommunal Samling",
+    "filnamn": "kommunal-samling"
+  },
+  {
+    "uuid": "e782cd26-8d46-482f-b4f1-2b688fc9105b",
+    "beteckning": "Kommundemokraterna",
+    "filnamn": "kommundemokraterna"
+  },
+  {
+    "uuid": "78589060-901b-472c-8731-1f454caae3df",
+    "beteckning": "Kommunens Bästa",
+    "filnamn": "kommunens-basta"
+  },
+  {
+    "uuid": "093e978b-c8cb-4383-a002-49a4ea34778d",
+    "beteckning": "Kommunens Bästa (partipolitiskt obunden lista)",
+    "filnamn": "kommunens-basta-partipolitiskt-obunden-lista"
+  },
+  {
+    "uuid": "44a507e9-3733-41ec-8eb7-dbad2c7c84be",
+    "beteckning": "Kommunens Röst",
+    "filnamn": "kommunens-rost"
+  },
+  {
+    "uuid": "f6d76476-a944-4706-ae7f-d054e4991d1f",
+    "beteckning": "Kommunens Röst ",
+    "filnamn": "kommunens-rost-"
+  },
+  {
+    "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",
+    "beteckning": "Kommunens Väl",
+    "filnamn": "kommunens-val"
+  },
+  {
+    "uuid": "55cdd0ac-6e10-42df-adf7-02db7dea7607",
+    "beteckning": "Kommunisterna",
+    "filnamn": "kommunisterna"
+  },
+  {
+    "uuid": "7d9b57e7-f172-4042-8a2e-ad18c5da6245",
+    "beteckning": "Kommunistiska Partiet",
+    "filnamn": "kommunistiska-partiet"
+  },
+  {
+    "uuid": "452aff7e-40d4-44b5-9193-b8e9b006a6da",
+    "beteckning": "Kommunlistan",
+    "filnamn": "kommunlistan"
+  },
+  {
+    "uuid": "8411e120-1d68-4435-bc7c-0f529b6d642a",
+    "beteckning": "Kommunpartiet",
+    "filnamn": "kommunpartiet"
+  },
+  {
+    "uuid": "27a67552-e814-43e1-9cbb-c2165d273e4e",
+    "beteckning": "Kommunpartiet - Vansbro",
+    "filnamn": "kommunpartiet-vansbro"
+  },
+  {
+    "uuid": "f2803c86-56ec-4d6f-bb99-6e847357b5f8",
+    "beteckning": "KommunPartiet Mellerud",
+    "filnamn": "kommunpartiet-mellerud"
+  },
+  {
+    "uuid": "35324e37-4fa4-4a29-9370-e75708476d5a",
+    "beteckning": "Konsensus - För Vadstenas Bästa",
+    "filnamn": "konsensus-for-vadstenas-basta"
+  },
+  {
+    "uuid": "7536db62-669c-4425-8f3b-4d6eb50d2287",
+    "beteckning": "Kosmopolitiska Partiet",
+    "filnamn": "kosmopolitiska-partiet"
+  },
+  {
+    "uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
+    "beteckning": "Kristdemokraterna",
+    "filnamn": "kristdemokraterna"
+  },
+  {
+    "uuid": "6ab877ef-e77c-4236-bbcf-f3b511fb29b1",
+    "beteckning": "Kristianstadsbygdens Framtid",
+    "filnamn": "kristianstadsbygdens-framtid"
+  },
+  {
+    "uuid": "c39ee49a-2a58-423d-836d-c97a2d9d8fcd",
+    "beteckning": "Kristna Värdepartiet",
+    "filnamn": "kristna-vardepartiet"
+  },
+  {
+    "uuid": "4eee1cd3-a349-4c74-937c-3b7149b78d4e",
+    "beteckning": "Kungsbackaborna",
+    "filnamn": "kungsbackaborna"
+  },
+  {
+    "uuid": "ffffc6da-c7d7-4e1e-9934-343907af3db0",
+    "beteckning": "KvillePartiet",
+    "filnamn": "kvillepartiet"
+  },
+  {
+    "uuid": "05ac49a3-fa54-4d3a-8938-f947b380987f",
+    "beteckning": "Laholmspartiet",
+    "filnamn": "laholmspartiet"
+  },
+  {
+    "uuid": "bdb4c62d-0dff-48b3-9be6-7783bc7d8889",
+    "beteckning": "Landsbygdens framtid i Bräcke",
+    "filnamn": "landsbygdens-framtid-i-bracke"
+  },
+  {
+    "uuid": "e39bddbe-ce7d-4c63-a677-b5c1a3046ebd",
+    "beteckning": "Landsbygdspartiet Oberoende",
+    "filnamn": "landsbygdspartiet-oberoende"
+  },
+  {
+    "uuid": "d9d8dcc8-eeea-48e5-b5a5-8c0633233e3c",
+    "beteckning": "LÅNGEN&CO",
+    "filnamn": "langen-amp-co"
+  },
+  {
+    "uuid": "bd4fff22-4d31-4d12-9abc-adc5fed355ee",
+    "beteckning": "Liberal Vision Åmål",
+    "filnamn": "liberal-vision-amal"
+  },
+  {
+    "uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0",
+    "beteckning": "Liberalerna (tidigare Folkpartiet)",
+    "filnamn": "liberalerna-tidigare-folkpartiet"
+  },
+  {
+    "uuid": "14af0084-697b-4fec-b085-df63f90c9465",
+    "beteckning": "Lidingöpartiet",
+    "filnamn": "lidingopartiet"
+  },
+  {
+    "uuid": "22f28ecd-8bb9-4740-9a62-11c85d8fc061",
+    "beteckning": "Lifepartiet",
+    "filnamn": "lifepartiet"
+  },
+  {
+    "uuid": "c5514ebe-b4e2-4ee6-a875-1b2f26870bee",
+    "beteckning": "Listan för Miljö och Omtanke, Örkelljunga",
+    "filnamn": "listan-for-miljo-och-omtanke--orkelljunga"
+  },
+  {
+    "uuid": "62970bde-1b67-469b-954a-33078773b42b",
+    "beteckning": "Ljusdalsbygdens parti",
+    "filnamn": "ljusdalsbygdens-parti"
+  },
+  {
+    "uuid": "77f0a0cd-c3c5-42ca-86a3-08759e95900d",
+    "beteckning": "Lokalpartiet BoA",
+    "filnamn": "lokalpartiet-boa"
+  },
+  {
+    "uuid": "29097cd1-6172-4321-bb78-a77cf7bfcb3a",
+    "beteckning": "LOTTOKRATIN",
+    "filnamn": "lottokratin"
+  },
+  {
+    "uuid": "5b6a8475-6d85-466e-a34f-008852c173f7",
+    "beteckning": "Lysekilspartiet",
+    "filnamn": "lysekilspartiet"
+  },
+  {
+    "uuid": "94de475b-521e-4fd6-b5e2-16eeacde72b4",
+    "beteckning": "Malålistan",
+    "filnamn": "malalistan"
+  },
+  {
+    "uuid": "0487b4e2-d2a2-4ae9-9f92-e511d3687dab",
+    "beteckning": "Malmfältens Väl",
+    "filnamn": "malmfaltens-val"
+  },
+  {
+    "uuid": "1f2b1723-551e-47f0-a10f-0a7961031451",
+    "beteckning": "Malung-Sälenpartiet",
+    "filnamn": "malung-salenpartiet"
+  },
+  {
+    "uuid": "9a93d96f-9082-4d57-b46b-f5e2b052da04",
+    "beteckning": "Mariefredspartiet",
+    "filnamn": "mariefredspartiet"
+  },
+  {
+    "uuid": "8d8034b7-d41c-404b-8895-42e5d752bebc",
+    "beteckning": "MariestadsPartiet",
+    "filnamn": "mariestadspartiet"
+  },
+  {
+    "uuid": "aca2a7c0-395b-4d61-a630-b75f327aad94",
+    "beteckning": "Markbygdspartiet",
+    "filnamn": "markbygdspartiet"
+  },
+  {
+    "uuid": "18bc4293-c7ac-4245-b5a2-8d041a9b3112",
+    "beteckning": "Marks Oberoende Demokrater, MOD",
+    "filnamn": "marks-oberoende-demokrater--mod"
+  },
+  {
+    "uuid": "245b9ede-33f6-4ae4-853c-898724a87900",
+    "beteckning": "Medborgarnas Politiska Parti i Sverige",
+    "filnamn": "medborgarnas-politiska-parti-i-sverige"
+  },
+  {
+    "uuid": "dc646f81-a2b4-44d3-8d5f-1e1802de6601",
+    "beteckning": "Medborgarpartiet",
+    "filnamn": "medborgarpartiet"
+  },
+  {
+    "uuid": "b0cf48a4-435b-4ec9-b448-b1f71246fd8b",
+    "beteckning": "Medborgarresan",
+    "filnamn": "medborgarresan"
+  },
+  {
+    "uuid": "68b3e558-d0bb-4ac7-b833-a5b30a542800",
+    "beteckning": "Medborgerlig Samling",
+    "filnamn": "medborgerlig-samling"
+  },
+  {
+    "uuid": "81977980-9553-4fa9-8ed7-7687fa9b5959",
+    "beteckning": "Miljödemokraterna",
+    "filnamn": "miljodemokraterna"
+  },
+  {
+    "uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
+    "beteckning": "Miljöpartiet de gröna",
+    "filnamn": "miljopartiet-de-grona"
+  },
+  {
+    "uuid": "db6631d4-61a1-4068-b426-66d75fe39ea1",
+    "beteckning": "Mitt Göinge",
+    "filnamn": "mitt-goinge"
+  },
+  {
+    "uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476",
+    "beteckning": "Moderaterna",
+    "filnamn": "moderaterna"
+  },
+  {
+    "uuid": "a9b37976-6cf6-4aba-876c-7148a1d4b969",
+    "beteckning": "Modern Sweden",
+    "filnamn": "modern-sweden"
+  },
+  {
+    "uuid": "3c442003-5859-4ff9-a322-86898ba54e13",
+    "beteckning": "Morapartiet",
+    "filnamn": "morapartiet"
+  },
+  {
+    "uuid": "759b6807-f012-41d8-969b-93ce1d839a30",
+    "beteckning": "Mosebackedemokraterna",
+    "filnamn": "mosebackedemokraterna"
+  },
+  {
+    "uuid": "91a14e9f-ab4c-4b2e-b4bf-ee634138ff7d",
+    "beteckning": "Mullsjö Framtid",
+    "filnamn": "mullsjo-framtid"
+  },
+  {
+    "uuid": "eeb297f7-5159-48b2-b6c0-ab92ebc9fa28",
+    "beteckning": "Nackalistan",
+    "filnamn": "nackalistan"
+  },
+  {
+    "uuid": "e62f64e1-7b26-4a5e-93e7-637112a6e9ca",
+    "beteckning": "NATURENS PARTI SANNING RÄTTVISA KÄRLEK",
+    "filnamn": "naturens-parti-sanning-rattvisa-karlek"
+  },
+  {
+    "uuid": "89ad9bef-dc40-4bd3-a70e-441ab8ee4103",
+    "beteckning": "NKS Nya Koalitionssamlingen",
+    "filnamn": "nks-nya-koalitionssamlingen"
+  },
+  {
+    "uuid": "1d7a2ecf-cd6c-478d-b6c6-95ff6e97c359",
+    "beteckning": "Norapartiet",
+    "filnamn": "norapartiet"
+  },
+  {
+    "uuid": "38456bd0-8569-4c27-a4b5-fec604e0f381",
+    "beteckning": "nordanstigspartiet.se",
+    "filnamn": "nordanstigspartiet-se"
+  },
+  {
+    "uuid": "c7ce3542-587c-4d95-8e2a-d63f91b11bc9",
+    "beteckning": "Nordiska motståndsrörelsen",
+    "filnamn": "nordiska-motstandsrorelsen"
+  },
+  {
+    "uuid": "896772f7-8ca8-4ee3-9111-3e66278bcf17",
+    "beteckning": "Nordmarkspartiet",
+    "filnamn": "nordmarkspartiet"
+  },
+  {
+    "uuid": "7d941341-bac1-4610-a5c0-75e5f4d67f48",
+    "beteckning": "Normaldemokraterna",
+    "filnamn": "normaldemokraterna"
+  },
+  {
+    "uuid": "1396159c-ac3b-48cd-82a2-b53e40e37a5c",
+    "beteckning": "Norrländska Välfärdspartiet",
+    "filnamn": "norrlandska-valfardspartiet"
+  },
+  {
+    "uuid": "eaadd374-35f6-45da-acc4-4254289c77db",
+    "beteckning": "Norrlandspartiet",
+    "filnamn": "norrlandspartiet"
+  },
+  {
+    "uuid": "1de65e35-d734-4941-a5de-d2b3edba6470",
+    "beteckning": "NPP Nya Pensions Partiet",
+    "filnamn": "npp-nya-pensions-partiet"
+  },
+  {
+    "uuid": "70799b6d-249c-4cdd-8f0f-415bf39d77b2",
+    "beteckning": "numen kärlekspartiet",
+    "filnamn": "numen-karlekspartiet"
+  },
+  {
+    "uuid": "85ccc38a-0fc7-4a55-b1f3-1db7d6c062b6",
+    "beteckning": "NY REFORM",
+    "filnamn": "ny-reform"
+  },
+  {
+    "uuid": "d356e679-91d5-4b18-a2b5-8867475116ca",
+    "beteckning": "Nya bjornska partiet",
+    "filnamn": "nya-bjornska-partiet"
+  },
+  {
+    "uuid": "9f737d9d-260a-4ebd-8600-b473fd3cb655",
+    "beteckning": "Nya Danderydspartiet",
+    "filnamn": "nya-danderydspartiet"
+  },
+  {
+    "uuid": "6639e412-737a-4308-992f-76b4f021910e",
+    "beteckning": "Nya Kirunapartiet",
+    "filnamn": "nya-kirunapartiet"
+  },
+  {
+    "uuid": "98e02aed-bbc7-410e-ae7e-77e2a9109fe7",
+    "beteckning": "Nya Kommunpartiet Eslöv",
+    "filnamn": "nya-kommunpartiet-eslov"
+  },
+  {
+    "uuid": "b5a8367b-9763-49e6-942b-49a342ac0736",
+    "beteckning": "Nya Listan i Vellinge",
+    "filnamn": "nya-listan-i-vellinge"
+  },
+  {
+    "uuid": "b4a0631c-8576-4bb6-880e-05972a7f952b",
+    "beteckning": "nya Ny Demokrati",
+    "filnamn": "nya-ny-demokrati"
+  },
+  {
+    "uuid": "2def9db4-ffba-4858-a406-b76008c36853",
+    "beteckning": "Nya Ulricehamn",
+    "filnamn": "nya-ulricehamn"
+  },
+  {
+    "uuid": "8f5f1ddd-b111-4ae5-a327-4b7d367ca142",
+    "beteckning": "Nybyggarpartiet",
+    "filnamn": "nybyggarpartiet"
+  },
+  {
+    "uuid": "d8c7d408-37c1-439c-a48d-805e00b4af49",
+    "beteckning": "Nykvarnspartiet",
+    "filnamn": "nykvarnspartiet"
+  },
+  {
+    "uuid": "f4f9b691-9eea-4cd7-906a-bbebb07a9c42",
+    "beteckning": "Nystart Enköping (NE)",
+    "filnamn": "nystart-enkoping-ne"
+  },
+  {
+    "uuid": "8463491f-4a86-4bfd-91d2-12d58ff5e223",
+    "beteckning": "OBEROENDE REALISTER",
+    "filnamn": "oberoende-realister"
+  },
+  {
+    "uuid": "a58232ce-38c7-4991-9b96-9179e0d9b4b6",
+    "beteckning": "Ödeshögs Partiet",
+    "filnamn": "odeshogs-partiet"
+  },
+  {
+    "uuid": "c79c8c7f-d06b-44f2-8749-de54938de492",
+    "beteckning": "Ölandspartiet",
+    "filnamn": "olandspartiet"
+  },
+  {
+    "uuid": "40214df8-8f99-464f-8cdf-d803e7167f60",
+    "beteckning": "Ölandspartiet södra",
+    "filnamn": "olandspartiet-sodra"
+  },
+  {
+    "uuid": "221f498a-d6cc-457b-bba7-f65f69a9f960",
+    "beteckning": "Omsorg för alla",
+    "filnamn": "omsorg-for-alla"
+  },
+  {
+    "uuid": "97e7e07e-7af2-4c39-8807-c7c18d60a5d1",
+    "beteckning": "Omsorgspartiet i Arboga",
+    "filnamn": "omsorgspartiet-i-arboga"
+  },
+  {
+    "uuid": "10366f60-a96a-48f2-b248-5e3ece19e338",
+    "beteckning": "Öpartiet",
+    "filnamn": "opartiet"
+  },
+  {
+    "uuid": "6d796e1b-ae89-46ba-932a-be2bc09a753b",
+    "beteckning": "Opinion",
+    "filnamn": "opinion"
+  },
+  {
+    "uuid": "04322f22-a4de-432a-9a68-be4845d2e4de",
+    "beteckning": "Öppna Göteborg!",
+    "filnamn": "oppna-goteborg-"
+  },
+  {
+    "uuid": "b61c947d-c5d9-481c-bedf-66ab406aac8e",
+    "beteckning": "Öppna Hela Lerum",
+    "filnamn": "oppna-hela-lerum"
+  },
+  {
+    "uuid": "4719f829-c6f3-43b9-aaee-db26d645007d",
+    "beteckning": "Örebropartiet",
+    "filnamn": "orebropartiet"
+  },
+  {
+    "uuid": "2f00d90b-2195-4bb4-9575-4324dfabb7f2",
+    "beteckning": "Orustpartiet (OP)",
+    "filnamn": "orustpartiet-op"
+  },
+  {
+    "uuid": "2130f9f3-4dbe-4019-9e9d-34e06d9754a1",
+    "beteckning": "Österåkerspartiet",
+    "filnamn": "osterakerspartiet"
+  },
+  {
+    "uuid": "6675260d-0e34-4c06-842e-98312374dc21",
+    "beteckning": "Österlenpartiet",
+    "filnamn": "osterlenpartiet"
+  },
+  {
+    "uuid": "bb1a5f6d-8662-4b8c-9e1e-8cd020f451f3",
+    "beteckning": "Ostkustens Framtid",
+    "filnamn": "ostkustens-framtid"
+  },
+  {
+    "uuid": "3bd219fb-835a-4d0d-8d26-5f99bdb79381",
+    "beteckning": "Övertorneås Fria Alternativ",
+    "filnamn": "overtorneas-fria-alternativ"
+  },
+  {
+    "uuid": "48be121c-0c48-4153-88a0-691fc6d255b0",
+    "beteckning": "Papepartiet",
+    "filnamn": "papepartiet"
+  },
+  {
+    "uuid": "89fd5b8d-a2c5-4d86-9acf-6b77b3f85bf9",
+    "beteckning": "Partiet Folkomröstning",
+    "filnamn": "partiet-folkomrostning"
+  },
+  {
+    "uuid": "144fe5cd-0d20-4b11-bd0e-24fa1c9d4438",
+    "beteckning": "Partiet för Norbergs Framtid",
+    "filnamn": "partiet-for-norbergs-framtid"
+  },
+  {
+    "uuid": "a53d194a-f771-44b3-b9a4-2f9c22ecb230",
+    "beteckning": "Partiet Horisont",
+    "filnamn": "partiet-horisont"
+  },
+  {
+    "uuid": "12e19db2-0113-4146-ae1f-c84d52016103",
+    "beteckning": "Partiet Vändpunkt",
+    "filnamn": "partiet-vandpunkt"
+  },
+  {
+    "uuid": "3e686571-a068-490b-b453-1b4f336bacfa",
+    "beteckning": "Partiett",
+    "filnamn": "partiett"
+  },
+  {
+    "uuid": "ac2f677a-f96e-41fd-869e-0a7ab2c24745",
+    "beteckning": "Pensionärspartiet i Nynäshamns kommun",
+    "filnamn": "pensionarspartiet-i-nynashamns-kommun"
+  },
+  {
+    "uuid": "1eee2b77-0a39-4eb9-8b98-43b9628875a9",
+    "beteckning": "Perstorps Framtid",
+    "filnamn": "perstorps-framtid"
+  },
+  {
+    "uuid": "e6be8b6a-9385-4918-847a-dee620802595",
+    "beteckning": "Piratpartiet",
+    "filnamn": "piratpartiet"
+  },
+  {
+    "uuid": "35c4f62f-3e79-4dbe-9ae4-b76aa4052b86",
+    "beteckning": "Politiskt Alternativ",
+    "filnamn": "politiskt-alternativ"
+  },
+  {
+    "uuid": "686dd12d-5dea-424b-854c-477d4291a865",
+    "beteckning": "POPULISTERNA",
+    "filnamn": "populisterna"
+  },
+  {
+    "uuid": "10f4e511-458e-4851-a994-a304ff94e78a",
+    "beteckning": "Raggarpartiet",
+    "filnamn": "raggarpartiet"
+  },
+  {
+    "uuid": "805429e4-e3f9-4294-8d09-0b2df610886f",
+    "beteckning": "RÄTT VÄG för Gullspångs kommun",
+    "filnamn": "ratt-vag-for-gullspangs-kommun"
+  },
+  {
+    "uuid": "c31b9463-3618-48b3-8a7d-f1c5b46261e6",
+    "beteckning": "Rättvis Demokrati",
+    "filnamn": "rattvis-demokrati"
+  },
+  {
+    "uuid": "a6ce3f75-6751-4373-928d-3cdaeb2a0e4a",
+    "beteckning": "Rättvisa i Flen",
+    "filnamn": "rattvisa-i-flen"
+  },
+  {
+    "uuid": "59fbdd58-38df-4cb8-9800-628c91046ec9",
+    "beteckning": "Rättvisa Rörelse Partiet",
+    "filnamn": "rattvisa-rorelse-partiet"
+  },
+  {
+    "uuid": "ce076c0a-bef8-401e-a65c-6882a0d384c0",
+    "beteckning": "Rättvisepartiet Socialisterna",
+    "filnamn": "rattvisepartiet-socialisterna"
+  },
+  {
+    "uuid": "c3388f52-cd86-4212-ad8c-80c7156cc57e",
+    "beteckning": "Realistpartiet",
+    "filnamn": "realistpartiet"
+  },
+  {
+    "uuid": "a14014ab-2a43-49e5-ad22-584c246aa0fd",
+    "beteckning": "Reformist Neutral Partiet",
+    "filnamn": "reformist-neutral-partiet"
+  },
+  {
+    "uuid": "0ea2696f-8b09-4eed-b02a-828239729b1a",
+    "beteckning": "Regionens framtid",
+    "filnamn": "regionens-framtid"
+  },
+  {
+    "uuid": "6613a0a3-015b-4dfa-bfe3-9d0bf77f82b4",
+    "beteckning": "Riksdemokraterna för Sverige",
+    "filnamn": "riksdemokraterna-for-sverige"
+  },
+  {
+    "uuid": "d11853ce-4206-4b7a-a222-2d107200dca1",
+    "beteckning": "Romelepartiet Skåne",
+    "filnamn": "romelepartiet-skane"
+  },
+  {
+    "uuid": "66187f91-2cc5-4f83-b976-87ac13346da2",
+    "beteckning": "Ronnebypartiet",
+    "filnamn": "ronnebypartiet"
+  },
+  {
+    "uuid": "a653fd03-0c6a-41a3-8260-24a5ca4f441c",
+    "beteckning": "Rönningepartiet",
+    "filnamn": "ronningepartiet"
+  },
+  {
+    "uuid": "b6b9bcc1-068f-4bb1-bc64-cdf1c32bf8c3",
+    "beteckning": "Rosa Drömmar",
+    "filnamn": "rosa-drommar"
+  },
+  {
+    "uuid": "34fddde3-58bd-4390-8239-6b822fa7e313",
+    "beteckning": "Roslagens oberoende parti",
+    "filnamn": "roslagens-oberoende-parti"
+  },
+  {
+    "uuid": "be71ef20-ecb1-4702-8cdd-98686556b98b",
+    "beteckning": "Roslagspartiet",
+    "filnamn": "roslagspartiet"
+  },
+  {
+    "uuid": "121acbe1-ec5f-4964-bd94-6f4c94a52302",
+    "beteckning": "Salas bästa",
+    "filnamn": "salas-basta"
+  },
+  {
+    "uuid": "13bf33dd-7b58-4757-893a-47ea5a12e399",
+    "beteckning": "Sámelistu/Samelistan Partipolitiskt obunden",
+    "filnamn": "samelistu-samelistan-partipolitiskt-obunden"
+  },
+  {
+    "uuid": "b77b63e0-84fa-4a87-97bb-8d72146ae208",
+    "beteckning": "Samernas Väl",
+    "filnamn": "samernas-val"
+  },
+  {
+    "uuid": "436e693c-e6ee-4b3e-8eec-6964710d1970",
+    "beteckning": "Samverkan Sandhem Mullsjö (SSM)",
+    "filnamn": "samverkan-sandhem-mullsjo-ssm"
+  },
+  {
+    "uuid": "8ab621eb-f774-4428-a3d8-d8dbe713a448",
+    "beteckning": "Seniorpartiet",
+    "filnamn": "seniorpartiet"
+  },
+  {
+    "uuid": "18b7efcb-527c-4886-8b8a-9ae9d68de88f",
+    "beteckning": "Sigtunapartiet Samling för Sigtuna",
+    "filnamn": "sigtunapartiet-samling-for-sigtuna"
+  },
+  {
+    "uuid": "57a2224c-71dd-4d74-aae4-b53e097cdc20",
+    "beteckning": "Sjöbopartiet",
+    "filnamn": "sjobopartiet"
+  },
+  {
+    "uuid": "394593f1-a26f-4271-a0ff-e3e9c5df8b86",
+    "beteckning": "Sjukvårdspartiet",
+    "filnamn": "sjukvardspartiet"
+  },
+  {
+    "uuid": "2dde7f18-4339-490a-abaf-43e4eb53205c",
+    "beteckning": "Sjukvårdspartiet - Västernorrland",
+    "filnamn": "sjukvardspartiet-vasternorrland"
+  },
+  {
+    "uuid": "8d5a5e59-3c8d-43e8-a4c5-90957816cf12",
+    "beteckning": "Sjukvårdspartiet - Västmanland",
+    "filnamn": "sjukvardspartiet-vastmanland"
+  },
+  {
+    "uuid": "d4884d96-9160-4f1d-bb0f-b2a0efe7cbba",
+    "beteckning": "Sjukvårdspartiet - Västra Götaland",
+    "filnamn": "sjukvardspartiet-vastra-gotaland"
+  },
+  {
+    "uuid": "488e603e-503c-4acf-88b0-e2e903cca577",
+    "beteckning": "Sjukvårdspartiet Bollnäs",
+    "filnamn": "sjukvardspartiet-bollnas"
+  },
+  {
+    "uuid": "091e3961-b5f2-419b-8f6c-54fc7579e30c",
+    "beteckning": "Sjukvårdspartiet Gävleborg",
+    "filnamn": "sjukvardspartiet-gavleborg"
+  },
+  {
+    "uuid": "a57335f0-563a-42f5-98d0-8ccd1b11f140",
+    "beteckning": "Sjukvårdspartiet i Jönköpings län",
+    "filnamn": "sjukvardspartiet-i-jonkopings-lan"
+  },
+  {
+    "uuid": "d6511d4e-1b9d-4f3c-89ff-4533300f46fc",
+    "beteckning": "Sjukvårdspartiet i Värmland",
+    "filnamn": "sjukvardspartiet-i-varmland"
+  },
+  {
+    "uuid": "96fa352b-a7d2-4bd0-bab9-37ab6c479d54",
+    "beteckning": "SKÅNEPARTIET",
+    "filnamn": "skanepartiet"
+  },
+  {
+    "uuid": "73d0ba2b-b024-4515-ad75-fbab558fb9ee",
+    "beteckning": "Skol och Landsbygdspartiet",
+    "filnamn": "skol-och-landsbygdspartiet"
+  },
+  {
+    "uuid": "4cdb24ff-2c49-4457-86c7-00661e381429",
+    "beteckning": "Sköldkörtelpartiet",
+    "filnamn": "skoldkortelpartiet"
+  },
+  {
+    "uuid": "75c520b2-651f-4a82-b58f-631b65fb3ce1",
+    "beteckning": "Skolpartiet Göteborg",
+    "filnamn": "skolpartiet-goteborg"
+  },
+  {
+    "uuid": "06a5f81d-ae11-496f-b222-2145e509d257",
+    "beteckning": "Skolpartiet i Österåker",
+    "filnamn": "skolpartiet-i-osteraker"
+  },
+  {
+    "uuid": "cc204154-12cf-416e-9269-289400cb7334",
+    "beteckning": "SkurupsPartiet",
+    "filnamn": "skurupspartiet"
+  },
+  {
+    "uuid": "640f040a-56c2-4b75-a240-733fa0eefd94",
+    "beteckning": "Sociala Partiet (SP)",
+    "filnamn": "sociala-partiet-sp"
+  },
+  {
+    "uuid": "9897ef04-abc4-4226-b74b-016a2f9e56a0",
+    "beteckning": "Socialisterna-Välfärdspartiet",
+    "filnamn": "socialisterna-valfardspartiet"
+  },
+  {
+    "uuid": "460d9564-c80d-4f42-a95a-518c956746c1",
+    "beteckning": "Socialistiska Partiet",
+    "filnamn": "socialistiska-partiet"
+  },
+  {
+    "uuid": "fe52faa5-e88c-4fae-a2c4-4c3e0ef83ab8",
+    "beteckning": "SOCIALLIBERALERNA",
+    "filnamn": "socialliberalerna"
+  },
+  {
+    "uuid": "e7ac6421-62bc-4ef3-aa5b-326acb0811bb",
+    "beteckning": "Söderslättspartiet",
+    "filnamn": "soderslattspartiet"
+  },
+  {
+    "uuid": "0d562b39-da62-425d-bd18-869277f706b4",
+    "beteckning": "SoL-partiet Sölvesborg och Lister",
+    "filnamn": "sol-partiet-solvesborg-och-lister"
+  },
+  {
+    "uuid": "b9432471-caff-4eee-b6a8-35427487a8a6",
+    "beteckning": "Solens Frihetsparti",
+    "filnamn": "solens-frihetsparti"
+  },
+  {
+    "uuid": "2c038150-7436-41b5-975e-c745ecbebc14",
+    "beteckning": "Solidaritet, Arbete, Fred, Ekologi, SAFE",
+    "filnamn": "solidaritet--arbete--fred--ekologi--safe"
+  },
+  {
+    "uuid": "284326c6-e8bd-4864-aa4c-b681444f1490",
+    "beteckning": "Sollentunapartiet",
+    "filnamn": "sollentunapartiet"
+  },
+  {
+    "uuid": "9d142618-dec4-4780-b3a9-9261a5d9c3e1",
+    "beteckning": "Solnapartiet",
+    "filnamn": "solnapartiet"
+  },
+  {
+    "uuid": "51ed83cb-d87b-48e8-b6b2-f5a8f0491624",
+    "beteckning": "Sorundanet Nynäshamns kommunparti",
+    "filnamn": "sorundanet-nynashamns-kommunparti"
+  },
+  {
+    "uuid": "4b2c8870-d6e5-402a-a4ed-7f68d098869b",
+    "beteckning": "SOS-Ställ Om Sverige, Söderhamnsinitiativet",
+    "filnamn": "sos-stall-om-sverige--soderhamnsinitiativet"
+  },
+  {
+    "uuid": "eb01a434-c644-417f-bb5f-14d86e053ce3",
+    "beteckning": "Spektral demokrati",
+    "filnamn": "spektral-demokrati"
+  },
+  {
+    "uuid": "8a4715a7-04d9-4238-8edc-5f00300089f6",
+    "beteckning": "SPI Välfärden",
+    "filnamn": "spi-valfarden"
+  },
+  {
+    "uuid": "035eb206-2fa5-4ba4-8226-33e08a5d425d",
+    "beteckning": "Sportpartiet",
+    "filnamn": "sportpartiet"
+  },
+  {
+    "uuid": "0206e185-1582-43fa-9841-c9f6f7d9653b",
+    "beteckning": "Staffanstorpspartiet",
+    "filnamn": "staffanstorpspartiet"
+  },
+  {
+    "uuid": "c4592c7f-15b8-4f0b-a0a7-eea1ca935643",
+    "beteckning": "Stenungsundspartiet",
+    "filnamn": "stenungsundspartiet"
+  },
+  {
+    "uuid": "1ad05d4a-8c99-472c-9205-5fb65344d4ed",
+    "beteckning": "Stockholmspartiet",
+    "filnamn": "stockholmspartiet"
+  },
+  {
+    "uuid": "f89fd097-d0bf-4174-8474-40e24abc9e2f",
+    "beteckning": "Storforsdemokraterna",
+    "filnamn": "storforsdemokraterna"
+  },
+  {
+    "uuid": "a118a3da-939b-47ec-93c2-1e314818bc7c",
+    "beteckning": "Strängnäspartiet",
+    "filnamn": "strangnaspartiet"
+  },
+  {
+    "uuid": "0c5525dc-1f2d-4825-ad75-6f43df31907a",
+    "beteckning": "Sundbybergs Lokalparti (SLP)",
+    "filnamn": "sundbybergs-lokalparti-slp"
+  },
+  {
+    "uuid": "0651b1bc-cdc5-4bcb-871d-c6f582c3c2bd",
+    "beteckning": "Sundsvallspartiet",
+    "filnamn": "sundsvallspartiet"
+  },
+  {
+    "uuid": "03be0cda-c149-4b32-89b5-c6c4068e6093",
+    "beteckning": "Svensk Jobbdemokrati",
+    "filnamn": "svensk-jobbdemokrati"
+  },
+  {
+    "uuid": "dc43e9e9-957d-4851-900b-98461a174ffd",
+    "beteckning": "Svenska Folkhemspartiet",
+    "filnamn": "svenska-folkhemspartiet"
+  },
+  {
+    "uuid": "98d922e8-41f7-46bc-91e0-1cf62eebb579",
+    "beteckning": "Sverige ut ur EU/Frihetliga Rättvisepartiet (FRP)",
+    "filnamn": "sverige-ut-ur-eu-frihetliga-rattvisepartiet-frp"
+  },
+  {
+    "uuid": "b9af6417-6861-40ff-b0a5-3c1fab176496",
+    "beteckning": "Sverigedemokraterna",
+    "filnamn": "sverigedemokraterna"
+  },
+  {
+    "uuid": "96fcf42b-0ce4-4a03-8196-963420a9b505",
+    "beteckning": "Sverigepartiet",
+    "filnamn": "sverigepartiet"
+  },
+  {
+    "uuid": "136e2fd9-2f99-41b6-94a7-ae5ccddb7093",
+    "beteckning": "Sveriges Kommunistiska Parti (SKP)",
+    "filnamn": "sveriges-kommunistiska-parti-skp"
+  },
+  {
+    "uuid": "617f16c5-dd2f-4c10-a838-01c2b308c8a6",
+    "beteckning": "Sveriges Nationella Demokratiska Parti",
+    "filnamn": "sveriges-nationella-demokratiska-parti"
+  },
+  {
+    "uuid": "57611daa-1330-40c1-8806-3d06a2f0f3d3",
+    "beteckning": "Technopartiet",
+    "filnamn": "technopartiet"
+  },
+  {
+    "uuid": "bd67893c-6cd0-4d19-a06c-f99484952917",
+    "beteckning": "Timråpartiet",
+    "filnamn": "timrapartiet"
+  },
+  {
+    "uuid": "11f9b277-29f8-4a27-8894-7adb51cf335c",
+    "beteckning": "Tingsrydsalternativet",
+    "filnamn": "tingsrydsalternativet"
+  },
+  {
+    "uuid": "3f42e34b-1a4a-43df-b00a-6b38b6a297ae",
+    "beteckning": "TJÖRNPARTIET",
+    "filnamn": "tjornpartiet"
+  },
+  {
+    "uuid": "e7c098fd-bb81-4cce-a9a3-278d7b7ef6f9",
+    "beteckning": "TJUSTPARTIET",
+    "filnamn": "tjustpartiet"
+  },
+  {
+    "uuid": "9ff9d785-3cad-46dd-b33a-8a0ea09793c4",
+    "beteckning": "Tomas Lindström",
+    "filnamn": "tomas-lindstrom"
+  },
+  {
+    "uuid": "71382aa3-f2e3-4bce-85d5-eda2b31f595a",
+    "beteckning": "Tomelillapartiet",
+    "filnamn": "tomelillapartiet"
+  },
+  {
+    "uuid": "30cf6f9d-b1df-4b33-a99d-3cedf3e191b4",
+    "beteckning": "Trollhättans Framtid",
+    "filnamn": "trollhattans-framtid"
+  },
+  {
+    "uuid": "380011b6-5ef1-4d1c-86c3-891dde016a78",
+    "beteckning": "Tryggare Sverige",
+    "filnamn": "tryggare-sverige"
+  },
+  {
+    "uuid": "c1b28696-4325-48c1-b40c-f8e530278dd0",
+    "beteckning": "TRYGGHETSPARTIET",
+    "filnamn": "trygghetspartiet"
+  },
+  {
+    "uuid": "c0fec9af-ef73-43ec-9748-c82d98ab4514",
+    "beteckning": "Tullingepartiet",
+    "filnamn": "tullingepartiet"
+  },
+  {
+    "uuid": "cdbb43bf-f8da-4c29-9980-7681eada9d62",
+    "beteckning": "Uddevallapartiet",
+    "filnamn": "uddevallapartiet"
+  },
+  {
+    "uuid": "83dd748a-bd97-412c-87c7-51ae9b5fb196",
+    "beteckning": "Unionspartiet",
+    "filnamn": "unionspartiet"
+  },
+  {
+    "uuid": "5d9c0cf0-f668-43a6-bbab-6dde4c91e56d",
+    "beteckning": "Upplands sjukvårdsparti",
+    "filnamn": "upplands-sjukvardsparti"
+  },
+  {
+    "uuid": "9017e7c6-3ab7-42fd-9c2a-a25c91807b18",
+    "beteckning": "Uppvidingedemokraterna",
+    "filnamn": "uppvidingedemokraterna"
+  },
+  {
+    "uuid": "a77788c8-b421-433a-ba94-78eae2520a0c",
+    "beteckning": "Utveckling och Progressiv för Sverige partiet (U.P.S)",
+    "filnamn": "utveckling-och-progressiv-for-sverige-partiet-u-p-s"
+  },
+  {
+    "uuid": "cefdf9df-76d1-450c-8f74-f52523758486",
+    "beteckning": "Utvecklingspartiet",
+    "filnamn": "utvecklingspartiet"
+  },
+  {
+    "uuid": "e35dbd0f-1df9-4dd5-97d8-8b82cdde0498",
+    "beteckning": "Vägvalet",
+    "filnamn": "vagvalet"
+  },
+  {
+    "uuid": "103aea17-5063-4fe0-bc0a-bafe286349fe",
+    "beteckning": "VALDI2018",
+    "filnamn": "valdi2018"
+  },
+  {
+    "uuid": "05cd1b5e-e1cf-4066-b5d8-f8ee476e7467",
+    "beteckning": "Valsamverkanspartiet",
+    "filnamn": "valsamverkanspartiet"
+  },
+  {
+    "uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a",
+    "beteckning": "Vänsterpartiet",
+    "filnamn": "vansterpartiet"
+  },
+  {
+    "uuid": "635ee374-fdd4-4bfd-afaa-83668895fcd5",
+    "beteckning": "VÅR FRAMTID - KLIPPAN",
+    "filnamn": "var-framtid-klippan"
+  },
+  {
+    "uuid": "4057e1cb-59cc-4157-b34f-3fac649dc325",
+    "beteckning": "Vår Framtids politiska utskott",
+    "filnamn": "var-framtids-politiska-utskott"
+  },
+  {
+    "uuid": "4ef9af41-d2fa-475f-834b-4d722f3c8914",
+    "beteckning": "Vård för Pengarna",
+    "filnamn": "vard-for-pengarna"
+  },
+  {
+    "uuid": "f7e321ee-3b91-4471-915f-b876da4169f0",
+    "beteckning": "Vårdpartiet i Skåne",
+    "filnamn": "vardpartiet-i-skane"
+  },
+  {
+    "uuid": "457685a6-4bad-48bb-a5dd-907e0b7cf069",
+    "beteckning": "VÅRT KIRUNA",
+    "filnamn": "vart-kiruna"
+  },
+  {
+    "uuid": "ddbf6667-caa6-4a38-8705-7fbae6eb9619",
+    "beteckning": "Vårt land - Sverige",
+    "filnamn": "vart-land-sverige"
+  },
+  {
+    "uuid": "5db775a3-83ab-48c0-8a68-95ed83590ad8",
+    "beteckning": "VÅRT NORRBOTTEN",
+    "filnamn": "vart-norrbotten"
+  },
+  {
+    "uuid": "b00bc532-e725-4f3b-9e0a-57ff456e6de1",
+    "beteckning": "Väsbys Bästa",
+    "filnamn": "vasbys-basta"
+  },
+  {
+    "uuid": "c102184c-f0ee-49c9-9250-ab9197f171a1",
+    "beteckning": "Västjämtlands Väl",
+    "filnamn": "vastjamtlands-val"
+  },
+  {
+    "uuid": "58bd344e-7f53-4c58-97f8-891bbe655d30",
+    "beteckning": "Västra Initiativet",
+    "filnamn": "vastra-initiativet"
+  },
+  {
+    "uuid": "5768c10d-266f-4969-96fb-c2a90adfb33a",
+    "beteckning": "Växjöpartiet",
+    "filnamn": "vaxjopartiet"
+  },
+  {
+    "uuid": "91ea834e-a512-48ba-bccc-a7e8bfd1dc75",
+    "beteckning": "Vetlanda framåtanda",
+    "filnamn": "vetlanda-framatanda"
+  },
+  {
+    "uuid": "321e4b97-efee-4982-9a14-3a1514b2009f",
+    "beteckning": "Vi i Verkligheten Ronneby (ViV)",
+    "filnamn": "vi-i-verkligheten-ronneby-viv"
+  },
+  {
+    "uuid": "df442bd9-a5e9-4768-a13b-be5c483be837",
+    "beteckning": "Vi Socialkonservativa",
+    "filnamn": "vi-socialkonservativa"
+  },
+  {
+    "uuid": "1ec14dc8-616b-4948-9f91-f739d2f59c78",
+    "beteckning": "Vingåkerspartiet - VTL",
+    "filnamn": "vingakerspartiet-vtl"
+  },
+  {
+    "uuid": "c6f0774a-12d5-49dd-b756-30c601b71bce",
+    "beteckning": "Visiona",
+    "filnamn": "visiona"
+  },
+  {
+    "uuid": "60c5adea-ea43-43cf-8ca7-d102a01bcad1",
+    "beteckning": "Waxholmspartiet - borgerligt alternativ",
+    "filnamn": "waxholmspartiet-borgerligt-alternativ"
+  },
+  {
+    "uuid": "e19a05b1-3db0-4f2a-8389-2c2e4d482fe8",
+    "beteckning": "Westbopartiet",
+    "filnamn": "westbopartiet"
+  },
+  {
+    "uuid": "b28ca28d-463b-429a-b732-de43333f9096",
+    "beteckning": "Westerwikspartiet",
+    "filnamn": "westerwikspartiet"
+  }
+]

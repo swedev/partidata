@@ -1,17 +1,29 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "standard"
+  ],
+  "plugins": [
+    // "css-modules",
+    // "simple-import-sort",
+    // "react",
+    // "react-hooks",
+    "import"
+  ],
+  "settings": {
   },
-  "plugins": [],
-  "extends": "standard",
   "rules": {
-    "indent": ["error", 2, {"SwitchCase": 1}],
+    // "indent": ["error", 2, {"SwitchCase": 1}],
     "semi": ["error", "always"],
-    "space-before-function-paren": "off",
+    // "space-before-function-paren": "off",
     "padded-blocks": "off",
-    "import/no-webpack-loader-syntax": "off",
+    "import/no-unresolved": [2, { "commonjs": true }],
+    // "import/no-webpack-loader-syntax": "off",
     "lines-between-class-members": "off",
     "comma-dangle": "off"
+    // "react/jsx-uses-vars": "error",
+    // "react/jsx-no-undef": "error",
+    // "react/jsx-uses-react": "error"
   }
 }

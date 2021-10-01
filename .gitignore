@@ -1,14 +1,38 @@
-# General
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
 *.tar
 *.gz
 *.DS_Store
-.nfs*
-._*
-*.pyc
-*.egg-info
-*.sublime-workspace
-*.sublime-project
+.npmrc
 
-# project
-dist
-node_modules
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.in
+.out
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel

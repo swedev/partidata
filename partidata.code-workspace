@@ -1,0 +1,46 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/sourceMaps": true,
+      "**/.babel-cache": true,
+      "**/.cache": true,
+      "**/*.tar": true,
+      "**/*.gz": true,
+      "**/__pycache__": true,
+      "pgdata": true,
+      "static": true,
+			"**/package-lock.json": true,
+    },
+    "files.exclude" : {
+      "**/node_modules": true,
+      "**/dist": true,  
+      "**/sourceMaps": true,
+      "**/.babel-cache": true,
+      "**/.cache": true,
+      "**/*.tar": true,
+      "**/*.gz": true,
+      "**/__pycache__": true,
+      "pgdata": true,
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    },
+    "files.associations": {
+      "Dockerfile-prod": "dockerfile",
+    },
+    "window.title": "Partidata 🇸🇪",
+    "editor.insertSpaces": true,        
+    "editor.tabSize": 2,
+    "search.useIgnoreFiles": false,
+  }
+}

@@ -1,5 +1,7 @@
 # Partidata
 
+[![Status](https://img.shields.io/badge/Status-Working%20on%20first%20draft-red.svg)]
+
 Öppen data om politiska partier i Sverige.
 
 
