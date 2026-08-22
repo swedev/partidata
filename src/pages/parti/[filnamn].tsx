@@ -1,18 +1,34 @@
-import type { NextPage } from 'next';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import Footer from 'src/components/Footer';
+import type { Parti } from 'src/types';
 
 import parties from 'data/parti/index.json';
 
-interface PartyPageProps {
-  beteckning: string;
-  forkortning?: string;
+const dateFormatter = new Intl.DateTimeFormat('sv-SE', { dateStyle: 'long', timeZone: 'UTC' });
+
+function formatSwedishDate (iso?: string) {
+  if (!iso) {
+    return undefined;
+  }
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) {
+    return iso;
+  }
+  return dateFormatter.format(date);
 }
 
 /**
  * PartyPage
  */
-const PartyPage: NextPage<PartyPageProps> = ({ beteckning, forkortning }) => {
+const PartyPage: NextPage<Parti> = ({ beteckning, forkortning, kod, valmyndigheten_registreringsdatum }) => {
+  const rows = [
+    { label: 'Partikod hos Valmyndigheten', value: kod },
+    { label: 'Förkortning', value: forkortning },
+    { label: 'Registrerad hos Valmyndigheten', value: formatSwedishDate(valmyndigheten_registreringsdatum) },
+  ].filter(row => row.value);
+
   return (
     <div>
       <main className="container">
@@ -22,6 +38,10 @@ const PartyPage: NextPage<PartyPageProps> = ({ beteckning, forkortning }) => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
+        <p className="mt-6">
+          <Link href="/">← Alla partier</Link>
+        </p>
+
         <h1>
           {beteckning}
           {forkortning &&
@@ -29,7 +49,7 @@ const PartyPage: NextPage<PartyPageProps> = ({ beteckning, forkortning }) => {
           }
         </h1>
 
-        <div className="flex flex-row mt-10">
+        <div className="flex flex-col md:flex-row mt-10">
           <div className="flex-1">
 
           <table className="table table-striped">
@@ -39,26 +59,12 @@ const PartyPage: NextPage<PartyPageProps> = ({ beteckning, forkortning }) => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Grundat</td>
-                <td>12 Juni, 19XX</td>
-              </tr>
-              <tr>
-                <td>Key</td>
-                <td>Value</td>
-              </tr>
-              <tr>
-                <td>Key</td>
-                <td>Value</td>
-              </tr>
-              <tr>
-                <td>Key</td>
-                <td>Value</td>
-              </tr>
-              <tr>
-                <td>Key</td>
-                <td>Value</td>
-              </tr>
+              {rows.map(row => (
+                <tr key={row.label}>
+                  <td>{row.label}</td>
+                  <td>{row.value}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
 
@@ -76,17 +82,20 @@ const PartyPage: NextPage<PartyPageProps> = ({ beteckning, forkortning }) => {
 
 export default PartyPage;
 
-export async function getStaticPaths () {
+export const getStaticPaths: GetStaticPaths<{ filnamn: string }> = async () => {
   return {
     paths: parties.map(party => ({ params: { filnamn: party.filnamn } })),
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps (context: { params: { filnamn: string } }) {
-  const filnamn = context.params.filnamn;
-  const party = (await import(`data/parti/${filnamn}/index.json`)).default;
+export const getStaticProps: GetStaticProps<Parti, { filnamn: string }> = async ({ params }) => {
+  const filnamn = params?.filnamn;
+  if (!filnamn) {
+    return { notFound: true };
+  }
+  const party = (await import(`data/parti/${filnamn}/index.json`)).default as Parti;
   return {
     props: party
   };
-}
+};

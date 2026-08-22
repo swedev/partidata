@@ -3,14 +3,17 @@ import Head from 'next/head';
 
 import parties from 'data/parti/index.json';
 import Footer from 'src/components/Footer';
+import type { PartiIndexEntry } from 'src/types';
 
-const groupedParties = new Map<string, Array<any>>();
+const groupedParties = new Map<string, PartiIndexEntry[]>();
 parties.forEach(parti => {
   const key = parti.beteckning.substr(0, 1).toUpperCase();
-  if (!groupedParties.has(key)) {
-    groupedParties.set(key, []);
+  const group = groupedParties.get(key);
+  if (group) {
+    group.push(parti);
+  } else {
+    groupedParties.set(key, [parti]);
   }
-  (groupedParties.get(key) as Array<any>).push(parti);
 });
 
 const charGroups = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
@@ -54,7 +57,7 @@ const HomePage: NextPage = () => {
             <li key={char} className="flex-1">
               <h3>{char}</h3>
               <ul>
-              {(groupedParties.get(char) as Array<any>).map((party, k) => (
+              {(groupedParties.get(char) ?? []).map(party => (
                 <li key={party.filnamn}>
                   <a href={`/parti/${party.filnamn}`}>{party.beteckning}</a>
                 </li>
