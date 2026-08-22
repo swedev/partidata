@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: { unoptimized: true },
   reactStrictMode: true,
+  agentRules: false,
   sassOptions: {
     quietDeps: true,
     silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'if-function'],
