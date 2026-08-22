@@ -40,7 +40,7 @@ const HomePage: NextPage = () => {
           </h1>
           <p className="description">
             Öppen data om politiska partier i Sverige<br/>
-            <strong>OBS! Work In Progress</strong>
+            Registrerade partibeteckningar från Valmyndigheten, med uppgifter om varje parti
           </p>
 
           <div className="w-3/5 mt-8">
