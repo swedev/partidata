@@ -1,0 +1,16 @@
+{
+  "uuid": "5fc72bf8-0128-4c04-b70f-56d9d44e529e",
+  "kod": "1728",
+  "beteckning": "Helmjölksinitiativet",
+  "filnamn": "helmjolksinitiativet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0860"
+      ]
+    }
+  }
+}

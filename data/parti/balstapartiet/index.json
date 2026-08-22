@@ -1,6 +1,31 @@
 {
-  "beteckning": "Bålstapartiet",
-  "kod": "0184",
   "uuid": "25be4598-d568-46e2-89ea-b6614711c6db",
-  "filnamn": "balstapartiet"
+  "kod": "0184",
+  "beteckning": "Bålstapartiet",
+  "filnamn": "balstapartiet",
+  "forkortning": "BÅP",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0305"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0305"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0305"
+      ]
+    }
+  }
 }

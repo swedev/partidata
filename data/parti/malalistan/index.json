@@ -1,8 +1,32 @@
 {
+  "uuid": "94de475b-521e-4fd6-b5e2-16eeacde72b4",
+  "kod": "0525",
   "beteckning": "Malålistan",
   "filnamn": "malalistan",
   "forkortning": "ML",
-  "kod": "0525",
-  "uuid": "94de475b-521e-4fd6-b5e2-16eeacde72b4",
-  "valmyndigheten_registreringsdatum": "2006-02-23"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2006-02-23",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2418"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2418"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2418"
+      ]
+    }
+  }
 }

@@ -1,8 +1,25 @@
 {
+  "uuid": "c79c8c7f-d06b-44f2-8749-de54938de492",
+  "kod": "0336",
   "beteckning": "Ölandspartiet",
   "filnamn": "olandspartiet",
   "forkortning": "Öland",
-  "kod": "0336",
-  "uuid": "c79c8c7f-d06b-44f2-8749-de54938de492",
-  "valmyndigheten_registreringsdatum": "2017-12-18"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0885"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0885"
+      ]
+    }
+  }
 }

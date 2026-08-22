@@ -1,8 +1,25 @@
 {
+  "uuid": "da251d4e-1f74-42de-b440-91cac1078bc1",
+  "kod": "1280",
   "beteckning": "Fria Demokraterna",
   "filnamn": "fria-demokraterna",
   "forkortning": "FD",
-  "kod": "1280",
-  "uuid": "da251d4e-1f74-42de-b440-91cac1078bc1",
-  "valmyndigheten_registreringsdatum": "2017-10-20"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-10-20",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2401"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2401"
+      ]
+    }
+  }
 }

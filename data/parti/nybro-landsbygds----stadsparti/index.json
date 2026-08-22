@@ -1,0 +1,17 @@
+{
+  "uuid": "9b140032-4095-4c74-ae5d-aa23f77cbff0",
+  "kod": "1800",
+  "beteckning": "Nybro Landsbygds- & Stadsparti",
+  "filnamn": "nybro-landsbygds----stadsparti",
+  "forkortning": "NLS",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0881"
+      ]
+    }
+  }
+}

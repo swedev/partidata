@@ -1,0 +1,14 @@
+{
+  "uuid": "88dbd014-9af8-46f8-a036-bc10f952a2cf",
+  "kod": "1719",
+  "beteckning": "Ett Bra Sverige",
+  "filnamn": "ett-bra-sverige",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

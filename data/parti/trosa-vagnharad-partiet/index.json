@@ -1,0 +1,16 @@
+{
+  "uuid": "40ec789b-5e10-4830-8d4a-c5a532b93501",
+  "kod": "1896",
+  "beteckning": "Trosa Vagnhärad Partiet",
+  "filnamn": "trosa-vagnharad-partiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0488"
+      ]
+    }
+  }
+}

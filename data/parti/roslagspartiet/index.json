@@ -1,8 +1,32 @@
 {
+  "uuid": "be71ef20-ecb1-4702-8cdd-98686556b98b",
+  "kod": "0465",
   "beteckning": "Roslagspartiet",
   "filnamn": "roslagspartiet",
   "forkortning": "ROSP",
-  "kod": "0465",
-  "uuid": "be71ef20-ecb1-4702-8cdd-98686556b98b",
-  "valmyndigheten_registreringsdatum": "2017-12-08"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-08",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0117"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0117"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0117"
+      ]
+    }
+  }
 }

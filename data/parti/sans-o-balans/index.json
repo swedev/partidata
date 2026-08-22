@@ -1,0 +1,24 @@
+{
+  "uuid": "380344b3-0c02-4d8d-af0a-a12763525232",
+  "kod": "1441",
+  "beteckning": "Sans o Balans",
+  "filnamn": "sans-o-balans",
+  "forkortning": "SoB",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1761"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1761"
+      ]
+    }
+  }
+}

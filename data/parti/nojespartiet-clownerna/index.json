@@ -1,0 +1,16 @@
+{
+  "uuid": "b12eba67-b1b9-416a-9256-e5677d171ed7",
+  "kod": "1620",
+  "beteckning": "Nöjespartiet Clownerna",
+  "filnamn": "nojespartiet-clownerna",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0127"
+      ]
+    }
+  }
+}

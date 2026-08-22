@@ -1,6 +1,13 @@
 {
+  "uuid": "d9d8dcc8-eeea-48e5-b5a5-8c0633233e3c",
+  "kod": "1345",
   "beteckning": "LÅNGEN&CO",
   "filnamn": "langen-amp-co",
-  "kod": "1345",
-  "uuid": "d9d8dcc8-eeea-48e5-b5a5-8c0633233e3c"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

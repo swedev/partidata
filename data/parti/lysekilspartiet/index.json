@@ -1,8 +1,32 @@
 {
+  "uuid": "5b6a8475-6d85-466e-a34f-008852c173f7",
+  "kod": "0248",
   "beteckning": "Lysekilspartiet",
   "filnamn": "lysekilspartiet",
   "forkortning": "LP.NU",
-  "kod": "0248",
-  "uuid": "5b6a8475-6d85-466e-a34f-008852c173f7",
-  "valmyndigheten_registreringsdatum": "2014-01-16"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2014-01-16",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1484"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1484"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1484"
+      ]
+    }
+  }
 }

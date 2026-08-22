@@ -1,0 +1,24 @@
+{
+  "uuid": "b3052937-a2a5-4be7-9f1e-c008e71abf8d",
+  "kod": "1515",
+  "beteckning": "Framtid S Övertorneå",
+  "filnamn": "framtid-s-overtornea",
+  "forkortning": "FrSÖ",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2518"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2518"
+      ]
+    }
+  }
+}

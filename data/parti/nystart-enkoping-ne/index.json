@@ -1,8 +1,32 @@
 {
+  "uuid": "f4f9b691-9eea-4cd7-906a-bbebb07a9c42",
+  "kod": "1143",
   "beteckning": "Nystart Enköping (NE)",
   "filnamn": "nystart-enkoping-ne",
   "forkortning": "NE",
-  "kod": "1143",
-  "uuid": "f4f9b691-9eea-4cd7-906a-bbebb07a9c42",
-  "valmyndigheten_registreringsdatum": "2017-12-08"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-08",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0381"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0381"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0381"
+      ]
+    }
+  }
 }

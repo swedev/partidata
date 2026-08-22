@@ -1,6 +1,31 @@
 {
-  "beteckning": "Folkkampanjen för sjukvården",
-  "kod": "0285",
   "uuid": "e9b71444-ae98-4388-bab5-617da46f248e",
-  "filnamn": "folkkampanjen-for-sjukvarden"
+  "kod": "1530",
+  "tidigare_koder": [
+    "0285"
+  ],
+  "beteckning": "Folkkampanjen för sjukvården",
+  "filnamn": "folkkampanjen-for-sjukvarden",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "20"
+      ],
+      "kommun": [
+        "2085"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "20"
+      ],
+      "kommun": [
+        "2061",
+        "2085"
+      ]
+    }
+  }
 }

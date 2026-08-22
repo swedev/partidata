@@ -1,7 +1,24 @@
 {
+  "uuid": "9d142618-dec4-4780-b3a9-9261a5d9c3e1",
+  "kod": "1286",
   "beteckning": "Solnapartiet",
   "filnamn": "solnapartiet",
-  "kod": "1286",
-  "uuid": "9d142618-dec4-4780-b3a9-9261a5d9c3e1",
-  "valmyndigheten_registreringsdatum": "2017-10-20"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-10-20",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0184"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0184"
+      ]
+    }
+  }
 }

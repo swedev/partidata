@@ -1,8 +1,32 @@
 {
+  "uuid": "6675260d-0e34-4c06-842e-98312374dc21",
+  "kod": "0422",
   "beteckning": "Österlenpartiet",
   "filnamn": "osterlenpartiet",
   "forkortning": "ÖstP",
-  "kod": "0422",
-  "uuid": "6675260d-0e34-4c06-842e-98312374dc21",
-  "valmyndigheten_registreringsdatum": "2002-08-13"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2002-08-13",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1291"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1291"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1291"
+      ]
+    }
+  }
 }

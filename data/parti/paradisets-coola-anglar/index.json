@@ -1,0 +1,18 @@
+{
+  "uuid": "2133498f-ddb8-4860-9205-d0c99fc92dcf",
+  "kod": "1706",
+  "beteckning": "Paradisets Coola Änglar",
+  "filnamn": "paradisets-coola-anglar",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "01"
+      ],
+      "kommun": [
+        "0180"
+      ]
+    }
+  }
+}

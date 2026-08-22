@@ -1,0 +1,16 @@
+{
+  "uuid": "702a0c3e-92e8-4449-a956-e49eaaa0a68e",
+  "kod": "1676",
+  "beteckning": "Vision Framåtanda",
+  "filnamn": "vision-framatanda",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "06"
+      ],
+      "kommun": []
+    }
+  }
+}

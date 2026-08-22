@@ -1,0 +1,16 @@
+{
+  "uuid": "42611ff0-d230-4626-9866-8b68298a61b6",
+  "kod": "1698",
+  "beteckning": "Oberoende S",
+  "filnamn": "oberoende-s",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0127"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "uuid": "675cfe22-0c1e-4892-a278-32ac4424d4ed",
+  "kod": "1912",
+  "beteckning": "Stoppa AI-kapprustningen",
+  "filnamn": "stoppa-ai-kapprustningen",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

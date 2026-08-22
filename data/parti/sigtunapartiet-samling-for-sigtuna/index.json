@@ -1,8 +1,32 @@
 {
+  "uuid": "18b7efcb-527c-4886-8b8a-9ae9d68de88f",
+  "kod": "0009",
   "beteckning": "Sigtunapartiet Samling för Sigtuna",
   "filnamn": "sigtunapartiet-samling-for-sigtuna",
   "forkortning": "SFS",
-  "kod": "0009",
-  "uuid": "18b7efcb-527c-4886-8b8a-9ae9d68de88f",
-  "valmyndigheten_registreringsdatum": "1999-04-06"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "1999-04-06",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0191"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0191"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0191"
+      ]
+    }
+  }
 }

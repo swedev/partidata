@@ -1,8 +1,32 @@
 {
+  "uuid": "c0fec9af-ef73-43ec-9748-c82d98ab4514",
+  "kod": "0711",
   "beteckning": "Tullingepartiet",
   "filnamn": "tullingepartiet",
   "forkortning": "TuP",
-  "kod": "0711",
-  "uuid": "c0fec9af-ef73-43ec-9748-c82d98ab4514",
-  "valmyndigheten_registreringsdatum": "2017-12-04"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-04",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0127"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0127"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0127"
+      ]
+    }
+  }
 }

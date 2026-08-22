@@ -1,6 +1,24 @@
 {
-  "beteckning": "Mullsjö Framtid",
-  "kod": "0639",
   "uuid": "91a14e9f-ab4c-4b2e-b4bf-ee634138ff7d",
-  "filnamn": "mullsjo-framtid"
+  "kod": "0639",
+  "beteckning": "Mullsjö Framtid",
+  "filnamn": "mullsjo-framtid",
+  "forkortning": "MFR",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0642"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0642"
+      ]
+    }
+  }
 }

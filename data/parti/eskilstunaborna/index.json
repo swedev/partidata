@@ -1,0 +1,16 @@
+{
+  "uuid": "b1c2b587-0ad4-40ca-a053-45c4a16a5761",
+  "kod": "1840",
+  "beteckning": "Eskilstunaborna!",
+  "filnamn": "eskilstunaborna",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0484"
+      ]
+    }
+  }
+}

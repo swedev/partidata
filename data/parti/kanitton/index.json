@@ -1,0 +1,14 @@
+{
+  "uuid": "6a82802d-5454-498a-89d7-6416acee7f40",
+  "kod": "1678",
+  "beteckning": "Kånitton",
+  "filnamn": "kanitton",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

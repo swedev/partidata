@@ -1,6 +1,13 @@
 {
+  "uuid": "c31e131c-ff24-4f29-b3fa-58afcbc3dddc",
+  "kod": "1406",
   "beteckning": "Generation Utveckling",
   "filnamn": "generation-utveckling",
-  "kod": "1406",
-  "uuid": "c31e131c-ff24-4f29-b3fa-58afcbc3dddc"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "uuid": "54cb7a33-4674-4b7a-8e1b-e32d7887a666",
+  "kod": "1765",
+  "beteckning": "FRIDSLAGET",
+  "filnamn": "fridslaget",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": [
+        "0180"
+      ]
+    }
+  }
+}

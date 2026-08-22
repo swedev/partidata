@@ -1,8 +1,32 @@
 {
+  "uuid": "1a5522db-9c9a-4c2e-8bc6-a5877671ed18",
+  "kod": "1310",
   "beteckning": "BARAPARTIET",
   "filnamn": "barapartiet",
   "forkortning": "BAP",
-  "kod": "1310",
-  "uuid": "1a5522db-9c9a-4c2e-8bc6-a5877671ed18",
-  "valmyndigheten_registreringsdatum": "2017-10-20"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-10-20",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1263"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1263"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1263"
+      ]
+    }
+  }
 }

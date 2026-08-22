@@ -1,8 +1,32 @@
 {
+  "uuid": "db6631d4-61a1-4068-b426-66d75fe39ea1",
+  "kod": "1337",
   "beteckning": "Mitt Göinge",
   "filnamn": "mitt-goinge",
   "forkortning": "MG",
-  "kod": "1337",
-  "uuid": "db6631d4-61a1-4068-b426-66d75fe39ea1",
-  "valmyndigheten_registreringsdatum": "2018-02-26"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-02-26",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1256"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1256"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1256"
+      ]
+    }
+  }
 }

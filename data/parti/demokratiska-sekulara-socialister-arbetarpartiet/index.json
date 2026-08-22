@@ -1,8 +1,29 @@
 {
+  "uuid": "59e3d3d7-ca0c-4818-933e-9c6b7e04b1d1",
+  "kod": "1180",
   "beteckning": "Demokratiska Sekulära Socialister Arbetarpartiet",
   "filnamn": "demokratiska-sekulara-socialister-arbetarpartiet",
-  "forkortning": "Ar P",
-  "kod": "1180",
-  "uuid": "59e3d3d7-ca0c-4818-933e-9c6b7e04b1d1",
-  "valmyndigheten_registreringsdatum": "2019-01-12"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2019-01-12",
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "24"
+      ],
+      "kommun": [
+        "2480"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "24"
+      ],
+      "kommun": [
+        "0380",
+        "2480"
+      ]
+    }
+  }
 }

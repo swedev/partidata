@@ -1,0 +1,16 @@
+{
+  "uuid": "c40146e6-4698-4c4e-9665-7cdf83290afd",
+  "kod": "1827",
+  "beteckning": "Uppsala ansvarspartiet",
+  "filnamn": "uppsala-ansvarspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0380"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "b61d0643-3ab8-4560-8849-4cdfbb45ec18",
+  "kod": "1445",
+  "beteckning": "Alvestademokraterna",
+  "filnamn": "alvestademokraterna",
+  "forkortning": "ADEM",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0764"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0764"
+      ]
+    }
+  }
+}

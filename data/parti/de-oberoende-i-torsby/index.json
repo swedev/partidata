@@ -1,0 +1,24 @@
+{
+  "uuid": "f1a75d12-a4fa-4263-bc59-3fcdec6629a9",
+  "kod": "1522",
+  "beteckning": "De Oberoende i Torsby",
+  "filnamn": "de-oberoende-i-torsby",
+  "forkortning": "DO!T",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1737"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1737"
+      ]
+    }
+  }
+}

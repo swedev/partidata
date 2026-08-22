@@ -1,0 +1,20 @@
+{
+  "uuid": "40b132ea-61fb-469b-b4da-26d573fd6cee",
+  "kod": "1717",
+  "beteckning": "VÅR RÖST",
+  "filnamn": "var-rost",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1276",
+        "1280",
+        "1281",
+        "1290",
+        "1291"
+      ]
+    }
+  }
+}

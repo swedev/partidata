@@ -1,0 +1,19 @@
+{
+  "uuid": "e9db3311-ce19-432d-b10d-d0735af83af7",
+  "kod": "1555",
+  "beteckning": "Olofströmsdemokraterna",
+  "filnamn": "olofstromsdemokraterna",
+  "forkortning": "OD",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "10"
+      ],
+      "kommun": [
+        "1060"
+      ]
+    }
+  }
+}

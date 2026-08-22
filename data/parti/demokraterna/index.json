@@ -1,8 +1,38 @@
 {
+  "uuid": "45040bfa-87cf-44ec-aee8-f27724866aaf",
+  "kod": "1297",
   "beteckning": "Demokraterna",
   "filnamn": "demokraterna",
   "forkortning": "DEM",
-  "kod": "1297",
-  "uuid": "45040bfa-87cf-44ec-aee8-f27724866aaf",
-  "valmyndigheten_registreringsdatum": "2018-03-16"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-03-16",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "14"
+      ],
+      "kommun": [
+        "1480"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "14"
+      ],
+      "kommun": [
+        "1480"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "14"
+      ],
+      "kommun": [
+        "1480"
+      ]
+    }
+  }
 }

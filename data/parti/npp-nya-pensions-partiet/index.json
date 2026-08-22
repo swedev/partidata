@@ -1,6 +1,13 @@
 {
+  "uuid": "1de65e35-d734-4941-a5de-d2b3edba6470",
+  "kod": "1399",
   "beteckning": "NPP Nya Pensions Partiet",
   "filnamn": "npp-nya-pensions-partiet",
-  "kod": "1399",
-  "uuid": "1de65e35-d734-4941-a5de-d2b3edba6470"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

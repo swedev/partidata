@@ -1,0 +1,16 @@
+{
+  "uuid": "76618364-a6e7-4747-af3e-f3594d4d7b7f",
+  "kod": "1797",
+  "beteckning": "Herrljunga Partiet",
+  "filnamn": "herrljunga-partiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1466"
+      ]
+    }
+  }
+}

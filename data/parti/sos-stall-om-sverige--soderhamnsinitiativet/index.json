@@ -1,8 +1,25 @@
 {
+  "uuid": "4b2c8870-d6e5-402a-a4ed-7f68d098869b",
+  "kod": "1360",
   "beteckning": "SOS-Ställ Om Sverige, Söderhamnsinitiativet",
   "filnamn": "sos-stall-om-sverige--soderhamnsinitiativet",
   "forkortning": "SOS",
-  "kod": "1360",
-  "uuid": "4b2c8870-d6e5-402a-a4ed-7f68d098869b",
-  "valmyndigheten_registreringsdatum": "2018-03-09"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-03-09",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2182"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2182"
+      ]
+    }
+  }
 }

@@ -1,8 +1,36 @@
 {
+  "uuid": "dc646f81-a2b4-44d3-8d5f-1e1802de6601",
+  "kod": "0505",
+  "tidigare_koder": [
+    "1299"
+  ],
   "beteckning": "Medborgarpartiet",
   "filnamn": "medborgarpartiet",
-  "forkortning": "MedP",
-  "kod": "1299",
-  "uuid": "dc646f81-a2b4-44d3-8d5f-1e1802de6601",
-  "valmyndigheten_registreringsdatum": "2017-08-23"
+  "forkortning": "Vfp",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-08-23",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1293",
+        "1487"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1487"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1487"
+      ]
+    }
+  }
 }

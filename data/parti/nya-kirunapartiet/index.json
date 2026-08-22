@@ -1,8 +1,25 @@
 {
+  "uuid": "6639e412-737a-4308-992f-76b4f021910e",
+  "kod": "1326",
   "beteckning": "Nya Kirunapartiet",
   "filnamn": "nya-kirunapartiet",
   "forkortning": "NKP",
-  "kod": "1326",
-  "uuid": "6639e412-737a-4308-992f-76b4f021910e",
-  "valmyndigheten_registreringsdatum": "2017-12-18"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2584"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2584"
+      ]
+    }
+  }
 }

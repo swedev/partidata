@@ -1,8 +1,19 @@
 {
+  "uuid": "b60ad164-adce-4c69-9438-074670153ab4",
+  "kod": "1168",
   "beteckning": "Knegarkampanjen",
   "filnamn": "knegarkampanjen",
   "forkortning": "KNEG",
-  "kod": "1168",
-  "uuid": "b60ad164-adce-4c69-9438-074670153ab4",
-  "valmyndigheten_registreringsdatum": "2014-03-07"
+  "valmyndigheten_registreringsdatum": "2014-03-07",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2521",
+        "2523",
+        "2584"
+      ]
+    }
+  }
 }

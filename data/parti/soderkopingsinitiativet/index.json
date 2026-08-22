@@ -1,0 +1,24 @@
+{
+  "uuid": "eea0ad04-5d4b-411b-a605-61c0b27e9c17",
+  "kod": "1584",
+  "beteckning": "Söderköpingsinitiativet",
+  "filnamn": "soderkopingsinitiativet",
+  "forkortning": "SI",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0582"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0582"
+      ]
+    }
+  }
+}

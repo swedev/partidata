@@ -1,0 +1,18 @@
+{
+  "uuid": "994a7516-f9b7-4d59-a2fa-06625539ecfc",
+  "kod": "1913",
+  "beteckning": "Återställ Sverige",
+  "filnamn": "aterstall-sverige",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2482",
+        "2580",
+        "2581"
+      ]
+    }
+  }
+}

@@ -1,8 +1,31 @@
 {
+  "uuid": "3571a393-94b0-4aeb-b092-f3dabc9b6f5e",
+  "kod": "1287",
   "beteckning": "Habodemokraterna",
   "filnamn": "habodemokraterna",
-  "forkortning": "HaDem",
-  "kod": "1287",
-  "uuid": "3571a393-94b0-4aeb-b092-f3dabc9b6f5e",
-  "valmyndigheten_registreringsdatum": "2017-01-16"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-01-16",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0643"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0643"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0643"
+      ]
+    }
+  }
 }

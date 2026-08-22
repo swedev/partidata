@@ -1,8 +1,31 @@
 {
+  "uuid": "ea3d9524-730d-437d-a74e-5b1412f40c7d",
+  "kod": "1379",
   "beteckning": "Älska Svedala",
   "filnamn": "alska-svedala",
-  "forkortning": "ÄS",
-  "kod": "1379",
-  "uuid": "ea3d9524-730d-437d-a74e-5b1412f40c7d",
-  "valmyndigheten_registreringsdatum": "2019-01-11"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2019-01-11",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1263"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1263"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1263"
+      ]
+    }
+  }
 }

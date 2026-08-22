@@ -1,8 +1,34 @@
 {
+  "uuid": "a8f1717a-818c-40d4-bfb3-f04dfd172e9f",
+  "kod": "1333",
   "beteckning": "EMPA(R)TIET",
   "filnamn": "empartiet",
   "forkortning": "EMP",
-  "kod": "1333",
-  "uuid": "a8f1717a-818c-40d4-bfb3-f04dfd172e9f",
-  "valmyndigheten_registreringsdatum": "2018-01-29"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-29",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "06"
+      ],
+      "kommun": [
+        "0665"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0665"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0665"
+      ]
+    }
+  }
 }

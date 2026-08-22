@@ -1,0 +1,24 @@
+{
+  "uuid": "2707079d-6275-4525-bca7-fd523d4f46fd",
+  "kod": "0742",
+  "beteckning": "Kommunlistan",
+  "filnamn": "kommunlistan-0742",
+  "forkortning": "SKL",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2421"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2421"
+      ]
+    }
+  }
+}

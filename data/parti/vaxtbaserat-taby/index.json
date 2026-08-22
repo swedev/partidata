@@ -1,0 +1,16 @@
+{
+  "uuid": "b1411933-f220-43c1-8a4b-ab655f21d11b",
+  "kod": "1847",
+  "beteckning": "Växtbaserat Täby",
+  "filnamn": "vaxtbaserat-taby",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0160"
+      ]
+    }
+  }
+}

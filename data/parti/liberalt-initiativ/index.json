@@ -1,0 +1,20 @@
+{
+  "uuid": "3114d79d-f1f6-4981-8bdf-971f533215a8",
+  "kod": "1851",
+  "beteckning": "Liberalt Initiativ",
+  "filnamn": "liberalt-initiativ",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "03"
+      ],
+      "kommun": [
+        "0330",
+        "0380",
+        "0381"
+      ]
+    }
+  }
+}

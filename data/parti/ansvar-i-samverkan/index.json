@@ -1,0 +1,16 @@
+{
+  "uuid": "61437ccc-ca2f-44d0-9a24-18addd0d37f4",
+  "kod": "1763",
+  "beteckning": "Ansvar i samverkan",
+  "filnamn": "ansvar-i-samverkan",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1430"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "acad976b-214e-4912-8c5c-d8114287fe28",
+  "kod": "1499",
+  "beteckning": "Vägval Stockholm",
+  "filnamn": "vagval-stockholm",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "01"
+      ],
+      "kommun": [
+        "0180"
+      ]
+    }
+  }
+}

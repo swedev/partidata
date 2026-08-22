@@ -1,8 +1,32 @@
 {
+  "uuid": "655f6918-3cd2-40a5-819a-05ba458c1209",
+  "kod": "1361",
   "beteckning": "Framtid S",
   "filnamn": "framtid-s",
   "forkortning": "FrS",
-  "kod": "1361",
-  "uuid": "655f6918-3cd2-40a5-819a-05ba458c1209",
-  "valmyndigheten_registreringsdatum": "2018-03-06"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-03-06",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2521"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2521"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2521"
+      ]
+    }
+  }
 }

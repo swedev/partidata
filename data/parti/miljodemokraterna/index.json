@@ -1,6 +1,15 @@
 {
-  "beteckning": "Miljödemokraterna",
-  "kod": "1383",
   "uuid": "81977980-9553-4fa9-8ed7-7687fa9b5959",
-  "filnamn": "miljodemokraterna"
+  "kod": "1383",
+  "beteckning": "Miljödemokraterna",
+  "filnamn": "miljodemokraterna",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1883"
+      ]
+    }
+  }
 }

@@ -1,8 +1,17 @@
 {
+  "uuid": "71382aa3-f2e3-4bce-85d5-eda2b31f595a",
+  "kod": "1334",
   "beteckning": "Tomelillapartiet",
   "filnamn": "tomelillapartiet",
   "forkortning": "TomP",
-  "kod": "1334",
-  "uuid": "71382aa3-f2e3-4bce-85d5-eda2b31f595a",
-  "valmyndigheten_registreringsdatum": "2018-01-22"
+  "valmyndigheten_registreringsdatum": "2018-01-22",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1270"
+      ]
+    }
+  }
 }

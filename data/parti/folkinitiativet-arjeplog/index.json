@@ -1,0 +1,24 @@
+{
+  "uuid": "7cfdfa11-7d51-476e-9ef1-4f31a950dde2",
+  "kod": "1514",
+  "beteckning": "Folkinitiativet Arjeplog",
+  "filnamn": "folkinitiativet-arjeplog",
+  "forkortning": "FoAr",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2506"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2506"
+      ]
+    }
+  }
+}

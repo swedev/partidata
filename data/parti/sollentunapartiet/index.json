@@ -1,8 +1,25 @@
 {
+  "uuid": "284326c6-e8bd-4864-aa4c-b681444f1490",
+  "kod": "0046",
   "beteckning": "Sollentunapartiet",
   "filnamn": "sollentunapartiet",
   "forkortning": "SPA",
-  "kod": "0046",
-  "uuid": "284326c6-e8bd-4864-aa4c-b681444f1490",
-  "valmyndigheten_registreringsdatum": "2018-06-26"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-06-26",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0163"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0163"
+      ]
+    }
+  }
 }

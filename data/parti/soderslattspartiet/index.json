@@ -1,8 +1,35 @@
 {
-  "beteckning": "Söderslättspartiet",
-  "filnamn": "soderslattspartiet",
-  "forkortning": "SÖS",
-  "kod": "1006",
   "uuid": "e7ac6421-62bc-4ef3-aa5b-326acb0811bb",
-  "valmyndigheten_registreringsdatum": "2010-03-04"
+  "kod": "1006",
+  "beteckning": "Vårt Söderslätt",
+  "tidigare_beteckningar": [
+    "Söderslättspartiet"
+  ],
+  "filnamn": "soderslattspartiet",
+  "forkortning": "VS",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2010-03-04",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1287"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1287"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1287"
+      ]
+    }
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "uuid": "9c5906a6-4d2f-4be1-a103-e88372a8f12c",
+  "kod": "1769",
+  "beteckning": "Ulricehamns Bygdens Framtid UBF",
+  "filnamn": "ulricehamns-bygdens-framtid-ubf",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1491"
+      ]
+    }
+  }
+}

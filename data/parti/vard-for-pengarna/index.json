@@ -1,8 +1,32 @@
 {
+  "uuid": "4ef9af41-d2fa-475f-834b-4d722f3c8914",
+  "kod": "1122",
   "beteckning": "Vård för Pengarna",
   "filnamn": "vard-for-pengarna",
   "forkortning": "VåfP",
-  "kod": "1122",
-  "uuid": "4ef9af41-d2fa-475f-834b-4d722f3c8914",
-  "valmyndigheten_registreringsdatum": "2017-10-17"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-10-17",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "04"
+      ],
+      "kommun": []
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "04"
+      ],
+      "kommun": []
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "04"
+      ],
+      "kommun": []
+    }
+  }
 }

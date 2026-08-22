@@ -1,6 +1,15 @@
 {
-  "beteckning": "Fucking Åmål",
-  "kod": "1392",
   "uuid": "dd5c8509-a332-4be8-b299-58fef42a5b7d",
-  "filnamn": "fucking-amal"
+  "kod": "1392",
+  "beteckning": "Fucking Åmål",
+  "filnamn": "fucking-amal",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1492"
+      ]
+    }
+  }
 }

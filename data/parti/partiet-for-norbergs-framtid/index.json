@@ -1,8 +1,32 @@
 {
+  "uuid": "144fe5cd-0d20-4b11-bd0e-24fa1c9d4438",
+  "kod": "1137",
   "beteckning": "Partiet för Norbergs Framtid",
   "filnamn": "partiet-for-norbergs-framtid",
   "forkortning": "PNF",
-  "kod": "1137",
-  "uuid": "144fe5cd-0d20-4b11-bd0e-24fa1c9d4438",
-  "valmyndigheten_registreringsdatum": "2014-02-21"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2014-02-21",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1962"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1962"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1962"
+      ]
+    }
+  }
 }

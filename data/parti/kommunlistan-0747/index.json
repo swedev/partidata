@@ -1,0 +1,24 @@
+{
+  "uuid": "29d3546a-9c99-4ce0-8bc7-d5276373090e",
+  "kod": "0747",
+  "beteckning": "Kommunlistan",
+  "filnamn": "kommunlistan-0747",
+  "forkortning": "KLH",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2083"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2083"
+      ]
+    }
+  }
+}

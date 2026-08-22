@@ -1,0 +1,18 @@
+{
+  "uuid": "016fb2c4-6354-4ab7-ad56-86d26f67ad55",
+  "kod": "1892",
+  "beteckning": "Partiet Förnuft",
+  "filnamn": "partiet-fornuft",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "13"
+      ],
+      "kommun": [
+        "1380"
+      ]
+    }
+  }
+}

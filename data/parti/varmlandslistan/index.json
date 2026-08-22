@@ -1,0 +1,17 @@
+{
+  "uuid": "c432918c-5471-4750-b56e-28864d819600",
+  "kod": "1550",
+  "beteckning": "Värmlandslistan",
+  "filnamn": "varmlandslistan",
+  "forkortning": "Värml",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "17"
+      ],
+      "kommun": []
+    }
+  }
+}

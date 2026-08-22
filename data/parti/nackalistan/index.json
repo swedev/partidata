@@ -1,8 +1,32 @@
 {
+  "uuid": "eeb297f7-5159-48b2-b6c0-ab92ebc9fa28",
+  "kod": "0543",
   "beteckning": "Nackalistan",
   "filnamn": "nackalistan",
   "forkortning": "NL",
-  "kod": "0543",
-  "uuid": "eeb297f7-5159-48b2-b6c0-ab92ebc9fa28",
-  "valmyndigheten_registreringsdatum": "2018-01-15"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-15",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0182"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0182"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0182"
+      ]
+    }
+  }
 }

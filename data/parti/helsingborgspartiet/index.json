@@ -1,0 +1,16 @@
+{
+  "uuid": "94d15989-4b83-49db-8886-29e7b6a36ac6",
+  "kod": "1789",
+  "beteckning": "Helsingborgspartiet",
+  "filnamn": "helsingborgspartiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1283"
+      ]
+    }
+  }
+}

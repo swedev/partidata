@@ -1,0 +1,18 @@
+{
+  "uuid": "e1ddb322-7ef6-442b-9a8e-3b213702ee9a",
+  "kod": "1909",
+  "beteckning": "Ungdomspartiet",
+  "filnamn": "ungdomspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "14"
+      ],
+      "kommun": [
+        "1491"
+      ]
+    }
+  }
+}

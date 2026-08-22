@@ -1,0 +1,16 @@
+{
+  "uuid": "0bfcd2d5-b1a8-4987-9434-13dec2803c26",
+  "kod": "1469",
+  "beteckning": "Betygsdemokraterna",
+  "filnamn": "betygsdemokraterna",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1980"
+      ]
+    }
+  }
+}

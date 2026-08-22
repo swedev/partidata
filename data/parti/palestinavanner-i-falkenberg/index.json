@@ -1,0 +1,16 @@
+{
+  "uuid": "c0d5ef4b-aebb-432c-a24a-ce0b3a0b5ff9",
+  "kod": "1901",
+  "beteckning": "Palestinavänner i Falkenberg",
+  "filnamn": "palestinavanner-i-falkenberg",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1382"
+      ]
+    }
+  }
+}

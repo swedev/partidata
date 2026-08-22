@@ -1,0 +1,24 @@
+{
+  "uuid": "e9e6022c-ad7b-4dd3-8591-0765044e0724",
+  "kod": "1542",
+  "beteckning": "Hjärta för Halmstad",
+  "filnamn": "hjarta-for-halmstad",
+  "forkortning": "HfH",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1380"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1380"
+      ]
+    }
+  }
+}

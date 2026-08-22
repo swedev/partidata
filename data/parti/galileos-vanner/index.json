@@ -1,0 +1,16 @@
+{
+  "uuid": "9809d6c0-0fd4-4abf-8825-0082c01182a1",
+  "kod": "1856",
+  "beteckning": "Galileos Vänner",
+  "filnamn": "galileos-vanner",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1760"
+      ]
+    }
+  }
+}

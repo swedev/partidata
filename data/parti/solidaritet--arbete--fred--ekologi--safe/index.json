@@ -1,8 +1,35 @@
 {
-  "beteckning": "Solidaritet, Arbete, Fred, Ekologi, SAFE",
+  "uuid": "2c038150-7436-41b5-975e-c745ecbebc14",
+  "kod": "0174",
+  "beteckning": "SAFE - Solidaritet Arbete Fred Ekologi",
+  "tidigare_beteckningar": [
+    "Solidaritet, Arbete, Fred, Ekologi, SAFE"
+  ],
   "filnamn": "solidaritet--arbete--fred--ekologi--safe",
   "forkortning": "SAFE",
-  "kod": "0174",
-  "uuid": "2c038150-7436-41b5-975e-c745ecbebc14",
-  "valmyndigheten_registreringsdatum": "1991-03-05"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "1991-03-05",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0682"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0682"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0682"
+      ]
+    }
+  }
 }

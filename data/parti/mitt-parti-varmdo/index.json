@@ -1,0 +1,17 @@
+{
+  "uuid": "d216206a-ce6b-43a9-96ef-6c5a45a0d293",
+  "kod": "1520",
+  "beteckning": "Mitt Parti Värmdö",
+  "filnamn": "mitt-parti-varmdo",
+  "forkortning": "MPV",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0120"
+      ]
+    }
+  }
+}

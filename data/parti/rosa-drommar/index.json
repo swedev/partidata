@@ -1,6 +1,13 @@
 {
+  "uuid": "b6b9bcc1-068f-4bb1-bc64-cdf1c32bf8c3",
+  "kod": "1409",
   "beteckning": "Rosa Drömmar",
   "filnamn": "rosa-drommar",
-  "kod": "1409",
-  "uuid": "b6b9bcc1-068f-4bb1-bc64-cdf1c32bf8c3"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

@@ -1,6 +1,13 @@
 {
+  "uuid": "d356e679-91d5-4b18-a2b5-8867475116ca",
+  "kod": "1418",
   "beteckning": "Nya bjornska partiet",
   "filnamn": "nya-bjornska-partiet",
-  "kod": "1418",
-  "uuid": "d356e679-91d5-4b18-a2b5-8867475116ca"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

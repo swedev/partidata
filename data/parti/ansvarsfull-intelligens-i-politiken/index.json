@@ -1,0 +1,15 @@
+{
+  "uuid": "c189fda8-c7cf-4cf7-92c9-d76c6ff8c599",
+  "kod": "1891",
+  "beteckning": "ansvarsfull intelligens i politiken",
+  "filnamn": "ansvarsfull-intelligens-i-politiken",
+  "forkortning": "aip",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

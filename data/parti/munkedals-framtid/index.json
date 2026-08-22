@@ -1,0 +1,16 @@
+{
+  "uuid": "cec58994-3d5c-47d2-a2af-8fd50f984c2d",
+  "kod": "1524",
+  "beteckning": "Munkedals Framtid",
+  "filnamn": "munkedals-framtid",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1430"
+      ]
+    }
+  }
+}

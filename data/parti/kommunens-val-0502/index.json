@@ -1,0 +1,24 @@
+{
+  "uuid": "9b733ec5-e9f2-472c-a42b-650ff055689c",
+  "kod": "0502",
+  "beteckning": "Kommunens Väl",
+  "filnamn": "kommunens-val-0502",
+  "forkortning": "KVS",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1264"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1264"
+      ]
+    }
+  }
+}

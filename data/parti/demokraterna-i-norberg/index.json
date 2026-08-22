@@ -1,8 +1,32 @@
 {
+  "uuid": "42e96322-fb95-4088-a804-96c881a44d36",
+  "kod": "1304",
   "beteckning": "Demokraterna i Norberg",
   "filnamn": "demokraterna-i-norberg",
   "forkortning": "DiN",
-  "kod": "1304",
-  "uuid": "42e96322-fb95-4088-a804-96c881a44d36",
-  "valmyndigheten_registreringsdatum": "2017-08-31"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-08-31",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1962"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1962"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1962"
+      ]
+    }
+  }
 }

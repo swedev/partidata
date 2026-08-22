@@ -1,0 +1,17 @@
+{
+  "uuid": "4a03e7a5-2598-45c3-b2fa-4d20d6ab1dc4",
+  "kod": "1750",
+  "beteckning": "Lokalpartiet Malung-Sälen",
+  "filnamn": "lokalpartiet-malung-salen",
+  "forkortning": "LM",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2023"
+      ]
+    }
+  }
+}

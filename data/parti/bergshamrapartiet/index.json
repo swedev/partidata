@@ -1,8 +1,17 @@
 {
+  "uuid": "7c5eb0ea-9c14-4780-a812-358ba6e93674",
+  "kod": "1105",
   "beteckning": "Bergshamrapartiet",
   "filnamn": "bergshamrapartiet",
   "forkortning": "BEP",
-  "kod": "1105",
-  "uuid": "7c5eb0ea-9c14-4780-a812-358ba6e93674",
-  "valmyndigheten_registreringsdatum": "2017-12-18"
+  "valmyndigheten_registreringsdatum": "2017-12-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0184"
+      ]
+    }
+  }
 }

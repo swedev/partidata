@@ -1,6 +1,31 @@
 {
-  "beteckning": "Hela Edas Lista",
-  "kod": "0160",
   "uuid": "13b80d5f-37ce-48c0-b342-347b39e3c2b9",
-  "filnamn": "hela-edas-lista"
+  "kod": "0160",
+  "beteckning": "Hela Edas Lista",
+  "filnamn": "hela-edas-lista",
+  "forkortning": "HEL",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1730"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1730"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1730"
+      ]
+    }
+  }
 }

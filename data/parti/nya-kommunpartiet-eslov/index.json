@@ -1,8 +1,17 @@
 {
+  "uuid": "98e02aed-bbc7-410e-ae7e-77e2a9109fe7",
+  "kod": "0988",
   "beteckning": "Nya Kommunpartiet Eslöv",
   "filnamn": "nya-kommunpartiet-eslov",
   "forkortning": "NKE",
-  "kod": "0988",
-  "uuid": "98e02aed-bbc7-410e-ae7e-77e2a9109fe7",
-  "valmyndigheten_registreringsdatum": "2010-02-19"
+  "valmyndigheten_registreringsdatum": "2010-02-19",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1285"
+      ]
+    }
+  }
 }

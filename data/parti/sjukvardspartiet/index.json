@@ -1,8 +1,63 @@
 {
+  "uuid": "394593f1-a26f-4271-a0ff-e3e9c5df8b86",
+  "kod": "0193",
   "beteckning": "Sjukvårdspartiet",
   "filnamn": "sjukvardspartiet",
   "forkortning": "SJV",
-  "kod": "0193",
-  "uuid": "394593f1-a26f-4271-a0ff-e3e9c5df8b86",
-  "valmyndigheten_registreringsdatum": "2017-05-23"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-05-23",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "25"
+      ],
+      "kommun": [
+        "2518",
+        "2521",
+        "2523",
+        "2560",
+        "2580",
+        "2581",
+        "2582",
+        "2583",
+        "2584"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "25"
+      ],
+      "kommun": [
+        "2514",
+        "2518",
+        "2521",
+        "2523",
+        "2580",
+        "2581",
+        "2582",
+        "2583",
+        "2584"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "25"
+      ],
+      "kommun": [
+        "2514",
+        "2518",
+        "2521",
+        "2523",
+        "2560",
+        "2580",
+        "2581",
+        "2582",
+        "2583",
+        "2584"
+      ]
+    }
+  }
 }

@@ -1,6 +1,31 @@
 {
-  "beteckning": "Sámelistu/Samelistan Partipolitiskt obunden",
-  "kod": "1073",
   "uuid": "13bf33dd-7b58-4757-893a-47ea5a12e399",
-  "filnamn": "samelistu-samelistan-partipolitiskt-obunden"
+  "kod": "1073",
+  "beteckning": "Sámelistu/Samelistan Partipolitiskt obunden",
+  "filnamn": "samelistu-samelistan-partipolitiskt-obunden",
+  "forkortning": "SL",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2584"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2584"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2584"
+      ]
+    }
+  }
 }

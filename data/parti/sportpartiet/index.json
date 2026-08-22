@@ -1,8 +1,25 @@
 {
+  "uuid": "035eb206-2fa5-4ba4-8226-33e08a5d425d",
+  "kod": "0998",
   "beteckning": "Sportpartiet",
   "filnamn": "sportpartiet",
   "forkortning": "SPP",
-  "kod": "0998",
-  "uuid": "035eb206-2fa5-4ba4-8226-33e08a5d425d",
-  "valmyndigheten_registreringsdatum": "2010-02-26"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2010-02-26",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1401"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1401"
+      ]
+    }
+  }
 }

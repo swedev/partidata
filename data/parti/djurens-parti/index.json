@@ -1,8 +1,15 @@
 {
+  "uuid": "e9f11067-9208-473c-9499-eed921f680a9",
+  "kod": "1136",
   "beteckning": "Djurens parti",
   "filnamn": "djurens-parti",
   "forkortning": "DjuP",
-  "kod": "1136",
-  "uuid": "e9f11067-9208-473c-9499-eed921f680a9",
-  "valmyndigheten_registreringsdatum": "2019-02-28"
+  "valmyndigheten_registreringsdatum": "2019-02-28",
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

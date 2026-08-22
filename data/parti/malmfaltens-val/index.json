@@ -1,8 +1,17 @@
 {
+  "uuid": "0487b4e2-d2a2-4ae9-9f92-e511d3687dab",
+  "kod": "0509",
   "beteckning": "Malmfältens Väl",
   "filnamn": "malmfaltens-val",
   "forkortning": "MV",
-  "kod": "0509",
-  "uuid": "0487b4e2-d2a2-4ae9-9f92-e511d3687dab",
-  "valmyndigheten_registreringsdatum": "2013-10-15"
+  "valmyndigheten_registreringsdatum": "2013-10-15",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2523"
+      ]
+    }
+  }
 }

@@ -18,9 +18,10 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint .",
-    "collect": "node scripts/collect.js",
+    "import-val": "node scripts/import-val.js",
     "typecheck": "tsc --noEmit",
-    "precommit": "npm run lint && npm run typecheck && npm run build"
+    "test": "node --test",
+    "precommit": "npm run lint && npm run typecheck && npm run build && npm test"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

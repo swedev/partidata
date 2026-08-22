@@ -1,0 +1,16 @@
+{
+  "uuid": "7f35a5b5-3ec5-45a0-af77-54dede9ca188",
+  "kod": "1770",
+  "beteckning": "Solidaritet Linköping",
+  "filnamn": "solidaritet-linkoping",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0580"
+      ]
+    }
+  }
+}

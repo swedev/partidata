@@ -1,0 +1,14 @@
+{
+  "uuid": "af49032e-4395-4ab3-bc6a-5fcc62a58c66",
+  "kod": "1881",
+  "beteckning": "RegleraAI.nu",
+  "filnamn": "regleraai-nu",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "uuid": "a539bec9-ad5d-4254-9751-5f818bb16357",
+  "kod": "1731",
+  "beteckning": "FREDS OCH FRIHETSPARTIER",
+  "filnamn": "freds-och-frihetspartier",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

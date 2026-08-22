@@ -1,8 +1,34 @@
 {
+  "uuid": "0d562b39-da62-425d-bd18-869277f706b4",
+  "kod": "1257",
   "beteckning": "SoL-partiet Sölvesborg och Lister",
   "filnamn": "sol-partiet-solvesborg-och-lister",
   "forkortning": "SoL",
-  "kod": "1257",
-  "uuid": "0d562b39-da62-425d-bd18-869277f706b4",
-  "valmyndigheten_registreringsdatum": "2018-01-22"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-22",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "10"
+      ],
+      "kommun": [
+        "1083"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1083"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1083"
+      ]
+    }
+  }
 }

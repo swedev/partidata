@@ -1,8 +1,32 @@
 {
+  "uuid": "a653fd03-0c6a-41a3-8260-24a5ca4f441c",
+  "kod": "1080",
   "beteckning": "Rönningepartiet",
   "filnamn": "ronningepartiet",
   "forkortning": "R",
-  "kod": "1080",
-  "uuid": "a653fd03-0c6a-41a3-8260-24a5ca4f441c",
-  "valmyndigheten_registreringsdatum": "2018-01-03"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-03",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0128"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0128"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0128"
+      ]
+    }
+  }
 }

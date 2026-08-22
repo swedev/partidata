@@ -1,0 +1,14 @@
+{
+  "uuid": "b7170fa7-cae3-4bae-badc-5f97c8ee1a53",
+  "kod": "1736",
+  "beteckning": "Sveriges Oberoende Ledamöter",
+  "filnamn": "sveriges-oberoende-ledamoter",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

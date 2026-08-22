@@ -1,6 +1,31 @@
 {
-  "beteckning": "TJÖRNPARTIET",
-  "kod": "1196",
   "uuid": "3f42e34b-1a4a-43df-b00a-6b38b6a297ae",
-  "filnamn": "tjornpartiet"
+  "kod": "1196",
+  "beteckning": "TJÖRNPARTIET",
+  "filnamn": "tjornpartiet",
+  "forkortning": "TJÖP",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1419"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1419"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1419"
+      ]
+    }
+  }
 }

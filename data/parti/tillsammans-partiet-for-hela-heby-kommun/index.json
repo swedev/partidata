@@ -1,0 +1,24 @@
+{
+  "uuid": "e7bc5109-0e83-4aec-80d7-9df6c64b7ae0",
+  "kod": "1566",
+  "beteckning": "Tillsammans - partiet för hela Heby kommun",
+  "filnamn": "tillsammans-partiet-for-hela-heby-kommun",
+  "forkortning": "TILL",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0331"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0331"
+      ]
+    }
+  }
+}

@@ -1,6 +1,27 @@
 {
-  "beteckning": "Ostkustens Framtid",
-  "kod": "1382",
   "uuid": "bb1a5f6d-8662-4b8c-9e1e-8cd020f451f3",
-  "filnamn": "ostkustens-framtid"
+  "kod": "1594",
+  "tidigare_koder": [
+    "1382"
+  ],
+  "beteckning": "Ostkustens Framtid",
+  "filnamn": "ostkustens-framtid",
+  "forkortning": "OF",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0382"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0382"
+      ]
+    }
+  }
 }

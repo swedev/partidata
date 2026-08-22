@@ -1,8 +1,32 @@
 {
+  "uuid": "3bd219fb-835a-4d0d-8d26-5f99bdb79381",
+  "kod": "1068",
   "beteckning": "Övertorneås Fria Alternativ",
   "filnamn": "overtorneas-fria-alternativ",
   "forkortning": "ÖFA",
-  "kod": "1068",
-  "uuid": "3bd219fb-835a-4d0d-8d26-5f99bdb79381",
-  "valmyndigheten_registreringsdatum": "2018-03-26"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-03-26",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2518"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2518"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2518"
+      ]
+    }
+  }
 }

@@ -1,6 +1,13 @@
 {
+  "uuid": "b4a0631c-8576-4bb6-880e-05972a7f952b",
+  "kod": "1391",
   "beteckning": "nya Ny Demokrati",
   "filnamn": "nya-ny-demokrati",
-  "kod": "1391",
-  "uuid": "b4a0631c-8576-4bb6-880e-05972a7f952b"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

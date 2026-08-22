@@ -1,0 +1,16 @@
+{
+  "uuid": "65542e44-ce74-4695-bac3-b22d63f9ff28",
+  "kod": "1470",
+  "beteckning": "Framtid Kalmar län",
+  "filnamn": "framtid-kalmar-lan",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "08"
+      ],
+      "kommun": []
+    }
+  }
+}

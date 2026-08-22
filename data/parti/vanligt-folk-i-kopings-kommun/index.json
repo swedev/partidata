@@ -1,0 +1,24 @@
+{
+  "uuid": "1d691fb8-9129-4e28-8717-d01fc064143a",
+  "kod": "1553",
+  "beteckning": "Vanligt Folk i Köpings kommun",
+  "filnamn": "vanligt-folk-i-kopings-kommun",
+  "forkortning": "VFiK",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1983"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1983"
+      ]
+    }
+  }
+}

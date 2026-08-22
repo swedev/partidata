@@ -1,0 +1,23 @@
+{
+  "uuid": "acdaaedc-d0aa-4c4d-a5be-a8a63cd3f4b5",
+  "kod": "1535",
+  "beteckning": "Vi i Perstorp",
+  "filnamn": "vi-i-perstorp",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1275"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1275"
+      ]
+    }
+  }
+}

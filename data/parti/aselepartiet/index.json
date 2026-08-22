@@ -1,8 +1,32 @@
 {
+  "uuid": "91a0fcf9-1c39-43df-980d-1aa8080054a0",
+  "kod": "0185",
   "beteckning": "Åselepartiet",
   "filnamn": "aselepartiet",
   "forkortning": "ÅSP",
-  "kod": "0185",
-  "uuid": "91a0fcf9-1c39-43df-980d-1aa8080054a0",
-  "valmyndigheten_registreringsdatum": "2006-03-07"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2006-03-07",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2463"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2463"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2463"
+      ]
+    }
+  }
 }

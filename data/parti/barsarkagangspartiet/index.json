@@ -1,0 +1,18 @@
+{
+  "uuid": "dc236f8c-bada-45e2-bdf9-1776b4ba6a2c",
+  "kod": "1742",
+  "beteckning": "Bärsärkagångspartiet",
+  "filnamn": "barsarkagangspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "18"
+      ],
+      "kommun": [
+        "1880"
+      ]
+    }
+  }
+}

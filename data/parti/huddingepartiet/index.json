@@ -1,8 +1,32 @@
 {
+  "uuid": "f056d271-b6d1-4b0b-98dc-f2c71f00138c",
+  "kod": "0028",
   "beteckning": "Huddingepartiet",
   "filnamn": "huddingepartiet",
   "forkortning": "HP",
-  "kod": "0028",
-  "uuid": "f056d271-b6d1-4b0b-98dc-f2c71f00138c",
-  "valmyndigheten_registreringsdatum": "2018-03-12"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-03-12",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0126"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0126"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0126"
+      ]
+    }
+  }
 }

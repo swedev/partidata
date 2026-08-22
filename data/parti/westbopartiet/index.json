@@ -1,8 +1,32 @@
 {
+  "uuid": "e19a05b1-3db0-4f2a-8389-2c2e4d482fe8",
+  "kod": "1335",
   "beteckning": "Westbopartiet",
   "filnamn": "westbopartiet",
   "forkortning": "WeP",
-  "kod": "1335",
-  "uuid": "e19a05b1-3db0-4f2a-8389-2c2e4d482fe8",
-  "valmyndigheten_registreringsdatum": "2018-01-29"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-29",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0662"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0662"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0662"
+      ]
+    }
+  }
 }

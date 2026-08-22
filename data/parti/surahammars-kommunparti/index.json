@@ -1,0 +1,16 @@
+{
+  "uuid": "82bcd120-4c59-479d-a0ca-dc9f80beaafb",
+  "kod": "1732",
+  "beteckning": "Surahammars kommunparti",
+  "filnamn": "surahammars-kommunparti",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1907"
+      ]
+    }
+  }
+}

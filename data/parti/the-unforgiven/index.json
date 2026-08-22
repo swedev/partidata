@@ -1,0 +1,18 @@
+{
+  "uuid": "95afcb9f-0720-4fae-a7bb-d2755cec8974",
+  "kod": "1647",
+  "beteckning": "The unforgiven",
+  "filnamn": "the-unforgiven",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "24"
+      ],
+      "kommun": [
+        "2482"
+      ]
+    }
+  }
+}

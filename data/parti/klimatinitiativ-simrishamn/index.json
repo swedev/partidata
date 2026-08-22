@@ -1,0 +1,23 @@
+{
+  "uuid": "70c47a8d-66ce-48ed-9110-35e8c9dfee96",
+  "kod": "1560",
+  "beteckning": "Klimatinitiativ Simrishamn",
+  "filnamn": "klimatinitiativ-simrishamn",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1291"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1291"
+      ]
+    }
+  }
+}

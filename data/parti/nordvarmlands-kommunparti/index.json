@@ -1,0 +1,24 @@
+{
+  "uuid": "7de96d66-a933-4d96-aa3b-8720396f0bb3",
+  "kod": "1446",
+  "beteckning": "Nordvärmlands kommunparti",
+  "filnamn": "nordvarmlands-kommunparti",
+  "forkortning": "NVKP",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1737"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1737"
+      ]
+    }
+  }
+}

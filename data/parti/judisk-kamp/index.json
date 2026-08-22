@@ -1,6 +1,26 @@
 {
-  "beteckning": "Judisk Kamp",
-  "kod": "1054",
   "uuid": "b1a18970-2141-4e28-9c68-5f4c7438ef22",
-  "filnamn": "judisk-kamp"
+  "kod": "1583",
+  "tidigare_koder": [
+    "1054"
+  ],
+  "beteckning": "Judisk Kamp",
+  "filnamn": "judisk-kamp",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2184"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2184"
+      ]
+    }
+  }
 }

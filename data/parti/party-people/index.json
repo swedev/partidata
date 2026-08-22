@@ -1,0 +1,14 @@
+{
+  "uuid": "17fdd5e2-456e-4f07-94df-d9b8c544d854",
+  "kod": "1823",
+  "beteckning": "PARTY PEOPLE",
+  "filnamn": "party-people",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

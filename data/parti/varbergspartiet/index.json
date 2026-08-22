@@ -1,0 +1,24 @@
+{
+  "uuid": "82ed4c88-8a8d-424c-9134-95075e22ffdb",
+  "kod": "1492",
+  "beteckning": "Varbergspartiet",
+  "filnamn": "varbergspartiet",
+  "forkortning": "VP",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1383"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1383"
+      ]
+    }
+  }
+}

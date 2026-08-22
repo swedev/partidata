@@ -1,6 +1,13 @@
 {
+  "uuid": "a77788c8-b421-433a-ba94-78eae2520a0c",
+  "kod": "1386",
   "beteckning": "Utveckling och Progressiv för Sverige partiet (U.P.S)",
   "filnamn": "utveckling-och-progressiv-for-sverige-partiet-u-p-s",
-  "kod": "1386",
-  "uuid": "a77788c8-b421-433a-ba94-78eae2520a0c"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

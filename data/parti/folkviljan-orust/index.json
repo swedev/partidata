@@ -1,8 +1,32 @@
 {
+  "uuid": "cc243f56-5c5a-4bd2-b649-0f685d0f7384",
+  "kod": "0204",
   "beteckning": "Folkviljan Orust",
   "filnamn": "folkviljan-orust",
   "forkortning": "FPO",
-  "kod": "0204",
-  "uuid": "cc243f56-5c5a-4bd2-b649-0f685d0f7384",
-  "valmyndigheten_registreringsdatum": "2018-01-03"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-03",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1421"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1421"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1421"
+      ]
+    }
+  }
 }

@@ -1,0 +1,15 @@
+{
+  "uuid": "7fc1db02-bc00-492f-a7cc-ba58707322a3",
+  "kod": "1716",
+  "beteckning": "Folkets Parti i Sverige",
+  "filnamn": "folkets-parti-i-sverige",
+  "forkortning": "FPS",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

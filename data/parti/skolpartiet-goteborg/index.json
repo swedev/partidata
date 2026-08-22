@@ -1,6 +1,13 @@
 {
+  "uuid": "75c520b2-651f-4a82-b58f-631b65fb3ce1",
+  "kod": "1397",
   "beteckning": "Skolpartiet Göteborg",
   "filnamn": "skolpartiet-goteborg",
-  "kod": "1397",
-  "uuid": "75c520b2-651f-4a82-b58f-631b65fb3ce1"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

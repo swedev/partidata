@@ -1,0 +1,16 @@
+{
+  "uuid": "ddf9bfca-66cb-4b99-b3e3-842b817fb2a3",
+  "kod": "1702",
+  "beteckning": "Öarnasväl",
+  "filnamn": "oarnasval",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1407"
+      ]
+    }
+  }
+}

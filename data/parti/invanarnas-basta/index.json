@@ -1,0 +1,16 @@
+{
+  "uuid": "649c0316-143c-4834-b35b-5dee7dcf7730",
+  "kod": "1865",
+  "beteckning": "Invånarnas Bästa",
+  "filnamn": "invanarnas-basta",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0486"
+      ]
+    }
+  }
+}

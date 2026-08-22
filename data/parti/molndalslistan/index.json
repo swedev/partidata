@@ -1,0 +1,18 @@
+{
+  "uuid": "f89ae786-b6e2-4ec0-9065-5740eb61e4e9",
+  "kod": "1760",
+  "beteckning": "Mölndalslistan",
+  "filnamn": "molndalslistan",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "14"
+      ],
+      "kommun": [
+        "1481"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "uuid": "0ce8c1fd-6abf-4e44-88e0-4eb673db4521",
+  "kod": "1580",
+  "beteckning": "Göteborgspartiet",
+  "filnamn": "goteborgspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1480"
+      ]
+    }
+  }
+}

@@ -1,6 +1,13 @@
 {
+  "uuid": "eabf35e4-7d57-4d57-8347-fc44ca74b0fd",
+  "kod": "1314",
   "beteckning": "Demokratirörelsen",
   "filnamn": "demokratirorelsen",
-  "kod": "1314",
-  "uuid": "eabf35e4-7d57-4d57-8347-fc44ca74b0fd"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

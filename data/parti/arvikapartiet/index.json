@@ -1,0 +1,23 @@
+{
+  "uuid": "4d9ee322-adc1-4854-9631-851f41137171",
+  "kod": "1521",
+  "beteckning": "Arvikapartiet",
+  "filnamn": "arvikapartiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1784"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1784"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "b94677c2-de91-476b-afc2-bc10b2aea1fc",
+  "kod": "1494",
+  "beteckning": "Demokratiska Samlingspartiet",
+  "filnamn": "demokratiska-samlingspartiet",
+  "forkortning": "DeSP",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1264"
+      ]
+    }
+  }
+}

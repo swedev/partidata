@@ -1,0 +1,16 @@
+{
+  "uuid": "e1e3e22d-b1f4-44e2-8e8f-616e4ba6ea8b",
+  "kod": "1788",
+  "beteckning": "Ny Kurs Nykvarn",
+  "filnamn": "ny-kurs-nykvarn",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0140"
+      ]
+    }
+  }
+}

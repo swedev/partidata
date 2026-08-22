@@ -1,0 +1,18 @@
+{
+  "uuid": "ad8180d6-8fc8-4d79-998f-df801b9600fe",
+  "kod": "1686",
+  "beteckning": "Jonathan Hemph",
+  "filnamn": "jonathan-hemph",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "05"
+      ],
+      "kommun": [
+        "0580"
+      ]
+    }
+  }
+}

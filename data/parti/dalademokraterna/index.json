@@ -1,0 +1,24 @@
+{
+  "uuid": "955ff177-5240-4253-8a9d-016e3f9979fa",
+  "kod": "1562",
+  "beteckning": "Dalademokraterna",
+  "filnamn": "dalademokraterna",
+  "forkortning": "Ddem",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2085"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2085"
+      ]
+    }
+  }
+}

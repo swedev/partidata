@@ -1,0 +1,16 @@
+{
+  "uuid": "104537e4-103c-4366-800e-dd3d4a50f891",
+  "kod": "1841",
+  "beteckning": "Äldre men ej Gamla i Bjuv",
+  "filnamn": "aldre-men-ej-gamla-i-bjuv",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1260"
+      ]
+    }
+  }
+}

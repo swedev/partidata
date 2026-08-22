@@ -1,0 +1,16 @@
+{
+  "uuid": "bb7809a4-706c-4b84-89a0-40c67e42d4b5",
+  "kod": "1640",
+  "beteckning": "Partiet Sunt Förnuft",
+  "filnamn": "partiet-sunt-fornuft",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1487"
+      ]
+    }
+  }
+}

@@ -1,8 +1,32 @@
 {
+  "uuid": "73d0ba2b-b024-4515-ad75-fbab558fb9ee",
+  "kod": "1216",
   "beteckning": "Skol och Landsbygdspartiet",
   "filnamn": "skol-och-landsbygdspartiet",
   "forkortning": "SkolP",
-  "kod": "1216",
-  "uuid": "73d0ba2b-b024-4515-ad75-fbab558fb9ee",
-  "valmyndigheten_registreringsdatum": "2017-12-18"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2581"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2581"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2581"
+      ]
+    }
+  }
 }

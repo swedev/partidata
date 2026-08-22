@@ -1,8 +1,25 @@
 {
+  "uuid": "e782cd26-8d46-482f-b4f1-2b688fc9105b",
+  "kod": "1338",
   "beteckning": "Kommundemokraterna",
   "filnamn": "kommundemokraterna",
   "forkortning": "KoDe",
-  "kod": "1338",
-  "uuid": "e782cd26-8d46-482f-b4f1-2b688fc9105b",
-  "valmyndigheten_registreringsdatum": "2018-02-08"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-02-08",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0680"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0680"
+      ]
+    }
+  }
 }

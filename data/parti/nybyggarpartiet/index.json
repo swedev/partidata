@@ -1,8 +1,25 @@
 {
+  "uuid": "8f5f1ddd-b111-4ae5-a327-4b7d367ca142",
+  "kod": "0984",
   "beteckning": "Nybyggarpartiet",
   "filnamn": "nybyggarpartiet",
   "forkortning": "NB",
-  "kod": "0984",
-  "uuid": "8f5f1ddd-b111-4ae5-a327-4b7d367ca142",
-  "valmyndigheten_registreringsdatum": "2010-02-19"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2010-02-19",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0563"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0563"
+      ]
+    }
+  }
 }

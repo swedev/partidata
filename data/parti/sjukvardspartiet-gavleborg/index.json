@@ -1,8 +1,34 @@
 {
+  "uuid": "091e3961-b5f2-419b-8f6c-54fc7579e30c",
+  "kod": "0249",
   "beteckning": "Sjukvårdspartiet Gävleborg",
   "filnamn": "sjukvardspartiet-gavleborg",
   "forkortning": "SJPG",
-  "kod": "0249",
-  "uuid": "091e3961-b5f2-419b-8f6c-54fc7579e30c",
-  "valmyndigheten_registreringsdatum": "2017-11-30"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-11-30",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "21"
+      ],
+      "kommun": []
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "21"
+      ],
+      "kommun": []
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "21"
+      ],
+      "kommun": [
+        "2183"
+      ]
+    }
+  }
 }

@@ -1,8 +1,32 @@
 {
+  "uuid": "c31b9463-3618-48b3-8a7d-f1c5b46261e6",
+  "kod": "0473",
   "beteckning": "Rättvis Demokrati",
   "filnamn": "rattvis-demokrati",
   "forkortning": "rd",
-  "kod": "0473",
-  "uuid": "c31b9463-3618-48b3-8a7d-f1c5b46261e6",
-  "valmyndigheten_registreringsdatum": "2005-03-22"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2005-03-22",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2313"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2313"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2313"
+      ]
+    }
+  }
 }

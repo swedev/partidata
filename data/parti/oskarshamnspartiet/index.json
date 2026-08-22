@@ -1,0 +1,16 @@
+{
+  "uuid": "5253b70b-7db5-456a-b7ac-ccae2311e657",
+  "kod": "1664",
+  "beteckning": "Oskarshamnspartiet",
+  "filnamn": "oskarshamnspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0882"
+      ]
+    }
+  }
+}

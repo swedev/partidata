@@ -1,6 +1,15 @@
 {
-  "beteckning": "Öppna Hela Lerum",
-  "kod": "1163",
   "uuid": "b61c947d-c5d9-481c-bedf-66ab406aac8e",
-  "filnamn": "oppna-hela-lerum"
+  "kod": "1163",
+  "beteckning": "Öppna Hela Lerum",
+  "filnamn": "oppna-hela-lerum",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1441"
+      ]
+    }
+  }
 }

@@ -1,8 +1,32 @@
 {
+  "uuid": "35c4f62f-3e79-4dbe-9ae4-b76aa4052b86",
+  "kod": "0983",
   "beteckning": "Politiskt Alternativ",
   "filnamn": "politiskt-alternativ",
   "forkortning": "PA",
-  "kod": "0983",
-  "uuid": "35c4f62f-3e79-4dbe-9ae4-b76aa4052b86",
-  "valmyndigheten_registreringsdatum": "2010-02-19"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2010-02-19",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2462"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2462"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2462"
+      ]
+    }
+  }
 }

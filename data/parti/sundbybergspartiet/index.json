@@ -1,0 +1,16 @@
+{
+  "uuid": "e75fd043-0028-4744-ae3a-57b0002c8d70",
+  "kod": "1712",
+  "beteckning": "SUNDBYBERGSPARTIET",
+  "filnamn": "sundbybergspartiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0183"
+      ]
+    }
+  }
+}

@@ -1,8 +1,32 @@
 {
+  "uuid": "6a91678c-924b-45f6-a281-26a363dcbbd8",
+  "kod": "1014",
   "beteckning": "Framtid i Jokkmokks kommun",
   "filnamn": "framtid-i-jokkmokks-kommun",
   "forkortning": "FJK",
-  "kod": "1014",
-  "uuid": "6a91678c-924b-45f6-a281-26a363dcbbd8",
-  "valmyndigheten_registreringsdatum": "2010-03-04"
+  "registrerad_partibeteckning": false,
+  "valmyndigheten_registreringsdatum": "2010-03-04",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2510"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2510"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2510"
+      ]
+    }
+  }
 }

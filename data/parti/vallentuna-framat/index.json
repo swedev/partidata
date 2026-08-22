@@ -1,0 +1,16 @@
+{
+  "uuid": "ac3837f9-0183-4901-bdfb-d2e654f70ec4",
+  "kod": "1786",
+  "beteckning": "Vallentuna framåt",
+  "filnamn": "vallentuna-framat",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0115"
+      ]
+    }
+  }
+}

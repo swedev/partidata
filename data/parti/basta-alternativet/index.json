@@ -1,8 +1,45 @@
 {
+  "uuid": "b4c33957-dac8-4d56-b08a-19c877822487",
+  "kod": "1366",
   "beteckning": "Bästa Alternativet",
   "filnamn": "basta-alternativet",
   "forkortning": "B-ALT",
-  "kod": "1366",
-  "uuid": "b4c33957-dac8-4d56-b08a-19c877822487",
-  "valmyndigheten_registreringsdatum": "2018-03-29"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-03-29",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "08"
+      ],
+      "kommun": [
+        "0821",
+        "0834",
+        "0840",
+        "0860",
+        "0861",
+        "0862",
+        "0880",
+        "0881",
+        "0882",
+        "0883",
+        "0884",
+        "0885"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0862"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0862"
+      ]
+    }
+  }
 }

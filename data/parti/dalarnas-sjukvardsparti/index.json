@@ -1,8 +1,32 @@
 {
+  "uuid": "4d11b150-8aa4-44e4-ac99-7378407b67e4",
+  "kod": "0472",
   "beteckning": "Dalarnas Sjukvårdsparti",
   "filnamn": "dalarnas-sjukvardsparti",
   "forkortning": "dsp",
-  "kod": "0472",
-  "uuid": "4d11b150-8aa4-44e4-ac99-7378407b67e4",
-  "valmyndigheten_registreringsdatum": "2005-03-17"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2005-03-17",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "20"
+      ],
+      "kommun": []
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "20"
+      ],
+      "kommun": []
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "20"
+      ],
+      "kommun": []
+    }
+  }
 }

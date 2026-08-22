@@ -1,6 +1,26 @@
 {
-  "beteckning": "Nya Danderydspartiet",
-  "kod": "1419",
   "uuid": "9f737d9d-260a-4ebd-8600-b473fd3cb655",
-  "filnamn": "nya-danderydspartiet"
+  "kod": "1557",
+  "tidigare_koder": [
+    "1419"
+  ],
+  "beteckning": "Nya Danderydspartiet",
+  "filnamn": "nya-danderydspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0162"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0162"
+      ]
+    }
+  }
 }

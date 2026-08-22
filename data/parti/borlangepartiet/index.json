@@ -1,0 +1,16 @@
+{
+  "uuid": "1e79ea1a-9ddf-473c-87de-e4df70386eda",
+  "kod": "1793",
+  "beteckning": "Borlängepartiet",
+  "filnamn": "borlangepartiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2081"
+      ]
+    }
+  }
+}

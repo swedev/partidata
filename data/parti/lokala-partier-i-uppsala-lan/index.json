@@ -1,0 +1,27 @@
+{
+  "uuid": "f921f393-6f51-423d-aa58-b6d058ed9905",
+  "kod": "1498",
+  "beteckning": "Sjukvårdspartiet i Uppsala län",
+  "tidigare_beteckningar": [
+    "Lokala partier i Uppsala län"
+  ],
+  "filnamn": "lokala-partier-i-uppsala-lan",
+  "forkortning": "SVPU",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "03"
+      ],
+      "kommun": []
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "03"
+      ],
+      "kommun": []
+    }
+  }
+}

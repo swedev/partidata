@@ -1,0 +1,16 @@
+{
+  "uuid": "6793a647-93f5-41db-91fa-609e718e98b7",
+  "kod": "1536",
+  "beteckning": "Dalälvens Demokratiska Parti",
+  "filnamn": "dalalvens-demokratiska-parti",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2026"
+      ]
+    }
+  }
+}

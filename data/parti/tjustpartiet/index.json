@@ -1,6 +1,29 @@
 {
-  "beteckning": "TJUSTPARTIET",
-  "kod": "1201",
   "uuid": "e7c098fd-bb81-4cce-a9a3-278d7b7ef6f9",
-  "filnamn": "tjustpartiet"
+  "kod": "1615",
+  "tidigare_koder": [
+    "1201"
+  ],
+  "beteckning": "Tjustpartiet",
+  "tidigare_beteckningar": [
+    "TJUSTPARTIET"
+  ],
+  "filnamn": "tjustpartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0883"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0883"
+      ]
+    }
+  }
 }

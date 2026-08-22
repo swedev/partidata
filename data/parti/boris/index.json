@@ -1,6 +1,15 @@
 {
-  "beteckning": "Boris",
-  "kod": "1381",
   "uuid": "6de0d940-dd1c-458e-b8f9-4d7cc695ff7c",
-  "filnamn": "boris"
+  "kod": "1381",
+  "beteckning": "Boris",
+  "filnamn": "boris",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1485"
+      ]
+    }
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "uuid": "a950621e-8773-4ce8-bbd5-e8f39a2d993a",
+  "kod": "1473",
+  "beteckning": "Härrydademokraterna",
+  "filnamn": "harrydademokraterna",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1401"
+      ]
+    }
+  }
+}

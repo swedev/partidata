@@ -1,6 +1,24 @@
 {
-  "beteckning": "Storforsdemokraterna",
-  "kod": "1402",
   "uuid": "f89fd097-d0bf-4174-8474-40e24abc9e2f",
-  "filnamn": "storforsdemokraterna"
+  "kod": "1402",
+  "beteckning": "Storforsdemokraterna",
+  "filnamn": "storforsdemokraterna",
+  "forkortning": "StDe",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1760"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1760"
+      ]
+    }
+  }
 }

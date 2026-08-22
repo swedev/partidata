@@ -1,0 +1,16 @@
+{
+  "uuid": "e54b1823-f606-4e18-b358-4e3637af02b2",
+  "kod": "1761",
+  "beteckning": "Radikala Kanalpartiet i Lund",
+  "filnamn": "radikala-kanalpartiet-i-lund",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1281"
+      ]
+    }
+  }
+}

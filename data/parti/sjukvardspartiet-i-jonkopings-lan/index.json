@@ -1,8 +1,39 @@
 {
+  "uuid": "a57335f0-563a-42f5-98d0-8ccd1b11f140",
+  "kod": "1293",
   "beteckning": "Sjukvårdspartiet i Jönköpings län",
   "filnamn": "sjukvardspartiet-i-jonkopings-lan",
   "forkortning": "SJPJ",
-  "kod": "1293",
-  "uuid": "a57335f0-563a-42f5-98d0-8ccd1b11f140",
-  "valmyndigheten_registreringsdatum": "2017-03-09"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-03-09",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "06"
+      ],
+      "kommun": [
+        "0604",
+        "0617",
+        "0642",
+        "0643",
+        "0662",
+        "0665",
+        "0680",
+        "0682",
+        "0683",
+        "0684",
+        "0685",
+        "0686",
+        "0687"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "06"
+      ],
+      "kommun": []
+    }
+  }
 }

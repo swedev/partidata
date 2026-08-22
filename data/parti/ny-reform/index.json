@@ -1,6 +1,52 @@
 {
+  "uuid": "85ccc38a-0fc7-4a55-b1f3-1db7d6c062b6",
+  "kod": "1718",
+  "tidigare_koder": [
+    "1385"
+  ],
   "beteckning": "NY REFORM",
   "filnamn": "ny-reform",
-  "kod": "1385",
-  "uuid": "85ccc38a-0fc7-4a55-b1f3-1db7d6c062b6"
+  "forkortning": "NR",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    },
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "01"
+      ],
+      "kommun": [
+        "0114",
+        "0115",
+        "0117",
+        "0120",
+        "0123",
+        "0125",
+        "0126",
+        "0127",
+        "0128",
+        "0136",
+        "0138",
+        "0139",
+        "0140",
+        "0160",
+        "0162",
+        "0163",
+        "0180",
+        "0181",
+        "0182",
+        "0183",
+        "0184",
+        "0186",
+        "0187",
+        "0188",
+        "0191",
+        "0192"
+      ]
+    }
+  }
 }

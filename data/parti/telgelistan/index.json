@@ -1,0 +1,19 @@
+{
+  "uuid": "c0e11374-70d1-445e-b086-c1697868d021",
+  "kod": "1537",
+  "beteckning": "Telgelistan",
+  "filnamn": "telgelistan",
+  "forkortning": "Teli",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "01"
+      ],
+      "kommun": [
+        "0181"
+      ]
+    }
+  }
+}

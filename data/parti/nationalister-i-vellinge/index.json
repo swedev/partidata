@@ -1,0 +1,16 @@
+{
+  "uuid": "63b9de25-20d6-4f6e-8658-7c1542f37b68",
+  "kod": "1476",
+  "beteckning": "Nationalister i Vellinge",
+  "filnamn": "nationalister-i-vellinge",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1233"
+      ]
+    }
+  }
+}

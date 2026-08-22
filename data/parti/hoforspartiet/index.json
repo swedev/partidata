@@ -1,6 +1,31 @@
 {
-  "beteckning": "Hoforspartiet",
-  "kod": "1215",
   "uuid": "ef75b8d8-8909-4f89-84c6-e7ff7bb70a7f",
-  "filnamn": "hoforspartiet"
+  "kod": "1215",
+  "beteckning": "Hoforspartiet",
+  "filnamn": "hoforspartiet",
+  "forkortning": "HOP",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2104"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2104"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2104"
+      ]
+    }
+  }
 }

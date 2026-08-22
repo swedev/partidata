@@ -1,0 +1,16 @@
+{
+  "uuid": "9c713b13-4c9a-44ca-bc68-5a06c845b412",
+  "kod": "1857",
+  "beteckning": "Gott nytt Storfors",
+  "filnamn": "gott-nytt-storfors",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1760"
+      ]
+    }
+  }
+}

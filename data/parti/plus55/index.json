@@ -1,0 +1,26 @@
+{
+  "uuid": "055905b5-c6cd-4f33-b148-785c73b61cc3",
+  "kod": "1556",
+  "beteckning": "PLUS55",
+  "filnamn": "plus55",
+  "forkortning": "P55",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2180"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "21"
+      ],
+      "kommun": [
+        "2180"
+      ]
+    }
+  }
+}

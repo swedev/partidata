@@ -1,8 +1,31 @@
 {
+  "uuid": "b28ca28d-463b-429a-b732-de43333f9096",
+  "kod": "0027",
   "beteckning": "Westerwikspartiet",
   "filnamn": "westerwikspartiet",
-  "forkortning": "VDM",
-  "kod": "0027",
-  "uuid": "b28ca28d-463b-429a-b732-de43333f9096",
-  "valmyndigheten_registreringsdatum": "2015-11-13"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2015-11-13",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0883"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0883"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0883"
+      ]
+    }
+  }
 }
