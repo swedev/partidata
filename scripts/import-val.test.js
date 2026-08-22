@@ -5,7 +5,7 @@ const path = require('path');
 const { test } = require('node:test');
 
 const { parseCsv, fetchText } = require('./utils.js');
-const { parseRows, collectPartier, bestGrund, parseArgs } = require('./import-val.js');
+const { parseRows, collectPartier, sortGrunder, parseArgs } = require('./import-val.js');
 const { fixture, makeTree, removeTree, runImport, readJson, snapshot } = require('./fixtures/tree.js');
 
 const CSV_2022 = fixture('val-2022.csv');
@@ -79,17 +79,28 @@ test('collectPartier rejects a code with two beteckningar', () => {
   assert.throws(() => collectPartier(parseRows(text)), /two beteckningar/);
 });
 
-test('bestGrund prefers an own anmälan over inherited participation', () => {
-  assert.equal(bestGrund(undefined, 'K'), 'K');
-  assert.equal(bestGrund('K', 'R'), 'R');
-  assert.equal(bestGrund('R', 'A'), 'A');
-  assert.equal(bestGrund('A', 'K'), 'A');
+test('sortGrunder lists the grounds in the order Valmyndigheten uses', () => {
+  assert.deepEqual(sortGrunder(new Set(['K', 'A'])), ['A', 'K']);
+  assert.deepEqual(sortGrunder(new Set(['K', 'R'])), ['R', 'K']);
+  assert.deepEqual(sortGrunder(new Set(['K', 'R', 'A'])), ['A', 'R', 'K']);
+});
+
+test('parseRows rejects a file with no rows or a missing valtyp', () => {
+  const header = readFixture(CSV_2026).split('\n')[0];
+  assert.throws(() => parseRows(header + '\n'), /no data rows/);
+
+  const utanKF = readFixture(CSV_2026)
+    .split('\n')
+    .filter(line => !line.startsWith('KF;'))
+    .join('\n');
+  assert.throws(() => parseRows(utanKF), /no KF rows, so it is empty or truncated/);
 });
 
 test('parseArgs requires a four-digit year', () => {
   assert.deepEqual(parseArgs(['2026']), { year: '2026', file: null });
   assert.throws(() => parseArgs([]), /Usage/);
   assert.throws(() => parseArgs(['26']), /Usage/);
+  assert.throws(() => parseArgs(['2026', '--file']), /--file requires a path/);
 });
 
 test('fetchText throws on a non-2xx response', async () => {
@@ -112,7 +123,7 @@ test('an import writes the four year files, deduplicating the per-valkrets rows'
 
   const riksdag = readJson(dir, 'data/val/2022/partideltagande/riksdag.json');
   assert.deepEqual(riksdag.map(party => party.kod), ['9001']);
-  assert.equal(riksdag[0].grund, 'A');
+  assert.deepEqual(riksdag[0].grunder, ['A', 'K']);
 
   const region = readJson(dir, 'data/val/2022/partideltagande/region.json');
   assert.equal(region.length, 1);

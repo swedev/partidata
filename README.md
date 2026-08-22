@@ -66,7 +66,7 @@ Fyra filer per valår, skrivna av `npm run import-val`:
 | `region.json` | En post per län som har anmälda partier, med länets partier |
 | `kommun.json` | Alla 290 kommuner, med kommunens partier (tom lista när inga finns) |
 
-Partiposterna i `riksdag.json`, `region.json` och `kommun.json` har ett `grund`-fält: `A` för egen anmälan, `R` och `K` när deltagandet följer av en anmälan till riksdags- respektive regionfullmäktigevalet.
+Partiposterna i `riksdag.json`, `region.json` och `kommun.json` har ett `grunder`-fält med Valmyndighetens `DELTAGANDEGRUND` oförändrad. Ett parti kan ha flera anmälningar för samma valområde, med olika grund och olika datum, och då listas alla: de åtta riksdagspartierna har till exempel både `R` och `K` i riksdagsvalet 2026. `R` och `K` förekommer i stort sett bara för partier med registrerad partibeteckning. Vad bokstäverna står för framgår inte av filen — se Valmyndighetens beskrivning av anmälan om deltagande nedan.
 
 > Om ett parti anmäler deltagande i val till riksdagen gäller anmälan också för:
 > * val till region- och kommunfullmäktige i hela landet och,

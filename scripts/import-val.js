@@ -60,6 +60,9 @@ function parseArgs (argv) {
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--file') {
       file = argv[++i];
+      if (!file) {
+        throw new Error('--file requires a path');
+      }
     } else if (!year) {
       year = argv[i];
     } else {
@@ -111,6 +114,14 @@ function parseRows (text) {
       throw new Error(`Row ${line}: empty PARTIBETECKNING`);
     }
   });
+  if (rows.length === 0) {
+    throw new Error('The file has no data rows');
+  }
+  const valtyper = new Set(rows.map(row => row.VALTYP));
+  const saknade = VALTYPER.filter(valtyp => !valtyper.has(valtyp));
+  if (saknade.length > 0) {
+    throw new Error(`The file has no ${saknade.join('/')} rows, so it is empty or truncated`);
+  }
   return rows;
 }
 
@@ -151,17 +162,27 @@ function collectPartier (rows) {
 }
 
 /**
- * bestGrund
- * Own anmälan beats participation inherited from a higher level.
- * @param  {String} current
- * @param  {String} next
- * @return {String}
+ * addGrund
+ * A party can have several anmälningar for the same valområde, each with its own
+ * DELTAGANDEGRUND, so the grounds are collected rather than reduced to one.
+ * @param  {Map} target Valområde or party code to a Set of grunder
+ * @param  {String} key
+ * @param  {String} grund
  */
-function bestGrund (current, next) {
-  if (!current) {
-    return next;
+function addGrund (target, key, grund) {
+  if (!target.has(key)) {
+    target.set(key, new Set());
   }
-  return GRUNDER.indexOf(next) < GRUNDER.indexOf(current) ? next : current;
+  target.get(key).add(grund);
+}
+
+/**
+ * sortGrunder
+ * @param  {Set} grunder
+ * @return {String[]}
+ */
+function sortGrunder (grunder) {
+  return [...grunder].sort((a, b) => GRUNDER.indexOf(a) - GRUNDER.indexOf(b));
 }
 
 /**
@@ -185,7 +206,7 @@ function buildYear (rows, partier) {
 
   for (const row of rows) {
     if (row.VALTYP === 'RD') {
-      riksdag.set(row.PARTIKOD, bestGrund(riksdag.get(row.PARTIKOD), row.DELTAGANDEGRUND));
+      addGrund(riksdag, row.PARTIKOD, row.DELTAGANDEGRUND);
       continue;
     }
     const target = row.VALTYP === 'RF' ? region : kommun;
@@ -196,17 +217,16 @@ function buildYear (rows, partier) {
     if (!target.has(row.VALOMRÅDESKOD)) {
       target.set(row.VALOMRÅDESKOD, new Map());
     }
-    const partierIOmråde = target.get(row.VALOMRÅDESKOD);
-    partierIOmråde.set(row.PARTIKOD, bestGrund(partierIOmråde.get(row.PARTIKOD), row.DELTAGANDEGRUND));
+    addGrund(target.get(row.VALOMRÅDESKOD), row.PARTIKOD, row.DELTAGANDEGRUND);
   }
 
   const toPartyEntries = partierIOmråde => [...partierIOmråde.entries()]
     .sort((a, b) => a[0].localeCompare(b[0]))
-    .map(([kod, grund]) => ({
+    .map(([kod, grunder]) => ({
       beteckning: byKod.get(kod).beteckning,
       kod,
       uuid: byKod.get(kod).uuid,
-      grund
+      grunder: sortGrunder(grunder)
     }));
 
   const toOmråden = (target, namn, koder) => koder
@@ -298,7 +318,8 @@ exports.COLUMNS = COLUMNS;
 exports.parseArgs = parseArgs;
 exports.parseRows = parseRows;
 exports.collectPartier = collectPartier;
-exports.bestGrund = bestGrund;
+exports.addGrund = addGrund;
+exports.sortGrunder = sortGrunder;
 exports.buildYear = buildYear;
 
 if (require.main === module) {
