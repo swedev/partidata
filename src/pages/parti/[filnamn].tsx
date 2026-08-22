@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Footer from 'src/components/Footer';
 
+import parties from 'data/parti/index.json';
+
 interface PartyPageProps {
   beteckning: string;
   forkortning?: string;
@@ -74,7 +76,14 @@ const PartyPage: NextPage<PartyPageProps> = ({ beteckning, forkortning }) => {
 
 export default PartyPage;
 
-export async function getServerSideProps (context:any) {
+export async function getStaticPaths () {
+  return {
+    paths: parties.map(party => ({ params: { filnamn: party.filnamn } })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps (context: { params: { filnamn: string } }) {
   const filnamn = context.params.filnamn;
   const party = (await import(`data/parti/${filnamn}/index.json`)).default;
   return {
