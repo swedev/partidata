@@ -1,0 +1,17 @@
+{
+  "uuid": "fb26c584-81a7-4466-9ecf-e1cb93397fd8",
+  "kod": "1543",
+  "beteckning": "Klimatalliansen",
+  "filnamn": "klimatalliansen",
+  "forkortning": "KA",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": true,
+      "region": [],
+      "kommun": [
+        "0180"
+      ]
+    }
+  }
+}

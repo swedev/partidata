@@ -1,0 +1,17 @@
+{
+  "uuid": "d277a599-7b11-46f5-ab22-45589fa24d60",
+  "kod": "1799",
+  "beteckning": "Stockholms Vänsterallians",
+  "filnamn": "stockholms-vansterallians",
+  "forkortning": "StV",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0180"
+      ]
+    }
+  }
+}

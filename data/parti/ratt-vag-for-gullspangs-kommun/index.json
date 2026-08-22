@@ -1,6 +1,24 @@
 {
-  "beteckning": "RÄTT VÄG för Gullspångs kommun",
-  "kod": "1222",
   "uuid": "805429e4-e3f9-4294-8d09-0b2df610886f",
-  "filnamn": "ratt-vag-for-gullspangs-kommun"
+  "kod": "1222",
+  "beteckning": "RÄTT VÄG för Gullspångs kommun",
+  "filnamn": "ratt-vag-for-gullspangs-kommun",
+  "forkortning": "Rättv",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1447"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1447"
+      ]
+    }
+  }
 }

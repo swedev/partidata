@@ -1,8 +1,35 @@
 {
-  "beteckning": "Vingåkerspartiet - VTL",
-  "filnamn": "vingakerspartiet-vtl",
-  "forkortning": "VTL",
-  "kod": "0301",
   "uuid": "1ec14dc8-616b-4948-9f91-f739d2f59c78",
-  "valmyndigheten_registreringsdatum": "2018-01-30"
+  "kod": "0301",
+  "beteckning": "Vingåkerspartiet - ViP",
+  "tidigare_beteckningar": [
+    "Vingåkerspartiet - VTL"
+  ],
+  "filnamn": "vingakerspartiet-vtl",
+  "forkortning": "ViP",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-30",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0428"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0428"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0428"
+      ]
+    }
+  }
 }

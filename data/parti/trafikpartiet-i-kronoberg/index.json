@@ -1,0 +1,18 @@
+{
+  "uuid": "705817be-f0f1-4a3f-8852-6906a0810fa9",
+  "kod": "1848",
+  "beteckning": "Trafikpartiet i Kronoberg",
+  "filnamn": "trafikpartiet-i-kronoberg",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "07"
+      ],
+      "kommun": [
+        "0780"
+      ]
+    }
+  }
+}

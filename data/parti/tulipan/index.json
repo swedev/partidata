@@ -1,0 +1,14 @@
+{
+  "uuid": "85138d84-76dd-40e1-adb0-e3b461b31bf0",
+  "kod": "1812",
+  "beteckning": "Tulipan",
+  "filnamn": "tulipan",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

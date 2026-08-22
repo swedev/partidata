@@ -1,6 +1,13 @@
 {
+  "uuid": "2f92086a-acb8-4a4e-b650-1fc00d1230a4",
+  "kod": "1375",
   "beteckning": "Bg-Demokrati",
   "filnamn": "bg-demokrati",
-  "kod": "1375",
-  "uuid": "2f92086a-acb8-4a4e-b650-1fc00d1230a4"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

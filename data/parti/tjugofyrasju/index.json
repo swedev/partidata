@@ -1,0 +1,24 @@
+{
+  "uuid": "91c0ceb7-bcaa-4407-b734-d41797998014",
+  "kod": "1450",
+  "beteckning": "tjugofyrasju",
+  "filnamn": "tjugofyrasju",
+  "forkortning": "Tfs",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1383"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1383"
+      ]
+    }
+  }
+}

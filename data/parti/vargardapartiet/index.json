@@ -1,0 +1,23 @@
+{
+  "uuid": "885e3cfd-d5ec-43a6-9b28-2efce02e72e4",
+  "kod": "1488",
+  "beteckning": "Vårgårdapartiet",
+  "filnamn": "vargardapartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1442"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1442"
+      ]
+    }
+  }
+}

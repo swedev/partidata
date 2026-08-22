@@ -1,0 +1,23 @@
+{
+  "uuid": "9839c0dc-1d95-44e5-bbaf-25a568cf0c72",
+  "kod": "1532",
+  "beteckning": "HåboDemokraterna",
+  "filnamn": "habodemokraterna-1532",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0305"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0305"
+      ]
+    }
+  }
+}

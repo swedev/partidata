@@ -1,6 +1,15 @@
 {
-  "beteckning": "Demokraterna i Jönköping",
-  "kod": "1320",
   "uuid": "25813075-2350-4f40-9397-1b34bcc8e6a9",
-  "filnamn": "demokraterna-i-jonkoping"
+  "kod": "1320",
+  "beteckning": "Demokraterna i Jönköping",
+  "filnamn": "demokraterna-i-jonkoping",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0680"
+      ]
+    }
+  }
 }

@@ -1,0 +1,28 @@
+{
+  "uuid": "1093db49-7ac0-4217-935b-cc42a7819307",
+  "kod": "1452",
+  "beteckning": "Utvecklingspartiet demokraterna",
+  "filnamn": "utvecklingspartiet-demokraterna",
+  "forkortning": "UPDEM",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "03"
+      ],
+      "kommun": [
+        "0380"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "03"
+      ],
+      "kommun": [
+        "0380"
+      ]
+    }
+  }
+}

@@ -1,8 +1,25 @@
 {
+  "uuid": "cc204154-12cf-416e-9269-289400cb7334",
+  "kod": "1285",
   "beteckning": "SkurupsPartiet",
   "filnamn": "skurupspartiet",
   "forkortning": "SkuP",
-  "kod": "1285",
-  "uuid": "cc204154-12cf-416e-9269-289400cb7334",
-  "valmyndigheten_registreringsdatum": "2016-06-02"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2016-06-02",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1264"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1264"
+      ]
+    }
+  }
 }

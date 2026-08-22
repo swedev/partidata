@@ -1,0 +1,24 @@
+{
+  "uuid": "0fab832b-bba4-4fe0-bad1-0cb183d24373",
+  "kod": "1481",
+  "beteckning": "Ekeröpartiet",
+  "filnamn": "ekeropartiet",
+  "forkortning": "EkP",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0125"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0125"
+      ]
+    }
+  }
+}

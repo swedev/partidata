@@ -1,6 +1,34 @@
 {
-  "beteckning": "Brobyggarpartiet",
-  "kod": "1413",
   "uuid": "fe6962ca-100f-4567-83ac-e8f8c83be714",
-  "filnamn": "brobyggarpartiet"
+  "kod": "1497",
+  "tidigare_koder": [
+    "1413"
+  ],
+  "beteckning": "Brobyggarpartiet",
+  "filnamn": "brobyggarpartiet",
+  "forkortning": "BBP",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1407"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1407"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1407"
+      ]
+    }
+  }
 }

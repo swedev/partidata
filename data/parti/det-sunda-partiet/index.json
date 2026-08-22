@@ -1,0 +1,14 @@
+{
+  "uuid": "cfe8df7d-e57d-443f-9da0-ea6a888e76f3",
+  "kod": "1889",
+  "beteckning": "Det sunda partiet",
+  "filnamn": "det-sunda-partiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "uuid": "ce55e850-f57d-4f06-a1f1-0157d0b4b310",
+  "kod": "1795",
+  "beteckning": "Framtidens Vänster",
+  "filnamn": "framtidens-vanster",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "03"
+      ],
+      "kommun": [
+        "0114",
+        "0184",
+        "0380",
+        "1280",
+        "1981"
+      ]
+    }
+  }
+}

@@ -1,8 +1,32 @@
 {
+  "uuid": "d62d3e66-de61-4897-a3d9-5511cd9c529b",
+  "kod": "0497",
   "beteckning": "Allt för Ragunda",
   "filnamn": "allt-for-ragunda",
   "forkortning": "AfR",
-  "kod": "0497",
-  "uuid": "d62d3e66-de61-4897-a3d9-5511cd9c529b",
-  "valmyndigheten_registreringsdatum": "2015-05-06"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2015-05-06",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2303"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2303"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2303"
+      ]
+    }
+  }
 }

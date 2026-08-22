@@ -1,6 +1,33 @@
 {
-  "beteckning": "Uddevallapartiet",
-  "kod": "1076",
   "uuid": "cdbb43bf-f8da-4c29-9980-7681eada9d62",
-  "filnamn": "uddevallapartiet"
+  "kod": "1076",
+  "beteckning": "Uddevallapartiet",
+  "filnamn": "uddevallapartiet",
+  "forkortning": "UddP",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1485"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1485"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "14"
+      ],
+      "kommun": [
+        "1485"
+      ]
+    }
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "uuid": "b2ce203d-e440-450a-a8cf-0e3878aa35b5",
+  "kod": "1919",
+  "beteckning": "Öppna Nässjö",
+  "filnamn": "oppna-nassjo",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0682"
+      ]
+    }
+  }
+}

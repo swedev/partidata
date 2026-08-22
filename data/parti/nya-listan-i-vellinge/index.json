@@ -1,6 +1,15 @@
 {
-  "beteckning": "Nya Listan i Vellinge",
-  "kod": "0989",
   "uuid": "b5a8367b-9763-49e6-942b-49a342ac0736",
-  "filnamn": "nya-listan-i-vellinge"
+  "kod": "0989",
+  "beteckning": "Nya Listan i Vellinge",
+  "filnamn": "nya-listan-i-vellinge",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1233"
+      ]
+    }
+  }
 }

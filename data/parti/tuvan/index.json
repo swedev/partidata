@@ -1,0 +1,16 @@
+{
+  "uuid": "ba9b9ac7-69c2-4be8-b771-dfd78ae11858",
+  "kod": "1751",
+  "beteckning": "Tuvan",
+  "filnamn": "tuvan",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "01"
+      ],
+      "kommun": []
+    }
+  }
+}

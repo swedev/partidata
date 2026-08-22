@@ -1,8 +1,25 @@
 {
+  "uuid": "5b6ad59e-fa87-467b-b143-e35c13ad728b",
+  "kod": "0139",
   "beteckning": "Ale - demokraterna",
   "filnamn": "ale-demokraterna",
   "forkortning": "ADK",
-  "kod": "0139",
-  "uuid": "5b6ad59e-fa87-467b-b143-e35c13ad728b",
-  "valmyndigheten_registreringsdatum": "2017-12-01"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-01",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1440"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1440"
+      ]
+    }
+  }
 }

@@ -1,0 +1,23 @@
+{
+  "uuid": "b5f9ede1-0417-4690-9a7b-de05dfa745a1",
+  "kod": "1572",
+  "beteckning": "Vägval Falun",
+  "filnamn": "vagval-falun",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2080"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2080"
+      ]
+    }
+  }
+}

@@ -1,6 +1,13 @@
 {
+  "uuid": "10f4e511-458e-4851-a994-a304ff94e78a",
+  "kod": "1389",
   "beteckning": "Raggarpartiet",
   "filnamn": "raggarpartiet",
-  "kod": "1389",
-  "uuid": "10f4e511-458e-4851-a994-a304ff94e78a"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

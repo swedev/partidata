@@ -1,0 +1,16 @@
+{
+  "uuid": "1e2a8287-efc9-4918-98c6-ffd8b6f89424",
+  "kod": "1754",
+  "beteckning": "Skolföräldrar",
+  "filnamn": "skolforaldrar",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1482"
+      ]
+    }
+  }
+}

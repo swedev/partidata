@@ -1,0 +1,17 @@
+{
+  "uuid": "5769cac7-08cc-41a4-b870-9ccb7bb7d135",
+  "kod": "1462",
+  "beteckning": "Lokal Framtid",
+  "filnamn": "lokal-framtid",
+  "forkortning": "Lf",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2284"
+      ]
+    }
+  }
+}

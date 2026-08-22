@@ -1,8 +1,32 @@
 {
+  "uuid": "60c5adea-ea43-43cf-8ca7-d102a01bcad1",
+  "kod": "1116",
   "beteckning": "Waxholmspartiet - borgerligt alternativ",
   "filnamn": "waxholmspartiet-borgerligt-alternativ",
   "forkortning": "WAX",
-  "kod": "1116",
-  "uuid": "60c5adea-ea43-43cf-8ca7-d102a01bcad1",
-  "valmyndigheten_registreringsdatum": "2013-11-05"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2013-11-05",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0187"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0187"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0187"
+      ]
+    }
+  }
 }

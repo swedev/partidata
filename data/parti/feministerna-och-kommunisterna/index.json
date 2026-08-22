@@ -1,0 +1,16 @@
+{
+  "uuid": "382f7a88-843f-46ca-b12c-5f7bc89fe8f8",
+  "kod": "1822",
+  "beteckning": "Feministerna och Kommunisterna",
+  "filnamn": "feministerna-och-kommunisterna",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1280"
+      ]
+    }
+  }
+}

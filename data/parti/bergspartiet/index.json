@@ -1,0 +1,24 @@
+{
+  "uuid": "66505caa-ef62-40b3-8898-8d9a96604b08",
+  "kod": "1597",
+  "beteckning": "Bergspartiet",
+  "filnamn": "bergspartiet",
+  "forkortning": "be",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2326"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2326"
+      ]
+    }
+  }
+}

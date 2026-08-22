@@ -1,8 +1,25 @@
 {
+  "uuid": "a2607113-2daa-4c79-8166-3d6e49b71423",
+  "kod": "0141",
   "beteckning": "Kalixpartiet",
   "filnamn": "kalixpartiet",
   "forkortning": "KXP",
-  "kod": "0141",
-  "uuid": "a2607113-2daa-4c79-8166-3d6e49b71423",
-  "valmyndigheten_registreringsdatum": "1997-09-17"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "1997-09-17",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2514"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2514"
+      ]
+    }
+  }
 }

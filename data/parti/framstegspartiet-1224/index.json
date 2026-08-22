@@ -1,6 +1,15 @@
 {
-  "beteckning": "Framstegspartiet",
-  "kod": "1224",
   "uuid": "d7dfc45e-67bd-46a2-9b18-f5cc20960eb9",
-  "filnamn": "framstegspartiet-1224"
+  "kod": "1224",
+  "beteckning": "Framstegspartiet",
+  "filnamn": "framstegspartiet-1224",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1273"
+      ]
+    }
+  }
 }

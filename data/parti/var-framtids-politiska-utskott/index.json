@@ -1,8 +1,32 @@
 {
+  "uuid": "4057e1cb-59cc-4157-b34f-3fac649dc325",
+  "kod": "1166",
   "beteckning": "Vår Framtids politiska utskott",
   "filnamn": "var-framtids-politiska-utskott",
   "forkortning": "VFÅ",
-  "kod": "1166",
-  "uuid": "4057e1cb-59cc-4157-b34f-3fac649dc325",
-  "valmyndigheten_registreringsdatum": "2014-03-13"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2014-03-13",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2260"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2260"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2260"
+      ]
+    }
+  }
 }

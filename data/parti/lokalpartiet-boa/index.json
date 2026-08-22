@@ -1,8 +1,32 @@
 {
+  "uuid": "77f0a0cd-c3c5-42ca-86a3-08759e95900d",
+  "kod": "0667",
   "beteckning": "Lokalpartiet BoA",
   "filnamn": "lokalpartiet-boa",
   "forkortning": "BoA",
-  "kod": "0667",
-  "uuid": "77f0a0cd-c3c5-42ca-86a3-08759e95900d",
-  "valmyndigheten_registreringsdatum": "2017-06-02"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-06-02",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0382"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0382"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0382"
+      ]
+    }
+  }
 }

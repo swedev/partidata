@@ -1,8 +1,32 @@
 {
+  "uuid": "66187f91-2cc5-4f83-b976-87ac13346da2",
+  "kod": "0183",
   "beteckning": "Ronnebypartiet",
   "filnamn": "ronnebypartiet",
   "forkortning": "ROP",
-  "kod": "0183",
-  "uuid": "66187f91-2cc5-4f83-b976-87ac13346da2",
-  "valmyndigheten_registreringsdatum": "2010-03-04"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2010-03-04",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1081"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1081"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1081"
+      ]
+    }
+  }
 }

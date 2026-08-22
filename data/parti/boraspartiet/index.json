@@ -1,0 +1,16 @@
+{
+  "uuid": "442bdacf-5bd5-4d0c-8dd6-407e96f2b0f1",
+  "kod": "1910",
+  "beteckning": "Boråspartiet",
+  "filnamn": "boraspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1490"
+      ]
+    }
+  }
+}

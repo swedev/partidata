@@ -1,0 +1,16 @@
+{
+  "uuid": "3051b1c0-5a5e-44f2-a72d-aef00e15ceeb",
+  "kod": "1593",
+  "beteckning": "Kungsbacka Framtidsparti",
+  "filnamn": "kungsbacka-framtidsparti",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1384"
+      ]
+    }
+  }
+}

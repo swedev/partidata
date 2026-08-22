@@ -1,6 +1,13 @@
 {
+  "uuid": "f7464f0e-4e40-4085-a1fe-cce9d8d0fbb7",
+  "kod": "1426",
   "beteckning": "Demokraterna i Göteborg",
   "filnamn": "demokraterna-i-goteborg",
-  "kod": "1426",
-  "uuid": "f7464f0e-4e40-4085-a1fe-cce9d8d0fbb7"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

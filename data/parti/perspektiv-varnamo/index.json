@@ -1,0 +1,16 @@
+{
+  "uuid": "5ff928be-bd28-4662-b2f0-2037c50ca26d",
+  "kod": "1752",
+  "beteckning": "Perspektiv Värnamo",
+  "filnamn": "perspektiv-varnamo",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0683"
+      ]
+    }
+  }
+}

@@ -1,6 +1,15 @@
 {
-  "beteckning": "Malung-Sälenpartiet",
-  "kod": "0516",
   "uuid": "1f2b1723-551e-47f0-a10f-0a7961031451",
-  "filnamn": "malung-salenpartiet"
+  "kod": "0516",
+  "beteckning": "Malung-Sälenpartiet",
+  "filnamn": "malung-salenpartiet",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2023"
+      ]
+    }
+  }
 }

@@ -1,8 +1,25 @@
 {
+  "uuid": "07b1bc42-9681-47d6-89cd-59e0118a008a",
+  "kod": "0201",
   "beteckning": "Falupartiet",
   "filnamn": "falupartiet",
   "forkortning": "FAP",
-  "kod": "0201",
-  "uuid": "07b1bc42-9681-47d6-89cd-59e0118a008a",
-  "valmyndigheten_registreringsdatum": "1994-03-02"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "1994-03-02",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2080"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2080"
+      ]
+    }
+  }
 }

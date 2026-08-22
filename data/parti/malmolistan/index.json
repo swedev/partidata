@@ -1,0 +1,24 @@
+{
+  "uuid": "4b1d7267-315d-4a16-8fcc-3fabb936322d",
+  "kod": "1459",
+  "beteckning": "Malmölistan",
+  "filnamn": "malmolistan",
+  "forkortning": "Mal",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1280"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1280"
+      ]
+    }
+  }
+}

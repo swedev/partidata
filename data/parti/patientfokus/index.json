@@ -1,0 +1,16 @@
+{
+  "uuid": "d9d3c647-302c-4b4e-a6c6-070a3098f05d",
+  "kod": "1874",
+  "beteckning": "Patientfokus",
+  "filnamn": "patientfokus",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "14"
+      ],
+      "kommun": []
+    }
+  }
+}

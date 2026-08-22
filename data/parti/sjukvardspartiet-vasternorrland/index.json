@@ -1,8 +1,34 @@
 {
+  "uuid": "2dde7f18-4339-490a-abaf-43e4eb53205c",
+  "kod": "0196",
   "beteckning": "Sjukvårdspartiet - Västernorrland",
   "filnamn": "sjukvardspartiet-vasternorrland",
   "forkortning": "SJVP",
-  "kod": "0196",
-  "uuid": "2dde7f18-4339-490a-abaf-43e4eb53205c",
-  "valmyndigheten_registreringsdatum": "2017-12-22"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-22",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "22"
+      ],
+      "kommun": [
+        "2284"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "22"
+      ],
+      "kommun": []
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "22"
+      ],
+      "kommun": []
+    }
+  }
 }

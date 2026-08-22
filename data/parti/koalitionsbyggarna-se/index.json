@@ -1,0 +1,14 @@
+{
+  "uuid": "374998b5-332b-4102-ba0e-f273eaa06217",
+  "kod": "1842",
+  "beteckning": "koalitionsbyggarna.se",
+  "filnamn": "koalitionsbyggarna-se",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

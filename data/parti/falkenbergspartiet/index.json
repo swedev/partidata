@@ -1,0 +1,16 @@
+{
+  "uuid": "d9ef7644-d03e-487b-ac6f-87dc6902b5c0",
+  "kod": "1850",
+  "beteckning": "FALKENBERGSpartiet",
+  "filnamn": "falkenbergspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1382"
+      ]
+    }
+  }
+}

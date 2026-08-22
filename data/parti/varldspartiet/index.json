@@ -1,0 +1,14 @@
+{
+  "uuid": "3a1dae47-29de-4780-95b6-a588710e6bec",
+  "kod": "1855",
+  "beteckning": "Världspartiet",
+  "filnamn": "varldspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

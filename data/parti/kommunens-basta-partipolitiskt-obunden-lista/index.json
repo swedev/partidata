@@ -1,8 +1,17 @@
 {
+  "uuid": "093e978b-c8cb-4383-a002-49a4ea34778d",
+  "kod": "0521",
   "beteckning": "Kommunens Bästa (partipolitiskt obunden lista)",
   "filnamn": "kommunens-basta-partipolitiskt-obunden-lista",
   "forkortning": "KB",
-  "kod": "0521",
-  "uuid": "093e978b-c8cb-4383-a002-49a4ea34778d",
-  "valmyndigheten_registreringsdatum": "2006-03-07"
+  "valmyndigheten_registreringsdatum": "2006-03-07",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0781"
+      ]
+    }
+  }
 }

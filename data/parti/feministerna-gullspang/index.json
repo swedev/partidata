@@ -1,0 +1,16 @@
+{
+  "uuid": "96786874-f67a-47e7-8b17-fc966f0785e0",
+  "kod": "1815",
+  "beteckning": "Feministerna Gullspång",
+  "filnamn": "feministerna-gullspang",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1447"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "uuid": "0ed4475d-d0ca-4e46-be37-b0288bf2f581",
+  "kod": "1821",
+  "beteckning": "Fria liberaler i Flens kommun",
+  "filnamn": "fria-liberaler-i-flens-kommun",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0482"
+      ]
+    }
+  }
+}

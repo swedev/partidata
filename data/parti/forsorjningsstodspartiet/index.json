@@ -1,0 +1,14 @@
+{
+  "uuid": "ff731324-9c4d-420b-a287-0054a0bf2155",
+  "kod": "1895",
+  "beteckning": "Försörjningsstödspartiet",
+  "filnamn": "forsorjningsstodspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

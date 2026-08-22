@@ -1,0 +1,16 @@
+{
+  "uuid": "8496cc6d-4d28-4f7f-8be6-0f1b66f98597",
+  "kod": "1792",
+  "beteckning": "Ett bättre Eskilstuna",
+  "filnamn": "ett-battre-eskilstuna",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0484"
+      ]
+    }
+  }
+}

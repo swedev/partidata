@@ -1,0 +1,19 @@
+{
+  "uuid": "1f2e70b8-74ab-4e01-b854-db7b690f019d",
+  "kod": "1858",
+  "beteckning": "EMPATI&CO",
+  "filnamn": "empati-co",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "05"
+      ],
+      "kommun": [
+        "0580",
+        "0581"
+      ]
+    }
+  }
+}

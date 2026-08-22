@@ -1,8 +1,17 @@
 {
+  "uuid": "98d8ea70-a5bf-4cf7-8aff-18c9f38f6f60",
+  "kod": "1331",
   "beteckning": "Demokratisk Rättvisa",
   "filnamn": "demokratisk-rattvisa",
   "forkortning": "DemRä",
-  "kod": "1331",
-  "uuid": "98d8ea70-a5bf-4cf7-8aff-18c9f38f6f60",
-  "valmyndigheten_registreringsdatum": "2018-01-11"
+  "valmyndigheten_registreringsdatum": "2018-01-11",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2161"
+      ]
+    }
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "uuid": "c82c46ff-64a0-480c-9e6f-503fb985edae",
+  "kod": "1794",
+  "beteckning": "Vi i Gullspång",
+  "filnamn": "vi-i-gullspang",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1447"
+      ]
+    }
+  }
+}

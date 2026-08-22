@@ -1,0 +1,16 @@
+{
+  "uuid": "ea0f660f-9eef-49aa-9712-a8d480bb9514",
+  "kod": "1738",
+  "beteckning": "Åtvidabergs Framtid",
+  "filnamn": "atvidabergs-framtid",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0561"
+      ]
+    }
+  }
+}

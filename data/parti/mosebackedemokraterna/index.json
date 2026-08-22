@@ -1,6 +1,17 @@
 {
-  "beteckning": "Mosebackedemokraterna",
-  "kod": "0976",
   "uuid": "759b6807-f012-41d8-969b-93ce1d839a30",
-  "filnamn": "mosebackedemokraterna"
+  "kod": "0976",
+  "beteckning": "Mosebackedemokraterna",
+  "filnamn": "mosebackedemokraterna",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "01"
+      ],
+      "kommun": [
+        "0180"
+      ]
+    }
+  }
 }

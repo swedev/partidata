@@ -1,6 +1,31 @@
 {
-  "beteckning": "Jämtlands Väl Bräcke",
-  "kod": "1327",
   "uuid": "e9f9bec8-09ff-483e-a484-d31babfd06ef",
-  "filnamn": "jamtlands-val-bracke"
+  "kod": "1327",
+  "beteckning": "Jämtlands Väl Bräcke",
+  "filnamn": "jamtlands-val-bracke",
+  "forkortning": "JVB",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2305"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2305"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2305"
+      ]
+    }
+  }
 }

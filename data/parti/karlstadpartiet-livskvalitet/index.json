@@ -1,8 +1,34 @@
 {
+  "uuid": "d28154f7-af47-4248-9363-d38fd26aef61",
+  "kod": "1350",
   "beteckning": "Karlstadpartiet Livskvalitet",
   "filnamn": "karlstadpartiet-livskvalitet",
-  "forkortning": "KDL",
-  "kod": "1350",
-  "uuid": "d28154f7-af47-4248-9363-d38fd26aef61",
-  "valmyndigheten_registreringsdatum": "2018-03-27"
+  "forkortning": "KPL",
+  "registrerad_partibeteckning": false,
+  "valmyndigheten_registreringsdatum": "2018-03-27",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1780"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1780"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "17"
+      ],
+      "kommun": [
+        "1780"
+      ]
+    }
+  }
 }

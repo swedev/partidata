@@ -1,0 +1,18 @@
+{
+  "uuid": "8461dcbe-68bd-412f-bca0-1a29d29bd204",
+  "kod": "1868",
+  "beteckning": "Evelinas parti",
+  "filnamn": "evelinas-parti",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "12"
+      ],
+      "kommun": [
+        "1280"
+      ]
+    }
+  }
+}

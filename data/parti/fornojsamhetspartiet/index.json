@@ -1,0 +1,16 @@
+{
+  "uuid": "c1ae61fc-4ac3-4d07-8a9f-149fe1ab91de",
+  "kod": "1685",
+  "beteckning": "Förnöjsamhetspartiet",
+  "filnamn": "fornojsamhetspartiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1382"
+      ]
+    }
+  }
+}

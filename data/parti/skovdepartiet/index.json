@@ -1,0 +1,24 @@
+{
+  "uuid": "b4f6236c-9bc3-4f59-85c8-4033a9ee8170",
+  "kod": "1585",
+  "beteckning": "Skövdepartiet",
+  "filnamn": "skovdepartiet",
+  "forkortning": "SköP",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1496"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1496"
+      ]
+    }
+  }
+}

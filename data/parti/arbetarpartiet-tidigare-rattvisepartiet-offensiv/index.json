@@ -1,6 +1,17 @@
 {
-  "beteckning": "Arbetarpartiet tidigare Rättvisepartiet Offensiv",
-  "kod": "1181",
   "uuid": "081727ef-2708-4eda-b098-6e5a7809f2ce",
-  "filnamn": "arbetarpartiet-tidigare-rattvisepartiet-offensiv"
+  "kod": "1181",
+  "beteckning": "Arbetarpartiet tidigare Rättvisepartiet Offensiv",
+  "filnamn": "arbetarpartiet-tidigare-rattvisepartiet-offensiv",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "24"
+      ],
+      "kommun": [
+        "2480"
+      ]
+    }
+  }
 }

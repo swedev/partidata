@@ -1,0 +1,14 @@
+{
+  "uuid": "fdd41c33-a087-4010-84d6-15e4ca02c647",
+  "kod": "1703",
+  "beteckning": "Utbildningspartiet",
+  "filnamn": "utbildningspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

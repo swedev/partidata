@@ -1,0 +1,16 @@
+{
+  "uuid": "548d1a18-8926-4048-a21a-5b096fe52db9",
+  "kod": "1862",
+  "beteckning": "Åstorpspartiet",
+  "filnamn": "astorpspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1277"
+      ]
+    }
+  }
+}

@@ -26,12 +26,12 @@ function Footer () {
           <ul className="mt-2">
             <li>
               <a
-                href="https://www.val.se/for-partier/partibeteckning/registrerade-partibeteckningar.html"
+                href="https://data.val.se/"
                 className="text-yellow-200 underline"
               >
                 Valmyndigheten
               </a>
-              {' '}— partibeteckningar
+              {' '}— partibeteckningar och partiers anmälda deltagande i val
             </li>
             <li className="mt-2">
               <a

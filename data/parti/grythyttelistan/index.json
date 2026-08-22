@@ -1,6 +1,31 @@
 {
-  "beteckning": "Grythyttelistan",
-  "kod": "1069",
   "uuid": "b9180254-2586-4112-a98b-bf84618217a8",
-  "filnamn": "grythyttelistan"
+  "kod": "1069",
+  "beteckning": "Grythyttelistan",
+  "filnamn": "grythyttelistan",
+  "forkortning": "GL",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1863"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1863"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1863"
+      ]
+    }
+  }
 }

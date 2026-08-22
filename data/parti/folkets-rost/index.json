@@ -1,6 +1,31 @@
 {
-  "beteckning": "Folkets Röst",
-  "kod": "1265",
   "uuid": "8ae6ac00-f69a-42f8-9295-7d0f4139dd0a",
-  "filnamn": "folkets-rost"
+  "kod": "1265",
+  "beteckning": "Folkets Röst",
+  "filnamn": "folkets-rost",
+  "forkortning": "FR",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1443"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1443"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1443"
+      ]
+    }
+  }
 }

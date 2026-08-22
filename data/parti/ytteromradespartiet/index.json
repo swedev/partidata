@@ -1,0 +1,16 @@
+{
+  "uuid": "cb011ef9-8d94-4822-ad3d-981f970f8ccc",
+  "kod": "1565",
+  "beteckning": "Ytterområdespartiet",
+  "filnamn": "ytteromradespartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0581"
+      ]
+    }
+  }
+}

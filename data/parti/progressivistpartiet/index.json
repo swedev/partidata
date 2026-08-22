@@ -1,0 +1,18 @@
+{
+  "uuid": "78dfb3dc-5dce-4784-a340-d647d7220263",
+  "kod": "1866",
+  "beteckning": "Progressivistpartiet",
+  "filnamn": "progressivistpartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "04"
+      ],
+      "kommun": [
+        "0483"
+      ]
+    }
+  }
+}

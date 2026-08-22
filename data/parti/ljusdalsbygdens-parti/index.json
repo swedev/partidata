@@ -1,8 +1,32 @@
 {
+  "uuid": "62970bde-1b67-469b-954a-33078773b42b",
+  "kod": "0535",
   "beteckning": "Ljusdalsbygdens parti",
   "filnamn": "ljusdalsbygdens-parti",
   "forkortning": "LjP",
-  "kod": "0535",
-  "uuid": "62970bde-1b67-469b-954a-33078773b42b",
-  "valmyndigheten_registreringsdatum": "2017-10-17"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-10-17",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2161"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2161"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2161"
+      ]
+    }
+  }
 }

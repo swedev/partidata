@@ -1,0 +1,14 @@
+{
+  "uuid": "03feaf73-ab81-446e-97d5-f442c3f2d0f4",
+  "kod": "1657",
+  "beteckning": "Partiet Tomma Stolarna (Demokraterna)",
+  "filnamn": "partiet-tomma-stolarna-demokraterna",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

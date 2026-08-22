@@ -1,0 +1,16 @@
+{
+  "uuid": "b55a72c9-c29f-41b4-ab02-d2671fdf132b",
+  "kod": "1527",
+  "beteckning": "ORUST FRAMTID",
+  "filnamn": "orust-framtid",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1421"
+      ]
+    }
+  }
+}

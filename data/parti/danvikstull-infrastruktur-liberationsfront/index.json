@@ -1,0 +1,16 @@
+{
+  "uuid": "ba569c10-6f97-4211-986a-d0965b1b0330",
+  "kod": "1735",
+  "beteckning": "Danvikstull Infrastruktur Liberationsfront",
+  "filnamn": "danvikstull-infrastruktur-liberationsfront",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0180"
+      ]
+    }
+  }
+}

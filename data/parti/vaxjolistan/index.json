@@ -1,0 +1,17 @@
+{
+  "uuid": "d3f73210-ac6d-4361-ae22-0d7a1378ccf5",
+  "kod": "1611",
+  "beteckning": "Växjölistan",
+  "filnamn": "vaxjolistan",
+  "forkortning": "Vlist",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0780"
+      ]
+    }
+  }
+}

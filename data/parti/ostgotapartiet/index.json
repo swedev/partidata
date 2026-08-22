@@ -1,0 +1,28 @@
+{
+  "uuid": "f0162ff9-78ac-43ee-aa15-6d129e0fbd2d",
+  "kod": "1544",
+  "beteckning": "Östgötapartiet",
+  "filnamn": "ostgotapartiet",
+  "forkortning": "ÖsP",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "05"
+      ],
+      "kommun": [
+        "0581"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "05"
+      ],
+      "kommun": [
+        "0581"
+      ]
+    }
+  }
+}

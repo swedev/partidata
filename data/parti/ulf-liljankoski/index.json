@@ -1,0 +1,16 @@
+{
+  "uuid": "410cb572-91f7-4833-87ae-f0b75dd624c4",
+  "kod": "1863",
+  "beteckning": "Ulf Liljankoski",
+  "filnamn": "ulf-liljankoski",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1277"
+      ]
+    }
+  }
+}

@@ -27,21 +27,46 @@ Tillgängliggöra data om alla Sveriges politiska partier på ett öppet och tra
 
 ### parti/index.json
 
-Baserad på XML-filen som går att ladda ner på val.se:<br />https://www.val.se/for-partier/partibeteckning/registrerade-partibeteckningar.html
+Register över samtliga partier, `{ uuid, beteckning, filnamn }` sorterat på `filnamn`. Filen genereras från partifilerna och redigeras inte för hand.
 
-Kompletterad med partier som registrerat deltagande i val till landstingsfullmäktige och kommunfullmäktige 2018. Har lagt till attribut `uuid` och `filnamn` för enklare hantering i kod och datastrukturer. Se `toFileName` i `scripts/utils.js`.
+### parti/\<filnamn\>/index.json
 
-### parti/\<filnamn\>.json
+En fil per parti. `uuid` och `filnamn` sätts en gång och ändras aldrig: `uuid` är den identitet `val/`-filerna refererar till, och `filnamn` är partiets adress på sajten, som behålls även när partiet byter namn. `filnamn` skapas med `toFileName` i `scripts/utils.js`, med suffixet `-<kod>` när flera partier ger samma filnamn.
 
-JSON-data för varje enskilt parti ska skapas och kommer ligga i t ex `/parti/miljopartiet-de-grona.json`.
+| Fält | Innehåll |
+|------|----------|
+| `uuid` | Stabil identitet |
+| `kod` | Valmyndighetens `PARTIKOD` i det senaste val partiet finns med i |
+| `tidigare_koder` | Övriga koder partiet har burit |
+| `beteckning` | Partibeteckning i det senaste valet |
+| `tidigare_beteckningar` | Tidigare partibeteckningar, äldst först |
+| `forkortning` | Partiförkortning, när Valmyndigheten anger någon |
+| `registrerad_partibeteckning` | Om partiet har registrerad partibeteckning |
+| `valmyndigheten_registreringsdatum` | Datum då partibeteckningen registrerades |
+| `deltagande` | Anmält deltagande per valår |
+
+`deltagande` har ett uppslag per valår: `{ riksdag: bool, region: [länskod], kommun: [kommunkod] }`. Från 2022 listas alla val partiet deltar i, även deltagande som följer av anmälan på högre nivå. 2018 års data är insamlad på annat sätt och speglar därför årets filer, där ett riksdagsparti inte har några region- eller kommunposter alls.
+
+### parti/kodbyten.json
+
+`{ "<ny kod>": "<gammal kod>" }` — granskade kopplingar för partier som fått ny `PARTIKOD` och samtidigt bytt namn, så att importen håller ihop dem till ett parti. Importen avbryts och ber om en post här när ett namn matchar flera partier.
 
 ### regioner/index.json
 
 Koder för län och kommuner år 2020. Genererad utifrån:<br/>https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/lan-och-kommuner/lan-och-kommuner-i-kodnummerordning/
 
-### val/\<year\>/partideltagande/\<valtyp\>.json
+### val/\<år\>/partideltagande/
 
-Partier som registrerat deltagande i val för angivna året.
+Fyra filer per valår, skrivna av `npm run import-val`:
+
+| Fil | Innehåll |
+|-----|----------|
+| `partier.json` | En post per `PARTIKOD` i årets fil: kod, beteckning, förkortning, registrerad partibeteckning, uuid |
+| `riksdag.json` | Partier som deltar i riksdagsvalet |
+| `region.json` | En post per län som har anmälda partier, med länets partier |
+| `kommun.json` | Alla 290 kommuner, med kommunens partier (tom lista när inga finns) |
+
+Partiposterna i `riksdag.json`, `region.json` och `kommun.json` har ett `grund`-fält: `A` för egen anmälan, `R` och `K` när deltagandet följer av en anmälan till riksdags- respektive regionfullmäktigevalet.
 
 > Om ett parti anmäler deltagande i val till riksdagen gäller anmälan också för:
 > * val till region- och kommunfullmäktige i hela landet och,
@@ -49,24 +74,32 @@ Partier som registrerat deltagande i val för angivna året.
 
 Läs mer på: https://www.val.se/for-partier/anmal-deltagande.html
 
-### val/\<year\>/kandidatlistor/\<parti.filnamn\>.json
+2018 års filer ligger kvar som de samlades in: `landsting.json` i stället för `region.json`, inget `partier.json`, 208 av 290 kommuner i `kommun.json`, och region- och kommunfilerna listar bara partier som inte finns i `riksdag.json`.
+
+### val/\<år\>/kandidatlistor/\<parti.filnamn\>.json
 
 Kandidatlistor per parti i alla val för angivna året. För tillfället endast ett utkast.
 
 
 ## Köra skripten
 
-Skripten i `scripts/` samlar in data och körs manuellt, utanför sajtbygget. Resultatet committas till `data/`.
+Skripten i `scripts/` hämtar in data och körs manuellt, utanför sajtbygget. Resultatet committas till `data/`.
 
 Krav: Node 24 och `npm ci`. Skripten kan köras från vilken katalog som helst — alla sökvägar till `data/` utgår från repots rot.
 
-### npm run collect
+### npm run import-val -- \<år\> [--file \<sökväg\>]
 
-Fyller i `partier` för de kommuner som saknar det i `data/val/<år>/partideltagande/kommun.json`, hämtat från `data.val.se`. Som mest 40 kommuner per körning — kör om tills `Starting at index` är lika med antalet kommuner i filen.
+Hämtar `https://data.val.se/filer/val<år>/parti/deltagande-partier.csv`, skriver `data/val/<år>/partideltagande/` och uppdaterar `data/parti/`. Med `--file` läses en nedladdad kopia i stället, vilket gör en körning reproducerbar. Körningen skriver ut filens SHA-256 och en sammanfattning av nya, sammanslagna och omdöpta partier.
+
+Partier identifieras på `PARTIKOD`, därefter på `parti/kodbyten.json` och sist på exakt namnmatchning mot ett parti som saknar egen kod i årets fil. Allt valideras i minnet först — vid fel skrivs ingenting och skriptet avslutas med felkod. Körningen är idempotent: samma indata ger samma filer, oavsett i vilken ordning åren importeras.
 
 ### node scripts/parti.js
 
-Bygger om `data/parti/index.json` från partifilerna.
+Bygger om partifilerna och `data/parti/index.json` från det som redan finns i `data/`, utan att hämta något.
+
+### npm test
+
+Kör `node:test`-sviten för importen och partiregistret.
 
 
 ## Bidra

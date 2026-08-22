@@ -1,6 +1,31 @@
 {
-  "beteckning": "Aktiv samling - Bodenalternativet",
-  "kod": "1373",
   "uuid": "7677e088-6467-4a45-99b3-3483f4ef26f7",
-  "filnamn": "aktiv-samling-bodenalternativet"
+  "kod": "1373",
+  "beteckning": "Aktiv samling - Bodenalternativet",
+  "filnamn": "aktiv-samling-bodenalternativet",
+  "forkortning": "ASB",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2582"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2582"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2582"
+      ]
+    }
+  }
 }

@@ -1,6 +1,15 @@
 {
-  "beteckning": "Mariefredspartiet",
-  "kod": "0637",
   "uuid": "9a93d96f-9082-4d57-b46b-f5e2b052da04",
-  "filnamn": "mariefredspartiet"
+  "kod": "0637",
+  "beteckning": "Mariefredspartiet",
+  "filnamn": "mariefredspartiet",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0486"
+      ]
+    }
+  }
 }

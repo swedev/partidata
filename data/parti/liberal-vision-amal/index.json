@@ -1,8 +1,25 @@
 {
+  "uuid": "bd4fff22-4d31-4d12-9abc-adc5fed355ee",
+  "kod": "1353",
   "beteckning": "Liberal Vision Åmål",
   "filnamn": "liberal-vision-amal",
   "forkortning": "LibVÅ",
-  "kod": "1353",
-  "uuid": "bd4fff22-4d31-4d12-9abc-adc5fed355ee",
-  "valmyndigheten_registreringsdatum": "2018-03-06"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-03-06",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1492"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1492"
+      ]
+    }
+  }
 }

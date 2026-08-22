@@ -1,0 +1,18 @@
+{
+  "uuid": "1f316e52-30cb-429b-8a5d-c25dc314321f",
+  "kod": "1619",
+  "beteckning": "DMV (de mångas väl)",
+  "filnamn": "dmv-de-mangas-val",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "05"
+      ],
+      "kommun": [
+        "0580"
+      ]
+    }
+  }
+}

@@ -1,8 +1,17 @@
 {
+  "uuid": "2915db45-e9a7-4cd4-9f93-d3f5ebf42bbe",
+  "kod": "0117",
   "beteckning": "Bopartiet",
   "filnamn": "bopartiet",
   "forkortning": "BOP",
-  "kod": "0117",
-  "uuid": "2915db45-e9a7-4cd4-9f93-d3f5ebf42bbe",
-  "valmyndigheten_registreringsdatum": "1986-05-06"
+  "valmyndigheten_registreringsdatum": "1986-05-06",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2085"
+      ]
+    }
+  }
 }

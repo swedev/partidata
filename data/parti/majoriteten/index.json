@@ -1,0 +1,14 @@
+{
+  "uuid": "d9af1938-844e-4924-8092-dfd88921a88c",
+  "kod": "1775",
+  "beteckning": "Majoriteten",
+  "filnamn": "majoriteten",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

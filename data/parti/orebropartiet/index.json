@@ -1,8 +1,38 @@
 {
+  "uuid": "4719f829-c6f3-43b9-aaee-db26d645007d",
+  "kod": "1152",
   "beteckning": "Örebropartiet",
   "filnamn": "orebropartiet",
   "forkortning": "ÖrP",
-  "kod": "1152",
-  "uuid": "4719f829-c6f3-43b9-aaee-db26d645007d",
-  "valmyndigheten_registreringsdatum": "2014-03-07"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2014-03-07",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "18"
+      ],
+      "kommun": [
+        "1880"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "18"
+      ],
+      "kommun": [
+        "1880"
+      ]
+    },
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "18"
+      ],
+      "kommun": [
+        "1880"
+      ]
+    }
+  }
 }

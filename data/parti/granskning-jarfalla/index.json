@@ -1,0 +1,23 @@
+{
+  "uuid": "d9368807-6be7-4957-b09b-2684465fc18f",
+  "kod": "1567",
+  "beteckning": "Granskning Järfälla",
+  "filnamn": "granskning-jarfalla",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0123"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0123"
+      ]
+    }
+  }
+}

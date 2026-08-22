@@ -1,8 +1,32 @@
 {
+  "uuid": "083558f5-89f8-4513-9ed1-6e5d309ec24a",
+  "kod": "1135",
   "beteckning": "FörNyaLund",
   "filnamn": "fornyalund",
   "forkortning": "FöNyL",
-  "kod": "1135",
-  "uuid": "083558f5-89f8-4513-9ed1-6e5d309ec24a",
-  "valmyndigheten_registreringsdatum": "2018-03-26"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-03-26",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1281"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1281"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1281"
+      ]
+    }
+  }
 }

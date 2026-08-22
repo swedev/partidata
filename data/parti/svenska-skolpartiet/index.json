@@ -1,0 +1,16 @@
+{
+  "uuid": "37d84267-e7df-4a09-b50d-ffc4d221e2fc",
+  "kod": "1570",
+  "beteckning": "Svenska Skolpartiet",
+  "filnamn": "svenska-skolpartiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0180"
+      ]
+    }
+  }
+}

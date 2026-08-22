@@ -1,0 +1,17 @@
+{
+  "uuid": "9f2ce84e-50a3-4af7-a863-31ddf53f2afa",
+  "kod": "1785",
+  "beteckning": "Vård i Kronoberg",
+  "filnamn": "vard-i-kronoberg",
+  "forkortning": "ViK",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "07"
+      ],
+      "kommun": []
+    }
+  }
+}

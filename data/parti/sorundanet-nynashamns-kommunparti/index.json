@@ -1,8 +1,32 @@
 {
+  "uuid": "51ed83cb-d87b-48e8-b6b2-f5a8f0491624",
+  "kod": "0519",
   "beteckning": "Sorundanet Nynäshamns kommunparti",
   "filnamn": "sorundanet-nynashamns-kommunparti",
   "forkortning": "SN",
-  "kod": "0519",
-  "uuid": "51ed83cb-d87b-48e8-b6b2-f5a8f0491624",
-  "valmyndigheten_registreringsdatum": "2017-12-08"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-08",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0192"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0192"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0192"
+      ]
+    }
+  }
 }

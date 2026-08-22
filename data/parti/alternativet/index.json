@@ -1,8 +1,35 @@
 {
+  "uuid": "74cf42dc-1c73-4a54-8a20-71a71cce6723",
+  "kod": "1284",
   "beteckning": "Alternativet",
   "filnamn": "alternativet",
   "forkortning": "Alt",
-  "kod": "1284",
-  "uuid": "74cf42dc-1c73-4a54-8a20-71a71cce6723",
-  "valmyndigheten_registreringsdatum": "2017-11-02"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-11-02",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "12"
+      ],
+      "kommun": [
+        "0781",
+        "1272"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1272"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1272"
+      ]
+    }
+  }
 }

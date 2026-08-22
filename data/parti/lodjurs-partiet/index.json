@@ -1,0 +1,18 @@
+{
+  "uuid": "7cd9fc8c-f299-45b2-817f-2a022450e5dc",
+  "kod": "1893",
+  "beteckning": "Lodjurs partiet",
+  "filnamn": "lodjurs-partiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "06"
+      ],
+      "kommun": [
+        "0512"
+      ]
+    }
+  }
+}

@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const https = require('https');
-const { Buffer } = require('buffer');
 
 /**
  * ROOT
@@ -80,31 +78,59 @@ function newUuid () {
 }
 
 /**
- * loadXML
- * @param  {String}   url
- * @param  {Function} callback
- * @return {request object}
+ * fetchText
+ * Downloads a text resource, throwing on any non-2xx response.
+ * @param  {String} url
+ * @return {Promise<String>}
  */
-function loadXML (url, callback) {
-  return https.get(url, function (res) {
-    const chunks = [];
+async function fetchText (url) {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`Request failed: ${res.status} ${res.statusText} for ${url}`);
+  }
+  return res.text();
+}
 
-    res.on('data', function (chunk) {
-      chunks.push(chunk);
-    });
-
-    res.on('error', function (e) {
-      callback(e, null);
-    });
-
-    res.on('timeout', function (e) {
-      callback(e, null);
-    });
-
-    res.on('end', function () {
-      callback(null, Buffer.concat(chunks));
-    });
+/**
+ * parseCsv
+ * Parses the unquoted, separator-delimited files published by Valmyndigheten.
+ * A leading BOM is stripped, values are trimmed (the source writes a single
+ * space for an empty value) and every row is checked against the header. Rows
+ * may carry one trailing separator, which the 2022 file does.
+ * @param  {String} text
+ * @param  {Object} [options]
+ * @param  {String} [options.separator]
+ * @return {{ header: String[], rows: Object[] }}
+ */
+function parseCsv (text, { separator = ';' } = {}) {
+  if (text.includes('"')) {
+    throw new Error('parseCsv: quote character found, the source is expected to be unquoted');
+  }
+  const lines = text
+    .replace(/^\ufeff/, '')
+    .split(/\r?\n/)
+    .filter(line => line.length > 0);
+  if (lines.length === 0) {
+    throw new Error('parseCsv: empty input');
+  }
+  const header = lines[0].split(separator).map(value => value.trim());
+  const duplicates = header.filter((name, i) => header.indexOf(name) !== i);
+  if (duplicates.length > 0) {
+    throw new Error(`parseCsv: duplicate column name(s): ${[...new Set(duplicates)].join(', ')}`);
+  }
+  const rows = lines.slice(1).map((line, i) => {
+    const values = line.split(separator).map(value => value.trim());
+    if (values.length === header.length + 1 && values[values.length - 1] === '') {
+      values.pop();
+    }
+    if (values.length !== header.length) {
+      throw new Error(
+        `parseCsv: row ${i + 2} has ${values.length} values, expected ${header.length}`
+      );
+    }
+    return Object.fromEntries(header.map((name, j) => [name, values[j]]));
   });
+  return { header, rows };
 }
 
 /**
@@ -126,5 +152,6 @@ exports.ROOT = ROOT;
 exports.dataPath = dataPath;
 exports.toFileName = toFileName;
 exports.newUuid = newUuid;
-exports.loadXML = loadXML;
+exports.fetchText = fetchText;
+exports.parseCsv = parseCsv;
 exports.loadJSONFile = loadJSONFile;

@@ -1,0 +1,30 @@
+{
+  "uuid": "d1982b54-f589-460b-bc0a-8f33bb03c7dc",
+  "kod": "1506",
+  "beteckning": "BOHUSLÄNPARTIET",
+  "filnamn": "bohuslanpartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "14"
+      ],
+      "kommun": [
+        "1407",
+        "1415",
+        "1419",
+        "1421",
+        "1427",
+        "1430",
+        "1435",
+        "1462",
+        "1480",
+        "1482",
+        "1484",
+        "1485",
+        "1486"
+      ]
+    }
+  }
+}

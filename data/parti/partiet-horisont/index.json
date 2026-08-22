@@ -1,7 +1,16 @@
 {
+  "uuid": "a53d194a-f771-44b3-b9a4-2f9c22ecb230",
+  "kod": "1368",
   "beteckning": "Partiet Horisont",
   "filnamn": "partiet-horisont",
-  "kod": "1368",
-  "uuid": "a53d194a-f771-44b3-b9a4-2f9c22ecb230",
-  "valmyndigheten_registreringsdatum": "2018-03-06"
+  "valmyndigheten_registreringsdatum": "2018-03-06",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1291"
+      ]
+    }
+  }
 }

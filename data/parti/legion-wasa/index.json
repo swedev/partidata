@@ -1,0 +1,16 @@
+{
+  "uuid": "6e7ebbc9-03f3-47a2-bbae-5eac08106bf7",
+  "kod": "1807",
+  "beteckning": "Legion Wasa",
+  "filnamn": "legion-wasa",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1499"
+      ]
+    }
+  }
+}

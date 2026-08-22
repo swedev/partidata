@@ -1,0 +1,43 @@
+{
+  "uuid": "43fdc0be-9fc3-4791-9b7f-1a47689dde2f",
+  "kod": "1766",
+  "beteckning": "Kristna Familjepartiet",
+  "filnamn": "kristna-familjepartiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "01"
+      ],
+      "kommun": [
+        "0114",
+        "0115",
+        "0117",
+        "0120",
+        "0123",
+        "0125",
+        "0126",
+        "0127",
+        "0128",
+        "0136",
+        "0138",
+        "0139",
+        "0140",
+        "0160",
+        "0162",
+        "0163",
+        "0180",
+        "0181",
+        "0182",
+        "0183",
+        "0184",
+        "0186",
+        "0187",
+        "0188",
+        "0191",
+        "0192"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "uuid": "eed375cc-7578-4b81-9654-26ca5c9be037",
+  "kod": "1781",
+  "beteckning": "Kunskapsdemokratiska Partiet",
+  "filnamn": "kunskapsdemokratiska-partiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "01"
+      ],
+      "kommun": [
+        "0123",
+        "0126",
+        "0127",
+        "0180",
+        "0181"
+      ]
+    }
+  }
+}

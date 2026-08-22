@@ -1,0 +1,16 @@
+{
+  "uuid": "2f8ae5de-547e-44f8-926f-76d983f04257",
+  "kod": "1746",
+  "beteckning": "Färspartiet Sjöbo",
+  "filnamn": "farspartiet-sjobo",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1265"
+      ]
+    }
+  }
+}

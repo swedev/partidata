@@ -1,8 +1,32 @@
 {
+  "uuid": "c27c54ce-4d48-40aa-97a7-d7708f4c16df",
+  "kod": "0124",
   "beteckning": "Alvesta Alternativet",
   "filnamn": "alvesta-alternativet",
   "forkortning": "ALV",
-  "kod": "0124",
-  "uuid": "c27c54ce-4d48-40aa-97a7-d7708f4c16df",
-  "valmyndigheten_registreringsdatum": "1995-08-23"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "1995-08-23",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0764"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0764"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0764"
+      ]
+    }
+  }
 }

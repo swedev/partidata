@@ -1,8 +1,32 @@
 {
+  "uuid": "d8c7d408-37c1-439c-a48d-805e00b4af49",
+  "kod": "0123",
   "beteckning": "Nykvarnspartiet",
   "filnamn": "nykvarnspartiet",
   "forkortning": "NP",
-  "kod": "0123",
-  "uuid": "d8c7d408-37c1-439c-a48d-805e00b4af49",
-  "valmyndigheten_registreringsdatum": "2017-12-18"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0140"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0140"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0140"
+      ]
+    }
+  }
 }

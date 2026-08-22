@@ -1,0 +1,16 @@
+{
+  "uuid": "68f8f997-11ec-4d74-97ae-523d0c763a77",
+  "kod": "1600",
+  "beteckning": "Borgerligt Liberalt Åstorp",
+  "filnamn": "borgerligt-liberalt-astorp",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1277"
+      ]
+    }
+  }
+}

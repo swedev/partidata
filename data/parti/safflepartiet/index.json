@@ -1,0 +1,17 @@
+{
+  "uuid": "7702a9bd-e385-4bb9-b344-2cabe1fe5391",
+  "kod": "1546",
+  "beteckning": "Säfflepartiet",
+  "filnamn": "safflepartiet",
+  "forkortning": "Säp",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1785"
+      ]
+    }
+  }
+}

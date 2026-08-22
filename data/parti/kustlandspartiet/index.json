@@ -1,0 +1,29 @@
+{
+  "uuid": "75661c75-456d-444e-ae84-28d8cfd17900",
+  "kod": "1588",
+  "beteckning": "KUSTLANDSPARTIET",
+  "filnamn": "kustlandspartiet",
+  "forkortning": "KUST",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "08"
+      ],
+      "kommun": [
+        "0821",
+        "0882"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "08"
+      ],
+      "kommun": [
+        "0882"
+      ]
+    }
+  }
+}

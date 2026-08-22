@@ -1,6 +1,15 @@
 {
-  "beteckning": "Karlstads Framtid",
-  "kod": "1159",
   "uuid": "4049bd73-9f9d-42ac-85ff-f4db21dd8845",
-  "filnamn": "karlstads-framtid"
+  "kod": "1159",
+  "beteckning": "Karlstads Framtid",
+  "filnamn": "karlstads-framtid",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1780"
+      ]
+    }
+  }
 }

@@ -1,6 +1,15 @@
 {
-  "beteckning": "Markbygdspartiet",
-  "kod": "0161",
   "uuid": "aca2a7c0-395b-4d61-a630-b75f327aad94",
-  "filnamn": "markbygdspartiet"
+  "kod": "0161",
+  "beteckning": "Markbygdspartiet",
+  "filnamn": "markbygdspartiet",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1463"
+      ]
+    }
+  }
 }

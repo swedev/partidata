@@ -1,8 +1,32 @@
 {
+  "uuid": "58bd344e-7f53-4c58-97f8-891bbe655d30",
+  "kod": "1002",
   "beteckning": "Västra Initiativet",
   "filnamn": "vastra-initiativet",
   "forkortning": "VSKB",
-  "kod": "1002",
-  "uuid": "58bd344e-7f53-4c58-97f8-891bbe655d30",
-  "valmyndigheten_registreringsdatum": "2018-01-15"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-15",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2283"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2283"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2283"
+      ]
+    }
+  }
 }

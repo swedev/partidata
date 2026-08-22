@@ -1,0 +1,16 @@
+{
+  "uuid": "33644a6a-7b24-4044-b321-e3e326fea95f",
+  "kod": "1708",
+  "beteckning": "Bättre Vellinge",
+  "filnamn": "battre-vellinge",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1233"
+      ]
+    }
+  }
+}

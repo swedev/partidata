@@ -1,0 +1,16 @@
+{
+  "uuid": "4791e69a-f061-4706-8295-c592cce96d27",
+  "kod": "1504",
+  "beteckning": "Alternativ Burlövs Väl",
+  "filnamn": "alternativ-burlovs-val",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1231"
+      ]
+    }
+  }
+}

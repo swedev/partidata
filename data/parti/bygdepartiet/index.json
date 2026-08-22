@@ -1,8 +1,32 @@
 {
+  "uuid": "b578db7a-cd4b-4e6c-826e-d53a0e142069",
+  "kod": "1053",
   "beteckning": "Bygdepartiet",
   "filnamn": "bygdepartiet",
   "forkortning": "ByP",
-  "kod": "1053",
-  "uuid": "b578db7a-cd4b-4e6c-826e-d53a0e142069",
-  "valmyndigheten_registreringsdatum": "2017-12-18"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2029"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2029"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2029"
+      ]
+    }
+  }
 }

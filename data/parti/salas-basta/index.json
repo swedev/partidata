@@ -1,8 +1,32 @@
 {
+  "uuid": "121acbe1-ec5f-4964-bd94-6f4c94a52302",
+  "kod": "0973",
   "beteckning": "Salas bästa",
   "filnamn": "salas-basta",
   "forkortning": "SBÄ",
-  "kod": "0973",
-  "uuid": "121acbe1-ec5f-4964-bd94-6f4c94a52302",
-  "valmyndigheten_registreringsdatum": "2009-12-18"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2009-12-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1981"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1981"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1981"
+      ]
+    }
+  }
 }

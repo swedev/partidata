@@ -1,0 +1,24 @@
+{
+  "uuid": "e51b46db-5402-4c26-a0e5-31a2ecb6b12b",
+  "kod": "1552",
+  "beteckning": "Edetlistan",
+  "filnamn": "edetlistan",
+  "forkortning": "EDL",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1462"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1462"
+      ]
+    }
+  }
+}

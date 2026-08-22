@@ -1,8 +1,32 @@
 {
+  "uuid": "407ebcac-23d1-4b6e-b030-d009163bccbe",
+  "kod": "1113",
   "beteckning": "Hela Sunne",
   "filnamn": "hela-sunne",
   "forkortning": "HS",
-  "kod": "1113",
-  "uuid": "407ebcac-23d1-4b6e-b030-d009163bccbe",
-  "valmyndigheten_registreringsdatum": "2013-06-14"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2013-06-14",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1766"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1766"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1766"
+      ]
+    }
+  }
 }

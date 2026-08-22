@@ -1,8 +1,15 @@
 {
+  "uuid": "e35dbd0f-1df9-4dd5-97d8-8b82cdde0498",
+  "kod": "1138",
   "beteckning": "Vägvalet",
   "filnamn": "vagvalet",
   "forkortning": "VägV",
-  "kod": "1138",
-  "uuid": "e35dbd0f-1df9-4dd5-97d8-8b82cdde0498",
-  "valmyndigheten_registreringsdatum": "2018-03-12"
+  "valmyndigheten_registreringsdatum": "2018-03-12",
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

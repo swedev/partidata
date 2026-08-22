@@ -1,0 +1,24 @@
+{
+  "uuid": "b731d12a-5553-4c4e-874c-abf1cf66141f",
+  "kod": "1490",
+  "beteckning": "Demokratiresan",
+  "filnamn": "demokratiresan",
+  "forkortning": "DemR",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1427"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1427"
+      ]
+    }
+  }
+}

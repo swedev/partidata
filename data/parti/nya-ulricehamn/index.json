@@ -1,6 +1,31 @@
 {
-  "beteckning": "Nya Ulricehamn",
-  "kod": "1157",
   "uuid": "2def9db4-ffba-4858-a406-b76008c36853",
-  "filnamn": "nya-ulricehamn"
+  "kod": "1157",
+  "beteckning": "Nya Ulricehamn",
+  "filnamn": "nya-ulricehamn",
+  "forkortning": "NU",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1491"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1491"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1491"
+      ]
+    }
+  }
 }

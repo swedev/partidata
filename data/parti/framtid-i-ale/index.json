@@ -1,8 +1,32 @@
 {
+  "uuid": "990c2123-0bc0-4534-8a36-a638109fc503",
+  "kod": "1158",
   "beteckning": "FRAMTID I ALE",
   "filnamn": "framtid-i-ale",
   "forkortning": "FiA",
-  "kod": "1158",
-  "uuid": "990c2123-0bc0-4534-8a36-a638109fc503",
-  "valmyndigheten_registreringsdatum": "2017-10-17"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-10-17",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1440"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1440"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1440"
+      ]
+    }
+  }
 }

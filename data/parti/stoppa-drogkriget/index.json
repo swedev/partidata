@@ -1,0 +1,14 @@
+{
+  "uuid": "93408c46-1659-4903-b03b-f134b47004e6",
+  "kod": "1826",
+  "beteckning": "Stoppa Drogkriget",
+  "filnamn": "stoppa-drogkriget",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
+}

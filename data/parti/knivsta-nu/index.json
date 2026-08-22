@@ -1,8 +1,32 @@
 {
+  "uuid": "2cdb7e51-30e9-479b-b7f7-2d33cf915b73",
+  "kod": "0303",
   "beteckning": "Knivsta.Nu",
   "filnamn": "knivsta-nu",
   "forkortning": "KNU",
-  "kod": "0303",
-  "uuid": "2cdb7e51-30e9-479b-b7f7-2d33cf915b73",
-  "valmyndigheten_registreringsdatum": "2018-01-29"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-29",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0330"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0330"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0330"
+      ]
+    }
+  }
 }

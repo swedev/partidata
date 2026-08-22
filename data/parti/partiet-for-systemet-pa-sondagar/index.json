@@ -1,0 +1,16 @@
+{
+  "uuid": "9b117ca6-1074-4d9d-8a43-f25787375726",
+  "kod": "1576",
+  "beteckning": "Partiet för Systemet på söndagar",
+  "filnamn": "partiet-for-systemet-pa-sondagar",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1980"
+      ]
+    }
+  }
+}

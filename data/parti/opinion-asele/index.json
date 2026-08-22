@@ -1,0 +1,16 @@
+{
+  "uuid": "84431b6b-357a-4e02-9c28-de2c6d2b73d4",
+  "kod": "1759",
+  "beteckning": "OPiNiON Åsele",
+  "filnamn": "opinion-asele",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2463"
+      ]
+    }
+  }
+}

@@ -1,8 +1,32 @@
 {
+  "uuid": "45099053-dfc2-4b55-8eeb-8ab53b26f8a1",
+  "kod": "0163",
   "beteckning": "Bjärepartiet",
   "filnamn": "bjarepartiet",
   "forkortning": "BJP",
-  "kod": "0163",
-  "uuid": "45099053-dfc2-4b55-8eeb-8ab53b26f8a1",
-  "valmyndigheten_registreringsdatum": "2017-12-05"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-05",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1278"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1278"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1278"
+      ]
+    }
+  }
 }

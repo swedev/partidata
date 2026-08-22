@@ -1,8 +1,32 @@
 {
+  "uuid": "cefdf9df-76d1-450c-8f74-f52523758486",
+  "kod": "0978",
   "beteckning": "Utvecklingspartiet",
   "filnamn": "utvecklingspartiet",
   "forkortning": "UtvP",
-  "kod": "0978",
-  "uuid": "cefdf9df-76d1-450c-8f74-f52523758486",
-  "valmyndigheten_registreringsdatum": "2018-01-15"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-15",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1482"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1482"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1482"
+      ]
+    }
+  }
 }

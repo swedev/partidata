@@ -1,0 +1,24 @@
+{
+  "uuid": "05fab818-0cb4-4f62-b2df-cac275610737",
+  "kod": "1605",
+  "beteckning": "Löddebygden",
+  "filnamn": "loddebygden",
+  "forkortning": "LB",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1261"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1261"
+      ]
+    }
+  }
+}

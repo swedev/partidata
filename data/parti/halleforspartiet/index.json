@@ -1,0 +1,16 @@
+{
+  "uuid": "c63cb529-e8eb-4b7c-b430-c33bae8b657b",
+  "kod": "1860",
+  "beteckning": "Hälleforspartiet",
+  "filnamn": "halleforspartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1863"
+      ]
+    }
+  }
+}

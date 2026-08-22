@@ -1,6 +1,13 @@
 {
+  "uuid": "0b18e45a-c359-470d-90bd-91b355407169",
+  "kod": "1317",
   "beteckning": "Folkstyret",
   "filnamn": "folkstyret",
-  "kod": "1317",
-  "uuid": "0b18e45a-c359-470d-90bd-91b355407169"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

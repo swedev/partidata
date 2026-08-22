@@ -1,0 +1,2914 @@
+[
+  {
+    "kod": "0001",
+    "beteckning": "Moderaterna",
+    "forkortning": "M",
+    "registrerad_partibeteckning": true,
+    "uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476"
+  },
+  {
+    "kod": "0002",
+    "beteckning": "Arbetarepartiet-Socialdemokraterna",
+    "forkortning": "S",
+    "registrerad_partibeteckning": true,
+    "uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd"
+  },
+  {
+    "kod": "0003",
+    "beteckning": "Liberalerna (tidigare Folkpartiet)",
+    "forkortning": "L",
+    "registrerad_partibeteckning": true,
+    "uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0"
+  },
+  {
+    "kod": "0004",
+    "beteckning": "Centerpartiet",
+    "forkortning": "C",
+    "registrerad_partibeteckning": true,
+    "uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3"
+  },
+  {
+    "kod": "0005",
+    "beteckning": "Vänsterpartiet",
+    "forkortning": "V",
+    "registrerad_partibeteckning": true,
+    "uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a"
+  },
+  {
+    "kod": "0009",
+    "beteckning": "Sigtunapartiet Samling för Sigtuna",
+    "forkortning": "SFS",
+    "registrerad_partibeteckning": true,
+    "uuid": "18b7efcb-527c-4886-8b8a-9ae9d68de88f"
+  },
+  {
+    "kod": "0019",
+    "beteckning": "LIDINGÖPARTIET",
+    "forkortning": "LP",
+    "registrerad_partibeteckning": true,
+    "uuid": "14af0084-697b-4fec-b085-df63f90c9465"
+  },
+  {
+    "kod": "0027",
+    "beteckning": "Westerwikspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "b28ca28d-463b-429a-b732-de43333f9096"
+  },
+  {
+    "kod": "0028",
+    "beteckning": "Huddingepartiet",
+    "forkortning": "HP",
+    "registrerad_partibeteckning": true,
+    "uuid": "f056d271-b6d1-4b0b-98dc-f2c71f00138c"
+  },
+  {
+    "kod": "0040",
+    "beteckning": "Kommunens Väl",
+    "forkortning": "KV",
+    "registrerad_partibeteckning": true,
+    "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021"
+  },
+  {
+    "kod": "0055",
+    "beteckning": "Miljöpartiet de gröna",
+    "forkortning": "MP",
+    "registrerad_partibeteckning": true,
+    "uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133"
+  },
+  {
+    "kod": "0068",
+    "beteckning": "Kristdemokraterna",
+    "forkortning": "KD",
+    "registrerad_partibeteckning": true,
+    "uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a"
+  },
+  {
+    "kod": "0080",
+    "beteckning": "Samernas Väl",
+    "forkortning": "SV",
+    "registrerad_partibeteckning": true,
+    "uuid": "b77b63e0-84fa-4a87-97bb-8d72146ae208"
+  },
+  {
+    "kod": "0094",
+    "beteckning": "Götenes framtid",
+    "forkortning": "GÖF",
+    "registrerad_partibeteckning": true,
+    "uuid": "d60a251d-9a0c-4867-8971-444f9a006eb8"
+  },
+  {
+    "kod": "0110",
+    "beteckning": "Sverigedemokraterna",
+    "forkortning": "SD",
+    "registrerad_partibeteckning": true,
+    "uuid": "b9af6417-6861-40ff-b0a5-3c1fab176496"
+  },
+  {
+    "kod": "0119",
+    "beteckning": "Vox Humana - Folkets Röst",
+    "forkortning": "VOXH",
+    "registrerad_partibeteckning": true,
+    "uuid": "b1599806-fc9a-45bb-87e5-42de210597b0"
+  },
+  {
+    "kod": "0122",
+    "beteckning": "Drevvikenpartiet",
+    "forkortning": "DP",
+    "registrerad_partibeteckning": true,
+    "uuid": "8ed0b238-a343-4e3b-b3a5-4cd430e9d7ff"
+  },
+  {
+    "kod": "0123",
+    "beteckning": "Nykvarnspartiet",
+    "forkortning": "NP",
+    "registrerad_partibeteckning": true,
+    "uuid": "d8c7d408-37c1-439c-a48d-805e00b4af49"
+  },
+  {
+    "kod": "0124",
+    "beteckning": "Alvesta Alternativet",
+    "forkortning": "ALV",
+    "registrerad_partibeteckning": true,
+    "uuid": "c27c54ce-4d48-40aa-97a7-d7708f4c16df"
+  },
+  {
+    "kod": "0126",
+    "beteckning": "Folkets Väl",
+    "forkortning": "FOV",
+    "registrerad_partibeteckning": true,
+    "uuid": "81c13f0b-134f-4337-95ad-9539165e9dbf"
+  },
+  {
+    "kod": "0131",
+    "beteckning": "Socialistiskt Alternativ tidigare Rättvisepartiet Socialisterna",
+    "forkortning": "SA",
+    "registrerad_partibeteckning": true,
+    "uuid": "ce076c0a-bef8-401e-a65c-6882a0d384c0"
+  },
+  {
+    "kod": "0160",
+    "beteckning": "Hela Edas Lista",
+    "forkortning": "HEL",
+    "registrerad_partibeteckning": false,
+    "uuid": "13b80d5f-37ce-48c0-b342-347b39e3c2b9"
+  },
+  {
+    "kod": "0163",
+    "beteckning": "Bjärepartiet",
+    "forkortning": "BJP",
+    "registrerad_partibeteckning": true,
+    "uuid": "45099053-dfc2-4b55-8eeb-8ab53b26f8a1"
+  },
+  {
+    "kod": "0174",
+    "beteckning": "SAFE - Solidaritet Arbete Fred Ekologi",
+    "forkortning": "SAFE",
+    "registrerad_partibeteckning": true,
+    "uuid": "2c038150-7436-41b5-975e-c745ecbebc14"
+  },
+  {
+    "kod": "0176",
+    "beteckning": "Lokalpartiet",
+    "forkortning": "LOK",
+    "registrerad_partibeteckning": true,
+    "uuid": "a118a3da-939b-47ec-93c2-1e314818bc7c"
+  },
+  {
+    "kod": "0183",
+    "beteckning": "Ronnebypartiet",
+    "forkortning": "ROP",
+    "registrerad_partibeteckning": true,
+    "uuid": "66187f91-2cc5-4f83-b976-87ac13346da2"
+  },
+  {
+    "kod": "0184",
+    "beteckning": "Bålstapartiet",
+    "forkortning": "BÅP",
+    "registrerad_partibeteckning": false,
+    "uuid": "25be4598-d568-46e2-89ea-b6614711c6db"
+  },
+  {
+    "kod": "0185",
+    "beteckning": "Åselepartiet",
+    "forkortning": "ÅSP",
+    "registrerad_partibeteckning": true,
+    "uuid": "91a0fcf9-1c39-43df-980d-1aa8080054a0"
+  },
+  {
+    "kod": "0187",
+    "beteckning": "Dorotea Kommunlista",
+    "forkortning": "DKL",
+    "registrerad_partibeteckning": true,
+    "uuid": "1d68b83f-c8bd-4d5f-907f-b8ae516a3a22"
+  },
+  {
+    "kod": "0189",
+    "beteckning": "Enhet",
+    "forkortning": "ENH",
+    "registrerad_partibeteckning": true,
+    "uuid": "4ed338ef-bbdd-4ff9-aaa9-b86c90a01e3e"
+  },
+  {
+    "kod": "0193",
+    "beteckning": "Sjukvårdspartiet",
+    "forkortning": "SJV",
+    "registrerad_partibeteckning": true,
+    "uuid": "394593f1-a26f-4271-a0ff-e3e9c5df8b86"
+  },
+  {
+    "kod": "0196",
+    "beteckning": "Sjukvårdspartiet - Västernorrland",
+    "forkortning": "SJVP",
+    "registrerad_partibeteckning": true,
+    "uuid": "2dde7f18-4339-490a-abaf-43e4eb53205c"
+  },
+  {
+    "kod": "0197",
+    "beteckning": "Morapartiet",
+    "forkortning": "MOP",
+    "registrerad_partibeteckning": true,
+    "uuid": "3c442003-5859-4ff9-a322-86898ba54e13"
+  },
+  {
+    "kod": "0204",
+    "beteckning": "Folkviljan Orust",
+    "forkortning": "FPO",
+    "registrerad_partibeteckning": true,
+    "uuid": "cc243f56-5c5a-4bd2-b649-0f685d0f7384"
+  },
+  {
+    "kod": "0205",
+    "beteckning": "Sakpolitikerna",
+    "forkortning": "Sak",
+    "registrerad_partibeteckning": true,
+    "uuid": "ec774af6-5b29-4068-beb5-10d07e62a062"
+  },
+  {
+    "kod": "0248",
+    "beteckning": "Lysekilspartiet",
+    "forkortning": "LP.NU",
+    "registrerad_partibeteckning": true,
+    "uuid": "5b6a8475-6d85-466e-a34f-008852c173f7"
+  },
+  {
+    "kod": "0249",
+    "beteckning": "Sjukvårdspartiet Gävleborg",
+    "forkortning": "SJPG",
+    "registrerad_partibeteckning": true,
+    "uuid": "091e3961-b5f2-419b-8f6c-54fc7579e30c"
+  },
+  {
+    "kod": "0250",
+    "beteckning": "Sjukvårdspartiet i Värmland",
+    "forkortning": "SjvV",
+    "registrerad_partibeteckning": true,
+    "uuid": "d6511d4e-1b9d-4f3c-89ff-4533300f46fc"
+  },
+  {
+    "kod": "0301",
+    "beteckning": "Vingåkerspartiet - ViP",
+    "forkortning": "ViP",
+    "registrerad_partibeteckning": true,
+    "uuid": "1ec14dc8-616b-4948-9f91-f739d2f59c78"
+  },
+  {
+    "kod": "0303",
+    "beteckning": "Knivsta.Nu",
+    "forkortning": "KNU",
+    "registrerad_partibeteckning": true,
+    "uuid": "2cdb7e51-30e9-479b-b7f7-2d33cf915b73"
+  },
+  {
+    "kod": "0339",
+    "beteckning": "Sveriges Nationella Demokratiska Parti",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "617f16c5-dd2f-4c10-a838-01c2b308c8a6"
+  },
+  {
+    "kod": "0418",
+    "beteckning": "Laholmspartiet",
+    "forkortning": "Lap",
+    "registrerad_partibeteckning": true,
+    "uuid": "05ac49a3-fa54-4d3a-8938-f947b380987f"
+  },
+  {
+    "kod": "0422",
+    "beteckning": "Österlenpartiet",
+    "forkortning": "ÖstP",
+    "registrerad_partibeteckning": true,
+    "uuid": "6675260d-0e34-4c06-842e-98312374dc21"
+  },
+  {
+    "kod": "0447",
+    "beteckning": "Sjukvårdspartiet - Västra Götaland",
+    "forkortning": "SPVG",
+    "registrerad_partibeteckning": true,
+    "uuid": "d4884d96-9160-4f1d-bb0f-b2a0efe7cbba"
+  },
+  {
+    "kod": "0465",
+    "beteckning": "Roslagspartiet",
+    "forkortning": "ROSP",
+    "registrerad_partibeteckning": true,
+    "uuid": "be71ef20-ecb1-4702-8cdd-98686556b98b"
+  },
+  {
+    "kod": "0470",
+    "beteckning": "Seniorpartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "8ab621eb-f774-4428-a3d8-d8dbe713a448"
+  },
+  {
+    "kod": "0471",
+    "beteckning": "Kommunistiska Partiet",
+    "forkortning": "K",
+    "registrerad_partibeteckning": true,
+    "uuid": "7d9b57e7-f172-4042-8a2e-ad18c5da6245"
+  },
+  {
+    "kod": "0472",
+    "beteckning": "Dalarnas Sjukvårdsparti",
+    "forkortning": "dsp",
+    "registrerad_partibeteckning": true,
+    "uuid": "4d11b150-8aa4-44e4-ac99-7378407b67e4"
+  },
+  {
+    "kod": "0473",
+    "beteckning": "Rättvis Demokrati",
+    "forkortning": "rd",
+    "registrerad_partibeteckning": true,
+    "uuid": "c31b9463-3618-48b3-8a7d-f1c5b46261e6"
+  },
+  {
+    "kod": "0497",
+    "beteckning": "Allt för Ragunda",
+    "forkortning": "AfR",
+    "registrerad_partibeteckning": true,
+    "uuid": "d62d3e66-de61-4897-a3d9-5511cd9c529b"
+  },
+  {
+    "kod": "0498",
+    "beteckning": "Mälaröpartiet",
+    "forkortning": "Ö",
+    "registrerad_partibeteckning": true,
+    "uuid": "10366f60-a96a-48f2-b248-5e3ece19e338"
+  },
+  {
+    "kod": "0502",
+    "beteckning": "Kommunens Väl",
+    "forkortning": "KVS",
+    "registrerad_partibeteckning": true,
+    "uuid": "9b733ec5-e9f2-472c-a42b-650ff055689c"
+  },
+  {
+    "kod": "0503",
+    "beteckning": "Kommunens Väl",
+    "forkortning": "Komv",
+    "registrerad_partibeteckning": true,
+    "uuid": "55e9cd9d-c6b7-4026-aea3-351a9b6c9db9"
+  },
+  {
+    "kod": "0505",
+    "beteckning": "Medborgarpartiet",
+    "forkortning": "Vfp",
+    "registrerad_partibeteckning": true,
+    "uuid": "dc646f81-a2b4-44d3-8d5f-1e1802de6601"
+  },
+  {
+    "kod": "0510",
+    "beteckning": "Alternativet",
+    "forkortning": "ALTER",
+    "registrerad_partibeteckning": false,
+    "uuid": "50ee1665-e858-4b5c-be82-c3faf01610a1"
+  },
+  {
+    "kod": "0512",
+    "beteckning": "Kommunlistan",
+    "forkortning": "KL",
+    "registrerad_partibeteckning": true,
+    "uuid": "452aff7e-40d4-44b5-9193-b8e9b006a6da"
+  },
+  {
+    "kod": "0519",
+    "beteckning": "Sorundanet Nynäshamns kommunparti",
+    "forkortning": "SN",
+    "registrerad_partibeteckning": true,
+    "uuid": "51ed83cb-d87b-48e8-b6b2-f5a8f0491624"
+  },
+  {
+    "kod": "0524",
+    "beteckning": "Piratpartiet",
+    "forkortning": "PP",
+    "registrerad_partibeteckning": true,
+    "uuid": "e6be8b6a-9385-4918-847a-dee620802595"
+  },
+  {
+    "kod": "0525",
+    "beteckning": "Malålistan",
+    "forkortning": "ML",
+    "registrerad_partibeteckning": true,
+    "uuid": "94de475b-521e-4fd6-b5e2-16eeacde72b4"
+  },
+  {
+    "kod": "0527",
+    "beteckning": "Pensionärspartiet i Nynäshamns kommun",
+    "forkortning": "PPiN",
+    "registrerad_partibeteckning": true,
+    "uuid": "ac2f677a-f96e-41fd-869e-0a7ab2c24745"
+  },
+  {
+    "kod": "0532",
+    "beteckning": "Enad Röst",
+    "forkortning": "ER",
+    "registrerad_partibeteckning": true,
+    "uuid": "611c7fae-c057-4e46-8fd9-c4507c36be62"
+  },
+  {
+    "kod": "0535",
+    "beteckning": "Ljusdalsbygdens parti",
+    "forkortning": "LjP",
+    "registrerad_partibeteckning": true,
+    "uuid": "62970bde-1b67-469b-954a-33078773b42b"
+  },
+  {
+    "kod": "0543",
+    "beteckning": "Nackalistan",
+    "forkortning": "NL",
+    "registrerad_partibeteckning": true,
+    "uuid": "eeb297f7-5159-48b2-b6c0-ab92ebc9fa28"
+  },
+  {
+    "kod": "0546",
+    "beteckning": "SPORT- OCH KOMMUNPARTIET",
+    "forkortning": "SOKP",
+    "registrerad_partibeteckning": true,
+    "uuid": "8411e120-1d68-4435-bc7c-0f529b6d642a"
+  },
+  {
+    "kod": "0593",
+    "beteckning": "KommunPartiet Mellerud",
+    "forkortning": "KiM",
+    "registrerad_partibeteckning": true,
+    "uuid": "f2803c86-56ec-4d6f-bb99-6e847357b5f8"
+  },
+  {
+    "kod": "0638",
+    "beteckning": "Klassiskt liberala partiet",
+    "forkortning": "KLP",
+    "registrerad_partibeteckning": true,
+    "uuid": "6537fb90-7ac9-4385-b554-3074b9e60b1a"
+  },
+  {
+    "kod": "0667",
+    "beteckning": "Lokalpartiet BoA",
+    "forkortning": "BoA",
+    "registrerad_partibeteckning": true,
+    "uuid": "77f0a0cd-c3c5-42ca-86a3-08759e95900d"
+  },
+  {
+    "kod": "0711",
+    "beteckning": "Tullingepartiet",
+    "forkortning": "TuP",
+    "registrerad_partibeteckning": true,
+    "uuid": "c0fec9af-ef73-43ec-9748-c82d98ab4514"
+  },
+  {
+    "kod": "0742",
+    "beteckning": "Kommunlistan",
+    "forkortning": "SKL",
+    "registrerad_partibeteckning": true,
+    "uuid": "2707079d-6275-4525-bca7-fd523d4f46fd"
+  },
+  {
+    "kod": "0747",
+    "beteckning": "Kommunlistan",
+    "forkortning": "KLH",
+    "registrerad_partibeteckning": true,
+    "uuid": "29d3546a-9c99-4ce0-8bc7-d5276373090e"
+  },
+  {
+    "kod": "0971",
+    "beteckning": "Perstorps Framtid",
+    "forkortning": "PF",
+    "registrerad_partibeteckning": true,
+    "uuid": "1eee2b77-0a39-4eb9-8b98-43b9628875a9"
+  },
+  {
+    "kod": "0973",
+    "beteckning": "Salas bästa",
+    "forkortning": "SBÄ",
+    "registrerad_partibeteckning": true,
+    "uuid": "121acbe1-ec5f-4964-bd94-6f4c94a52302"
+  },
+  {
+    "kod": "0977",
+    "beteckning": "Socialisterna-Välfärdspartiet",
+    "forkortning": "S-V",
+    "registrerad_partibeteckning": true,
+    "uuid": "9897ef04-abc4-4226-b74b-016a2f9e56a0"
+  },
+  {
+    "kod": "0978",
+    "beteckning": "Utvecklingspartiet",
+    "forkortning": "UtvP",
+    "registrerad_partibeteckning": true,
+    "uuid": "cefdf9df-76d1-450c-8f74-f52523758486"
+  },
+  {
+    "kod": "0982",
+    "beteckning": "Västjämtlands Väl",
+    "forkortning": "VV",
+    "registrerad_partibeteckning": true,
+    "uuid": "c102184c-f0ee-49c9-9250-ab9197f171a1"
+  },
+  {
+    "kod": "0983",
+    "beteckning": "Politiskt Alternativ",
+    "forkortning": "PA",
+    "registrerad_partibeteckning": true,
+    "uuid": "35c4f62f-3e79-4dbe-9ae4-b76aa4052b86"
+  },
+  {
+    "kod": "0985",
+    "beteckning": "Norapartiet",
+    "forkortning": "NOR",
+    "registrerad_partibeteckning": true,
+    "uuid": "1d7a2ecf-cd6c-478d-b6c6-95ff6e97c359"
+  },
+  {
+    "kod": "0986",
+    "beteckning": "EngelholmsPartiet",
+    "forkortning": "EP",
+    "registrerad_partibeteckning": true,
+    "uuid": "319daaea-c08a-4e2f-b8a5-c99b5fd9de6c"
+  },
+  {
+    "kod": "0993",
+    "beteckning": "Vetlanda framåtanda",
+    "forkortning": "VF",
+    "registrerad_partibeteckning": true,
+    "uuid": "91ea834e-a512-48ba-bccc-a7e8bfd1dc75"
+  },
+  {
+    "kod": "0997",
+    "beteckning": "Framtidspartiet i Lekeberg",
+    "forkortning": "FL",
+    "registrerad_partibeteckning": true,
+    "uuid": "4cf12d91-1c02-4fb0-86ce-8c7cd122ba50"
+  },
+  {
+    "kod": "1002",
+    "beteckning": "Västra Initiativet",
+    "forkortning": "VSKB",
+    "registrerad_partibeteckning": true,
+    "uuid": "58bd344e-7f53-4c58-97f8-891bbe655d30"
+  },
+  {
+    "kod": "1006",
+    "beteckning": "Vårt Söderslätt",
+    "forkortning": "VS",
+    "registrerad_partibeteckning": true,
+    "uuid": "e7ac6421-62bc-4ef3-aa5b-326acb0811bb"
+  },
+  {
+    "kod": "1011",
+    "beteckning": "Landsbygdspartiet Oberoende",
+    "forkortning": "LPo",
+    "registrerad_partibeteckning": true,
+    "uuid": "e39bddbe-ce7d-4c63-a677-b5c1a3046ebd"
+  },
+  {
+    "kod": "1013",
+    "beteckning": "Bollnäspartiet",
+    "forkortning": "Bollp",
+    "registrerad_partibeteckning": true,
+    "uuid": "30aab0fe-85ab-47b1-85b0-5511e0a5da4d"
+  },
+  {
+    "kod": "1014",
+    "beteckning": "Framtid i Jokkmokks kommun",
+    "forkortning": "FJK",
+    "registrerad_partibeteckning": false,
+    "uuid": "6a91678c-924b-45f6-a281-26a363dcbbd8"
+  },
+  {
+    "kod": "1036",
+    "beteckning": "Kungsbackaborna",
+    "forkortning": "Kbabo",
+    "registrerad_partibeteckning": true,
+    "uuid": "4eee1cd3-a349-4c74-937c-3b7149b78d4e"
+  },
+  {
+    "kod": "1053",
+    "beteckning": "Bygdepartiet",
+    "forkortning": "ByP",
+    "registrerad_partibeteckning": true,
+    "uuid": "b578db7a-cd4b-4e6c-826e-d53a0e142069"
+  },
+  {
+    "kod": "1068",
+    "beteckning": "Övertorneås Fria Alternativ",
+    "forkortning": "ÖFA",
+    "registrerad_partibeteckning": true,
+    "uuid": "3bd219fb-835a-4d0d-8d26-5f99bdb79381"
+  },
+  {
+    "kod": "1069",
+    "beteckning": "Grythyttelistan",
+    "forkortning": "GL",
+    "registrerad_partibeteckning": false,
+    "uuid": "b9180254-2586-4112-a98b-bf84618217a8"
+  },
+  {
+    "kod": "1073",
+    "beteckning": "Sámelistu/Samelistan Partipolitiskt obunden",
+    "forkortning": "SL",
+    "registrerad_partibeteckning": false,
+    "uuid": "13bf33dd-7b58-4757-893a-47ea5a12e399"
+  },
+  {
+    "kod": "1076",
+    "beteckning": "Uddevallapartiet",
+    "forkortning": "UddP",
+    "registrerad_partibeteckning": true,
+    "uuid": "cdbb43bf-f8da-4c29-9980-7681eada9d62"
+  },
+  {
+    "kod": "1080",
+    "beteckning": "Rönningepartiet",
+    "forkortning": "R",
+    "registrerad_partibeteckning": true,
+    "uuid": "a653fd03-0c6a-41a3-8260-24a5ca4f441c"
+  },
+  {
+    "kod": "1106",
+    "beteckning": "Härjedalspartiet",
+    "forkortning": "Härjp",
+    "registrerad_partibeteckning": true,
+    "uuid": "9f7fabe1-2a28-4fb9-88b8-de3cd17a8020"
+  },
+  {
+    "kod": "1113",
+    "beteckning": "Hela Sunne",
+    "forkortning": "HS",
+    "registrerad_partibeteckning": true,
+    "uuid": "407ebcac-23d1-4b6e-b030-d009163bccbe"
+  },
+  {
+    "kod": "1116",
+    "beteckning": "Waxholmspartiet - borgerligt alternativ",
+    "forkortning": "WAX",
+    "registrerad_partibeteckning": true,
+    "uuid": "60c5adea-ea43-43cf-8ca7-d102a01bcad1"
+  },
+  {
+    "kod": "1121",
+    "beteckning": "Kommunal Samling",
+    "forkortning": "KOSA",
+    "registrerad_partibeteckning": true,
+    "uuid": "0b9990ce-999d-4628-9634-d16188729059"
+  },
+  {
+    "kod": "1122",
+    "beteckning": "Vård för Pengarna",
+    "forkortning": "VåfP",
+    "registrerad_partibeteckning": true,
+    "uuid": "4ef9af41-d2fa-475f-834b-4d722f3c8914"
+  },
+  {
+    "kod": "1128",
+    "beteckning": "Roslagens oberoende parti",
+    "forkortning": "ROOP",
+    "registrerad_partibeteckning": true,
+    "uuid": "34fddde3-58bd-4390-8239-6b822fa7e313"
+  },
+  {
+    "kod": "1133",
+    "beteckning": "TingsrydsAlternativet (TiA)",
+    "forkortning": "TiA",
+    "registrerad_partibeteckning": true,
+    "uuid": "11f9b277-29f8-4a27-8894-7adb51cf335c"
+  },
+  {
+    "kod": "1135",
+    "beteckning": "FörNyaLund",
+    "forkortning": "FöNyL",
+    "registrerad_partibeteckning": true,
+    "uuid": "083558f5-89f8-4513-9ed1-6e5d309ec24a"
+  },
+  {
+    "kod": "1137",
+    "beteckning": "Partiet för Norbergs Framtid",
+    "forkortning": "PNF",
+    "registrerad_partibeteckning": true,
+    "uuid": "144fe5cd-0d20-4b11-bd0e-24fa1c9d4438"
+  },
+  {
+    "kod": "1142",
+    "beteckning": "Framtid Öland",
+    "forkortning": "FÖL",
+    "registrerad_partibeteckning": true,
+    "uuid": "a6ed8e2b-6e19-4657-a083-ebe43a8d4a12"
+  },
+  {
+    "kod": "1143",
+    "beteckning": "Nystart Enköping (NE)",
+    "forkortning": "NE",
+    "registrerad_partibeteckning": true,
+    "uuid": "f4f9b691-9eea-4cd7-906a-bbebb07a9c42"
+  },
+  {
+    "kod": "1150",
+    "beteckning": "Direktdemokraterna",
+    "forkortning": "DD",
+    "registrerad_partibeteckning": true,
+    "uuid": "153c98fb-b712-4314-a922-9562253639c2"
+  },
+  {
+    "kod": "1151",
+    "beteckning": "Realistpartiet",
+    "forkortning": "REAL",
+    "registrerad_partibeteckning": true,
+    "uuid": "c3388f52-cd86-4212-ad8c-80c7156cc57e"
+  },
+  {
+    "kod": "1152",
+    "beteckning": "Örebropartiet",
+    "forkortning": "ÖrP",
+    "registrerad_partibeteckning": true,
+    "uuid": "4719f829-c6f3-43b9-aaee-db26d645007d"
+  },
+  {
+    "kod": "1154",
+    "beteckning": "Väsbys Bästa",
+    "forkortning": "VB",
+    "registrerad_partibeteckning": true,
+    "uuid": "b00bc532-e725-4f3b-9e0a-57ff456e6de1"
+  },
+  {
+    "kod": "1157",
+    "beteckning": "Nya Ulricehamn",
+    "forkortning": "NU",
+    "registrerad_partibeteckning": true,
+    "uuid": "2def9db4-ffba-4858-a406-b76008c36853"
+  },
+  {
+    "kod": "1158",
+    "beteckning": "FRAMTID I ALE",
+    "forkortning": "FiA",
+    "registrerad_partibeteckning": true,
+    "uuid": "990c2123-0bc0-4534-8a36-a638109fc503"
+  },
+  {
+    "kod": "1164",
+    "beteckning": "Framtid i Kalix",
+    "forkortning": "FRAK",
+    "registrerad_partibeteckning": true,
+    "uuid": "b6cccbf7-1836-4e17-a389-bd715299bb70"
+  },
+  {
+    "kod": "1166",
+    "beteckning": "Vår Framtids politiska utskott",
+    "forkortning": "VFÅ",
+    "registrerad_partibeteckning": true,
+    "uuid": "4057e1cb-59cc-4157-b34f-3fac649dc325"
+  },
+  {
+    "kod": "1180",
+    "beteckning": "Demokratiska Sekulära Socialister Arbetarpartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "59e3d3d7-ca0c-4818-933e-9c6b7e04b1d1"
+  },
+  {
+    "kod": "1196",
+    "beteckning": "TJÖRNPARTIET",
+    "forkortning": "TJÖP",
+    "registrerad_partibeteckning": false,
+    "uuid": "3f42e34b-1a4a-43df-b00a-6b38b6a297ae"
+  },
+  {
+    "kod": "1215",
+    "beteckning": "Hoforspartiet",
+    "forkortning": "HOP",
+    "registrerad_partibeteckning": false,
+    "uuid": "ef75b8d8-8909-4f89-84c6-e7ff7bb70a7f"
+  },
+  {
+    "kod": "1216",
+    "beteckning": "Skol och Landsbygdspartiet",
+    "forkortning": "SkolP",
+    "registrerad_partibeteckning": true,
+    "uuid": "73d0ba2b-b024-4515-ad75-fbab558fb9ee"
+  },
+  {
+    "kod": "1257",
+    "beteckning": "SoL-partiet Sölvesborg och Lister",
+    "forkortning": "SoL",
+    "registrerad_partibeteckning": true,
+    "uuid": "0d562b39-da62-425d-bd18-869277f706b4"
+  },
+  {
+    "kod": "1258",
+    "beteckning": "Konsensus - För Vadstenas Bästa",
+    "forkortning": "Kons",
+    "registrerad_partibeteckning": true,
+    "uuid": "35324e37-4fa4-4a29-9370-e75708476d5a"
+  },
+  {
+    "kod": "1265",
+    "beteckning": "Folkets Röst",
+    "forkortning": "FR",
+    "registrerad_partibeteckning": true,
+    "uuid": "8ae6ac00-f69a-42f8-9295-7d0f4139dd0a"
+  },
+  {
+    "kod": "1273",
+    "beteckning": "Nordiska motståndsrörelsen",
+    "forkortning": "NMR",
+    "registrerad_partibeteckning": true,
+    "uuid": "c7ce3542-587c-4d95-8e2a-d63f91b11bc9"
+  },
+  {
+    "kod": "1281",
+    "beteckning": "Naturens Parti",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "e62f64e1-7b26-4a5e-93e7-637112a6e9ca"
+  },
+  {
+    "kod": "1284",
+    "beteckning": "Alternativet",
+    "forkortning": "Alt",
+    "registrerad_partibeteckning": true,
+    "uuid": "74cf42dc-1c73-4a54-8a20-71a71cce6723"
+  },
+  {
+    "kod": "1287",
+    "beteckning": "Habodemokraterna",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "3571a393-94b0-4aeb-b092-f3dabc9b6f5e"
+  },
+  {
+    "kod": "1296",
+    "beteckning": "Medborgerlig Samling",
+    "forkortning": "MED",
+    "registrerad_partibeteckning": true,
+    "uuid": "68b3e558-d0bb-4ac7-b833-a5b30a542800"
+  },
+  {
+    "kod": "1297",
+    "beteckning": "Demokraterna",
+    "forkortning": "DEM",
+    "registrerad_partibeteckning": true,
+    "uuid": "45040bfa-87cf-44ec-aee8-f27724866aaf"
+  },
+  {
+    "kod": "1304",
+    "beteckning": "Demokraterna i Norberg",
+    "forkortning": "DiN",
+    "registrerad_partibeteckning": true,
+    "uuid": "42e96322-fb95-4088-a804-96c881a44d36"
+  },
+  {
+    "kod": "1305",
+    "beteckning": "Oberoende Realister",
+    "forkortning": "OR",
+    "registrerad_partibeteckning": true,
+    "uuid": "8463491f-4a86-4bfd-91d2-12d58ff5e223"
+  },
+  {
+    "kod": "1309",
+    "beteckning": "TRYGGHETSPARTIET",
+    "forkortning": "TRP",
+    "registrerad_partibeteckning": true,
+    "uuid": "c1b28696-4325-48c1-b40c-f8e530278dd0"
+  },
+  {
+    "kod": "1310",
+    "beteckning": "BARAPARTIET",
+    "forkortning": "BAP",
+    "registrerad_partibeteckning": true,
+    "uuid": "1a5522db-9c9a-4c2e-8bc6-a5877671ed18"
+  },
+  {
+    "kod": "1312",
+    "beteckning": "Jämtlands Väl Krokom",
+    "forkortning": "JVK",
+    "registrerad_partibeteckning": true,
+    "uuid": "511fcae2-33c6-4280-807f-2cfb3dae576a"
+  },
+  {
+    "kod": "1318",
+    "beteckning": "Common sense in Sweden",
+    "forkortning": "CSIS",
+    "registrerad_partibeteckning": false,
+    "uuid": "b931129c-2ee1-41fa-9429-a841721d2205"
+  },
+  {
+    "kod": "1322",
+    "beteckning": "Timråpartiet",
+    "forkortning": "TimP",
+    "registrerad_partibeteckning": true,
+    "uuid": "bd67893c-6cd0-4d19-a06c-f99484952917"
+  },
+  {
+    "kod": "1323",
+    "beteckning": "Stenungsundspartiet",
+    "forkortning": "St",
+    "registrerad_partibeteckning": true,
+    "uuid": "c4592c7f-15b8-4f0b-a0a7-eea1ca935643"
+  },
+  {
+    "kod": "1325",
+    "beteckning": "Alternativ för Sverige",
+    "forkortning": "AFS",
+    "registrerad_partibeteckning": true,
+    "uuid": "3f7caf00-f50b-4ce3-b135-04492de827b1"
+  },
+  {
+    "kod": "1327",
+    "beteckning": "Jämtlands Väl Bräcke",
+    "forkortning": "JVB",
+    "registrerad_partibeteckning": false,
+    "uuid": "e9f9bec8-09ff-483e-a484-d31babfd06ef"
+  },
+  {
+    "kod": "1333",
+    "beteckning": "EMPA(R)TIET",
+    "forkortning": "EMP",
+    "registrerad_partibeteckning": true,
+    "uuid": "a8f1717a-818c-40d4-bfb3-f04dfd172e9f"
+  },
+  {
+    "kod": "1335",
+    "beteckning": "Westbopartiet",
+    "forkortning": "WeP",
+    "registrerad_partibeteckning": true,
+    "uuid": "e19a05b1-3db0-4f2a-8389-2c2e4d482fe8"
+  },
+  {
+    "kod": "1337",
+    "beteckning": "Mitt Göinge",
+    "forkortning": "MG",
+    "registrerad_partibeteckning": true,
+    "uuid": "db6631d4-61a1-4068-b426-66d75fe39ea1"
+  },
+  {
+    "kod": "1339",
+    "beteckning": "Romelepartiet Skåne",
+    "forkortning": "RoPa",
+    "registrerad_partibeteckning": true,
+    "uuid": "d11853ce-4206-4b7a-a222-2d107200dca1"
+  },
+  {
+    "kod": "1342",
+    "beteckning": "Hela Vara kommuns bästa",
+    "forkortning": "hvkb",
+    "registrerad_partibeteckning": true,
+    "uuid": "ae7d2e8b-4cc0-49e9-a27a-109546278c8f"
+  },
+  {
+    "kod": "1343",
+    "beteckning": "nordanstigspartiet.se",
+    "forkortning": "nop",
+    "registrerad_partibeteckning": true,
+    "uuid": "38456bd0-8569-4c27-a4b5-fec604e0f381"
+  },
+  {
+    "kod": "1344",
+    "beteckning": "Fokus",
+    "forkortning": "Fok",
+    "registrerad_partibeteckning": true,
+    "uuid": "082c3b14-65fb-499d-a8b7-37c29eaa55e0"
+  },
+  {
+    "kod": "1350",
+    "beteckning": "Karlstadpartiet Livskvalitet",
+    "forkortning": "KPL",
+    "registrerad_partibeteckning": false,
+    "uuid": "d28154f7-af47-4248-9363-d38fd26aef61"
+  },
+  {
+    "kod": "1353",
+    "beteckning": "Liberal Vision Åmål",
+    "forkortning": "LibVÅ",
+    "registrerad_partibeteckning": true,
+    "uuid": "bd4fff22-4d31-4d12-9abc-adc5fed355ee"
+  },
+  {
+    "kod": "1355",
+    "beteckning": "Vårddemokraterna",
+    "forkortning": "VD",
+    "registrerad_partibeteckning": true,
+    "uuid": "44273904-e60e-4323-885f-d7f4195e38d9"
+  },
+  {
+    "kod": "1361",
+    "beteckning": "Framtid S",
+    "forkortning": "FrS",
+    "registrerad_partibeteckning": true,
+    "uuid": "655f6918-3cd2-40a5-819a-05ba458c1209"
+  },
+  {
+    "kod": "1366",
+    "beteckning": "Bästa Alternativet",
+    "forkortning": "B-ALT",
+    "registrerad_partibeteckning": true,
+    "uuid": "b4c33957-dac8-4d56-b08a-19c877822487"
+  },
+  {
+    "kod": "1367",
+    "beteckning": "NyFramtid",
+    "forkortning": "NyF",
+    "registrerad_partibeteckning": true,
+    "uuid": "245b9ede-33f6-4ae4-853c-898724a87900"
+  },
+  {
+    "kod": "1373",
+    "beteckning": "Aktiv samling - Bodenalternativet",
+    "forkortning": "ASB",
+    "registrerad_partibeteckning": true,
+    "uuid": "7677e088-6467-4a45-99b3-3483f4ef26f7"
+  },
+  {
+    "kod": "1379",
+    "beteckning": "Älska Svedala",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "ea3d9524-730d-437d-a74e-5b1412f40c7d"
+  },
+  {
+    "kod": "1393",
+    "beteckning": "Vår Framtid",
+    "forkortning": "VF",
+    "registrerad_partibeteckning": true,
+    "uuid": "635ee374-fdd4-4bfd-afaa-83668895fcd5"
+  },
+  {
+    "kod": "1404",
+    "beteckning": "Revolutionspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "88ad8b1d-d574-4ff7-bffc-1630c01345ab"
+  },
+  {
+    "kod": "1430",
+    "beteckning": "Partiet Vändpunkt",
+    "forkortning": "PV",
+    "registrerad_partibeteckning": true,
+    "uuid": "12e19db2-0113-4146-ae1f-c84d52016103"
+  },
+  {
+    "kod": "1439",
+    "beteckning": "Partiet Nyans",
+    "forkortning": "PNy",
+    "registrerad_partibeteckning": true,
+    "uuid": "1a5c7b71-fcb0-40eb-b23b-f3a50f70a8c5"
+  },
+  {
+    "kod": "1441",
+    "beteckning": "Sans o Balans",
+    "forkortning": "SoB",
+    "registrerad_partibeteckning": true,
+    "uuid": "380344b3-0c02-4d8d-af0a-a12763525232"
+  },
+  {
+    "kod": "1445",
+    "beteckning": "Alvestademokraterna",
+    "forkortning": "ADEM",
+    "registrerad_partibeteckning": true,
+    "uuid": "b61d0643-3ab8-4560-8849-4cdfbb45ec18"
+  },
+  {
+    "kod": "1446",
+    "beteckning": "Nordvärmlands kommunparti",
+    "forkortning": "NVKP",
+    "registrerad_partibeteckning": true,
+    "uuid": "7de96d66-a933-4d96-aa3b-8720396f0bb3"
+  },
+  {
+    "kod": "1448",
+    "beteckning": "Enade Sverige",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "0be2f94a-03ad-4af7-a0cf-24989aa44a4c"
+  },
+  {
+    "kod": "1449",
+    "beteckning": "FramtidsTro",
+    "forkortning": "FT",
+    "registrerad_partibeteckning": false,
+    "uuid": "e54361ef-ae77-4370-9ead-a71f49c8af13"
+  },
+  {
+    "kod": "1450",
+    "beteckning": "tjugofyrasju",
+    "forkortning": "Tfs",
+    "registrerad_partibeteckning": true,
+    "uuid": "91c0ceb7-bcaa-4407-b734-d41797998014"
+  },
+  {
+    "kod": "1452",
+    "beteckning": "Utvecklingspartiet demokraterna",
+    "forkortning": "UPDEM",
+    "registrerad_partibeteckning": true,
+    "uuid": "1093db49-7ac0-4217-935b-cc42a7819307"
+  },
+  {
+    "kod": "1458",
+    "beteckning": "Linköpingslistan",
+    "forkortning": "LL",
+    "registrerad_partibeteckning": true,
+    "uuid": "e1000305-e53c-4c8b-bc56-f171e8840c3e"
+  },
+  {
+    "kod": "1459",
+    "beteckning": "Malmölistan",
+    "forkortning": "Mal",
+    "registrerad_partibeteckning": true,
+    "uuid": "4b1d7267-315d-4a16-8fcc-3fabb936322d"
+  },
+  {
+    "kod": "1466",
+    "beteckning": "Säkerhetspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "4ba2b18d-d389-42bb-b573-a350d59f4d9b"
+  },
+  {
+    "kod": "1468",
+    "beteckning": "Vinningspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ca42c3ea-ca6b-4365-acb2-eb2a02f2e398"
+  },
+  {
+    "kod": "1472",
+    "beteckning": "Ond Kyckling Partiet",
+    "forkortning": "OKP",
+    "registrerad_partibeteckning": false,
+    "uuid": "0dc48515-c9e3-4c06-bd52-1488d87a0ff3"
+  },
+  {
+    "kod": "1474",
+    "beteckning": "Vi Tidaholm",
+    "forkortning": "VT",
+    "registrerad_partibeteckning": true,
+    "uuid": "9601bba4-836d-43e4-88f8-c53abe3874d9"
+  },
+  {
+    "kod": "1479",
+    "beteckning": "Fritt val",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "194cd4fa-751f-41bb-9b03-d97a35cd4c5a"
+  },
+  {
+    "kod": "1481",
+    "beteckning": "Ekeröpartiet",
+    "forkortning": "EkP",
+    "registrerad_partibeteckning": false,
+    "uuid": "0fab832b-bba4-4fe0-bad1-0cb183d24373"
+  },
+  {
+    "kod": "1482",
+    "beteckning": "En Vis Avskaffar Asylrätten!",
+    "forkortning": "EVA",
+    "registrerad_partibeteckning": false,
+    "uuid": "0f110db0-d70f-4262-bbbe-74e5c4849f85"
+  },
+  {
+    "kod": "1484",
+    "beteckning": "Fredspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "27b7a642-0758-49e4-926c-c22443c81d2d"
+  },
+  {
+    "kod": "1488",
+    "beteckning": "Vårgårdapartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "885e3cfd-d5ec-43a6-9b28-2efce02e72e4"
+  },
+  {
+    "kod": "1490",
+    "beteckning": "Demokratiresan",
+    "forkortning": "DemR",
+    "registrerad_partibeteckning": true,
+    "uuid": "b731d12a-5553-4c4e-874c-abf1cf66141f"
+  },
+  {
+    "kod": "1491",
+    "beteckning": "Pax",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "4ef2cbd2-5833-464d-911e-7992cd5d7303"
+  },
+  {
+    "kod": "1492",
+    "beteckning": "Varbergspartiet",
+    "forkortning": "VP",
+    "registrerad_partibeteckning": true,
+    "uuid": "82ed4c88-8a8d-424c-9134-95075e22ffdb"
+  },
+  {
+    "kod": "1497",
+    "beteckning": "Brobyggarpartiet",
+    "forkortning": "BBP",
+    "registrerad_partibeteckning": false,
+    "uuid": "fe6962ca-100f-4567-83ac-e8f8c83be714"
+  },
+  {
+    "kod": "1498",
+    "beteckning": "Sjukvårdspartiet i Uppsala län",
+    "forkortning": "SVPU",
+    "registrerad_partibeteckning": true,
+    "uuid": "f921f393-6f51-423d-aa58-b6d058ed9905"
+  },
+  {
+    "kod": "1505",
+    "beteckning": "Knapptryckarna",
+    "forkortning": "Kn",
+    "registrerad_partibeteckning": true,
+    "uuid": "fddd2129-7d09-4314-bf10-53248ca1ee30"
+  },
+  {
+    "kod": "1510",
+    "beteckning": "Företaget Sverige",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "0b9be94f-c63b-4e02-85dd-eeaac212f369"
+  },
+  {
+    "kod": "1514",
+    "beteckning": "Folkinitiativet Arjeplog",
+    "forkortning": "FoAr",
+    "registrerad_partibeteckning": true,
+    "uuid": "7cfdfa11-7d51-476e-9ef1-4f31a950dde2"
+  },
+  {
+    "kod": "1515",
+    "beteckning": "Framtid S Övertorneå",
+    "forkortning": "FrSÖ",
+    "registrerad_partibeteckning": true,
+    "uuid": "b3052937-a2a5-4be7-9f1e-c008e71abf8d"
+  },
+  {
+    "kod": "1521",
+    "beteckning": "Arvikapartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "4d9ee322-adc1-4854-9631-851f41137171"
+  },
+  {
+    "kod": "1522",
+    "beteckning": "De Oberoende i Torsby",
+    "forkortning": "DO!T",
+    "registrerad_partibeteckning": true,
+    "uuid": "f1a75d12-a4fa-4263-bc59-3fcdec6629a9"
+  },
+  {
+    "kod": "1526",
+    "beteckning": "Valsamverkanspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "05cd1b5e-e1cf-4066-b5d8-f8ee476e7467"
+  },
+  {
+    "kod": "1532",
+    "beteckning": "HåboDemokraterna",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "9839c0dc-1d95-44e5-bbaf-25a568cf0c72"
+  },
+  {
+    "kod": "1533",
+    "beteckning": "Skärgårdspartiet",
+    "forkortning": "SGP",
+    "registrerad_partibeteckning": true,
+    "uuid": "d92f8d14-ad9d-44cc-8574-cb225414c178"
+  },
+  {
+    "kod": "1535",
+    "beteckning": "Vi i Perstorp",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "acdaaedc-d0aa-4c4d-a5be-a8a63cd3f4b5"
+  },
+  {
+    "kod": "1540",
+    "beteckning": "Livbojen Vaxholmsdemokraterna",
+    "forkortning": "LVD",
+    "registrerad_partibeteckning": true,
+    "uuid": "0bbc6a13-1ce2-47be-ae8f-8ab5f8406226"
+  },
+  {
+    "kod": "1542",
+    "beteckning": "Hjärta för Halmstad",
+    "forkortning": "HfH",
+    "registrerad_partibeteckning": true,
+    "uuid": "e9e6022c-ad7b-4dd3-8591-0765044e0724"
+  },
+  {
+    "kod": "1544",
+    "beteckning": "Östgötapartiet",
+    "forkortning": "ÖsP",
+    "registrerad_partibeteckning": true,
+    "uuid": "f0162ff9-78ac-43ee-aa15-6d129e0fbd2d"
+  },
+  {
+    "kod": "1545",
+    "beteckning": "Tierpslistan",
+    "forkortning": "TL",
+    "registrerad_partibeteckning": true,
+    "uuid": "eb407cb6-8002-4128-8c49-ddad4e9cc967"
+  },
+  {
+    "kod": "1548",
+    "beteckning": "Fria Wermland",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "3ed6c796-a5ed-4752-b180-018e67f0dca0"
+  },
+  {
+    "kod": "1551",
+    "beteckning": "Kristna Värdepartiet",
+    "forkortning": "KVp",
+    "registrerad_partibeteckning": true,
+    "uuid": "c39ee49a-2a58-423d-836d-c97a2d9d8fcd"
+  },
+  {
+    "kod": "1552",
+    "beteckning": "Edetlistan",
+    "forkortning": "EDL",
+    "registrerad_partibeteckning": true,
+    "uuid": "e51b46db-5402-4c26-a0e5-31a2ecb6b12b"
+  },
+  {
+    "kod": "1553",
+    "beteckning": "Vanligt Folk i Köpings kommun",
+    "forkortning": "VFiK",
+    "registrerad_partibeteckning": true,
+    "uuid": "1d691fb8-9129-4e28-8717-d01fc064143a"
+  },
+  {
+    "kod": "1556",
+    "beteckning": "PLUS55",
+    "forkortning": "P55",
+    "registrerad_partibeteckning": true,
+    "uuid": "055905b5-c6cd-4f33-b148-785c73b61cc3"
+  },
+  {
+    "kod": "1558",
+    "beteckning": "Gävleborgspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "ad0359ae-ec54-429e-8d42-817fe8324ec5"
+  },
+  {
+    "kod": "1560",
+    "beteckning": "Klimatinitiativ Simrishamn",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "70c47a8d-66ce-48ed-9110-35e8c9dfee96"
+  },
+  {
+    "kod": "1562",
+    "beteckning": "Dalademokraterna",
+    "forkortning": "Ddem",
+    "registrerad_partibeteckning": true,
+    "uuid": "955ff177-5240-4253-8a9d-016e3f9979fa"
+  },
+  {
+    "kod": "1563",
+    "beteckning": "Halmstadpartiet",
+    "forkortning": "HP",
+    "registrerad_partibeteckning": true,
+    "uuid": "dd1d7547-9583-4710-8eb0-7bfe3f28b8bf"
+  },
+  {
+    "kod": "1566",
+    "beteckning": "Tillsammans - partiet för hela Heby kommun",
+    "forkortning": "TILL",
+    "registrerad_partibeteckning": true,
+    "uuid": "e7bc5109-0e83-4aec-80d7-9df6c64b7ae0"
+  },
+  {
+    "kod": "1567",
+    "beteckning": "Granskning Järfälla",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "d9368807-6be7-4957-b09b-2684465fc18f"
+  },
+  {
+    "kod": "1568",
+    "beteckning": "MoD - Mänskliga rättigheter och Demokrati",
+    "forkortning": "MD",
+    "registrerad_partibeteckning": true,
+    "uuid": "f81ff626-d049-43e7-8ac7-d332b9363dd5"
+  },
+  {
+    "kod": "1571",
+    "beteckning": "PRJ -Partiet för Rättvisa och Jämställdhet",
+    "forkortning": "PRJ",
+    "registrerad_partibeteckning": false,
+    "uuid": "5bad196e-a83b-499d-9327-13a67dac8546"
+  },
+  {
+    "kod": "1572",
+    "beteckning": "Vägval Falun",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "b5f9ede1-0417-4690-9a7b-de05dfa745a1"
+  },
+  {
+    "kod": "1575",
+    "beteckning": "Medborgarpartiet i Gislaved (MiG)",
+    "forkortning": "MiG",
+    "registrerad_partibeteckning": true,
+    "uuid": "7a8e584e-2672-4a52-aad7-417b6de61d09"
+  },
+  {
+    "kod": "1578",
+    "beteckning": "Partiet Folkomröstning",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "89fd5b8d-a2c5-4d86-9acf-6b77b3f85bf9"
+  },
+  {
+    "kod": "1584",
+    "beteckning": "Söderköpingsinitiativet",
+    "forkortning": "SI",
+    "registrerad_partibeteckning": false,
+    "uuid": "eea0ad04-5d4b-411b-a605-61c0b27e9c17"
+  },
+  {
+    "kod": "1585",
+    "beteckning": "Skövdepartiet",
+    "forkortning": "SköP",
+    "registrerad_partibeteckning": true,
+    "uuid": "b4f6236c-9bc3-4f59-85c8-4033a9ee8170"
+  },
+  {
+    "kod": "1587",
+    "beteckning": "Hörbys Framtid",
+    "forkortning": "HF",
+    "registrerad_partibeteckning": true,
+    "uuid": "f1396a0e-3557-463d-9833-3cc72ce1a61b"
+  },
+  {
+    "kod": "1588",
+    "beteckning": "KUSTLANDSPARTIET",
+    "forkortning": "KUST",
+    "registrerad_partibeteckning": false,
+    "uuid": "75661c75-456d-444e-ae84-28d8cfd17900"
+  },
+  {
+    "kod": "1589",
+    "beteckning": "Enad Politik",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "313bed91-3cba-4420-b3f4-a5f7bc224013"
+  },
+  {
+    "kod": "1597",
+    "beteckning": "Bergspartiet",
+    "forkortning": "be",
+    "registrerad_partibeteckning": false,
+    "uuid": "66505caa-ef62-40b3-8898-8d9a96604b08"
+  },
+  {
+    "kod": "1605",
+    "beteckning": "Löddebygden",
+    "forkortning": "LB",
+    "registrerad_partibeteckning": false,
+    "uuid": "05fab818-0cb4-4f62-b2df-cac275610737"
+  },
+  {
+    "kod": "1606",
+    "beteckning": "FAMILJENS FRIHET",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "6c9d5390-3749-455e-be2d-f487f61cdefb"
+  },
+  {
+    "kod": "1609",
+    "beteckning": "WILLY TIGER",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "5a738c77-eec4-48af-8647-054164119faf"
+  },
+  {
+    "kod": "1610",
+    "beteckning": "Volt",
+    "forkortning": "Volt",
+    "registrerad_partibeteckning": false,
+    "uuid": "1332e68f-3454-4128-b32d-fc8edb1631d9"
+  },
+  {
+    "kod": "1625",
+    "beteckning": "IP - IDROTTSPARTIET - Rädda Stadshagens IP!",
+    "forkortning": "IP",
+    "registrerad_partibeteckning": false,
+    "uuid": "1b6c72c2-6835-4066-9928-3312512cebe7"
+  },
+  {
+    "kod": "1627",
+    "beteckning": "Naturistpartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ae029bf6-6023-422d-b16a-bf81fdbbdd11"
+  },
+  {
+    "kod": "1628",
+    "beteckning": "ANARKISTERNA",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "cc83aa3e-9066-4019-8bc5-c4848a49ca64"
+  },
+  {
+    "kod": "1630",
+    "beteckning": "Upprorsdemokraterna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9069be43-6482-4876-9d2d-fd2712356cbe"
+  },
+  {
+    "kod": "1639",
+    "beteckning": "Sverige i valsamverkan",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "7dd49663-5861-48be-8f7c-72b777ee8394"
+  },
+  {
+    "kod": "1640",
+    "beteckning": "Partiet Sunt Förnuft",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "bb7809a4-706c-4b84-89a0-40c67e42d4b5"
+  },
+  {
+    "kod": "1642",
+    "beteckning": "TE2002",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "d38a7d1f-c448-4033-b9d0-167cf770f6e5"
+  },
+  {
+    "kod": "1644",
+    "beteckning": "Upplysningspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "8cf6ab82-6808-4a80-9a06-fd8088681149"
+  },
+  {
+    "kod": "1646",
+    "beteckning": "Visionpartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9289481c-a2f4-4f09-90b7-22f71ccb2a75"
+  },
+  {
+    "kod": "1647",
+    "beteckning": "The unforgiven",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "95afcb9f-0720-4fae-a7bb-d2755cec8974"
+  },
+  {
+    "kod": "1650",
+    "beteckning": "För Allas Bästa",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "fa9c3cb7-dfc1-42aa-9c56-c910c9c37a62"
+  },
+  {
+    "kod": "1652",
+    "beteckning": "Högerpartiet de konservativa",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "94d45816-6e28-4736-becf-008e039e3bc0"
+  },
+  {
+    "kod": "1653",
+    "beteckning": "Globala partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "c6c905c3-a96b-48e6-8311-1c8c0d6932a7"
+  },
+  {
+    "kod": "1654",
+    "beteckning": "Origo",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "4bed2994-8d41-4d6a-935b-0675b49496d1"
+  },
+  {
+    "kod": "1657",
+    "beteckning": "Partiet Tomma Stolarna (Demokraterna)",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "03feaf73-ab81-446e-97d5-f442c3f2d0f4"
+  },
+  {
+    "kod": "1658",
+    "beteckning": "Solens Frihetsparti",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "b9432471-caff-4eee-b6a8-35427487a8a6"
+  },
+  {
+    "kod": "1659",
+    "beteckning": "Folklistan",
+    "forkortning": "FOLK",
+    "registrerad_partibeteckning": false,
+    "uuid": "45d0bf9e-b51a-4208-bc0e-e1d2cfbb5199"
+  },
+  {
+    "kod": "1662",
+    "beteckning": "AMORISTERNA",
+    "forkortning": "AMO",
+    "registrerad_partibeteckning": false,
+    "uuid": "8fd029b5-26bd-417d-9d18-60e459e37e43"
+  },
+  {
+    "kod": "1664",
+    "beteckning": "Oskarshamnspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "5253b70b-7db5-456a-b7ac-ccae2311e657"
+  },
+  {
+    "kod": "1665",
+    "beteckning": "Resurs Demokrati",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "56be2e66-0221-4ebf-be66-d7781510b54e"
+  },
+  {
+    "kod": "1666",
+    "beteckning": "SYMPARTIET",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "1531226f-b61f-4769-ac59-5de693d2a1f8"
+  },
+  {
+    "kod": "1669",
+    "beteckning": "NEUTRALITET",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "68d28f67-b9f3-4786-af19-20a30abedd11"
+  },
+  {
+    "kod": "1671",
+    "beteckning": "Johannespartiet med extra älg",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ea370eb5-4ef1-49a2-a807-8600cb96c88f"
+  },
+  {
+    "kod": "1676",
+    "beteckning": "Vision Framåtanda",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "702a0c3e-92e8-4449-a956-e49eaaa0a68e"
+  },
+  {
+    "kod": "1677",
+    "beteckning": "Libertarianerna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9df5c472-cf9a-4d8a-8dd6-c3fa7f2e1607"
+  },
+  {
+    "kod": "1678",
+    "beteckning": "Kånitton",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "6a82802d-5454-498a-89d7-6416acee7f40"
+  },
+  {
+    "kod": "1680",
+    "beteckning": "Skogsfolket",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "79425e13-e450-449b-86ed-a740197b389b"
+  },
+  {
+    "kod": "1681",
+    "beteckning": "Socialliberalerna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "fe52faa5-e88c-4fae-a2c4-4c3e0ef83ab8"
+  },
+  {
+    "kod": "1683",
+    "beteckning": "Vindarna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "cf3c16e8-b88f-4e74-8bba-80f6abecc10d"
+  },
+  {
+    "kod": "1685",
+    "beteckning": "Förnöjsamhetspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "c1ae61fc-4ac3-4d07-8a9f-149fe1ab91de"
+  },
+  {
+    "kod": "1686",
+    "beteckning": "Jonathan Hemph",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ad8180d6-8fc8-4d79-998f-df801b9600fe"
+  },
+  {
+    "kod": "1688",
+    "beteckning": "Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "fd6174dc-6135-4aef-bbcd-d0bcb47e7828"
+  },
+  {
+    "kod": "1691",
+    "beteckning": "Stjärnpartiet Sverige",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "8c447d87-e743-4c36-b9d1-ad5b1f1c5bb0"
+  },
+  {
+    "kod": "1693",
+    "beteckning": "SKP KOMMUNISTERNA",
+    "forkortning": "SKP",
+    "registrerad_partibeteckning": false,
+    "uuid": "acfe7ff7-16d7-45c2-b51a-556fcae1dfeb"
+  },
+  {
+    "kod": "1694",
+    "beteckning": "Medkänsla",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "835a7df2-42eb-4926-a694-b8846af36d96"
+  },
+  {
+    "kod": "1698",
+    "beteckning": "Oberoende S",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "42611ff0-d230-4626-9866-8b68298a61b6"
+  },
+  {
+    "kod": "1702",
+    "beteckning": "Öarnasväl",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ddf9bfca-66cb-4b99-b3e3-842b817fb2a3"
+  },
+  {
+    "kod": "1703",
+    "beteckning": "Utbildningspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "fdd41c33-a087-4010-84d6-15e4ca02c647"
+  },
+  {
+    "kod": "1704",
+    "beteckning": "Pite Demokrati",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "da6e4cea-0837-41b5-8ad8-145aee54013d"
+  },
+  {
+    "kod": "1706",
+    "beteckning": "Paradisets Coola Änglar",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "2133498f-ddb8-4860-9205-d0c99fc92dcf"
+  },
+  {
+    "kod": "1708",
+    "beteckning": "Bättre Vellinge",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "33644a6a-7b24-4044-b321-e3e326fea95f"
+  },
+  {
+    "kod": "1710",
+    "beteckning": "Samlade Demokrater",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "77339fe8-db83-4370-a780-115543755065"
+  },
+  {
+    "kod": "1712",
+    "beteckning": "SUNDBYBERGSPARTIET",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "e75fd043-0028-4744-ae3a-57b0002c8d70"
+  },
+  {
+    "kod": "1715",
+    "beteckning": "Socialistpartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "bc37d9d9-5738-4e86-a537-e0a74e866cc9"
+  },
+  {
+    "kod": "1716",
+    "beteckning": "Folkets Parti i Sverige",
+    "forkortning": "FPS",
+    "registrerad_partibeteckning": false,
+    "uuid": "7fc1db02-bc00-492f-a7cc-ba58707322a3"
+  },
+  {
+    "kod": "1717",
+    "beteckning": "VÅR RÖST",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "40b132ea-61fb-469b-b4da-26d573fd6cee"
+  },
+  {
+    "kod": "1718",
+    "beteckning": "NY REFORM",
+    "forkortning": "NR",
+    "registrerad_partibeteckning": false,
+    "uuid": "85ccc38a-0fc7-4a55-b1f3-1db7d6c062b6"
+  },
+  {
+    "kod": "1719",
+    "beteckning": "Ett Bra Sverige",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "88dbd014-9af8-46f8-a036-bc10f952a2cf"
+  },
+  {
+    "kod": "1720",
+    "beteckning": "Ny Allians",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "7aab6afe-e524-4bd8-b386-afbb4ee6c9e5"
+  },
+  {
+    "kod": "1721",
+    "beteckning": "Enighetspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "20427f25-5f17-40b2-b739-7cfcc9d89acb"
+  },
+  {
+    "kod": "1728",
+    "beteckning": "Helmjölksinitiativet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "5fc72bf8-0128-4c04-b70f-56d9d44e529e"
+  },
+  {
+    "kod": "1729",
+    "beteckning": "Ambition Sverige",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "1f5d5134-0597-484a-b87f-6a1caa7c071e"
+  },
+  {
+    "kod": "1730",
+    "beteckning": "Walter Ƶarl",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "2a40f30a-d6e2-46f6-9a87-d86351f784da"
+  },
+  {
+    "kod": "1731",
+    "beteckning": "FREDS OCH FRIHETSPARTIER",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "a539bec9-ad5d-4254-9751-5f818bb16357"
+  },
+  {
+    "kod": "1732",
+    "beteckning": "Surahammars kommunparti",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "82bcd120-4c59-479d-a0ca-dc9f80beaafb"
+  },
+  {
+    "kod": "1733",
+    "beteckning": "Anti-partiet Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "4b7ff083-ce9f-4a57-90b6-b9e96b68f3ad"
+  },
+  {
+    "kod": "1735",
+    "beteckning": "Danvikstull Infrastruktur Liberationsfront",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ba569c10-6f97-4211-986a-d0965b1b0330"
+  },
+  {
+    "kod": "1736",
+    "beteckning": "Sveriges Oberoende Ledamöter",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "b7170fa7-cae3-4bae-badc-5f97c8ee1a53"
+  },
+  {
+    "kod": "1738",
+    "beteckning": "Åtvidabergs Framtid",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ea0f660f-9eef-49aa-9712-a8d480bb9514"
+  },
+  {
+    "kod": "1741",
+    "beteckning": "Snöfall",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "97fde72d-4c8d-4240-9ef5-5d1337b3ccbc"
+  },
+  {
+    "kod": "1742",
+    "beteckning": "Bärsärkagångspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "dc236f8c-bada-45e2-bdf9-1776b4ba6a2c"
+  },
+  {
+    "kod": "1743",
+    "beteckning": "Pensionspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "fc18be51-fe7b-4ab5-b2a1-21efc3dc4aa8"
+  },
+  {
+    "kod": "1746",
+    "beteckning": "Färspartiet Sjöbo",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "2f8ae5de-547e-44f8-926f-76d983f04257"
+  },
+  {
+    "kod": "1748",
+    "beteckning": "DIN MAKT",
+    "forkortning": "D",
+    "registrerad_partibeteckning": false,
+    "uuid": "2dd359e2-7488-4620-801d-32a4d89ab4c6"
+  },
+  {
+    "kod": "1749",
+    "beteckning": "Humankapitalisterna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "c1128dba-9abd-40e4-b494-6fda655fc237"
+  },
+  {
+    "kod": "1750",
+    "beteckning": "Lokalpartiet Malung-Sälen",
+    "forkortning": "LM",
+    "registrerad_partibeteckning": true,
+    "uuid": "4a03e7a5-2598-45c3-b2fa-4d20d6ab1dc4"
+  },
+  {
+    "kod": "1751",
+    "beteckning": "Tuvan",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ba9b9ac7-69c2-4be8-b771-dfd78ae11858"
+  },
+  {
+    "kod": "1752",
+    "beteckning": "Perspektiv Värnamo",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "5ff928be-bd28-4662-b2f0-2037c50ca26d"
+  },
+  {
+    "kod": "1753",
+    "beteckning": "Alternative for Immigrants",
+    "forkortning": "AfI",
+    "registrerad_partibeteckning": false,
+    "uuid": "ac80bff9-1cb4-46e9-83c9-a604b34a6255"
+  },
+  {
+    "kod": "1754",
+    "beteckning": "Skolföräldrar",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "1e2a8287-efc9-4918-98c6-ffd8b6f89424"
+  },
+  {
+    "kod": "1755",
+    "beteckning": "JESUS",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "deeba003-5308-4eab-88af-2920aecc1d8d"
+  },
+  {
+    "kod": "1756",
+    "beteckning": "Kristna Frihetspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "6156a74f-2270-4922-bae1-6af737ca7814"
+  },
+  {
+    "kod": "1757",
+    "beteckning": "YN Demokraterna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "68ffd280-47a7-4444-b1db-d94e22b58c6d"
+  },
+  {
+    "kod": "1759",
+    "beteckning": "OPiNiON Åsele",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "84431b6b-357a-4e02-9c28-de2c6d2b73d4"
+  },
+  {
+    "kod": "1760",
+    "beteckning": "Mölndalslistan",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "f89ae786-b6e2-4ec0-9065-5740eb61e4e9"
+  },
+  {
+    "kod": "1761",
+    "beteckning": "Radikala Kanalpartiet i Lund",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "e54b1823-f606-4e18-b358-4e3637af02b2"
+  },
+  {
+    "kod": "1762",
+    "beteckning": "Proxypartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "a90f690a-e4c1-44e9-ad4c-77a5097022c6"
+  },
+  {
+    "kod": "1763",
+    "beteckning": "Ansvar i samverkan",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "61437ccc-ca2f-44d0-9a24-18addd0d37f4"
+  },
+  {
+    "kod": "1764",
+    "beteckning": "Katrineholm FRAMÅT",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "90ccc071-a151-4b5b-b7de-8b944afa12cc"
+  },
+  {
+    "kod": "1765",
+    "beteckning": "FRIDSLAGET",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "54cb7a33-4674-4b7a-8e1b-e32d7887a666"
+  },
+  {
+    "kod": "1766",
+    "beteckning": "Kristna Familjepartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "43fdc0be-9fc3-4791-9b7f-1a47689dde2f"
+  },
+  {
+    "kod": "1768",
+    "beteckning": "Politiskt Erövrande Demokratiska Organisationen",
+    "forkortning": "PEDO",
+    "registrerad_partibeteckning": false,
+    "uuid": "60914e07-7d1e-4cfc-9794-afbf2d9eaff5"
+  },
+  {
+    "kod": "1769",
+    "beteckning": "Ulricehamns Bygdens Framtid UBF",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9c5906a6-4d2f-4be1-a103-e88372a8f12c"
+  },
+  {
+    "kod": "1770",
+    "beteckning": "Solidaritet Linköping",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "7f35a5b5-3ec5-45a0-af77-54dede9ca188"
+  },
+  {
+    "kod": "1771",
+    "beteckning": "FRAM FÖR KOMMUNEN",
+    "forkortning": "FFK",
+    "registrerad_partibeteckning": true,
+    "uuid": "343f31f3-4d1e-4207-acd2-04964ed84d2e"
+  },
+  {
+    "kod": "1773",
+    "beteckning": "Norrlandspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "eaadd374-35f6-45da-acc4-4254289c77db"
+  },
+  {
+    "kod": "1774",
+    "beteckning": "Progress",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9ccc972a-eb2d-4885-9f04-08c613c5ceab"
+  },
+  {
+    "kod": "1775",
+    "beteckning": "Majoriteten",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "d9af1938-844e-4924-8092-dfd88921a88c"
+  },
+  {
+    "kod": "1777",
+    "beteckning": "Sunt Förnuft Bengtsfors",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "522ba2a4-ce2a-43da-8c5f-a232914239bc"
+  },
+  {
+    "kod": "1778",
+    "beteckning": "Ockelbo Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "53d5ff3c-433f-4661-a696-1fc203292d8e"
+  },
+  {
+    "kod": "1780",
+    "beteckning": "AI partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "b7c09a9d-9380-4be1-abf5-968eaf8418f4"
+  },
+  {
+    "kod": "1781",
+    "beteckning": "Kunskapsdemokratiska Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "eed375cc-7578-4b81-9654-26ca5c9be037"
+  },
+  {
+    "kod": "1785",
+    "beteckning": "Vård i Kronoberg",
+    "forkortning": "ViK",
+    "registrerad_partibeteckning": true,
+    "uuid": "9f2ce84e-50a3-4af7-a863-31ddf53f2afa"
+  },
+  {
+    "kod": "1786",
+    "beteckning": "Vallentuna framåt",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ac3837f9-0183-4901-bdfb-d2e654f70ec4"
+  },
+  {
+    "kod": "1787",
+    "beteckning": "Partiet Arkitekturupproret",
+    "forkortning": "PAU",
+    "registrerad_partibeteckning": true,
+    "uuid": "35a9dc3b-ffe5-481f-888d-ac7f4b9df603"
+  },
+  {
+    "kod": "1788",
+    "beteckning": "Ny Kurs Nykvarn",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "e1e3e22d-b1f4-44e2-8e8f-616e4ba6ea8b"
+  },
+  {
+    "kod": "1789",
+    "beteckning": "Helsingborgspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "94d15989-4b83-49db-8886-29e7b6a36ac6"
+  },
+  {
+    "kod": "1790",
+    "beteckning": "Nya Svenskar",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ac8a9264-76ab-43a8-8cd0-f5d356afd421"
+  },
+  {
+    "kod": "1791",
+    "beteckning": "Djurvänners Parti",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "e2b5d257-31f0-4d0a-b174-2d3fe175a159"
+  },
+  {
+    "kod": "1792",
+    "beteckning": "Ett bättre Eskilstuna",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "8496cc6d-4d28-4f7f-8be6-0f1b66f98597"
+  },
+  {
+    "kod": "1793",
+    "beteckning": "Borlängepartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "1e79ea1a-9ddf-473c-87de-e4df70386eda"
+  },
+  {
+    "kod": "1794",
+    "beteckning": "Vi i Gullspång",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "c82c46ff-64a0-480c-9e6f-503fb985edae"
+  },
+  {
+    "kod": "1795",
+    "beteckning": "Framtidens Vänster",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "ce55e850-f57d-4f06-a1f1-0157d0b4b310"
+  },
+  {
+    "kod": "1796",
+    "beteckning": "Säffle Reformparti",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "2df4b27f-d98e-4a56-9f9d-57d66afe84df"
+  },
+  {
+    "kod": "1797",
+    "beteckning": "Herrljunga Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "76618364-a6e7-4747-af3e-f3594d4d7b7f"
+  },
+  {
+    "kod": "1799",
+    "beteckning": "Stockholms Vänsterallians",
+    "forkortning": "StV",
+    "registrerad_partibeteckning": true,
+    "uuid": "d277a599-7b11-46f5-ab22-45589fa24d60"
+  },
+  {
+    "kod": "1800",
+    "beteckning": "Nybro Landsbygds- & Stadsparti",
+    "forkortning": "NLS",
+    "registrerad_partibeteckning": true,
+    "uuid": "9b140032-4095-4c74-ae5d-aa23f77cbff0"
+  },
+  {
+    "kod": "1801",
+    "beteckning": "Realistpartiet i Halmstad",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "c1bb1522-ad2f-48b4-969e-e44ded038da6"
+  },
+  {
+    "kod": "1805",
+    "beteckning": "O",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "d90047db-4161-4977-8d90-f77bd979c632"
+  },
+  {
+    "kod": "1806",
+    "beteckning": "99 Svarta ballonger",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "4306a81a-e3fc-4214-88f4-538fc39f7252"
+  },
+  {
+    "kod": "1807",
+    "beteckning": "Legion Wasa",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "6e7ebbc9-03f3-47a2-bbae-5eac08106bf7"
+  },
+  {
+    "kod": "1808",
+    "beteckning": "Demokrati, Folk och Religion (DFR)",
+    "forkortning": "DFR",
+    "registrerad_partibeteckning": false,
+    "uuid": "aeeeaadd-fedc-4e40-9407-1c159619b2ff"
+  },
+  {
+    "kod": "1811",
+    "beteckning": "Tristdemokraterna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "e1961a27-c172-4a2a-aede-d0ebd23a281d"
+  },
+  {
+    "kod": "1812",
+    "beteckning": "Tulipan",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "85138d84-76dd-40e1-adb0-e3b461b31bf0"
+  },
+  {
+    "kod": "1815",
+    "beteckning": "Feministerna Gullspång",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "96786874-f67a-47e7-8b17-fc966f0785e0"
+  },
+  {
+    "kod": "1816",
+    "beteckning": "Fria Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "2082859a-80b9-4d31-bd68-aff8ac9fa829"
+  },
+  {
+    "kod": "1817",
+    "beteckning": "ANTI-AUKTORITÄRA AKTIONS PARTIET",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "8d3c8d9c-b902-4d0d-ab7a-f3d927d8a0f4"
+  },
+  {
+    "kod": "1820",
+    "beteckning": "Liberalt Initiativ i Ulricehamn",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "80e17a1e-dc7f-47a6-83a7-b111f4ea3882"
+  },
+  {
+    "kod": "1821",
+    "beteckning": "Fria liberaler i Flens kommun",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "0ed4475d-d0ca-4e46-be37-b0288bf2f581"
+  },
+  {
+    "kod": "1822",
+    "beteckning": "Feministerna och Kommunisterna",
+    "forkortning": "",
+    "registrerad_partibeteckning": true,
+    "uuid": "382f7a88-843f-46ca-b12c-5f7bc89fe8f8"
+  },
+  {
+    "kod": "1823",
+    "beteckning": "PARTY PEOPLE",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "17fdd5e2-456e-4f07-94df-d9b8c544d854"
+  },
+  {
+    "kod": "1824",
+    "beteckning": "Liberalt initiativ Habo kommun",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9979ac68-bc43-4861-a34d-97fa9136a0f3"
+  },
+  {
+    "kod": "1825",
+    "beteckning": "Kalle Ankapartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "5ad1c995-8367-4b8e-9dfe-a3ae5d1fd15c"
+  },
+  {
+    "kod": "1826",
+    "beteckning": "Stoppa Drogkriget",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "93408c46-1659-4903-b03b-f134b47004e6"
+  },
+  {
+    "kod": "1827",
+    "beteckning": "Uppsala ansvarspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "c40146e6-4698-4c4e-9665-7cdf83290afd"
+  },
+  {
+    "kod": "1830",
+    "beteckning": "Folkrådet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "70c26e6c-7aa9-4d0a-b903-1ae18c8e641e"
+  },
+  {
+    "kod": "1831",
+    "beteckning": "Venstre Sverige",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "f35d47ba-c040-433f-b282-83253d6d6530"
+  },
+  {
+    "kod": "1838",
+    "beteckning": "Sekulära Humanistiska Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "6cbe7e1d-01e8-4dfb-a3f8-2f14b47a3a15"
+  },
+  {
+    "kod": "1839",
+    "beteckning": "RÖDA DEMOKRATI PARTIE",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "d79ab699-406e-4108-aeaf-0f0c86ae0fd1"
+  },
+  {
+    "kod": "1840",
+    "beteckning": "Eskilstunaborna!",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "b1c2b587-0ad4-40ca-a053-45c4a16a5761"
+  },
+  {
+    "kod": "1841",
+    "beteckning": "Äldre men ej Gamla i Bjuv",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "104537e4-103c-4366-800e-dd3d4a50f891"
+  },
+  {
+    "kod": "1842",
+    "beteckning": "koalitionsbyggarna.se",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "374998b5-332b-4102-ba0e-f273eaa06217"
+  },
+  {
+    "kod": "1844",
+    "beteckning": "Patriot Narke",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "4d2c82b3-0ec0-4830-98b0-6cf95a0cfbaa"
+  },
+  {
+    "kod": "1846",
+    "beteckning": "Vindkraft- och Busskartor Partiet (Vi älskar AIPAC) (VBPVÄAIPAC)",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "c00b5972-573f-4e02-bb4e-b9566fa3cab2"
+  },
+  {
+    "kod": "1847",
+    "beteckning": "Växtbaserat Täby",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "b1411933-f220-43c1-8a4b-ab655f21d11b"
+  },
+  {
+    "kod": "1848",
+    "beteckning": "Trafikpartiet i Kronoberg",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "705817be-f0f1-4a3f-8852-6906a0810fa9"
+  },
+  {
+    "kod": "1849",
+    "beteckning": "Tomas Lindström",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9ff9d785-3cad-46dd-b33a-8a0ea09793c4"
+  },
+  {
+    "kod": "1850",
+    "beteckning": "FALKENBERGSpartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "d9ef7644-d03e-487b-ac6f-87dc6902b5c0"
+  },
+  {
+    "kod": "1851",
+    "beteckning": "Liberalt Initiativ",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "3114d79d-f1f6-4981-8bdf-971f533215a8"
+  },
+  {
+    "kod": "1854",
+    "beteckning": "Humlanochhusen",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "da673284-8aaa-4aa4-834e-8cf6a1b145eb"
+  },
+  {
+    "kod": "1855",
+    "beteckning": "Världspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "3a1dae47-29de-4780-95b6-a588710e6bec"
+  },
+  {
+    "kod": "1856",
+    "beteckning": "Galileos Vänner",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9809d6c0-0fd4-4abf-8825-0082c01182a1"
+  },
+  {
+    "kod": "1857",
+    "beteckning": "Gott nytt Storfors",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "9c713b13-4c9a-44ca-bc68-5a06c845b412"
+  },
+  {
+    "kod": "1858",
+    "beteckning": "EMPATI&CO",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "1f2e70b8-74ab-4e01-b854-db7b690f019d"
+  },
+  {
+    "kod": "1860",
+    "beteckning": "Hälleforspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "c63cb529-e8eb-4b7c-b430-c33bae8b657b"
+  },
+  {
+    "kod": "1861",
+    "beteckning": "Multidimensionella Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "1630cbfe-3bfa-4a31-94d5-8ae409b4d121"
+  },
+  {
+    "kod": "1862",
+    "beteckning": "Åstorpspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "548d1a18-8926-4048-a21a-5b096fe52db9"
+  },
+  {
+    "kod": "1863",
+    "beteckning": "Ulf Liljankoski",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "410cb572-91f7-4833-87ae-f0b75dd624c4"
+  },
+  {
+    "kod": "1864",
+    "beteckning": "Jojo Beyonde Befolkningsparti (JBBP)",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "3e63c474-8125-4541-98c1-a4723b1452cf"
+  },
+  {
+    "kod": "1865",
+    "beteckning": "Invånarnas Bästa",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "649c0316-143c-4834-b35b-5dee7dcf7730"
+  },
+  {
+    "kod": "1866",
+    "beteckning": "Progressivistpartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "78dfb3dc-5dce-4784-a340-d647d7220263"
+  },
+  {
+    "kod": "1868",
+    "beteckning": "Evelinas parti",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "8461dcbe-68bd-412f-bca0-1a29d29bd204"
+  },
+  {
+    "kod": "1869",
+    "beteckning": "BarnDemokraterna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "f7995bd1-f0d1-49a1-a671-1501b145d08a"
+  },
+  {
+    "kod": "1870",
+    "beteckning": "EVOLT FOLKHANSA",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "36e0c65a-9784-4b83-b8f5-e9b80ec88ad3"
+  },
+  {
+    "kod": "1872",
+    "beteckning": "Enighet Europa",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "6319f4b0-7918-44fb-b88d-39b14a5bb611"
+  },
+  {
+    "kod": "1874",
+    "beteckning": "Patientfokus",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "d9d3c647-302c-4b4e-a6c6-070a3098f05d"
+  },
+  {
+    "kod": "1875",
+    "beteckning": "Hampans vänner",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "3fd1c74b-4a57-4421-99c6-b3bc330f4c0e"
+  },
+  {
+    "kod": "1877",
+    "beteckning": "Något Annat",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "f40e7941-0bd1-4ff8-b86a-5b2e63fd71f1"
+  },
+  {
+    "kod": "1879",
+    "beteckning": "Riket",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "31a84d36-80e3-4d1c-a899-60c272f92842"
+  },
+  {
+    "kod": "1881",
+    "beteckning": "RegleraAI.nu",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "af49032e-4395-4ab3-bc6a-5fcc62a58c66"
+  },
+  {
+    "kod": "1882",
+    "beteckning": "Ekorrepartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "7e5282ba-c3e8-45ee-b45c-21b839a80531"
+  },
+  {
+    "kod": "1883",
+    "beteckning": "Pragmatiskt Initiativ",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "605a7705-71e8-4d99-a405-293939d2021b"
+  },
+  {
+    "kod": "1884",
+    "beteckning": "CIVIS",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "7a0b8153-6f88-4d40-98de-267ab7986689"
+  },
+  {
+    "kod": "1886",
+    "beteckning": "Svensk-Finska Unionspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "1ed305e0-da39-4257-9849-11b97bc64375"
+  },
+  {
+    "kod": "1887",
+    "beteckning": "Sverige röstar",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "26671933-0179-4ce9-a364-ddfa8ee6a7e5"
+  },
+  {
+    "kod": "1888",
+    "beteckning": "Viking",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "3d9b68be-49e0-4708-a9d8-7db43f1ee408"
+  },
+  {
+    "kod": "1889",
+    "beteckning": "Det sunda partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "cfe8df7d-e57d-443f-9da0-ea6a888e76f3"
+  },
+  {
+    "kod": "1890",
+    "beteckning": "Rymdraketerna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "70493585-25b9-4340-b90b-b7e98378dcb4"
+  },
+  {
+    "kod": "1891",
+    "beteckning": "ansvarsfull intelligens i politiken",
+    "forkortning": "aip",
+    "registrerad_partibeteckning": false,
+    "uuid": "c189fda8-c7cf-4cf7-92c9-d76c6ff8c599"
+  },
+  {
+    "kod": "1892",
+    "beteckning": "Partiet Förnuft",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "016fb2c4-6354-4ab7-ad56-86d26f67ad55"
+  },
+  {
+    "kod": "1893",
+    "beteckning": "Lodjurs partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "7cd9fc8c-f299-45b2-817f-2a022450e5dc"
+  },
+  {
+    "kod": "1894",
+    "beteckning": "Tidö",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "391613b0-05be-4a38-a381-77fc6de717f8"
+  },
+  {
+    "kod": "1895",
+    "beteckning": "Försörjningsstödspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "ff731324-9c4d-420b-a287-0054a0bf2155"
+  },
+  {
+    "kod": "1896",
+    "beteckning": "Trosa Vagnhärad Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "40ec789b-5e10-4830-8d4a-c5a532b93501"
+  },
+  {
+    "kod": "1898",
+    "beteckning": "Vågen",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "f54309bf-003e-4ca9-bc39-8a28c5445e64"
+  },
+  {
+    "kod": "1899",
+    "beteckning": "Kompass",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "57c7d00c-c1e0-4989-984a-6b9104ad0756"
+  },
+  {
+    "kod": "1900",
+    "beteckning": "Elbira partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "4a10b758-eccd-4f3d-b6e6-72f1495e0c2b"
+  },
+  {
+    "kod": "1901",
+    "beteckning": "Palestinavänner i Falkenberg",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "c0d5ef4b-aebb-432c-a24a-ce0b3a0b5ff9"
+  },
+  {
+    "kod": "1902",
+    "beteckning": "Alternativ Sanning",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "c31434dd-0320-44d9-a03e-8aceb02a7921"
+  },
+  {
+    "kod": "1903",
+    "beteckning": "Fred och demokrati",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "792fc8f0-039a-404e-8ce2-6dc5163cd896"
+  },
+  {
+    "kod": "1905",
+    "beteckning": "Presidency",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "e4e2e5d9-afce-45f6-a9de-dd6a7be5b2c5"
+  },
+  {
+    "kod": "1906",
+    "beteckning": "Republic",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "8f0702e6-8a17-4e4a-8c84-429cad8ee429"
+  },
+  {
+    "kod": "1907",
+    "beteckning": "The Jarl",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "5fb9a281-6920-4c19-a10f-e8e71940391d"
+  },
+  {
+    "kod": "1908",
+    "beteckning": "Mannaminne Sverige",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "fa7f437d-685d-45a2-a8dd-5c7de8494e81"
+  },
+  {
+    "kod": "1909",
+    "beteckning": "Ungdomspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "e1ddb322-7ef6-442b-9a8e-3b213702ee9a"
+  },
+  {
+    "kod": "1910",
+    "beteckning": "Boråspartiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "442bdacf-5bd5-4d0c-8dd6-407e96f2b0f1"
+  },
+  {
+    "kod": "1911",
+    "beteckning": "Fenix Partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "0eff873c-8208-4f5f-a4e7-d6b255d85c0a"
+  },
+  {
+    "kod": "1912",
+    "beteckning": "Stoppa AI-kapprustningen",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "675cfe22-0c1e-4892-a278-32ac4424d4ed"
+  },
+  {
+    "kod": "1913",
+    "beteckning": "Återställ Sverige",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "994a7516-f9b7-4d59-a2fa-06625539ecfc"
+  },
+  {
+    "kod": "1914",
+    "beteckning": "Ett modernt land",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "5c3607e7-1b99-432c-840b-1c1656c34684"
+  },
+  {
+    "kod": "1915",
+    "beteckning": "Framåtanda i en nytänkande landsbygd",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "417b6bf8-277c-4bdd-aa69-2e1bf44363e2"
+  },
+  {
+    "kod": "1916",
+    "beteckning": "Quisling-partiet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "0af545df-0cc8-4505-b3b3-32a3a40612a3"
+  },
+  {
+    "kod": "1917",
+    "beteckning": "NO Filter Partiet [NFP]",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "79fea1c5-73a5-4a46-9dc6-8e26db641a70"
+  },
+  {
+    "kod": "1918",
+    "beteckning": "Kustkult",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "37e5027d-7595-4693-859f-12fb4229196b"
+  },
+  {
+    "kod": "1919",
+    "beteckning": "Öppna Nässjö",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "b2ce203d-e440-450a-a8cf-0e3878aa35b5"
+  },
+  {
+    "kod": "1920",
+    "beteckning": "SVERIGES INTELLEKTUELLA DEMOKRATER",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "23ab6571-bba4-4933-8205-03882f290a70"
+  },
+  {
+    "kod": "1921",
+    "beteckning": "Gemensam Säkerhet",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "7823f4ff-da03-4a83-964d-cfadcda5163a"
+  },
+  {
+    "kod": "1922",
+    "beteckning": "Rädda Sverige!",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "288b78ae-012d-45f8-9ea1-6463304122f2"
+  },
+  {
+    "kod": "1924",
+    "beteckning": "Jarl",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "79d6d986-93c9-4866-9941-26b83e065173"
+  },
+  {
+    "kod": "1926",
+    "beteckning": "Bondesrepublikanerna",
+    "forkortning": "",
+    "registrerad_partibeteckning": false,
+    "uuid": "45cf2bef-9eb0-4244-b7c5-04e4263a22a4"
+  }
+]

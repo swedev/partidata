@@ -1,8 +1,31 @@
 {
+  "uuid": "c7ce3542-587c-4d95-8e2a-d63f91b11bc9",
+  "kod": "1273",
   "beteckning": "Nordiska motståndsrörelsen",
   "filnamn": "nordiska-motstandsrorelsen",
   "forkortning": "NMR",
-  "kod": "1273",
-  "uuid": "c7ce3542-587c-4d95-8e2a-d63f91b11bc9",
-  "valmyndigheten_registreringsdatum": "2015-07-09"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2015-07-09",
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    },
+    "2022": {
+      "riksdag": true,
+      "region": [],
+      "kommun": [
+        "0685",
+        "1257",
+        "1430",
+        "2085"
+      ]
+    },
+    "2026": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

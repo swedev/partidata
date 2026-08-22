@@ -1,0 +1,24 @@
+{
+  "uuid": "9601bba4-836d-43e4-88f8-c53abe3874d9",
+  "kod": "1474",
+  "beteckning": "Vi Tidaholm",
+  "filnamn": "vi-tidaholm",
+  "forkortning": "VT",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1498"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1498"
+      ]
+    }
+  }
+}

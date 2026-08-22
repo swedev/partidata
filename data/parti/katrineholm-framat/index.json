@@ -1,0 +1,16 @@
+{
+  "uuid": "90ccc071-a151-4b5b-b7de-8b944afa12cc",
+  "kod": "1764",
+  "beteckning": "Katrineholm FRAMÅT",
+  "filnamn": "katrineholm-framat",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0483"
+      ]
+    }
+  }
+}

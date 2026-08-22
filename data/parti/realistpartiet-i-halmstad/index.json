@@ -1,0 +1,16 @@
+{
+  "uuid": "c1bb1522-ad2f-48b4-969e-e44ded038da6",
+  "kod": "1801",
+  "beteckning": "Realistpartiet i Halmstad",
+  "filnamn": "realistpartiet-i-halmstad",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1380"
+      ]
+    }
+  }
+}

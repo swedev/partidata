@@ -1,8 +1,32 @@
 {
+  "uuid": "0b9990ce-999d-4628-9634-d16188729059",
+  "kod": "1121",
   "beteckning": "Kommunal Samling",
   "filnamn": "kommunal-samling",
   "forkortning": "KOSA",
-  "kod": "1121",
-  "uuid": "0b9990ce-999d-4628-9634-d16188729059",
-  "valmyndigheten_registreringsdatum": "2013-10-01"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2013-10-01",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2026"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2026"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2026"
+      ]
+    }
+  }
 }

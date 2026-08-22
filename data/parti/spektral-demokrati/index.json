@@ -1,6 +1,13 @@
 {
+  "uuid": "eb01a434-c644-417f-bb5f-14d86e053ce3",
+  "kod": "1376",
   "beteckning": "Spektral demokrati",
   "filnamn": "spektral-demokrati",
-  "kod": "1376",
-  "uuid": "eb01a434-c644-417f-bb5f-14d86e053ce3"
+  "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    }
+  }
 }

@@ -1,0 +1,26 @@
+{
+  "uuid": "50ee1665-e858-4b5c-be82-c3faf01610a1",
+  "kod": "0510",
+  "beteckning": "Alternativet",
+  "filnamn": "alternativet-0510",
+  "forkortning": "ALTER",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "07"
+      ],
+      "kommun": [
+        "0781"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0781"
+      ]
+    }
+  }
+}

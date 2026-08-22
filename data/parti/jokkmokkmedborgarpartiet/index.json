@@ -1,0 +1,16 @@
+{
+  "uuid": "ca49af41-c8b5-4a73-96b2-449cd8b8c593",
+  "kod": "1455",
+  "beteckning": "Jokkmokkmedborgarpartiet",
+  "filnamn": "jokkmokkmedborgarpartiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2510"
+      ]
+    }
+  }
+}

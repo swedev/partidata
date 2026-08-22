@@ -1,0 +1,16 @@
+{
+  "uuid": "da6e4cea-0837-41b5-8ad8-145aee54013d",
+  "kod": "1704",
+  "beteckning": "Pite Demokrati",
+  "filnamn": "pite-demokrati",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2581"
+      ]
+    }
+  }
+}

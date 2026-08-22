@@ -1,0 +1,16 @@
+{
+  "uuid": "522ba2a4-ce2a-43da-8c5f-a232914239bc",
+  "kod": "1777",
+  "beteckning": "Sunt Förnuft Bengtsfors",
+  "filnamn": "sunt-fornuft-bengtsfors",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1460"
+      ]
+    }
+  }
+}

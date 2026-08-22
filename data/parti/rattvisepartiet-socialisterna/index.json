@@ -1,8 +1,41 @@
 {
-  "beteckning": "Rättvisepartiet Socialisterna",
-  "filnamn": "rattvisepartiet-socialisterna",
-  "forkortning": "RS",
-  "kod": "0131",
   "uuid": "ce076c0a-bef8-401e-a65c-6882a0d384c0",
-  "valmyndigheten_registreringsdatum": "2017-12-05"
+  "kod": "0131",
+  "beteckning": "Socialistiskt Alternativ tidigare Rättvisepartiet Socialisterna",
+  "tidigare_beteckningar": [
+    "Rättvisepartiet Socialisterna"
+  ],
+  "filnamn": "rattvisepartiet-socialisterna",
+  "forkortning": "SA",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-05",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "14",
+        "25"
+      ],
+      "kommun": [
+        "0136",
+        "1480",
+        "2580"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0136",
+        "2580"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2580"
+      ]
+    }
+  }
 }

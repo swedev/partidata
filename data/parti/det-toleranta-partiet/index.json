@@ -1,0 +1,16 @@
+{
+  "uuid": "74e6e4b4-4430-4c7d-bb61-c45f4ec8ac6b",
+  "kod": "1607",
+  "beteckning": "Det Toleranta Partiet",
+  "filnamn": "det-toleranta-partiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0191"
+      ]
+    }
+  }
+}

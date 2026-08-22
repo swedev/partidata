@@ -1,6 +1,15 @@
 {
-  "beteckning": "Kommunens Röst ",
-  "kod": "1395",
   "uuid": "f6d76476-a944-4706-ae7f-d054e4991d1f",
-  "filnamn": "kommunens-rost-"
+  "kod": "1395",
+  "beteckning": "Kommunens Röst ",
+  "filnamn": "kommunens-rost-",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1293"
+      ]
+    }
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "uuid": "9979ac68-bc43-4861-a34d-97fa9136a0f3",
+  "kod": "1824",
+  "beteckning": "Liberalt initiativ Habo kommun",
+  "filnamn": "liberalt-initiativ-habo-kommun",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0643"
+      ]
+    }
+  }
+}

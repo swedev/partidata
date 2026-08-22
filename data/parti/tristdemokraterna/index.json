@@ -1,0 +1,20 @@
+{
+  "uuid": "e1961a27-c172-4a2a-aede-d0ebd23a281d",
+  "kod": "1811",
+  "beteckning": "Tristdemokraterna",
+  "filnamn": "tristdemokraterna",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "10",
+        "14"
+      ],
+      "kommun": [
+        "1080",
+        "1480"
+      ]
+    }
+  }
+}

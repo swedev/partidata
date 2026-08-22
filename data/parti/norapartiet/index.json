@@ -1,8 +1,32 @@
 {
+  "uuid": "1d7a2ecf-cd6c-478d-b6c6-95ff6e97c359",
+  "kod": "0985",
   "beteckning": "Norapartiet",
   "filnamn": "norapartiet",
   "forkortning": "NOR",
-  "kod": "0985",
-  "uuid": "1d7a2ecf-cd6c-478d-b6c6-95ff6e97c359",
-  "valmyndigheten_registreringsdatum": "2017-12-08"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-08",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1884"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1884"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1884"
+      ]
+    }
+  }
 }

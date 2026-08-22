@@ -1,8 +1,35 @@
 {
+  "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",
+  "kod": "0040",
   "beteckning": "Kommunens Väl",
   "filnamn": "kommunens-val",
   "forkortning": "KV",
-  "kod": "0040",
-  "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",
-  "valmyndigheten_registreringsdatum": "2003-05-14"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2003-05-14",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0319",
+        "1264",
+        "1315",
+        "1466"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0319"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0319"
+      ]
+    }
+  }
 }

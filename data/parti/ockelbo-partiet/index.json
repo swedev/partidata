@@ -1,0 +1,16 @@
+{
+  "uuid": "53d5ff3c-433f-4661-a696-1fc203292d8e",
+  "kod": "1778",
+  "beteckning": "Ockelbo Partiet",
+  "filnamn": "ockelbo-partiet",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2101"
+      ]
+    }
+  }
+}

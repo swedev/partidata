@@ -1,8 +1,32 @@
 {
+  "uuid": "b00bc532-e725-4f3b-9e0a-57ff456e6de1",
+  "kod": "1154",
   "beteckning": "Väsbys Bästa",
   "filnamn": "vasbys-basta",
   "forkortning": "VB",
-  "kod": "1154",
-  "uuid": "b00bc532-e725-4f3b-9e0a-57ff456e6de1",
-  "valmyndigheten_registreringsdatum": "2018-01-18"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0114"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0114"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0114"
+      ]
+    }
+  }
 }

@@ -1,8 +1,17 @@
 {
+  "uuid": "6dd658b6-76ca-4da0-bb37-8ba2c39d60fe",
+  "kod": "0103",
   "beteckning": "DET LOKALA PARTIET I HEBY KOMMUN",
   "filnamn": "det-lokala-partiet-i-heby-kommun",
   "forkortning": "L-P",
-  "kod": "0103",
-  "uuid": "6dd658b6-76ca-4da0-bb37-8ba2c39d60fe",
-  "valmyndigheten_registreringsdatum": "2017-08-16"
+  "valmyndigheten_registreringsdatum": "2017-08-16",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0331"
+      ]
+    }
+  }
 }

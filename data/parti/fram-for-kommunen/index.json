@@ -1,0 +1,17 @@
+{
+  "uuid": "343f31f3-4d1e-4207-acd2-04964ed84d2e",
+  "kod": "1771",
+  "beteckning": "FRAM FÖR KOMMUNEN",
+  "filnamn": "fram-for-kommunen",
+  "forkortning": "FFK",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1444"
+      ]
+    }
+  }
+}

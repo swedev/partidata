@@ -1,0 +1,21 @@
+{
+  "uuid": "3d9b68be-49e0-4708-a9d8-7db43f1ee408",
+  "kod": "1888",
+  "beteckning": "Viking",
+  "filnamn": "viking",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "14"
+      ],
+      "kommun": [
+        "1496",
+        "1497",
+        "1498",
+        "1499"
+      ]
+    }
+  }
+}

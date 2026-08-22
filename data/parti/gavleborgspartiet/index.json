@@ -1,0 +1,23 @@
+{
+  "uuid": "ad0359ae-ec54-429e-8d42-817fe8324ec5",
+  "kod": "1558",
+  "beteckning": "Gävleborgspartiet",
+  "filnamn": "gavleborgspartiet",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "21"
+      ],
+      "kommun": []
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "21"
+      ],
+      "kommun": []
+    }
+  }
+}

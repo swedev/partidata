@@ -1,6 +1,15 @@
 {
-  "beteckning": "KvillePartiet",
-  "kod": "1398",
   "uuid": "ffffc6da-c7d7-4e1e-9934-343907af3db0",
-  "filnamn": "kvillepartiet"
+  "kod": "1398",
+  "beteckning": "KvillePartiet",
+  "filnamn": "kvillepartiet",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1435"
+      ]
+    }
+  }
 }

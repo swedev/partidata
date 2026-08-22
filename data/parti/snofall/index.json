@@ -1,0 +1,18 @@
+{
+  "uuid": "97fde72d-4c8d-4240-9ef5-5d1337b3ccbc",
+  "kod": "1741",
+  "beteckning": "Snöfall",
+  "filnamn": "snofall",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [
+        "18"
+      ],
+      "kommun": [
+        "1880"
+      ]
+    }
+  }
+}

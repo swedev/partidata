@@ -1,8 +1,32 @@
 {
+  "uuid": "ae7d2e8b-4cc0-49e9-a27a-109546278c8f",
+  "kod": "1342",
   "beteckning": "Hela Vara kommuns bästa",
   "filnamn": "hela-vara-kommuns-basta",
   "forkortning": "hvkb",
-  "kod": "1342",
-  "uuid": "ae7d2e8b-4cc0-49e9-a27a-109546278c8f",
-  "valmyndigheten_registreringsdatum": "2018-02-08"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-02-08",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1470"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1470"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1470"
+      ]
+    }
+  }
 }

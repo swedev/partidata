@@ -1,0 +1,16 @@
+{
+  "uuid": "2df4b27f-d98e-4a56-9f9d-57d66afe84df",
+  "kod": "1796",
+  "beteckning": "Säffle Reformparti",
+  "filnamn": "saffle-reformparti",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1785"
+      ]
+    }
+  }
+}

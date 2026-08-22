@@ -1,0 +1,17 @@
+{
+  "uuid": "83e8beb9-44c3-4777-b657-1b2213224af4",
+  "kod": "0526",
+  "beteckning": "Kommunens Väl",
+  "filnamn": "kommunens-val-0526",
+  "forkortning": "KVäl",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1466"
+      ]
+    }
+  }
+}

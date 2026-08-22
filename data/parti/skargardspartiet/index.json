@@ -1,0 +1,24 @@
+{
+  "uuid": "d92f8d14-ad9d-44cc-8574-cb225414c178",
+  "kod": "1533",
+  "beteckning": "Skärgårdspartiet",
+  "filnamn": "skargardspartiet",
+  "forkortning": "SGP",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0120"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0120"
+      ]
+    }
+  }
+}

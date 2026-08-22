@@ -1,6 +1,15 @@
 {
-  "beteckning": "Samverkan Sandhem Mullsjö (SSM)",
-  "kod": "1390",
   "uuid": "436e693c-e6ee-4b3e-8eec-6964710d1970",
-  "filnamn": "samverkan-sandhem-mullsjo-ssm"
+  "kod": "1390",
+  "beteckning": "Samverkan Sandhem Mullsjö (SSM)",
+  "filnamn": "samverkan-sandhem-mullsjo-ssm",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0642"
+      ]
+    }
+  }
 }

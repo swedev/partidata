@@ -1,0 +1,26 @@
+{
+  "uuid": "e1000305-e53c-4c8b-bc56-f171e8840c3e",
+  "kod": "1458",
+  "beteckning": "Linköpingslistan",
+  "filnamn": "linkopingslistan",
+  "forkortning": "LL",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "05"
+      ],
+      "kommun": [
+        "0580"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0580"
+      ]
+    }
+  }
+}

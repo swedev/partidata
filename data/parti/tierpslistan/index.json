@@ -1,0 +1,24 @@
+{
+  "uuid": "eb407cb6-8002-4128-8c49-ddad4e9cc967",
+  "kod": "1545",
+  "beteckning": "Tierpslistan",
+  "filnamn": "tierpslistan",
+  "forkortning": "TL",
+  "registrerad_partibeteckning": true,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0360"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0360"
+      ]
+    }
+  }
+}

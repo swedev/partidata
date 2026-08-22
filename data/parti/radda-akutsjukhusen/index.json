@@ -1,0 +1,17 @@
+{
+  "uuid": "60216e40-c6de-49bd-b7c8-d102791cdd74",
+  "kod": "1590",
+  "beteckning": "RÄDDA AKUTSJUKHUSEN",
+  "filnamn": "radda-akutsjukhusen",
+  "forkortning": "RAK",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "18"
+      ],
+      "kommun": []
+    }
+  }
+}

@@ -1,8 +1,19 @@
 {
+  "uuid": "59fbdd58-38df-4cb8-9800-628c91046ec9",
+  "kod": "1362",
   "beteckning": "Rättvisa Rörelse Partiet",
   "filnamn": "rattvisa-rorelse-partiet",
   "forkortning": "RRP",
-  "kod": "1362",
-  "uuid": "59fbdd58-38df-4cb8-9800-628c91046ec9",
-  "valmyndigheten_registreringsdatum": "2018-04-09"
+  "valmyndigheten_registreringsdatum": "2018-04-09",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "07"
+      ],
+      "kommun": [
+        "0780"
+      ]
+    }
+  }
 }

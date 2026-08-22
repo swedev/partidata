@@ -1,8 +1,36 @@
 {
+  "uuid": "4eee1cd3-a349-4c74-937c-3b7149b78d4e",
+  "kod": "1036",
   "beteckning": "Kungsbackaborna",
   "filnamn": "kungsbackaborna",
   "forkortning": "Kbabo",
-  "kod": "1036",
-  "uuid": "4eee1cd3-a349-4c74-937c-3b7149b78d4e",
-  "valmyndigheten_registreringsdatum": "2017-12-05"
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-05",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [
+        "13"
+      ],
+      "kommun": [
+        "1384"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [
+        "13"
+      ],
+      "kommun": [
+        "1384"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1384"
+      ]
+    }
+  }
 }

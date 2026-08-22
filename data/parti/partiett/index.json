@@ -1,6 +1,24 @@
 {
-  "beteckning": "Partiett",
-  "kod": "1377",
   "uuid": "3e686571-a068-490b-b453-1b4f336bacfa",
-  "filnamn": "partiett"
+  "kod": "1377",
+  "beteckning": "Partiett",
+  "filnamn": "partiett",
+  "forkortning": "Prt",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2518"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2518"
+      ]
+    }
+  }
 }

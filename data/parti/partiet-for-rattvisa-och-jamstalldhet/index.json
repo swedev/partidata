@@ -1,0 +1,29 @@
+{
+  "uuid": "5bad196e-a83b-499d-9327-13a67dac8546",
+  "kod": "1571",
+  "beteckning": "PRJ -Partiet för Rättvisa och Jämställdhet",
+  "tidigare_beteckningar": [
+    "Partiet för Rättvisa och Jämställdhet"
+  ],
+  "filnamn": "partiet-for-rattvisa-och-jamstalldhet",
+  "forkortning": "PRJ",
+  "registrerad_partibeteckning": false,
+  "deltagande": {
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1267"
+      ]
+    },
+    "2026": {
+      "riksdag": true,
+      "region": [
+        "12"
+      ],
+      "kommun": [
+        "1267"
+      ]
+    }
+  }
+}
