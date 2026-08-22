@@ -18,6 +18,7 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint .",
+    "collect": "node scripts/collect.js",
     "typecheck": "tsc --noEmit",
     "precommit": "npm run lint && npm run typecheck && npm run build"
   },

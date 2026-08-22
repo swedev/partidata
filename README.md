@@ -29,7 +29,7 @@ Tillgängliggöra data om alla Sveriges politiska partier på ett öppet och tra
 
 Baserad på XML-filen som går att ladda ner på val.se:<br />https://www.val.se/for-partier/partibeteckning/registrerade-partibeteckningar.html
 
-Kompletterad med partier som registrerat deltagande i val till landstingsfullmäktige och kommunfullmäktige 2018. Har lagt till attribut `uuid` och `filnamn` för enklare hantering i kod och datastrukturer. Se `toFileName` i `./utils.js`.
+Kompletterad med partier som registrerat deltagande i val till landstingsfullmäktige och kommunfullmäktige 2018. Har lagt till attribut `uuid` och `filnamn` för enklare hantering i kod och datastrukturer. Se `toFileName` i `scripts/utils.js`.
 
 ### parti/\<filnamn\>.json
 
@@ -52,6 +52,22 @@ Läs mer på: https://www.val.se/for-partier/anmal-deltagande.html
 ### val/\<year\>/kandidatlistor/\<parti.filnamn\>.json
 
 Kandidatlistor per parti i alla val för angivna året. För tillfället endast ett utkast.
+
+
+## Köra skripten
+
+Skripten i `scripts/` samlar in data och körs manuellt, utanför sajtbygget. Resultatet committas till `data/`.
+
+Krav: Node 24 och `npm ci`. Skripten kan köras från vilken katalog som helst — alla sökvägar till `data/` utgår från repots rot.
+
+### npm run collect
+
+Fyller i `partier` för de kommuner som saknar det i `data/val/<år>/partideltagande/kommun.json`, hämtat från `data.val.se`. Som mest 40 kommuner per körning — kör om tills `Starting at index` är lika med antalet kommuner i filen.
+
+### node scripts/parti.js
+
+Bygger om `data/parti/index.json` från partifilerna.
+
 
 ## Bidra
 

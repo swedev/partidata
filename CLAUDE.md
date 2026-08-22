@@ -18,8 +18,10 @@ Open data about Swedish political parties. Static public site, Swedish copy.
 - Styling: Tailwind 3 + Bootstrap 5 tables via sass. `src/styles/base.scss` is
   the single CSS entry; it pulls in `app.scss` and `lato.scss` so Tailwind's
   `@layer` blocks share one file with the `@tailwind` directives.
-- Data collection scripts live in `scripts/` and run offline
-  (`node scripts/collect.js`); results are committed to `data/`.
+- Data collection scripts live in `scripts/` and are run manually, outside the
+  site build (`npm run collect`, i.e. `node scripts/collect.js`); `collect.js`
+  fetches from `data.val.se`. Results are committed to `data/`. Paths resolve
+  from the repo root, so the scripts run from any directory.
 
 ## Deploy
 

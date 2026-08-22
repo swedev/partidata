@@ -143,10 +143,7 @@ function getNonRiksdagPartiesFromKommunXmlUrl (year, url) {
  * _getRiksdagPartyMap
  */
 function _getRiksdagPartyMap (year) {
-  const riksdagParties = JSON.parse(
-    fs.readFileSync(path.resolve('data', 'val', String(year), 'partideltagande/riksdag.json'))
-      .toString('utf8')
-  );
+  const riksdagParties = loadJSONFile('data', 'val', String(year), 'partideltagande', 'riksdag.json');
   return riksdagParties.reduce((acc, p) => {
     acc[p.beteckning] = p;
     return acc;
