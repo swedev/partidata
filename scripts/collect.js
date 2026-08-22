@@ -1,20 +1,19 @@
-const path = require('path');
 const fs = require('fs');
 
-const { loadJSONFile } = require('./utils.js');
+const { dataPath } = require('./utils.js');
 const { getNonRiksdagPartiesFromKommunXmlUrl } = require('./helpers.js');
 
 /**
  * Script for collecting data from XML files at data.val.se
  * and updating party participation per municipality (kommun).
  * Run:
- * > node scripts/collect.js
+ * > npm run collect
  */
 
 const year = '2018';
 
-const kommunJsonFile = path.resolve('data', 'val', year, 'partideltagande', 'kommun.json');
-const kommunDeltagande = loadJSONFile(kommunJsonFile);
+const kommunJsonFile = dataPath('val', year, 'partideltagande', 'kommun.json');
+const kommunDeltagande = JSON.parse(fs.readFileSync(kommunJsonFile, 'utf8'));
 
 const fetchLimit = 40;
 let numFetched = 0;
