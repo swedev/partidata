@@ -4,6 +4,13 @@
   "beteckning": "Arvikapartiet",
   "filnamn": "arvikapartiet",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1521-arvikapartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1521"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

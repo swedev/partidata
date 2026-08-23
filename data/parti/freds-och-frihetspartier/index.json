@@ -4,6 +4,13 @@
   "beteckning": "FREDS OCH FRIHETSPARTIER",
   "filnamn": "freds-och-frihetspartier",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1731-freds-och-frihetspartier.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1731"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

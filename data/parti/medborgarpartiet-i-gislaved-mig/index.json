@@ -11,6 +11,13 @@
   ],
   "forkortning": "MiG",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1575-medborgarpartiet-i-gislaved-mig.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1575"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

@@ -5,6 +5,13 @@
   "filnamn": "bergspartiet",
   "forkortning": "be",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1597-bergspartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1597"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

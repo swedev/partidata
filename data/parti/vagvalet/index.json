@@ -5,6 +5,13 @@
   "filnamn": "vagvalet",
   "forkortning": "VägV",
   "valmyndigheten_registreringsdatum": "2018-03-12",
+  "partisymbol": {
+    "filnamn": "1138-vagvalet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1138.png",
+    "valar": 2019,
+    "partikod": "1138"
+  },
   "deltagande": {
     "2018": {
       "riksdag": true,

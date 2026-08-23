@@ -6,6 +6,13 @@
   "forkortning": "SPA",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2018-06-26",
+  "partisymbol": {
+    "filnamn": "0046-sollentunapartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/0046.png",
+    "valar": 2019,
+    "partikod": "0046"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

@@ -4,6 +4,13 @@
   "beteckning": "Multidimensionella Partiet",
   "filnamn": "multidimensionella-partiet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1861-multidimensionella-partiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1861"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

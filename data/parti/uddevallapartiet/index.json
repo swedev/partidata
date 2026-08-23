@@ -5,6 +5,13 @@
   "filnamn": "uddevallapartiet",
   "forkortning": "UddP",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1076-uddevallapartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1076"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

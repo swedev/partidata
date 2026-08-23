@@ -3,5 +3,12 @@
   "kod": "1442",
   "beteckning": "Uppvidingedemokraterna",
   "filnamn": "uppvidingedemokraterna",
-  "valmyndigheten_registreringsdatum": "2019-12-20"
+  "valmyndigheten_registreringsdatum": "2019-12-20",
+  "partisymbol": {
+    "filnamn": "1442-uppvidingedemokraterna.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1442.png",
+    "valar": 2019,
+    "partikod": "1442"
+  }
 }

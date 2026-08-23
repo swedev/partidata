@@ -4,6 +4,13 @@
   "beteckning": "Svensk-Finska Unionspartiet",
   "filnamn": "svensk-finska-unionspartiet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1886-svensk-finska-unionspartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1886"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

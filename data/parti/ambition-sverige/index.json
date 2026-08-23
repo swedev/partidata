@@ -4,6 +4,13 @@
   "beteckning": "Ambition Sverige",
   "filnamn": "ambition-sverige",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1729-ambition-sverige.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1729"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

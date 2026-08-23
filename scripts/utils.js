@@ -92,6 +92,20 @@ async function fetchText (url) {
 }
 
 /**
+ * fetchBuffer
+ * Downloads a binary resource, throwing on any non-2xx response.
+ * @param  {String} url
+ * @return {Promise<Buffer>}
+ */
+async function fetchBuffer (url) {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`Request failed: ${res.status} ${res.statusText} for ${url}`);
+  }
+  return Buffer.from(await res.arrayBuffer());
+}
+
+/**
  * parseCsv
  * Parses the unquoted, separator-delimited files published by Valmyndigheten.
  * A leading BOM is stripped, values are trimmed (the source writes a single
@@ -153,5 +167,6 @@ exports.dataPath = dataPath;
 exports.toFileName = toFileName;
 exports.newUuid = newUuid;
 exports.fetchText = fetchText;
+exports.fetchBuffer = fetchBuffer;
 exports.parseCsv = parseCsv;
 exports.loadJSONFile = loadJSONFile;

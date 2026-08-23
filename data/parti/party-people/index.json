@@ -4,6 +4,13 @@
   "beteckning": "PARTY PEOPLE",
   "filnamn": "party-people",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1823-party-people.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1823"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

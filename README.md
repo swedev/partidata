@@ -27,7 +27,7 @@ Tillgängliggöra data om alla Sveriges politiska partier på ett öppet och tra
 
 ### parti/index.json
 
-Register över samtliga partier, `{ uuid, beteckning, filnamn }` sorterat på `filnamn`. Partier som har bytt namn har dessutom `tidigare_filnamn`, som sajten bygger sina vidarebefordringar från. Filen genereras från partifilerna och redigeras inte för hand.
+Register över samtliga partier, `{ uuid, beteckning, filnamn, partisymbol? }` sorterat på `filnamn`. Partier som har bytt namn har dessutom `tidigare_filnamn`, som sajten bygger sina vidarebefordringar från. Filen genereras från partifilerna och redigeras inte för hand.
 
 ### parti/\<filnamn\>/index.json
 
@@ -45,9 +45,12 @@ En fil per parti. `uuid` sätts en gång och ändras aldrig — det är den iden
 | `forkortning` | Partiförkortning, när Valmyndigheten anger någon |
 | `registrerad_partibeteckning` | Om partiet har registrerad partibeteckning |
 | `valmyndigheten_registreringsdatum` | Datum då partibeteckningen registrerades |
+| `partisymbol` | Filnamn och proveniens för partiets senast kända symbol |
 | `deltagande` | Anmält deltagande per valår |
 
 `deltagande` har ett uppslag per valår: `{ riksdag: bool, region: [länskod], kommun: [kommunkod] }`. Från 2022 listas alla val partiet deltar i, även deltagande som följer av anmälan på högre nivå. 2018 års data är insamlad på annat sätt och speglar därför årets filer, där ett riksdagsparti inte har några region- eller kommunposter alls.
+
+När `partisymbol` finns ligger PNG-filen i samma katalog som partiets `index.json`. Filnamnet innehåller både den partikod symbolen hämtades under och en läsbar namn-slug, till exempel `0001-moderaterna.png`. Symbolen från det senaste importerade valet används. För partier som saknar symbol i 2026 års paket används i vissa fall den senast kända symbolen från Valmyndighetens arkiv för EU-valet 2019. `valar`, `partikod` och `kallurl` anger symbolens proveniens.
 
 ### parti/kodbyten.json
 
@@ -96,6 +99,12 @@ Hämtar `https://data.val.se/filer/val<år>/parti/deltagande-partier.csv`, skriv
 Partier identifieras på `PARTIKOD`, därefter på `parti/kodbyten.json` och sist på exakt namnmatchning mot ett parti som saknar egen kod i årets fil. Ett parti som har bytt namn får ett nytt `filnamn`, och `data/parti/<filnamn>/` flyttas dit tillsammans med partiets kandidatlistor. Allt valideras i minnet först — vid fel flyttas och skrivs ingenting och skriptet avslutas med felkod.
 
 Körningen är idempotent: samma indata ger samma filer, oavsett i vilken ordning åren importeras. `tidigare_filnamn` är undantaget, eftersom fältet är historik över de adresser registret faktiskt har haft: ett parti som har hunnit heta tre olika saker får olika `tidigare_filnamn` beroende på i vilken ordning åren importerades.
+
+### npm run import-partisymboler -- \<år\> [--file \<zip\>] [--legacy-dir \<katalog\>]
+
+Hämtar Valmyndighetens `partisymboler.zip` för valåret, kopplar varje PNG till partiets stabila `uuid` via partikoden och skriver symbolen i partiets katalog. `--file` läser en redan nedladdad ZIP. `--legacy-dir` kan användas för en katalog med äldre `<partikod>.png`; de fyller endast luckor och ersätter aldrig en symbol från det aktuella paketet.
+
+Valmyndigheten ska anges som källa för symbolerna. Partisymboler kan dessutom vara skyddade som varumärken och omfattas därför inte automatiskt av projektets CC0-dedikation. Se [data/partisymboler/README.md](data/partisymboler/README.md).
 
 ### node scripts/parti.js
 

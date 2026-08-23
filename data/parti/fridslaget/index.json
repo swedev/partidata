@@ -4,6 +4,13 @@
   "beteckning": "FRIDSLAGET",
   "filnamn": "fridslaget",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1765-fridslaget.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1765"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

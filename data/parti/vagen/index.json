@@ -4,6 +4,13 @@
   "beteckning": "Vågen",
   "filnamn": "vagen",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1898-vagen.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1898"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

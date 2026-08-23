@@ -5,6 +5,13 @@
   "filnamn": "partiet-arkitekturupproret",
   "forkortning": "PAU",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1787-partiet-arkitekturupproret.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1787"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

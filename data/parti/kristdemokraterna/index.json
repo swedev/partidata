@@ -6,6 +6,13 @@
   "forkortning": "KD",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2017-11-02",
+  "partisymbol": {
+    "filnamn": "0068-kristdemokraterna.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "0068"
+  },
   "deltagande": {
     "2018": {
       "riksdag": true,

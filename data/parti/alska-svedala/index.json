@@ -5,6 +5,13 @@
   "filnamn": "alska-svedala",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2019-01-11",
+  "partisymbol": {
+    "filnamn": "1379-alska-svedala.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1379"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

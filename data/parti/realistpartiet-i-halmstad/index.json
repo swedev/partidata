@@ -4,6 +4,13 @@
   "beteckning": "Realistpartiet i Halmstad",
   "filnamn": "realistpartiet-i-halmstad",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1801-realistpartiet-i-halmstad.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1801"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

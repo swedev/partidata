@@ -5,6 +5,13 @@
   "filnamn": "skovdepartiet",
   "forkortning": "SköP",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1585-skovdepartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1585"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

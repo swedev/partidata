@@ -12,7 +12,19 @@ export interface Parti {
   forkortning?: string;
   registrerad_partibeteckning?: boolean;
   valmyndigheten_registreringsdatum?: string;
+  partisymbol?: PartiSymbol;
   deltagande?: Record<string, PartiDeltagande>;
+}
+
+/**
+ * The best known symbol for a party and its provenance.
+ */
+export interface PartiSymbol {
+  filnamn: string;
+  kalla: string;
+  kallurl: string;
+  valar: number;
+  partikod: string;
 }
 
 /**
@@ -28,7 +40,7 @@ export interface PartiDeltagande {
 /**
  * An entry in `data/parti/index.json`, a subset of the full party record.
  */
-export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn'>;
+export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn' | 'partisymbol'>;
 
 /**
  * The props of a page served on a slug a party used to have, pointing at the

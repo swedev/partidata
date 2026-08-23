@@ -4,6 +4,13 @@
   "beteckning": "Bättre Vellinge",
   "filnamn": "battre-vellinge",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1708-battre-vellinge.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1708"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

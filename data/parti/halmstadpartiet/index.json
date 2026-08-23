@@ -11,6 +11,13 @@
   ],
   "forkortning": "HP",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1563-halmstadpartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1563"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

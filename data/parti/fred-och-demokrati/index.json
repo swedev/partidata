@@ -4,6 +4,13 @@
   "beteckning": "Fred och demokrati",
   "filnamn": "fred-och-demokrati",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1903-fred-och-demokrati.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1903"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

@@ -5,6 +5,13 @@
   "filnamn": "vard-i-kronoberg",
   "forkortning": "ViK",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1785-vard-i-kronoberg.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1785"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

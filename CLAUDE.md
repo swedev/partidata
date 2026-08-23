@@ -25,6 +25,9 @@ Open data about Swedish political parties. Static public site, Swedish copy.
   `npm run import-val -- <år> [--file <sökväg>]` imports Valmyndigheten's
   `deltagande-partier.csv` from `data.val.se`, writes
   `data/val/<år>/partideltagande/` and reconciles `data/parti/`;
+  `npm run import-partisymboler -- <år> [--file <zip>] [--legacy-dir <dir>]`
+  imports code-and-name-labelled PNG party symbols into each party directory
+  and records their provenance in `partisymbol`;
   `node scripts/parti.js` rebuilds the registry from `data/` alone. Results are
   committed to `data/`. Paths resolve from the repo root, so the scripts run
   from any directory. `npm run validate:data` checks the committed data tree;

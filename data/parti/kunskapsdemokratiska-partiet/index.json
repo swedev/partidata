@@ -4,6 +4,13 @@
   "beteckning": "Kunskapsdemokratiska Partiet",
   "filnamn": "kunskapsdemokratiska-partiet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1781-kunskapsdemokratiska-partiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1781"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

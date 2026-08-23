@@ -4,6 +4,13 @@
   "beteckning": "Visionpartiet",
   "filnamn": "visionpartiet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1646-visionpartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1646"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

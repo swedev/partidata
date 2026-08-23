@@ -6,6 +6,13 @@
   "forkortning": "FD",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2017-10-20",
+  "partisymbol": {
+    "filnamn": "1280-fria-demokraterna.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1280.png",
+    "valar": 2019,
+    "partikod": "1280"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

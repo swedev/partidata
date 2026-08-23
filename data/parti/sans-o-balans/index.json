@@ -5,6 +5,13 @@
   "filnamn": "sans-o-balans",
   "forkortning": "SoB",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1441-sans-o-balans.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1441"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

@@ -4,6 +4,13 @@
   "beteckning": "Invånarnas Bästa",
   "filnamn": "invanarnas-basta",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1865-invanarnas-basta.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1865"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

@@ -4,6 +4,13 @@
   "beteckning": "Oberoende S",
   "filnamn": "oberoende-s",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1698-oberoende-s.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1698"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

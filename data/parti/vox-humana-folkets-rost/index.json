@@ -12,6 +12,13 @@
   "forkortning": "VOXH",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "1997-11-26",
+  "partisymbol": {
+    "filnamn": "0119-vox-humana-folkets-rost.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "0119"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

@@ -3,5 +3,12 @@
   "kod": "1340",
   "beteckning": "NKS Nya Koalitionssamlingen",
   "filnamn": "nks-nya-koalitionssamlingen",
-  "valmyndigheten_registreringsdatum": "2018-03-13"
+  "valmyndigheten_registreringsdatum": "2018-03-13",
+  "partisymbol": {
+    "filnamn": "1340-nks-nya-koalitionssamlingen.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1340.png",
+    "valar": 2019,
+    "partikod": "1340"
+  }
 }

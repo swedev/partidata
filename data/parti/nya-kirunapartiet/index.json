@@ -6,6 +6,13 @@
   "forkortning": "NKP",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2017-12-18",
+  "partisymbol": {
+    "filnamn": "1326-nya-kirunapartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1326.png",
+    "valar": 2019,
+    "partikod": "1326"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

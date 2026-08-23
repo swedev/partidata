@@ -5,6 +5,13 @@
   "filnamn": "initiativet",
   "forkortning": "INI",
   "valmyndigheten_registreringsdatum": "2018-03-27",
+  "partisymbol": {
+    "filnamn": "1374-initiativet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1374.png",
+    "valar": 2019,
+    "partikod": "1374"
+  },
   "deltagande": {
     "2018": {
       "riksdag": true,

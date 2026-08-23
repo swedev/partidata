@@ -5,6 +5,13 @@
   "filnamn": "politiskt-erovrande-demokratiska-organisationen",
   "forkortning": "PEDO",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1768-politiskt-erovrande-demokratiska-organisationen.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1768"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

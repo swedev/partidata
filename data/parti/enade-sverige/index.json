@@ -4,6 +4,13 @@
   "beteckning": "Enade Sverige",
   "filnamn": "enade-sverige",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1448-enade-sverige.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1448"
+  },
   "deltagande": {
     "2022": {
       "riksdag": true,

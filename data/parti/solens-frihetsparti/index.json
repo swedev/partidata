@@ -8,6 +8,13 @@
   "filnamn": "solens-frihetsparti",
   "registrerad_partibeteckning": false,
   "valmyndigheten_registreringsdatum": "2018-03-28",
+  "partisymbol": {
+    "filnamn": "1658-solens-frihetsparti.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1658"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

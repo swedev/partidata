@@ -5,6 +5,13 @@
   "filnamn": "hela-edas-lista",
   "forkortning": "HEL",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "0160-hela-edas-lista.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "0160"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

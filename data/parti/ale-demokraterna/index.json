@@ -6,6 +6,13 @@
   "forkortning": "ADK",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2017-12-01",
+  "partisymbol": {
+    "filnamn": "0139-ale-demokraterna.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/0139.png",
+    "valar": 2019,
+    "partikod": "0139"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,
