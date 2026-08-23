@@ -1,0 +1,38 @@
+{
+  "uuid": "ec774af6-5b29-4068-beb5-10d07e62a062",
+  "kod": "0205",
+  "beteckning": "Sakpolitikerna",
+  "tidigare_beteckningar": [
+    "Åhuspartiet"
+  ],
+  "filnamn": "sakpolitikerna",
+  "tidigare_filnamn": [
+    "ahuspartiet"
+  ],
+  "forkortning": "Sak",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-12-18",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1290"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1290"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1290"
+      ]
+    }
+  }
+}

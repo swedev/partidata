@@ -16,6 +16,7 @@ const {
 
 const CSV_2022 = fixture('val-2022.csv');
 const CSV_2026 = fixture('val-2026.csv');
+const CSV_2030 = fixture('val-2030.csv');
 const CSV_TVETYDIG = fixture('val-2026-tvetydig.csv');
 
 /**
@@ -101,12 +102,14 @@ test('kodbyten.json binds a re-coded party that also changed its name', t => {
   assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
   assert.equal(runImport(dir, '2026', CSV_2026).status, 0);
 
-  const alias = parti(dir, 'aliaspartiet');
+  const alias = parti(dir, 'omdopt-via-alias');
   assert.equal(alias.uuid, PARTIER[2].uuid);
   assert.equal(alias.kod, '9106');
   assert.deepEqual(alias.tidigare_koder, ['9006']);
   assert.equal(alias.beteckning, 'Omdöpt via alias');
   assert.deepEqual(alias.tidigare_beteckningar, ['Aliaspartiet']);
+  assert.deepEqual(alias.tidigare_filnamn, ['aliaspartiet']);
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/aliaspartiet')), false);
 });
 
 test('without an alias a renamed re-code becomes a separate party', t => {
@@ -132,17 +135,161 @@ test('an ambiguous name stops the import and writes nothing', t => {
   assert.deepEqual(snapshot(dir), before);
 });
 
-test('a renamed party keeps its filnamn and lists the old name', t => {
+test('a renamed party moves to a new filnamn and keeps the old one as tidigare_filnamn', t => {
   const dir = makeTree();
   t.after(() => removeTree(dir));
   assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
-  assert.equal(runImport(dir, '2026', CSV_2026).status, 0);
+  const result = runImport(dir, '2026', CSV_2026);
+  assert.equal(result.status, 0, result.stderr);
 
-  const testpartiet = parti(dir, 'testpartiet');
+  const testpartiet = parti(dir, 'nya-testpartiet');
+  assert.equal(testpartiet.uuid, PARTIER[0].uuid);
   assert.equal(testpartiet.beteckning, 'Nya Testpartiet');
   assert.deepEqual(testpartiet.tidigare_beteckningar, ['Testpartiet']);
+  assert.deepEqual(testpartiet.tidigare_filnamn, ['testpartiet']);
   assert.equal(testpartiet.forkortning, 'NTP');
-  assert.equal(readJson(dir, 'data/parti/index.json').find(p => p.filnamn === 'testpartiet').beteckning, 'Nya Testpartiet');
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/testpartiet')), false);
+
+  const entry = readJson(dir, 'data/parti/index.json').find(p => p.uuid === PARTIER[0].uuid);
+  assert.equal(entry.filnamn, 'nya-testpartiet');
+  assert.deepEqual(entry.tidigare_filnamn, ['testpartiet']);
+  assert.match(result.stdout, /9001 Testpartiet → Nya Testpartiet \(testpartiet → nya-testpartiet\)/);
+});
+
+test('a name change with the same slug moves nothing', t => {
+  const parties = PARTIER.map(party => (party.filnamn === 'testpartiet'
+    ? { ...party, beteckning: 'nya testpartiet', filnamn: 'nya-testpartiet' }
+    : party));
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  const result = runImport(dir, '2026', CSV_2026);
+  assert.equal(result.status, 0, result.stderr);
+
+  const testpartiet = parti(dir, 'nya-testpartiet');
+  assert.equal(testpartiet.beteckning, 'Nya Testpartiet');
+  assert.deepEqual(testpartiet.tidigare_beteckningar, ['nya testpartiet']);
+  assert.equal(testpartiet.tidigare_filnamn, undefined);
+  assert.match(result.stdout, /9001 nya testpartiet → Nya Testpartiet$/m);
+});
+
+test('an old filnamn is never given to a new party', t => {
+  const parties = PARTIER.map(party => (party.filnamn === 'testpartiet'
+    ? { ...party, tidigare_filnamn: ['lokalpartiet'] }
+    : party));
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+
+  assert.equal(parti(dir, 'lokalpartiet-9002').beteckning, 'Lokalpartiet');
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/lokalpartiet')), false);
+});
+
+test('a renamed party and a new party sharing a slug are both suffixed', t => {
+  const parties = PARTIER.map(party => (party.filnamn === 'testpartiet'
+    ? { ...party, beteckning: 'Gammalt testparti', filnamn: 'gammalt-testparti' }
+    : party));
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  const result = runImport(dir, '2022', CSV_2022);
+  assert.equal(result.status, 0, result.stderr);
+
+  assert.equal(parti(dir, 'testpartiet-9001').uuid, PARTIER[0].uuid);
+  assert.deepEqual(parti(dir, 'testpartiet-9001').tidigare_filnamn, ['gammalt-testparti']);
+  assert.equal(parti(dir, 'testpartiet-9004').kod, '9004');
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/testpartiet')), false);
+});
+
+test('two renamed parties sharing a slug are both suffixed', t => {
+  const parties = [
+    ...PARTIER,
+    { uuid: '66666666-6666-4666-8666-666666666666', kod: '9010', beteckning: 'Delad ett', filnamn: 'delad-ett' },
+    { uuid: '77777777-7777-4777-8777-777777777777', kod: '9011', beteckning: 'Delad två', filnamn: 'delad-tva' }
+  ];
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+
+  assert.deepEqual(parti(dir, 'delad-9010').tidigare_filnamn, ['delad-ett']);
+  assert.deepEqual(parti(dir, 'delad-9011').tidigare_filnamn, ['delad-tva']);
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/delad')), false);
+});
+
+test('a party renamed back reclaims its old filnamn', t => {
+  const parties = PARTIER.map(party => (party.filnamn === 'testpartiet'
+    ? { ...party, tidigare_filnamn: ['nya-testpartiet'] }
+    : party));
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2026', CSV_2026).status, 0);
+
+  const testpartiet = parti(dir, 'nya-testpartiet');
+  assert.equal(testpartiet.uuid, PARTIER[0].uuid);
+  assert.deepEqual(testpartiet.tidigare_filnamn, ['testpartiet']);
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/testpartiet')), false);
+});
+
+test('a tidigare_filnamn that equals another party filnamn stops the import', t => {
+  const parties = PARTIER.map(party => (party.filnamn === 'gamla-partiet'
+    ? { ...party, tidigare_filnamn: ['testpartiet'] }
+    : party));
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  const before = snapshot(dir);
+
+  const result = runImport(dir, '2022', CSV_2022);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /Duplicate filnamn "testpartiet"/);
+  assert.deepEqual(snapshot(dir), before);
+});
+
+test('a rename moves the party kandidatlista', t => {
+  const dir = makeTree({ kandidatlistor: [{ year: '2022', filnamn: 'testpartiet' }] });
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  const result = runImport(dir, '2026', CSV_2026);
+  assert.equal(result.status, 0, result.stderr);
+
+  assert.equal(fs.existsSync(path.join(dir, 'data/val/2022/kandidatlistor/nya-testpartiet.json')), true);
+  assert.equal(fs.existsSync(path.join(dir, 'data/val/2022/kandidatlistor/testpartiet.json')), false);
+  assert.equal(readJson(dir, 'data/val/2022/kandidatlistor/nya-testpartiet.json').filnamn, 'nya-testpartiet');
+  assert.match(result.stdout, /kandidatlistor\/testpartiet\.json → data\/val\/2022\/kandidatlistor\/nya-testpartiet\.json/);
+});
+
+test('a rename whose kandidatlista target already exists stops the import before anything is written', t => {
+  const dir = makeTree({
+    kandidatlistor: [
+      { year: '2022', filnamn: 'testpartiet' },
+      { year: '2022', filnamn: 'nya-testpartiet' }
+    ]
+  });
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  const before = snapshot(dir);
+
+  const result = runImport(dir, '2026', CSV_2026);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /kandidatlistor\/nya-testpartiet\.json already exists/);
+  assert.deepEqual(snapshot(dir), before);
+});
+
+test('tidigare_filnamn records the slugs the registry has carried, in the order they were imported', t => {
+  const chronological = makeTree();
+  const newestFirst = makeTree();
+  t.after(() => {
+    removeTree(chronological);
+    removeTree(newestFirst);
+  });
+
+  assert.equal(runImport(chronological, '2022', CSV_2022).status, 0);
+  assert.equal(runImport(chronological, '2026', CSV_2026).status, 0);
+  assert.equal(runImport(chronological, '2030', CSV_2030).status, 0);
+  assert.equal(runImport(newestFirst, '2030', CSV_2030).status, 0);
+  assert.equal(runImport(newestFirst, '2026', CSV_2026).status, 0);
+  assert.equal(runImport(newestFirst, '2022', CSV_2022).status, 0);
+
+  assert.deepEqual(parti(chronological, 'tredje-testpartiet').tidigare_filnamn, ['testpartiet', 'nya-testpartiet']);
+  assert.deepEqual(parti(newestFirst, 'tredje-testpartiet').tidigare_filnamn, ['testpartiet']);
+  assert.deepEqual(identity(newestFirst), identity(chronological));
 });
 
 test('deltagande is derived per year from the val files', t => {
@@ -151,7 +298,7 @@ test('deltagande is derived per year from the val files', t => {
   assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
   assert.equal(runImport(dir, '2026', CSV_2026).status, 0);
 
-  assert.deepEqual(parti(dir, 'testpartiet').deltagande, {
+  assert.deepEqual(parti(dir, 'nya-testpartiet').deltagande, {
     2022: { riksdag: true, region: ['01'], kommun: ['0114'] },
     2026: { riksdag: true, region: [], kommun: ['0114'] }
   });

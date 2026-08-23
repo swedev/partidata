@@ -8,6 +8,7 @@ const {
   upsertParties,
   buildParties,
   validate,
+  applyRenames,
   writeFiles
 } = require('./parti.js');
 
@@ -284,6 +285,7 @@ async function main () {
   const yearFiles = loadYearFiles({ [year]: yearData });
   const build = buildParties(registry, yearFiles);
   validate(build, yearFiles);
+  const moved = applyRenames(build.renamed);
 
   const valWriteSet = ['partier', 'riksdag', 'region', 'kommun'].map(name => ({
     file: dataPath('val', year, 'partideltagande', `${name}.json`),
@@ -295,6 +297,7 @@ async function main () {
     const before = beteckningarFore.get(party.uuid);
     return before && before !== party.beteckning;
   });
+  const flyttar = new Map(build.renamed.map(flytt => [flytt.uuid, flytt]));
 
   console.log(`\nRader: ${rows.length}`);
   console.log(`Partier i filen: ${partier.length}`);
@@ -305,8 +308,13 @@ async function main () {
   merged.forEach(({ record, party }) =>
     console.log(`  ~ ${party.koder.filter(kod => kod !== record.kod).join('/')} → ${record.kod} ${record.beteckning} (${party.filnamn})`));
   console.log(`Omdöpta partier: ${renamed.length}`);
-  renamed.forEach(party =>
-    console.log(`  * ${party.kod} ${beteckningarFore.get(party.uuid)} → ${party.beteckning}`));
+  renamed.forEach(party => {
+    const flytt = flyttar.get(party.uuid);
+    const slug = flytt ? ` (${flytt.from} → ${flytt.to})` : '';
+    console.log(`  * ${party.kod} ${beteckningarFore.get(party.uuid)} → ${party.beteckning}${slug}`);
+  });
+  console.log(`Flyttade filer: ${moved.length}`);
+  moved.forEach(move => console.log(`  ${move}`));
   console.log(`Skrivna filer: ${written.length}`);
   written.slice(0, valWriteSet.length).forEach(path => console.log(`  ${path}`));
 }

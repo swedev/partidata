@@ -1,0 +1,38 @@
+{
+  "uuid": "11f9b277-29f8-4a27-8894-7adb51cf335c",
+  "kod": "1133",
+  "beteckning": "TingsrydsAlternativet (TiA)",
+  "tidigare_beteckningar": [
+    "Tingsrydsalternativet"
+  ],
+  "filnamn": "tingsrydsalternativet-tia",
+  "tidigare_filnamn": [
+    "tingsrydsalternativet"
+  ],
+  "forkortning": "TiA",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2014-01-29",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0763"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0763"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0763"
+      ]
+    }
+  }
+}

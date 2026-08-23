@@ -1,0 +1,38 @@
+{
+  "uuid": "10366f60-a96a-48f2-b248-5e3ece19e338",
+  "kod": "0498",
+  "beteckning": "Mälaröpartiet",
+  "tidigare_beteckningar": [
+    "Öpartiet"
+  ],
+  "filnamn": "malaropartiet",
+  "tidigare_filnamn": [
+    "opartiet"
+  ],
+  "forkortning": "Ö",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2018-01-29",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0125"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0125"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0125"
+      ]
+    }
+  }
+}

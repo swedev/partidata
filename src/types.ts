@@ -5,6 +5,7 @@ export interface Parti {
   uuid: string;
   beteckning: string;
   filnamn: string;
+  tidigare_filnamn?: string[];
   kod: string;
   tidigare_koder?: string[];
   tidigare_beteckningar?: string[];
@@ -27,4 +28,23 @@ export interface PartiDeltagande {
 /**
  * An entry in `data/parti/index.json`, a subset of the full party record.
  */
-export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn'>;
+export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn'>;
+
+/**
+ * The props of a page served on a slug a party used to have, pointing at the
+ * slug it has now.
+ */
+export interface PartiRedirect {
+  redirect: {
+    filnamn: string;
+    beteckning: string;
+  };
+}
+
+/**
+ * isRedirect
+ * @param props The props of a page under `/parti/`
+ */
+export function isRedirect (props: Parti | PartiRedirect): props is PartiRedirect {
+  return 'redirect' in props;
+}

@@ -1,0 +1,38 @@
+{
+  "uuid": "a118a3da-939b-47ec-93c2-1e314818bc7c",
+  "kod": "0176",
+  "beteckning": "Lokalpartiet",
+  "tidigare_beteckningar": [
+    "Strängnäspartiet"
+  ],
+  "filnamn": "lokalpartiet",
+  "tidigare_filnamn": [
+    "strangnaspartiet"
+  ],
+  "forkortning": "LOK",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "1990-01-30",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0486"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0486"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "0486"
+      ]
+    }
+  }
+}

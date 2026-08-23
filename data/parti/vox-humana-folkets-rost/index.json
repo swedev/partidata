@@ -1,0 +1,38 @@
+{
+  "uuid": "b1599806-fc9a-45bb-87e5-42de210597b0",
+  "kod": "0119",
+  "beteckning": "Vox Humana - Folkets Röst",
+  "tidigare_beteckningar": [
+    "Folkets röst - VOX humana"
+  ],
+  "filnamn": "vox-humana-folkets-rost",
+  "tidigare_filnamn": [
+    "folkets-rost-vox-humana"
+  ],
+  "forkortning": "VOXH",
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "1997-11-26",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2361"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2361"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "2361"
+      ]
+    }
+  }
+}

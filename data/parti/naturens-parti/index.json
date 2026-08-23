@@ -1,0 +1,37 @@
+{
+  "uuid": "e62f64e1-7b26-4a5e-93e7-637112a6e9ca",
+  "kod": "1281",
+  "beteckning": "Naturens Parti",
+  "tidigare_beteckningar": [
+    "NATURENS PARTI SANNING RÄTTVISA KÄRLEK"
+  ],
+  "filnamn": "naturens-parti",
+  "tidigare_filnamn": [
+    "naturens-parti-sanning-rattvisa-karlek"
+  ],
+  "registrerad_partibeteckning": true,
+  "valmyndigheten_registreringsdatum": "2017-05-08",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1480"
+      ]
+    },
+    "2022": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1480"
+      ]
+    },
+    "2026": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1480"
+      ]
+    }
+  }
+}

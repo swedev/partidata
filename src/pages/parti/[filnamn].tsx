@@ -2,9 +2,12 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Footer from 'src/components/Footer';
-import type { Parti } from 'src/types';
+import { isRedirect } from 'src/types';
+import type { Parti, PartiIndexEntry, PartiRedirect } from 'src/types';
 
-import parties from 'data/parti/index.json';
+import partiIndex from 'data/parti/index.json';
+
+const parties = partiIndex as PartiIndexEntry[];
 
 const dateFormatter = new Intl.DateTimeFormat('sv-SE', { dateStyle: 'long', timeZone: 'UTC' });
 
@@ -22,7 +25,7 @@ function formatSwedishDate (iso?: string) {
 /**
  * PartyPage
  */
-const PartyPage: NextPage<Parti> = ({ beteckning, forkortning, kod, valmyndigheten_registreringsdatum }) => {
+function PartyPage ({ beteckning, forkortning, kod, valmyndigheten_registreringsdatum }: Parti) {
   const rows = [
     { label: 'Partikod hos Valmyndigheten', value: kod },
     { label: 'Förkortning', value: forkortning },
@@ -78,24 +81,77 @@ const PartyPage: NextPage<Parti> = ({ beteckning, forkortning, kod, valmyndighet
       <Footer />
     </div>
   );
-};
+}
 
-export default PartyPage;
+/**
+ * RedirectPage
+ * Served on a slug the party used to have. The static export cannot answer with
+ * a 3xx, so the page refreshes to the current slug and points search engines at
+ * it with a canonical link.
+ */
+function RedirectPage ({ filnamn, beteckning }: PartiRedirect['redirect']) {
+  const href = `/parti/${filnamn}/`;
+
+  return (
+    <div>
+      <main className="container">
+        <Head>
+          <title>{`${beteckning} - Partidata 🇸🇪`}</title>
+          <meta httpEquiv="refresh" content={`0; url=${href}`} />
+          <meta name="robots" content="noindex" />
+          <link rel="canonical" href={href} />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+
+        <p className="mt-6">
+          <Link href="/">← Alla partier</Link>
+        </p>
+
+        <h1>Partiet har bytt namn</h1>
+
+        <p className="mt-10">
+          Partiet heter numera {beteckning}.
+        </p>
+        <p className="mt-2">
+          <Link href={href}>{beteckning}</Link>
+        </p>
+
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+const PartiPage: NextPage<Parti | PartiRedirect> = props => (
+  isRedirect(props)
+    ? <RedirectPage {...props.redirect} />
+    : <PartyPage {...props} />
+);
+
+export default PartiPage;
 
 export const getStaticPaths: GetStaticPaths<{ filnamn: string }> = async () => {
   return {
-    paths: parties.map(party => ({ params: { filnamn: party.filnamn } })),
+    paths: parties.flatMap(party => [party.filnamn, ...(party.tidigare_filnamn ?? [])]
+      .map(filnamn => ({ params: { filnamn } }))),
     fallback: false,
   };
 };
 
-export const getStaticProps: GetStaticProps<Parti, { filnamn: string }> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Parti | PartiRedirect, { filnamn: string }> = async ({ params }) => {
   const filnamn = params?.filnamn;
   if (!filnamn) {
     return { notFound: true };
   }
-  const party = (await import(`data/parti/${filnamn}/index.json`)).default as Parti;
+  if (parties.some(entry => entry.filnamn === filnamn)) {
+    const party = (await import(`data/parti/${filnamn}/index.json`)).default as Parti;
+    return { props: party };
+  }
+  const entry = parties.find(party => (party.tidigare_filnamn ?? []).includes(filnamn));
+  if (!entry) {
+    return { notFound: true };
+  }
   return {
-    props: party
+    props: { redirect: { filnamn: entry.filnamn, beteckning: entry.beteckning } }
   };
 };
