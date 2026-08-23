@@ -110,6 +110,10 @@ Valmyndigheten ska anges som källa för symbolerna. Partisymboler kan dessutom 
 
 Bygger om partifilerna och `data/parti/index.json` från det som redan finns i `data/`, utan att hämta något.
 
+### npm run validate:data
+
+Kontrollerar att partiregistret, partifilerna, valårens partireferenser samt region- och kommundatan är konsistenta. Kontrollen körs också i CI före tester och bygge.
+
 ### npm test
 
 Kör `node:test`-sviten för importen och partiregistret.

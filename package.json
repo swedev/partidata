@@ -20,9 +20,10 @@
     "lint": "eslint .",
     "import-val": "node scripts/import-val.js",
     "import-partisymboler": "node scripts/import-partisymboler.js",
+    "validate:data": "node scripts/validate.js",
     "typecheck": "tsc --noEmit",
     "test": "node --test",
-    "precommit": "npm run lint && npm run typecheck && npm run build && npm test"
+    "precommit": "npm run lint && npm run typecheck && npm run validate:data && npm run build && npm test"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

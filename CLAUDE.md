@@ -5,8 +5,8 @@ Open data about Swedish political parties. Static public site, Swedish copy.
 ## Workflow
 
 - Branch + PR flow — never commit directly to `main`. PRs are squash-merged.
-- CI (`Integrate`) must be green: `npm run lint && npm run typecheck && npm test
-  && npm run build`.
+- CI (`Integrate`) must be green: `npm run lint && npm run typecheck &&
+  npm run validate:data && npm test && npm run build`.
 - Deploys happen on `v*` tags, not on merge: tag `main` and push the tag
   (see `deploy/README.md`). Merging is not releasing.
 
@@ -30,7 +30,8 @@ Open data about Swedish political parties. Static public site, Swedish copy.
   and records their provenance in `partisymbol`;
   `node scripts/parti.js` rebuilds the registry from `data/` alone. Results are
   committed to `data/`. Paths resolve from the repo root, so the scripts run
-  from any directory. `npm test` runs the `node:test` suite in `scripts/`.
+  from any directory. `npm run validate:data` checks the committed data tree;
+  `npm test` runs the `node:test` suite in `scripts/`.
 
 ## Deploy
 
