@@ -543,8 +543,10 @@ function validateRenames (renamed) {
 /**
  * applyRenames
  * Moves the directory of every renamed party, and the kandidatlistor keyed by
- * its slug, to the new slug. Runs after validate() and before writeFiles(), so
- * the party file is written into the directory it now belongs in.
+ * its slug, to the new slug. A kandidatlista repeats the slug in its own
+ * filnamn, which is rewritten with the move so the file and its content agree.
+ * Runs after validate() and before writeFiles(), so the party file is written
+ * into the directory it now belongs in.
  * @param  {Object[]} renamed From buildParties(), each { uuid, from, to }
  * @return {String[]} Moves made, as "<gammal sökväg> → <ny sökväg>"
  */
@@ -556,6 +558,11 @@ function applyRenames (renamed) {
     moved.push(`data/parti/${from} → data/parti/${to}`);
     for (const flytt of flyttar) {
       fs.renameSync(flytt.from, flytt.to);
+      const kandidatlista = readJson(flytt.to);
+      if (kandidatlista && kandidatlista.filnamn) {
+        kandidatlista.filnamn = to;
+        fs.writeFileSync(flytt.to, JSON.stringify(kandidatlista, null, 2) + '\n');
+      }
       moved.push(`${path.relative(ROOT, flytt.from)} → ${path.relative(ROOT, flytt.to)}`);
     }
   }

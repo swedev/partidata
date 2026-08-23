@@ -251,6 +251,7 @@ test('a rename moves the party kandidatlista', t => {
 
   assert.equal(fs.existsSync(path.join(dir, 'data/val/2022/kandidatlistor/nya-testpartiet.json')), true);
   assert.equal(fs.existsSync(path.join(dir, 'data/val/2022/kandidatlistor/testpartiet.json')), false);
+  assert.equal(readJson(dir, 'data/val/2022/kandidatlistor/nya-testpartiet.json').filnamn, 'nya-testpartiet');
   assert.match(result.stdout, /kandidatlistor\/testpartiet\.json → data\/val\/2022\/kandidatlistor\/nya-testpartiet\.json/);
 });
 
