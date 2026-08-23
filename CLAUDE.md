@@ -16,6 +16,8 @@ Open data about Swedish political parties. Static public site, Swedish copy.
   `next/image` optimisation. `trailingSlash: true` so nginx `try_files` works.
 - Party pages are pre-rendered from `data/parti/index.json` via
   `getStaticPaths`; every entry must have a matching `data/parti/<filnamn>/index.json`.
+  Every slug in an entry's `tidigare_filnamn` is pre-rendered too, as a
+  meta-refresh page pointing at the party's current slug.
 - Styling: Tailwind 3 + Bootstrap 5 tables via sass. `src/styles/base.scss` is
   the single CSS entry; it pulls in `app.scss` and `lato.scss` so Tailwind's
   `@layer` blocks share one file with the `@tailwind` directives.

@@ -16,6 +16,7 @@ const PARTY_KEY_ORDER = [
   'beteckning',
   'tidigare_beteckningar',
   'filnamn',
+  'tidigare_filnamn',
   'forkortning',
   'registrerad_partibeteckning',
   'valmyndigheten_registreringsdatum',
@@ -61,6 +62,7 @@ function loadParties () {
       koder: [data.kod, ...(data.tidigare_koder || [])].filter(Boolean),
       beteckning: data.beteckning,
       tidigare_beteckningar: data.tidigare_beteckningar || [],
+      tidigare_filnamn: data.tidigare_filnamn || [],
       forkortning: data.forkortning,
       registrerad_partibeteckning: data.registrerad_partibeteckning,
       valmyndigheten_registreringsdatum: data.valmyndigheten_registreringsdatum
@@ -110,12 +112,14 @@ function loadYearFiles (overrides = {}) {
 
 /**
  * upsertParties
- * Reconciles one year's party records against the registry, allocating uuid and
- * filnamn for parties that are new. Identity is PARTIKOD first, then the
- * committed kodbyten.json aliases, then an unambiguous name match for a party
- * that has been given a new code. A name match is only considered for a party
- * that carries no code of its own in the year being imported, and only when
- * exactly one party and exactly one record share the name.
+ * Reconciles one year's party records against the registry, allocating a uuid
+ * for parties that are new; their filnamn is allocated by buildParties(), in the
+ * same pass as the slugs of parties that were renamed. Identity is PARTIKOD
+ * first, then the committed kodbyten.json aliases, then an unambiguous name
+ * match for a party that has been given a new code. A name match is only
+ * considered for a party that carries no code of its own in the year being
+ * imported, and only when exactly one party and exactly one record share the
+ * name.
  * @param  {Object} registry From loadParties()
  * @param  {String} year
  * @param  {Object[]} partier Year records, each { kod, beteckning }
@@ -169,37 +173,67 @@ function upsertParties (registry, year, partier) {
     }
   }
 
-  const takenFilnamn = new Set(parties.map(party => party.filnamn));
-  const baseCounts = new Map();
-  unmatched.forEach(record => {
-    const base = toFileName(record.beteckning);
-    baseCounts.set(base, (baseCounts.get(base) || 0) + 1);
-  });
   for (const record of unmatched) {
-    const base = toFileName(record.beteckning);
-    if (!base) {
-      throw new Error(`Party name "${record.beteckning}" (${record.kod}) produces an empty filnamn`);
-    }
-    const filnamn = takenFilnamn.has(base) || baseCounts.get(base) > 1
-      ? `${base}-${record.kod}`
-      : base;
-    if (takenFilnamn.has(filnamn)) {
-      throw new Error(`Cannot allocate filnamn for ${record.kod} "${record.beteckning}": ${filnamn} is taken`);
-    }
     const party = {
       uuid: newUuid(),
-      filnamn,
+      filnamn: null,
       koder: [record.kod],
       beteckning: record.beteckning,
-      tidigare_beteckningar: []
+      tidigare_beteckningar: [],
+      tidigare_filnamn: []
     };
-    takenFilnamn.add(filnamn);
     parties.push(party);
     byKod.set(record.kod, party);
     created.push(party);
   }
 
   return { created, merged };
+}
+
+/**
+ * allocateFilnamn
+ * Assigns a filnamn to every party that needs one in this build: parties that
+ * are new to the registry and parties whose beteckning changed. One pass, so two
+ * claimants on the same base slug are both suffixed with their kod, exactly as
+ * two new parties are. A slug counts as taken when it is any party's filnamn or
+ * any other party's tidigare_filnamn; a party may reclaim a slug it carried
+ * before.
+ * @param  {Object[]} claims Each { party, beteckning, kod }
+ * @param  {Object[]} parties Every party in the registry
+ * @return {Object[]} The claims, each with the allocated filnamn
+ */
+function allocateFilnamn (claims, parties) {
+  const taken = new Set();
+  for (const party of parties) {
+    if (party.filnamn) {
+      taken.add(party.filnamn);
+    }
+    (party.tidigare_filnamn || []).forEach(filnamn => taken.add(filnamn));
+  }
+
+  const baseCounts = new Map();
+  for (const claim of claims) {
+    const base = toFileName(claim.beteckning);
+    baseCounts.set(base, (baseCounts.get(base) || 0) + 1);
+  }
+
+  for (const claim of claims) {
+    const base = toFileName(claim.beteckning);
+    if (!base) {
+      throw new Error(`Party name "${claim.beteckning}" (${claim.kod}) produces an empty filnamn`);
+    }
+    const egna = new Set(claim.party.tidigare_filnamn || []);
+    const isTaken = filnamn => taken.has(filnamn) && !egna.has(filnamn);
+    const filnamn = isTaken(base) || baseCounts.get(base) > 1 ? `${base}-${claim.kod}` : base;
+    if (isTaken(filnamn)) {
+      throw new Error(`Cannot allocate filnamn for ${claim.kod} "${claim.beteckning}": ${filnamn} is taken`);
+    }
+    taken.add(filnamn);
+    claim.filnamn = filnamn;
+    claim.party.filnamn = filnamn;
+  }
+
+  return claims;
 }
 
 /**
@@ -230,13 +264,16 @@ function _matchAlias (kod, kodbyten, byKod) {
  * buildParties
  * Derives every party's current fields and participation from the year files,
  * so the result is a pure function of the committed data rather than of the
- * order the imports were run in.
+ * order the imports were run in, apart from tidigare_filnamn, which records the
+ * slugs the registry has actually carried. A party whose beteckning changed is
+ * given the slug of its new name; the slug it had moves to tidigare_filnamn.
  * @param  {Object} registry From loadParties(), after any upserts
  * @param  {Object} yearFiles From loadYearFiles()
- * @return {{ writeSet: Object[], index: Object[], parties: Object[] }}
+ * @return {{ writeSet: Object[], index: Object[], parties: Object[], renamed: Object[] }}
  */
 function buildParties (registry, yearFiles) {
   const { parties } = registry;
+  _assertUniqueUuid(parties);
   const years = Object.keys(yearFiles).sort();
 
   const recordsByYear = new Map();
@@ -277,7 +314,7 @@ function buildParties (registry, yearFiles) {
     participationByYear.set(year, { riksdag, region, kommun });
   }
 
-  const built = parties.map(party => {
+  const derived = parties.map(party => {
     const yearRecords = years
       .map(year => ({ year, record: recordsByYear.get(year).get(party.uuid) }))
       .filter(entry => entry.record);
@@ -311,9 +348,37 @@ function buildParties (registry, yearFiles) {
       }
     }
 
+    return { party, koder, kod, beteckning, tidigareBeteckningar, forkortning, registrerad, deltagande };
+  });
+
+  const claims = [];
+  for (const entry of derived) {
+    const { party, beteckning, kod, koder } = entry;
+    if (!party.filnamn) {
+      claims.push({ party, beteckning, kod });
+      continue;
+    }
+    const base = toFileName(beteckning);
+    const slugOfCurrentName = party.filnamn === base || koder.some(other => party.filnamn === `${base}-${other}`);
+    if (beteckning !== party.beteckning && !slugOfCurrentName) {
+      claims.push({ party, beteckning, kod, from: party.filnamn });
+    }
+  }
+  allocateFilnamn(claims, parties);
+
+  const renamed = [];
+  for (const claim of claims.filter(entry => entry.from)) {
+    const historik = [...(claim.party.tidigare_filnamn || []), claim.from];
+    claim.party.tidigare_filnamn = [...new Set(historik)].filter(filnamn => filnamn !== claim.filnamn);
+    renamed.push({ uuid: claim.party.uuid, from: claim.from, to: claim.filnamn });
+  }
+
+  const built = derived.map(entry => {
+    const { party, koder, kod, beteckning, tidigareBeteckningar, forkortning, registrerad, deltagande } = entry;
     return {
       uuid: party.uuid,
       filnamn: party.filnamn,
+      tidigare_filnamn: party.tidigare_filnamn || [],
       koder,
       data: _orderKeys({
         uuid: party.uuid,
@@ -322,6 +387,7 @@ function buildParties (registry, yearFiles) {
         beteckning,
         tidigare_beteckningar: tidigareBeteckningar,
         filnamn: party.filnamn,
+        tidigare_filnamn: party.tidigare_filnamn || [],
         forkortning,
         registrerad_partibeteckning: registrerad,
         valmyndigheten_registreringsdatum: party.valmyndigheten_registreringsdatum,
@@ -333,10 +399,11 @@ function buildParties (registry, yearFiles) {
   _assertUnique(built);
 
   const index = built
-    .map(party => ({
+    .map(party => _orderKeys({
       uuid: party.data.uuid,
       beteckning: party.data.beteckning,
-      filnamn: party.data.filnamn
+      filnamn: party.data.filnamn,
+      tidigare_filnamn: party.tidigare_filnamn
     }))
     .sort((a, b) => (a.filnamn < b.filnamn ? -1 : a.filnamn > b.filnamn ? 1 : 0));
 
@@ -347,7 +414,7 @@ function buildParties (registry, yearFiles) {
     }))
     .concat([{ file: dataPath('parti', 'index.json'), json: index }]);
 
-  return { writeSet, index, parties: built };
+  return { writeSet, index, parties: built, renamed };
 }
 
 /**
@@ -373,17 +440,39 @@ function _orderKeys (data) {
 }
 
 /**
+ * _assertUniqueUuid
+ * The uuid is the identity every other derivation hangs on, so a registry that
+ * carries one twice is rejected before a single slug is allocated.
+ * @param  {Object[]} parties From loadParties(), after any upserts
+ */
+function _assertUniqueUuid (parties) {
+  const seen = new Map();
+  for (const party of parties) {
+    if (seen.has(party.uuid)) {
+      throw new Error(`Duplicate uuid "${party.uuid}": ${seen.get(party.uuid)} and ${party.filnamn}`);
+    }
+    seen.set(party.uuid, party.filnamn);
+  }
+}
+
+/**
  * _assertUnique
- * Every party must own its filnamn, its uuid and each of its codes.
+ * Every party must own its filnamn and each of its codes. A slug the registry
+ * has served before is owned just as firmly as an active one, so a
+ * tidigare_filnamn may not be any other party's filnamn or tidigare_filnamn.
  */
 function _assertUnique (built) {
-  const seen = { filnamn: new Map(), uuid: new Map(), kod: new Map() };
+  const seen = { filnamn: new Map(), kod: new Map() };
   for (const party of built) {
-    for (const [key, value] of [['filnamn', party.filnamn], ['uuid', party.uuid]]) {
-      if (seen[key].has(value)) {
-        throw new Error(`Duplicate ${key} "${value}": ${seen[key].get(value)} and ${party.filnamn}`);
+    if (seen.filnamn.has(party.filnamn)) {
+      throw new Error(`Duplicate filnamn "${party.filnamn}": ${seen.filnamn.get(party.filnamn)} and ${party.filnamn}`);
+    }
+    seen.filnamn.set(party.filnamn, party.filnamn);
+    for (const filnamn of party.tidigare_filnamn || []) {
+      if (seen.filnamn.has(filnamn)) {
+        throw new Error(`Duplicate filnamn "${filnamn}": ${seen.filnamn.get(filnamn)} and ${party.filnamn}`);
       }
-      seen[key].set(value, party.filnamn);
+      seen.filnamn.set(filnamn, party.filnamn);
     }
     for (const kod of party.koder) {
       if (seen.kod.has(kod)) {
@@ -392,6 +481,85 @@ function _assertUnique (built) {
       seen.kod.set(kod, party.filnamn);
     }
   }
+}
+
+/**
+ * _kandidatlistFlyttar
+ * The kandidatlistor a party rename takes with it, one per election year that
+ * has a file for the old slug.
+ * @param  {String} from
+ * @param  {String} to
+ * @return {Object[]} Each { from, to }, absolute paths
+ */
+function _kandidatlistFlyttar (from, to) {
+  const valDir = dataPath('val');
+  if (!fs.existsSync(valDir)) {
+    return [];
+  }
+  return fs.readdirSync(valDir, { withFileTypes: true })
+    .filter(entry => entry.isDirectory())
+    .map(entry => ({
+      from: dataPath('val', entry.name, 'kandidatlistor', `${from}.json`),
+      to: dataPath('val', entry.name, 'kandidatlistor', `${to}.json`)
+    }))
+    .filter(flytt => fs.existsSync(flytt.from));
+}
+
+/**
+ * validateRenames
+ * Asserts that every directory move applyRenames() is about to make can be made,
+ * so a rename never leaves the data tree half moved.
+ * @param  {Object[]} renamed From buildParties(), each { uuid, from, to }
+ */
+function validateRenames (renamed) {
+  const seenFrom = new Set();
+  const seenTo = new Set();
+  for (const { from, to } of renamed) {
+    if (from === to) {
+      throw new Error(`Rename of "${from}" has the same source and target`);
+    }
+    if (seenFrom.has(from)) {
+      throw new Error(`Two renames move data/parti/${from}/`);
+    }
+    if (seenTo.has(to)) {
+      throw new Error(`Two renames target data/parti/${to}/`);
+    }
+    seenFrom.add(from);
+    seenTo.add(to);
+    if (!fs.existsSync(dataPath('parti', from))) {
+      throw new Error(`Cannot rename ${from} to ${to}: data/parti/${from}/ does not exist`);
+    }
+    if (fs.existsSync(dataPath('parti', to))) {
+      throw new Error(`Cannot rename ${from} to ${to}: data/parti/${to}/ already exists`);
+    }
+    for (const flytt of _kandidatlistFlyttar(from, to)) {
+      if (fs.existsSync(flytt.to)) {
+        throw new Error(`Cannot rename ${from} to ${to}: ${path.relative(ROOT, flytt.to)} already exists`);
+      }
+    }
+  }
+}
+
+/**
+ * applyRenames
+ * Moves the directory of every renamed party, and the kandidatlistor keyed by
+ * its slug, to the new slug. Runs after validate() and before writeFiles(), so
+ * the party file is written into the directory it now belongs in.
+ * @param  {Object[]} renamed From buildParties(), each { uuid, from, to }
+ * @return {String[]} Moves made, as "<gammal sökväg> → <ny sökväg>"
+ */
+function applyRenames (renamed) {
+  const moved = [];
+  for (const { from, to } of renamed) {
+    const flyttar = _kandidatlistFlyttar(from, to);
+    fs.renameSync(dataPath('parti', from), dataPath('parti', to));
+    moved.push(`data/parti/${from} → data/parti/${to}`);
+    for (const flytt of flyttar) {
+      fs.renameSync(flytt.from, flytt.to);
+      moved.push(`${path.relative(ROOT, flytt.from)} → ${path.relative(ROOT, flytt.to)}`);
+    }
+  }
+  return moved;
 }
 
 /**
@@ -440,6 +608,8 @@ function validate (build, yearFiles) {
   if (index.length !== build.parties.length) {
     throw new Error(`index.json has ${index.length} entries, expected ${build.parties.length}`);
   }
+
+  validateRenames(build.renamed || []);
 }
 
 /**
@@ -462,8 +632,11 @@ exports.PARTY_KEY_ORDER = PARTY_KEY_ORDER;
 exports.loadParties = loadParties;
 exports.loadYearFiles = loadYearFiles;
 exports.upsertParties = upsertParties;
+exports.allocateFilnamn = allocateFilnamn;
 exports.buildParties = buildParties;
 exports.validate = validate;
+exports.validateRenames = validateRenames;
+exports.applyRenames = applyRenames;
 exports.writeFiles = writeFiles;
 
 /**
@@ -475,6 +648,8 @@ if (require.main === module) {
   const yearFiles = loadYearFiles();
   const build = buildParties(registry, yearFiles);
   validate(build, yearFiles);
+  const moved = applyRenames(build.renamed);
+  moved.forEach(move => console.log(`Moved ${move}`));
   const written = writeFiles(build.writeSet);
   console.log(`Wrote ${written.length} files for ${build.parties.length} parties.`);
 }

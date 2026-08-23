@@ -27,11 +27,11 @@ Tillgängliggöra data om alla Sveriges politiska partier på ett öppet och tra
 
 ### parti/index.json
 
-Register över samtliga partier, `{ uuid, beteckning, filnamn }` sorterat på `filnamn`. Filen genereras från partifilerna och redigeras inte för hand.
+Register över samtliga partier, `{ uuid, beteckning, filnamn }` sorterat på `filnamn`. Partier som har bytt namn har dessutom `tidigare_filnamn`, som sajten bygger sina vidarebefordringar från. Filen genereras från partifilerna och redigeras inte för hand.
 
 ### parti/\<filnamn\>/index.json
 
-En fil per parti. `uuid` och `filnamn` sätts en gång och ändras aldrig: `uuid` är den identitet `val/`-filerna refererar till, och `filnamn` är partiets adress på sajten, som behålls även när partiet byter namn. `filnamn` skapas med `toFileName` i `scripts/utils.js`, med suffixet `-<kod>` när flera partier ger samma filnamn.
+En fil per parti. `uuid` sätts en gång och ändras aldrig — det är den identitet `val/`-filerna refererar till. `filnamn` är partiets adress på sajten och följer partiets `beteckning`: byter partiet namn får det ett nytt `filnamn`, katalogen flyttas dit, och den gamla adressen läggs till i `tidigare_filnamn` och serveras som en vidarebefordran till den nya. `filnamn` skapas med `toFileName` i `scripts/utils.js`, med suffixet `-<kod>` när flera partier ger samma filnamn. Ett `filnamn` som registret en gång har burit ges aldrig till ett annat parti.
 
 | Fält | Innehåll |
 |------|----------|
@@ -40,6 +40,8 @@ En fil per parti. `uuid` och `filnamn` sätts en gång och ändras aldrig: `uuid
 | `tidigare_koder` | Övriga koder partiet har burit |
 | `beteckning` | Partibeteckning i det senaste valet |
 | `tidigare_beteckningar` | Tidigare partibeteckningar, äldst först |
+| `filnamn` | Partiets adress på sajten |
+| `tidigare_filnamn` | Adresser partiet har haft, äldst först, som vidarebefordras till `filnamn` |
 | `forkortning` | Partiförkortning, när Valmyndigheten anger någon |
 | `registrerad_partibeteckning` | Om partiet har registrerad partibeteckning |
 | `valmyndigheten_registreringsdatum` | Datum då partibeteckningen registrerades |
@@ -91,7 +93,9 @@ Krav: Node 24 och `npm ci`. Skripten kan köras från vilken katalog som helst �
 
 Hämtar `https://data.val.se/filer/val<år>/parti/deltagande-partier.csv`, skriver `data/val/<år>/partideltagande/` och uppdaterar `data/parti/`. Med `--file` läses en nedladdad kopia i stället, vilket gör en körning reproducerbar. Körningen skriver ut filens SHA-256 och en sammanfattning av nya, sammanslagna och omdöpta partier.
 
-Partier identifieras på `PARTIKOD`, därefter på `parti/kodbyten.json` och sist på exakt namnmatchning mot ett parti som saknar egen kod i årets fil. Allt valideras i minnet först — vid fel skrivs ingenting och skriptet avslutas med felkod. Körningen är idempotent: samma indata ger samma filer, oavsett i vilken ordning åren importeras.
+Partier identifieras på `PARTIKOD`, därefter på `parti/kodbyten.json` och sist på exakt namnmatchning mot ett parti som saknar egen kod i årets fil. Ett parti som har bytt namn får ett nytt `filnamn`, och `data/parti/<filnamn>/` flyttas dit tillsammans med partiets kandidatlistor. Allt valideras i minnet först — vid fel flyttas och skrivs ingenting och skriptet avslutas med felkod.
+
+Körningen är idempotent: samma indata ger samma filer, oavsett i vilken ordning åren importeras. `tidigare_filnamn` är undantaget, eftersom fältet är historik över de adresser registret faktiskt har haft: ett parti som har hunnit heta tre olika saker får olika `tidigare_filnamn` beroende på i vilken ordning åren importerades.
 
 ### node scripts/parti.js
 

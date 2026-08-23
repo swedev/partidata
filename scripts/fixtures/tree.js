@@ -61,9 +61,10 @@ function fixture (name) {
  * @param  {Object} [options]
  * @param  {Object[]} [options.parties]
  * @param  {Object} [options.kodbyten]
+ * @param  {Object[]} [options.kandidatlistor] Each { year, filnamn }
  * @return {String} Path to the tree
  */
-function makeTree ({ parties = PARTIER, kodbyten = null } = {}) {
+function makeTree ({ parties = PARTIER, kodbyten = null, kandidatlistor = [] } = {}) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'partidata-'));
   fs.mkdirSync(path.join(dir, 'scripts'));
   for (const file of ['utils.js', 'parti.js', 'import-val.js']) {
@@ -80,6 +81,11 @@ function makeTree ({ parties = PARTIER, kodbyten = null } = {}) {
   }
   if (kodbyten) {
     fs.writeFileSync(path.join(dir, 'data', 'parti', 'kodbyten.json'), JSON.stringify(kodbyten, null, 2) + '\n');
+  }
+  for (const { year, filnamn } of kandidatlistor) {
+    const listor = path.join(dir, 'data', 'val', year, 'kandidatlistor');
+    fs.mkdirSync(listor, { recursive: true });
+    fs.writeFileSync(path.join(listor, `${filnamn}.json`), JSON.stringify({ filnamn, kandidater: [] }, null, 2) + '\n');
   }
   return dir;
 }
