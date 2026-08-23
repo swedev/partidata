@@ -36,7 +36,7 @@ function PartyPage ({ beteckning, forkortning, kod, valmyndigheten_registrerings
     <div>
       <main className="container">
         <Head>
-          <title>{beteckning} - Partidata 🇸🇪</title>
+          <title>{`${beteckning} - Partidata 🇸🇪`}</title>
           <meta name="description" content={`Öppen data om det politiska partiet “${beteckning}”`} />
           <link rel="icon" href="/favicon.ico" />
         </Head>

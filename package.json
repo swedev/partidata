@@ -17,6 +17,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/validate-export.js",
     "lint": "eslint .",
     "import-val": "node scripts/import-val.js",
     "typecheck": "tsc --noEmit",
