@@ -5,6 +5,13 @@
   "filnamn": "solnapartiet",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2017-10-20",
+  "partisymbol": {
+    "filnamn": "1286-solnapartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1286.png",
+    "valar": 2019,
+    "partikod": "1286"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

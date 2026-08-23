@@ -5,6 +5,13 @@
   "filnamn": "kommunens-val-0502",
   "forkortning": "KVS",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "0502-kommunens-val.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "0502"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

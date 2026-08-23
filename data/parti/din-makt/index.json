@@ -5,6 +5,13 @@
   "filnamn": "din-makt",
   "forkortning": "D",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1748-din-makt.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1748"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

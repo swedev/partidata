@@ -4,6 +4,13 @@
   "beteckning": "Vägval Falun",
   "filnamn": "vagval-falun",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1572-vagval-falun.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1572"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

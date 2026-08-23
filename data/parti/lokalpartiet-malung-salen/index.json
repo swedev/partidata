@@ -5,6 +5,13 @@
   "filnamn": "lokalpartiet-malung-salen",
   "forkortning": "LM",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1750-lokalpartiet-malung-salen.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1750"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

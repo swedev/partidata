@@ -4,6 +4,13 @@
   "beteckning": "FAMILJENS FRIHET",
   "filnamn": "familjens-frihet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1606-familjens-frihet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1606"
+  },
   "deltagande": {
     "2022": {
       "riksdag": true,

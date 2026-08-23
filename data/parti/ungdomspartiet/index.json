@@ -4,6 +4,13 @@
   "beteckning": "Ungdomspartiet",
   "filnamn": "ungdomspartiet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1909-ungdomspartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1909"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

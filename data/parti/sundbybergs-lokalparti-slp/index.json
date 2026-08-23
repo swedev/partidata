@@ -5,6 +5,13 @@
   "filnamn": "sundbybergs-lokalparti-slp",
   "forkortning": "SLP",
   "valmyndigheten_registreringsdatum": "2018-03-12",
+  "partisymbol": {
+    "filnamn": "1348-sundbybergs-lokalparti-slp.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1348.png",
+    "valar": 2019,
+    "partikod": "1348"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

@@ -4,6 +4,13 @@
   "beteckning": "HANINGEPARTIET",
   "filnamn": "haningepartiet",
   "valmyndigheten_registreringsdatum": "2017-10-11",
+  "partisymbol": {
+    "filnamn": "1272-haningepartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1272.png",
+    "valar": 2019,
+    "partikod": "1272"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

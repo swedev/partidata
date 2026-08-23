@@ -67,7 +67,7 @@ function fixture (name) {
 function makeTree ({ parties = PARTIER, kodbyten = null, kandidatlistor = [] } = {}) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'partidata-'));
   fs.mkdirSync(path.join(dir, 'scripts'));
-  for (const file of ['utils.js', 'parti.js', 'import-val.js']) {
+  for (const file of ['utils.js', 'parti.js', 'import-val.js', 'import-partisymboler.js']) {
     fs.copyFileSync(path.join(SCRIPTS, file), path.join(dir, 'scripts', file));
   }
   fs.mkdirSync(path.join(dir, 'data', 'parti'), { recursive: true });
@@ -111,6 +111,26 @@ function runImport (dir, year, csv) {
     [path.join(dir, 'scripts', 'import-val.js'), year, '--file', csv],
     { encoding: 'utf8' }
   );
+  return { status: result.status, stdout: result.stdout, stderr: result.stderr };
+}
+
+/**
+ * runSymbolImport
+ * @param  {String} dir Tree from makeTree()
+ * @param  {String} year
+ * @param  {String} zip Path to a symbol ZIP
+ * @param  {String|null} legacyDir Optional directory of code-named PNGs
+ * @return {{ status: Number, stdout: String, stderr: String }}
+ */
+function runSymbolImport (dir, year, zip, legacyDir = null) {
+  const args = [path.join(dir, 'scripts', 'import-partisymboler.js'), year, '--file', zip];
+  if (legacyDir) {
+    args.push('--legacy-dir', legacyDir);
+  }
+  const result = spawnSync(process.execPath, args, {
+    encoding: 'utf8',
+    env: { ...process.env, NODE_PATH: path.join(ROOT, 'node_modules') }
+  });
   return { status: result.status, stdout: result.stdout, stderr: result.stderr };
 }
 
@@ -165,6 +185,7 @@ exports.fixture = fixture;
 exports.makeTree = makeTree;
 exports.removeTree = removeTree;
 exports.runImport = runImport;
+exports.runSymbolImport = runSymbolImport;
 exports.runParti = runParti;
 exports.readJson = readJson;
 exports.snapshot = snapshot;

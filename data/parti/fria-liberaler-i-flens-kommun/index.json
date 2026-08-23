@@ -4,6 +4,13 @@
   "beteckning": "Fria liberaler i Flens kommun",
   "filnamn": "fria-liberaler-i-flens-kommun",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1821-fria-liberaler-i-flens-kommun.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1821"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

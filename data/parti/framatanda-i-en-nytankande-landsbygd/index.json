@@ -4,6 +4,13 @@
   "beteckning": "Framåtanda i en nytänkande landsbygd",
   "filnamn": "framatanda-i-en-nytankande-landsbygd",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1915-framatanda-i-en-nytankande-landsbygd.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1915"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

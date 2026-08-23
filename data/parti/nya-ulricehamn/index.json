@@ -5,6 +5,13 @@
   "filnamn": "nya-ulricehamn",
   "forkortning": "NU",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1157-nya-ulricehamn.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1157"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

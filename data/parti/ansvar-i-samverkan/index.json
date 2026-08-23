@@ -4,6 +4,13 @@
   "beteckning": "Ansvar i samverkan",
   "filnamn": "ansvar-i-samverkan",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1763-ansvar-i-samverkan.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1763"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

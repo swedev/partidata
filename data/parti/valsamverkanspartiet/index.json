@@ -7,6 +7,13 @@
   "beteckning": "Valsamverkanspartiet",
   "filnamn": "valsamverkanspartiet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1526-valsamverkanspartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1526"
+  },
   "deltagande": {
     "2018": {
       "riksdag": true,

@@ -4,6 +4,13 @@
   "beteckning": "Vision Framåtanda",
   "filnamn": "vision-framatanda",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1676-vision-framatanda.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1676"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

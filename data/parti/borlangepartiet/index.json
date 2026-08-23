@@ -4,6 +4,13 @@
   "beteckning": "Borlängepartiet",
   "filnamn": "borlangepartiet",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1793-borlangepartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1793"
+  },
   "deltagande": {
     "2026": {
       "riksdag": false,

@@ -20,6 +20,7 @@ const PARTY_KEY_ORDER = [
   'forkortning',
   'registrerad_partibeteckning',
   'valmyndigheten_registreringsdatum',
+  'partisymbol',
   'deltagande'
 ];
 
@@ -65,7 +66,8 @@ function loadParties () {
       tidigare_filnamn: data.tidigare_filnamn || [],
       forkortning: data.forkortning,
       registrerad_partibeteckning: data.registrerad_partibeteckning,
-      valmyndigheten_registreringsdatum: data.valmyndigheten_registreringsdatum
+      valmyndigheten_registreringsdatum: data.valmyndigheten_registreringsdatum,
+      partisymbol: data.partisymbol
     };
   });
   return {
@@ -391,6 +393,7 @@ function buildParties (registry, yearFiles) {
         forkortning,
         registrerad_partibeteckning: registrerad,
         valmyndigheten_registreringsdatum: party.valmyndigheten_registreringsdatum,
+        partisymbol: party.partisymbol,
         deltagande
       })
     };
@@ -403,7 +406,8 @@ function buildParties (registry, yearFiles) {
       uuid: party.data.uuid,
       beteckning: party.data.beteckning,
       filnamn: party.data.filnamn,
-      tidigare_filnamn: party.tidigare_filnamn
+      tidigare_filnamn: party.tidigare_filnamn,
+      partisymbol: party.data.partisymbol
     }))
     .sort((a, b) => (a.filnamn < b.filnamn ? -1 : a.filnamn > b.filnamn ? 1 : 0));
 

@@ -6,6 +6,13 @@
   "forkortning": "MP",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2017-11-02",
+  "partisymbol": {
+    "filnamn": "0055-miljopartiet-de-grona.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "0055"
+  },
   "deltagande": {
     "2018": {
       "riksdag": true,

@@ -5,6 +5,13 @@
   "filnamn": "alvestademokraterna",
   "forkortning": "ADEM",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1445-alvestademokraterna.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1445"
+  },
   "deltagande": {
     "2022": {
       "riksdag": false,

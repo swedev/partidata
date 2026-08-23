@@ -6,6 +6,13 @@
   "forkortning": "LPo",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2017-12-08",
+  "partisymbol": {
+    "filnamn": "1011-landsbygdspartiet-oberoende.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1011"
+  },
   "deltagande": {
     "2018": {
       "riksdag": true,

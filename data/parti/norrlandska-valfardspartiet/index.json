@@ -3,5 +3,12 @@
   "kod": "1313",
   "beteckning": "Norrländska Välfärdspartiet",
   "filnamn": "norrlandska-valfardspartiet",
-  "valmyndigheten_registreringsdatum": "2017-11-30"
+  "valmyndigheten_registreringsdatum": "2017-11-30",
+  "partisymbol": {
+    "filnamn": "1313-norrlandska-valfardspartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://historik.val.se/val/ep2019/regpartier/1313.png",
+    "valar": 2019,
+    "partikod": "1313"
+  }
 }

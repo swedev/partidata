@@ -4,6 +4,13 @@
   "beteckning": "Folkrådet",
   "filnamn": "folkradet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1830-folkradet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1830"
+  },
   "deltagande": {
     "2026": {
       "riksdag": true,

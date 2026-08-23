@@ -4,6 +4,13 @@
   "beteckning": "Vinningspartiet",
   "filnamn": "vinningspartiet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1468-vinningspartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1468"
+  },
   "deltagande": {
     "2022": {
       "riksdag": true,

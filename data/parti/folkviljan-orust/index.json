@@ -6,6 +6,13 @@
   "forkortning": "FPO",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2018-01-03",
+  "partisymbol": {
+    "filnamn": "0204-folkviljan-orust.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "0204"
+  },
   "deltagande": {
     "2018": {
       "riksdag": false,

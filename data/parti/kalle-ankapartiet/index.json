@@ -10,6 +10,13 @@
   ],
   "filnamn": "kalle-ankapartiet",
   "registrerad_partibeteckning": false,
+  "partisymbol": {
+    "filnamn": "1825-kalle-ankapartiet.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1825"
+  },
   "deltagande": {
     "2022": {
       "riksdag": true,

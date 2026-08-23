@@ -5,6 +5,13 @@
   "filnamn": "partiet-nyans",
   "forkortning": "PNy",
   "registrerad_partibeteckning": true,
+  "partisymbol": {
+    "filnamn": "1439-partiet-nyans.png",
+    "kalla": "Valmyndigheten",
+    "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
+    "valar": 2026,
+    "partikod": "1439"
+  },
   "deltagande": {
     "2022": {
       "riksdag": true,
