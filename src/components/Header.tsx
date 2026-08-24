@@ -12,7 +12,7 @@ function Header () {
           width={512}
           height={256}
           aria-hidden="true"
-          priority
+          loading="eager"
         />
 
         <Link href="/" className="site-header__brand" aria-label="Partidata – alla partier">
@@ -21,7 +21,7 @@ function Header () {
             alt="Partidata"
             width={4661}
             height={1090}
-            priority
+            loading="eager"
           />
         </Link>
 
