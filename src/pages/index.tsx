@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import parties from 'data/parti/index.json';
 import Footer from 'src/components/Footer';
@@ -25,25 +27,31 @@ const charGroups = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
  */
 const HomePage: NextPage = () => {
   return (
-    <div>
+    <div className="page-shell">
       <Head>
-        <title>Partidata 🇸🇪</title>
+        <title>Partidata</title>
         <meta name="description" content="Öppen data om politiska partier i Sverige" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
       </Head>
 
       <main className="container main-index">
 
         <div className="text-left my-24">
-          <h1>
-            Partidata 🇸🇪
+          <h1 className="home-brand">
+            <Image
+              src="/img/partidata/logotyp.svg"
+              alt="Partidata"
+              width={560}
+              height={131}
+              loading="eager"
+            />
           </h1>
           <p className="description">
             Öppen data om politiska partier i Sverige<br/>
             Registrerade partibeteckningar från Valmyndigheten, med uppgifter om varje parti
           </p>
 
-          <div className="w-3/5 mt-8">
+          <div className="w-full md:w-3/5 mt-8">
             <input
               type="text"
               placeholder="Sök parti, kandidater, regioner, m.m."
@@ -59,7 +67,7 @@ const HomePage: NextPage = () => {
               <ul>
               {(groupedParties.get(char) ?? []).map(party => (
                 <li key={party.filnamn}>
-                  <a href={`/parti/${party.filnamn}`}>{party.beteckning}</a>
+                  <Link href={`/parti/${party.filnamn}`}>{party.beteckning}</Link>
                 </li>
               ))}
               </ul>

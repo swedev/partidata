@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Footer from 'src/components/Footer';
+import Header from 'src/components/Header';
 import { isRedirect } from 'src/types';
 import type { Parti, PartiIndexEntry, PartiRedirect } from 'src/types';
 
@@ -33,12 +34,13 @@ function PartyPage ({ beteckning, forkortning, kod, valmyndigheten_registrerings
   ].filter(row => row.value);
 
   return (
-    <div>
+    <div className="page-shell">
+      <Header />
       <main className="container">
         <Head>
-          <title>{`${beteckning} - Partidata 🇸🇪`}</title>
+          <title>{`${beteckning} – Partidata`}</title>
           <meta name="description" content={`Öppen data om det politiska partiet “${beteckning}”`} />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
         </Head>
 
         <p className="mt-6">
@@ -93,14 +95,15 @@ function RedirectPage ({ filnamn, beteckning }: PartiRedirect['redirect']) {
   const href = `/parti/${filnamn}/`;
 
   return (
-    <div>
+    <div className="page-shell">
+      <Header />
       <main className="container">
         <Head>
-          <title>{`${beteckning} - Partidata 🇸🇪`}</title>
+          <title>{`${beteckning} – Partidata`}</title>
           <meta httpEquiv="refresh" content={`0; url=${href}`} />
           <meta name="robots" content="noindex" />
           <link rel="canonical" href={href} />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
         </Head>
 
         <p className="mt-6">

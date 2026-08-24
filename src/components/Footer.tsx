@@ -1,72 +1,55 @@
-import SweDevLogo from 'src/components/SweDevLogo';
+import Image from 'next/image';
 
 function Footer () {
   return (
-    <footer className="bg-swe-gradient text-yellow-200 text-sm">
-      <div className="container flex flex-col md:flex-row py-6">
-        <div className="flex-1 p-3">
-          <SweDevLogo
-            className="fill-current w-40 md:w-4/5"
+    <footer id="om-tjansten" className="site-footer">
+      <div className="site-shell site-footer__grid">
+        <div className="site-footer__intro">
+          <Image
+            src="/img/partidata/logotyp.svg"
+            alt="Partidata"
+            width={225}
+            height={53}
           />
-        </div>
-        <div className="flex-1 p-3 break-words">
-          <h4>Om Partidata</h4>
-          <p className="mt-2">
-            Öppen data om svenska partiers registrerade partibeteckningar
-            och anmälda deltagande i val.
+          <p>
+            Öppen data om politiska partier i Sverige, samlad för att kunna
+            granskas, återanvändas och förbättras av fler.
           </p>
-          <p className="mt-2">
-            <a href="https://github.com/swedev/partidata" className="text-yellow-200 underline">
-              Källkod och data på GitHub
-            </a>
+          <p className="site-footer__credit">
+            Ett öppet projekt av <a href="https://swedev.org/">SweDev</a>.
           </p>
         </div>
-        <div className="flex-1 p-3 break-words">
-          <h4>Datakällor</h4>
-          <ul className="mt-2">
+
+        <div>
+          <h2>Datakällor</h2>
+          <ul>
             <li>
-              <a
-                href="https://data.val.se/"
-                className="text-yellow-200 underline"
-              >
-                Valmyndigheten
-              </a>
-              {' '}— partibeteckningar och partiers anmälda deltagande i val
+              <a href="https://data.val.se/">Valmyndigheten</a>
+              <span>Partibeteckningar och anmält deltagande i val</span>
             </li>
-            <li className="mt-2">
-              <a
-                href="https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/lan-och-kommuner/lan-och-kommuner-i-kodnummerordning/"
-                className="text-yellow-200 underline"
-              >
+            <li>
+              <a href="https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/lan-och-kommuner/lan-och-kommuner-i-kodnummerordning/">
                 SCB
               </a>
-              {' '}— läns- och kommunkoder
+              <span>Läns- och kommunkoder</span>
             </li>
           </ul>
-          <p className="mt-2">
-            Fri att använda{' '}
-            <a
-              href="https://creativecommons.org/publicdomain/zero/1.0/"
-              className="text-yellow-200 underline"
-            >
-              (CC0 1.0)
-            </a>
-          </p>
         </div>
-        <div className="flex-1 p-3 break-words">
-          <h4>Kontakt</h4>
-          <ul className="mt-2">
-            <li>
-              <a href="mailto:hello@swedev.org" className="text-yellow-200 underline">
-                hello@swedev.org
-              </a>
-            </li>
-            <li className="mt-2">
-              <a href="https://github.com/swedev/partidata/issues" className="text-yellow-200 underline">
-                Rapportera fel eller bidra
-              </a>
-            </li>
+
+        <div>
+          <h2>Öppen data</h2>
+          <ul>
+            <li><a href="https://github.com/swedev/partidata">Källkod och data på GitHub</a></li>
+            <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">Fri att använda under CC0 1.0</a></li>
+            <li><a href="https://github.com/swedev/partidata/issues">Rapportera fel eller bidra</a></li>
           </ul>
+        </div>
+
+        <div>
+          <h2>Kontakt</h2>
+          <p>
+            <a href="mailto:hello@swedev.org">hello@swedev.org</a>
+          </p>
         </div>
       </div>
     </footer>

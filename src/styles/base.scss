@@ -8,10 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @import "./lato";
-}
-
 $red:   #dc3545;
 $green: #4BB676;
 $blue:  #3b5dbf;
