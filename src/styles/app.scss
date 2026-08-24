@@ -269,20 +269,6 @@ input {
   margin-top: 0;
 }
 
-.site-footer__meta {
-  border-top: 1px solid var(--partidata-line);
-}
-
-.site-footer__meta-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.625rem 1.25rem;
-  flex-wrap: wrap;
-  padding-block: 0.875rem;
-  color: #45453f;
-  font-size: 0.875rem;
-}
-
 @media (max-width: 700px) {
   .site-header__nav {
     gap: 0.5rem 1.25rem;

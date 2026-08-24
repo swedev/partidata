@@ -37,5 +37,5 @@ designsidorna.
 - Tog bort den egenritade kompakta toppbaren med vit bakgrund och linje.
 - Återställde designens stora logotypkomposition med riksdagsgrafiken uppe
   till höger och navigation under logotypen.
-- Ändrade sidfoten till designens kompakta grå yta, 1320 px sidbredd,
-  fyrkolumnsrutnät och smal metadata-rad utan gul toppkant.
+- Ändrade sidfoten till designens kompakta grå yta, 1320 px sidbredd och
+  fyrkolumnsrutnät utan gul toppkant eller separat bottenrad.

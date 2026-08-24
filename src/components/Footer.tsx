@@ -48,12 +48,6 @@ function Footer () {
         </div>
       </div>
 
-      <div className="site-footer__meta">
-        <div className="site-shell site-footer__meta-inner">
-          <span>Ett öppet projekt av <a href="https://swedev.org/">SweDev</a></span>
-          <span>Data och källkod uppdateras via GitHub</span>
-        </div>
-      </div>
     </footer>
   );
 }
