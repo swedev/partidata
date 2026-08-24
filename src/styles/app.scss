@@ -168,15 +168,28 @@ input:focus-visible {
 }
 
 .home-intro {
-  max-width: 52rem;
+  margin-top: 3rem;
   margin-bottom: clamp(4rem, 8vw, 7rem);
 }
 
+.home-intro h1 {
+  max-width: 30ch;
+  margin-bottom: 1rem;
+  font-size: clamp(1.875rem, 3.8vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
 .description {
-  margin-top: 2rem;
-  max-width: 45rem;
-  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
-  line-height: 1.5;
+  max-width: 62ch;
+  margin-top: 1.125rem;
+  color: #4a4a44;
+  font-size: clamp(1rem, 1.8vw, 1.1875rem);
+  font-weight: 350;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 input {
