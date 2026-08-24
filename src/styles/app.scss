@@ -1,96 +1,294 @@
-
-@layer base {
-  h1 {
-    @apply text-6xl;
-    @apply font-black;
-  }
-  h2 {
-    @apply text-3xl;
-    @apply font-bold;
-  }
-  h3 {
-    @apply text-2xl;
-    @apply font-bold;
-  }
-  h4 {
-    @apply text-xl;
-    @apply font-bold;
-  }
+:root {
+  --partidata-navy: #082354;
+  --partidata-yellow: #ffbe1b;
+  --partidata-paper: #f5f3ec;
+  --partidata-card: #fffdf8;
+  --partidata-line: #e2dfd4;
+  --partidata-footer: #efece3;
+  --partidata-text: #1a1a19;
 }
 
-html,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin: 0;
+  background: var(--partidata-paper);
+  color: var(--partidata-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.app-root,
+.page-shell {
+  min-height: 100vh;
+}
+
+.app-root {
+  font-family: var(--font-partidata-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   position: relative;
-  padding: 5rem 0;
   width: 100%;
-  min-height: calc(100vh - 250px);
+  min-height: 34rem;
+  padding-top: 0;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-footer {
-  min-height: 250px;
-  border-top: 1rem solid #ddd;
+.container,
+.site-shell {
+  width: 100%;
+  max-width: 82.5rem;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--partidata-text);
+  font-weight: 600;
+  line-height: 1.08;
 }
 
 h1 {
-  margin: 0;
-  line-height: 1.15;
+  margin-bottom: 0;
+  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  letter-spacing: -0.035em;
 }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: underline;
-  }
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.025em;
 }
 
-.bg-swe-gradient {
-  background: linear-gradient(to top, #226644, #224422);
-}
-
-.main-index {
-  padding-top: 7vw;
-  background: url('/img/sveriges_riksdag.svg') top left no-repeat;
-  background-size: 50%;
-  background-position-x: right;
-  background-position-y: -5vw;
-}
-
-.container {
-  margin: auto;
-}
-
-.description {
-  line-height: 1.5;
+h3 {
   font-size: 1.5rem;
 }
 
+h4 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: var(--partidata-navy);
+  text-decoration-color: var(--partidata-yellow);
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.22em;
+}
+
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--partidata-yellow);
+  outline-offset: 4px;
+}
+
+.site-header {
+  background: transparent;
+}
+
+.site-header__inner {
+  position: relative;
+  padding-top: clamp(1.75rem, 5vw, 3.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.site-header__brand {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-bottom: clamp(1.125rem, 2.6vw, 1.625rem);
+  text-decoration: none;
+}
+
+.site-header__brand img {
+  display: block;
+  width: auto;
+  height: clamp(3.125rem, 8.18vw, 6rem);
+}
+
+.site-header__parliament {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(34vw, 40rem);
+  height: auto;
+  margin-top: -1.75rem;
+  pointer-events: none;
+}
+
+.site-header__nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 0.5rem 1.625rem;
+  flex-wrap: wrap;
+  font-size: 0.9375rem;
+}
+
+.site-header__nav a {
+  text-decoration: none;
+}
+
+.site-header__nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--partidata-yellow);
+  text-decoration-thickness: 0.2em;
+  text-underline-offset: 0.3em;
+}
+
+.site-header__active-link {
+  color: var(--partidata-text);
+  border-bottom: 2px solid var(--partidata-navy);
+  padding-bottom: 0.125rem;
+}
+
+.home-intro {
+  margin-top: 3rem;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.home-intro h1 {
+  max-width: 30ch;
+  margin-bottom: 1rem;
+  font-size: clamp(1.875rem, 3.8vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.description {
+  max-width: 62ch;
+  margin-top: 1.125rem;
+  color: #4a4a44;
+  font-size: clamp(1rem, 1.8vw, 1.1875rem);
+  font-weight: 350;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+input {
+  border-color: var(--partidata-line) !important;
+  background: var(--partidata-card);
+  color: var(--partidata-text);
+  font-family: inherit;
+}
+
 .party-index {
+  display: block;
+  width: 100%;
+  columns: 4 16rem;
+  column-gap: 2rem;
+}
+
+.party-index > li {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  break-inside: avoid;
+}
+
+.party-index > li > ul > li {
+  margin-top: 0.75rem;
+  line-height: 1.2;
+}
+
+.party-index a {
+  font-weight: 600;
+}
+
+.table {
+  --bs-table-bg: var(--partidata-card);
+  --bs-table-striped-bg: color-mix(in srgb, var(--partidata-paper) 72%, white);
+  --bs-table-color: var(--partidata-text);
+  overflow: hidden;
+  border: 1px solid var(--partidata-line);
+  border-radius: 0.5rem;
+}
+
+.table th {
+  color: var(--partidata-navy);
+}
+
+.site-footer {
+  border-top: 1px solid var(--partidata-line);
+  background: var(--partidata-footer);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11.875rem, 1fr));
+  gap: 1.5rem;
+  padding-block: 2rem;
+}
+
+.site-footer__intro img {
+  width: auto;
+  height: 2.3125rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer__intro p {
+  max-width: 34ch;
+  color: #2a2a26;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.site-footer h3 {
+  margin-bottom: 0.875rem;
+  color: #45453f;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.site-footer ul {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-  max-height: 3700px;
+  gap: 0.6875rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  list-style: none;
+}
 
-  > li {
-    padding: 1rem;
-    flex: 0 1 0%;
-    width: 25%;
+.site-footer li + li {
+  margin-top: 0;
+}
 
-    > ul > li {
-      margin-top: 0.75rem;
-      line-height: 1.2em;
-    }
+@media (max-width: 700px) {
+  .site-header__nav {
+    gap: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .party-index {
+    columns: 1;
   }
 }
