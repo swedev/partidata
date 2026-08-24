@@ -12,44 +12,46 @@ function Footer () {
             height={53}
           />
           <p>
-            Öppen data om politiska partier i Sverige, samlad för att kunna
-            granskas, återanvändas och förbättras av fler.
-          </p>
-          <p className="site-footer__credit">
-            Ett öppet projekt av <a href="https://swedev.org/">SweDev</a>.
+            Oberoende, partipolitiskt neutral datatjänst. Inte kopplad till
+            någon myndighet eller något parti.
           </p>
         </div>
 
         <div>
-          <h2>Datakällor</h2>
+          <h3>Datakällor</h3>
           <ul>
             <li>
-              <a href="https://data.val.se/">Valmyndigheten</a>
-              <span>Partibeteckningar och anmält deltagande i val</span>
+              <a href="https://data.val.se/">Valmyndigheten — partibeteckningar och valdata</a>
             </li>
             <li>
               <a href="https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/lan-och-kommuner/lan-och-kommuner-i-kodnummerordning/">
-                SCB
+                SCB — region- och kommunkoder
               </a>
-              <span>Läns- och kommunkoder</span>
             </li>
           </ul>
         </div>
 
         <div>
-          <h2>Öppen data</h2>
+          <h3>Öppenhet</h3>
           <ul>
             <li><a href="https://github.com/swedev/partidata">Källkod och data på GitHub</a></li>
-            <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">Fri att använda under CC0 1.0</a></li>
-            <li><a href="https://github.com/swedev/partidata/issues">Rapportera fel eller bidra</a></li>
+            <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">Licens: CC0 1.0</a></li>
           </ul>
         </div>
 
         <div>
-          <h2>Kontakt</h2>
-          <p>
-            <a href="mailto:hello@swedev.org">hello@swedev.org</a>
-          </p>
+          <h3>Kontakt</h3>
+          <ul>
+            <li><a href="mailto:hello@swedev.org">hello@swedev.org</a></li>
+            <li><a href="https://github.com/swedev/partidata/issues">Rapportera felaktig uppgift</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="site-footer__meta">
+        <div className="site-shell site-footer__meta-inner">
+          <span>Ett öppet projekt av <a href="https://swedev.org/">SweDev</a></span>
+          <span>Data och källkod uppdateras via GitHub</span>
         </div>
       </div>
     </footer>

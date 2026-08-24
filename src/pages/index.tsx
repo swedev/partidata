@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import parties from 'data/parti/index.json';
 import Footer from 'src/components/Footer';
+import Header from 'src/components/Header';
 import type { PartiIndexEntry } from 'src/types';
 
 const groupedParties = new Map<string, PartiIndexEntry[]>();
@@ -34,21 +34,15 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
       </Head>
 
+      <Header />
       <main className="container main-index">
 
-        <div className="text-left my-24">
-          <h1 className="home-brand">
-            <Image
-              src="/img/partidata/logotyp.svg"
-              alt="Partidata"
-              width={560}
-              height={131}
-              loading="eager"
-            />
-          </h1>
+        <div className="home-intro">
+          <h1>Alla registrerade partier i Sverige, på ett ställe.</h1>
           <p className="description">
-            Öppen data om politiska partier i Sverige<br/>
-            Registrerade partibeteckningar från Valmyndigheten, med uppgifter om varje parti
+            Partidata samlar uppgifter från Valmyndigheten om partibeteckningar,
+            tidigare namn och anmält deltagande i riksdags-, region- och kommunval.
+            Ingen värdering, ingen rangordning — bara källhänvisad data.
           </p>
 
           <div className="w-full md:w-3/5 mt-8">

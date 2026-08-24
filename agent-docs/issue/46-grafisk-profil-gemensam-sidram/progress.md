@@ -2,7 +2,7 @@
 
 **Started:** 2026-08-24
 **Last updated:** 2026-08-24
-**Status:** Pull request opened
+**Status:** Pull request updated after review
 
 ## Completed Steps
 
@@ -20,7 +20,8 @@
 
 ## Current Work
 
-Pull request #51 är öppnad för granskning.
+Pull request #51 innehåller den korrigerade sidramen från de godkända
+designsidorna.
 
 ## Verification Notes
 
@@ -30,3 +31,11 @@ Pull request #51 är öppnad för granskning.
 - Startsidan och partisidan har ingen horisontell scroll på desktop eller
   390 px mobil.
 - Chrome visade inga konsolfel på den slutliga partisidan eller mobilvyn.
+
+## Review Corrections
+
+- Tog bort den egenritade kompakta toppbaren med vit bakgrund och linje.
+- Återställde designens stora logotypkomposition med riksdagsgrafiken uppe
+  till höger och navigation under logotypen.
+- Ändrade sidfoten till designens kompakta grå yta, 1320 px sidbredd,
+  fyrkolumnsrutnät och smal metadata-rad utan gul toppkant.

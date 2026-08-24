@@ -5,18 +5,28 @@ function Header () {
   return (
     <header className="site-header">
       <div className="site-shell site-header__inner">
+        <Image
+          className="site-header__parliament"
+          src="/img/sveriges_riksdag.svg"
+          alt=""
+          width={512}
+          height={256}
+          aria-hidden="true"
+          priority
+        />
+
         <Link href="/" className="site-header__brand" aria-label="Partidata – alla partier">
           <Image
             src="/img/partidata/logotyp.svg"
             alt="Partidata"
-            width={205}
-            height={48}
+            width={4661}
+            height={1090}
             priority
           />
         </Link>
 
         <nav className="site-header__nav" aria-label="Huvudnavigation">
-          <Link href="/">Alla partier</Link>
+          <Link href="/" className="site-header__active-link">Partier</Link>
           <a href="https://github.com/swedev/partidata">Data på GitHub</a>
           <a href="#om-tjansten">Om tjänsten</a>
         </nav>

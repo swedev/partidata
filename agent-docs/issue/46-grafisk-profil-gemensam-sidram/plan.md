@@ -53,9 +53,9 @@ senare bygger vidare på samma grund.
    navigation.
 7. Bygg om `Footer` till profilens ljusa, källorienterade struktur och behåll
    SweDev som diskret projektavsändare.
-8. Koppla headern till partisidan och redirect-sidan. Startsidan behåller sin
-   nuvarande informationsstruktur tills #49 men får rätt logotyp, typografi,
-   bakgrund och footer.
+8. Koppla samma visuella headerkomposition till startsidan, partisidan och
+   redirect-sidan. Sidornas innehåll kan utvecklas vidare i #49 och #50, men
+   logotyp, riksdagsgrafik, navigation, bredd och rytm ska vara gemensamma.
 9. Ta bort svensk flagga ur sidtitlar och synlig huvudrubrik.
 
 ### Phase 3: Verifiering
@@ -73,11 +73,11 @@ senare bygger vidare på samma grund.
 Typsnitten hämtas vid bygge och självhostas av Next. Besökaren blir inte
 beroende av Google Fonts och den statiska exporten behåller samma typografi.
 
-### Headern används inte dubbelt på startsidan
+### Samma headerkomposition på alla sidtyper
 
-Designens startsida har en egen stor logotypkomposition som implementeras i
-#49. #46 gör headerkomponenten klar och använder den på undersidorna; den
-befintliga startsidan får den nya logotypen utan en extra kompakt header.
+Den godkända designens stora logotyp, riksdagsgrafik och navigation är själva
+sidramen, inte en fristående kompakt toppbar. Komponenten används därför på
+både startsida och undersidor med samma mått och bakgrund.
 
 ### Bara fungerande navigation
 
