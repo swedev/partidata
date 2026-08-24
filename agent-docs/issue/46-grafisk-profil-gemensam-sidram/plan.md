@@ -95,4 +95,4 @@ startsidan, footerankaret och externa källor används direkt.
 - [x] Ingen svensk flagga återstår i titlar eller huvudrubrik
 - [x] Inga döda navigationslänkar introduceras
 - [x] Lint, typecheck, validate:data, test och build är gröna
-- [ ] PR-body avslutas med `Closes #46`
+- [x] PR-body avslutas med `Closes #46`

@@ -2,7 +2,7 @@
 
 **Started:** 2026-08-24
 **Last updated:** 2026-08-24
-**Status:** Ready for pull request
+**Status:** Pull request opened
 
 ## Completed Steps
 
@@ -20,7 +20,7 @@
 
 ## Current Work
 
-Förbereder commit och pull request.
+Pull request #51 är öppnad för granskning.
 
 ## Verification Notes
 
