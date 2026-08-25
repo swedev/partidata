@@ -1,7 +1,7 @@
 name: Build and deploy
 
-# Pushing a v* tag builds the static export and rsyncs it to the web root on
-# the saga server. workflow_dispatch from a tag re-deploys that tag (rollback).
+# Pushing a v* tag builds the static export and rsyncs it to the production
+# web root. workflow_dispatch from a tag re-deploys that tag (rollback).
 # Nothing is built on the server.
 on:
   push:
@@ -48,7 +48,7 @@ jobs:
         env:
           HOST: ${{ secrets.DEPLOY_HOST }}
           USER: ${{ secrets.DEPLOY_USER }}
-          TARGET: /var/www/partidata.se
+          TARGET: ${{ secrets.DEPLOY_TARGET }}
         run: |
           rsync -az --delete \
             -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" \
@@ -58,6 +58,7 @@ jobs:
         env:
           HOST: ${{ secrets.DEPLOY_HOST }}
           USER: ${{ secrets.DEPLOY_USER }}
+          TARGET: ${{ secrets.DEPLOY_TARGET }}
         run: |
           ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes "$USER@$HOST" \
-            'grep -q Partidata /var/www/partidata.se/index.html'
+            "grep -q Partidata '$TARGET/index.html'"
