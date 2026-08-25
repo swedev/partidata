@@ -1,0 +1,108 @@
+{
+  "namn": "Liberalerna",
+  "webbplats": "https://www.liberalerna.se/",
+  "symbolvisning": "mark",
+  "namn_kalla": {
+    "namn": "Liberalerna",
+    "url": "https://www.liberalerna.se/vart-parti",
+    "hamtad": "2026-08-24"
+  },
+  "profiltext": {
+    "text": "Frihet måste försvaras.",
+    "kalla": {
+      "namn": "Liberalerna – Vårt parti",
+      "url": "https://www.liberalerna.se/vart-parti",
+      "hamtad": "2026-08-24"
+    }
+  },
+  "valresultat": {
+    "valtyp": "riksdag",
+    "kallor": [
+      {
+        "namn": "Valmyndigheten – tidigare valresultat 2002–2018",
+        "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/tidigare-valresultat",
+        "hamtad": "2026-08-24"
+      },
+      {
+        "namn": "Valmyndigheten – valresultat 2022",
+        "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/valresultat-2022",
+        "hamtad": "2026-08-24"
+      }
+    ],
+    "resultat": [
+      { "valar": 2002, "rostandel": 13.39, "mandat": 48 },
+      { "valar": 2006, "rostandel": 7.54, "mandat": 28 },
+      { "valar": 2010, "rostandel": 7.06, "mandat": 24 },
+      { "valar": 2014, "rostandel": 5.42, "mandat": 19 },
+      { "valar": 2018, "rostandel": 5.49, "mandat": 20 },
+      { "valar": 2022, "rostandel": 4.61, "mandat": 16 }
+    ]
+  },
+  "dokument": [
+    {
+      "typ": "valmanifest",
+      "titel": "Liberalernas valmanifest 2026",
+      "url": "https://www.liberalerna.se/wp-content/uploads/liberalernas-valmanifest-2026-40s-komprimerad.pdf",
+      "valar": 2026,
+      "sidor": 40,
+      "kalla": {
+        "namn": "Liberalerna",
+        "url": "https://www.liberalerna.se/var-politik-valet-2026",
+        "hamtad": "2026-08-24"
+      },
+      "delar": [
+        {
+          "nummer": 1,
+          "titel": "En trygg start i livet",
+          "url": "https://www.liberalerna.se/valmanifest-2026/1-en-trygg-start-i-livet"
+        },
+        {
+          "nummer": 2,
+          "titel": "Kunskap som öppnar dörrar",
+          "url": "https://www.liberalerna.se/valmanifest-2026/2-kunskap-som-oppnar-dorrar"
+        },
+        {
+          "nummer": 3,
+          "titel": "Ett samhälle där ansträngning lönar sig",
+          "url": "https://www.liberalerna.se/valmanifest-2026/3-ett-samhalle-dar-anstrangning-lonar-sig"
+        },
+        {
+          "nummer": 4,
+          "titel": "Mer frihet i vardagen",
+          "url": "https://www.liberalerna.se/valmanifest-2026/4-mer-frihet-i-vardagen"
+        },
+        {
+          "nummer": 5,
+          "titel": "Skydd för friheten",
+          "url": "https://www.liberalerna.se/valmanifest-2026/5-skydd-for-friheten"
+        },
+        {
+          "nummer": 6,
+          "titel": "När du behöver samhället som mest",
+          "url": "https://www.liberalerna.se/valmanifest-2026/6-nar-du-behover-samhallet-som-mest"
+        },
+        {
+          "nummer": 7,
+          "titel": "Frihet som håller för framtiden",
+          "url": "https://www.liberalerna.se/valmanifest-2026/7-frihet-som-haller-for-framtiden"
+        },
+        {
+          "nummer": 8,
+          "titel": "Ett Sverige som håller ihop",
+          "url": "https://www.liberalerna.se/valmanifest-2026/8-ett-sverige-som-haller-ihop"
+        }
+      ]
+    },
+    {
+      "typ": "partiprogram",
+      "titel": "Liberalernas partiprogram",
+      "url": "https://www.liberalerna.se/wp-content/uploads/liberalernas-partiprogram-2022docx-komprimerad.pdf",
+      "utgivet": 2022,
+      "kalla": {
+        "namn": "Liberalerna – Program och rapporter",
+        "url": "https://www.liberalerna.se/program-och-rapporter",
+        "hamtad": "2026-08-24"
+      }
+    }
+  ]
+}

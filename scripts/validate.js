@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 
+const { checkPartyProfileParliamentView } = require('./build-derived-data.js');
 const { ROOT, toFileName } = require('./utils.js');
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -27,6 +28,136 @@ function requireString (value, context) {
 function requireUuid (value, context) {
   requireString(value, context);
   assert.match(value, UUID_PATTERN, `${context} ska vara ett UUID`);
+}
+
+function requireUrl (value, context) {
+  requireString(value, context);
+  assert.doesNotThrow(() => new URL(value), `${context} ska vara en giltig URL`);
+}
+
+function validateProfileSource (source, context) {
+  assert.ok(source && typeof source === 'object' && !Array.isArray(source), `${context} ska vara ett objekt`);
+  requireString(source.namn, `${context}.namn`);
+  requireUrl(source.url, `${context}.url`);
+  requireString(source.hamtad, `${context}.hamtad`);
+  assert.match(source.hamtad, /^\d{4}-\d{2}-\d{2}$/, `${context}.hamtad ska vara ÅÅÅÅ-MM-DD`);
+}
+
+function validatePartyProfile (profile, context) {
+  assert.ok(profile && typeof profile === 'object' && !Array.isArray(profile), `${context} ska vara ett objekt`);
+  requireString(profile.namn, `${context}.namn`);
+  validateProfileSource(profile.namn_kalla, `${context}.namn_kalla`);
+  if (profile.webbplats !== undefined) requireUrl(profile.webbplats, `${context}.webbplats`);
+  if (profile.accentfarg !== undefined) {
+    requireString(profile.accentfarg, `${context}.accentfarg`);
+    assert.match(profile.accentfarg, /^#[0-9a-f]{6}$/i, `${context}.accentfarg ska vara en hex-färg`);
+  }
+  if (profile.beskrivning !== undefined) requireString(profile.beskrivning, `${context}.beskrivning`);
+  if (profile.symbolvisning !== undefined) {
+    assert.equal(profile.symbolvisning, 'mark', `${context}.symbolvisning har ett okänt värde`);
+  }
+  if (profile.profiltext !== undefined) {
+    requireString(profile.profiltext.text, `${context}.profiltext.text`);
+    validateProfileSource(profile.profiltext.kalla, `${context}.profiltext.kalla`);
+  }
+  if (profile.kanaler !== undefined) {
+    requireArray(profile.kanaler, `${context}.kanaler`);
+    for (const [index, channel] of profile.kanaler.entries()) {
+      requireString(channel.etikett, `${context}.kanaler[${index}].etikett`);
+      if (channel.detalj !== undefined) requireString(channel.detalj, `${context}.kanaler[${index}].detalj`);
+      requireUrl(channel.url, `${context}.kanaler[${index}].url`);
+    }
+  }
+  if (profile.utdrag !== undefined) {
+    requireString(profile.utdrag.etikett, `${context}.utdrag.etikett`);
+    requireString(profile.utdrag.rubrik, `${context}.utdrag.rubrik`);
+    if (profile.utdrag.ingress !== undefined) requireString(profile.utdrag.ingress, `${context}.utdrag.ingress`);
+    requireUrl(profile.utdrag.url, `${context}.utdrag.url`);
+    validateProfileSource(profile.utdrag.kalla, `${context}.utdrag.kalla`);
+    requireArray(profile.utdrag.punkter, `${context}.utdrag.punkter`);
+    for (const [index, item] of profile.utdrag.punkter.entries()) {
+      requireString(item.rubrik, `${context}.utdrag.punkter[${index}].rubrik`);
+      requireString(item.text, `${context}.utdrag.punkter[${index}].text`);
+    }
+  }
+  if (profile.foretradare !== undefined) {
+    requireArray(profile.foretradare, `${context}.foretradare`);
+    requireUnique(profile.foretradare, 'namn', `${context}.foretradare`);
+    for (const [index, representative] of profile.foretradare.entries()) {
+      requireString(representative.namn, `${context}.foretradare[${index}].namn`);
+      requireString(representative.uppdrag, `${context}.foretradare[${index}].uppdrag`);
+      requireUrl(representative.url, `${context}.foretradare[${index}].url`);
+      if (representative.bild !== undefined) requireString(representative.bild, `${context}.foretradare[${index}].bild`);
+      if (representative.framlyft !== undefined) assert.equal(typeof representative.framlyft, 'boolean', `${context}.foretradare[${index}].framlyft ska vara boolean`);
+    }
+  }
+  if (profile.nyheter !== undefined) {
+    requireArray(profile.nyheter, `${context}.nyheter`);
+    for (const [index, article] of profile.nyheter.entries()) {
+      const articleContext = `${context}.nyheter[${index}]`;
+      requireString(article.datum, `${articleContext}.datum`);
+      assert.match(article.datum, /^\d{4}-\d{2}-\d{2}$/, `${articleContext}.datum ska vara ÅÅÅÅ-MM-DD`);
+      requireString(article.kalla, `${articleContext}.kalla`);
+      requireString(article.kallkod, `${articleContext}.kallkod`);
+      requireString(article.kallfarg, `${articleContext}.kallfarg`);
+      assert.match(article.kallfarg, /^#[0-9a-f]{6}$/i, `${articleContext}.kallfarg ska vara en hex-färg`);
+      if (article.sektion !== undefined) requireString(article.sektion, `${articleContext}.sektion`);
+      requireString(article.titel, `${articleContext}.titel`);
+      requireUrl(article.url, `${articleContext}.url`);
+    }
+  }
+  if (profile.wikipedia !== undefined) {
+    requireString(profile.wikipedia.titel, `${context}.wikipedia.titel`);
+    requireUrl(profile.wikipedia.url, `${context}.wikipedia.url`);
+    requireString(profile.wikipedia.utdrag, `${context}.wikipedia.utdrag`);
+    requireString(profile.wikipedia.hamtad, `${context}.wikipedia.hamtad`);
+    assert.match(profile.wikipedia.hamtad, /^\d{4}-\d{2}-\d{2}$/, `${context}.wikipedia.hamtad ska vara ÅÅÅÅ-MM-DD`);
+    if (profile.wikipedia.fakta !== undefined) {
+      requireArray(profile.wikipedia.fakta, `${context}.wikipedia.fakta`);
+      for (const [index, fact] of profile.wikipedia.fakta.entries()) {
+        requireString(fact.etikett, `${context}.wikipedia.fakta[${index}].etikett`);
+        requireString(fact.varde, `${context}.wikipedia.fakta[${index}].varde`);
+      }
+    }
+  }
+  if (profile.valresultat !== undefined) {
+    assert.equal(profile.valresultat.valtyp, 'riksdag', `${context}.valresultat.valtyp har ett okänt värde`);
+    requireArray(profile.valresultat.kallor, `${context}.valresultat.kallor`);
+    assert.ok(profile.valresultat.kallor.length > 0, `${context}.valresultat.kallor får inte vara tom`);
+    profile.valresultat.kallor.forEach((source, index) => {
+      validateProfileSource(source, `${context}.valresultat.kallor[${index}]`);
+    });
+    requireArray(profile.valresultat.resultat, `${context}.valresultat.resultat`);
+    assert.ok(profile.valresultat.resultat.length > 0, `${context}.valresultat.resultat får inte vara tom`);
+    requireUnique(profile.valresultat.resultat, 'valar', `${context}.valresultat.resultat`);
+    let previousYear = 0;
+    for (const result of profile.valresultat.resultat) {
+      assert.ok(Number.isInteger(result.valar) && result.valar > previousYear, `${context}.valresultat.resultat ska vara sorterat på valår`);
+      assert.ok(typeof result.rostandel === 'number' && result.rostandel >= 0 && result.rostandel <= 100, `${context}.valresultat.resultat.rostandel ska vara 0–100`);
+      assert.ok(Number.isInteger(result.mandat) && result.mandat >= 0 && result.mandat <= 349, `${context}.valresultat.resultat.mandat ska vara 0–349`);
+      if (result.roster !== undefined) assert.ok(Number.isInteger(result.roster) && result.roster >= 0, `${context}.valresultat.resultat.roster ska vara ett positivt heltal`);
+      previousYear = result.valar;
+    }
+  }
+  if (profile.dokument !== undefined) {
+    requireArray(profile.dokument, `${context}.dokument`);
+    for (const [index, document] of profile.dokument.entries()) {
+      const documentContext = `${context}.dokument[${index}]`;
+      assert.ok(['valmanifest', 'partiprogram'].includes(document.typ), `${documentContext}.typ har ett okänt värde`);
+      requireString(document.titel, `${documentContext}.titel`);
+      requireUrl(document.url, `${documentContext}.url`);
+      validateProfileSource(document.kalla, `${documentContext}.kalla`);
+      if (document.delar !== undefined) {
+        requireArray(document.delar, `${documentContext}.delar`);
+        requireUnique(document.delar, 'nummer', `${documentContext}.delar`);
+        for (const section of document.delar) {
+          assert.ok(Number.isInteger(section.nummer) && section.nummer > 0, `${documentContext}.delar.nummer ska vara ett positivt heltal`);
+          requireString(section.titel, `${documentContext}.delar.titel`);
+          if (section.url !== undefined) requireUrl(section.url, `${documentContext}.delar.url`);
+        }
+      }
+    }
+  }
 }
 
 function requireUnique (items, key, context) {
@@ -93,6 +224,11 @@ function validatePartyRegistry (dataDirectory) {
     );
     partiesByUuid.set(party.uuid, party);
     partySlugs.add(party.filnamn);
+
+    const profileFile = path.join(partyDirectory, entry.filnamn, 'profil.json');
+    if (fs.existsSync(profileFile)) {
+      validatePartyProfile(readJson(profileFile), `${entry.filnamn}/profil.json`);
+    }
   }
 
   return { index, partiesByUuid, partySlugs };
@@ -222,6 +358,43 @@ function validateElectionYears (dataDirectory, parties, geography) {
   return { years: years.length, referenceCount, candidateListCount };
 }
 
+function validateParliamentResults (dataDirectory) {
+  const electionDirectory = path.join(dataDirectory, 'val');
+  const resultFiles = fs.readdirSync(electionDirectory, { withFileTypes: true })
+    .filter(entry => entry.isDirectory() && /^\d{4}$/.test(entry.name))
+    .map(entry => ({
+      year: Number(entry.name),
+      file: path.join(electionDirectory, entry.name, 'valresultat', 'riksdag.json')
+    }))
+    .filter(result => fs.existsSync(result.file))
+    .toSorted((a, b) => a.year - b.year);
+
+  if (resultFiles.length === 0) return;
+
+  let hasChamberComposition = false;
+  for (const { year, file } of resultFiles) {
+    const context = `${year}/valresultat/riksdag.json`;
+    const result = readJson(file);
+    assert.equal(result.valar, year, `${context}.valar ska matcha katalogens valår`);
+    assert.ok(typeof result.valdeltagande?.procent === 'number' && result.valdeltagande.procent >= 0 && result.valdeltagande.procent <= 100, `${context}.valdeltagande.procent ska vara 0–100`);
+    validateProfileSource(result.valdeltagande?.kalla, `${context}.valdeltagande.kalla`);
+
+    if (result.mandatfordelning === undefined) continue;
+    hasChamberComposition = true;
+    const parties = requireArray(result.mandatfordelning.partier, `${context}.mandatfordelning.partier`);
+    requireUnique(parties, 'forkortning', `${context}.mandatfordelning.partier`);
+    for (const party of parties) {
+      requireString(party.forkortning, `${context}.mandatfordelning.partier.forkortning`);
+      assert.ok(Number.isInteger(party.mandat) && party.mandat >= 0, `${context}.mandatfordelning.partier.mandat ska vara ett positivt heltal`);
+    }
+    assert.equal(parties.reduce((total, party) => total + party.mandat, 0), 349, `${context}.mandatfordelning ska innehålla 349 mandat`);
+    validateProfileSource(result.mandatfordelning.kalla, `${context}.mandatfordelning.kalla`);
+  }
+
+  assert.ok(hasChamberComposition, 'Minst ett riksdagsresultat ska innehålla mandatfördelning');
+  checkPartyProfileParliamentView(dataDirectory);
+}
+
 function validateData (dataDirectory = path.join(ROOT, 'data')) {
   const parties = validatePartyRegistry(dataDirectory);
   const geography = validateRegions(dataDirectory);
@@ -235,6 +408,7 @@ function validateData (dataDirectory = path.join(ROOT, 'data')) {
     'partier, regioner och kommuner'
   );
   const elections = validateElectionYears(dataDirectory, parties, geography);
+  validateParliamentResults(dataDirectory);
 
   return {
     parties: parties.index.length,

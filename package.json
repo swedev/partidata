@@ -17,6 +17,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:derived-data": "node scripts/build-derived-data.js",
+    "check:derived-data": "node scripts/build-derived-data.js --check",
     "postbuild": "node scripts/validate-export.js",
     "lint": "eslint .",
     "import-val": "node scripts/import-val.js",
@@ -24,7 +26,7 @@
     "validate:data": "node scripts/validate.js",
     "typecheck": "tsc --noEmit",
     "test": "node --test",
-    "precommit": "npm run lint && npm run typecheck && npm run validate:data && npm run build && npm test"
+    "precommit": "npm run lint && npm run typecheck && npm run check:derived-data && npm run validate:data && npm run build && npm test"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
