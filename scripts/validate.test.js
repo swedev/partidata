@@ -96,6 +96,34 @@ test('validateData rejects inconsistencies with useful errors', async t => {
     writeJson(root, 'val/2026/partideltagande/kommun.json', [{ ...MUNICIPALITIES[0], partier: [] }]);
     assert.throws(() => validateData(root), /ska innehålla samtliga områden/);
   });
+
+  await t.test('invalid curated party profiles', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'parti/testpartiet/profil.json', {
+      namn: 'Testpartiet',
+      namn_kalla: { namn: 'Testpartiet', url: 'inte-en-url', hamtad: '2026-08-24' }
+    });
+    assert.throws(() => validateData(root), /namn_kalla.url ska vara en giltig URL/);
+  });
+
+  await t.test('invalid curated election results', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'parti/testpartiet/profil.json', {
+      namn: 'Testpartiet',
+      namn_kalla: { namn: 'Testpartiet', url: 'https://example.com', hamtad: '2026-08-24' },
+      valresultat: {
+        valtyp: 'riksdag',
+        kallor: [{ namn: 'Valmyndigheten', url: 'https://www.val.se', hamtad: '2026-08-24' }],
+        resultat: [
+          { valar: 2022, rostandel: 5, mandat: 18 },
+          { valar: 2018, rostandel: 4, mandat: 14 }
+        ]
+      }
+    });
+    assert.throws(() => validateData(root), /ska vara sorterat på valår/);
+  });
 });
 
 function readJson (root, relativePath) {

@@ -1,0 +1,188 @@
+{
+  "namn": "Miljöpartiet de gröna",
+  "webbplats": "https://www.mp.se/",
+  "accentfarg": "#53a045",
+  "beskrivning": "Nationellt parti, bildat 1981 och representerat i riksdagen sedan 1988. Anmält deltagande i riksdags-, region- och kommunval 2026.",
+  "namn_kalla": {
+    "namn": "Miljöpartiet",
+    "url": "https://www.mp.se/om/",
+    "hamtad": "2026-08-24"
+  },
+  "kanaler": [
+    { "etikett": "Webbplats", "detalj": "mp.se", "url": "https://www.mp.se/" },
+    { "etikett": "Partiprogram 2025", "detalj": "mp.se/om/partiprogram", "url": "https://www.mp.se/om/partiprogram/" },
+    { "etikett": "Våra politiker", "detalj": "mp.se/om/riksdagspolitiker", "url": "https://www.mp.se/om/riksdagspolitiker/" },
+    { "etikett": "Bli medlem", "detalj": "mp.se/bli-medlem", "url": "https://www.mp.se/bli-medlem/" },
+    { "etikett": "Ungdomsförbund", "detalj": "gronungdom.se", "url": "https://gronungdom.se/" },
+    { "etikett": "Kontakt", "detalj": "mp.se/om/kontakt", "url": "https://www.mp.se/om/kontakt/" }
+  ],
+  "utdrag": {
+    "etikett": "Urklipp · Valmanifest 2026",
+    "rubrik": "Sverige vinner på grön politik",
+    "ingress": "Punkterna och formuleringarna är hämtade ur partiets publicerade valmanifest.",
+    "url": "https://www.mp.se/valmanifest2026/",
+    "kalla": {
+      "namn": "Miljöpartiet – Valmanifest 2026",
+      "url": "https://www.mp.se/valmanifest2026/",
+      "hamtad": "2026-08-24"
+    },
+    "punkter": [
+      {
+        "rubrik": "En rättvis klimatomställning",
+        "text": "Klimatmålen ska ligga fast och politiken ska snabbt minska utsläppen samtidigt som omställningen görs rättvis."
+      },
+      {
+        "rubrik": "Transporter som fungerar",
+        "text": "Järnvägen ska rustas upp, kollektivtrafiken byggas ut och fler ska ha råd att byta till elbil."
+      },
+      {
+        "rubrik": "Förnybar energi",
+        "text": "Sol- och vindkraft, energilagring och utbyggda elnät ska ge billigare el och minska sårbarheten."
+      },
+      {
+        "rubrik": "Minskade ekonomiska klyftor",
+        "text": "Välfärds- och trygghetssystemen ska stärkas och samhällets stöd riktas till dem som behöver det mest."
+      },
+      {
+        "rubrik": "Ett bra liv nära naturen",
+        "text": "Allemansrätten, strandskyddet, rent dricksvatten och tillgången till natur ska värnas."
+      }
+    ]
+  },
+  "dokument": [
+    {
+      "typ": "partiprogram",
+      "titel": "Partiprogram 2025",
+      "url": "https://www.mp.se/om/partiprogram/",
+      "utgivet": 2025,
+      "kalla": {
+        "namn": "Miljöpartiet",
+        "url": "https://www.mp.se/om/partiprogram/",
+        "hamtad": "2026-08-24"
+      }
+    },
+    {
+      "typ": "valmanifest",
+      "titel": "Valmanifest 2026",
+      "url": "https://www.mp.se/valmanifest2026/",
+      "valar": 2026,
+      "kalla": {
+        "namn": "Miljöpartiet",
+        "url": "https://www.mp.se/valmanifest2026/",
+        "hamtad": "2026-08-24"
+      }
+    },
+    {
+      "typ": "valmanifest",
+      "titel": "EU-valmanifest 2024",
+      "url": "https://www.mp.se/valmanifest2024/",
+      "valar": 2024,
+      "kalla": {
+        "namn": "Miljöpartiet",
+        "url": "https://www.mp.se/valmanifest2024/",
+        "hamtad": "2026-08-25"
+      }
+    },
+    {
+      "typ": "valmanifest",
+      "titel": "Valmanifest 2022",
+      "url": "https://www.mp.se/valmanifest2022/",
+      "valar": 2022,
+      "kalla": {
+        "namn": "Miljöpartiet",
+        "url": "https://www.mp.se/valmanifest2022/",
+        "hamtad": "2026-08-25"
+      }
+    },
+    {
+      "typ": "partiprogram",
+      "titel": "Gällande stadgar",
+      "url": "https://www.mp.se/om/stadgar/",
+      "utgivet": 2025,
+      "kalla": {
+        "namn": "Miljöpartiet",
+        "url": "https://www.mp.se/om/stadgar/",
+        "hamtad": "2026-08-25"
+      }
+    }
+  ],
+  "foretradare": [
+    { "namn": "Amanda Lind", "uppdrag": "Språkrör", "url": "https://www.mp.se/om/amanda-lind/", "bild": "/img/partier/miljopartiet-de-grona/representanter/amanda-lind.jpg", "framlyft": true },
+    { "namn": "Daniel Helldén", "uppdrag": "Språkrör och riksdagsledamot i Utrikesnämnden och Krigsdelegationen.", "url": "https://www.mp.se/om/daniel-hellden/", "bild": "/img/partier/miljopartiet-de-grona/representanter/daniel-hellden.jpg", "framlyft": true },
+    { "namn": "Annika Hirvonen", "uppdrag": "Gruppledare och riksdagsledamot i skatteutskottet och talesperson för migration.", "url": "https://www.mp.se/om/annika-hirvonen/", "bild": "/img/partier/miljopartiet-de-grona/representanter/annika-hirvonen.jpg" },
+    { "namn": "Camilla Hansén", "uppdrag": "Vice gruppledare och riksdagsledamot i utbildningsutskottet.", "url": "https://www.mp.se/om/camilla-hansen/", "bild": "/img/partier/miljopartiet-de-grona/representanter/camilla-hansen.jpg" },
+    { "namn": "Emma Nohrén", "uppdrag": "Ordförande i miljö- och jordbruksutskottet och landsbygdspolitisk talesperson.", "url": "https://www.mp.se/om/emma-nohren/", "bild": "/img/partier/miljopartiet-de-grona/representanter/emma-nohren.jpeg" },
+    { "namn": "Janine Alm Ericson", "uppdrag": "Riksdagsledamot i finansutskottet och talesperson för bistånd och jämställdhet.", "url": "https://www.mp.se/om/janine-alm-ericson/", "bild": "/img/partier/miljopartiet-de-grona/representanter/janine-alm-ericson.jpg" },
+    { "namn": "Rebecka Le Moine", "uppdrag": "Riksdagsledamot i EU-nämnden och talesperson för biologisk mångfald och djurrätt.", "url": "https://www.mp.se/om/rebecka-le-moine/", "bild": "/img/partier/miljopartiet-de-grona/representanter/rebecka-le-moine.jpg" },
+    { "namn": "Katarina Luhr", "uppdrag": "Riksdagsledamot i näringsutskottet och klimatpolitisk talesperson.", "url": "https://www.mp.se/om/katarina-luhr/", "bild": "/img/partier/miljopartiet-de-grona/representanter/katarina-luhr.jpg" },
+    { "namn": "Linus Lakso", "uppdrag": "Talesperson för energi- och transportpolitik samt ledamot i trafik- och näringsutskotten.", "url": "https://www.mp.se/om/linus-lakso/", "bild": "/img/partier/miljopartiet-de-grona/representanter/linus-lakso.jpg" },
+    { "namn": "Emma Berginger", "uppdrag": "Ledamot i försvarsutskottet och försvarspolitisk talesperson.", "url": "https://www.mp.se/om/emma-berginger/", "bild": "/img/partier/miljopartiet-de-grona/representanter/emma-berginger.jpg" },
+    { "namn": "Ulrika Westerlund", "uppdrag": "Riksdagsledamot i justitieutskottet och talesperson för HBTQI och barnrätt.", "url": "https://www.mp.se/om/ulrika-westerlund/", "bild": "/img/partier/miljopartiet-de-grona/representanter/ulrika-westerlund.jpg" },
+    { "namn": "Leila Ali Elmi", "uppdrag": "Riksdagsledamot i arbetsmarknadsutskottet och talesperson för integration.", "url": "https://www.mp.se/om/leila-ali-elmi/", "bild": "/img/partier/miljopartiet-de-grona/representanter/leila-ali-elmi.jpg" },
+    { "namn": "Amanda Palmstierna", "uppdrag": "Riksdagsledamot i civilutskottet och bostadspolitisk talesperson.", "url": "https://www.mp.se/om/amanda-palmstierna/", "bild": "/img/partier/miljopartiet-de-grona/representanter/amanda-palmstierna.jpg" },
+    { "namn": "Jan Riise", "uppdrag": "Riksdagsledamot i konstitutionsutskottet och talesperson för AI-frågor samt minoritets- och urfolkspolitik.", "url": "https://www.mp.se/om/jan-riise/", "bild": "/img/partier/miljopartiet-de-grona/representanter/jan-riise.jpg" },
+    { "namn": "Jacob Risberg", "uppdrag": "Riksdagsledamot i utrikesutskottet.", "url": "https://www.mp.se/om/jacob-risberg/", "bild": "/img/partier/miljopartiet-de-grona/representanter/jacob-risberg.jpg" },
+    { "namn": "Malte Tängmark Roos", "uppdrag": "Riksdagsledamot i socialförsäkringsutskottet och ledamot i Pensionsgruppen.", "url": "https://www.mp.se/om/malte-tangmark-roos/", "bild": "/img/partier/miljopartiet-de-grona/representanter/malte-tangmark-roos.jpg" },
+    { "namn": "Nils Seye Larsen", "uppdrag": "Riksdagsledamot för Miljöpartiet.", "url": "https://www.mp.se/om/nils-seye-larsen/", "bild": "/img/partier/miljopartiet-de-grona/representanter/nils-seye-larsen.jpg" },
+    { "namn": "Mohamed Yassin", "uppdrag": "Ledamot i kommunfullmäktige och gymnasie- och vuxenutbildningsnämnden.", "url": "https://www.mp.se/om/mohamed-yassin/", "bild": "/img/partier/miljopartiet-de-grona/representanter/mohamed-yassin.jpg" }
+  ],
+  "valresultat": {
+    "valtyp": "riksdag",
+    "kallor": [
+      { "namn": "SCB – historisk valstatistik 1910–2022", "url": "https://www.scb.se/hitta-statistik/statistik-efter-amne/demokrati/allmanna-val/allmanna-val-valresultat/pong/tabell-och-diagram/historisk-valstatistik/historisk-statistik-over-valaren-19102022.-procentuell-fordelning-av-giltiga-valsedlar-efter-parti-och-typ-av-val/", "hamtad": "2026-08-25" },
+      { "namn": "Valmyndigheten – tidigare valresultat 2002–2018", "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/tidigare-valresultat", "hamtad": "2026-08-24" },
+      { "namn": "Valmyndigheten – valresultat 2022", "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/valresultat-2022", "hamtad": "2026-08-24" }
+    ],
+    "resultat": [
+      { "valar": 1994, "rostandel": 5.02, "mandat": 18 },
+      { "valar": 1998, "rostandel": 4.5, "mandat": 16 },
+      { "valar": 2002, "rostandel": 4.65, "mandat": 17 },
+      { "valar": 2006, "rostandel": 5.24, "mandat": 19 },
+      { "valar": 2010, "rostandel": 7.34, "mandat": 25 },
+      { "valar": 2014, "rostandel": 6.89, "mandat": 25 },
+      { "valar": 2018, "rostandel": 4.41, "mandat": 16 },
+      { "valar": 2022, "rostandel": 5.08, "mandat": 18 }
+    ]
+  },
+  "nyheter": [
+    {
+      "datum": "2026-08-20",
+      "kalla": "Sveriges Radio",
+      "kallkod": "SR",
+      "kallfarg": "#0e6f4c",
+      "sektion": "Ekot · politik",
+      "titel": "Fler partier lyfter förslag om bullerregler",
+      "url": "https://www.sverigesradio.se/artikel/ekots-direktrapport-om-svensk-politik-2026"
+    },
+    {
+      "datum": "2026-08-17",
+      "kalla": "SVT Nyheter",
+      "kallkod": "SVT",
+      "kallfarg": "#e2231a",
+      "sektion": "Valet 2026",
+      "titel": "MP vill satsa miljarder på Östersjön: ”Vägs ände”",
+      "url": "https://www.svt.se/nyheter/inrikes/senaste-nytt-om-val-2026?inlagg=78d96962656d6036ef7fca52575eac4f"
+    },
+    {
+      "datum": "2026-06-02",
+      "kalla": "SVT Nyheter",
+      "kallkod": "SVT",
+      "kallfarg": "#e2231a",
+      "sektion": "Inrikes · Val 2026",
+      "titel": "Amanda Linds hårda ord om Socialdemokraterna: ”Bensinpopulism”",
+      "url": "https://www.svt.se/nyheter/inrikes/amanda-linds-harda-ord-om-socialdemokraterna-bensinpopulism"
+    }
+  ],
+  "wikipedia": {
+    "titel": "Miljöpartiet de gröna",
+    "url": "https://sv.wikipedia.org/wiki/Miljöpartiet",
+    "utdrag": "Miljöpartiet de gröna är ett svenskt politiskt parti bildat 1981. Partiet kom in i riksdagen första gången 1988, förlorade platserna 1991 och återkom 1994.",
+    "hamtad": "2026-08-24",
+    "fakta": [
+      { "etikett": "Bildat", "varde": "1981" },
+      { "etikett": "Politisk ideologi", "varde": "Grön ideologi" },
+      { "etikett": "Språkrör", "varde": "Amanda Lind och Daniel Helldén" },
+      { "etikett": "Riksdagsmandat", "varde": "18 av 349" }
+    ]
+  }
+}

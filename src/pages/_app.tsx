@@ -1,7 +1,7 @@
 import '../styles/base.scss';
 
 import type { AppProps } from 'next/app';
-import { Hanken_Grotesk, IBM_Plex_Mono } from 'next/font/google';
+import { Hanken_Grotesk, IBM_Plex_Mono, Source_Serif_4 } from 'next/font/google';
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ['latin'],
@@ -16,9 +16,16 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: 'swap',
 });
 
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-partidata-serif',
+  display: 'swap',
+});
+
 function Partidata ({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${hankenGrotesk.variable} ${ibmPlexMono.variable} app-root`}>
+    <div className={`${hankenGrotesk.className} ${hankenGrotesk.variable} ${ibmPlexMono.variable} ${sourceSerif.variable} app-root`}>
       <Component {...pageProps} />
     </div>
   );

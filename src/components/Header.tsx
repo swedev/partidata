@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-function Header () {
+function Header ({ partyProfile = false }: { partyProfile?: boolean }) {
   return (
     <header className="site-header">
       <div className="site-shell site-header__inner">
@@ -27,7 +27,8 @@ function Header () {
 
         <nav className="site-header__nav" aria-label="Huvudnavigation">
           <Link href="/" className="site-header__active-link">Partier</Link>
-          <a href="https://github.com/swedev/partidata">Data på GitHub</a>
+          <a href={partyProfile ? '#resultat' : '/#val'}>Val</a>
+          <a href={partyProfile ? '#export' : 'https://github.com/swedev/partidata'}>API &amp; data</a>
           <a href="#om-tjansten">Om tjänsten</a>
         </nav>
       </div>
