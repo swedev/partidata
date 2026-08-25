@@ -4,6 +4,7 @@ const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 
+const { writePartyProfileParliamentView } = require('./build-derived-data.js');
 const { validateData } = require('./validate.js');
 
 const PARTY = {
@@ -123,6 +124,44 @@ test('validateData rejects inconsistencies with useful errors', async t => {
       }
     });
     assert.throws(() => validateData(root), /ska vara sorterat på valår/);
+  });
+
+  await t.test('invalid parliamentary election result', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'val/2022/valresultat/riksdag.json', {
+      valar: 2022,
+      valdeltagande: {
+        procent: 84,
+        kalla: { namn: 'SCB', url: 'https://www.scb.se/', hamtad: '2026-08-25' }
+      },
+      mandatfordelning: {
+        partier: [{ forkortning: 'T', mandat: 1 }],
+        kalla: { namn: 'Riksdagen', url: 'https://data.riksdagen.se/', hamtad: '2026-08-25' }
+      }
+    });
+    assert.throws(() => validateData(root), /ska innehålla 349 mandat/);
+  });
+
+  await t.test('stale derived parliamentary data', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'val/2022/valresultat/riksdag.json', {
+      valar: 2022,
+      valdeltagande: {
+        procent: 84,
+        kalla: { namn: 'SCB', url: 'https://www.scb.se/', hamtad: '2026-08-25' }
+      },
+      mandatfordelning: {
+        partier: [{ forkortning: 'T', mandat: 349 }],
+        kalla: { namn: 'Riksdagen', url: 'https://data.riksdagen.se/', hamtad: '2026-08-25' }
+      }
+    });
+    writePartyProfileParliamentView(root);
+    const derived = readJson(root, 'derived/partiprofil/riksdag.json');
+    derived.senast_uppdaterad = '2026-08-24';
+    writeJson(root, 'derived/partiprofil/riksdag.json', derived);
+    assert.throws(() => validateData(root), /är inaktuell/);
   });
 });
 

@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 
+const { checkPartyProfileParliamentView } = require('./build-derived-data.js');
 const { ROOT, toFileName } = require('./utils.js');
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -357,6 +358,43 @@ function validateElectionYears (dataDirectory, parties, geography) {
   return { years: years.length, referenceCount, candidateListCount };
 }
 
+function validateParliamentResults (dataDirectory) {
+  const electionDirectory = path.join(dataDirectory, 'val');
+  const resultFiles = fs.readdirSync(electionDirectory, { withFileTypes: true })
+    .filter(entry => entry.isDirectory() && /^\d{4}$/.test(entry.name))
+    .map(entry => ({
+      year: Number(entry.name),
+      file: path.join(electionDirectory, entry.name, 'valresultat', 'riksdag.json')
+    }))
+    .filter(result => fs.existsSync(result.file))
+    .toSorted((a, b) => a.year - b.year);
+
+  if (resultFiles.length === 0) return;
+
+  let hasChamberComposition = false;
+  for (const { year, file } of resultFiles) {
+    const context = `${year}/valresultat/riksdag.json`;
+    const result = readJson(file);
+    assert.equal(result.valar, year, `${context}.valar ska matcha katalogens valår`);
+    assert.ok(typeof result.valdeltagande?.procent === 'number' && result.valdeltagande.procent >= 0 && result.valdeltagande.procent <= 100, `${context}.valdeltagande.procent ska vara 0–100`);
+    validateProfileSource(result.valdeltagande?.kalla, `${context}.valdeltagande.kalla`);
+
+    if (result.mandatfordelning === undefined) continue;
+    hasChamberComposition = true;
+    const parties = requireArray(result.mandatfordelning.partier, `${context}.mandatfordelning.partier`);
+    requireUnique(parties, 'forkortning', `${context}.mandatfordelning.partier`);
+    for (const party of parties) {
+      requireString(party.forkortning, `${context}.mandatfordelning.partier.forkortning`);
+      assert.ok(Number.isInteger(party.mandat) && party.mandat >= 0, `${context}.mandatfordelning.partier.mandat ska vara ett positivt heltal`);
+    }
+    assert.equal(parties.reduce((total, party) => total + party.mandat, 0), 349, `${context}.mandatfordelning ska innehålla 349 mandat`);
+    validateProfileSource(result.mandatfordelning.kalla, `${context}.mandatfordelning.kalla`);
+  }
+
+  assert.ok(hasChamberComposition, 'Minst ett riksdagsresultat ska innehålla mandatfördelning');
+  checkPartyProfileParliamentView(dataDirectory);
+}
+
 function validateData (dataDirectory = path.join(ROOT, 'data')) {
   const parties = validatePartyRegistry(dataDirectory);
   const geography = validateRegions(dataDirectory);
@@ -370,6 +408,7 @@ function validateData (dataDirectory = path.join(ROOT, 'data')) {
     'partier, regioner och kommuner'
   );
   const elections = validateElectionYears(dataDirectory, parties, geography);
+  validateParliamentResults(dataDirectory);
 
   return {
     parties: parties.index.length,

@@ -1,0 +1,28 @@
+{
+  "valar": 2022,
+  "valdeltagande": {
+    "procent": 84.21,
+    "kalla": {
+      "namn": "SCB",
+      "url": "https://www.scb.se/",
+      "hamtad": "2026-08-25"
+    }
+  },
+  "mandatfordelning": {
+    "partier": [
+      { "forkortning": "V", "mandat": 24 },
+      { "forkortning": "S", "mandat": 107 },
+      { "forkortning": "MP", "mandat": 18 },
+      { "forkortning": "C", "mandat": 24 },
+      { "forkortning": "L", "mandat": 16 },
+      { "forkortning": "KD", "mandat": 19 },
+      { "forkortning": "M", "mandat": 68 },
+      { "forkortning": "SD", "mandat": 73 }
+    ],
+    "kalla": {
+      "namn": "Riksdagen",
+      "url": "https://data.riksdagen.se/",
+      "hamtad": "2026-08-25"
+    }
+  }
+}
