@@ -109,10 +109,69 @@ test('health fails when the party index is unavailable', async t => {
   await assert.rejects(createPartyDataStore(path.join(root, 'data')).assertHealthy(), /ENOENT/);
 });
 
+test('health fails when the runtime collation guard rejects the runtime', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(dataRoot, {
+    assertCollation () { throw new Error('Runtime saknar svensk kollation'); }
+  });
+
+  await assert.rejects(store.assertHealthy(), /saknar svensk kollation/);
+});
+
 function makeHomeData () {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'partidata-home-'));
   const dataRoot = path.join(root, 'data');
+  // Deliberately unordered, and picked so root collation would place
+  // Jämtlands Väl before Jarl and the Å/Ä/Ö parties among A and O.
   const parties = [
+    {
+      uuid: '55555555-5555-4555-8555-555555555555',
+      kod: '9005',
+      beteckning: 'Östra partiet',
+      filnamn: 'ostra-partiet'
+    },
+    {
+      uuid: '99999999-9999-4999-8999-999999999999',
+      kod: '9009',
+      beteckning: 'Kommunens Väl',
+      filnamn: 'kommunens-val-beta'
+    },
+    {
+      uuid: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
+      kod: '9010',
+      beteckning: 'Jämtlands Väl',
+      filnamn: 'jamtlands-val'
+    },
+    {
+      uuid: '22222222-2222-4222-8222-222222222222',
+      kod: '9002',
+      beteckning: 'Betapartiet',
+      filnamn: 'betapartiet',
+      forkortning: 'B',
+      deltagande: {
+        2022: { riksdag: false, region: ['14'], kommun: [] }
+      }
+    },
+    {
+      uuid: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',
+      kod: '9011',
+      beteckning: 'Åkerpartiet',
+      filnamn: 'akerpartiet'
+    },
+    {
+      uuid: '44444444-4444-4444-8444-444444444444',
+      kod: '9004',
+      beteckning: 'Duplikatpartiet två',
+      filnamn: 'duplikatpartiet-tva',
+      forkortning: 'd'
+    },
+    {
+      uuid: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc',
+      kod: '9012',
+      beteckning: 'Zebrapartiet',
+      filnamn: 'zebrapartiet'
+    },
     {
       uuid: '11111111-1111-4111-8111-111111111111',
       kod: '9001',
@@ -132,14 +191,22 @@ function makeHomeData () {
       }
     },
     {
-      uuid: '22222222-2222-4222-8222-222222222222',
-      kod: '9002',
-      beteckning: 'Betapartiet',
-      filnamn: 'betapartiet',
-      forkortning: 'B',
-      deltagande: {
-        2022: { riksdag: false, region: ['14'], kommun: [] }
-      }
+      uuid: 'dddddddd-dddd-4ddd-8ddd-dddddddddddd',
+      kod: '9013',
+      beteckning: 'Ängspartiet',
+      filnamn: 'angspartiet'
+    },
+    {
+      uuid: 'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee',
+      kod: '9014',
+      beteckning: 'Jarl',
+      filnamn: 'jarl'
+    },
+    {
+      uuid: 'ffffffff-ffff-4fff-8fff-ffffffffffff',
+      kod: '9015',
+      beteckning: 'Kommunens Väl',
+      filnamn: 'kommunens-val-alfa'
     },
     {
       uuid: '33333333-3333-4333-8333-333333333333',
@@ -147,28 +214,17 @@ function makeHomeData () {
       beteckning: 'Duplikatpartiet ett',
       filnamn: 'duplikatpartiet-ett',
       forkortning: 'D'
-    },
-    {
-      uuid: '44444444-4444-4444-8444-444444444444',
-      kod: '9004',
-      beteckning: 'Duplikatpartiet två',
-      filnamn: 'duplikatpartiet-tva',
-      forkortning: 'd'
-    },
-    {
-      uuid: '55555555-5555-4555-8555-555555555555',
-      kod: '9005',
-      beteckning: 'Östra partiet',
-      filnamn: 'ostra-partiet'
     }
   ];
 
   writeJson(dataRoot, 'parti/index.json', parties.map(({ kod, deltagande, ...entry }) => entry));
   parties.forEach(party => writeJson(dataRoot, `parti/${party.filnamn}/index.json`, party));
   writeJson(dataRoot, 'regioner/index.json', [
+    { kod: '18', namn: 'Örebro län', uuid: '10101010-1010-4010-8010-101010101010', kommuner: [] },
     { kod: '12', namn: 'Skåne län', uuid: '66666666-6666-4666-8666-666666666666', kommuner: [] },
-    { kod: '01', namn: 'Stockholms län', uuid: '77777777-7777-4777-8777-777777777777', kommuner: [] },
-    { kod: '14', namn: 'Västra Götalands län', uuid: '88888888-8888-4888-8888-888888888888', kommuner: [] }
+    { kod: '05', namn: 'Östergötlands län', uuid: '20202020-2020-4020-8020-202020202020', kommuner: [] },
+    { kod: '14', namn: 'Västra Götalands län', uuid: '88888888-8888-4888-8888-888888888888', kommuner: [] },
+    { kod: '01', namn: 'Stockholms län', uuid: '77777777-7777-4777-8777-777777777777', kommuner: [] }
   ]);
 
   const source = { namn: 'Riksdagen', url: 'https://data.riksdagen.se/', hamtad: '2026-08-25' };
@@ -203,6 +259,13 @@ test('home data lists parties in Swedish alphabetical order with participation f
     'betapartiet',
     'duplikatpartiet-ett',
     'duplikatpartiet-tva',
+    'jarl',
+    'jamtlands-val',
+    'kommunens-val-alfa',
+    'kommunens-val-beta',
+    'zebrapartiet',
+    'akerpartiet',
+    'angspartiet',
     'ostra-partiet'
   ]);
   assert.deepEqual(home.parties[0], {
@@ -217,10 +280,16 @@ test('home data lists parties in Swedish alphabetical order with participation f
     }
   });
   assert.equal(home.parties[1].symbolSrc, undefined);
-  assert.equal(home.parties[4].forkortning, undefined);
-  assert.deepEqual(home.parties[4].deltagande, {});
+  assert.equal(home.parties.at(-1).forkortning, undefined);
+  assert.deepEqual(home.parties.at(-1).deltagande, {});
   assert.deepEqual(home.valar, ['2022', '2026']);
-  assert.deepEqual(home.lan.map(lan => lan.namn), ['Skåne län', 'Stockholms län', 'Västra Götalands län']);
+  assert.deepEqual(home.lan.map(lan => lan.namn), [
+    'Skåne län',
+    'Stockholms län',
+    'Västra Götalands län',
+    'Örebro län',
+    'Östergötlands län'
+  ]);
 });
 
 test('mandate records resolve to a party only on an unambiguous abbreviation', async t => {

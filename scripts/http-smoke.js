@@ -6,6 +6,33 @@ const { spawn } = require('node:child_process');
 
 const projectRoot = path.join(__dirname, '..');
 const releaseRoot = path.join(projectRoot, '.release');
+const collator = new Intl.Collator('sv');
+const homePageSize = 48;
+
+/**
+ * The expected order below is computed with the same ICU data as the server
+ * this test starts, so a runtime without Swedish locale data would produce a
+ * matching root-collation fallback on both sides. These literal comparisons
+ * fail on such a runtime instead.
+ */
+function assertSwedishCollation () {
+  for (const [first, second] of [['z', 'å'], ['å', 'ä'], ['ä', 'ö'], ['Jarl', 'Jämtlands']]) {
+    assert.ok(collator.compare(first, second) < 0, `"${first}" ska sorteras före "${second}"`);
+  }
+}
+
+function comparePartyOrder (a, b) {
+  return collator.compare(a.beteckning, b.beteckning) || collator.compare(a.filnamn, b.filnamn);
+}
+
+/** Extracts the party links of the "Alla partier" grid in document order. */
+function partyGridLinks (html) {
+  const section = html.slice(html.indexOf('id="alla-partier"'));
+  const gridStart = section.indexOf('<ul class="home-grid">');
+  assert.ok(gridStart !== -1, 'partigridet hittades i markupen');
+  const grid = section.slice(gridStart, section.indexOf('</ul>', gridStart));
+  return [...grid.matchAll(/href="\/parti\/([^"/]+)\/?"/g)].map(match => match[1]);
+}
 
 async function freePort () {
   return await new Promise((resolve, reject) => {
@@ -36,8 +63,10 @@ async function main () {
   const chamber = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'partiprofil', 'riksdag.json'), 'utf8')).kammare;
   const seats = chamber.partier.reduce((total, party) => total + party.mandat, 0);
   const majority = Math.floor(seats / 2) + 1;
+  assertSwedishCollation();
   const current = parties.find(party => party.filnamn === 'miljopartiet-de-grona') ?? parties[0];
-  const first = parties.toSorted((a, b) => new Intl.Collator('sv').compare(a.beteckning, b.beteckning))[0];
+  const expectedOrder = parties.toSorted(comparePartyOrder).slice(0, homePageSize).map(party => party.filnamn);
+  const [first] = expectedOrder;
   const previous = parties.find(party => party.tidigare_filnamn?.length > 0);
   const withSymbol = parties.find(party => party.partisymbol);
   assert.ok(current);
@@ -65,13 +94,17 @@ async function main () {
     assert.match(homeBody, /Sök parti på namn eller förkortning/);
     assert.match(homeBody, /Alla partier/, 'partilistan har en rubrik');
     assert.match(homeBody, new RegExp(`>${parties.length}</span>`), 'rubriken räknar partierna ur datan');
-    assert.match(homeBody, new RegExp(`/parti/${first.filnamn}`), 'partigridet länkar till en partisida');
+    assert.match(homeBody, new RegExp(`/parti/${first}`), 'partigridet länkar till en partisida');
     assert.match(homeBody, /Riksdagspartier/);
     assert.match(homeBody, new RegExp(`valet (<!-- -->)?${chamber.valar}`), 'riksdagssektionen anger valåret');
     assert.match(homeBody, new RegExp(`${seats}(<!-- -->)? mandat`), 'faktaraden anger kammarens storlek');
     assert.match(homeBody, new RegExp(`${majority}(<!-- -->)? för egen majoritet`), 'faktaraden anger egen majoritet');
     assert.match(homeBody, /aria-pressed="false"/, 'valtypen renderas som en chip-grupp');
     assert.match(homeBody, /Visa fler partier \(/, 'visa fler anger hur många som återstår');
+
+    const gridLinks = partyGridLinks(homeBody);
+    assert.equal(gridLinks.length, Math.min(homePageSize, parties.length), 'partigridet renderar en hel sida partier');
+    assert.deepEqual(gridLinks, expectedOrder, 'partigridet följer svensk bokstavsordning');
 
     const riksdagCards = homeBody.split('party-card--large').length - 1;
     assert.equal(riksdagCards, chamber.partier.length, 'riksdagspartierna renderas som stora partikort');

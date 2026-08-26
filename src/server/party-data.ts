@@ -2,6 +2,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
 import type { Parti, PartiIndexEntry, PartiProfil, PartiProfilKalla } from '../types';
+import { assertSwedishCollation, compareSv } from './collation.ts';
 
 export type ElectionType = 'R' | 'L' | 'K';
 export type CandidateLists = Record<string, ElectionType[]>;
@@ -137,7 +138,14 @@ async function readOptionalJson<T> (file: string): Promise<T | undefined> {
   }
 }
 
-export function createPartyDataStore (dataRoot = path.join(process.cwd(), 'data')) {
+export interface PartyDataStoreOptions {
+  assertCollation?: () => void;
+}
+
+export function createPartyDataStore (
+  dataRoot = path.join(process.cwd(), 'data'),
+  { assertCollation = assertSwedishCollation }: PartyDataStoreOptions = {},
+) {
   let partyIndexPromise: Promise<PartyIndex> | undefined;
   let homeDataPromise: Promise<HomeData> | undefined;
 
@@ -226,7 +234,6 @@ export function createPartyDataStore (dataRoot = path.join(process.cwd(), 'data'
 
   async function buildHomeData (): Promise<HomeData> {
     const index = await getPartyIndex();
-    const collator = new Intl.Collator('sv');
 
     const parties: HomeParty[] = (await Promise.all(index.parties.map(async entry => {
       const party = await readJson<Parti>(path.join(dataRoot, 'parti', entry.filnamn, 'index.json'));
@@ -239,14 +246,14 @@ export function createPartyDataStore (dataRoot = path.join(process.cwd(), 'data'
         ...(symbolSrc ? { symbolSrc } : {}),
         deltagande: facet(party.deltagande),
       };
-    }))).sort((a, b) => collator.compare(a.beteckning, b.beteckning));
+    }))).sort((a, b) => compareSv(a.beteckning, b.beteckning) || compareSv(a.filnamn, b.filnamn));
 
     const valar = [...new Set(parties.flatMap(party => Object.keys(party.deltagande)))].sort();
 
     const regions = await readJson<RegionFile[]>(path.join(dataRoot, 'regioner', 'index.json'));
     const lan = regions
       .map(region => ({ kod: region.kod, namn: region.namn }))
-      .sort((a, b) => collator.compare(a.namn, b.namn));
+      .sort((a, b) => compareSv(a.namn, b.namn));
 
     // A mandate record names its party by abbreviation only, so an abbreviation
     // that no party or several parties carry resolves to nothing rather than to
@@ -294,6 +301,7 @@ export function createPartyDataStore (dataRoot = path.join(process.cwd(), 'data'
     },
 
     async assertHealthy (): Promise<void> {
+      assertCollation();
       if ((await getPartyIndex()).parties.length === 0) throw new Error('Party index is empty');
     },
   };
