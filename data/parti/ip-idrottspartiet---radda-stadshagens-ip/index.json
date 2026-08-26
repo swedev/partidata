@@ -1,11 +1,25 @@
 {
   "uuid": "1b6c72c2-6835-4066-9928-3312512cebe7",
   "kod": "1625",
+  "tidigare_koder": [
+    "1416"
+  ],
   "beteckning": "IP - IDROTTSPARTIET - Rädda Stadshagens IP!",
+  "tidigare_beteckningar": [
+    "iP-IDROTTSPARTIET-Rädda Stadshagens IP!"
+  ],
   "filnamn": "ip-idrottspartiet---radda-stadshagens-ip",
+  "tidigare_filnamn": [
+    "ip-idrottspartiet-radda-stadshagens-ip-"
+  ],
   "forkortning": "IP",
   "registrerad_partibeteckning": false,
   "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    },
     "2022": {
       "riksdag": false,
       "region": [],

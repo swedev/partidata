@@ -1111,14 +1111,12 @@
     "filnamn": "final-partiet"
   },
   {
-    "uuid": "bf140eb2-9556-4cc6-acb5-4d7a30c3e45e",
-    "beteckning": "FN Parti art: 27",
-    "filnamn": "fn-parti-art--27"
-  },
-  {
     "uuid": "f0b05373-8099-4cfa-8568-55159ea14ec5",
     "beteckning": "FN Parti art.27",
-    "filnamn": "fn-parti-art-27"
+    "filnamn": "fn-parti-art-27",
+    "tidigare_filnamn": [
+      "fn-parti-art--27"
+    ]
   },
   {
     "uuid": "082c3b14-65fb-499d-a8b7-37c29eaa55e0",
@@ -1923,12 +1921,10 @@
     "uuid": "1b6c72c2-6835-4066-9928-3312512cebe7",
     "beteckning": "IP - IDROTTSPARTIET - Rädda Stadshagens IP!",
     "filnamn": "ip-idrottspartiet---radda-stadshagens-ip",
+    "tidigare_filnamn": [
+      "ip-idrottspartiet-radda-stadshagens-ip-"
+    ],
     "forkortning": "IP"
-  },
-  {
-    "uuid": "b066a1e7-8be7-43aa-918b-df6684b353f9",
-    "beteckning": "iP-IDROTTSPARTIET-Rädda Stadshagens IP!",
-    "filnamn": "ip-idrottspartiet-radda-stadshagens-ip-"
   },
   {
     "uuid": "e9f9bec8-09ff-483e-a484-d31babfd06ef",
@@ -2179,12 +2175,10 @@
   {
     "uuid": "44a507e9-3733-41ec-8eb7-dbad2c7c84be",
     "beteckning": "Kommunens Röst",
-    "filnamn": "kommunens-rost"
-  },
-  {
-    "uuid": "f6d76476-a944-4706-ae7f-d054e4991d1f",
-    "beteckning": "Kommunens Röst ",
-    "filnamn": "kommunens-rost-"
+    "filnamn": "kommunens-rost",
+    "tidigare_filnamn": [
+      "kommunens-rost-"
+    ]
   },
   {
     "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",

@@ -4,6 +4,13 @@ const path = require('path');
 const { test } = require('node:test');
 
 const {
+  buildParties,
+  normalisePartyName,
+  normalisedNameCollisions,
+  upsertParties
+} = require('./parti.js');
+
+const {
   PARTIER,
   fixture,
   makeTree,
@@ -94,6 +101,91 @@ test('a re-coded party is matched on its name and records the old code', t => {
   assert.equal(gamla.kod, '9105');
   assert.deepEqual(gamla.tidigare_koder, ['9005']);
   assert.match(result.stdout, /9005 → 9105 Gamla partiet/);
+});
+
+test('a re-coded party is matched after harmless name normalisation', () => {
+  const party = {
+    uuid: '11111111-1111-4111-8111-111111111111',
+    filnamn: 'fn-parti-art-27',
+    koder: ['1425'],
+    beteckning: 'FN Parti art: 27',
+    tidigare_beteckningar: [],
+    tidigare_filnamn: []
+  };
+  const result = upsertParties(
+    { parties: [party], kodbyten: {} },
+    '2022',
+    [{ kod: '1631', beteckning: ' FN Parti art.27 ' }]
+  );
+
+  assert.deepEqual(party.koder, ['1425', '1631']);
+  assert.equal(result.created.length, 0);
+  assert.equal(result.merged.length, 1);
+  assert.equal(result.merged[0].via, 'beteckning');
+  assert.equal(normalisePartyName('Rädda! Håbo'), 'radda habo');
+});
+
+test('normalised ambiguity is rejected even when punctuation and accents differ', () => {
+  const parties = [
+    { filnamn: 'habodemokraterna', koder: ['1287'], beteckning: 'Habodemokraterna' },
+    { filnamn: 'habodemokraterna-1532', koder: ['1532'], beteckning: 'HåboDemokraterna' }
+  ];
+
+  assert.throws(
+    () => upsertParties(
+      { parties, kodbyten: {} },
+      '2030',
+      [{ kod: '2000', beteckning: 'HaboDemokraterna!' }]
+    ),
+    /Ambiguous match for 2000 "HaboDemokraterna!".*2 registry candidate/
+  );
+});
+
+test('the collision report finds Habo and Håbo without changing files', t => {
+  const parties = [
+    { uuid: '11111111-1111-4111-8111-111111111111', kod: '1287', beteckning: 'Habodemokraterna', filnamn: 'habodemokraterna' },
+    { uuid: '22222222-2222-4222-8222-222222222222', kod: '1532', beteckning: 'HåboDemokraterna', filnamn: 'habodemokraterna-1532' }
+  ];
+  const collisions = normalisedNameCollisions(parties.map(party => ({ ...party, koder: [party.kod] })));
+  assert.equal(collisions.length, 1);
+  assert.equal(collisions[0].name, 'habodemokraterna');
+  assert.deepEqual(collisions[0].parties.map(party => party.koder[0]), ['1287', '1532']);
+
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  const before = snapshot(dir);
+  const result = runParti(dir, ['--report-name-collisions']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /habodemokraterna: 1287 "Habodemokraterna".*1532 "HåboDemokraterna"/);
+  assert.deepEqual(snapshot(dir), before);
+});
+
+test('historical-only records do not replace current registry identity', () => {
+  const party = {
+    uuid: '11111111-1111-4111-8111-111111111111',
+    filnamn: 'kommunens-rost',
+    koder: ['1302', '1395'],
+    beteckning: 'Kommunens Röst',
+    tidigare_beteckningar: ['Kommunens Röst '],
+    tidigare_filnamn: ['kommunens-rost-']
+  };
+  const historical = {
+    kod: '1395',
+    beteckning: 'Kommunens Röst ',
+    uuid: party.uuid
+  };
+  const build = buildParties(
+    { parties: [party], kodbyten: { 1302: '1395' } },
+    { 2018: { partier: null, riksdag: [], region: [], kommun: [{ kod: '1293', partier: [historical] }] } }
+  );
+
+  assert.equal(build.parties[0].data.kod, '1302');
+  assert.equal(build.parties[0].data.beteckning, 'Kommunens Röst');
+  assert.deepEqual(build.parties[0].data.tidigare_koder, ['1395']);
+  assert.deepEqual(build.parties[0].data.tidigare_beteckningar, ['Kommunens Röst ']);
+  assert.deepEqual(build.parties[0].data.deltagande, {
+    2018: { riksdag: false, region: [], kommun: ['1293'] }
+  });
 });
 
 test('kodbyten.json binds a re-coded party that also changed its name', t => {

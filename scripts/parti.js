@@ -113,12 +113,53 @@ function loadYearFiles (overrides = {}) {
 }
 
 /**
+ * normalisePartyName
+ * Makes harmless spelling differences comparable without treating the result
+ * as an identity of its own. The caller must still reject ambiguous matches.
+ * @param  {String} name
+ * @return {String}
+ */
+function normalisePartyName (name) {
+  return name
+    .normalize('NFD')
+    .replace(/\p{Mark}/gu, '')
+    .toLowerCase()
+    .replace(/[^\p{Letter}\p{Number}]+/gu, ' ')
+    .trim();
+}
+
+/**
+ * normalisedNameCollisions
+ * Lists different registry parties whose current names become equal after
+ * normalisation. These are review candidates, never automatic merges.
+ * @param  {Object[]} parties From loadParties()
+ * @return {Object[]} Each { name, parties }
+ */
+function normalisedNameCollisions (parties) {
+  const groups = new Map();
+  for (const party of parties) {
+    const name = normalisePartyName(party.beteckning);
+    if (!groups.has(name)) {
+      groups.set(name, []);
+    }
+    groups.get(name).push(party);
+  }
+  return [...groups.entries()]
+    .filter(([, matches]) => matches.length > 1)
+    .map(([name, matches]) => ({
+      name,
+      parties: matches.slice().sort((a, b) => a.koder[0].localeCompare(b.koder[0]))
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/**
  * upsertParties
  * Reconciles one year's party records against the registry, allocating a uuid
  * for parties that are new; their filnamn is allocated by buildParties(), in the
  * same pass as the slugs of parties that were renamed. Identity is PARTIKOD
- * first, then the committed kodbyten.json aliases, then an unambiguous name
- * match for a party that has been given a new code. A name match is only
+ * first, then the committed kodbyten.json aliases, then an unambiguous
+ * normalised-name match for a party that has been given a new code. A name match is only
  * considered for a party that carries no code of its own in the year being
  * imported, and only when exactly one party and exactly one record share the
  * name.
@@ -137,7 +178,7 @@ function upsertParties (registry, year, partier) {
   const records = [...partier].sort((a, b) => a.kod.localeCompare(b.kod));
   const nameCounts = new Map();
   records.forEach(record => {
-    const key = record.beteckning.toLowerCase();
+    const key = normalisePartyName(record.beteckning);
     nameCounts.set(key, (nameCounts.get(key) || 0) + 1);
   });
 
@@ -148,15 +189,16 @@ function upsertParties (registry, year, partier) {
   for (const record of records) {
     let party = byKod.get(record.kod) || _matchAlias(record.kod, kodbyten, byKod);
     if (!party) {
-      const candidates = parties.filter(candidate =>
-        candidate.beteckning.toLowerCase() === record.beteckning.toLowerCase() &&
+      const name = normalisePartyName(record.beteckning);
+      const nameCandidates = parties.filter(candidate => normalisePartyName(candidate.beteckning) === name);
+      const candidates = nameCandidates.filter(candidate =>
         !candidate.koder.some(kod => importedKoder.has(kod))
       );
-      if (candidates.length > 0 && (candidates.length > 1 || nameCounts.get(record.beteckning.toLowerCase()) > 1)) {
+      if (nameCandidates.length > 1 || (candidates.length > 0 && nameCounts.get(name) > 1)) {
         throw new Error(
           `Ambiguous match for ${record.kod} "${record.beteckning}" in ${year}: ` +
-          `${candidates.length} registry candidate(s) [${candidates.map(c => c.koder.join('/')).join(', ')}], ` +
-          `${nameCounts.get(record.beteckning.toLowerCase())} record(s) with that name. ` +
+          `${nameCandidates.length} registry candidate(s) [${nameCandidates.map(c => c.koder.join('/')).join(', ')}], ` +
+          `${nameCounts.get(name)} record(s) with that normalised name. ` +
           'Resolve it in data/parti/kodbyten.json.'
         );
       }
@@ -320,7 +362,8 @@ function buildParties (registry, yearFiles) {
     const yearRecords = years
       .map(year => ({ year, record: recordsByYear.get(year).get(party.uuid) }))
       .filter(entry => entry.record);
-    const newest = yearRecords.length > 0 ? yearRecords[yearRecords.length - 1] : null;
+    const derivedYearRecords = yearRecords.filter(entry => entry.record.derived);
+    const newest = derivedYearRecords.length > 0 ? derivedYearRecords[derivedYearRecords.length - 1] : null;
 
     const koder = [...new Set(party.koder)];
     const kod = newest ? newest.record.kod : party.koder[0];
@@ -643,6 +686,8 @@ function writeFiles (writeSet) {
 exports.PARTY_KEY_ORDER = PARTY_KEY_ORDER;
 exports.loadParties = loadParties;
 exports.loadYearFiles = loadYearFiles;
+exports.normalisePartyName = normalisePartyName;
+exports.normalisedNameCollisions = normalisedNameCollisions;
 exports.upsertParties = upsertParties;
 exports.allocateFilnamn = allocateFilnamn;
 exports.buildParties = buildParties;
@@ -657,11 +702,24 @@ exports.writeFiles = writeFiles;
  */
 if (require.main === module) {
   const registry = loadParties();
-  const yearFiles = loadYearFiles();
-  const build = buildParties(registry, yearFiles);
-  validate(build, yearFiles);
-  const moved = applyRenames(build.renamed);
-  moved.forEach(move => console.log(`Moved ${move}`));
-  const written = writeFiles(build.writeSet);
-  console.log(`Wrote ${written.length} files for ${build.parties.length} parties.`);
+  if (process.argv.includes('--report-name-collisions')) {
+    const collisions = normalisedNameCollisions(registry.parties);
+    if (collisions.length === 0) {
+      console.log('No normalised party-name collisions.');
+    }
+    for (const collision of collisions) {
+      const matches = collision.parties
+        .map(party => `${party.koder.join('/')} "${party.beteckning}" (${party.filnamn})`)
+        .join(' | ');
+      console.log(`${collision.name}: ${matches}`);
+    }
+  } else {
+    const yearFiles = loadYearFiles();
+    const build = buildParties(registry, yearFiles);
+    validate(build, yearFiles);
+    const moved = applyRenames(build.renamed);
+    moved.forEach(move => console.log(`Moved ${move}`));
+    const written = writeFiles(build.writeSet);
+    console.log(`Wrote ${written.length} files for ${build.parties.length} parties.`);
+  }
 }

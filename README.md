@@ -96,7 +96,7 @@ Krav: Node 24 och `npm ci`. Skripten kan köras från vilken katalog som helst �
 
 Hämtar `https://data.val.se/filer/val<år>/parti/deltagande-partier.csv`, skriver `data/val/<år>/partideltagande/` och uppdaterar `data/parti/`. Med `--file` läses en nedladdad kopia i stället, vilket gör en körning reproducerbar. Körningen skriver ut filens SHA-256 och en sammanfattning av nya, sammanslagna och omdöpta partier.
 
-Partier identifieras på `PARTIKOD`, därefter på `parti/kodbyten.json` och sist på exakt namnmatchning mot ett parti som saknar egen kod i årets fil. Ett parti som har bytt namn får ett nytt `filnamn`, och `data/parti/<filnamn>/` flyttas dit tillsammans med partiets kandidatlistor. Allt valideras i minnet först — vid fel flyttas och skrivs ingenting och skriptet avslutas med felkod.
+Partier identifieras på `PARTIKOD`, därefter på `parti/kodbyten.json` och sist på en normaliserad namnmatchning (trim, gemener, diakritiska tecken och skiljetecken) mot ett parti som saknar egen kod i årets fil. Namnmatchningen används bara när både register och import är entydiga; annars avbryts importen och kopplingen måste granskas och anges i `kodbyten.json`. Ett parti som har bytt namn får ett nytt `filnamn`, och `data/parti/<filnamn>/` flyttas dit tillsammans med partiets kandidatlistor. Allt valideras i minnet först — vid fel flyttas och skrivs ingenting och skriptet avslutas med felkod.
 
 Körningen är idempotent: samma indata ger samma filer, oavsett i vilken ordning åren importeras. `tidigare_filnamn` är undantaget, eftersom fältet är historik över de adresser registret faktiskt har haft: ett parti som har hunnit heta tre olika saker får olika `tidigare_filnamn` beroende på i vilken ordning åren importerades.
 
@@ -109,6 +109,8 @@ Valmyndigheten ska anges som källa för symbolerna. Partisymboler kan dessutom 
 ### node scripts/parti.js
 
 Bygger om partifilerna och `data/parti/index.json` från det som redan finns i `data/`, utan att hämta något.
+
+`node scripts/parti.js --report-name-collisions` skriver i stället en rapport över olika partier vars aktuella namn blir lika efter normalisering. Rapporten ändrar inga filer och varje träff måste bedömas manuellt.
 
 ### npm run validate:data
 

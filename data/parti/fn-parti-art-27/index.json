@@ -1,10 +1,24 @@
 {
   "uuid": "f0b05373-8099-4cfa-8568-55159ea14ec5",
   "kod": "1631",
+  "tidigare_koder": [
+    "1425"
+  ],
   "beteckning": "FN Parti art.27",
+  "tidigare_beteckningar": [
+    "FN Parti art: 27"
+  ],
   "filnamn": "fn-parti-art-27",
+  "tidigare_filnamn": [
+    "fn-parti-art--27"
+  ],
   "registrerad_partibeteckning": false,
   "deltagande": {
+    "2018": {
+      "riksdag": true,
+      "region": [],
+      "kommun": []
+    },
     "2022": {
       "riksdag": true,
       "region": [

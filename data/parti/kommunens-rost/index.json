@@ -1,7 +1,25 @@
 {
   "uuid": "44a507e9-3733-41ec-8eb7-dbad2c7c84be",
   "kod": "1302",
+  "tidigare_koder": [
+    "1395"
+  ],
   "beteckning": "Kommunens Röst",
+  "tidigare_beteckningar": [
+    "Kommunens Röst "
+  ],
   "filnamn": "kommunens-rost",
-  "valmyndigheten_registreringsdatum": "2017-06-22"
+  "tidigare_filnamn": [
+    "kommunens-rost-"
+  ],
+  "valmyndigheten_registreringsdatum": "2017-06-22",
+  "deltagande": {
+    "2018": {
+      "riksdag": false,
+      "region": [],
+      "kommun": [
+        "1293"
+      ]
+    }
+  }
 }
