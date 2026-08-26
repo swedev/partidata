@@ -3,14 +3,11 @@ import Head from 'next/head';
 
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
-import PartySearch from 'src/components/home/PartySearch';
-import RiksdagSection from 'src/components/home/RiksdagSection';
+import HomeContent from 'src/components/home/HomeContent';
 import { partyData } from 'src/server/party-data';
 import type { HomeData } from 'src/server/party-data';
 
-const numberFormatter = new Intl.NumberFormat('sv-SE');
-
-const HomePage: NextPage<HomeData> = ({ parties, valar, lan, riksdag }) => {
+const HomePage: NextPage<HomeData> = props => {
   return (
     <div className="page-shell">
       <Head>
@@ -28,14 +25,9 @@ const HomePage: NextPage<HomeData> = ({ parties, valar, lan, riksdag }) => {
             tidigare namn och anmält deltagande i riksdags-, region- och kommunval.
             Ingen värdering, ingen rangordning — bara källhänvisad data.
           </p>
-          <p className="home-count">
-            <strong>{numberFormatter.format(parties.length)} partier</strong> i registret
-            {valar.length > 0 && `, med anmält valdeltagande från ${valar[0]} till ${valar[valar.length - 1]}`}.
-          </p>
         </div>
 
-        <PartySearch parties={parties} valar={valar} lan={lan} />
-        <RiksdagSection years={riksdag} />
+        <HomeContent {...props} />
       </main>
 
       <Footer />

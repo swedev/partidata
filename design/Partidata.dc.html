@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#F5F3EC; }
+  body { -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  a { color:#082354; text-decoration:none; }
+  a:hover { color:#051838; text-decoration:underline; }
+  input, select, button { font:inherit; color:inherit; }
+  :focus-visible { outline:2px solid #082354; outline-offset:2px; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F3EC;color:#1A1A19;font-family:'Hanken Grotesk',Helvetica,sans-serif;display:flex;flex-direction:column">
+
+  <sc-if value="{{ showParty }}">
+    <header style="position:sticky;top:0;z-index:20;background:rgba(245,243,236,.93);backdrop-filter:blur(8px);border-bottom:1px solid #E2DFD4">
+      <div style="max-width:1320px;margin:0 auto;padding:16px clamp(16px,4vw,32px);display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px">
+        <a href="#" onClick="{{ goHome }}" aria-label="Partidata — startsida" style="display:inline-block;text-decoration:none"><img src="./partidata-logotyp.svg" alt="Partidata" style="display:block;height:33px;width:auto" /></a>
+        <nav aria-label="Huvudmeny" style="display:flex;flex-wrap:wrap;gap:8px 26px;font-size:16px">
+          <a href="#" onClick="{{ goHome }}" style="color:#1A1A19">Partier</a>
+          <a href="#val">Val</a>
+          <a href="#api">API &amp; data</a>
+          <a href="#om">Om tjänsten</a>
+        </nav>
+      </div>
+    </header>
+  </sc-if>
+
+  <main style="flex:1">
+
+    <sc-if value="{{ showHome }}" hint-placeholder-val="{{ true }}">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(28px,5vw,56px) clamp(16px,4vw,32px) 72px;position:relative">
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: clamp(20px,4vw,56px); align-items: start; margin-bottom: clamp(0px,2vw,40px)">
+          <div style="width: 100%">
+            <img src="./partidata-logotyp.svg" alt="Partidata" style="display:block;height:clamp(50px,8.18vw,96px);width:auto;margin-bottom:clamp(18px,2.6vw,26px)" />
+            <nav aria-label="Huvudmeny" style="display:flex;flex-wrap:wrap;gap:8px 26px;margin-bottom:clamp(48px,6vw,72px);font-size:15px">
+              <a href="#" onClick="{{ goHome }}" style="color:#1A1A19;border-bottom:2px solid #082354;padding-bottom:2px">Partier</a>
+              <a href="#val">Val</a>
+              <a href="#api">API &amp; data</a>
+              <a href="#om">Om tjänsten</a>
+            </nav>
+            
+            <h1 style="font-family: 'Hanken Grotesk',Helvetica,sans-serif; font-weight: 600; font-size: clamp(30px,3.8vw,48px); line-height: 1.1; letter-spacing: -.025em; margin: 0 0 16px; max-width: 30ch; text-wrap: balance; margin-top: 100px">Alla registrerade partier i Sverige, på ett ställe.</h1><p style="margin: 18px 0 0; font-size: clamp(16px,1.8vw,19px); line-height: 1.55; color: #4A4A44; max-width: 62ch; text-wrap: pretty">Partidata samlar uppgifter från Valmyndigheten om partibeteckningar, tidigare namn och anmält deltagande i riksdags-, region- och kommunval. Ingen värdering, ingen rangordning — bara källhänvisad data.</p>
+          </div>
+          <img src="./riksdagen-mandat.svg" alt="" aria-hidden="true" style="position: absolute; top: 0; right: 0; pointer-events: none; width: min(34vw,640px); height: auto; margin-top: -28px">
+          <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;max-width:560px">
+            
+            
+          </div>
+        </div>
+
+        <section aria-label="Sök parti">
+          <label for="sok" style="display:block;font-size:17px;font-weight:600;margin-bottom:12px">Sök parti</label>
+          <div style="display:flex;align-items:center;gap:14px;border-bottom:2px solid #082354;padding:0 2px">
+            <i data-lucide="search" aria-hidden="true" style="width:26px;height:26px;flex:none;color:#082354;stroke-width:2"></i>
+            <input id="sok" type="search" value="{{ query }}" onChange="{{ onQuery }}" placeholder="Namn, förkortning, kommun eller region…" autoComplete="off" style="flex:1;min-width:0;border:0;outline:none;background:transparent;padding:14px 0;font-size:24px;color:#1A1A19" />
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px">
+            <span style="position:relative;display:inline-flex;align-items:center">
+              <select aria-label="Valår" value="{{ year }}" onChange="{{ onYear }}" style="border:1px solid #B9B4A4;border-radius:999px;background-color:#FFFDF8;appearance:none;-webkit-appearance:none;padding:11px 44px 11px 18px;font-size:16px;color:#1A1A19;cursor:pointer">
+                <sc-for list="{{ yearOpts }}" as="y" hint-placeholder-count="3"><option value="{{ y }}">{{ y }}</option></sc-for>
+              </select>
+              <i data-lucide="chevron-down" aria-hidden="true" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#082354;pointer-events:none"></i>
+            </span>
+            <span style="position:relative;display:inline-flex;align-items:center">
+              <select aria-label="Region" value="{{ region }}" onChange="{{ onRegion }}" style="border:1px solid #B9B4A4;border-radius:999px;background-color:#FFFDF8;appearance:none;-webkit-appearance:none;padding:11px 44px 11px 18px;font-size:16px;color:#1A1A19;cursor:pointer;max-width:240px">
+                <sc-for list="{{ regionOpts }}" as="r" hint-placeholder-count="3"><option value="{{ r }}">{{ r }}</option></sc-for>
+              </select>
+              <i data-lucide="chevron-down" aria-hidden="true" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#082354;pointer-events:none"></i>
+            </span>
+            <div role="group" aria-label="Valtyp" style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ chips }}" as="c" hint-placeholder-count="3">
+                <button type="button" onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" style="cursor:pointer;border-radius:999px;padding:11px 20px;font-size:16px;border:1.5px solid {{ c.bc }};background:{{ c.bg }};color:{{ c.fg }}">{{ c.label }}</button>
+              </sc-for>
+            </div>
+            <button type="button" onClick="{{ reset }}" style="margin-left:auto;cursor:pointer;background:none;border:0;font-size:16px;color:#082354;padding:8px 0;display:inline-flex;align-items:center;gap:7px"><i data-lucide="rotate-ccw" aria-hidden="true" style="width:15px;height:15px"></i><span style="text-decoration:underline">Rensa filter</span></button>
+          </div>
+        </section>
+
+        <sc-if value="{{ showFeatured }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <section aria-label="Riksdagspartier" style="margin-top:clamp(36px,5vw,56px)">
+              <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;border-bottom:1px solid #E2DFD4;padding-bottom:12px;margin-bottom:22px">
+                <h2 style="margin:0;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(28px,3.8vw,40px);letter-spacing:-.02em">Riksdagspartier</h2>
+                <p style="margin:0;font-size:16px;color:#45453F">Mandat efter valet 2022</p>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:10px 26px;margin:-4px 0 24px;font-size:15px;color:#45453F">
+                <span>349 mandat</span><span>175 för egen majoritet</span><span>4 % spärr</span><span>Källa: Valmyndigheten</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(220px,calc((100% - 42px)/4)),1fr));gap:14px">
+                <sc-for list="{{ riksdag }}" as="p" hint-placeholder-count="8">
+                  <dc-import name="Partikort" size="lg" party-name="{{ p.name }}" abbr="{{ p.abbr }}" logo="{{ p.logo }}" meta="{{ p.metaText }}" on-open="{{ p.open }}" hint-size="100%,200px"></dc-import>
+                </sc-for>
+              </div>
+            </section>
+
+            <section aria-label="Största partierna utanför riksdagen" style="margin-top:clamp(32px,4.5vw,48px)">
+              <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;border-bottom:1px solid #E2DFD4;padding-bottom:12px;margin-bottom:18px">
+                <h2 style="margin:0;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(24px,3.2vw,32px);letter-spacing:-.02em">Största partierna utanför riksdagen</h2>
+                <p style="margin:0;font-size:16px;color:#45453F">Bästa resultat i riksdagsval sedan 1994</p>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px">
+                <sc-for list="{{ tier2 }}" as="p" hint-placeholder-count="6">
+                  <dc-import name="Partikort" size="md" party-name="{{ p.name }}" abbr="{{ p.abbr }}" logo="{{ p.logo }}" meta="{{ p.best }}" on-open="{{ p.open }}" hint-size="100%,168px"></dc-import>
+                </sc-for>
+              </div>
+            </section>
+          </div>
+        </sc-if>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between;margin:clamp(36px,5vw,56px) 0 12px;border-bottom:1px solid #E2DFD4;padding-bottom:12px">
+          <h2 style="margin:0;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(28px,3.8vw,40px);letter-spacing:-.02em">Alla partier <span style="color:#55554F">{{ resultCount }}</span></h2>
+          <p style="margin:0;font-size:16px;color:#45453F">Sorterat A–Ö</p>
+        </div>
+
+        <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:12px">
+              <sc-for list="{{ visible }}" as="p" hint-placeholder-count="12">
+                <dc-import name="Partikort" size="sm" party-name="{{ p.name }}" abbr="{{ p.abbr }}" logo="{{ p.logo }}" meta="{{ p.levelText }}" sub="{{ p.home }}" on-open="{{ p.open }}" hint-size="100%,150px"></dc-import>
+              </sc-for>
+            </div>
+            <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;justify-content:center;padding:22px 0">
+                <button type="button" onClick="{{ more }}" style="cursor:pointer;background:transparent;border:1.5px solid #082354;border-radius:999px;padding:14px 28px;font-size:17px;font-weight:500;color:#082354;display:inline-flex;align-items:center;gap:10px" style-hover="background:#082354;color:#FFFDF8"><i data-lucide="chevron-down" aria-hidden="true" style="width:16px;height:16px"></i>Visa fler partier ({{ remaining }} kvar)</button>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isEmpty }}">
+          <div style="padding:clamp(36px,7vw,72px) 0;text-align:center;border-top:1px solid #DFDBCD">
+            <i data-lucide="search-x" aria-hidden="true" style="width:30px;height:30px;color:#B4B0A4;margin:0 auto 16px;display:block;stroke-width:1.5"></i>
+            
+            <h3 style="font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(24px,3.4vw,32px);letter-spacing:-.02em;margin:0 0 14px">Inga partier matchar {{ queryEcho }}</h3>
+            <p style="margin:0 auto 20px;max-width:48ch;font-size:17px;line-height:1.6;color:#2A2A26;text-wrap:pretty">Kontrollera stavningen, prova en förkortning eller bredda filtren. Partier som avregistrerats före 1994 finns inte i Valmyndighetens öppna underlag.</p>
+            <button type="button" onClick="{{ reset }}" style="cursor:pointer;background:#082354;color:#FFFDF8;border:0;border-radius:999px;padding:14px 28px;font-size:17px;font-weight:500" style-hover="background:#051838">Rensa sökning och filter</button>
+          </div>
+        </sc-if>
+
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showParty }}">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(20px,4vw,40px) clamp(16px,4vw,32px) 72px">
+        <button type="button" onClick="{{ goHome }}" style="cursor:pointer;background:none;border:0;padding:0;font-size:16px;color:#082354;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;width:fit-content;margin-bottom:clamp(22px,3vw,32px)"><i data-lucide="arrow-left" aria-hidden="true" style="width:16px;height:16px"></i>Alla partier</button>
+
+        <h1 style="font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(36px,6vw,68px);line-height:1;letter-spacing:-.035em;margin:0 0 clamp(24px,3vw,32px);text-wrap:balance">{{ party.name }}</h1>
+
+      <dl style="margin:0 0 clamp(14px,2vw,18px);background:#FFFDF8;border:1px solid #DFDBCD;border-radius:12px;padding:clamp(20px,2.5vw,26px) clamp(22px,3vw,30px);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px 32px">
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Förkortning</dt>
+          <dd style="margin:0;font-size:19px;font-weight:600">{{ party.abbr }}</dd>
+        </div>
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Registernummer</dt>
+          <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:500">{{ party.regNr }}</dd>
+        </div>
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Status</dt>
+          <dd style="margin:0;font-size:19px;font-weight:600">{{ party.statusShort }}</dd>
+        </div>
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Typ</dt>
+          <dd style="margin:0;font-size:19px;font-weight:600">{{ party.kindText }}</dd>
+        </div>
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Hemvist</dt>
+          <dd style="margin:0;font-size:19px;font-weight:600">{{ party.homeText }}</dd>
+        </div>
+      </dl>
+
+      <section aria-label="Grunduppgifter" style="margin-bottom:clamp(36px,5vw,56px)">
+        <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;border-bottom:1px solid #DFDBCD;padding-bottom:12px;margin-bottom:20px">
+          <h2 style="margin:0;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(24px,3.2vw,32px);letter-spacing:-.02em">Grunduppgifter</h2>
+          <p style="margin:0;font-size:16px;color:#45453F">Källa: Valmyndigheten</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(14px,2vw,18px);align-items:start">
+          <dl style="margin:0;background:#FFFDF8;border:1px solid #DFDBCD;border-radius:12px;padding:clamp(6px,1vw,10px) clamp(22px,3vw,30px)">
+            <sc-for list="{{ party.facts }}" as="f" hint-placeholder-count="3">
+              <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:{{ f.sep }}">
+                <dt style="font-size:16px;color:#45453F">{{ f.label }}</dt>
+                <dd style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.01em;text-align:right">{{ f.value }}</dd>
+              </div>
+            </sc-for>
+            <sc-if value="{{ party.hasFormer }}">
+              <div style="border-top:1px solid #EFEBE0;padding:22px 0 6px">
+                <p style="margin:0;font-size:16px;font-weight:600;color:#1A1A19">Tidigare partibeteckningar</p>
+                <sc-for list="{{ party.former }}" as="q" hint-placeholder-count="2">
+                  <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:baseline;padding:14px 0 0">
+                    <dt style="font-size:16px;color:#45453F">{{ q.name }}</dt>
+                    <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:16px;color:#45453F;text-align:right">{{ q.period }}</dd>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </dl>
+          <sc-if value="{{ party.hasLogo }}" hint-placeholder-val="{{ true }}">
+            <figure style="margin:0;background:#FFFDF8;border:1px solid #DFDBCD;border-radius:12px;padding:clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+              <div aria-hidden="true" style="width:100%;max-width:100%;height:clamp(64px,7vw,88px);background-image:url({{ party.logo }});background-size:contain;background-position:left center;background-repeat:no-repeat"></div>
+              <figcaption style="font-size:13px;color:#45453F;line-height:1.45">Logotypen tillhör partiet och är skyddad av upphovsrätt och varumärkesrätt. Den återges här enbart för identifiering av registrerad partibeteckning.</figcaption>
+            </figure>
+          </sc-if>
+        </div>
+      </section>
+
+
+
+        <section aria-label="Valresultat" style="margin-bottom:clamp(36px,5vw,56px)">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;border-bottom:1px solid #DFDBCD;padding-bottom:12px;margin-bottom:20px">
+            <h2 style="margin:0;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(24px,3.2vw,32px);letter-spacing:-.02em">Valresultat</h2>
+            <p style="margin:0;font-size:16px;color:#45453F">{{ party.resultScope }}</p>
+          </div>
+          <sc-if value="{{ party.hasResults }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(14px,2vw,18px);align-items:start">
+              <figure style="margin:0;background:#FFFDF8;border:1px solid #DFDBCD;border-radius:12px;padding:clamp(22px,3vw,30px)">
+                <figcaption style="display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between;margin-bottom:26px">
+                  <span style="font-size:19px;font-weight:600;letter-spacing:-.01em">Mandat</span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F">{{ party.maxSeats }}</span>
+                </figcaption>
+                <div style="position:relative;height:210px;margin-bottom:10px">
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:100%">
+                    <polyline points="{{ party.seatPoints }}" fill="none" stroke="#082354" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline>
+                  </svg>
+                  <sc-for list="{{ party.seatBars }}" as="p" hint-placeholder-count="8">
+                    <span aria-hidden="true" style="position:absolute;left:{{ p.x }};top:{{ p.y }};transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#082354;border:2px solid #FFFDF8"></span>
+                  </sc-for>
+                  <sc-for list="{{ party.seatBars }}" as="p" hint-placeholder-count="8">
+                    <span style="position:absolute;left:{{ p.x }};top:{{ p.y }};transform:translate(-50%,-150%);margin-left:{{ p.dx }};font-size:14px;font-weight:600;color:#1A1A19;white-space:nowrap;background:#FFFDF8;padding:1px 6px;border-radius:5px">{{ p.v }}</span>
+                  </sc-for>
+                </div>
+                <div style="position:relative;height:20px;border-top:1px solid #EFEBE0;padding-top:10px">
+                  <sc-for list="{{ party.seatBars }}" as="p" hint-placeholder-count="8">
+                    <span style="position:absolute;left:{{ p.x }};top:10px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:13px;color:#45453F">{{ p.year }}</span>
+                  </sc-for>
+                </div>
+              </figure>
+              <figure style="margin:0;background:#FFFDF8;border:1px solid #DFDBCD;border-radius:12px;padding:clamp(22px,3vw,30px)">
+                <figcaption style="display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between;margin-bottom:14px">
+                  <span style="font-size:19px;font-weight:600;letter-spacing:-.01em">Antal röster</span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F">{{ party.maxVotesLabel }}</span>
+                </figcaption>
+                <div style="position:relative;height:230px;margin-bottom:10px">
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:100%">
+                    <polyline points="{{ party.votePoints }}" fill="none" stroke="#082354" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline>
+                  </svg>
+                  <sc-for list="{{ party.voteBars }}" as="p" hint-placeholder-count="8">
+                    <span aria-hidden="true" style="position:absolute;left:{{ p.x }};top:{{ p.y }};transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#082354;border:2px solid #FFFDF8"></span>
+                  </sc-for>
+                  <sc-for list="{{ party.voteBars }}" as="p" hint-placeholder-count="8">
+                    <span style="position:absolute;left:{{ p.x }};top:{{ p.y }};transform:translate(-50%,-128%);margin-left:{{ p.dx }};display:flex;flex-direction:column;align-items:{{ p.align }};gap:1px;white-space:nowrap;background:#FFFDF8;padding:2px 6px;border-radius:5px">
+                      <span style="font-size:14px;font-weight:600;color:#1A1A19">{{ p.v }}</span>
+                      <span style="font-size:12.5px;color:#45453F">{{ p.pct }}</span>
+                    </span>
+                  </sc-for>
+                </div>
+                <div style="position:relative;height:20px;border-top:1px solid #EFEBE0;padding-top:10px">
+                  <sc-for list="{{ party.voteBars }}" as="p" hint-placeholder-count="8">
+                    <span style="position:absolute;left:{{ p.x }};top:10px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:13px;color:#45453F">{{ p.year }}</span>
+                  </sc-for>
+                </div>
+              </figure>
+            </div>
+            <p style="margin:16px 0 0;font-size:15px;color:#45453F;line-height:1.6;max-width:70ch">{{ party.resultNote }}</p>
+          </sc-if>
+          <sc-if value="{{ party.noResults }}">
+            <div style="background:#FFFDF8;border:1px solid #DFDBCD;border-radius:12px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+              <p style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.01em">Inga redovisade röstetal</p>
+              <p style="margin:0;font-size:16px;color:#45453F;line-height:1.6;max-width:60ch">Partiet har anmält valsedlar men inte fått röster redovisade i något av valen 1994–2026.</p>
+            </div>
+          </sc-if>
+        </section>
+      </div>
+    </sc-if>
+
+  </main>
+
+  <footer id="om" style="border-top:1px solid #E2DFD4;background:#EFECE3">
+    <div style="max-width:1320px;margin:0 auto;padding:32px clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-bottom:16px">
+          <img src="./partidata-logotyp.svg" alt="Partidata" style="display:block;height:37px;width:auto" />
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#2A2A26;max-width:34ch">Oberoende, partipolitiskt neutral datatjänst. Inte kopplad till någon myndighet eller något parti.</p>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Datakällor</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li><a href="#kalla">Valmyndigheten — partibeteckningar</a></li>
+          <li><a href="#kalla">Valmyndigheten — valresultat</a></li>
+          <li><a href="#kalla">SCB — regionkoder</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Öppenhet</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="download" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#api">API &amp; nedladdning (JSON, CSV)</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="github" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#github">Källkod på GitHub</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="scale" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#licens">Licens: CC BY 4.0</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Kontakt</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="mail" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="mailto:hej@partidata.se">hej@partidata.se</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="flag" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#ratta">Rapportera felaktig uppgift</a></li>
+          <li><a href="./Grafisk profil.dc.html">Grafisk profil</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid #E2DFD4">
+      <div style="max-width:1320px;margin:0 auto;padding:14px clamp(16px,4vw,32px);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;font-size:14px;color:#45453F">
+        <span>Senast uppdaterad 2026-08-19</span>
+        <span>Exempeldata i prototypen</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;pageSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:40,&quot;min&quot;:20,&quot;max&quot;:140,&quot;step&quot;:20,&quot;unit&quot;:&quot;rader&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Lista&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Normal&quot;,&quot;options&quot;:[&quot;Tät&quot;,&quot;Normal&quot;,&quot;Luftig&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lista&quot;}}">
+const REGIONS = ['Stockholm','Uppsala','Södermanland','Östergötland','Jönköping','Kronoberg','Kalmar','Gotland','Blekinge','Skåne','Halland','Västra Götaland','Värmland','Örebro','Västmanland','Dalarna','Gävleborg','Västernorrland','Jämtland','Västerbotten','Norrbotten'];
+const KOMMUNER = [['Stockholm',0],['Solna',0],['Nacka',0],['Södertälje',0],['Huddinge',0],['Täby',0],['Sollentuna',0],['Norrtälje',0],['Haninge',0],['Botkyrka',0],['Uppsala',1],['Enköping',1],['Östhammar',1],['Tierp',1],['Eskilstuna',2],['Nyköping',2],['Katrineholm',2],['Strängnäs',2],['Linköping',3],['Norrköping',3],['Motala',3],['Mjölby',3],['Finspång',3],['Jönköping',4],['Värnamo',4],['Nässjö',4],['Vetlanda',4],['Gislaved',4],['Växjö',5],['Ljungby',5],['Älmhult',5],['Alvesta',5],['Kalmar',6],['Västervik',6],['Oskarshamn',6],['Nybro',6],['Vimmerby',6],['Gotland',7],['Karlskrona',8],['Karlshamn',8],['Ronneby',8],['Sölvesborg',8],['Malmö',9],['Helsingborg',9],['Lund',9],['Kristianstad',9],['Landskrona',9],['Trelleborg',9],['Ystad',9],['Hässleholm',9],['Eslöv',9],['Ängelholm',9],['Halmstad',10],['Varberg',10],['Falkenberg',10],['Kungsbacka',10],['Laholm',10],['Göteborg',11],['Borås',11],['Trollhättan',11],['Uddevalla',11],['Skövde',11],['Lidköping',11],['Mölndal',11],['Alingsås',11],['Vänersborg',11],['Mariestad',11],['Karlstad',12],['Arvika',12],['Kristinehamn',12],['Säffle',12],['Örebro',13],['Karlskoga',13],['Kumla',13],['Lindesberg',13],['Västerås',14],['Köping',14],['Sala',14],['Fagersta',14],['Falun',15],['Borlänge',15],['Ludvika',15],['Mora',15],['Avesta',15],['Gävle',16],['Sandviken',16],['Hudiksvall',16],['Söderhamn',16],['Bollnäs',16],['Sundsvall',17],['Örnsköldsvik',17],['Härnösand',17],['Sollefteå',17],['Östersund',18],['Åre',18],['Strömsund',18],['Umeå',19],['Skellefteå',19],['Lycksele',19],['Vilhelmina',19],['Luleå',20],['Piteå',20],['Kiruna',20],['Gällivare',20],['Boden',20]];
+const PATTERNS = [k => k + 'partiet', k => k + 's Väl', k => 'Framtid ' + k, k => k + 'listan', k => 'Vi i ' + k, k => k + 'bygdens parti', k => 'Sjukvårdspartiet ' + k];
+const NATIONAL = [['Socialdemokraterna','S',1889],['Moderaterna','M',1904],['Sverigedemokraterna','SD',1988],['Centerpartiet','C',1913],['Vänsterpartiet','V',1917],['Kristdemokraterna','KD',1964],['Miljöpartiet de gröna','MP',1981],['Liberalerna','L',1934],['Feministiskt initiativ','Fi',2005],['Piratpartiet','PP',2006],['Alternativ för Sverige','AfS',2018],['Medborgerlig Samling','MED',2014],['Landsbygdspartiet oberoende','LPo',2011],['Djurens parti','DP',2014],['Enhet','ENH',1993],['Partiet Nyans','NYA',2019],['Direktdemokraterna','DD',2014],['Klassiskt liberala partiet','KLP',2004],['Kristna Värdepartiet','KrV',2014],['Sveriges kommunistiska parti','SKP',1995],['Kommunistiska Partiet','KP',1970],['Socialistiska Partiet','SP',1982],['Basinkomstpartiet','BIP',2018],['Initiativet','INI',2018],['Skånepartiet','SkP',1979],['Rättvisepartiet Socialisterna','RS',1997],['Norrbottens Sjukvårdsparti','NS',1990],['Framtid Gotland','FG',2002],['Vändpunkt','VP',2019],['Fria Demokrater','FD',2020],['Folkets Röst','FR',2021]];
+const RIKSDAG = [['Socialdemokraterna','S',107],['Sverigedemokraterna','SD',73],['Moderaterna','M',68],['Vänsterpartiet','V',24],['Centerpartiet','C',24],['Kristdemokraterna','KD',19],['Miljöpartiet de gröna','MP',18],['Liberalerna','L',16]];
+const TIER2 = [['Feministiskt initiativ','Fi',null,'3,12 % · 2014'],['Piratpartiet','PP',null,'0,65 % · 2010'],['Partiet Nyans','NYA',null,'0,44 % · 2022'],['Alternativ för Sverige','AfS',null,'0,31 % · 2022'],['Medborgerlig Samling','MED',null,'0,15 % · 2022'],['Djurens parti','DP',null,'0,10 % · 2018']];
+const LOGOS = ['S','SD','M','V','C','KD','MP','L','Fi','PP','NYA','AfS','MED','DP'];
+const REG = { M:'0001', S:'0002', L:'0003', C:'0004', V:'0005', MP:'0055', KD:'0068', SD:'0110', PP:'0524', Fi:'0532', DP:'1136', MED:'1296', AfS:'1325', NYA:'1439' };
+const YEARS = [2026,2022,2018,2014,2010,2006,2002,1998,1994];
+const FORMER = {
+  'Liberalerna': [['Folkpartiet liberalerna','1990–2015'],['Folkpartiet','1934–1990']],
+  'Moderaterna': [['Moderata samlingspartiet','1969–2017'],['Högerpartiet','1952–1969']],
+  'Vänsterpartiet': [['Vänsterpartiet kommunisterna','1967–1990']],
+  'Kristdemokraterna': [['Kristdemokratiska samhällspartiet','1987–1996'],['Kristen Demokratisk Samling','1964–1987']],
+  'Miljöpartiet de gröna': [['Miljöpartiet','1981–1985']]
+};
+
+function hash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function abbrOf(name) {
+  const w = name.replace(/[^0-9A-Za-zÅÄÖåäö\s]/g, ' ').split(/\s+/).filter(Boolean);
+  return (w.length === 1 ? w[0].slice(0, 3) : w.map(x => x[0]).join('').slice(0, 4)).toUpperCase();
+}
+
+class Component extends DCLogic {
+  state = { q: '', year: 'Alla valår', region: 'Alla regioner', riksdag: false, regionval: false, kommunval: false, limit: null, party: null };
+  page() { return this.props.pageSize ?? 40; }
+  icons() { if (window.lucide) window.lucide.createIcons(); }
+  componentDidMount() { this.icons(); setTimeout(() => this.icons(), 400); }
+  componentDidUpdate() { this.icons(); }
+
+  all() {
+    if (this._all) return this._all;
+    const list = [];
+    NATIONAL.forEach((n, i) => {
+      const h = hash(n[0]);
+      const years = YEARS.filter((y, j) => i < 8 ? true : ((h >> j) & 1) === 1 || j === 1);
+      list.push({ name: n[0], abbr: n[1], founded: n[2], kommun: null, region: null,
+        kind: i < 8 ? 'Riksdagsparti' : 'Nationellt registrerat parti', riksdag: true, regionval: i < 8 || (h & 2) > 0, kommunval: true, years });
+    });
+    KOMMUNER.forEach(([k, ri], i) => {
+      for (let j = 0; j < 7 && list.length < 670; j++) {
+        const name = PATTERNS[(i + j) % 7](k);
+        const h = hash(name);
+        const years = YEARS.filter((y, n) => ((h >> n) & 1) === 1 || n === 1);
+        list.push({ name, abbr: abbrOf(name), founded: 1988 + (h % 34), kommun: k, region: REGIONS[ri],
+          kind: 'Lokalt parti', riksdag: (h % 29) === 0, regionval: (h % 5) < 2, kommunval: true, years });
+      }
+    });
+    this._all = list.sort((a, b) => a.name.localeCompare(b.name, 'sv'));
+    return this._all;
+  }
+
+  filtered() {
+    const s = this.state, q = s.q.trim().toLowerCase();
+    return this.all().filter(p => {
+      if (q && !(p.name.toLowerCase().includes(q) || p.abbr.toLowerCase().includes(q) || (p.kommun || '').toLowerCase().includes(q) || (p.region || '').toLowerCase().includes(q))) return false;
+      if (s.year !== 'Alla valår' && !p.years.includes(Number(s.year))) return false;
+      if (s.region !== 'Alla regioner' && p.region !== s.region) return false;
+      if (s.riksdag && !p.riksdag) return false;
+      if (s.regionval && !p.regionval) return false;
+      if (s.kommunval && !p.kommunval) return false;
+      return true;
+    });
+  }
+
+  chip(key, label) {
+    const on = !!this.state[key];
+    return { label, on, bg: on ? '#082354' : '#FFFFFF', fg: on ? '#FFFFFF' : '#4A4A44', bc: on ? '#082354' : '#CFCBBD',
+      toggle: () => this.setState({ [key]: !on, limit: this.page() }) };
+  }
+
+  featured(r, prefix) {
+    const p = this.all().find(x => x.name === r[0]);
+    return { name: r[0], abbr: r[1], seats: r[2], best: r[3], metaText: r[2] + ' mandat', logo: './logos/' + r[1].toLowerCase() + '.png',
+      open: () => { this.setState({ party: this.detail(p) }); window.scrollTo(0, 0); },
+      key: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.setState({ party: this.detail(p) }); window.scrollTo(0, 0); } } };
+  }
+
+  // Riksdagsval: [år, andel giltiga röster i %, mandat] — verkliga tal för riksdagspartierna
+  static get REAL() {
+    return {
+      S: [[1994, 45.30, 161], [1998, 36.39, 131], [2002, 39.85, 144], [2006, 34.99, 130], [2010, 30.66, 112], [2014, 31.01, 113], [2018, 28.26, 100], [2022, 30.33, 107]],
+      M: [[1994, 22.40, 80], [1998, 22.90, 82], [2002, 15.26, 55], [2006, 26.23, 97], [2010, 30.06, 107], [2014, 23.33, 84], [2018, 19.84, 70], [2022, 19.10, 68]],
+      SD: [[1998, 0.37, 0], [2002, 1.44, 0], [2006, 2.93, 0], [2010, 5.70, 20], [2014, 12.86, 49], [2018, 17.53, 62], [2022, 20.54, 73]],
+      C: [[1994, 7.65, 27], [1998, 5.11, 18], [2002, 6.19, 22], [2006, 7.88, 29], [2010, 6.56, 23], [2014, 6.11, 22], [2018, 8.61, 31], [2022, 6.71, 24]],
+      V: [[1994, 6.20, 22], [1998, 11.99, 43], [2002, 8.39, 30], [2006, 5.85, 22], [2010, 5.60, 19], [2014, 5.72, 21], [2018, 8.00, 28], [2022, 6.75, 24]],
+      KD: [[1994, 4.06, 15], [1998, 11.77, 42], [2002, 9.15, 33], [2006, 6.59, 24], [2010, 5.60, 19], [2014, 4.57, 16], [2018, 6.32, 22], [2022, 5.34, 19]],
+      MP: [[1994, 5.02, 18], [1998, 4.50, 16], [2002, 4.65, 17], [2006, 5.24, 19], [2010, 7.34, 25], [2014, 6.89, 25], [2018, 4.41, 16], [2022, 5.08, 18]],
+      L: [[1994, 7.19, 26], [1998, 4.72, 17], [2002, 13.39, 48], [2006, 7.54, 28], [2010, 7.06, 24], [2014, 5.42, 19], [2018, 5.49, 20], [2022, 4.61, 16]],
+      Fi: [[2006, 0.68, 0], [2010, 0.40, 0], [2014, 3.12, 0], [2018, 0.46, 0], [2022, 0.09, 0]],
+      PP: [[2006, 0.63, 0], [2010, 0.65, 0], [2014, 0.43, 0]],
+      NYA: [[2022, 0.44, 0]],
+      AfS: [[2018, 0.31, 0], [2022, 0.29, 0]],
+      MED: [[2018, 0.18, 0], [2022, 0.15, 0]],
+      DP: [[2014, 0.05, 0], [2018, 0.10, 0], [2022, 0.09, 0]]
+    };
+  }
+
+  series(p) {
+    const real = Component.REAL[p.abbr];
+    if (real) return { rows: real, local: false };
+    // lokala partier: kommunval, andelar härledda ur samma hash som partidatan
+    const h = hash(p.name);
+    const rows = p.years.filter(y => y <= 2022).sort((a, b) => a - b).map((y, i) => {
+      const pct = 1.4 + ((h >> (i * 3)) % 62) / 10;
+      const seats = Math.max(0, Math.round(pct / 100 * 49) - (pct < 3 ? 1 : 0));
+      return [y, Math.round(pct * 100) / 100, seats];
+    });
+    return { rows, local: true };
+  }
+
+  charts(p) {
+    const TOTALS = { 1994: 5787400, 1998: 5377100, 2002: 5327300, 2006: 5551300, 2010: 5960400, 2014: 6178100, 2018: 6476700, 2022: 6578000 };
+    const s = this.series(p);
+    const res = s.rows, n = res.length, local = s.local;
+    const localTotal = 9000 + (hash(p.name) % 26000);
+    const nf = new Intl.NumberFormat('sv-SE');
+    const maxSeats = res.reduce((m, r) => Math.max(m, r[2]), 0);
+    const votes = res.map(r => Math.round(r[1] / 100 * (local ? localTotal : TOTALS[r[0]])));
+    const maxVotes = votes.reduce((m, v) => Math.max(m, v), 1);
+    const plot = (val, max) => 94 - (max > 0 ? val / max : 0) * 78;
+    const xAt = i => n > 1 ? i / (n - 1) * 100 : 50;
+    const dx = i => i === 0 ? '22px' : i === n - 1 ? '-22px' : '0px';
+    const sparse = i => (n - 1 - i) % 2 === 0;
+    const seatBars = res.map((r, i) => ({ year: String(r[0]), v: String(r[2]), dx: dx(i),
+      x: xAt(i).toFixed(2) + '%', y: plot(r[2], maxSeats).toFixed(2) + '%' }));
+    const voteBars = res.map((r, i) => ({ year: String(r[0]), dx: dx(i),
+      align: i === 0 ? 'flex-start' : i === n - 1 ? 'flex-end' : 'center',
+      v: sparse(i) ? nf.format(votes[i]) : '', pct: sparse(i) ? r[1].toFixed(1).replace('.', ',') + ' %' : '',
+      x: xAt(i).toFixed(2) + '%', y: plot(votes[i], maxVotes).toFixed(2) + '%' }));
+    const pts = arr => arr.map((q, i) => xAt(i).toFixed(2) + ',' + parseFloat(q.y).toFixed(2)).join(' ');
+    return {
+      seatBars, voteBars, seatPoints: pts(seatBars), votePoints: pts(voteBars),
+      hasResults: n > 0, noResults: n === 0,
+      maxSeats: maxSeats > 0 ? 'Flest ' + maxSeats + ' mandat' : 'Inga mandat',
+      maxVotesLabel: 'Flest ' + nf.format(maxVotes) + ' röster',
+      resultScope: local ? 'Kommunval i ' + p.kommun : 'Riksdagsval 1994–2022',
+      resultNote: local
+        ? 'Andelen avser giltiga röster i kommunvalet i ' + p.kommun + ' kommun. Exempeldata i prototypen.'
+        : 'Andelen avser giltiga röster i hela riket. Röstetalen är beräknade utifrån andelen och antalet giltiga röster i respektive riksdagsval.'
+    };
+  }
+
+  detail(p) {
+    const active = p.years.includes(2026) || p.years.includes(2022);
+    const former = (FORMER[p.name] || []).map(f => ({ name: f[0], period: f[1] }));
+    return Object.assign(this.charts(p), {
+      name: p.name, abbr: p.abbr, former, hasFormer: former.length > 0,
+      hasLogo: LOGOS.indexOf(p.abbr) > -1, logo: './logos/' + p.abbr.toLowerCase() + '.png',
+      kindText: p.kind, homeText: p.kommun ? p.kommun + ' kommun · ' + p.region : 'Hela landet',
+      statusShort: active ? 'Aktiv' : 'Vilande',
+      regNr: REG[p.abbr] || String(1500 + (hash(p.name) % 8400)),
+      summary: p.kommun
+        ? 'Lokalt parti med hemvist i ' + p.kommun + ' kommun, ' + p.region + '. Uppgifterna nedan är hämtade från Valmyndighetens register över anmälda partibeteckningar.'
+        : 'Nationellt registrerad partibeteckning. Uppgifterna nedan är hämtade från Valmyndighetens register över anmälda partibeteckningar och valsedelsbeställningar.',
+      facts: [
+        { label: 'Först registrerat', value: String(p.founded) },
+        { label: 'Senaste val med deltagande', value: String(Math.max.apply(null, p.years)) },
+        { label: 'Antal val med deltagande', value: p.years.length + ' av 9' }
+      ].map((f, i) => Object.assign(f, { sep: i === 0 ? 'none' : '1px solid #EFEBE0' }))
+    });
+  }
+
+  renderVals() {
+    const s = this.state, limit = s.limit ?? this.page();
+    const res = s.party ? [] : this.filtered();
+    const nf = new Intl.NumberFormat('sv-SE');
+    const vis = res.slice(0, limit).map(p => ({
+      name: p.name, abbr: p.abbr, home: p.kommun ? p.kommun + ' · ' + p.region : 'Hela landet',
+      logo: LOGOS.indexOf(p.abbr) > -1 ? './logos/' + p.abbr.toLowerCase() + '.png' : '',
+      levelText: [p.riksdag ? 'Riksdag' : null, p.regionval ? 'Region' : null, p.kommunval ? 'Kommun' : null].filter(Boolean).join(' · ') + ' · ' + p.years.length + '/9 val',
+      yearText: p.years.length + '/9 val',
+      open: () => { this.setState({ party: this.detail(p) }); window.scrollTo(0, 0); },
+      key: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.setState({ party: this.detail(p) }); window.scrollTo(0, 0); } }
+    }));
+    return {
+      totalCount: nf.format(this.all().length),
+      showHome: !s.party, showParty: !!s.party, party: s.party,
+      query: s.q, year: s.year, region: s.region,
+      yearOpts: ['Alla valår'].concat(YEARS.map(String)),
+      regionOpts: ['Alla regioner'].concat(REGIONS),
+      chips: [this.chip('riksdag', 'Riksdagsval'), this.chip('regionval', 'Regionval'), this.chip('kommunval', 'Kommunval')],
+      onQuery: e => this.setState({ q: e.target.value, limit: this.page() }),
+      onYear: e => this.setState({ year: e.target.value, limit: this.page() }),
+      onRegion: e => this.setState({ region: e.target.value, limit: this.page() }),
+      reset: () => this.setState({ q: '', year: 'Alla valår', region: 'Alla regioner', riksdag: false, regionval: false, kommunval: false, limit: this.page() }),
+      goHome: e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ party: null }); window.scrollTo(0, 0); },
+      showFeatured: !s.q.trim() && s.year === 'Alla valår' && s.region === 'Alla regioner' && !s.riksdag && !s.regionval && !s.kommunval,
+      riksdag: RIKSDAG.map(r => this.featured(r, 'rd-')),
+      tier2: TIER2.map(r => this.featured(r, 't2-')),
+      rowPad: (this.props.density === 'Luftig' ? '22px 4px' : this.props.density === 'Tät' ? '12px 4px' : '17px 4px'),
+      visible: vis, hasResults: res.length > 0, isEmpty: !s.party && res.length === 0,
+      hasMore: res.length > limit, remaining: nf.format(Math.max(0, res.length - limit)),
+      more: () => this.setState(st => ({ limit: (st.limit ?? this.page()) + this.page() })),
+      resultCount: nf.format(res.length),
+      queryEcho: s.q.trim() ? '”' + s.q.trim() + '”' : 'dina filter'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

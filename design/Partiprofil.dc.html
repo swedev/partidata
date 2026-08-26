@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#F5F3EC; }
+  body { -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  a { color:#082354; text-decoration:none; }
+  a:hover { color:#051838; text-decoration:underline; }
+  input, select, button { font:inherit; color:inherit; }
+  :focus-visible { outline:2px solid #082354; outline-offset:3px; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F3EC;color:#1A1A19;font-family:'Hanken Grotesk',Helvetica,sans-serif;display:flex;flex-direction:column">
+
+  <main style="flex:1">
+
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(28px,5vw,56px) clamp(16px,4vw,32px) 0;position:relative">
+      <img src="./riksdagen-mandat.svg" alt="" aria-hidden="true" style="position:absolute;top:0;right:clamp(16px,4vw,32px);pointer-events:none;width:min(32vw,560px);height:auto;margin-top:-14px" />
+
+      <a href="./Partidata.dc.html" aria-label="Partidata — startsida" style="display:inline-block"><img src="./partidata-logotyp.svg" alt="Partidata" style="display:block;height:clamp(50px,8.18vw,96px);width:auto;margin-bottom:clamp(18px,2.6vw,26px)" /></a>
+      <nav aria-label="Huvudmeny" style="display:flex;flex-wrap:wrap;gap:8px 26px;margin-bottom:clamp(44px,6vw,72px);font-size:15px">
+        <a href="./Partidata.dc.html" style="color:#1A1A19;border-bottom:2px solid #082354;padding-bottom:2px">Partier</a>
+        <a href="#resultat">Val</a>
+        <a href="#export">API &amp; data</a>
+        <a href="#om">Om tjänsten</a>
+      </nav>
+
+      <a href="./Partidata.dc.html" style="font-size:16px;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;margin-bottom:clamp(18px,2.4vw,26px)"><i data-lucide="arrow-left" aria-hidden="true" style="width:16px;height:16px"></i>Alla partier</a>
+
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);align-items:start">
+        <div style="grid-column:span 2;min-width:0">
+          <h1 style="margin:0 0 18px;font-weight:600;font-size:clamp(32px,4.6vw,54px);line-height:1.02;letter-spacing:-.034em;text-wrap:balance">Miljöpartiet de gröna</h1>
+          <p style="margin:0;font-size:clamp(16px,1.5vw,19px);line-height:1.5;color:#2A2A26;max-width:52ch">Nationellt parti, grundat 1981, i riksdagen sedan 1988. Anmält deltagande i riksdags-, region- och kommunval 2026 — valbart i 247 av 290 kommuner.</p>
+        </div>
+        <div style="min-width:0;display:flex;flex-direction:column;gap:14px;align-items:stretch">
+          <span style="background:#FFFDF8;border-radius:12px;padding:clamp(20px,2.2vw,30px) clamp(22px,2.4vw,34px);display:block;width:100%"><img src="./logos/mp.png" alt="Miljöpartiet de grönas logotyp" style="display:block;width:100%;height:auto" /></span>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:#55554F">Partibeteckningens logotyp, hämtad ur Valmyndighetens öppna data. Bilden tillhör partiet och återges för identifiering.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);margin:clamp(26px,3.2vw,38px) 0 0">
+        <div style="min-width:0;padding:20px 0">
+          <p style="margin:0 0 6px;font-size:14.5px;color:#55554F">Mandat i riksdagen</p>
+          <p style="margin:0 0 8px;font-size:clamp(26px,2.8vw,32px);font-weight:600;letter-spacing:-.025em;white-space:nowrap">18 <span style="font-size:16px;font-weight:400;color:#55554F">av 349</span></p>
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.5;color:#55554F">Riksdagen · data.riksdagen.se<br />hämtat 2026-08-18 · CC0</p>
+        </div>
+        <div style="min-width:0;padding:20px 0">
+          <p style="margin:0 0 6px;font-size:14.5px;color:#55554F">Riksdagsvalet 2022</p>
+          <p style="margin:0 0 8px;font-size:clamp(26px,2.8vw,32px);font-weight:600;letter-spacing:-.025em;white-space:nowrap">5,08 <span style="font-size:16px;font-weight:400;color:#55554F">%</span></p>
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.5;color:#55554F">Valmyndigheten · val.se/valresultat<br />slutligt resultat · CC0</p>
+        </div>
+        <div style="min-width:0;padding:20px 0">
+          <p style="margin:0 0 6px;font-size:14.5px;color:#55554F">Kommunala mandat</p>
+          <p style="margin:0 0 8px;font-size:clamp(26px,2.8vw,32px);font-weight:600;letter-spacing:-.025em;white-space:nowrap">543</p>
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.5;color:#55554F">Valmyndigheten · kommunval 2022<br />hämtat 2026-08-19 · CC0</p>
+        </div>
+      </div>
+
+      <div style="margin:clamp(30px,3.6vw,46px) calc(-1 * clamp(26px,3vw,38px)) 0;background:#FFFDF8;border-radius:14px;padding:clamp(26px,3vw,36px) clamp(26px,3vw,38px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);align-items:start">
+        <div style="min-width:0">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+            <span aria-hidden="true" style="width:44px;height:44px;border-radius:9px;background:#53A045;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">MP</span>
+            <h2 style="margin:0;font-weight:600;font-size:clamp(20px,2.2vw,25px);letter-spacing:-.02em">Partiets egna kanaler</h2>
+          </div>
+          <p style="margin:0;font-size:15.5px;line-height:1.6;color:#45453F;text-wrap:pretty">Länkarna går till partiets egen webbplats och pressrum. Partidata äger inte innehållet och speglar det inte — allt öppnas hos utgivaren.</p>
+          <p style="margin:12px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">mp.se · kontrollerad 2026-08-24</p>
+        </div>
+        <div style="grid-column:span 2;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,3vw,48px)">
+          <a href="https://mp.se" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0" style-hover="text-decoration:none">
+            <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+              <span style="font-size:18.5px;font-weight:600;letter-spacing:-.012em">Webbplats</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">mp.se</span>
+            </span>
+            <i data-lucide="arrow-up-right" aria-hidden="true" style="flex:none;width:18px;height:18px;color:#082354"></i>
+          </a>
+          <a href="https://mp.se" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0" style-hover="text-decoration:none">
+            <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+              <span style="font-size:18.5px;font-weight:600;letter-spacing:-.012em">Partiprogram 2025</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">mp.se/vart-parti</span>
+            </span>
+            <i data-lucide="arrow-up-right" aria-hidden="true" style="flex:none;width:18px;height:18px;color:#082354"></i>
+          </a>
+          <a href="https://mp.se" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid #DFDBCD" style-hover="text-decoration:none">
+            <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+              <span style="font-size:18.5px;font-weight:600;letter-spacing:-.012em">Våra politiker</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">mp.se/vara-politiker</span>
+            </span>
+            <i data-lucide="arrow-up-right" aria-hidden="true" style="flex:none;width:18px;height:18px;color:#082354"></i>
+          </a>
+          <a href="https://mp.se" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid #DFDBCD" style-hover="text-decoration:none">
+            <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+              <span style="font-size:18.5px;font-weight:600;letter-spacing:-.012em">Bli medlem</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">mp.se/bli-medlem</span>
+            </span>
+            <i data-lucide="arrow-up-right" aria-hidden="true" style="flex:none;width:18px;height:18px;color:#082354"></i>
+          </a>
+          <a href="https://gronungdom.se" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid #DFDBCD" style-hover="text-decoration:none">
+            <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+              <span style="font-size:18.5px;font-weight:600;letter-spacing:-.012em">Ungdomsförbund</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">gronungdom.se</span>
+            </span>
+            <i data-lucide="arrow-up-right" aria-hidden="true" style="flex:none;width:18px;height:18px;color:#082354"></i>
+          </a>
+          <a href="mailto:info@mp.se" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid #DFDBCD" style-hover="text-decoration:none">
+            <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+              <span style="font-size:18.5px;font-weight:600;letter-spacing:-.012em">Kontakt</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">växeln 08-545 224 50</span>
+            </span>
+            <i data-lucide="arrow-up-right" aria-hidden="true" style="flex:none;width:18px;height:18px;color:#082354"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section id="dokument" style="max-width:1320px;margin:0 auto;padding:clamp(40px,5.4vw,74px) clamp(16px,4vw,32px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid #DFDBCD;padding-bottom:14px;margin-bottom:clamp(20px,2.6vw,28px)">
+        <div>
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.026em">Vad partiet själv har skrivit</h2>
+          <p style="margin:8px 0 0;font-size:16px;color:#45453F">Länkar går till utgivarens original — inga sammanfattningar</p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,48px);align-items:flex-start">
+        <blockquote style="flex:2 1 460px;min-width:0;margin:0;background:#FFFDF8;border-radius:14px;padding:clamp(24px,2.8vw,36px) clamp(24px,3vw,40px)">
+          <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:#55554F">URKLIPP · VALMANIFEST 2026</p>
+          <p style="margin:0 0 6px;font-size:clamp(19px,2.1vw,23px);font-weight:600;letter-spacing:-.02em">”Sverige vinner på grön politik”</p>
+          <p style="margin:0 0 22px;font-size:15px;color:#45453F">Manifestet presenterades 10 augusti 2026. Punkterna är partiets egna formuleringar.</p>
+          <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px">
+            <li style="display:flex;gap:16px">
+              <span aria-hidden="true" style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#53A045;padding-top:2px">01</span>
+              <span><span style="display:block;font-size:17.5px;font-weight:600;margin-bottom:5px">Klimatmålen ska ligga fast</span><span style="display:block;font-size:15.5px;line-height:1.6;color:#2A2A26;max-width:56ch">Partiet vill se ”en snabb och rättvis klimatomställning i hela landet” och att de som släpper ut mest också ska betala mest.</span></span>
+            </li>
+            <li style="display:flex;gap:16px">
+              <span aria-hidden="true" style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#53A045;padding-top:2px">02</span>
+              <span><span style="display:block;font-size:17.5px;font-weight:600;margin-bottom:5px">Ett miljonprogram för elbilar</span><span style="display:block;font-size:15.5px;line-height:1.6;color:#2A2A26;max-width:56ch">En miljon elbilar ska ut på svenska vägar till år 2031, som del av paketet Folkel för snabbare elektrifiering.</span></span>
+            </li>
+            <li style="display:flex;gap:16px">
+              <span aria-hidden="true" style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#53A045;padding-top:2px">03</span>
+              <span><span style="display:block;font-size:17.5px;font-weight:600;margin-bottom:5px">Billig grön el för fler</span><span style="display:block;font-size:15.5px;line-height:1.6;color:#2A2A26;max-width:56ch">Folkel ska göra det enklare att producera egen el och billigare att ladda bilen — oavsett villa, bostadsrätt eller hyresrätt.</span></span>
+            </li>
+            <li style="display:flex;gap:16px">
+              <span aria-hidden="true" style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#53A045;padding-top:2px">04</span>
+              <span><span style="display:block;font-size:17.5px;font-weight:600;margin-bottom:5px">Sverigekortet i kollektivtrafiken</span><span style="display:block;font-size:15.5px;line-height:1.6;color:#2A2A26;max-width:56ch">Kollektivtrafiken ska bli billigare och enklare, och järnvägen byggas ut ”så att tågen går i tid”.</span></span>
+            </li>
+            <li style="display:flex;gap:16px">
+              <span aria-hidden="true" style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#53A045;padding-top:2px">05</span>
+              <span><span style="display:block;font-size:17.5px;font-weight:600;margin-bottom:5px">Östersjöpaketet</span><span style="display:block;font-size:15.5px;line-height:1.6;color:#2A2A26;max-width:56ch">Östersjön utpekas som huvudprioritering i en kommande regering, med en samlad politik för havets återhämtning.</span></span>
+            </li>
+          </ol>
+          <footer style="margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:baseline;justify-content:space-between">
+            <a href="https://mp.se" style="font-size:15.5px;display:inline-flex;align-items:center;gap:8px">Läs hela valmanifestet<i data-lucide="external-link" aria-hidden="true" style="width:14px;height:14px"></i></a>
+            <cite style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-style:normal;color:#55554F">mp.se · valmanifest 2026 · citerat 2026-08-24</cite>
+          </footer>
+        </blockquote>
+
+        <div style="flex:1 1 300px;min-width:0">
+          <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+            <span aria-hidden="true" style="width:30px;height:30px;border-radius:7px;background:#53A045;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">MP</span>
+            <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:600">Från partiet</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">mp.se · hämtat 2026-08-24 · upphovsrätt utgivaren</span></span>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0">
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="https://mp.se" style="font-size:16.5px;font-weight:500">Partiprogram 2025</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">gällande program</span>
+            </li>
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="https://mp.se" style="font-size:16.5px;font-weight:500">Valmanifest 2026</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">presenterat 2026-08-10</span>
+            </li>
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="https://mp.se" style="font-size:16.5px;font-weight:500">Valmanifest 2024</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">EU-valet</span>
+            </li>
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="https://mp.se" style="font-size:16.5px;font-weight:500">Valmanifest 2022</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">föregående riksdagsval</span>
+            </li>
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="https://mp.se" style="font-size:16.5px;font-weight:500">Gällande stadgar</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">mp.se/vart-parti</span>
+            </li>
+          </ul>
+          <p style="margin:18px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:#55554F">SENASTE NYTT FRÅN MP.SE</p>
+          <ul style="list-style:none;margin:8px 0 0;padding:0">
+            <li style="padding:9px 0;display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;width:64px">24 aug</span><a href="https://mp.se" style="font-size:15.5px">Miljöpartiet säger nej till ”högervriden” regering</a></li>
+            <li style="padding:9px 0;display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;width:64px">18 aug</span><a href="https://mp.se" style="font-size:15.5px">MP drar ut på klimatturné med C</a></li>
+            <li style="padding:9px 0;display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;width:64px">17 aug</span><a href="https://mp.se" style="font-size:15.5px">Östersjöpaket: ”Östersjön har inte råd att vänta”</a></li>
+            <li style="padding:9px 0;display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;width:64px">12 aug</span><a href="https://mp.se" style="font-size:15.5px">Folkel: grön el ska vara billigare och tillgänglig för alla</a></li>
+            <li style="padding:9px 0;display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;width:64px">12 aug</span><a href="https://mp.se" style="font-size:15.5px">Språkrörens sommartal 2026</a></li>
+          </ul>
+        </div>
+
+        <div style="flex:1 1 100%;min-width:0;margin-top:clamp(18px,2.4vw,30px)">
+          <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+            <span aria-hidden="true" style="width:30px;height:30px;border-radius:7px;background:#1D4F91;color:#FFFDF8;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">R</span>
+            <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:600">Från riksdagen</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">data.riksdagen.se/dokumentlista · hämtat 2026-08-18 · CC0</span></span>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:0 clamp(24px,3vw,48px)">
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="#dokument" style="font-size:16.5px;font-weight:500">Partimotion: budgetalternativ 2026</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">2025/26:2130 · 2025-10-06</span>
+            </li>
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="#dokument" style="font-size:16.5px;font-weight:500">Motion om klimatpolitiska ramverket</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">2025/26:1842 · 2025-10-04</span>
+            </li>
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="#dokument" style="font-size:16.5px;font-weight:500">Kommittémotion: skydd av gammal skog</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">2025/26:1907 · 2025-10-05</span>
+            </li>
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="#dokument" style="font-size:16.5px;font-weight:500">Interpellation om utsläppsrätter</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">2025/26:412 · 2026-02-19</span>
+            </li>
+            <li style="padding:11px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="#dokument" style="font-size:16.5px;font-weight:500">Alla dokument från partiets ledamöter</a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">1 412 träffar · API</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="representanter" style="max-width:1320px;margin:0 auto;padding:clamp(40px,5.4vw,74px) clamp(16px,4vw,32px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid #DFDBCD;padding-bottom:14px;margin-bottom:clamp(24px,3vw,34px)">
+        <div>
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.026em">Vilka som företräder partiet</h2>
+          <p style="margin:8px 0 0;font-size:16px;color:#45453F">Miljöpartiets riksdagsgrupp · 18 mandat</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:11px">
+          <span aria-hidden="true" style="width:34px;height:34px;border-radius:7px;background:#53A045;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">MP</span>
+          <span style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:14.5px;font-weight:600">Partiets egen webbplats</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">mp.se/om/riksdagspolitiker · hämtat 2026-08-24</span>
+          </span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);align-items:start">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:16px">
+          <img src="./reps/amanda-lind.jpg" alt="Amanda Lind" style="display:block;width:80%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:12px;background:#EFECE3" />
+          <figcaption>
+            <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#55554F">Språkrör</p>
+            <p style="margin:0 0 10px;font-size:clamp(21px,2.2vw,26px);font-weight:600;letter-spacing:-.022em">Amanda Lind</p>
+            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#2A2A26;max-width:34ch">Partiets språkrör tillsammans med Daniel Helldén.</p>
+            <a href="https://www.mp.se/om/amanda-lind/" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:15px">Profil på mp.se<i data-lucide="arrow-up-right" aria-hidden="true" style="width:15px;height:15px"></i></a>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:16px">
+          <img src="./reps/daniel-hellden.jpg" alt="Daniel Helldén" style="display:block;width:80%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:12px;background:#EFECE3" />
+          <figcaption>
+            <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#55554F">Språkrör</p>
+            <p style="margin:0 0 10px;font-size:clamp(21px,2.2vw,26px);font-weight:600;letter-spacing:-.022em">Daniel Helldén</p>
+            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#2A2A26;max-width:34ch">Språkrör och riksdagsledamot i Utrikesnämnden och Krigsdelegationen.</p>
+            <a href="https://www.mp.se/om/daniel-hellden/" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:15px">Profil på mp.se<i data-lucide="arrow-up-right" aria-hidden="true" style="width:15px;height:15px"></i></a>
+          </figcaption>
+        </figure>
+        <div style="min-width:0">
+          <p style="margin:0 0 14px;font-size:16px;line-height:1.6;color:#2A2A26;text-wrap:pretty">Partiet leds av två språkrör, ett kvinnligt och ett manligt, valda av kongressen. Riksdagsgruppen leds av en gruppledare med vice gruppledare.</p>
+          <p style="margin:0 0 18px;font-size:15.5px;line-height:1.6;color:#45453F;text-wrap:pretty">Uppdragen är hämtade ordagrant från partiets egen presentation av riksdagsgruppen. Pressfoton kommer från samma sidor och tillhör respektive fotograf.</p>
+          <a href="https://www.mp.se/om/riksdagspolitiker/" style="display:inline-flex;align-items:center;gap:7px;font-size:15.5px">Hela riksdagsgruppen på mp.se<i data-lucide="arrow-up-right" aria-hidden="true" style="width:15px;height:15px"></i></a>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);margin-top:clamp(28px,3.4vw,44px);padding-top:clamp(24px,3vw,34px);border-top:1px solid #DFDBCD">
+        <figure style="margin:0;display:flex;gap:16px;align-items:flex-start">
+          <img src="./reps/annika-hirvonen.jpg" alt="Annika Hirvonen" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+          <figcaption style="min-width:0">
+            <p style="margin:0 0 3px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#55554F">Gruppledare</p>
+            <p style="margin:0 0 7px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/annika-hirvonen/" style="color:#1A1A19">Annika Hirvonen</a></p>
+            <p style="margin:0;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i skatteutskottet och talesperson för migration.</p>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;gap:16px;align-items:flex-start">
+          <img src="./reps/camilla-hansen.jpg" alt="Camilla Hansén" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+          <figcaption style="min-width:0">
+            <p style="margin:0 0 3px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#55554F">Vice gruppledare</p>
+            <p style="margin:0 0 7px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/camilla-hansen/" style="color:#1A1A19">Camilla Hansén</a></p>
+            <p style="margin:0;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i utbildningsutskottet, med ansvar för förskola, skola, högre utbildning och forskning.</p>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;gap:16px;align-items:flex-start">
+          <img src="./reps/emma-nohren.jpeg" alt="Emma Nohrén" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+          <figcaption style="min-width:0">
+            <p style="margin:0 0 3px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#55554F">Utskottsordförande</p>
+            <p style="margin:0 0 7px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/emma-nohren/" style="color:#1A1A19">Emma Nohrén</a></p>
+            <p style="margin:0;font-size:14.5px;line-height:1.5;color:#45453F">Ordförande i miljö- och jordbruksutskottet och landsbygdspolitisk talesperson.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div style="margin-top:clamp(28px,3.4vw,44px);padding-top:clamp(20px,2.6vw,28px);border-top:1px solid #DFDBCD">
+        <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:#55554F">ÖVRIGA 13 I RIKSDAGSGRUPPEN</p>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,3vw,48px)">
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/janine-alm-ericson.jpg" alt="Janine Alm Ericson" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/janine-alm-ericson/" style="color:#1A1A19">Janine Alm Ericson</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i finansutskottet och talesperson för bistånd och jämställdhet. Kommun- och riksdagskandidat.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/rebecka-le-moine.jpg" alt="Rebecka Le Moine" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/rebecka-le-moine/" style="color:#1A1A19">Rebecka Le Moine</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i EU-nämnden och talesperson för biologisk mångfald och djurrätt.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/katarina-luhr.jpg" alt="Katarina Luhr" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/katarina-luhr/" style="color:#1A1A19">Katarina Luhr</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i näringsutskottet och klimatpolitisk talesperson.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/linus-lakso.jpg" alt="Linus Lakso" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/linus-lakso/" style="color:#1A1A19">Linus Lakso</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Talesperson för energi- och transportpolitik. Ledamot i trafikutskottet och näringsutskottet, ersättare i miljö- och jordbruksutskottet.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/emma-berginger.jpg" alt="Emma Berginger" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/emma-berginger/" style="color:#1A1A19">Emma Berginger</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Ledamot i försvarsutskottet och försvarspolitisk talesperson. Gruppledarkandidat till Region Östergötland i valet 2026.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/ulrika-westerlund.jpg" alt="Ulrika Westerlund" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/ulrika-westerlund/" style="color:#1A1A19">Ulrika Westerlund</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i justitieutskottet och talesperson för HBTQI och barnrätt.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/leila-ali-elmi.jpg" alt="Leila Ali Elmi" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/leila-ali-elmi/" style="color:#1A1A19">Leila Ali Elmi</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i arbetsmarknadsutskottet och talesperson för integration.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/amanda-palmstierna.jpg" alt="Amanda Palmstierna" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/amanda-palmstierna/" style="color:#1A1A19">Amanda Palmstierna</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i civilutskottet och bostadspolitisk talesperson.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/jan-riise.jpg" alt="Jan Riise" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/jan-riise/" style="color:#1A1A19">Jan Riise</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i konstitutionsutskottet och talesperson för AI-frågor samt minoritets- och urfolkspolitik.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/jacob-risberg.jpg" alt="Jacob Risberg" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/jacob-risberg/" style="color:#1A1A19">Jacob Risberg</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i utrikesutskottet.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/malte-tangmark-roos.jpg" alt="Malte Tängmark Roos" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/malte-tangmark-roos/" style="color:#1A1A19">Malte Tängmark Roos</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot i socialförsäkringsutskottet och ledamot i Pensionsgruppen.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/nils-seye-larsen.jpg" alt="Nils Seye Larsen" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/nils-seye-larsen/" style="color:#1A1A19">Nils Seye Larsen</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Riksdagsledamot. Umebo och västerbottning med rötter i Skåne.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:14px 0">
+            <img src="./reps/mohamed-yassin.jpg" alt="Mohamed Yassin" style="flex:none;display:block;width:118px;height:118px;object-fit:cover;object-position:50% 20%;border-radius:10px;background:#EFECE3" />
+            <span style="min-width:0">
+              <span style="display:block;margin-bottom:6px;font-size:18px;font-weight:600;letter-spacing:-.015em"><a href="https://www.mp.se/om/mohamed-yassin/" style="color:#1A1A19">Mohamed Yassin</a></span>
+              <span style="display:block;font-size:14.5px;line-height:1.5;color:#45453F">Ledamot i kommunfullmäktige och i gymnasie- och vuxenutbildningsnämnden.</span>
+            </span>
+          </li>
+        </ul>
+        <p style="margin:14px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">Uppdrag och foto: mp.se/om/riksdagspolitiker · foto tillhör respektive fotograf</p>
+      </div>
+    </section>
+
+
+    <section id="resultat" style="background:#082354;color:#F1EEE4;margin-top:clamp(40px,5.4vw,74px)">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(36px,4.6vw,64px) clamp(16px,4vw,32px)">
+        <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(241,238,228,.25);padding-bottom:14px;margin-bottom:clamp(22px,2.8vw,32px)">
+          <div>
+            <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.026em">Vad partiet har fått i val</h2>
+            <p style="margin:8px 0 0;font-size:16px;color:#AFBCD4">Riksdagsval 1994–2022, andel av giltiga röster i hela riket</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:11px">
+            <img src="./val-logotyp.png" alt="" aria-hidden="true" style="flex:none;display:block;width:38px;height:38px;border-radius:50%;background:#F1EEE4" />
+            <span style="display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:14.5px;font-weight:600">Valmyndigheten</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#93A5C4">valresultat · hämtat 2026-08-19</span>
+            </span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,44px);align-items:flex-start">
+          <div style="flex:1 1 240px;min-width:0;max-width:330px">
+            <p style="margin:0 0 18px;font-size:16px;line-height:1.6;color:#D3DAE8;text-wrap:pretty">Partiet har passerat fyraprocentsspärren i samtliga nio riksdagsval sedan 1994. Marginalen var minst 2018, då 0,41 procentenheter skilde från utträde ur riksdagen.</p>
+            <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#93A5C4">val.se/valresultat/riksdag<br />slutlig rösträkning</p>
+          </div>
+
+          <div style="flex:2 1 520px;min-width:0">
+            <p style="margin:0 0 10px;display:flex;align-items:center;justify-content:flex-end;gap:9px;font-size:12.5px;font-weight:600;color:#FDD017"><span aria-hidden="true" style="width:26px;height:0;border-top:2px dashed #FDD017"></span>4 % riksdagsspärr</p>
+            <div style="position:relative;display:flex;align-items:flex-end;height:clamp(190px,23vw,266px)">
+              <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:50%;border-top:2px dashed #FDD017"></span>
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
+                <polygon points="6.25,37.2 18.75,43.7 31.25,41.9 43.75,34.5 56.25,8.2 68.75,13.9 81.25,44.9 93.75,36.5 93.75,100 6.25,100" fill="#F1EEE4" opacity="0.07"></polygon>
+                <polyline points="6.25,37.2 18.75,43.7 31.25,41.9 43.75,34.5 56.25,8.2 68.75,13.9 81.25,44.9 93.75,36.5" fill="none" stroke="#F1EEE4" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline>
+              </svg>
+              <button type="button" onClick="{{ p1994 }}" aria-label="Riksdagsvalet 1994: 5,02 procent" style="flex:1 1 0;min-width:0;height:100%;position:relative;background:none;border:0;padding:0;cursor:pointer">
+                <span style="position:absolute;left:50%;bottom:62.8%;transform:translateX(-50%);margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AFBCD4;white-space:nowrap">5,02</span>
+                <span aria-hidden="true" style="position:absolute;left:50%;bottom:62.8%;transform:translate(-50%,50%);width:11px;height:11px;border-radius:50%;background:#F1EEE4;border:2px solid #082354"></span>
+              </button>
+              <button type="button" onClick="{{ p1998 }}" aria-label="Riksdagsvalet 1998: 4,50 procent" style="flex:1 1 0;min-width:0;height:100%;position:relative;background:none;border:0;padding:0;cursor:pointer">
+                <span style="position:absolute;left:50%;bottom:56.3%;transform:translateX(-50%);margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AFBCD4;white-space:nowrap">4,50</span>
+                <span aria-hidden="true" style="position:absolute;left:50%;bottom:56.3%;transform:translate(-50%,50%);width:11px;height:11px;border-radius:50%;background:#F1EEE4;border:2px solid #082354"></span>
+              </button>
+              <button type="button" onClick="{{ p2002 }}" aria-label="Riksdagsvalet 2002: 4,65 procent" style="flex:1 1 0;min-width:0;height:100%;position:relative;background:none;border:0;padding:0;cursor:pointer">
+                <span style="position:absolute;left:50%;bottom:58.1%;transform:translateX(-50%);margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AFBCD4;white-space:nowrap">4,65</span>
+                <span aria-hidden="true" style="position:absolute;left:50%;bottom:58.1%;transform:translate(-50%,50%);width:11px;height:11px;border-radius:50%;background:#F1EEE4;border:2px solid #082354"></span>
+              </button>
+              <button type="button" onClick="{{ p2006 }}" aria-label="Riksdagsvalet 2006: 5,24 procent" style="flex:1 1 0;min-width:0;height:100%;position:relative;background:none;border:0;padding:0;cursor:pointer">
+                <span style="position:absolute;left:50%;bottom:65.5%;transform:translateX(-50%);margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AFBCD4;white-space:nowrap">5,24</span>
+                <span aria-hidden="true" style="position:absolute;left:50%;bottom:65.5%;transform:translate(-50%,50%);width:11px;height:11px;border-radius:50%;background:#F1EEE4;border:2px solid #082354"></span>
+              </button>
+              <button type="button" onClick="{{ p2010 }}" aria-label="Riksdagsvalet 2010: 7,34 procent" style="flex:1 1 0;min-width:0;height:100%;position:relative;background:none;border:0;padding:0;cursor:pointer">
+                <span style="position:absolute;left:50%;bottom:91.8%;transform:translateX(-50%);margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AFBCD4;white-space:nowrap">7,34</span>
+                <span aria-hidden="true" style="position:absolute;left:50%;bottom:91.8%;transform:translate(-50%,50%);width:11px;height:11px;border-radius:50%;background:#F1EEE4;border:2px solid #082354"></span>
+              </button>
+              <button type="button" onClick="{{ p2014 }}" aria-label="Riksdagsvalet 2014: 6,89 procent" style="flex:1 1 0;min-width:0;height:100%;position:relative;background:none;border:0;padding:0;cursor:pointer">
+                <span style="position:absolute;left:50%;bottom:86.1%;transform:translateX(-50%);margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AFBCD4;white-space:nowrap">6,89</span>
+                <span aria-hidden="true" style="position:absolute;left:50%;bottom:86.1%;transform:translate(-50%,50%);width:11px;height:11px;border-radius:50%;background:#F1EEE4;border:2px solid #082354"></span>
+              </button>
+              <button type="button" onClick="{{ p2018 }}" aria-label="Riksdagsvalet 2018: 4,41 procent" style="flex:1 1 0;min-width:0;height:100%;position:relative;background:none;border:0;padding:0;cursor:pointer">
+                <span style="position:absolute;left:50%;bottom:55.1%;transform:translateX(-50%);margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AFBCD4;white-space:nowrap">4,41</span>
+                <span aria-hidden="true" style="position:absolute;left:50%;bottom:55.1%;transform:translate(-50%,50%);width:11px;height:11px;border-radius:50%;background:#F1EEE4;border:2px solid #082354"></span>
+              </button>
+              <button type="button" onClick="{{ p2022 }}" aria-label="Riksdagsvalet 2022: 5,08 procent" style="flex:1 1 0;min-width:0;height:100%;position:relative;background:none;border:0;padding:0;cursor:pointer">
+                <span style="position:absolute;left:50%;bottom:63.5%;transform:translateX(-50%);margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AFBCD4;white-space:nowrap">5,08</span>
+                <span aria-hidden="true" style="position:absolute;left:50%;bottom:63.5%;transform:translate(-50%,50%);width:11px;height:11px;border-radius:50%;background:#F1EEE4;border:2px solid #082354"></span>
+              </button>
+            </div>
+
+            <div style="display:flex;border-top:1px solid rgba(241,238,228,.25);padding-top:9px;margin-top:2px">
+              <div style="flex:1 1 0;min-width:0;text-align:center">
+                <p style="margin:0;font-size:16px;font-weight:600">18</p>
+                <p style="margin:2px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">1994</p>
+                <sc-if value="{{ s1994 }}"><span aria-hidden="true" style="display:block;width:100%;height:2px;background:#FDD017;margin-top:6px"></span></sc-if>
+              </div>
+              <div style="flex:1 1 0;min-width:0;text-align:center">
+                <p style="margin:0;font-size:16px;font-weight:600">16</p>
+                <p style="margin:2px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">1998</p>
+                <sc-if value="{{ s1998 }}"><span aria-hidden="true" style="display:block;width:100%;height:2px;background:#FDD017;margin-top:6px"></span></sc-if>
+              </div>
+              <div style="flex:1 1 0;min-width:0;text-align:center">
+                <p style="margin:0;font-size:16px;font-weight:600">17</p>
+                <p style="margin:2px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">2002</p>
+                <sc-if value="{{ s2002 }}"><span aria-hidden="true" style="display:block;width:100%;height:2px;background:#FDD017;margin-top:6px"></span></sc-if>
+              </div>
+              <div style="flex:1 1 0;min-width:0;text-align:center">
+                <p style="margin:0;font-size:16px;font-weight:600">19</p>
+                <p style="margin:2px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">2006</p>
+                <sc-if value="{{ s2006 }}"><span aria-hidden="true" style="display:block;width:100%;height:2px;background:#FDD017;margin-top:6px"></span></sc-if>
+              </div>
+              <div style="flex:1 1 0;min-width:0;text-align:center">
+                <p style="margin:0;font-size:16px;font-weight:600">25</p>
+                <p style="margin:2px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">2010</p>
+                <sc-if value="{{ s2010 }}"><span aria-hidden="true" style="display:block;width:100%;height:2px;background:#FDD017;margin-top:6px"></span></sc-if>
+              </div>
+              <div style="flex:1 1 0;min-width:0;text-align:center">
+                <p style="margin:0;font-size:16px;font-weight:600">25</p>
+                <p style="margin:2px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">2014</p>
+                <sc-if value="{{ s2014 }}"><span aria-hidden="true" style="display:block;width:100%;height:2px;background:#FDD017;margin-top:6px"></span></sc-if>
+              </div>
+              <div style="flex:1 1 0;min-width:0;text-align:center">
+                <p style="margin:0;font-size:16px;font-weight:600">16</p>
+                <p style="margin:2px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">2018</p>
+                <sc-if value="{{ s2018 }}"><span aria-hidden="true" style="display:block;width:100%;height:2px;background:#FDD017;margin-top:6px"></span></sc-if>
+              </div>
+              <div style="flex:1 1 0;min-width:0;text-align:center">
+                <p style="margin:0;font-size:16px;font-weight:600">18</p>
+                <p style="margin:2px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">2022</p>
+                <sc-if value="{{ s2022 }}"><span aria-hidden="true" style="display:block;width:100%;height:2px;background:#FDD017;margin-top:6px"></span></sc-if>
+              </div>
+            </div>
+            <p style="margin:10px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">Mandat per val · klicka på en punkt för detaljer</p>
+
+            <div style="margin-top:clamp(16px,2vw,22px);background:rgba(241,238,228,.07);border:1px solid rgba(241,238,228,.22);border-radius:12px;padding:clamp(16px,2vw,22px) clamp(18px,2.4vw,26px);display:flex;flex-wrap:wrap;gap:18px 34px;align-items:flex-end">
+              <div style="flex:1 1 100%;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between">
+                <p style="margin:0;font-size:18px;font-weight:600;letter-spacing:-.015em">Riksdagsvalet {{ sel.year }}</p>
+                <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#93A5C4">Valmyndigheten · slutligt resultat</p>
+              </div>
+              <div>
+                <p style="margin:0 0 4px;font-size:14px;color:#AFBCD4">Andel giltiga röster</p>
+                <p style="margin:0;font-size:23px;font-weight:600;letter-spacing:-.02em">{{ sel.pct }} %</p>
+              </div>
+              <div>
+                <p style="margin:0 0 4px;font-size:14px;color:#AFBCD4">Röster</p>
+                <p style="margin:0;font-size:23px;font-weight:600;letter-spacing:-.02em">{{ sel.votes }}</p>
+              </div>
+              <div>
+                <p style="margin:0 0 4px;font-size:14px;color:#AFBCD4">Mandat</p>
+                <p style="margin:0;font-size:23px;font-weight:600;letter-spacing:-.02em">{{ sel.seats }}</p>
+              </div>
+              <div>
+                <p style="margin:0 0 4px;font-size:14px;color:#AFBCD4">Mot föregående val</p>
+                <p style="margin:0;font-size:23px;font-weight:600;letter-spacing:-.02em">{{ sel.diff }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(22px,3vw,48px);align-items:flex-start;margin-top:clamp(30px,4vw,52px);padding-top:clamp(26px,3.4vw,40px);border-top:1px solid rgba(241,238,228,.25)">
+          <div style="flex:2 1 440px;min-width:0">
+            <p style="margin:0 0 14px;font-size:19px;font-weight:600;letter-spacing:-.015em">Partiets 18 platser i kammaren</p>
+            <div style="position:relative;width:100%;padding-bottom:52%">
+              <sc-for list="{{ dots }}" as="d" hint-placeholder-count="60">
+                <span aria-hidden="true" style="position:absolute;left:{{ d.x }};top:{{ d.y }};transform:translate(-50%,-50%);width:1.5%;padding-bottom:1.5%;height:0;border-radius:50%;background:{{ d.c }}"></span>
+              </sc-for>
+            </div>
+            <p style="margin:4px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#93A5C4">349 mandat efter valet 2022 · data.riksdagen.se</p>
+          </div>
+
+          <div style="flex:1 1 280px;min-width:0">
+            <p style="margin:0 0 14px;font-size:15px;color:#AFBCD4">Riksdagens sammansättning 2022</p>
+            <ul style="list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:9px">
+              <li style="display:flex;align-items:center;gap:12px;font-size:14.5px">
+                <span style="flex:0 0 32px;color:#AFBCD4">S</span>
+                <span aria-hidden="true" style="flex:1;min-width:0;height:10px;background:rgba(241,238,228,.12);display:block"><span style="display:block;height:100%;width:100%;background:#2C4A7C"></span></span>
+                <span style="flex:0 0 30px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#AFBCD4">107</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;font-size:14.5px">
+                <span style="flex:0 0 32px;color:#AFBCD4">SD</span>
+                <span aria-hidden="true" style="flex:1;min-width:0;height:10px;background:rgba(241,238,228,.12);display:block"><span style="display:block;height:100%;width:68.2%;background:#2C4A7C"></span></span>
+                <span style="flex:0 0 30px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#AFBCD4">73</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;font-size:14.5px">
+                <span style="flex:0 0 32px;color:#AFBCD4">M</span>
+                <span aria-hidden="true" style="flex:1;min-width:0;height:10px;background:rgba(241,238,228,.12);display:block"><span style="display:block;height:100%;width:63.6%;background:#2C4A7C"></span></span>
+                <span style="flex:0 0 30px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#AFBCD4">68</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;font-size:14.5px">
+                <span style="flex:0 0 32px;color:#AFBCD4">V</span>
+                <span aria-hidden="true" style="flex:1;min-width:0;height:10px;background:rgba(241,238,228,.12);display:block"><span style="display:block;height:100%;width:22.4%;background:#2C4A7C"></span></span>
+                <span style="flex:0 0 30px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#AFBCD4">24</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;font-size:14.5px">
+                <span style="flex:0 0 32px;color:#AFBCD4">C</span>
+                <span aria-hidden="true" style="flex:1;min-width:0;height:10px;background:rgba(241,238,228,.12);display:block"><span style="display:block;height:100%;width:22.4%;background:#2C4A7C"></span></span>
+                <span style="flex:0 0 30px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#AFBCD4">24</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;font-size:14.5px">
+                <span style="flex:0 0 32px;color:#AFBCD4">KD</span>
+                <span aria-hidden="true" style="flex:1;min-width:0;height:10px;background:rgba(241,238,228,.12);display:block"><span style="display:block;height:100%;width:17.8%;background:#2C4A7C"></span></span>
+                <span style="flex:0 0 30px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#AFBCD4">19</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;font-size:14.5px">
+                <span style="flex:0 0 32px;color:#F1EEE4;font-weight:700">MP</span>
+                <span aria-hidden="true" style="flex:1;min-width:0;height:10px;background:rgba(241,238,228,.12);display:block"><span style="display:block;height:100%;width:16.8%;background:#F1EEE4"></span></span>
+                <span style="flex:0 0 30px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#F1EEE4;font-weight:500">18</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;font-size:14.5px">
+                <span style="flex:0 0 32px;color:#AFBCD4">L</span>
+                <span aria-hidden="true" style="flex:1;min-width:0;height:10px;background:rgba(241,238,228,.12);display:block"><span style="display:block;height:100%;width:15%;background:#2C4A7C"></span></span>
+                <span style="flex:0 0 30px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#AFBCD4">16</span>
+              </li>
+            </ul>
+
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <sc-if value="{{ visaValdeltagande }}" hint-placeholder-val="{{ true }}">
+    <section id="deltagande" style="max-width:1320px;margin:0 auto;padding:clamp(34px,4.4vw,58px) clamp(16px,4vw,32px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,44px);align-items:flex-start">
+        <div style="flex:1 1 260px;min-width:0;max-width:400px">
+          <h2 style="margin:0 0 10px;font-weight:600;font-size:clamp(20px,2.2vw,25px);letter-spacing:-.02em">Valdeltagande som jämförelse</h2>
+          <p style="margin:0 0 14px;font-size:15.5px;line-height:1.6;color:#2A2A26;text-wrap:pretty">Valdeltagandet är en egenskap hos valet, inte hos partiet. Det visas för att kunna läsa röstetalen mot antalet röstande.</p>
+          <ul style="list-style:none;margin:0 0 14px;padding:0;display:flex;flex-direction:column;gap:9px;font-size:15px">
+            <li style="display:flex;align-items:center;gap:10px"><span aria-hidden="true" style="width:22px;height:0;border-top:3px solid #082354"></span>Riket — 84,2 % (2022)</li>
+            <li style="display:flex;align-items:center;gap:10px"><span aria-hidden="true" style="width:22px;height:0;border-top:2px dashed #082354;opacity:.55"></span>Stockholms kommun — 85,6 %</li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:11px">
+            <span aria-hidden="true" style="width:28px;height:28px;border-radius:6px;background:#00615C;color:#FFFDF8;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700">SCB</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">api.scb.se · hämtat 2026-07-02</span>
+          </div>
+        </div>
+        <div style="flex:2 1 460px;min-width:0">
+          <div style="position:relative;height:clamp(120px,13vw,158px);border-bottom:1px solid #DFDBCD">
+            <span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;border-top:1px solid #E8E4D8"></span>
+            <span style="position:absolute;left:0;top:0;transform:translateY(-50%);background:#F5F3EC;padding-right:8px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">90 %</span>
+            <span aria-hidden="true" style="position:absolute;left:0;right:0;top:41.7%;border-top:1px solid #E8E4D8"></span>
+            <span style="position:absolute;left:0;top:41.7%;transform:translateY(-50%);background:#F5F3EC;padding-right:8px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">85 %</span>
+            <span aria-hidden="true" style="position:absolute;left:0;right:0;top:83.3%;border-top:1px solid #E8E4D8"></span>
+            <span style="position:absolute;left:0;top:83.3%;transform:translateY(-50%);background:#F5F3EC;padding-right:8px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">80 %</span>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%">
+              <polyline points="0,26.7 14.29,71.7 28.57,82.5 42.86,66.7 57.14,45 71.43,35 85.71,23.3 100,48.3" fill="none" stroke="#082354" stroke-width="2.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"></polyline>
+              <polyline points="0,12.5 14.29,59.2 28.57,69.2 42.86,53.3 57.14,32.5 71.43,23.3 85.71,13.3 100,36.7" fill="none" stroke="#082354" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55" vector-effect="non-scaling-stroke"></polyline>
+            </svg>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;padding-top:8px">
+            <span>1994</span><span>1998</span><span>2002</span><span>2006</span><span>2010</span><span>2014</span><span>2018</span><span>2022</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+
+    <section id="rosta" style="max-width:1320px;margin:0 auto;padding:clamp(40px,5.4vw,74px) clamp(16px,4vw,32px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid #DFDBCD;padding-bottom:14px;margin-bottom:clamp(20px,2.6vw,28px)">
+        <div>
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.026em">Var du kan rösta på partiet</h2>
+          <p style="margin:8px 0 0;font-size:16px;color:#45453F">Anmälda valsedlar och kandidater i valen 2026</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:11px">
+          <img src="./val-logotyp.png" alt="" aria-hidden="true" style="flex:none;display:block;width:38px;height:38px;border-radius:50%" />
+          <span style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:14.5px;font-weight:600">Valmyndigheten</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">valsedlar 2026 · hämtat 2026-08-19</span>
+          </span>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(18px,2.4vw,26px)">
+        <button type="button" onClick="{{ tabR }}" style="cursor:pointer;background:none;border:0;padding:0 0 7px;font-size:16.5px;font-weight:500;display:flex;flex-direction:column;gap:7px;margin-right:16px">Riksdagsval<sc-if value="{{ isR }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="height:2px;background:#082354"></span></sc-if></button>
+        <button type="button" onClick="{{ tabL }}" style="cursor:pointer;background:none;border:0;padding:0 0 7px;font-size:16.5px;font-weight:500;display:flex;flex-direction:column;gap:7px;margin-right:16px">Regionval<sc-if value="{{ isL }}"><span aria-hidden="true" style="height:2px;background:#082354"></span></sc-if></button>
+        <button type="button" onClick="{{ tabK }}" style="cursor:pointer;background:none;border:0;padding:0 0 7px;font-size:16.5px;font-weight:500;display:flex;flex-direction:column;gap:7px">Kommunval<sc-if value="{{ isK }}"><span aria-hidden="true" style="height:2px;background:#082354"></span></sc-if></button>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,48px);align-items:flex-start">
+
+        <sc-if value="{{ isR }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1 1 340px;max-width:430px;background:#FBF3D0;border:1px solid #E4D9A6;box-shadow:0 1px 0 #E4D9A6,0 16px 30px -24px rgba(8,35,84,.45);padding:clamp(20px,2.6vw,30px)">
+          <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:#7A6B2E">VALSEDEL · RIKSDAGSVAL 2026</p>
+          <p style="margin:0 0 3px;font-size:13.5px;color:#5B5333">Valkrets: Stockholms kommun</p>
+          <p style="margin:14px 0 4px;font-size:21px;font-weight:700;letter-spacing:-.02em">Miljöpartiet de gröna</p>
+          <p style="margin:0 0 16px;font-size:13.5px;color:#5B5333">Beställd valsedel med kandidatnamn · listnr 0055-01</p>
+          <ol style="list-style:none;margin:0;padding:0">
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4D9A6"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7A6B2E;width:22px;flex:none">1</span><span style="font-size:15.5px">Amanda Lind, <span style="color:#5B5333">kulturchef, Härnösand</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4D9A6"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7A6B2E;width:22px;flex:none">2</span><span style="font-size:15.5px">Daniel Helldén, <span style="color:#5B5333">borgarråd, Stockholm</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4D9A6"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7A6B2E;width:22px;flex:none">3</span><span style="font-size:15.5px">Annika Hirvonen, <span style="color:#5B5333">riksdagsledamot, Sollentuna</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4D9A6"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7A6B2E;width:22px;flex:none">4</span><span style="font-size:15.5px">Bassem Nasr, <span style="color:#5B5333">politisk sekreterare, Stockholm</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4D9A6"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7A6B2E;width:22px;flex:none">5</span><span style="font-size:15.5px">Rebecka Le Moine, <span style="color:#5B5333">biolog, Linköping</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4D9A6"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7A6B2E;width:22px;flex:none">6</span><span style="font-size:15.5px">Marielle Lahti, <span style="color:#5B5333">lärare, Nacka</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4D9A6"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7A6B2E;width:22px;flex:none">7</span><span style="font-size:15.5px">Jacob Risberg, <span style="color:#5B5333">jurist, Uppsala</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4D9A6"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7A6B2E;width:22px;flex:none">8</span><span style="font-size:15.5px">Katarina Luhr, <span style="color:#5B5333">miljöborgarråd, Stockholm</span></span></li>
+          </ol>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid #E4D9A6;font-size:13px;line-height:1.55;color:#5B5333">Personröstning: sätt ett kryss framför den kandidat du helst vill se vald. Du kan bara kryssa ett namn.</p>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ isL }}">
+        <div style="flex:1 1 340px;max-width:430px;background:#E6EDF6;border:1px solid #B8C8DC;box-shadow:0 1px 0 #B8C8DC,0 16px 30px -24px rgba(8,35,84,.45);padding:clamp(20px,2.6vw,30px)">
+          <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:#3D5A80">VALSEDEL · REGIONVAL 2026</p>
+          <p style="margin:0 0 3px;font-size:13.5px;color:#3D5A80">Valkrets: Region Stockholm, valkrets 1</p>
+          <p style="margin:14px 0 4px;font-size:21px;font-weight:700;letter-spacing:-.02em">Miljöpartiet de gröna</p>
+          <p style="margin:0 0 16px;font-size:13.5px;color:#3D5A80">Beställd valsedel med kandidatnamn · listnr 0055-08</p>
+          <ol style="list-style:none;margin:0;padding:0">
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #B8C8DC"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3D5A80;width:22px;flex:none">1</span><span style="font-size:15.5px">Susanne Nordling, <span style="color:#3D5A80">regionråd, Solna</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #B8C8DC"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3D5A80;width:22px;flex:none">2</span><span style="font-size:15.5px">Tomas Eriksson, <span style="color:#3D5A80">regionråd, Stockholm</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #B8C8DC"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3D5A80;width:22px;flex:none">3</span><span style="font-size:15.5px">Malin Karlsson, <span style="color:#3D5A80">sjuksköterska, Huddinge</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #B8C8DC"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3D5A80;width:22px;flex:none">4</span><span style="font-size:15.5px">Anton Fernquist, <span style="color:#3D5A80">civilingenjör, Nacka</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #B8C8DC"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3D5A80;width:22px;flex:none">5</span><span style="font-size:15.5px">Anna Sehlin, <span style="color:#3D5A80">biolog, Botkyrka</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #B8C8DC"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3D5A80;width:22px;flex:none">6</span><span style="font-size:15.5px">Michel Silvestri, <span style="color:#3D5A80">forskare, Stockholm</span></span></li>
+          </ol>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid #B8C8DC;font-size:13px;line-height:1.55;color:#3D5A80">Personröstning: sätt ett kryss framför den kandidat du helst vill se vald. Du kan bara kryssa ett namn.</p>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ isK }}">
+        <div style="flex:1 1 340px;max-width:430px;background:#FFFFFF;border:1px solid #D9D5C6;box-shadow:0 1px 0 #D9D5C6,0 16px 30px -24px rgba(8,35,84,.45);padding:clamp(20px,2.6vw,30px)">
+          <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:#6B6B62">VALSEDEL · KOMMUNVAL 2026</p>
+          <p style="margin:0 0 3px;font-size:13.5px;color:#55554F">Valkrets: Stockholms stad, Södermalm</p>
+          <p style="margin:14px 0 4px;font-size:21px;font-weight:700;letter-spacing:-.02em">Miljöpartiet de gröna</p>
+          <p style="margin:0 0 16px;font-size:13.5px;color:#55554F">Beställd valsedel med kandidatnamn · listnr 0055-24</p>
+          <ol style="list-style:none;margin:0;padding:0">
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #EAE6DA"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6B6B62;width:22px;flex:none">1</span><span style="font-size:15.5px">Åsa Lindhagen, <span style="color:#55554F">kommunalråd, Stockholm</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #EAE6DA"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6B6B62;width:22px;flex:none">2</span><span style="font-size:15.5px">Katarina Luhr, <span style="color:#55554F">miljöborgarråd, Stockholm</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #EAE6DA"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6B6B62;width:22px;flex:none">3</span><span style="font-size:15.5px">Jonas Naddebom, <span style="color:#55554F">stadsplanerare, Stockholm</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #EAE6DA"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6B6B62;width:22px;flex:none">4</span><span style="font-size:15.5px">Sara Stenudd, <span style="color:#55554F">socionom, Stockholm</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #EAE6DA"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6B6B62;width:22px;flex:none">5</span><span style="font-size:15.5px">Mikael Magnusson, <span style="color:#55554F">trafikplanerare, Stockholm</span></span></li>
+            <li style="display:flex;gap:12px;padding:9px 0;border-top:1px solid #EAE6DA"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6B6B62;width:22px;flex:none">6</span><span style="font-size:15.5px">Ingrid Rikardsdotter, <span style="color:#55554F">lärare, Stockholm</span></span></li>
+          </ol>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid #EAE6DA;font-size:13px;line-height:1.55;color:#55554F">Personröstning: sätt ett kryss framför den kandidat du helst vill se vald. Du kan bara kryssa ett namn.</p>
+        </div>
+        </sc-if>
+
+        <div style="flex:0 1 250px;min-width:0">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:12px">
+            <button type="button" onClick="{{ layerBallots }}" style="cursor:pointer;background:none;border:0;padding:0 0 5px;font-size:14.5px;display:flex;flex-direction:column;gap:5px">Valsedlar<sc-if value="{{ isBallots }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="height:2px;background:#082354"></span></sc-if></button>
+            <button type="button" onClick="{{ layerSeats }}" style="cursor:pointer;background:none;border:0;padding:0 0 5px;font-size:14.5px;display:flex;flex-direction:column;gap:5px">Mandat<sc-if value="{{ isSeats }}"><span aria-hidden="true" style="height:2px;background:#082354"></span></sc-if></button>
+          </div>
+          <div ref="{{ mapRef }}" aria-hidden="true" style="width:100%;min-height:420px"></div>
+          <sc-if value="{{ isBallots }}" hint-placeholder-val="{{ true }}">
+            <ul style="list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:#45453F">
+              <li style="display:flex;align-items:center;gap:9px"><span aria-hidden="true" style="width:13px;height:13px;background:#082354;flex:none"></span>Valsedel beställd 2026</li>
+              <li style="display:flex;align-items:center;gap:9px"><span aria-hidden="true" style="width:13px;height:13px;background:#B4553F;flex:none"></span>Ingen valsedel beställd</li>
+            </ul>
+          </sc-if>
+          <sc-if value="{{ isSeats }}">
+            <ul style="list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:#45453F">
+              <li style="display:flex;align-items:center;gap:9px"><span aria-hidden="true" style="width:13px;height:13px;background:#082354;flex:none"></span>4 mandat eller fler</li>
+              <li style="display:flex;align-items:center;gap:9px"><span aria-hidden="true" style="width:13px;height:13px;background:#5C7099;flex:none"></span>2–3 mandat</li>
+              <li style="display:flex;align-items:center;gap:9px"><span aria-hidden="true" style="width:13px;height:13px;background:#C6CEDD;flex:none"></span>1 mandat</li>
+              <li style="display:flex;align-items:center;gap:9px"><span aria-hidden="true" style="width:13px;height:13px;background:#CFC8B4;flex:none"></span>Inget mandat</li>
+            </ul>
+          </sc-if>
+          <p style="margin:12px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.5;color:#55554F">Kommunkarta: SCB kommunkoder<br />sjöar och hav är omålade<br />exempeldata i prototypen</p>
+        </div>
+
+        <div style="flex:1 1 260px;min-width:0">
+          <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#2A2A26;max-width:46ch;text-wrap:pretty">Valsedlarna visas som de är beställda hos Valmyndigheten: samma ordning, samma yrkes- och ortsangivelser, samma listnummer. Färgen följer valet — gul för riksdagsval, blå för regionval, vit för kommunval.</p>
+          <p style="margin:0 0 10px;font-size:15px;color:#45453F">Partiet har beställt valsedlar i</p>
+          <ul style="list-style:none;margin:0 0 14px;padding:0;display:flex;flex-direction:column">
+            <li style="display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;padding:8px 0"><span style="font-size:16px">Riksdagsvalkretsar</span><span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F">29 av 29</span></li>
+            <li style="display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;padding:8px 0"><span style="font-size:16px">Regioner</span><span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F">21 av 21</span></li>
+            <li style="display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;padding:8px 0"><span style="font-size:16px">Kommuner</span><span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F">247 av 290</span></li>
+          </ul>
+          <p style="margin:0 0 16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.5;color:#55554F">Valmyndigheten · val.se/api/v1/valsedlar<br />hämtat 2026-08-19 · CC0</p>
+          <a href="#export" style="font-size:16px;display:inline-flex;align-items:center;gap:8px">Ladda ner alla kandidatlistor (CSV)<i data-lucide="download" aria-hidden="true" style="width:15px;height:15px"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="wikipedia" style="background:#FFFFFF;border-top:1px solid #E7E3D6;border-bottom:1px solid #E7E3D6;margin-top:clamp(40px,5.4vw,74px)">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(36px,4.6vw,64px) clamp(16px,4vw,32px)">
+
+        <div style="display:flex;flex-wrap:wrap;gap:14px 28px;align-items:flex-end;justify-content:space-between;margin-bottom:20px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <img src="./wikipedia-globe.jpeg" alt="" aria-hidden="true" style="flex:none;display:block;width:54px;height:auto;mix-blend-mode:multiply" />
+            <span style="display:flex;flex-direction:column;gap:1px">
+              <span style="font-family:'Linux Libertine',Georgia,serif;font-size:22px;letter-spacing:.01em;color:#111111">WIKIPEDIA</span>
+              <span style="font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.06em;color:#54595D">Den fria encyklopedin</span>
+            </span>
+          </div>
+          <nav aria-label="Wikipedia-flikar" style="display:flex;flex-wrap:wrap;gap:20px;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;color:#3366CC;border-bottom:1px solid #A2A9B1;padding-bottom:7px">
+            <span style="color:#202122;border-bottom:2px solid #202122;padding-bottom:6px;margin-bottom:-8px">Artikel</span>
+            <a href="https://sv.wikipedia.org" style="color:#3366CC">Diskussion</a>
+            <a href="https://sv.wikipedia.org" style="color:#3366CC">Redigera</a>
+            <a href="https://sv.wikipedia.org" style="color:#3366CC">Visa historik</a>
+          </nav>
+        </div>
+
+        <h2 style="margin:0;font-family:'Linux Libertine',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.01em;color:#000000;border-bottom:1px solid #A2A9B1;padding-bottom:8px">Miljöpartiet de gröna</h2>
+        <p style="margin:8px 0 26px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-style:italic;color:#54595D">Från Wikipedia, den fria encyklopedin</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(22px,3vw,44px);align-items:flex-start">
+          <div style="flex:2 1 440px;min-width:0;font-family:Arial,Helvetica,sans-serif">
+            <p style="margin:0 0 16px;font-size:15.5px;line-height:1.66;color:#202122;max-width:70ch"><b>Miljöpartiet de gröna</b> är ett svenskt politiskt parti bildat 1981 i efterdyningarna av <a href="https://sv.wikipedia.org" style="color:#3366CC">folkomröstningen om kärnkraft 1980</a>. Partiet kom in i <a href="https://sv.wikipedia.org" style="color:#3366CC">riksdagen</a> första gången 1988, förlorade platserna 1991 och återkom 1994.<sup style="font-size:11.5px;color:#3366CC">[1]</sup></p>
+            <p style="margin:0 0 22px;font-size:15.5px;line-height:1.66;color:#202122;max-width:70ch">Partiet leds av två <a href="https://sv.wikipedia.org" style="color:#3366CC">språkrör</a>, varav ett kvinnligt och ett manligt, och räknar miljö- och klimatfrågor, jämställdhet och mänskliga rättigheter som sina huvudfrågor. Miljöpartiet ingick i regeringen tillsammans med <a href="https://sv.wikipedia.org" style="color:#3366CC">Socialdemokraterna</a> 2014–2021.<sup style="font-size:11.5px;color:#3366CC">[2]</sup></p>
+
+            <div style="border:1px solid #A2A9B1;background:#F8F9FA;padding:12px 16px;display:inline-block;margin-bottom:24px">
+              <p style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#202122">Innehåll</p>
+              <ol style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;color:#3366CC">
+                <li><a href="https://sv.wikipedia.org" style="color:#3366CC">Historia</a></li>
+                <li><a href="https://sv.wikipedia.org" style="color:#3366CC">Ideologi och politik</a></li>
+                <li><a href="https://sv.wikipedia.org" style="color:#3366CC">Valresultat</a></li>
+                <li><a href="https://sv.wikipedia.org" style="color:#3366CC">Organisation</a></li>
+                <li><a href="https://sv.wikipedia.org" style="color:#3366CC">Referenser</a></li>
+              </ol>
+            </div>
+
+            <p style="margin:0 0 14px;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#54595D;max-width:72ch">Utdraget är hämtat i sin ursprungliga form från artikelns inledning. Partidata sammanfattar inte och redigerar inte texten.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px 22px;font-family:Arial,Helvetica,sans-serif;font-size:14.5px">
+              <a href="https://sv.wikipedia.org" style="color:#3366CC;display:inline-flex;align-items:center;gap:8px">Läs hela artikeln på Wikipedia<i data-lucide="external-link" aria-hidden="true" style="width:14px;height:14px"></i></a>
+              <a href="https://www.wikidata.org" style="color:#3366CC">Wikidata Q193230</a>
+            </div>
+            <p style="margin:16px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.6;color:#55554F">sv.wikipedia.org/api/rest_v1/page/summary · version 24812903 · senast ändrad 2026-08-12 09:41 · CC BY-SA 4.0</p>
+          </div>
+
+          <aside style="flex:1 1 270px;min-width:0;max-width:330px;border:1px solid #A2A9B1;background:#F8F9FA;font-family:Arial,Helvetica,sans-serif">
+            <p style="margin:0;background:#EAECF0;border-bottom:1px solid #A2A9B1;padding:9px 12px;font-family:'Linux Libertine',Georgia,serif;font-size:17px;text-align:center;color:#202122">Miljöpartiet de gröna</p>
+            <div style="padding:12px 14px;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:#202122">
+              <div style="display:flex;gap:12px"><span style="flex:0 0 44%;font-weight:700">Bildat</span><span>1981</span></div>
+              <div style="display:flex;gap:12px"><span style="flex:0 0 44%;font-weight:700">Ideologi</span><span><a href="https://sv.wikipedia.org" style="color:#3366CC">Grön politik</a></span></div>
+              <div style="display:flex;gap:12px"><span style="flex:0 0 44%;font-weight:700">Position</span><span>Mitten till vänster</span></div>
+              <div style="display:flex;gap:12px"><span style="flex:0 0 44%;font-weight:700">Språkrör</span><span>Amanda Lind, Daniel Helldén</span></div>
+              <div style="display:flex;gap:12px"><span style="flex:0 0 44%;font-weight:700">Ungdomsförbund</span><span><a href="https://sv.wikipedia.org" style="color:#3366CC">Grön Ungdom</a></span></div>
+              <div style="display:flex;gap:12px"><span style="flex:0 0 44%;font-weight:700">Europagrupp</span><span>De gröna/EFA</span></div>
+              <div style="display:flex;gap:12px"><span style="flex:0 0 44%;font-weight:700">Medlemmar</span><span>ca 9 000 (2024)</span></div>
+              <div style="display:flex;gap:12px"><span style="flex:0 0 44%;font-weight:700">Riksdagsmandat</span><span>18 / 349</span></div>
+              <div style="display:flex;gap:12px;border-top:1px solid #C8CCD1;padding-top:9px"><span style="flex:0 0 44%;font-weight:700">Webbplats</span><span><a href="https://mp.se" style="color:#3366CC">mp.se</a></span></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="nyheter" style="max-width:1320px;margin:0 auto;padding:clamp(40px,5.4vw,74px) clamp(16px,4vw,32px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid #DFDBCD;padding-bottom:14px;margin-bottom:clamp(18px,2.4vw,24px)">
+        <div>
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.026em">Vad redaktionerna skriver</h2>
+          <p style="margin:8px 0 0;font-size:16px;color:#45453F">Rubriker och tidsstämplar oredigerade ur respektive flöde</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+          <a href="#export" style="font-size:15px;display:inline-flex;align-items:center;gap:8px"><i data-lucide="rss" aria-hidden="true" style="width:14px;height:14px"></i>RSS för det här partiet</a>
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;text-align:right">publika RSS-flöden · rubrik och länk endast · klick går till originalet</p>
+        </div>
+      </div>
+
+      <ul style="list-style:none;margin:0;padding:0">
+        <li style="padding:15px 0;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;flex:0 0 86px;padding-top:4px">22 aug 2026</span>
+          <span aria-hidden="true" style="flex:none;width:52px;height:26px;background:#E2231A;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;letter-spacing:.04em">SVT</span>
+          <span style="flex:1 1 300px;min-width:0">
+            <a href="#nyheter" style="font-size:17px;font-weight:500;line-height:1.4;display:block">Miljöpartiet vill se skärpta krav i klimatpolitiska ramverket</a>
+            <span style="display:block;margin-top:5px;font-size:14px;color:#55554F">SVT Nyheter · Inrikes</span>
+          </span>
+        </li>
+        <li style="padding:15px 0;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;flex:0 0 86px;padding-top:4px">21 aug 2026</span>
+          <span aria-hidden="true" style="flex:none;width:52px;height:26px;background:#0E6F4C;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;letter-spacing:.04em">SR</span>
+          <span style="flex:1 1 300px;min-width:0">
+            <a href="#nyheter" style="font-size:17px;font-weight:500;line-height:1.4;display:block">Språkrören om valrörelsens upptakt: ”Vi driver klimatfrågan hela vägen”</a>
+            <span style="display:block;margin-top:5px;font-size:14px;color:#55554F">Sveriges Radio · Ekot</span>
+          </span>
+        </li>
+        <li style="padding:15px 0;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;flex:0 0 86px;padding-top:4px">19 aug 2026</span>
+          <span aria-hidden="true" style="flex:none;width:52px;height:26px;background:#111111;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:15px;font-weight:700">DN</span>
+          <span style="flex:1 1 300px;min-width:0">
+            <a href="#nyheter" style="font-size:17px;font-weight:500;line-height:1.4;display:block">Analys: så förändras det gröna väljarstödet i storstäderna</a>
+            <span style="display:block;margin-top:5px;font-size:14px;color:#55554F">Dagens Nyheter · Politik</span>
+          </span>
+        </li>
+        <li style="padding:15px 0;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;flex:0 0 86px;padding-top:4px">18 aug 2026</span>
+          <span aria-hidden="true" style="flex:none;width:52px;height:26px;background:#00529B;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;letter-spacing:.04em">TT</span>
+          <span style="flex:1 1 300px;min-width:0">
+            <a href="#nyheter" style="font-size:17px;font-weight:500;line-height:1.4;display:block">Kongressbeslut om partiets valplattform klart</a>
+            <span style="display:block;margin-top:5px;font-size:14px;color:#55554F">TT Nyhetsbyrån</span>
+          </span>
+        </li>
+        <li style="padding:15px 0;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;flex:0 0 86px;padding-top:4px">14 aug 2026</span>
+          <span aria-hidden="true" style="flex:none;width:52px;height:26px;background:#2B2B2B;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;letter-spacing:.06em">ALT</span>
+          <span style="flex:1 1 300px;min-width:0">
+            <a href="#nyheter" style="font-size:17px;font-weight:500;line-height:1.4;display:block">Miljöpartiet lämnar in remissvar om havsplanering</a>
+            <span style="display:block;margin-top:5px;font-size:14px;color:#55554F">Altinget · Miljö och energi</span>
+          </span>
+        </li>
+        <li style="padding:15px 0;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F;flex:0 0 86px;padding-top:4px">09 aug 2026</span>
+          <span aria-hidden="true" style="flex:none;width:52px;height:26px;background:#7A1F1F;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;letter-spacing:.06em">GP</span>
+          <span style="flex:1 1 300px;min-width:0">
+            <a href="#nyheter" style="font-size:17px;font-weight:500;line-height:1.4;display:block">Gröna listan i Göteborg presenterar kommunala kandidater</a>
+            <span style="display:block;margin-top:5px;font-size:14px;color:#55554F">Göteborgs-Posten · Göteborg</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <sc-if value="{{ visaRegister }}" hint-placeholder-val="{{ true }}">
+    <section id="register" style="max-width:1320px;margin:0 auto;padding:clamp(40px,5.4vw,74px) clamp(16px,4vw,32px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;padding-bottom:16px;margin-bottom:clamp(14px,1.8vw,20px)">
+        <div>
+          <h2 style="margin:0;font-weight:600;font-size:clamp(22px,2.4vw,27px);letter-spacing:-.022em">Så står partiet skrivet i registret</h2>
+        </div>
+        <div style="display:flex;align-items:center;gap:11px">
+          <img src="./val-logotyp.png" alt="" aria-hidden="true" style="flex:none;display:block;width:38px;height:38px;border-radius:50%" />
+          <span style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:14.5px;font-weight:600">Valmyndigheten</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#55554F">val.se/api/v1/partier/0055 · hämtat 2026-08-19 · CC0</span>
+          </span>
+        </div>
+      </div>
+
+      <div style="margin:0 calc(-1 * clamp(26px,3vw,38px));background:#FFFDF8;border-radius:14px;padding:clamp(26px,3vw,36px) clamp(26px,3vw,38px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);align-items:start">
+        <div style="min-width:0">
+          <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:#55554F">BETECKNING</p>
+          <dl style="margin:0">
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:12px 0;border-top:1px solid #DFDBCD"><dt style="font-size:14.5px;color:#55554F">Partibeteckning</dt><dd style="margin:0;font-size:15.5px;text-align:right">Miljöpartiet de gröna</dd></div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:11px 0"><dt style="font-size:14.5px;color:#55554F">Tidigare beteckning</dt><dd style="margin:0;font-size:15.5px;text-align:right">Miljöpartiet <span style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#55554F">1981–1985</span></dd></div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:11px 0"><dt style="font-size:14.5px;color:#55554F">Förkortning</dt><dd style="margin:0;font-size:15.5px;text-align:right">MP</dd></div>
+          </dl>
+        </div>
+        <div style="min-width:0">
+          <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:#55554F">REGISTRERING</p>
+          <dl style="margin:0">
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:12px 0;border-top:1px solid #DFDBCD"><dt style="font-size:14.5px;color:#55554F">Registernummer</dt><dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:15.5px;text-align:right">0055</dd></div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:11px 0"><dt style="font-size:14.5px;color:#55554F">Registrerad</dt><dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:15.5px;text-align:right">1988-03-14</dd></div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:11px 0"><dt style="font-size:14.5px;color:#55554F">Anmäld för val till</dt><dd style="margin:0;font-size:15.5px;text-align:right">Riksdag, region, kommun</dd></div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:11px 0"><dt style="font-size:14.5px;color:#55554F">Status</dt><dd style="margin:0;font-size:15.5px;text-align:right">Aktiv</dd></div>
+          </dl>
+        </div>
+        <div style="min-width:0">
+          <p style="margin:0 0 4px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:#55554F">ORGANISATION</p>
+          <dl style="margin:0">
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:12px 0;border-top:1px solid #DFDBCD"><dt style="font-size:14.5px;color:#55554F">Organisationsnummer</dt><dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:15.5px;text-align:right">802001-4260</dd></div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:11px 0"><dt style="font-size:14.5px;color:#55554F">Statligt partistöd 2026</dt><dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:15.5px;text-align:right">21 964 000 kr</dd></div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:11px 0"><dt style="font-size:14.5px;color:#55554F">Ombud hos myndigheten</dt><dd style="margin:0;font-size:15.5px;text-align:right">Registrerat</dd></div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;padding:11px 0"><dt style="font-size:14.5px;color:#55554F">Uppgiften ändrad</dt><dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:15.5px;text-align:right">2024-11-02</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+
+    <section id="export" style="max-width:1320px;margin:0 auto;padding:clamp(36px,4.6vw,64px) clamp(16px,4vw,32px) clamp(30px,4vw,52px)">
+      <div style="border-top:1px solid #DFDBCD;padding-top:clamp(20px,2.6vw,28px);display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;justify-content:space-between">
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#45453F;max-width:58ch;text-wrap:pretty">Källan står vid varje uppgift på sidan. Samma data, maskinläsbar, med endpoint och tidsstämpel per fält.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <a href="#export" style="color:#FFFDF8;background:#082354;border-radius:999px;padding:10px 20px;font-size:15px;font-weight:600" style-hover="background:#051838;text-decoration:none">JSON</a>
+          <a href="#export" style="color:#FFFDF8;background:#082354;border-radius:999px;padding:10px 20px;font-size:15px;font-weight:600" style-hover="background:#051838;text-decoration:none">CSV</a>
+          <a href="#export" style="color:#082354;border:1.5px solid #082354;border-radius:999px;padding:10px 20px;font-size:15px" style-hover="background:#082354;color:#FFFDF8;text-decoration:none">API-dokumentation</a>
+          <a href="#export" style="color:#082354;border:1.5px solid #082354;border-radius:999px;padding:10px 20px;font-size:15px;display:inline-flex;align-items:center;gap:8px" style-hover="background:#082354;color:#FFFDF8;text-decoration:none"><i data-lucide="rss" aria-hidden="true" style="width:14px;height:14px"></i>RSS</a>
+        </div>
+      </div>
+      <p style="margin:16px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.6;color:#55554F">Prototyp: valresultat 1994–2022 kommer från Valmyndigheten, och partiets dokument, manifesturklipp och nyhetsrubriker från mp.se (hämtat 2026-08-24). Riksdagsgruppens uppdrag och pressfoton kommer från mp.se/om/riksdagspolitiker. Kandidatlistor på valsedlarna, kartans valsedelsbeställningar, riksdagsdokumenten och redaktionernas rubriker är exempeldata. Hittar du en felaktighet — <a href="#ratta">rapportera den här</a>.</p>
+    </section>
+
+  </main>
+
+  <footer id="om" style="margin-top:clamp(48px,7vw,104px);border-top:1px solid #E2DFD4;background:#EFECE3">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(44px,5vw,68px) clamp(16px,4vw,32px) clamp(36px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(28px,3.4vw,48px)">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-bottom:16px">
+          <img src="./partidata-logotyp.svg" alt="Partidata" style="display:block;height:37px;width:auto" />
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#2A2A26;max-width:34ch">Oberoende, partipolitiskt neutral datatjänst. Inte kopplad till någon myndighet eller något parti.</p>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Datakällor</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li><a href="#export">Valmyndigheten — partibeteckningar</a></li>
+          <li><a href="#export">Valmyndigheten — valresultat</a></li>
+          <li><a href="#export">SCB — regionkoder</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Öppenhet</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="download" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#export">API &amp; nedladdning (JSON, CSV)</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="github" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#github">Källkod på GitHub</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="scale" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#licens">Licens: CC BY 4.0</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Kontakt</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="mail" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="mailto:hej@partidata.se">hej@partidata.se</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="flag" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#ratta">Rapportera felaktig uppgift</a></li>
+          <li><a href="./Grafisk profil.dc.html">Grafisk profil</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid #E2DFD4">
+      <div style="max-width:1320px;margin:0 auto;padding:22px clamp(16px,4vw,32px);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;font-size:14px;color:#45453F">
+        <span>Senast uppdaterad 2026-08-19</span>
+        <span>Exempeldata i prototypen</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;visaValdeltagande&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sektioner&quot;},&quot;visaRegister&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sektioner&quot;}}">
+const EL = [[1994,5.02,18],[1998,4.50,16],[2002,4.65,17],[2006,5.24,19],[2010,7.34,25],[2014,6.89,25],[2018,4.41,16],[2022,5.08,18]];
+const TOT = {1994:5787400,1998:5377100,2002:5327300,2006:5551300,2010:5960400,2014:6178100,2018:6476700,2022:6578000};
+const SEATS = [['V',24],['S',107],['MP',18],['C',24],['L',16],['KD',19],['M',68],['SD',73]];
+function kh(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+
+class Component extends DCLogic {
+  state = { year: 2022, ballot: 'R', layer: 'valsedlar' };
+  mapRef = React.createRef();
+  icons() { if (window.lucide) window.lucide.createIcons(); }
+  componentDidMount() { this.icons(); setTimeout(() => this.icons(), 500); this.loadMap(); }
+  componentDidUpdate() { this.icons(); this.paintMap(); }
+
+  loadMap() {
+    const host = this.mapRef.current;
+    if (!host || this._mapLoaded) return;
+    this._mapLoaded = true;
+    fetch('./uploads/SWE-Map_Kommuner.svg').then(r => r.text()).then(txt => {
+      const el = this.mapRef.current;
+      if (!el) return;
+      el.innerHTML = txt;
+      const svg = el.querySelector('svg');
+      if (svg) {
+        svg.setAttribute('viewBox', '0 0 290 660');
+        svg.removeAttribute('width');
+        svg.removeAttribute('height');
+        svg.style.width = '100%';
+        svg.style.height = 'auto';
+        svg.style.display = 'block';
+      }
+      this._paths = Array.prototype.slice.call(el.querySelectorAll('path'));
+      this.paintMap();
+    }).catch(() => {});
+  }
+
+  paintMap() {
+    if (!this._paths) return;
+    const seats = this.state.layer === 'mandat';
+    if (!this._ballotSet) {
+      const ranked = this._paths
+        .map(p => ({ k: p.id || p.getAttribute('class') || '', h: kh(p.id || p.getAttribute('class') || '') }))
+        .sort((a, b) => a.h - b.h)
+        .slice(0, 247);
+      this._ballotSet = {};
+      ranked.forEach(r => { this._ballotSet[r.k] = true; });
+    }
+    this._paths.forEach(p => {
+      const key = p.id || p.getAttribute('class') || '';
+      const h = kh(key);
+      const has = !!this._ballotSet[key];
+      const n = has ? (h >> 7) % 7 : 0;
+      let fill;
+      if (seats) fill = n === 0 ? '#CFC8B4' : n === 1 ? '#C6CEDD' : n < 4 ? '#5C7099' : '#082354';
+      else fill = has ? '#082354' : '#B4553F';
+      p.setAttribute('fill', fill);
+      p.setAttribute('stroke', '#F5F3EC');
+      p.setAttribute('stroke-width', '0.75');
+    });
+  }
+
+  dots() {
+    if (this._dots) return this._dots;
+    const seq = [];
+    SEATS.forEach(s => { for (let i = 0; i < s[1]; i++) seq.push(s[0]); });
+    const rows = 9, R0 = 0.40, R1 = 0.97, total = seq.length;
+    const radii = [];
+    for (let r = 0; r < rows; r++) radii.push(R0 + (R1 - R0) * r / (rows - 1));
+    const w = radii.reduce((a, b) => a + b, 0);
+    const counts = radii.map(r => Math.floor(total * r / w));
+    let rem = total - counts.reduce((a, b) => a + b, 0);
+    for (let i = 0; rem > 0; i++, rem--) counts[rows - 1 - (i % rows)]++;
+    const pts = [];
+    radii.forEach((R, r) => {
+      const c = counts[r];
+      for (let j = 0; j < c; j++) {
+        const tt = c > 1 ? (j + 0.5) / c : 0.5;
+        const th = Math.PI * (1 - tt);
+        pts.push({ t: tt, R: R, th: th });
+      }
+    });
+    pts.sort((a, b) => a.t - b.t || a.R - b.R);
+    const out = pts.map((p, k) => ({
+      x: (50 + 50 * p.R * Math.cos(p.th)).toFixed(2) + '%',
+      y: (100 - 100 * p.R * Math.sin(p.th)).toFixed(2) + '%',
+      c: seq[k] === 'MP' ? '#F1EEE4' : '#2C4A7C'
+    }));
+    this._dots = out;
+    return out;
+  }
+
+  pick(y) { return () => this.setState({ year: y }); }
+
+  renderVals() {
+    const nf = new Intl.NumberFormat('sv-SE');
+    const i = EL.findIndex(e => e[0] === this.state.year);
+    const e = EL[i], prev = EL[i - 1];
+    const d = prev ? e[1] - prev[1] : null;
+    const ds = prev ? e[2] - prev[2] : null;
+    const sign = n => (n > 0 ? '+' : n < 0 ? '−' : '±');
+    const b = this.state.ballot;
+    const v = {
+      sel: {
+        year: String(e[0]),
+        pct: e[1].toFixed(2).replace('.', ','),
+        votes: nf.format(Math.round(e[1] / 100 * TOT[e[0]])),
+        seats: String(e[2]),
+        diff: d === null ? 'första valet i serien'
+          : sign(d) + Math.abs(d).toFixed(2).replace('.', ',') + ' pe · ' + sign(ds) + Math.abs(ds) + ' mandat'
+      },
+      dots: this.dots(),
+      visaValdeltagande: this.props.visaValdeltagande !== false,
+      visaRegister: this.props.visaRegister !== false,
+      isR: b === 'R', isL: b === 'L', isK: b === 'K',
+      mapRef: this.mapRef,
+      isBallots: this.state.layer === 'valsedlar', isSeats: this.state.layer === 'mandat',
+      layerBallots: () => this.setState({ layer: 'valsedlar' }),
+      layerSeats: () => this.setState({ layer: 'mandat' }),
+      tabR: () => this.setState({ ballot: 'R' }),
+      tabL: () => this.setState({ ballot: 'L' }),
+      tabK: () => this.setState({ ballot: 'K' })
+    };
+    EL.forEach(row => { v['p' + row[0]] = this.pick(row[0]); v['s' + row[0]] = this.state.year === row[0]; });
+    return v;
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#F5F3EC; }
+  * { box-sizing:border-box; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#082354; text-decoration:none; }
+  a:hover { color:#051838; text-decoration:underline; }
+  :focus-visible { outline:2px solid #082354; outline-offset:2px; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F3EC;color:#1A1A19;font-family:'Hanken Grotesk',Helvetica,sans-serif;display:flex;flex-direction:column">
+
+  <main style="flex:1">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(28px,5vw,56px) clamp(16px,4vw,32px) 72px;position:relative">
+
+      <img src="./riksdagen-mandat.svg" alt="" aria-hidden="true" style="position:absolute;top:0;right:0;pointer-events:none;width:min(34vw,640px);height:auto;margin-top:-28px" />
+
+      <a href="./Partidata.dc.html"  aria-label="Partidata — startsida" style="display:inline-block;text-decoration:none;margin-bottom:clamp(18px,2.6vw,26px)"><img src="./partidata-logotyp.svg" alt="Partidata" style="display:block;height:clamp(50px,8.18vw,96px);width:auto" /></a>
+      <nav aria-label="Huvudmeny" style="display:flex;flex-wrap:wrap;gap:8px 26px;margin-bottom:clamp(48px,6vw,72px);font-size:15px">
+        <a href="./Partidata.dc.html" style="color:#1A1A19;border-bottom:2px solid #082354;padding-bottom:2px">Partier</a>
+        <a href="#val">Val</a>
+        <a href="#api">API &amp; data</a>
+        <a href="#om">Om tjänsten</a>
+      </nav>
+
+      <a href="./Partidata.dc.html" style="display:inline-flex;align-items:center;gap:7px;font-size:16px;color:#082354;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap;margin-bottom:clamp(22px,3vw,32px);width:fit-content"><i data-lucide="arrow-left" aria-hidden="true" style="width:16px;height:16px"></i>Alla partier</a>
+
+      <h1 style="font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(36px,6vw,68px);line-height:1;letter-spacing:-.035em;margin:0 0 clamp(24px,3vw,32px);text-wrap:balance">{{ name }}</h1>
+
+      <dl style="margin:0 0 clamp(14px,2vw,18px);background:#FFFDF8;border:1px solid #DFDBCD;border-radius:12px;padding:clamp(20px,2.5vw,26px) clamp(22px,3vw,30px);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px 32px">
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Förkortning</dt>
+          <dd style="margin:0;font-size:19px;font-weight:600">{{ abbr }}</dd>
+        </div>
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Registernummer</dt>
+          <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:500">{{ regNr }}</dd>
+        </div>
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Status</dt>
+          <dd style="margin:0;font-size:19px;font-weight:600">{{ statusShort }}</dd>
+        </div>
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Typ</dt>
+          <dd style="margin:0;font-size:19px;font-weight:600">{{ kindText }}</dd>
+        </div>
+        <div>
+          <dt style="font-size:15px;color:#45453F;margin-bottom:6px">Hemvist</dt>
+          <dd style="margin:0;font-size:19px;font-weight:600">{{ homeText }}</dd>
+        </div>
+      </dl>
+
+      <section aria-label="Grunduppgifter" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,64px);align-items:start;padding-bottom:clamp(40px,5vw,64px)">
+        <div>
+          <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#45453F;display:inline-flex;align-items:center;gap:10px"><i data-lucide="landmark" aria-hidden="true" style="width:15px;height:15px;color:#082354;flex:none"></i>Grunduppgifter · Valmyndigheten</p>
+          <dl style="margin:0">
+            <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3">
+              <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:baseline;padding:16px 0;border-top:{{ f.sep }}">
+                <dt style="font-size:16px;color:#45453F">{{ f.label }}</dt>
+                <dd style="margin:0;font-size:21px;font-weight:600;letter-spacing:-.01em;text-align:right">{{ f.value }}</dd>
+              </div>
+            </sc-for>
+            <sc-if value="{{ hasFormer }}">
+              <div style="border-top:1px solid #DFDBCD;margin-top:14px;padding-top:22px">
+                <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#45453F">Tidigare partibeteckningar</p>
+                <sc-for list="{{ former }}" as="q" hint-placeholder-count="2">
+                  <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:baseline;padding:10px 0">
+                    <dt style="font-size:17px">{{ q.name }}</dt>
+                    <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#45453F">{{ q.period }}</dd>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </dl>
+        </div>
+        <sc-if value="{{ hasLogo }}" hint-placeholder-val="{{ true }}">
+          <figure style="margin:0">
+            <div aria-hidden="true" style="width:100%;height:clamp(72px,8vw,104px);background-image:url({{ logo }});background-size:contain;background-position:left center;background-repeat:no-repeat"></div>
+            <figcaption style="margin-top:18px;padding-top:16px;border-top:1px solid #DFDBCD;font-size:14px;color:#45453F;line-height:1.5;max-width:44ch">Logotypen tillhör partiet och är skyddad av upphovsrätt och varumärkesrätt. Den återges här enbart för identifiering av registrerad partibeteckning.</figcaption>
+          </figure>
+        </sc-if>
+      </section>
+
+      <section aria-label="Politik i korthet" style="margin-left:calc(-1 * clamp(16px,4vw,32px));margin-right:calc(-1 * clamp(16px,4vw,32px));padding-left:clamp(16px,4vw,32px);padding-right:clamp(16px,4vw,32px);background:#082354;color:#FFFDF8;padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px);margin-bottom:clamp(40px,5vw,64px)">
+        <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8FA0BC;display:inline-flex;align-items:center;gap:10px"><i data-lucide="scale" aria-hidden="true" style="width:15px;height:15px;color:#FFBE1B;flex:none"></i>Politik i korthet</p>
+        <p style="margin:0 0 clamp(28px,4vw,44px);font-size:clamp(20px,2.4vw,26px);line-height:1.4;max-width:56ch;text-wrap:pretty">Refererande sammanfattning av partiets egna dokument — inte partiets formuleringar.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,4vw,56px)">
+          <sc-for list="{{ policy }}" as="a" hint-placeholder-count="4">
+            <div style="display:flex;gap:18px;padding:22px 0;border-top:1px solid rgba(255,253,248,.22)">
+              <span aria-hidden="true" style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFBE1B;padding-top:4px">{{ a.num }}</span>
+              <span style="min-width:0">
+                <span style="display:block;font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px">{{ a.area }}</span>
+                <span style="display:block;font-size:16px;line-height:1.55;color:#D5DCE8">{{ a.text }}</span>
+              </span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section aria-label="Vallöften" style="margin-bottom:clamp(40px,5vw,64px)">
+        <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-bottom:8px">
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.4vw,36px);letter-spacing:-.025em;display:inline-flex;align-items:center;gap:12px"><i data-lucide="list-checks" aria-hidden="true" style="width:26px;height:26px;color:#082354;flex:none"></i>Vallöften</h2>
+          <p style="margin:0;font-size:16px;color:#45453F">{{ promiseScope }}</p>
+        </div>
+        <ol style="list-style:none;margin:0;padding:0;counter-reset:v">
+          <sc-for list="{{ promises }}" as="v" hint-placeholder-count="3">
+            <li style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px 22px;align-items:baseline;padding:24px 0;border-top:1px solid #DFDBCD">
+              <span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#082354">{{ v.num }}</span>
+              <span style="font-size:clamp(19px,2.2vw,24px);line-height:1.35;letter-spacing:-.015em;text-wrap:pretty">{{ v.text }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F;white-space:nowrap;align-self:center">{{ v.ref }}</span>
+            </li>
+          </sc-for>
+        </ol>
+      </section>
+
+      <section aria-label="Valresultat" style="margin-bottom:clamp(40px,5vw,64px)">
+        <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-bottom:clamp(24px,3vw,36px)">
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.4vw,36px);letter-spacing:-.025em;display:inline-flex;align-items:center;gap:12px"><i data-lucide="trending-up" aria-hidden="true" style="width:26px;height:26px;color:#082354;flex:none"></i>Valresultat</h2>
+          <p style="margin:0;font-size:16px;color:#45453F">{{ resultScope }}</p>
+        </div>
+        <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,56px)">
+              <figure style="margin:0">
+                <figcaption style="display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between;margin-bottom:30px">
+                  <span style="font-size:17px;font-weight:600">Mandat</span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F">{{ maxSeats }}</span>
+                </figcaption>
+                <div style="position:relative;height:210px;margin-bottom:10px">
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:100%"><polyline points="{{ seatPoints }}" fill="none" stroke="#082354" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline></svg>
+                  <sc-for list="{{ seatBars }}" as="p" hint-placeholder-count="8">
+                    <span aria-hidden="true" style="position:absolute;left:{{ p.x }};top:{{ p.y }};transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#082354;border:2px solid #F5F3EC"></span>
+                  </sc-for>
+                  <sc-for list="{{ seatBars }}" as="p" hint-placeholder-count="8">
+                    <span style="position:absolute;left:{{ p.x }};top:{{ p.y }};transform:translate(-50%,-150%);margin-left:{{ p.dx }};font-size:14px;font-weight:600;white-space:nowrap;background:#F5F3EC;padding:1px 6px;border-radius:5px">{{ p.v }}</span>
+                  </sc-for>
+                </div>
+                <div style="position:relative;height:20px;border-top:1px solid #DFDBCD;padding-top:10px">
+                  <sc-for list="{{ seatBars }}" as="p" hint-placeholder-count="8">
+                    <span style="position:absolute;left:{{ p.x }};top:10px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:13px;color:#45453F">{{ p.year }}</span>
+                  </sc-for>
+                </div>
+              </figure>
+              <figure style="margin:0">
+                <figcaption style="display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between;margin-bottom:30px">
+                  <span style="font-size:17px;font-weight:600">Antal röster</span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F">{{ maxVotesLabel }}</span>
+                </figcaption>
+                <div style="position:relative;height:230px;margin-bottom:10px">
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:100%"><polyline points="{{ votePoints }}" fill="none" stroke="#082354" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline></svg>
+                  <sc-for list="{{ voteBars }}" as="p" hint-placeholder-count="8">
+                    <span aria-hidden="true" style="position:absolute;left:{{ p.x }};top:{{ p.y }};transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#082354;border:2px solid #F5F3EC"></span>
+                  </sc-for>
+                  <sc-for list="{{ voteBars }}" as="p" hint-placeholder-count="8">
+                    <span style="position:absolute;left:{{ p.x }};top:{{ p.y }};transform:translate(-50%,-128%);margin-left:{{ p.dx }};display:flex;flex-direction:column;align-items:{{ p.align }};gap:1px;white-space:nowrap;background:#F5F3EC;padding:2px 6px;border-radius:5px">
+                      <span style="font-size:14px;font-weight:600">{{ p.v }}</span>
+                      <span style="font-size:12.5px;color:#45453F">{{ p.pct }}</span>
+                    </span>
+                  </sc-for>
+                </div>
+                <div style="position:relative;height:20px;border-top:1px solid #DFDBCD;padding-top:10px">
+                  <sc-for list="{{ voteBars }}" as="p" hint-placeholder-count="8">
+                    <span style="position:absolute;left:{{ p.x }};top:10px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:13px;color:#45453F">{{ p.year }}</span>
+                  </sc-for>
+                </div>
+              </figure>
+            </div>
+            <p style="margin:26px 0 0;font-size:15px;color:#45453F;line-height:1.6;max-width:70ch">{{ resultNote }}</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noResults }}">
+          <div style="border-top:1px solid #DFDBCD;padding:clamp(28px,4vw,44px) 0 0">
+            <p style="margin:0 0 8px;font-size:21px;font-weight:600;letter-spacing:-.015em">Inga redovisade röstetal</p>
+            <p style="margin:0;font-size:16px;color:#45453F;line-height:1.6;max-width:60ch">Partiet har anmält valsedlar men inte fått röster redovisade i något av valen 1994–2026.</p>
+          </div>
+        </sc-if>
+      </section>
+
+      <section aria-label="Representanter" style="margin-left:calc(-1 * clamp(16px,4vw,32px));margin-right:calc(-1 * clamp(16px,4vw,32px));padding-left:clamp(16px,4vw,32px);padding-right:clamp(16px,4vw,32px);background:#EFECE3;padding-top:clamp(36px,4.5vw,56px);padding-bottom:clamp(36px,4.5vw,56px);margin-bottom:clamp(40px,5vw,64px)">
+        <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-bottom:clamp(24px,3vw,34px)">
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.4vw,36px);letter-spacing:-.025em;display:inline-flex;align-items:center;gap:12px"><i data-lucide="users" aria-hidden="true" style="width:26px;height:26px;color:#082354;flex:none"></i>Representanter</h2>
+          <p style="margin:0;font-size:16px;color:#45453F">{{ repScope }}</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,72px);border-bottom:1px solid #DFDBCD;padding-bottom:clamp(24px,3vw,32px);margin-bottom:clamp(24px,3vw,32px)">
+          <sc-for list="{{ repStats }}" as="r" hint-placeholder-count="3">
+            <div>
+              <p style="margin:0;font-size:clamp(34px,4.4vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1">{{ r.value }}</p>
+              <p style="margin:8px 0 0;font-size:15px;color:#45453F">{{ r.label }}</p>
+            </div>
+          </sc-for>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 clamp(28px,4vw,56px)">
+          <sc-for list="{{ people }}" as="q" hint-placeholder-count="4">
+            <li style="display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #DFDBCD">
+              <span aria-hidden="true" style="flex:none;width:38px;height:38px;border-radius:50%;border:1.5px solid #C6CFDF;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#082354">{{ q.initials }}</span>
+              <span style="min-width:0">
+                <span style="display:block;font-size:17px;font-weight:600;letter-spacing:-.01em">{{ q.name }}</span>
+                <span style="display:block;font-size:15px;color:#45453F;margin-top:2px">{{ q.role }}</span>
+              </span>
+            </li>
+          </sc-for>
+        </ul>
+        <p style="margin:22px 0 0;font-size:15px;color:#45453F;line-height:1.6;max-width:70ch">Uppdrag och kandidatlistor hämtas från Riksdagen.se och Valmyndighetens kandidatanmälningar. Personuppgifter begränsas till namn, uppdrag och valkrets.</p>
+      </section>
+
+      <section aria-label="Partiets egna kanaler" style="margin-bottom:clamp(40px,5vw,64px)">
+        <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-bottom:clamp(20px,2.5vw,28px)">
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.4vw,36px);letter-spacing:-.025em;display:inline-flex;align-items:center;gap:12px"><i data-lucide="globe" aria-hidden="true" style="width:26px;height:26px;color:#082354;flex:none"></i>Partiets egna kanaler</h2>
+          <p style="margin:0;font-size:16px;color:#45453F">Hämtat 2026-08-19</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.5vw,48px);align-items:flex-start">
+          <figure style="margin:0;flex:2 1 340px;min-width:0">
+            <div style="aspect-ratio:16/9;border:1px solid #DFDBCD;border-radius:6px;overflow:hidden;background:#FFFDF8">
+              <image-slot id="{{ shotId }}" shape="rect" placeholder="Skärmbild av startsidan"></image-slot>
+            </div>
+            <figcaption style="margin-top:16px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+              <a href="{{ siteUrl }}" style="font-size:clamp(19px,2.2vw,24px);font-weight:600;letter-spacing:-.015em;display:inline-flex;align-items:center;gap:9px">{{ siteLabel }}<i data-lucide="arrow-up-right" aria-hidden="true" style="width:19px;height:19px"></i></a>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F">Officiell webbplats</span>
+            </figcaption>
+          </figure>
+          <div style="flex:1 1 220px;min-width:0">
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#45453F;display:inline-flex;align-items:center;gap:10px"><i data-lucide="file-text" aria-hidden="true" style="width:15px;height:15px;color:#082354;flex:none"></i>Dokument</p>
+            <sc-for list="{{ sitePages }}" as="u" hint-placeholder-count="4">
+              <div style="display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;align-items:baseline;padding:16px 0;border-top:1px solid #DFDBCD">
+                <a href="{{ u.url }}" style="font-size:17px;font-weight:600;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:9px"><i data-lucide="{{ u.icon }}" aria-hidden="true" style="width:16px;height:16px;color:#082354;flex:none"></i>{{ u.label }}</a>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#45453F">{{ u.kind }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Wikipedia" style="border-top:2px solid #082354;padding-top:clamp(28px,3.5vw,40px);margin-bottom:clamp(40px,5vw,64px)">
+        <sc-if value="{{ hasWiki }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#45453F;display:inline-flex;align-items:center;gap:10px"><i data-lucide="book-open" aria-hidden="true" style="width:15px;height:15px;color:#082354;flex:none"></i>Wikipedia · CC BY-SA 4.0</p>
+            <p style="margin:0 0 clamp(22px,3vw,30px);font-size:clamp(21px,2.6vw,30px);line-height:1.4;letter-spacing:-.015em;max-width:60ch;text-wrap:pretty">{{ wikiSummary }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:14px clamp(26px,4vw,52px);align-items:baseline;border-top:1px solid #DFDBCD;padding-top:20px">
+              <sc-for list="{{ wikiFacts }}" as="w" hint-placeholder-count="4">
+                <span style="display:flex;flex-direction:column;gap:4px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#45453F">{{ w.label }}</span>
+                  <span style="font-size:17px;font-weight:600">{{ w.value }}</span>
+                </span>
+              </sc-for>
+              <a href="{{ wikiUrl }}" style="margin-left:auto;font-size:16px;display:inline-flex;align-items:center;gap:7px;align-self:flex-end">Läs hela artikeln<i data-lucide="arrow-up-right" aria-hidden="true" style="width:15px;height:15px"></i></a>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noWiki }}">
+          <div>
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#45453F">Wikipedia</p>
+            <p style="margin:0 0 10px;font-size:clamp(21px,2.6vw,28px);font-weight:600;letter-spacing:-.02em">Ingen artikel hittad</p>
+            <p style="margin:0;font-size:17px;color:#45453F;line-height:1.6;max-width:60ch">Vi hittar ingen artikel som säkert kan kopplas till den här partibeteckningen. Känner du till en, rapportera den så länkar vi.</p>
+          </div>
+        </sc-if>
+      </section>
+
+      <section aria-label="Datakällor om partiet" style="margin-bottom:clamp(40px,5vw,64px)">
+        <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-bottom:clamp(18px,2.2vw,24px)">
+          <h2 style="margin:0;font-weight:600;font-size:clamp(26px,3.4vw,36px);letter-spacing:-.025em;display:inline-flex;align-items:center;gap:12px"><i data-lucide="database" aria-hidden="true" style="width:26px;height:26px;color:#082354;flex:none"></i>Datakällor om partiet</h2>
+          <p style="margin:0;font-size:16px;color:#45453F">{{ sourceCount }}</p>
+        </div>
+        <div role="table" style="border-top:2px solid #082354">
+          <div role="row" style="display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,2.2fr) auto;gap:12px 24px;padding:12px 0;border-bottom:1px solid #DFDBCD;font-size:14px;font-weight:600;color:#45453F">
+            <span>Källa</span><span>Innehåll</span><span>Hämtad</span>
+          </div>
+          <sc-for list="{{ sources }}" as="k" hint-placeholder-count="6">
+            <div role="row" style="display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,2.2fr) auto;gap:6px 24px;padding:18px 0;border-bottom:1px solid #EFEBE0;align-items:baseline">
+              <a href="{{ k.url }}" style="font-size:17px;font-weight:600;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:8px"><i data-lucide="{{ k.icon }}" aria-hidden="true" style="width:16px;height:16px;flex:none"></i>{{ k.name }}</a>
+              <span style="font-size:16px;line-height:1.5;color:#2A2A26">{{ k.what }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#45453F;white-space:nowrap">{{ k.updated }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section aria-label="I nyheterna och ekonomi" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,64px);margin-bottom:clamp(40px,5vw,64px)">
+        <div style="min-width:0">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+            <h2 style="margin:0;font-weight:600;font-size:clamp(22px,2.8vw,28px);letter-spacing:-.02em;display:inline-flex;align-items:center;gap:10px"><i data-lucide="newspaper" aria-hidden="true" style="width:21px;height:21px;color:#082354;flex:none"></i>I nyheterna</h2>
+            <p style="margin:0;font-size:15px;color:#45453F">Senaste 30 dagarna</p>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0">
+            <sc-for list="{{ news }}" as="n" hint-placeholder-count="3">
+              <li style="padding:18px 0;border-top:1px solid #DFDBCD">
+                <a href="{{ n.url }}" style="font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.35;display:block">{{ n.title }}</a>
+                <span style="display:flex;align-items:center;gap:7px;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#45453F"><i data-lucide="external-link" aria-hidden="true" style="width:13px;height:13px;color:#45453F;flex:none"></i>{{ n.outlet }} · {{ n.date }}</span>
+              </li>
+            </sc-for>
+          </ul>
+          <p style="margin:18px 0 0;font-size:14px;color:#45453F;line-height:1.6;max-width:52ch">Rubriker hämtas maskinellt från svenska mediers RSS. Partidata gör inget urval.</p>
+        </div>
+        <div style="min-width:0">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+            <h2 style="margin:0;font-weight:600;font-size:clamp(22px,2.8vw,28px);letter-spacing:-.02em;display:inline-flex;align-items:center;gap:10px"><i data-lucide="banknote" aria-hidden="true" style="width:21px;height:21px;color:#082354;flex:none"></i>Partistöd</h2>
+            <p style="margin:0;font-size:15px;color:#45453F">Kammarkollegiet</p>
+          </div>
+          <dl style="margin:0">
+            <sc-for list="{{ funding }}" as="e" hint-placeholder-count="3">
+              <div style="display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:1px solid #DFDBCD">
+                <dt style="font-size:16px;color:#45453F">{{ e.label }}<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:4px">{{ e.year }}</span></dt>
+                <dd style="margin:0;font-size:clamp(22px,2.4vw,28px);font-weight:600;letter-spacing:-.02em">{{ e.value }}</dd>
+              </div>
+            </sc-for>
+          </dl>
+        </div>
+      </section>
+
+      <section aria-label="Hämta datan" style="margin-left:calc(-1 * clamp(16px,4vw,32px));margin-right:calc(-1 * clamp(16px,4vw,32px));padding-left:clamp(16px,4vw,32px);padding-right:clamp(16px,4vw,32px);background:#082354;color:#FFFDF8;padding-top:clamp(32px,4vw,48px);padding-bottom:clamp(32px,4vw,48px);display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between">
+        <div style="min-width:0">
+          <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8FA0BC;display:inline-flex;align-items:center;gap:10px"><i data-lucide="braces" aria-hidden="true" style="width:15px;height:15px;color:#FFBE1B;flex:none"></i>Öppna data</p>
+          <p style="margin:0;font-size:clamp(19px,2.2vw,24px);line-height:1.4;max-width:46ch;text-wrap:pretty">Allt på den här sidan finns som strukturerad data, med källhänvisning per fält.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <sc-for list="{{ downloads }}" as="d" hint-placeholder-count="3">
+            <a href="{{ d.url }}" style="display:inline-flex;align-items:center;gap:9px;border:1.5px solid #FFFDF8;border-radius:999px;padding:13px 24px;font-size:16px;font-weight:500;color:#FFFDF8" style-hover="background:#FFFDF8;color:#082354"><i data-lucide="download" aria-hidden="true" style="width:16px;height:16px"></i>{{ d.label }}</a>
+          </sc-for>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="om" style="border-top:1px solid #E2DFD4;background:#EFECE3">
+    <div style="max-width:1320px;margin:0 auto;padding:32px clamp(16px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px">
+      <div>
+        <img src="./partidata-logotyp.svg" alt="Partidata" style="display:block;height:37px;width:auto;margin-bottom:16px" />
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#2A2A26;max-width:34ch">Oberoende, partipolitiskt neutral datatjänst. Inte kopplad till någon myndighet eller något parti.</p>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Datakällor</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li><a href="#kalla">Valmyndigheten — partibeteckningar</a></li>
+          <li><a href="#kalla">Valmyndigheten — valresultat</a></li>
+          <li><a href="#kalla">SCB — regionkoder</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Öppenhet</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="download" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#api">API &amp; nedladdning (JSON, CSV)</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="github" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#github">Källkod på GitHub</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="scale" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#licens">Licens: CC BY 4.0</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:#45453F;font-weight:600;margin:0 0 14px">Kontakt</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:16px">
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="mail" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="mailto:hej@partidata.se">hej@partidata.se</a></li>
+          <li style="display:flex;align-items:center;gap:8px"><i data-lucide="flag" aria-hidden="true" style="width:14px;height:14px;color:#55554F"></i><a href="#ratta">Rapportera felaktig uppgift</a></li>
+          <li><a href="./Grafisk profil.dc.html">Grafisk profil</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid #E2DFD4">
+      <div style="max-width:1320px;margin:0 auto;padding:14px clamp(16px,4vw,32px);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;font-size:14px;color:#45453F">
+        <span>Senast uppdaterad 2026-08-19</span>
+        <span>Exempeldata i prototypen</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;party&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;L&quot;,&quot;options&quot;:[&quot;S&quot;,&quot;M&quot;,&quot;L&quot;,&quot;Fi&quot;,&quot;MJP&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Innehåll&quot;}}">
+const PARTIES = {
+  S: { name: 'Socialdemokraterna', founded: 1889, kind: 'Riksdagsparti', kommun: null, region: null, years: [2026, 2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994], riksdag: true, regionval: true, kommunval: true },
+  L: { name: 'Liberalerna', founded: 1934, kind: 'Riksdagsparti', kommun: null, region: null, years: [2026, 2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994], riksdag: true, regionval: true, kommunval: true },
+  M: { name: 'Moderaterna', founded: 1904, kind: 'Riksdagsparti', kommun: null, region: null, years: [2026, 2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994], riksdag: true, regionval: true, kommunval: true },
+  Fi: { name: 'Feministiskt initiativ', founded: 2005, kind: 'Nationellt registrerat parti', kommun: null, region: null, years: [2022, 2018, 2014, 2010, 2006], riksdag: true, regionval: true, kommunval: true },
+  MJP: { name: 'Mjölbypartiet', founded: 2002, kind: 'Lokalt parti', kommun: 'Mjölby', region: 'Östergötland', years: [2026, 2022, 2014, 2006], riksdag: false, regionval: false, kommunval: true }
+};
+const FORMER = {
+  L: [['Folkpartiet liberalerna', '1990–2015'], ['Folkpartiet', '1934–1990']],
+  M: [['Moderata samlingspartiet', '1969–2017'], ['Högerpartiet', '1952–1969']],
+  S: [['Sveriges socialdemokratiska arbetareparti', '1889–2004']]
+};
+const LOGOS = ['S', 'SD', 'M', 'V', 'C', 'KD', 'MP', 'L', 'Fi', 'PP', 'NYA', 'AfS', 'MED', 'DP'];
+// Riksdagsval: [år, andel giltiga röster i %, mandat]
+const RESULTS = {
+  S: [[1994, 45.30, 161], [1998, 36.39, 131], [2002, 39.85, 144], [2006, 34.99, 130], [2010, 30.66, 112], [2014, 31.01, 113], [2018, 28.26, 100], [2022, 30.33, 107]],
+  M: [[1994, 22.40, 80], [1998, 22.90, 82], [2002, 15.26, 55], [2006, 26.23, 97], [2010, 30.06, 107], [2014, 23.33, 84], [2018, 19.84, 70], [2022, 19.10, 68]],
+  L: [[1994, 7.19, 26], [1998, 4.72, 17], [2002, 13.39, 48], [2006, 7.54, 28], [2010, 7.06, 24], [2014, 5.42, 19], [2018, 5.49, 20], [2022, 4.61, 16]],
+  Fi: [[2006, 0.68, 0], [2010, 0.40, 0], [2014, 3.12, 0], [2018, 0.46, 0], [2022, 0.09, 0]],
+  MJP: [[2006, 4.20, 2], [2010, 3.60, 2], [2014, 5.80, 3], [2018, 6.10, 3], [2022, 6.90, 3]]
+};
+// Giltiga röster i riksdagsvalet per år
+const TOTALS = { 1994: 5787400, 1998: 5377100, 2002: 5327300, 2006: 5551300, 2010: 5960400, 2014: 6178100, 2018: 6476700, 2022: 6578000 };
+const LOCAL_TOTAL = 13100;
+const YEARS = [2026, 2022, 2018, 2014, 2010, 2006, 2002, 1998, 1994];
+const REG = { M:'0001', S:'0002', L:'0003', C:'0004', V:'0005', MP:'0055', KD:'0068', SD:'0110', PP:'0524', Fi:'0532', DP:'1136', MED:'1296', AfS:'1325', NYA:'1439' };
+
+// Innehåll per parti. Refererande sammanfattningar, inte partiernas egna formuleringar.
+const EXTRA = {
+  S: { site: 'socialdemokraterna.se', candidates: 348, wiki: 'Socialdemokraterna', leader: 'Magdalena Andersson', wikiFounded: '1889', ideology: 'Socialdemokrati', intl: 'Progressiva alliansen', seats: 107, gov: 'Opposition',
+    summary: 'Sveriges största parti mätt i mandat och det parti som innehaft regeringsmakten flest år sedan andra världskriget. Bildat 1889 ur arbetarrörelsen, med fackliga band till LO.',
+    policy: [['Arbetsmarknad', 'Full sysselsättning som överordnat mål, kollektivavtal som grund för arbetsvillkor.'], ['Välfärd', 'Skattefinansierad välfärd i offentlig regi, begränsad vinstuttag i skattefinansierad verksamhet.'], ['Klimat', 'Industriell omställning med statliga investeringar och elektrifiering.'], ['Trygghet', 'Fler poliser kombinerat med sociala insatser mot nyrekrytering.']],
+    promises: [['30 000 fler anställda i välfärden under mandatperioden', 'Valmanifest 2026, s. 8'], ['Ingen vinstutdelning i skolan', 'Valmanifest 2026, s. 14'], ['Statlig grön investeringsfond', 'Valmanifest 2026, s. 21']],
+    people: [['Magdalena Andersson', 'Partiledare'], ['Mikael Damberg', 'Ekonomisk-politisk talesperson'], ['Lena Hallengren', 'Gruppledare i riksdagen'], ['Ardalan Shekarabi', 'Kandidat, Uppsala län']],
+    news: [['Socialdemokraterna presenterar välfärdssatsning inför valet', 'SVT Nyheter', '2026-08-14'], ['Debatt om vinster i välfärden hettar till', 'Dagens Nyheter', '2026-08-09'], ['Partiets kongressbeslut om Nato får kritik internt', 'Sveriges Radio', '2026-07-28']],
+    funding: [['Statligt partistöd', '73,4 mkr'], ['Stöd till riksdagsgrupp', '31,2 mkr'], ['Mandatbundet stöd', '107 mandat']] },
+  M: { site: 'moderaterna.se', candidates: 312, wiki: 'Moderaterna', leader: 'Ulf Kristersson', wikiFounded: '1904', ideology: 'Liberalkonservatism', intl: 'EPP', seats: 68, gov: 'Regeringsparti',
+    summary: 'Liberalkonservativt parti bildat 1904, tidigare Högerpartiet och Moderata samlingspartiet. Har lett borgerliga regeringar 1991–1994, 2006–2014 och från 2022.',
+    policy: [['Ekonomi', 'Lägre skatt på arbete, stramare offentliga utgifter och bidragstak.'], ['Rättspolitik', 'Skärpta straff, utökade tvångsmedel och fler poliser.'], ['Energi', 'Ny kärnkraft med statliga kreditgarantier.'], ['Migration', 'Stramare regler för uppehållstillstånd och skärpta krav för medborgarskap.']],
+    promises: [['Sänkt skatt för alla som arbetar', 'Valmanifest 2026, s. 5'], ['Tio nya kärnreaktorer till 2045', 'Valmanifest 2026, s. 18'], ['Fördubblad polistäthet i utsatta områden', 'Valmanifest 2026, s. 11']],
+    people: [['Ulf Kristersson', 'Partiledare'], ['Elisabeth Svantesson', 'Ekonomisk-politisk talesperson'], ['Tobias Billström', 'Gruppledare i riksdagen'], ['Jessika Roswall', 'Kandidat, Uppsala län']],
+    news: [['Moderaterna vill utöka kärnkraftsgarantierna', 'Dagens industri', '2026-08-16'], ['Kritik mot regeringens budgetprioriteringar', 'Aftonbladet', '2026-08-11'], ['Partiledaren om samarbetet efter valet', 'TV4 Nyheterna', '2026-08-02']],
+    funding: [['Statligt partistöd', '48,1 mkr'], ['Stöd till riksdagsgrupp', '20,4 mkr'], ['Mandatbundet stöd', '68 mandat']] },
+  L: { site: 'liberalerna.se', candidates: 214, wiki: 'Liberalerna', leader: 'Johan Pehrson', wikiFounded: '1934', ideology: 'Socialliberalism', intl: 'ALDE', seats: 16, gov: 'Regeringsparti',
+    summary: 'Socialliberalt parti med rötter i frisinnet och det liberala partiet från 1934. Hette Folkpartiet till 1990 och Folkpartiet liberalerna till 2015.',
+    policy: [['Skola', 'Statligt huvudmannaskap för skolan och tidiga stödinsatser.'], ['Individens frihet', 'Starkt skydd för yttrandefrihet, HBTQ-rättigheter och religionsfrihet.'], ['Europa', 'Fördjupat EU-samarbete och gemensamt försvar.'], ['Energi', 'Kärnkraft som klimatåtgärd.']],
+    promises: [['Förstatliga skolan under mandatperioden', 'Valmanifest 2026, s. 4'], ['Läsa-skriva-räkna-garanti från förskoleklass', 'Valmanifest 2026, s. 6'], ['Svenskt inträde i eurosamarbetet prövas', 'Valmanifest 2026, s. 22']],
+    people: [['Johan Pehrson', 'Partiledare'], ['Cecilia Nykvist', 'Partisekreterare'], ['Lina Nordquist', 'Gruppledare i riksdagen'], ['Louise Eklund', 'Kandidat, Malmö']],
+    news: [['Liberalerna pressas av opinionsläget', 'Sydsvenskan', '2026-08-18'], ['Skolförslaget får stöd av lärarfacken', 'Skolvärlden', '2026-08-06'], ['Partiledaren om fyraprocentsspärren', 'Ekot', '2026-07-30']],
+    funding: [['Statligt partistöd', '11,6 mkr'], ['Stöd till riksdagsgrupp', '4,9 mkr'], ['Mandatbundet stöd', '16 mandat']] },
+  Fi: { site: 'feministisktinitiativ.se', candidates: 168, wiki: 'Feministiskt initiativ', leader: 'Partistyrelse', wikiFounded: '2005', ideology: 'Feminism, antirasism', intl: 'Europeiska feministiska partier', seats: 0, gov: 'Utanför riksdagen',
+    summary: 'Feministiskt parti bildat 2005 ur nätverket Feministiskt initiativ. Har haft mandat i Europaparlamentet 2014–2019 och i ett antal kommunfullmäktige.',
+    policy: [['Jämställdhet', 'Feministisk analys som grund för all politik, individbeskattning och delad föräldraförsäkring.'], ['Antirasism', 'Regularisering av papperslösa och kritik av migrationsrestriktioner.'], ['Arbetsliv', 'Sex timmars arbetsdag med bibehållen lön.'], ['Våld', 'Utbyggt skydd för våldsutsatta och samtyckeslagstiftningens tillämpning.']],
+    promises: [['Sex timmars arbetsdag införs stegvis', 'Valplattform 2026, s. 3'], ['Individualiserad föräldraförsäkring', 'Valplattform 2026, s. 7'], ['Avskaffad vinstjakt i välfärden', 'Valplattform 2026, s. 12']],
+    people: [['Teysir Subhi', 'Partiledare'], ['Jaqueline Gustafsson', 'Partiledare'], ['Anna Rosengren', 'Kandidat, Göteborg'], ['Sissela Nordling Blanco', 'Kandidat, Stockholm']],
+    news: [['Feministiskt initiativ satsar på kommunvalet', 'ETC', '2026-08-12'], ['Partiet kritiserar migrationspolitiken', 'Dagens Arena', '2026-08-04']],
+    funding: [['Statligt partistöd', '0 mkr'], ['Kommunalt partistöd', '2,1 mkr'], ['Mandatbundet stöd', 'Inga riksdagsmandat']] },
+  MJP: { site: 'mjolbypartiet.se', candidates: 14, wiki: null, leader: 'Lokal styrelse', wikiFounded: '2002', ideology: 'Lokalt intresseparti', intl: null, seats: 3, gov: 'Opposition i kommunfullmäktige',
+    summary: null,
+    policy: [['Kommunal service', 'Bevarad skola och äldreomsorg i kommunens mindre orter.'], ['Bebyggelse', 'Restriktiv hållning till exploatering av jordbruksmark.'], ['Kollektivtrafik', 'Tätare turer mellan tätorterna i kommunen.'], ['Ekonomi', 'Oförändrad kommunalskatt under mandatperioden.']],
+    promises: [['Ingen nedläggning av byskolor', 'Kommunprogram 2026, s. 2'], ['Utbyggd hemtjänst i landsbygdsdelarna', 'Kommunprogram 2026, s. 5']],
+    people: [['Ordförande', 'Partiets styrelse'], ['Gruppledare', 'Kommunfullmäktige'], ['Kandidat', 'Kommunvalet 2026']],
+    news: [['Lokalpartiet vill stoppa skolnedläggning', 'Corren', '2026-08-15']],
+    funding: [['Kommunalt partistöd', '0,3 mkr'], ['Mandatbundet stöd', '3 mandat'], ['Statligt partistöd', '0 mkr']] }
+};
+
+class Component extends DCLogic {
+  icons() { if (window.lucide) window.lucide.createIcons(); }
+  componentDidMount() { this.icons(); setTimeout(() => this.icons(), 400); }
+  componentDidUpdate() { this.icons(); }
+
+  renderVals() {
+    const abbr = this.props.party ?? 'L';
+    const p = PARTIES[abbr] || PARTIES.L;
+        const former = (FORMER[abbr] || []).map(f => ({ name: f[0], period: f[1] }));
+    const res = RESULTS[abbr] || [];
+    const local = p.kind === 'Lokalt parti';
+    const nf = new Intl.NumberFormat('sv-SE');
+    const maxSeats = res.reduce((m, r) => Math.max(m, r[2]), 0);
+    const maxVotes = res.reduce((m, r) => Math.max(m, Math.round(r[1] / 100 * (local ? LOCAL_TOTAL : TOTALS[r[0]]))), 1);
+    const n = res.length;
+    // y maps a value onto 16–94 % of the plot box, so labels above the top point stay inside
+    const plot = (val, max) => 94 - (max > 0 ? val / max : 0) * 78;
+    const xAt = i => n > 1 ? i / (n - 1) * 100 : 50;
+    // edge labels get the same fixed inset so value and year stay on one vertical
+    const dx = i => i === 0 ? '22px' : i === n - 1 ? '-22px' : '0px';
+    // a wide label needs roughly two point-steps, so label every other year plus the last
+    const sparse = i => (n - 1 - i) % 2 === 0;
+    const seatBars = res.map((r, i) => ({
+      year: String(r[0]), v: String(r[2]), dx: dx(i),
+      x: xAt(i).toFixed(2) + '%', y: plot(r[2], maxSeats).toFixed(2) + '%'
+    }));
+    const votes = res.map(r => Math.round(r[1] / 100 * (local ? LOCAL_TOTAL : TOTALS[r[0]])));
+    const voteBars = res.map((r, i) => ({
+      year: String(r[0]), dx: dx(i),
+      align: i === 0 ? 'flex-start' : i === n - 1 ? 'flex-end' : 'center',
+      v: sparse(i) ? nf.format(votes[i]) : '',
+      pct: sparse(i) ? r[1].toFixed(1).replace('.', ',') + ' %' : '',
+      x: xAt(i).toFixed(2) + '%', y: plot(votes[i], maxVotes).toFixed(2) + '%'
+    }));
+    const pts = arr => arr.map((p, i) => xAt(i).toFixed(2) + ',' + parseFloat(p.y).toFixed(2)).join(' ');
+    const active = p.years.indexOf(2026) > -1 || p.years.indexOf(2022) > -1;
+    const e = EXTRA[abbr] || EXTRA.MJP;
+    const sep = i => i === 0 ? 'none' : '1px solid #EFEBE0';
+    const initials = nm => nm.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+    const wikiUrl = e.wiki ? 'https://sv.wikipedia.org/wiki/' + encodeURIComponent(e.wiki) : '';
+    const siteRoot = 'https://' + e.site;
+    const pages = local
+      ? [['Kommunprogram', 'PDF', 'file-text'], ['Om partiet', 'Sida', 'info'], ['Kontakt', 'Sida', 'mail']]
+      : [['Partiprogram', 'PDF', 'file-text'], ['Valmanifest 2026', 'PDF', 'file-check'], ['Stadgar', 'PDF', 'gavel'], ['Kontakt', 'Sida', 'mail']];
+    const extras = {
+      policy: e.policy.map((a, i) => ({ area: a[0], text: a[1], num: String(i + 1).padStart(2, '0') })),
+      promises: e.promises.map((v, i) => ({ text: v[0], ref: v[1], num: String(i + 1).padStart(2, '0') })),
+      promiseScope: local ? 'Kommunvalet 2026' : 'Riksdagsvalet 2026',
+      repScope: local ? 'Kommunfullmäktige i ' + p.kommun : 'Riksdagen och kandidater 2026',
+      repStats: local
+        ? [{ label: 'Mandat i fullmäktige', value: String(e.seats) }, { label: 'Kandidater 2026', value: '14' }, { label: 'Roll', value: e.gov }]
+        : [{ label: 'Riksdagsmandat', value: String(e.seats) }, { label: 'Kandidater 2026', value: String(e.candidates) }, { label: 'Roll', value: e.gov }],
+      people: e.people.map(q => ({ name: q[0], role: q[1], initials: initials(q[0]) })),
+      siteUrl: siteRoot, siteLabel: e.site, shotId: 'site-' + abbr.toLowerCase(),
+      sitePages: pages.map((u, i) => ({ label: u[0], kind: u[1], icon: u[2], url: siteRoot, sep: sep(i) })),
+      hasWiki: !!e.wiki, noWiki: !e.wiki, wikiUrl,
+      wikiSummary: e.summary || '',
+      wikiFacts: [
+        { label: 'Grundat', value: e.wikiFounded },
+        { label: 'Ideologi', value: e.ideology },
+        { label: 'Partiledning', value: e.leader },
+        { label: 'Europeiskt samarbete', value: e.intl || 'Inget' }
+      ].map((w, i) => Object.assign(w, { sep: sep(i) })),
+      news: e.news.map(nn => ({ title: nn[0], outlet: nn[1], date: nn[2], url: siteRoot })),
+      funding: e.funding.map((x, i) => ({ label: x[0], value: x[1], year: i === 2 ? 'Efter valet 2022' : 'Räkenskapsåret 2025' })),
+      sources: [
+        { name: 'Valmyndigheten', icon: 'landmark', what: 'Registrerad partibeteckning, registernummer, anmälda valsedlar och valresultat per valår.', url: 'https://www.val.se', linkLabel: 'val.se', updated: '2026-08-19' },
+        { name: 'Riksdagen', icon: 'users', what: 'Ledamöter, uppdrag, voteringar och motioner för partiets riksdagsgrupp.', url: 'https://data.riksdagen.se', linkLabel: 'data.riksdagen.se', updated: '2026-08-18' },
+        { name: 'Wikidata', icon: 'database', what: 'Identifierare som binder samman partiet mellan register, samt logotyp och grunduppgifter.', url: 'https://www.wikidata.org', linkLabel: 'wikidata.org', updated: '2026-08-17' },
+        { name: 'Kammarkollegiet', icon: 'banknote', what: 'Utbetalt statligt partistöd och stöd till riksdagsgrupper per år.', url: 'https://www.kammarkollegiet.se', linkLabel: 'kammarkollegiet.se', updated: '2026-06-30' },
+        { name: 'SCB', icon: 'chart-no-axes-column', what: 'Valstatistik, valdeltagande och regionkoder som underlag för nedbrytningar.', url: 'https://www.scb.se', linkLabel: 'scb.se', updated: '2026-08-01' },
+        { name: 'Partiets egen webbplats', icon: 'globe', what: 'Program, manifest och stadgar, hämtade som dokument med datum för hämtningen.', url: siteRoot, linkLabel: e.site, updated: '2026-08-19' }
+      ],
+      sourceCount: '6 källor',
+      downloads: [
+        { label: 'JSON', url: '#json' },
+        { label: 'CSV', url: '#csv' },
+        { label: 'API', url: '#api' }
+      ]
+    };
+    return Object.assign(extras, {
+      name: p.name, abbr, former, hasFormer: former.length > 0,
+      seatBars, voteBars, hasResults: res.length > 0, noResults: res.length === 0,
+      seatPoints: pts(seatBars), votePoints: pts(voteBars),
+      maxSeats: maxSeats > 0 ? 'Flest ' + maxSeats : 'Inga mandat',
+      maxVotesLabel: 'Flest ' + nf.format(maxVotes) + ' röster',
+      resultScope: local ? 'Kommunval i ' + p.kommun : 'Riksdagsval 1994–2022',
+      resultNote: local
+        ? 'Andelen avser giltiga röster i kommunvalet i ' + p.kommun + ' kommun. Röstetalen är beräknade utifrån andelen och antalet giltiga röster i kommunen.'
+        : 'Andelen avser giltiga röster i hela riket. Röstetalen är beräknade utifrån andelen och antalet giltiga röster i respektive riksdagsval.',
+      hasLogo: LOGOS.indexOf(abbr) > -1, logo: './logos/' + abbr.toLowerCase() + '.png',
+      statusShort: active ? 'Aktiv' : 'Vilande',
+      regNr: REG[abbr] || '—',
+      kindText: p.kind,
+      homeText: p.kommun ? p.kommun + ' kommun · ' + p.region : 'Hela landet',
+      summary: p.kommun
+        ? 'Lokalt parti med hemvist i ' + p.kommun + ' kommun, ' + p.region + '. Uppgifterna nedan är hämtade från Valmyndighetens register över anmälda partibeteckningar.'
+        : 'Nationellt registrerad partibeteckning. Uppgifterna nedan är hämtade från Valmyndighetens register över anmälda partibeteckningar och valsedelsbeställningar.',
+      facts: [
+        { label: 'Först registrerat', value: String(p.founded) },
+        { label: 'Senaste val med deltagande', value: String(Math.max.apply(null, p.years)) },
+        { label: 'Antal val med deltagande', value: p.years.length + ' av 9' }
+      ].map((f, i) => Object.assign(f, { sep: i === 0 ? 'none' : '1px solid #EFEBE0' }))
+    });
+  }
+}
+
+</script>
+</body>
+</html>
