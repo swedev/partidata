@@ -11,6 +11,8 @@ const percentageFormatter = new Intl.NumberFormat('sv-SE', { minimumFractionDigi
 const chamberComposition = parliamentView.kammare.partier.map(party => ({ label: party.forkortning, seats: party.mandat }));
 const parliamentComposition = chamberComposition.toSorted((a, b) => b.seats - a.seats);
 const nationalTurnout = parliamentView.valdeltagande.resultat.map(result => ({ year: result.valar, value: result.procent }));
+const turnoutSourceNames = [...new Set(parliamentView.valdeltagande.kallor.map(source => source.namn))];
+const turnoutFetched = parliamentView.valdeltagande.kallor.map(source => source.hamtad).toSorted().at(-1);
 
 const chamberSeats = (() => {
   const parties = chamberComposition.flatMap(party => Array.from({ length: party.seats }, () => party.label));
@@ -143,7 +145,7 @@ export function TurnoutSection () {
       <div className="profile-turnout__intro">
         <h2 id="turnout-heading">Valdeltagande som jämförelse</h2>
         <p>Valdeltagandet är en egenskap hos valet, inte hos partiet. Det visas för att kunna läsa röstetalen mot antalet röstande.</p>
-        <div className="profile-source-brand profile-source-brand--small"><span className="profile-source-brand__scb">SCB</span><div><small>Historisk valstatistik · hämtat {parliamentView.senast_uppdaterad}</small></div></div>
+        <div className="profile-source-brand profile-source-brand--small"><div><small>{turnoutSourceNames.join(' och ')} · hämtat {turnoutFetched}</small></div></div>
       </div>
       <div className="profile-turnout__chart">
         <div>

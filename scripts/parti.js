@@ -163,14 +163,18 @@ function deriveArea (deltagande, areas) {
 /**
  * normalisePartyName
  * Makes harmless spelling differences comparable without treating the result
- * as an identity of its own. The caller must still reject ambiguous matches.
+ * as an identity of its own. å, ä and ö are distinct Swedish letters rather
+ * than accented variants of a and o, so their marks survive the folding —
+ * otherwise two genuinely different parties (Habo/Håbo) would compare equal.
+ * The caller must still reject ambiguous matches.
  * @param  {String} name
  * @return {String}
  */
 function normalisePartyName (name) {
   return name
     .normalize('NFD')
-    .replace(/\p{Mark}/gu, '')
+    .replace(/\p{Mark}/gu, mark => (mark === '\u0308' || mark === '\u030A' ? mark : ''))
+    .normalize('NFC')
     .toLowerCase()
     .replace(/[^\p{Letter}\p{Number}]+/gu, ' ')
     .trim();
@@ -210,7 +214,9 @@ function normalisedNameCollisions (parties) {
  * normalised-name match for a party that has been given a new code. A name match is only
  * considered for a party that carries no code of its own in the year being
  * imported, and only when exactly one party and exactly one record share the
- * name.
+ * name. When every registry party with the name is already accounted for by
+ * its own code in the year's file, no merge is possible and the record is a
+ * new party.
  * @param  {Object} registry From loadParties()
  * @param  {String} year
  * @param  {Object[]} partier Year records, each { kod, beteckning }
@@ -242,7 +248,7 @@ function upsertParties (registry, year, partier) {
       const candidates = nameCandidates.filter(candidate =>
         !candidate.koder.some(kod => importedKoder.has(kod))
       );
-      if (nameCandidates.length > 1 || (candidates.length > 0 && nameCounts.get(name) > 1)) {
+      if (candidates.length > 0 && (nameCandidates.length > 1 || nameCounts.get(name) > 1)) {
         throw new Error(
           `Ambiguous match for ${record.kod} "${record.beteckning}" in ${year}: ` +
           `${nameCandidates.length} registry candidate(s) [${nameCandidates.map(c => c.koder.join('/')).join(', ')}], ` +

@@ -15,9 +15,19 @@
     "valar": 2022,
     "partier": [
       {
+        "parti_uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a",
+        "forkortning": "V",
+        "mandat": 24
+      },
+      {
         "parti_uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd",
         "forkortning": "S",
         "mandat": 107
+      },
+      {
+        "parti_uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
+        "forkortning": "MP",
+        "mandat": 18
       },
       {
         "parti_uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3",
@@ -25,19 +35,14 @@
         "mandat": 24
       },
       {
-        "parti_uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
-        "forkortning": "KD",
-        "mandat": 19
-      },
-      {
         "parti_uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0",
         "forkortning": "L",
         "mandat": 16
       },
       {
-        "parti_uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
-        "forkortning": "MP",
-        "mandat": 18
+        "parti_uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
+        "forkortning": "KD",
+        "mandat": 19
       },
       {
         "parti_uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476",
@@ -48,11 +53,6 @@
         "parti_uuid": "b9af6417-6861-40ff-b0a5-3c1fab176496",
         "forkortning": "SD",
         "mandat": 73
-      },
-      {
-        "parti_uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a",
-        "forkortning": "V",
-        "mandat": 24
       }
     ],
     "kalla": {

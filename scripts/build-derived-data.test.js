@@ -110,6 +110,19 @@ test('the diagram draws one group per party, sized by its mandate count', t => {
   assert.equal((svg.match(/<circle /g) ?? []).length, 349);
 });
 
+test('the chamber is ordered along the spectrum, not in source row order', t => {
+  const root = makeData([
+    { forkortning: 'SD', mandat: 73 },
+    { forkortning: 'S', mandat: 107 },
+    { forkortning: 'XYZ', mandat: 145 },
+    { forkortning: 'V', mandat: 24 }
+  ]);
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const chamber = buildPartyProfileParliamentView(root).kammare;
+  assert.deepEqual(chamber.partier.map(party => party.forkortning), ['V', 'S', 'SD', 'XYZ']);
+});
+
 test('the diagram records the election year it was generated from', t => {
   const root = makeData([{ forkortning: 'S', mandat: 349 }]);
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));

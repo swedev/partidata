@@ -137,7 +137,7 @@ async function main () {
 
     const withoutParticipationProfile = await fetch(`${baseUrl}/parti/${withoutParticipation.filnamn}/`);
     assert.equal(withoutParticipationProfile.status, 200);
-    assert.match(await withoutParticipationProfile.text(), /Inget registrerat valdeltagande/);
+    assert.match(await withoutParticipationProfile.text(), /Inget registrerat deltagande/);
 
     const redirect = await fetch(`${baseUrl}/parti/${previous.tidigare_filnamn[0]}/`, { redirect: 'manual' });
     assert.equal(redirect.status, 308);

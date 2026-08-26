@@ -71,7 +71,7 @@ export function ProfileHero ({
         </div>
         {symbolSrc && symbol && (
           <figure className={`profile-logo${profile.symbolvisning === 'mark' ? ' profile-logo--mark' : ''}`}>
-            <div><Image src={symbolSrc} alt={`${displayName}s logotyp`} fill sizes="(max-width: 800px) 80vw, 26vw" loading="eager" unoptimized /></div>
+            <div><Image src={symbolSrc} alt={`Logotyp för ${displayName}`} fill sizes="(max-width: 800px) 80vw, 26vw" loading="eager" unoptimized /></div>
             <figcaption>Partisymbol från <a href={symbol.kallurl}>{symbol.kalla}</a>, återgiven för identifiering.</figcaption>
           </figure>
         )}
@@ -104,8 +104,8 @@ export function ProfileHero ({
           </div>
         ) : (
           <div>
-            <dt>Valdeltagande</dt>
-            <dd><span>Inget registrerat valdeltagande</span></dd>
+            <dt>Anmält deltagande</dt>
+            <dd><span>Inget registrerat deltagande</span></dd>
             <dd className="profile-source">Valmyndigheten</dd>
           </div>
         )}
