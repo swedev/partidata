@@ -1,0 +1,110 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+const test = require('node:test');
+
+const { createPartyDataStore } = require('../src/server/party-data.ts');
+
+function writeJson (root, relativePath, value) {
+  const file = path.join(root, relativePath);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, JSON.stringify(value));
+}
+
+function makeData () {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'partidata-server-'));
+  const dataRoot = path.join(root, 'data');
+  const testParty = {
+    uuid: '11111111-1111-4111-8111-111111111111',
+    kod: '9001',
+    beteckning: 'Testpartiet',
+    filnamn: 'testpartiet',
+    tidigare_filnamn: ['gamla-testpartiet'],
+    partisymbol: {
+      filnamn: '9001-testpartiet.png',
+      kalla: 'Test',
+      kallurl: 'https://example.com/symbol.png',
+      valar: 2026,
+      partikod: '9001'
+    }
+  };
+  const plainParty = {
+    uuid: '22222222-2222-4222-8222-222222222222',
+    kod: '9002',
+    beteckning: 'Utan profil',
+    filnamn: 'utan-profil'
+  };
+
+  writeJson(dataRoot, 'parti/index.json', [testParty, plainParty].map(({ kod, ...party }) => party));
+  writeJson(dataRoot, 'parti/testpartiet/index.json', testParty);
+  writeJson(dataRoot, 'parti/testpartiet/profil.json', {
+    namn: 'Testpartiet',
+    namn_kalla: { namn: 'Test', url: 'https://example.com', hamtad: '2026-08-26' }
+  });
+  writeJson(dataRoot, 'parti/utan-profil/index.json', plainParty);
+  fs.writeFileSync(path.join(dataRoot, 'parti/testpartiet/9001-testpartiet.png'), Buffer.from([1, 2, 3]));
+  writeJson(dataRoot, 'val/2018/kandidatlistor/testpartiet.json', {
+    val: ['R'],
+    kandidatlistor: [{ val: 'K' }, { val: 'R' }, { val: 'invalid' }]
+  });
+  fs.mkdirSync(path.join(dataRoot, 'val/2022/partideltagande'), { recursive: true });
+  fs.mkdirSync(path.join(dataRoot, 'val/partideltagande'), { recursive: true });
+
+  return { root, dataRoot };
+}
+
+test('party data resolves current, previous and unknown slugs', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(dataRoot);
+
+  const current = await store.resolveParty('testpartiet');
+  assert.equal(current.kind, 'party');
+  assert.equal(current.props.profile.namn, 'Testpartiet');
+  assert.deepEqual(current.props.candidateLists, { 2018: ['R', 'K'] });
+  assert.equal(current.props.symbolSrc, '/partisymbol/testpartiet/9001-testpartiet.png');
+  assert.deepEqual(await store.resolveParty('gamla-testpartiet'), {
+    kind: 'redirect',
+    destination: '/parti/testpartiet/'
+  });
+  assert.deepEqual(await store.resolveParty('okant-parti'), { kind: 'notFound' });
+});
+
+test('optional profile and candidate lists may be absent', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const result = await createPartyDataStore(dataRoot).resolveParty('utan-profil');
+  assert.equal(result.kind, 'party');
+  assert.equal(result.props.profile, undefined);
+  assert.deepEqual(result.props.candidateLists, {});
+});
+
+test('party symbols require an exact registered slug and filename', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(dataRoot);
+
+  const symbol = await store.readPartySymbol('testpartiet', '9001-testpartiet.png');
+  assert.equal(symbol.contentType, 'image/png');
+  assert.deepEqual(symbol.body, Buffer.from([1, 2, 3]));
+  assert.equal(await store.readPartySymbol('testpartiet', '../index.json'), undefined);
+  assert.equal(await store.readPartySymbol('../parti/testpartiet', '9001-testpartiet.png'), undefined);
+  assert.equal(await store.readPartySymbol('gamla-testpartiet', '9001-testpartiet.png'), undefined);
+});
+
+test('health and sitemap data use the indexed current parties', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(dataRoot);
+
+  await store.assertHealthy();
+  assert.deepEqual(await store.listCurrentSlugs(), ['testpartiet', 'utan-profil']);
+});
+
+test('health fails when the party index is unavailable', async t => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'partidata-server-missing-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  await assert.rejects(createPartyDataStore(path.join(root, 'data')).assertHealthy(), /ENOENT/);
+});

@@ -147,22 +147,3 @@ export interface PartiProfil {
  * An entry in `data/parti/index.json`, a subset of the full party record.
  */
 export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn' | 'partisymbol'>;
-
-/**
- * The props of a page served on a slug a party used to have, pointing at the
- * slug it has now.
- */
-export interface PartiRedirect {
-  redirect: {
-    filnamn: string;
-    beteckning: string;
-  };
-}
-
-/**
- * isRedirect
- * @param props The props of a page under `/parti/`
- */
-export function isRedirect (props: Parti | PartiRedirect): props is PartiRedirect {
-  return 'redirect' in props;
-}

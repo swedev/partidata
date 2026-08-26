@@ -1,54 +1,16 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
+import type { GetServerSideProps, NextPage } from 'next';
 import type { CSSProperties } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import { BallotSection, type CandidateLists, type ElectionType, ElectionResultsSection, TurnoutSection } from 'src/components/party-profile/elections';
+import { BallotSection, ElectionResultsSection, TurnoutSection } from 'src/components/party-profile/elections';
 import { DocumentsSection, ProfileHero, RepresentativesSection } from 'src/components/party-profile/overview';
 import { ExportSection, NewsSection, RegistrySection, WikipediaSection } from 'src/components/party-profile/sources';
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
-import { isRedirect } from 'src/types';
-import type { Parti, PartiIndexEntry, PartiProfil, PartiRedirect } from 'src/types';
+import { partyData } from 'src/server/party-data';
+import type { PartyPageData } from 'src/server/party-data';
+import type { PartiProfil } from 'src/types';
 
-import partyIndex from 'data/parti/index.json';
-
-const parties = partyIndex as PartiIndexEntry[];
-
-interface PartyPageProps extends Parti {
-  candidateLists?: CandidateLists;
-  profile?: PartiProfil;
-  symbolSrc?: string;
-}
-
-interface CandidateListFile {
-  val?: ElectionType[];
-  kandidatlistor?: Array<{ val: ElectionType }>;
-}
-
-async function readPartyProfile (slug: string) {
-  try {
-    return JSON.parse(await readFile(path.join(process.cwd(), 'data', 'parti', slug, 'profil.json'), 'utf8')) as PartiProfil;
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return undefined;
-    throw error;
-  }
-}
-
-async function readCandidateLists (slug: string) {
-  const entries = await Promise.all([2018, 2022, 2026].map(async year => {
-    try {
-      const file = JSON.parse(await readFile(path.join(process.cwd(), 'data', 'val', String(year), 'kandidatlistor', `${slug}.json`), 'utf8')) as CandidateListFile;
-      const electionTypes = [...new Set([...(file.val ?? []), ...(file.kandidatlistor?.map(list => list.val) ?? [])])];
-      return [String(year), electionTypes] as const;
-    } catch (error) {
-      if ((error as NodeJS.ErrnoException).code === 'ENOENT') return undefined;
-      throw error;
-    }
-  }));
-  return Object.fromEntries(entries.filter((entry): entry is readonly [string, ElectionType[]] => entry !== undefined));
-}
+type PartyPageProps = PartyPageData;
 
 function PartyPage ({
   beteckning: registeredName,
@@ -83,6 +45,7 @@ function PartyPage ({
           <title>{`${displayName} – Partidata`}</title>
           <meta name="description" content={`Källhänvisad data om det politiska partiet ${displayName}.`} />
           <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
+          <link rel="canonical" href={`https://www.partidata.se/parti/${slug}/`} />
         </Head>
         <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} symbol={symbol} symbolSrc={symbolSrc} latestResult={latestResult} latestParticipation={participationYears[0]} />
         <DocumentsSection profile={resolvedProfile} abbreviation={abbreviation} />
@@ -100,40 +63,14 @@ function PartyPage ({
   );
 }
 
-function RedirectPage ({ filnamn: slug, beteckning: registeredName }: PartiRedirect['redirect']) {
-  const href = `/parti/${slug}/`;
-  return (
-    <div className="page-shell">
-      <Header />
-      <main className="container">
-        <Head><title>{`${registeredName} – Partidata`}</title><meta httpEquiv="refresh" content={`0; url=${href}`} /><meta name="robots" content="noindex" /><link rel="canonical" href={href} /></Head>
-        <p className="mt-6"><Link href="/">← Alla partier</Link></p>
-        <h1>Partiet har bytt namn</h1>
-        <p className="mt-10">Partiet heter numera {registeredName}.</p>
-        <p className="mt-2"><Link href={href}>{registeredName}</Link></p>
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
-const PartyRoute: NextPage<PartyPageProps | PartiRedirect> = props => isRedirect(props) ? <RedirectPage {...props.redirect} /> : <PartyPage {...props} />;
+const PartyRoute: NextPage<PartyPageProps> = props => <PartyPage {...props} />;
 export default PartyRoute;
 
-export const getStaticPaths: GetStaticPaths<{ filnamn: string }> = async () => ({
-  paths: parties.flatMap(party => [party.filnamn, ...(party.tidigare_filnamn ?? [])].map(filnamn => ({ params: { filnamn } }))),
-  fallback: false,
-});
-
-export const getStaticProps: GetStaticProps<PartyPageProps | PartiRedirect, { filnamn: string }> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<PartyPageProps, { filnamn: string }> = async ({ params }) => {
   const slug = params?.filnamn;
   if (!slug) return { notFound: true };
-  if (parties.some(entry => entry.filnamn === slug)) {
-    const party = (await import(`data/parti/${slug}/index.json`)).default as Parti;
-    const symbolSrc = party.partisymbol ? (await import(`data/parti/${slug}/${party.partisymbol.filnamn}`)).default.src as string : undefined;
-    const [profile, candidateLists] = await Promise.all([readPartyProfile(slug), readCandidateLists(slug)]);
-    return { props: { ...party, candidateLists, ...(profile ? { profile } : {}), ...(symbolSrc ? { symbolSrc } : {}) } };
-  }
-  const entry = parties.find(party => (party.tidigare_filnamn ?? []).includes(slug));
-  return entry ? { props: { redirect: { filnamn: entry.filnamn, beteckning: entry.beteckning } } } : { notFound: true };
+  const result = await partyData.resolveParty(slug);
+  if (result.kind === 'party') return { props: result.props };
+  if (result.kind === 'redirect') return { redirect: { destination: result.destination, permanent: true } };
+  return { notFound: true };
 };

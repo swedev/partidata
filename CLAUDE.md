@@ -1,23 +1,23 @@
 # partidata — agent notes
 
-Open data about Swedish political parties. Static public site, Swedish copy.
+Open data about Swedish political parties. Swedish copy.
 
 ## Workflow
 
 - Branch + PR flow — never commit directly to `main`. PRs are squash-merged.
-- CI (`Integrate`) must be green: `npm run lint && npm run typecheck &&
-  npm run validate:data && npm test && npm run build`.
+- CI (`Integrate`) must be green; `npm run precommit` runs the equivalent local
+  lint, typecheck, data validation, tests, standalone build and HTTP smoke.
 - Deploys happen on `v*` tags, not on merge: tag `main` and push the tag
   (see `deploy/README.md`). Merging is not releasing.
 
 ## Stack
 
-- Next 16, pages router, `output: 'export'` — no server, no API routes, no
-  `next/image` optimisation. `trailingSlash: true` so nginx `try_files` works.
-- Party pages are pre-rendered from `data/parti/index.json` via
-  `getStaticPaths`; every entry must have a matching `data/parti/<filnamn>/index.json`.
-  Every slug in an entry's `tidigare_filnamn` is pre-rendered too, as a
-  meta-refresh page pointing at the party's current slug.
+- Next 16, pages router, `output: 'standalone'`, served as a managed Node process
+  behind nginx. `next/image` optimisation remains disabled.
+- Party pages use `getServerSideProps` and read JSON through
+  `src/server/party-data.ts`. Previous slugs return HTTP 308, unknown slugs 404.
+- `npm run build:release` packages `.release/`; `npm run test:http` starts that
+  exact artifact and verifies the public routes locally.
 - Styling: Tailwind 3 + Bootstrap 5 tables via sass. `src/styles/base.scss` is
   the single CSS entry; it pulls in `app.scss` and `lato.scss` so Tailwind's
   `@layer` blocks share one file with the `@tailwind` directives.
