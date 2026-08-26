@@ -15,7 +15,8 @@ export default async function handler (request: NextApiRequest, response: NextAp
     response.status(200);
     if (request.method === 'HEAD') response.end();
     else response.json({ status: 'ok' });
-  } catch {
+  } catch (error) {
+    console.error('Hälsokontrollen misslyckades', error);
     response.status(500);
     if (request.method === 'HEAD') response.end();
     else response.json({ status: 'error' });
