@@ -33,6 +33,7 @@
     "uuid": "7677e088-6467-4a45-99b3-3483f4ef26f7",
     "beteckning": "Aktiv samling - Bodenalternativet",
     "filnamn": "aktiv-samling-bodenalternativet",
+    "omrade": "Boden",
     "forkortning": "ASB",
     "partisymbol": {
       "filnamn": "1373-aktiv-samling-bodenalternativet.png",
@@ -45,12 +46,14 @@
   {
     "uuid": "104537e4-103c-4366-800e-dd3d4a50f891",
     "beteckning": "Äldre men ej Gamla i Bjuv",
-    "filnamn": "aldre-men-ej-gamla-i-bjuv"
+    "filnamn": "aldre-men-ej-gamla-i-bjuv",
+    "omrade": "Bjuv"
   },
   {
     "uuid": "5b6ad59e-fa87-467b-b143-e35c13ad728b",
     "beteckning": "Ale - demokraterna",
     "filnamn": "ale-demokraterna",
+    "omrade": "Ale",
     "forkortning": "ADK",
     "partisymbol": {
       "filnamn": "0139-ale-demokraterna.png",
@@ -63,7 +66,8 @@
   {
     "uuid": "2a688dfe-e5df-4060-93b1-1c75ae9bddea",
     "beteckning": "Allians för Frihet",
-    "filnamn": "allians-for-frihet"
+    "filnamn": "allians-for-frihet",
+    "omrade": "Varberg"
   },
   {
     "uuid": "8c940e3f-b10a-4642-aa25-ff89505535b8",
@@ -74,12 +78,14 @@
     "uuid": "d62d3e66-de61-4897-a3d9-5511cd9c529b",
     "beteckning": "Allt för Ragunda",
     "filnamn": "allt-for-ragunda",
+    "omrade": "Ragunda",
     "forkortning": "AfR"
   },
   {
     "uuid": "ea3d9524-730d-437d-a74e-5b1412f40c7d",
     "beteckning": "Älska Svedala",
     "filnamn": "alska-svedala",
+    "omrade": "Svedala",
     "partisymbol": {
       "filnamn": "1379-alska-svedala.png",
       "kalla": "Valmyndigheten",
@@ -91,12 +97,14 @@
   {
     "uuid": "204fff92-1e5b-4652-a68a-5d9ee2abfe20",
     "beteckning": "Alternativ 2000",
-    "filnamn": "alternativ-2000"
+    "filnamn": "alternativ-2000",
+    "omrade": "Flen"
   },
   {
     "uuid": "4791e69a-f061-4706-8295-c592cce96d27",
     "beteckning": "Alternativ Burlövs Väl",
-    "filnamn": "alternativ-burlovs-val"
+    "filnamn": "alternativ-burlovs-val",
+    "omrade": "Burlöv"
   },
   {
     "uuid": "3f7caf00-f50b-4ce3-b135-04492de827b1",
@@ -133,6 +141,7 @@
     "uuid": "74cf42dc-1c73-4a54-8a20-71a71cce6723",
     "beteckning": "Alternativet",
     "filnamn": "alternativet",
+    "omrade": "Bromölla",
     "forkortning": "Alt",
     "partisymbol": {
       "filnamn": "1284-alternativet.png",
@@ -146,12 +155,14 @@
     "uuid": "50ee1665-e858-4b5c-be82-c3faf01610a1",
     "beteckning": "Alternativet",
     "filnamn": "alternativet-0510",
+    "omrade": "Ljungby",
     "forkortning": "ALTER"
   },
   {
     "uuid": "c27c54ce-4d48-40aa-97a7-d7708f4c16df",
     "beteckning": "Alvesta Alternativet",
     "filnamn": "alvesta-alternativet",
+    "omrade": "Alvesta",
     "forkortning": "ALV",
     "partisymbol": {
       "filnamn": "0124-alvesta-alternativet.png",
@@ -165,6 +176,7 @@
     "uuid": "b61d0643-3ab8-4560-8849-4cdfbb45ec18",
     "beteckning": "Alvestademokraterna",
     "filnamn": "alvestademokraterna",
+    "omrade": "Alvesta",
     "forkortning": "ADEM",
     "partisymbol": {
       "filnamn": "1445-alvestademokraterna.png",
@@ -219,6 +231,7 @@
     "uuid": "61437ccc-ca2f-44d0-9a24-18addd0d37f4",
     "beteckning": "Ansvar i samverkan",
     "filnamn": "ansvar-i-samverkan",
+    "omrade": "Munkedal",
     "partisymbol": {
       "filnamn": "1763-ansvar-i-samverkan.png",
       "kalla": "Valmyndigheten",
@@ -266,12 +279,14 @@
   {
     "uuid": "081727ef-2708-4eda-b098-6e5a7809f2ce",
     "beteckning": "Arbetarpartiet tidigare Rättvisepartiet Offensiv",
-    "filnamn": "arbetarpartiet-tidigare-rattvisepartiet-offensiv"
+    "filnamn": "arbetarpartiet-tidigare-rattvisepartiet-offensiv",
+    "omrade": "Umeå"
   },
   {
     "uuid": "4d9ee322-adc1-4854-9631-851f41137171",
     "beteckning": "Arvikapartiet",
     "filnamn": "arvikapartiet",
+    "omrade": "Arvika",
     "partisymbol": {
       "filnamn": "1521-arvikapartiet.png",
       "kalla": "Valmyndigheten",
@@ -284,18 +299,21 @@
     "uuid": "91a0fcf9-1c39-43df-980d-1aa8080054a0",
     "beteckning": "Åselepartiet",
     "filnamn": "aselepartiet",
+    "omrade": "Åsele",
     "forkortning": "ÅSP"
   },
   {
     "uuid": "c496cc38-e576-4646-bf3f-f8e76d561c56",
     "beteckning": "Åseles framtid",
     "filnamn": "aseles-framtid",
+    "omrade": "Åsele",
     "forkortning": "ÅF"
   },
   {
     "uuid": "548d1a18-8926-4048-a21a-5b096fe52db9",
     "beteckning": "Åstorpspartiet",
-    "filnamn": "astorpspartiet"
+    "filnamn": "astorpspartiet",
+    "omrade": "Åstorp"
   },
   {
     "uuid": "ab4a2576-9338-4da7-98d0-dfeb324d4549",
@@ -311,6 +329,7 @@
     "uuid": "ea0f660f-9eef-49aa-9712-a8d480bb9514",
     "beteckning": "Åtvidabergs Framtid",
     "filnamn": "atvidabergs-framtid",
+    "omrade": "Åtvidaberg",
     "partisymbol": {
       "filnamn": "1738-atvidabergs-framtid.png",
       "kalla": "Valmyndigheten",
@@ -323,6 +342,7 @@
     "uuid": "25be4598-d568-46e2-89ea-b6614711c6db",
     "beteckning": "Bålstapartiet",
     "filnamn": "balstapartiet",
+    "omrade": "Håbo",
     "forkortning": "BÅP",
     "partisymbol": {
       "filnamn": "0184-balstapartiet.png",
@@ -336,6 +356,7 @@
     "uuid": "1a5522db-9c9a-4c2e-8bc6-a5877671ed18",
     "beteckning": "BARAPARTIET",
     "filnamn": "barapartiet",
+    "omrade": "Svedala",
     "forkortning": "BAP",
     "partisymbol": {
       "filnamn": "1310-barapartiet.png",
@@ -358,7 +379,8 @@
   {
     "uuid": "dc236f8c-bada-45e2-bdf9-1776b4ba6a2c",
     "beteckning": "Bärsärkagångspartiet",
-    "filnamn": "barsarkagangspartiet"
+    "filnamn": "barsarkagangspartiet",
+    "omrade": "Örebro"
   },
   {
     "uuid": "07ede108-4daa-4328-bde7-79b9de0086e0",
@@ -369,6 +391,7 @@
     "uuid": "b4c33957-dac8-4d56-b08a-19c877822487",
     "beteckning": "Bästa Alternativet",
     "filnamn": "basta-alternativet",
+    "omrade": "Emmaboda",
     "forkortning": "B-ALT",
     "partisymbol": {
       "filnamn": "1366-basta-alternativet.png",
@@ -387,6 +410,7 @@
     "uuid": "33644a6a-7b24-4044-b321-e3e326fea95f",
     "beteckning": "Bättre Vellinge",
     "filnamn": "battre-vellinge",
+    "omrade": "Vellinge",
     "partisymbol": {
       "filnamn": "1708-battre-vellinge.png",
       "kalla": "Valmyndigheten",
@@ -399,6 +423,7 @@
     "uuid": "7c5eb0ea-9c14-4780-a812-358ba6e93674",
     "beteckning": "Bergshamrapartiet",
     "filnamn": "bergshamrapartiet",
+    "omrade": "Solna",
     "forkortning": "BEP",
     "partisymbol": {
       "filnamn": "1105-bergshamrapartiet.png",
@@ -412,6 +437,7 @@
     "uuid": "66505caa-ef62-40b3-8898-8d9a96604b08",
     "beteckning": "Bergspartiet",
     "filnamn": "bergspartiet",
+    "omrade": "Berg",
     "forkortning": "be",
     "partisymbol": {
       "filnamn": "1597-bergspartiet.png",
@@ -424,7 +450,8 @@
   {
     "uuid": "0bfcd2d5-b1a8-4987-9434-13dec2803c26",
     "beteckning": "Betygsdemokraterna",
-    "filnamn": "betygsdemokraterna"
+    "filnamn": "betygsdemokraterna",
+    "omrade": "Västerås"
   },
   {
     "uuid": "2f92086a-acb8-4a4e-b650-1fc00d1230a4",
@@ -435,6 +462,7 @@
     "uuid": "45099053-dfc2-4b55-8eeb-8ab53b26f8a1",
     "beteckning": "Bjärepartiet",
     "filnamn": "bjarepartiet",
+    "omrade": "Båstad",
     "forkortning": "BJP",
     "partisymbol": {
       "filnamn": "0163-bjarepartiet.png",
@@ -462,12 +490,14 @@
   {
     "uuid": "d1982b54-f589-460b-bc0a-8f33bb03c7dc",
     "beteckning": "BOHUSLÄNPARTIET",
-    "filnamn": "bohuslanpartiet"
+    "filnamn": "bohuslanpartiet",
+    "omrade": "Västra Götalands län"
   },
   {
     "uuid": "30aab0fe-85ab-47b1-85b0-5511e0a5da4d",
     "beteckning": "Bollnäspartiet",
     "filnamn": "bollnaspartiet",
+    "omrade": "Bollnäs",
     "forkortning": "Bollp"
   },
   {
@@ -479,12 +509,14 @@
     "uuid": "2915db45-e9a7-4cd4-9f93-d3f5ebf42bbe",
     "beteckning": "Bopartiet",
     "filnamn": "bopartiet",
+    "omrade": "Ludvika",
     "forkortning": "BOP"
   },
   {
     "uuid": "442bdacf-5bd5-4d0c-8dd6-407e96f2b0f1",
     "beteckning": "Boråspartiet",
-    "filnamn": "boraspartiet"
+    "filnamn": "boraspartiet",
+    "omrade": "Borås"
   },
   {
     "uuid": "3f69dec1-6ce6-4341-ac6b-0de8a76546d4",
@@ -495,17 +527,20 @@
   {
     "uuid": "68f8f997-11ec-4d74-97ae-523d0c763a77",
     "beteckning": "Borgerligt Liberalt Åstorp",
-    "filnamn": "borgerligt-liberalt-astorp"
+    "filnamn": "borgerligt-liberalt-astorp",
+    "omrade": "Åstorp"
   },
   {
     "uuid": "6de0d940-dd1c-458e-b8f9-4d7cc695ff7c",
     "beteckning": "Boris",
-    "filnamn": "boris"
+    "filnamn": "boris",
+    "omrade": "Uddevalla"
   },
   {
     "uuid": "1e79ea1a-9ddf-473c-87de-e4df70386eda",
     "beteckning": "Borlängepartiet",
     "filnamn": "borlangepartiet",
+    "omrade": "Borlänge",
     "partisymbol": {
       "filnamn": "1793-borlangepartiet.png",
       "kalla": "Valmyndigheten",
@@ -524,6 +559,7 @@
     "uuid": "fe6962ca-100f-4567-83ac-e8f8c83be714",
     "beteckning": "Brobyggarpartiet",
     "filnamn": "brobyggarpartiet",
+    "omrade": "Öckerö",
     "forkortning": "BBP",
     "partisymbol": {
       "filnamn": "1497-brobyggarpartiet.png",
@@ -543,6 +579,7 @@
     "uuid": "b578db7a-cd4b-4e6c-826e-d53a0e142069",
     "beteckning": "Bygdepartiet",
     "filnamn": "bygdepartiet",
+    "omrade": "Leksand",
     "forkortning": "ByP",
     "partisymbol": {
       "filnamn": "1053-bygdepartiet.png",
@@ -587,6 +624,7 @@
     "uuid": "955ff177-5240-4253-8a9d-016e3f9979fa",
     "beteckning": "Dalademokraterna",
     "filnamn": "dalademokraterna",
+    "omrade": "Ludvika",
     "forkortning": "Ddem",
     "partisymbol": {
       "filnamn": "1562-dalademokraterna.png",
@@ -599,28 +637,33 @@
   {
     "uuid": "6793a647-93f5-41db-91fa-609e718e98b7",
     "beteckning": "Dalälvens Demokratiska Parti",
-    "filnamn": "dalalvens-demokratiska-parti"
+    "filnamn": "dalalvens-demokratiska-parti",
+    "omrade": "Gagnef"
   },
   {
     "uuid": "4d11b150-8aa4-44e4-ac99-7378407b67e4",
     "beteckning": "Dalarnas Sjukvårdsparti",
     "filnamn": "dalarnas-sjukvardsparti",
+    "omrade": "Dalarnas län",
     "forkortning": "dsp"
   },
   {
     "uuid": "a91b96ec-924f-40c8-8290-49227e2087d6",
     "beteckning": "Dalsländska Separatistpartiet",
-    "filnamn": "dalslandska-separatistpartiet"
+    "filnamn": "dalslandska-separatistpartiet",
+    "omrade": "Vänersborg"
   },
   {
     "uuid": "ba569c10-6f97-4211-986a-d0965b1b0330",
     "beteckning": "Danvikstull Infrastruktur Liberationsfront",
-    "filnamn": "danvikstull-infrastruktur-liberationsfront"
+    "filnamn": "danvikstull-infrastruktur-liberationsfront",
+    "omrade": "Stockholm"
   },
   {
     "uuid": "f1a75d12-a4fa-4263-bc59-3fcdec6629a9",
     "beteckning": "De Oberoende i Torsby",
     "filnamn": "de-oberoende-i-torsby",
+    "omrade": "Torsby",
     "forkortning": "DO!T",
     "partisymbol": {
       "filnamn": "1522-de-oberoende-i-torsby.png",
@@ -634,6 +677,7 @@
     "uuid": "45040bfa-87cf-44ec-aee8-f27724866aaf",
     "beteckning": "Demokraterna",
     "filnamn": "demokraterna",
+    "omrade": "Göteborg",
     "forkortning": "DEM",
     "partisymbol": {
       "filnamn": "1297-demokraterna.png",
@@ -651,18 +695,21 @@
   {
     "uuid": "25813075-2350-4f40-9397-1b34bcc8e6a9",
     "beteckning": "Demokraterna i Jönköping",
-    "filnamn": "demokraterna-i-jonkoping"
+    "filnamn": "demokraterna-i-jonkoping",
+    "omrade": "Jönköping"
   },
   {
     "uuid": "42e96322-fb95-4088-a804-96c881a44d36",
     "beteckning": "Demokraterna i Norberg",
     "filnamn": "demokraterna-i-norberg",
+    "omrade": "Norberg",
     "forkortning": "DiN"
   },
   {
     "uuid": "954a5df2-0f6b-4c83-8151-c02169fe77a6",
     "beteckning": "Demokraterna Knivsta",
-    "filnamn": "demokraterna-knivsta"
+    "filnamn": "demokraterna-knivsta",
+    "omrade": "Knivsta"
   },
   {
     "uuid": "aeeeaadd-fedc-4e40-9407-1c159619b2ff",
@@ -682,6 +729,7 @@
     "uuid": "b731d12a-5553-4c4e-874c-abf1cf66141f",
     "beteckning": "Demokratiresan",
     "filnamn": "demokratiresan",
+    "omrade": "Sotenäs",
     "forkortning": "DemR",
     "partisymbol": {
       "filnamn": "1490-demokratiresan.png",
@@ -700,6 +748,7 @@
     "uuid": "98d8ea70-a5bf-4cf7-8aff-18c9f38f6f60",
     "beteckning": "Demokratisk Rättvisa",
     "filnamn": "demokratisk-rattvisa",
+    "omrade": "Ljusdal",
     "forkortning": "DemRä",
     "partisymbol": {
       "filnamn": "1331-demokratisk-rattvisa.png",
@@ -713,6 +762,7 @@
     "uuid": "b94677c2-de91-476b-afc2-bc10b2aea1fc",
     "beteckning": "Demokratiska Samlingspartiet",
     "filnamn": "demokratiska-samlingspartiet",
+    "omrade": "Skurup",
     "forkortning": "DeSP"
   },
   {
@@ -731,6 +781,7 @@
     "uuid": "6dd658b6-76ca-4da0-bb37-8ba2c39d60fe",
     "beteckning": "DET LOKALA PARTIET I HEBY KOMMUN",
     "filnamn": "det-lokala-partiet-i-heby-kommun",
+    "omrade": "Heby",
     "forkortning": "L-P",
     "partisymbol": {
       "filnamn": "0103-det-lokala-partiet-i-heby-kommun.png",
@@ -758,7 +809,8 @@
   {
     "uuid": "74e6e4b4-4430-4c7d-bb61-c45f4ec8ac6b",
     "beteckning": "Det Toleranta Partiet",
-    "filnamn": "det-toleranta-partiet"
+    "filnamn": "det-toleranta-partiet",
+    "omrade": "Sigtuna"
   },
   {
     "uuid": "2dd359e2-7488-4620-801d-32a4d89ab4c6",
@@ -807,12 +859,14 @@
   {
     "uuid": "1f316e52-30cb-429b-8a5d-c25dc314321f",
     "beteckning": "DMV (de mångas väl)",
-    "filnamn": "dmv-de-mangas-val"
+    "filnamn": "dmv-de-mangas-val",
+    "omrade": "Linköping"
   },
   {
     "uuid": "1d68b83f-c8bd-4d5f-907f-b8ae516a3a22",
     "beteckning": "Dorotea Kommunlista",
     "filnamn": "dorotea-kommunlista",
+    "omrade": "Dorotea",
     "forkortning": "DKL",
     "partisymbol": {
       "filnamn": "0187-dorotea-kommunlista.png",
@@ -826,6 +880,7 @@
     "uuid": "8ed0b238-a343-4e3b-b3a5-4cd430e9d7ff",
     "beteckning": "Drevvikenpartiet",
     "filnamn": "drevvikenpartiet",
+    "omrade": "Huddinge",
     "forkortning": "DP",
     "partisymbol": {
       "filnamn": "0122-drevvikenpartiet.png",
@@ -844,6 +899,7 @@
     "uuid": "e51b46db-5402-4c26-a0e5-31a2ecb6b12b",
     "beteckning": "Edetlistan",
     "filnamn": "edetlistan",
+    "omrade": "Lilla Edet",
     "forkortning": "EDL",
     "partisymbol": {
       "filnamn": "1552-edetlistan.png",
@@ -857,6 +913,7 @@
     "uuid": "0fab832b-bba4-4fe0-bad1-0cb183d24373",
     "beteckning": "Ekeröpartiet",
     "filnamn": "ekeropartiet",
+    "omrade": "Ekerö",
     "forkortning": "EkP",
     "partisymbol": {
       "filnamn": "1481-ekeropartiet.png",
@@ -887,6 +944,7 @@
     "uuid": "a8f1717a-818c-40d4-bfb3-f04dfd172e9f",
     "beteckning": "EMPA(R)TIET",
     "filnamn": "empartiet",
+    "omrade": "Vaggeryd",
     "forkortning": "EMP",
     "partisymbol": {
       "filnamn": "1333-empartiet.png",
@@ -951,6 +1009,7 @@
     "uuid": "319daaea-c08a-4e2f-b8a5-c99b5fd9de6c",
     "beteckning": "EngelholmsPartiet",
     "filnamn": "engelholmspartiet",
+    "omrade": "Ängelholm",
     "forkortning": "EP"
   },
   {
@@ -990,6 +1049,7 @@
     "uuid": "b1c2b587-0ad4-40ca-a053-45c4a16a5761",
     "beteckning": "Eskilstunaborna!",
     "filnamn": "eskilstunaborna",
+    "omrade": "Eskilstuna",
     "partisymbol": {
       "filnamn": "1840-eskilstunaborna.png",
       "kalla": "Valmyndigheten",
@@ -1006,7 +1066,8 @@
   {
     "uuid": "8496cc6d-4d28-4f7f-8be6-0f1b66f98597",
     "beteckning": "Ett bättre Eskilstuna",
-    "filnamn": "ett-battre-eskilstuna"
+    "filnamn": "ett-battre-eskilstuna",
+    "omrade": "Eskilstuna"
   },
   {
     "uuid": "88dbd014-9af8-46f8-a036-bc10f952a2cf",
@@ -1042,12 +1103,14 @@
   {
     "uuid": "d9ef7644-d03e-487b-ac6f-87dc6902b5c0",
     "beteckning": "FALKENBERGSpartiet",
-    "filnamn": "falkenbergspartiet"
+    "filnamn": "falkenbergspartiet",
+    "omrade": "Falkenberg"
   },
   {
     "uuid": "07b1bc42-9681-47d6-89cd-59e0118a008a",
     "beteckning": "Falupartiet",
     "filnamn": "falupartiet",
+    "omrade": "Falun",
     "forkortning": "FAP"
   },
   {
@@ -1070,7 +1133,8 @@
   {
     "uuid": "2f8ae5de-547e-44f8-926f-76d983f04257",
     "beteckning": "Färspartiet Sjöbo",
-    "filnamn": "farspartiet-sjobo"
+    "filnamn": "farspartiet-sjobo",
+    "omrade": "Sjöbo"
   },
   {
     "uuid": "487d9bf2-632c-4d1e-bbe1-89eb94e4090c",
@@ -1081,6 +1145,7 @@
     "uuid": "96786874-f67a-47e7-8b17-fc966f0785e0",
     "beteckning": "Feministerna Gullspång",
     "filnamn": "feministerna-gullspang",
+    "omrade": "Gullspång",
     "partisymbol": {
       "filnamn": "1815-feministerna-gullspang.png",
       "kalla": "Valmyndigheten",
@@ -1093,6 +1158,7 @@
     "uuid": "382f7a88-843f-46ca-b12c-5f7bc89fe8f8",
     "beteckning": "Feministerna och Kommunisterna",
     "filnamn": "feministerna-och-kommunisterna",
+    "omrade": "Malmö",
     "partisymbol": {
       "filnamn": "1822-feministerna-och-kommunisterna.png",
       "kalla": "Valmyndigheten",
@@ -1109,7 +1175,8 @@
   {
     "uuid": "c23f6f35-b56b-4e30-ad8e-07b071ae6400",
     "beteckning": "Filipstadspartiet",
-    "filnamn": "filipstadspartiet"
+    "filnamn": "filipstadspartiet",
+    "omrade": "Filipstad"
   },
   {
     "uuid": "831ff763-fc28-4d99-a9d8-5b973865e4eb",
@@ -1131,6 +1198,7 @@
     "tidigare_filnamn": [
       "fokus-bjarred"
     ],
+    "omrade": "Lomma",
     "forkortning": "Fok",
     "partisymbol": {
       "filnamn": "1344-fokus.png",
@@ -1148,6 +1216,7 @@
       "odeshogs-partiet",
       "folk---natur"
     ],
+    "omrade": "Ödeshög",
     "forkortning": "FN"
   },
   {
@@ -1160,6 +1229,7 @@
     "uuid": "8ae6ac00-f69a-42f8-9295-7d0f4139dd0a",
     "beteckning": "Folkets Röst",
     "filnamn": "folkets-rost",
+    "omrade": "Bollebygd",
     "forkortning": "FR",
     "partisymbol": {
       "filnamn": "1265-folkets-rost.png",
@@ -1173,6 +1243,7 @@
     "uuid": "81c13f0b-134f-4337-95ad-9539165e9dbf",
     "beteckning": "Folkets Väl",
     "filnamn": "folkets-val",
+    "omrade": "Hässleholm",
     "forkortning": "FOV",
     "partisymbol": {
       "filnamn": "0126-folkets-val.png",
@@ -1190,7 +1261,8 @@
   {
     "uuid": "784c81df-700c-46c6-9888-f206e0492d69",
     "beteckning": "Folkhemmet i Hofors-Torsåker",
-    "filnamn": "folkhemmet-i-hofors-torsaker"
+    "filnamn": "folkhemmet-i-hofors-torsaker",
+    "omrade": "Hofors"
   },
   {
     "uuid": "a7568519-98b1-4af8-9f2a-a802e2ae1d35",
@@ -1201,6 +1273,7 @@
     "uuid": "7cfdfa11-7d51-476e-9ef1-4f31a950dde2",
     "beteckning": "Folkinitiativet Arjeplog",
     "filnamn": "folkinitiativet-arjeplog",
+    "omrade": "Arjeplog",
     "forkortning": "FoAr",
     "partisymbol": {
       "filnamn": "1514-folkinitiativet-arjeplog.png",
@@ -1213,7 +1286,8 @@
   {
     "uuid": "e9b71444-ae98-4388-bab5-617da46f248e",
     "beteckning": "Folkkampanjen för sjukvården",
-    "filnamn": "folkkampanjen-for-sjukvarden"
+    "filnamn": "folkkampanjen-for-sjukvarden",
+    "omrade": "Dalarnas län"
   },
   {
     "uuid": "45d0bf9e-b51a-4208-bc0e-e1d2cfbb5199",
@@ -1254,6 +1328,7 @@
     "uuid": "cc243f56-5c5a-4bd2-b649-0f685d0f7384",
     "beteckning": "Folkviljan Orust",
     "filnamn": "folkviljan-orust",
+    "omrade": "Orust",
     "forkortning": "FPO",
     "partisymbol": {
       "filnamn": "0204-folkviljan-orust.png",
@@ -1288,12 +1363,14 @@
   {
     "uuid": "c1ae61fc-4ac3-4d07-8a9f-149fe1ab91de",
     "beteckning": "Förnöjsamhetspartiet",
-    "filnamn": "fornojsamhetspartiet"
+    "filnamn": "fornojsamhetspartiet",
+    "omrade": "Falkenberg"
   },
   {
     "uuid": "083558f5-89f8-4513-9ed1-6e5d309ec24a",
     "beteckning": "FörNyaLund",
     "filnamn": "fornyalund",
+    "omrade": "Lund",
     "forkortning": "FöNyL",
     "partisymbol": {
       "filnamn": "1135-fornyalund.png",
@@ -1312,6 +1389,7 @@
     "uuid": "343f31f3-4d1e-4207-acd2-04964ed84d2e",
     "beteckning": "FRAM FÖR KOMMUNEN",
     "filnamn": "fram-for-kommunen",
+    "omrade": "Grästorp",
     "forkortning": "FFK",
     "partisymbol": {
       "filnamn": "1771-fram-for-kommunen.png",
@@ -1325,6 +1403,7 @@
     "uuid": "417b6bf8-277c-4bdd-aa69-2e1bf44363e2",
     "beteckning": "Framåtanda i en nytänkande landsbygd",
     "filnamn": "framatanda-i-en-nytankande-landsbygd",
+    "omrade": "Högsby",
     "partisymbol": {
       "filnamn": "1915-framatanda-i-en-nytankande-landsbygd.png",
       "kalla": "Valmyndigheten",
@@ -1336,22 +1415,26 @@
   {
     "uuid": "f98fed67-f15c-4dbc-92a8-275924925ade",
     "beteckning": "Framstegspartiet",
-    "filnamn": "framstegspartiet-1223"
+    "filnamn": "framstegspartiet-1223",
+    "omrade": "Östra Göinge"
   },
   {
     "uuid": "d7dfc45e-67bd-46a2-9b18-f5cc20960eb9",
     "beteckning": "Framstegspartiet",
-    "filnamn": "framstegspartiet-1224"
+    "filnamn": "framstegspartiet-1224",
+    "omrade": "Osby"
   },
   {
     "uuid": "0c775614-936c-43d2-b281-cb9967198934",
     "beteckning": "Framstegspartiet",
-    "filnamn": "framstegspartiet-1226"
+    "filnamn": "framstegspartiet-1226",
+    "omrade": "Bjuv"
   },
   {
     "uuid": "990c2123-0bc0-4534-8a36-a638109fc503",
     "beteckning": "FRAMTID I ALE",
     "filnamn": "framtid-i-ale",
+    "omrade": "Ale",
     "forkortning": "FiA",
     "partisymbol": {
       "filnamn": "1158-framtid-i-ale.png",
@@ -1365,12 +1448,14 @@
     "uuid": "6a91678c-924b-45f6-a281-26a363dcbbd8",
     "beteckning": "Framtid i Jokkmokks kommun",
     "filnamn": "framtid-i-jokkmokks-kommun",
+    "omrade": "Jokkmokk",
     "forkortning": "FJK"
   },
   {
     "uuid": "b6cccbf7-1836-4e17-a389-bd715299bb70",
     "beteckning": "Framtid i Kalix",
     "filnamn": "framtid-i-kalix",
+    "omrade": "Kalix",
     "forkortning": "FRAK",
     "partisymbol": {
       "filnamn": "1164-framtid-i-kalix.png",
@@ -1384,17 +1469,20 @@
     "uuid": "0fcbe5ee-afa5-4a8b-9c63-a30c8b8de31b",
     "beteckning": "Framtid Kalmar",
     "filnamn": "framtid-kalmar",
+    "omrade": "Kalmar",
     "forkortning": "FK"
   },
   {
     "uuid": "65542e44-ce74-4695-bac3-b22d63f9ff28",
     "beteckning": "Framtid Kalmar län",
-    "filnamn": "framtid-kalmar-lan"
+    "filnamn": "framtid-kalmar-lan",
+    "omrade": "Kalmar län"
   },
   {
     "uuid": "a6ed8e2b-6e19-4657-a083-ebe43a8d4a12",
     "beteckning": "Framtid Öland",
     "filnamn": "framtid-oland",
+    "omrade": "Borgholm",
     "forkortning": "FÖL",
     "partisymbol": {
       "filnamn": "1142-framtid-oland.png",
@@ -1408,12 +1496,14 @@
     "uuid": "655f6918-3cd2-40a5-819a-05ba458c1209",
     "beteckning": "Framtid S",
     "filnamn": "framtid-s",
+    "omrade": "Pajala",
     "forkortning": "FrS"
   },
   {
     "uuid": "b3052937-a2a5-4be7-9f1e-c008e71abf8d",
     "beteckning": "Framtid S Övertorneå",
     "filnamn": "framtid-s-overtornea",
+    "omrade": "Övertorneå",
     "forkortning": "FrSÖ"
   },
   {
@@ -1432,6 +1522,7 @@
     "uuid": "4cf12d91-1c02-4fb0-86ce-8c7cd122ba50",
     "beteckning": "Framtidspartiet i Lekeberg",
     "filnamn": "framtidspartiet-i-lekeberg",
+    "omrade": "Lekeberg",
     "forkortning": "FL",
     "partisymbol": {
       "filnamn": "0997-framtidspartiet-i-lekeberg.png",
@@ -1492,6 +1583,7 @@
     "uuid": "da251d4e-1f74-42de-b440-91cac1078bc1",
     "beteckning": "Fria Demokraterna",
     "filnamn": "fria-demokraterna",
+    "omrade": "Nordmaling",
     "forkortning": "FD",
     "partisymbol": {
       "filnamn": "1280-fria-demokraterna.png",
@@ -1505,6 +1597,7 @@
     "uuid": "0ed4475d-d0ca-4e46-be37-b0288bf2f581",
     "beteckning": "Fria liberaler i Flens kommun",
     "filnamn": "fria-liberaler-i-flens-kommun",
+    "omrade": "Flen",
     "partisymbol": {
       "filnamn": "1821-fria-liberaler-i-flens-kommun.png",
       "kalla": "Valmyndigheten",
@@ -1522,6 +1615,7 @@
     "uuid": "8adf7deb-d476-4bb5-bab8-b6696777d0b9",
     "beteckning": "Fria Stockholmare",
     "filnamn": "fria-stockholmare",
+    "omrade": "Stockholm",
     "forkortning": "FS",
     "partisymbol": {
       "filnamn": "1156-fria-stockholmare.png",
@@ -1568,12 +1662,14 @@
   {
     "uuid": "dd5c8509-a332-4be8-b299-58fef42a5b7d",
     "beteckning": "Fucking Åmål",
-    "filnamn": "fucking-amal"
+    "filnamn": "fucking-amal",
+    "omrade": "Åmål"
   },
   {
     "uuid": "c4a3ff36-564b-46f6-81db-96ae77bfff77",
     "beteckning": "Futurum Sverige",
     "filnamn": "futurum-sverige",
+    "omrade": "Helsingborg",
     "partisymbol": {
       "filnamn": "1363-futurum-sverige.png",
       "kalla": "Valmyndigheten",
@@ -1585,12 +1681,14 @@
   {
     "uuid": "9809d6c0-0fd4-4abf-8825-0082c01182a1",
     "beteckning": "Galileos Vänner",
-    "filnamn": "galileos-vanner"
+    "filnamn": "galileos-vanner",
+    "omrade": "Storfors"
   },
   {
     "uuid": "ad0359ae-ec54-429e-8d42-817fe8324ec5",
     "beteckning": "Gävleborgspartiet",
-    "filnamn": "gavleborgspartiet"
+    "filnamn": "gavleborgspartiet",
+    "omrade": "Gävleborgs län"
   },
   {
     "uuid": "7823f4ff-da03-4a83-964d-cfadcda5163a",
@@ -1617,12 +1715,14 @@
   {
     "uuid": "0ce8c1fd-6abf-4e44-88e0-4eb673db4521",
     "beteckning": "Göteborgspartiet",
-    "filnamn": "goteborgspartiet"
+    "filnamn": "goteborgspartiet",
+    "omrade": "Göteborg"
   },
   {
     "uuid": "d60a251d-9a0c-4867-8971-444f9a006eb8",
     "beteckning": "Götenes framtid",
     "filnamn": "gotenes-framtid",
+    "omrade": "Götene",
     "forkortning": "GÖF",
     "partisymbol": {
       "filnamn": "0094-gotenes-framtid.png",
@@ -1635,7 +1735,8 @@
   {
     "uuid": "9c713b13-4c9a-44ca-bc68-5a06c845b412",
     "beteckning": "Gott nytt Storfors",
-    "filnamn": "gott-nytt-storfors"
+    "filnamn": "gott-nytt-storfors",
+    "omrade": "Storfors"
   },
   {
     "uuid": "b12c6352-4b9f-42fb-8743-77114e5496b7",
@@ -1647,6 +1748,7 @@
     "uuid": "d9368807-6be7-4957-b09b-2684465fc18f",
     "beteckning": "Granskning Järfälla",
     "filnamn": "granskning-jarfalla",
+    "omrade": "Järfälla",
     "partisymbol": {
       "filnamn": "1567-granskning-jarfalla.png",
       "kalla": "Valmyndigheten",
@@ -1664,6 +1766,7 @@
     "uuid": "b9180254-2586-4112-a98b-bf84618217a8",
     "beteckning": "Grythyttelistan",
     "filnamn": "grythyttelistan",
+    "omrade": "Hällefors",
     "forkortning": "GL"
   },
   {
@@ -1680,6 +1783,7 @@
     "uuid": "3571a393-94b0-4aeb-b092-f3dabc9b6f5e",
     "beteckning": "Habodemokraterna",
     "filnamn": "habodemokraterna",
+    "omrade": "Habo",
     "partisymbol": {
       "filnamn": "1287-habodemokraterna.png",
       "kalla": "Valmyndigheten",
@@ -1692,6 +1796,7 @@
     "uuid": "9839c0dc-1d95-44e5-bbaf-25a568cf0c72",
     "beteckning": "HåboDemokraterna",
     "filnamn": "habodemokraterna-1532",
+    "omrade": "Håbo",
     "partisymbol": {
       "filnamn": "1532-habodemokraterna.png",
       "kalla": "Valmyndigheten",
@@ -1704,6 +1809,7 @@
     "uuid": "c63cb529-e8eb-4b7c-b430-c33bae8b657b",
     "beteckning": "Hälleforspartiet",
     "filnamn": "halleforspartiet",
+    "omrade": "Hällefors",
     "partisymbol": {
       "filnamn": "1860-halleforspartiet.png",
       "kalla": "Valmyndigheten",
@@ -1719,6 +1825,7 @@
     "tidigare_filnamn": [
       "halmstads-lokala-parti"
     ],
+    "omrade": "Halmstad",
     "forkortning": "HP",
     "partisymbol": {
       "filnamn": "1563-halmstadpartiet.png",
@@ -1737,6 +1844,7 @@
     "uuid": "c1338d92-1a30-45f2-8244-2c339eff16de",
     "beteckning": "HANINGEPARTIET",
     "filnamn": "haningepartiet",
+    "omrade": "Haninge",
     "partisymbol": {
       "filnamn": "1272-haningepartiet.png",
       "kalla": "Valmyndigheten",
@@ -1749,17 +1857,20 @@
     "uuid": "9f7fabe1-2a28-4fb9-88b8-de3cd17a8020",
     "beteckning": "Härjedalspartiet",
     "filnamn": "harjedalspartiet",
+    "omrade": "Härjedalen",
     "forkortning": "Härjp"
   },
   {
     "uuid": "a950621e-8773-4ce8-bbd5-e8f39a2d993a",
     "beteckning": "Härrydademokraterna",
-    "filnamn": "harrydademokraterna"
+    "filnamn": "harrydademokraterna",
+    "omrade": "Härryda"
   },
   {
     "uuid": "13b80d5f-37ce-48c0-b342-347b39e3c2b9",
     "beteckning": "Hela Edas Lista",
     "filnamn": "hela-edas-lista",
+    "omrade": "Eda",
     "forkortning": "HEL",
     "partisymbol": {
       "filnamn": "0160-hela-edas-lista.png",
@@ -1773,18 +1884,21 @@
     "uuid": "407ebcac-23d1-4b6e-b030-d009163bccbe",
     "beteckning": "Hela Sunne",
     "filnamn": "hela-sunne",
+    "omrade": "Sunne",
     "forkortning": "HS"
   },
   {
     "uuid": "ae7d2e8b-4cc0-49e9-a27a-109546278c8f",
     "beteckning": "Hela Vara kommuns bästa",
     "filnamn": "hela-vara-kommuns-basta",
+    "omrade": "Vara",
     "forkortning": "hvkb"
   },
   {
     "uuid": "5fc72bf8-0128-4c04-b70f-56d9d44e529e",
     "beteckning": "Helmjölksinitiativet",
     "filnamn": "helmjolksinitiativet",
+    "omrade": "Hultsfred",
     "partisymbol": {
       "filnamn": "1728-helmjolksinitiativet.png",
       "kalla": "Valmyndigheten",
@@ -1797,6 +1911,7 @@
     "uuid": "94d15989-4b83-49db-8886-29e7b6a36ac6",
     "beteckning": "Helsingborgspartiet",
     "filnamn": "helsingborgspartiet",
+    "omrade": "Helsingborg",
     "partisymbol": {
       "filnamn": "1789-helsingborgspartiet.png",
       "kalla": "Valmyndigheten",
@@ -1809,6 +1924,7 @@
     "uuid": "76618364-a6e7-4747-af3e-f3594d4d7b7f",
     "beteckning": "Herrljunga Partiet",
     "filnamn": "herrljunga-partiet",
+    "omrade": "Herrljunga",
     "partisymbol": {
       "filnamn": "1797-herrljunga-partiet.png",
       "kalla": "Valmyndigheten",
@@ -1821,17 +1937,20 @@
     "uuid": "e9e6022c-ad7b-4dd3-8591-0765044e0724",
     "beteckning": "Hjärta för Halmstad",
     "filnamn": "hjarta-for-halmstad",
+    "omrade": "Halmstad",
     "forkortning": "HfH"
   },
   {
     "uuid": "c2278989-28fa-4302-b49b-83635c8569ee",
     "beteckning": "Hjärupspartiet",
-    "filnamn": "hjarupspartiet"
+    "filnamn": "hjarupspartiet",
+    "omrade": "Staffanstorp"
   },
   {
     "uuid": "ef75b8d8-8909-4f89-84c6-e7ff7bb70a7f",
     "beteckning": "Hoforspartiet",
     "filnamn": "hoforspartiet",
+    "omrade": "Hofors",
     "forkortning": "HOP"
   },
   {
@@ -1846,6 +1965,7 @@
     "tidigare_filnamn": [
       "sveriges-pensionarers-intresseparti"
     ],
+    "omrade": "Hörby",
     "forkortning": "HF",
     "partisymbol": {
       "filnamn": "1587-horbys-framtid.png",
@@ -1859,6 +1979,7 @@
     "uuid": "f056d271-b6d1-4b0b-98dc-f2c71f00138c",
     "beteckning": "Huddingepartiet",
     "filnamn": "huddingepartiet",
+    "omrade": "Huddinge",
     "forkortning": "HP",
     "partisymbol": {
       "filnamn": "0028-huddingepartiet.png",
@@ -1914,6 +2035,7 @@
     "uuid": "649c0316-143c-4834-b35b-5dee7dcf7730",
     "beteckning": "Invånarnas Bästa",
     "filnamn": "invanarnas-basta",
+    "omrade": "Strängnäs",
     "partisymbol": {
       "filnamn": "1865-invanarnas-basta.png",
       "kalla": "Valmyndigheten",
@@ -1935,12 +2057,14 @@
       "ip-idrottspartiet-radda-stadshagens-ip-",
       "ip-idrottspartiet---radda-stadshagens-ip"
     ],
+    "omrade": "Stockholms län",
     "forkortning": "IP"
   },
   {
     "uuid": "e9f9bec8-09ff-483e-a484-d31babfd06ef",
     "beteckning": "Jämtlands Väl Bräcke",
     "filnamn": "jamtlands-val-bracke",
+    "omrade": "Bräcke",
     "forkortning": "JVB",
     "partisymbol": {
       "filnamn": "1327-jamtlands-val-bracke.png",
@@ -1954,6 +2078,7 @@
     "uuid": "511fcae2-33c6-4280-807f-2cfb3dae576a",
     "beteckning": "Jämtlands Väl Krokom",
     "filnamn": "jamtlands-val-krokom",
+    "omrade": "Krokom",
     "forkortning": "JVK",
     "partisymbol": {
       "filnamn": "1312-jamtlands-val-krokom.png",
@@ -1998,7 +2123,8 @@
   {
     "uuid": "ca49af41-c8b5-4a73-96b2-449cd8b8c593",
     "beteckning": "Jokkmokkmedborgarpartiet",
-    "filnamn": "jokkmokkmedborgarpartiet"
+    "filnamn": "jokkmokkmedborgarpartiet",
+    "omrade": "Jokkmokk"
   },
   {
     "uuid": "ad8180d6-8fc8-4d79-998f-df801b9600fe",
@@ -2008,17 +2134,20 @@
   {
     "uuid": "ed52f7e6-711c-4a94-ac7c-af60f3e6c5fc",
     "beteckning": "Jour Strömstad",
-    "filnamn": "jour-stromstad"
+    "filnamn": "jour-stromstad",
+    "omrade": "Strömstad"
   },
   {
     "uuid": "b1a18970-2141-4e28-9c68-5f4c7438ef22",
     "beteckning": "Judisk Kamp",
-    "filnamn": "judisk-kamp"
+    "filnamn": "judisk-kamp",
+    "omrade": "Hudiksvall"
   },
   {
     "uuid": "a2607113-2daa-4c79-8166-3d6e49b71423",
     "beteckning": "Kalixpartiet",
     "filnamn": "kalixpartiet",
+    "omrade": "Kalix",
     "forkortning": "KXP"
   },
   {
@@ -2058,6 +2187,7 @@
     "uuid": "d28154f7-af47-4248-9363-d38fd26aef61",
     "beteckning": "Karlstadpartiet Livskvalitet",
     "filnamn": "karlstadpartiet-livskvalitet",
+    "omrade": "Karlstad",
     "forkortning": "KPL",
     "partisymbol": {
       "filnamn": "1350-karlstadpartiet-livskvalitet.png",
@@ -2070,12 +2200,14 @@
   {
     "uuid": "4049bd73-9f9d-42ac-85ff-f4db21dd8845",
     "beteckning": "Karlstads Framtid",
-    "filnamn": "karlstads-framtid"
+    "filnamn": "karlstads-framtid",
+    "omrade": "Karlstad"
   },
   {
     "uuid": "90ccc071-a151-4b5b-b7de-8b944afa12cc",
     "beteckning": "Katrineholm FRAMÅT",
     "filnamn": "katrineholm-framat",
+    "omrade": "Katrineholm",
     "partisymbol": {
       "filnamn": "1764-katrineholm-framat.png",
       "kalla": "Valmyndigheten",
@@ -2107,6 +2239,7 @@
     "uuid": "70c47a8d-66ce-48ed-9110-35e8c9dfee96",
     "beteckning": "Klimatinitiativ Simrishamn",
     "filnamn": "klimatinitiativ-simrishamn",
+    "omrade": "Simrishamn",
     "partisymbol": {
       "filnamn": "1560-klimatinitiativ-simrishamn.png",
       "kalla": "Valmyndigheten",
@@ -2132,12 +2265,14 @@
     "uuid": "b60ad164-adce-4c69-9438-074670153ab4",
     "beteckning": "Knegarkampanjen",
     "filnamn": "knegarkampanjen",
+    "omrade": "Norrbottens län",
     "forkortning": "KNEG"
   },
   {
     "uuid": "2cdb7e51-30e9-479b-b7f7-2d33cf915b73",
     "beteckning": "Knivsta.Nu",
     "filnamn": "knivsta-nu",
+    "omrade": "Knivsta",
     "forkortning": "KNU",
     "partisymbol": {
       "filnamn": "0303-knivsta-nu.png",
@@ -2156,12 +2291,14 @@
     "uuid": "0b9990ce-999d-4628-9634-d16188729059",
     "beteckning": "Kommunal Samling",
     "filnamn": "kommunal-samling",
+    "omrade": "Gagnef",
     "forkortning": "KOSA"
   },
   {
     "uuid": "e782cd26-8d46-482f-b4f1-2b688fc9105b",
     "beteckning": "Kommundemokraterna",
     "filnamn": "kommundemokraterna",
+    "omrade": "Jönköping",
     "forkortning": "KoDe",
     "partisymbol": {
       "filnamn": "1338-kommundemokraterna.png",
@@ -2175,12 +2312,14 @@
     "uuid": "78589060-901b-472c-8731-1f454caae3df",
     "beteckning": "Kommunens Bästa",
     "filnamn": "kommunens-basta",
+    "omrade": "Forshaga",
     "forkortning": "KomBä"
   },
   {
     "uuid": "093e978b-c8cb-4383-a002-49a4ea34778d",
     "beteckning": "Kommunens Bästa (partipolitiskt obunden lista)",
     "filnamn": "kommunens-basta-partipolitiskt-obunden-lista",
+    "omrade": "Ljungby",
     "forkortning": "KB"
   },
   {
@@ -2189,18 +2328,21 @@
     "filnamn": "kommunens-rost",
     "tidigare_filnamn": [
       "kommunens-rost-"
-    ]
+    ],
+    "omrade": "Hässleholm"
   },
   {
     "uuid": "5f8920c0-71dd-4e2d-8a12-7392ec1d2021",
     "beteckning": "Kommunens Väl",
     "filnamn": "kommunens-val",
+    "omrade": "Älvkarleby",
     "forkortning": "KV"
   },
   {
     "uuid": "9b733ec5-e9f2-472c-a42b-650ff055689c",
     "beteckning": "Kommunens Väl",
     "filnamn": "kommunens-val-0502",
+    "omrade": "Skurup",
     "forkortning": "KVS",
     "partisymbol": {
       "filnamn": "0502-kommunens-val.png",
@@ -2214,12 +2356,14 @@
     "uuid": "55e9cd9d-c6b7-4026-aea3-351a9b6c9db9",
     "beteckning": "Kommunens Väl",
     "filnamn": "kommunens-val-0503",
+    "omrade": "Hylte",
     "forkortning": "Komv"
   },
   {
     "uuid": "83e8beb9-44c3-4777-b657-1b2213224af4",
     "beteckning": "Kommunens Väl",
     "filnamn": "kommunens-val-0526",
+    "omrade": "Herrljunga",
     "forkortning": "KVäl",
     "partisymbol": {
       "filnamn": "0526-kommunens-val.png",
@@ -2252,24 +2396,28 @@
     "uuid": "452aff7e-40d4-44b5-9193-b8e9b006a6da",
     "beteckning": "Kommunlistan",
     "filnamn": "kommunlistan",
+    "omrade": "Älvdalen",
     "forkortning": "KL"
   },
   {
     "uuid": "2707079d-6275-4525-bca7-fd523d4f46fd",
     "beteckning": "Kommunlistan",
     "filnamn": "kommunlistan-0742",
+    "omrade": "Storuman",
     "forkortning": "SKL"
   },
   {
     "uuid": "29d3546a-9c99-4ce0-8bc7-d5276373090e",
     "beteckning": "Kommunlistan",
     "filnamn": "kommunlistan-0747",
+    "omrade": "Hedemora",
     "forkortning": "KLH"
   },
   {
     "uuid": "f2803c86-56ec-4d6f-bb99-6e847357b5f8",
     "beteckning": "KommunPartiet Mellerud",
     "filnamn": "kommunpartiet-mellerud",
+    "omrade": "Mellerud",
     "forkortning": "KiM",
     "partisymbol": {
       "filnamn": "0593-kommunpartiet-mellerud.png",
@@ -2283,6 +2431,7 @@
     "uuid": "27a67552-e814-43e1-9cbb-c2165d273e4e",
     "beteckning": "Kommunpartiet - Vansbro",
     "filnamn": "kommunpartiet-vansbro",
+    "omrade": "Vansbro",
     "forkortning": "Kp"
   },
   {
@@ -2301,6 +2450,7 @@
     "uuid": "35324e37-4fa4-4a29-9370-e75708476d5a",
     "beteckning": "Konsensus - För Vadstenas Bästa",
     "filnamn": "konsensus-for-vadstenas-basta",
+    "omrade": "Vadstena",
     "forkortning": "Kons",
     "partisymbol": {
       "filnamn": "1258-konsensus-for-vadstenas-basta.png",
@@ -2338,6 +2488,7 @@
     "uuid": "43fdc0be-9fc3-4791-9b7f-1a47689dde2f",
     "beteckning": "Kristna Familjepartiet",
     "filnamn": "kristna-familjepartiet",
+    "omrade": "Stockholms län",
     "partisymbol": {
       "filnamn": "1766-kristna-familjepartiet.png",
       "kalla": "Valmyndigheten",
@@ -2365,12 +2516,14 @@
   {
     "uuid": "3051b1c0-5a5e-44f2-a72d-aef00e15ceeb",
     "beteckning": "Kungsbacka Framtidsparti",
-    "filnamn": "kungsbacka-framtidsparti"
+    "filnamn": "kungsbacka-framtidsparti",
+    "omrade": "Kungsbacka"
   },
   {
     "uuid": "4eee1cd3-a349-4c74-937c-3b7149b78d4e",
     "beteckning": "Kungsbackaborna",
     "filnamn": "kungsbackaborna",
+    "omrade": "Kungsbacka",
     "forkortning": "Kbabo",
     "partisymbol": {
       "filnamn": "1036-kungsbackaborna.png",
@@ -2401,6 +2554,7 @@
     "uuid": "75661c75-456d-444e-ae84-28d8cfd17900",
     "beteckning": "KUSTLANDSPARTIET",
     "filnamn": "kustlandspartiet",
+    "omrade": "Oskarshamn",
     "forkortning": "KUST",
     "partisymbol": {
       "filnamn": "1588-kustlandspartiet.png",
@@ -2413,12 +2567,14 @@
   {
     "uuid": "ffffc6da-c7d7-4e1e-9934-343907af3db0",
     "beteckning": "KvillePartiet",
-    "filnamn": "kvillepartiet"
+    "filnamn": "kvillepartiet",
+    "omrade": "Tanum"
   },
   {
     "uuid": "05ac49a3-fa54-4d3a-8938-f947b380987f",
     "beteckning": "Laholmspartiet",
     "filnamn": "laholmspartiet",
+    "omrade": "Laholm",
     "forkortning": "Lap",
     "partisymbol": {
       "filnamn": "0418-laholmspartiet.png",
@@ -2431,7 +2587,8 @@
   {
     "uuid": "bdb4c62d-0dff-48b3-9be6-7783bc7d8889",
     "beteckning": "Landsbygdens framtid i Bräcke",
-    "filnamn": "landsbygdens-framtid-i-bracke"
+    "filnamn": "landsbygdens-framtid-i-bracke",
+    "omrade": "Bräcke"
   },
   {
     "uuid": "e39bddbe-ce7d-4c63-a677-b5c1a3046ebd",
@@ -2454,12 +2611,14 @@
   {
     "uuid": "6e7ebbc9-03f3-47a2-bbae-5eac08106bf7",
     "beteckning": "Legion Wasa",
-    "filnamn": "legion-wasa"
+    "filnamn": "legion-wasa",
+    "omrade": "Falköping"
   },
   {
     "uuid": "bd4fff22-4d31-4d12-9abc-adc5fed355ee",
     "beteckning": "Liberal Vision Åmål",
     "filnamn": "liberal-vision-amal",
+    "omrade": "Åmål",
     "forkortning": "LibVÅ"
   },
   {
@@ -2478,12 +2637,14 @@
   {
     "uuid": "3114d79d-f1f6-4981-8bdf-971f533215a8",
     "beteckning": "Liberalt Initiativ",
-    "filnamn": "liberalt-initiativ"
+    "filnamn": "liberalt-initiativ",
+    "omrade": "Uppsala län"
   },
   {
     "uuid": "9979ac68-bc43-4861-a34d-97fa9136a0f3",
     "beteckning": "Liberalt initiativ Habo kommun",
     "filnamn": "liberalt-initiativ-habo-kommun",
+    "omrade": "Habo",
     "partisymbol": {
       "filnamn": "1824-liberalt-initiativ-habo-kommun.png",
       "kalla": "Valmyndigheten",
@@ -2495,7 +2656,8 @@
   {
     "uuid": "80e17a1e-dc7f-47a6-83a7-b111f4ea3882",
     "beteckning": "Liberalt Initiativ i Ulricehamn",
-    "filnamn": "liberalt-initiativ-i-ulricehamn"
+    "filnamn": "liberalt-initiativ-i-ulricehamn",
+    "omrade": "Ulricehamn"
   },
   {
     "uuid": "9df5c472-cf9a-4d8a-8dd6-c3fa7f2e1607",
@@ -2506,6 +2668,7 @@
     "uuid": "14af0084-697b-4fec-b085-df63f90c9465",
     "beteckning": "LIDINGÖPARTIET",
     "filnamn": "lidingopartiet",
+    "omrade": "Lidingö",
     "forkortning": "LP",
     "partisymbol": {
       "filnamn": "0019-lidingopartiet.png",
@@ -2524,6 +2687,7 @@
     "uuid": "e1000305-e53c-4c8b-bc56-f171e8840c3e",
     "beteckning": "Linköpingslistan",
     "filnamn": "linkopingslistan",
+    "omrade": "Linköping",
     "forkortning": "LL",
     "partisymbol": {
       "filnamn": "1458-linkopingslistan.png",
@@ -2539,7 +2703,8 @@
     "filnamn": "listan-for-miljo-och-omtanke-orkelljunga",
     "tidigare_filnamn": [
       "listan-for-miljo-och-omtanke--orkelljunga"
-    ]
+    ],
+    "omrade": "Örkelljunga"
   },
   {
     "uuid": "0bbc6a13-1ce2-47be-ae8f-8ab5f8406226",
@@ -2548,6 +2713,7 @@
     "tidigare_filnamn": [
       "vaxholmsdemokraterna"
     ],
+    "omrade": "Vaxholm",
     "forkortning": "LVD",
     "partisymbol": {
       "filnamn": "1540-livbojen-vaxholmsdemokraterna.png",
@@ -2561,6 +2727,7 @@
     "uuid": "62970bde-1b67-469b-954a-33078773b42b",
     "beteckning": "Ljusdalsbygdens parti",
     "filnamn": "ljusdalsbygdens-parti",
+    "omrade": "Ljusdal",
     "forkortning": "LjP",
     "partisymbol": {
       "filnamn": "0535-ljusdalsbygdens-parti.png",
@@ -2574,6 +2741,7 @@
     "uuid": "05fab818-0cb4-4f62-b2df-cac275610737",
     "beteckning": "Löddebygden",
     "filnamn": "loddebygden",
+    "omrade": "Kävlinge",
     "forkortning": "LB"
   },
   {
@@ -2585,6 +2753,7 @@
     "uuid": "5769cac7-08cc-41a4-b870-9ccb7bb7d135",
     "beteckning": "Lokal Framtid",
     "filnamn": "lokal-framtid",
+    "omrade": "Örnsköldsvik",
     "forkortning": "Lf"
   },
   {
@@ -2594,18 +2763,21 @@
     "tidigare_filnamn": [
       "strangnaspartiet"
     ],
+    "omrade": "Strängnäs",
     "forkortning": "LOK"
   },
   {
     "uuid": "77f0a0cd-c3c5-42ca-86a3-08759e95900d",
     "beteckning": "Lokalpartiet BoA",
     "filnamn": "lokalpartiet-boa",
+    "omrade": "Östhammar",
     "forkortning": "BoA"
   },
   {
     "uuid": "4a03e7a5-2598-45c3-b2fa-4d20d6ab1dc4",
     "beteckning": "Lokalpartiet Malung-Sälen",
     "filnamn": "lokalpartiet-malung-salen",
+    "omrade": "Malung-Sälen",
     "forkortning": "LM",
     "partisymbol": {
       "filnamn": "1750-lokalpartiet-malung-salen.png",
@@ -2624,6 +2796,7 @@
     "uuid": "5b6a8475-6d85-466e-a34f-008852c173f7",
     "beteckning": "Lysekilspartiet",
     "filnamn": "lysekilspartiet",
+    "omrade": "Lysekil",
     "forkortning": "LP.NU",
     "partisymbol": {
       "filnamn": "0248-lysekilspartiet.png",
@@ -2654,6 +2827,7 @@
     "uuid": "94de475b-521e-4fd6-b5e2-16eeacde72b4",
     "beteckning": "Malålistan",
     "filnamn": "malalistan",
+    "omrade": "Malå",
     "forkortning": "ML"
   },
   {
@@ -2668,6 +2842,7 @@
     "tidigare_filnamn": [
       "opartiet"
     ],
+    "omrade": "Ekerö",
     "forkortning": "Ö",
     "partisymbol": {
       "filnamn": "0498-malaropartiet.png",
@@ -2681,12 +2856,14 @@
     "uuid": "0487b4e2-d2a2-4ae9-9f92-e511d3687dab",
     "beteckning": "Malmfältens Väl",
     "filnamn": "malmfaltens-val",
+    "omrade": "Gällivare",
     "forkortning": "MV"
   },
   {
     "uuid": "4b1d7267-315d-4a16-8fcc-3fabb936322d",
     "beteckning": "Malmölistan",
     "filnamn": "malmolistan",
+    "omrade": "Malmö",
     "forkortning": "Mal",
     "partisymbol": {
       "filnamn": "1459-malmolistan.png",
@@ -2699,7 +2876,8 @@
   {
     "uuid": "1f2b1723-551e-47f0-a10f-0a7961031451",
     "beteckning": "Malung-Sälenpartiet",
-    "filnamn": "malung-salenpartiet"
+    "filnamn": "malung-salenpartiet",
+    "omrade": "Malung-Sälen"
   },
   {
     "uuid": "fa7f437d-685d-45a2-a8dd-5c7de8494e81",
@@ -2709,18 +2887,21 @@
   {
     "uuid": "9a93d96f-9082-4d57-b46b-f5e2b052da04",
     "beteckning": "Mariefredspartiet",
-    "filnamn": "mariefredspartiet"
+    "filnamn": "mariefredspartiet",
+    "omrade": "Strängnäs"
   },
   {
     "uuid": "8d8034b7-d41c-404b-8895-42e5d752bebc",
     "beteckning": "MariestadsPartiet",
     "filnamn": "mariestadspartiet",
+    "omrade": "Mariestad",
     "forkortning": "MaP"
   },
   {
     "uuid": "aca2a7c0-395b-4d61-a630-b75f327aad94",
     "beteckning": "Markbygdspartiet",
-    "filnamn": "markbygdspartiet"
+    "filnamn": "markbygdspartiet",
+    "omrade": "Mark"
   },
   {
     "uuid": "18bc4293-c7ac-4245-b5a2-8d041a9b3112",
@@ -2729,12 +2910,14 @@
     "tidigare_filnamn": [
       "marks-oberoende-demokrater--mod"
     ],
+    "omrade": "Mark",
     "forkortning": "MOD"
   },
   {
     "uuid": "dc646f81-a2b4-44d3-8d5f-1e1802de6601",
     "beteckning": "Medborgarpartiet",
     "filnamn": "medborgarpartiet",
+    "omrade": "Vänersborg",
     "forkortning": "Vfp"
   },
   {
@@ -2744,6 +2927,7 @@
     "tidigare_filnamn": [
       "medborgarpartiet-i-gislaved"
     ],
+    "omrade": "Gislaved",
     "forkortning": "MiG",
     "partisymbol": {
       "filnamn": "1575-medborgarpartiet-i-gislaved-mig.png",
@@ -2779,7 +2963,8 @@
   {
     "uuid": "81977980-9553-4fa9-8ed7-7687fa9b5959",
     "beteckning": "Miljödemokraterna",
-    "filnamn": "miljodemokraterna"
+    "filnamn": "miljodemokraterna",
+    "omrade": "Karlskoga"
   },
   {
     "uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
@@ -2803,12 +2988,14 @@
     "uuid": "db6631d4-61a1-4068-b426-66d75fe39ea1",
     "beteckning": "Mitt Göinge",
     "filnamn": "mitt-goinge",
+    "omrade": "Östra Göinge",
     "forkortning": "MG"
   },
   {
     "uuid": "d216206a-ce6b-43a9-96ef-6c5a45a0d293",
     "beteckning": "Mitt Parti Värmdö",
     "filnamn": "mitt-parti-varmdo",
+    "omrade": "Värmdö",
     "forkortning": "MPV"
   },
   {
@@ -2854,6 +3041,7 @@
     "uuid": "f89ae786-b6e2-4ec0-9065-5740eb61e4e9",
     "beteckning": "Mölndalslistan",
     "filnamn": "molndalslistan",
+    "omrade": "Mölndal",
     "partisymbol": {
       "filnamn": "1760-molndalslistan.png",
       "kalla": "Valmyndigheten",
@@ -2871,17 +3059,20 @@
     "uuid": "3c442003-5859-4ff9-a322-86898ba54e13",
     "beteckning": "Morapartiet",
     "filnamn": "morapartiet",
+    "omrade": "Mora",
     "forkortning": "MOP"
   },
   {
     "uuid": "759b6807-f012-41d8-969b-93ce1d839a30",
     "beteckning": "Mosebackedemokraterna",
-    "filnamn": "mosebackedemokraterna"
+    "filnamn": "mosebackedemokraterna",
+    "omrade": "Stockholm"
   },
   {
     "uuid": "91a14e9f-ab4c-4b2e-b4bf-ee634138ff7d",
     "beteckning": "Mullsjö Framtid",
     "filnamn": "mullsjo-framtid",
+    "omrade": "Mullsjö",
     "forkortning": "MFR"
   },
   {
@@ -2899,12 +3090,14 @@
   {
     "uuid": "cec58994-3d5c-47d2-a2af-8fd50f984c2d",
     "beteckning": "Munkedals Framtid",
-    "filnamn": "munkedals-framtid"
+    "filnamn": "munkedals-framtid",
+    "omrade": "Munkedal"
   },
   {
     "uuid": "eeb297f7-5159-48b2-b6c0-ab92ebc9fa28",
     "beteckning": "Nackalistan",
     "filnamn": "nackalistan",
+    "omrade": "Nacka",
     "forkortning": "NL",
     "partisymbol": {
       "filnamn": "0543-nackalistan.png",
@@ -2929,7 +3122,8 @@
   {
     "uuid": "63b9de25-20d6-4f6e-8658-7c1542f37b68",
     "beteckning": "Nationalister i Vellinge",
-    "filnamn": "nationalister-i-vellinge"
+    "filnamn": "nationalister-i-vellinge",
+    "omrade": "Vellinge"
   },
   {
     "uuid": "2365977a-6bdd-4ab2-9ac7-ead2a7428a95",
@@ -2943,6 +3137,7 @@
     "tidigare_filnamn": [
       "naturens-parti-sanning-rattvisa-karlek"
     ],
+    "omrade": "Göteborg",
     "partisymbol": {
       "filnamn": "1281-naturens-parti.png",
       "kalla": "Valmyndigheten",
@@ -2999,12 +3194,14 @@
   {
     "uuid": "b12eba67-b1b9-416a-9256-e5677d171ed7",
     "beteckning": "Nöjespartiet Clownerna",
-    "filnamn": "nojespartiet-clownerna"
+    "filnamn": "nojespartiet-clownerna",
+    "omrade": "Botkyrka"
   },
   {
     "uuid": "1d7a2ecf-cd6c-478d-b6c6-95ff6e97c359",
     "beteckning": "Norapartiet",
     "filnamn": "norapartiet",
+    "omrade": "Nora",
     "forkortning": "NOR",
     "partisymbol": {
       "filnamn": "0985-norapartiet.png",
@@ -3018,6 +3215,7 @@
     "uuid": "38456bd0-8569-4c27-a4b5-fec604e0f381",
     "beteckning": "nordanstigspartiet.se",
     "filnamn": "nordanstigspartiet-se",
+    "omrade": "Nordanstig",
     "forkortning": "nop"
   },
   {
@@ -3036,6 +3234,7 @@
     "uuid": "7de96d66-a933-4d96-aa3b-8720396f0bb3",
     "beteckning": "Nordvärmlands kommunparti",
     "filnamn": "nordvarmlands-kommunparti",
+    "omrade": "Torsby",
     "forkortning": "NVKP",
     "partisymbol": {
       "filnamn": "1446-nordvarmlands-kommunparti.png",
@@ -3066,6 +3265,7 @@
     "uuid": "eaadd374-35f6-45da-acc4-4254289c77db",
     "beteckning": "Norrlandspartiet",
     "filnamn": "norrlandspartiet",
+    "omrade": "Västernorrlands län",
     "partisymbol": {
       "filnamn": "1773-norrlandspartiet.png",
       "kalla": "Valmyndigheten",
@@ -3110,6 +3310,7 @@
     "uuid": "e1e3e22d-b1f4-44e2-8e8f-616e4ba6ea8b",
     "beteckning": "Ny Kurs Nykvarn",
     "filnamn": "ny-kurs-nykvarn",
+    "omrade": "Nykvarn",
     "partisymbol": {
       "filnamn": "1788-ny-kurs-nykvarn.png",
       "kalla": "Valmyndigheten",
@@ -3138,7 +3339,8 @@
   {
     "uuid": "9f737d9d-260a-4ebd-8600-b473fd3cb655",
     "beteckning": "Nya Danderydspartiet",
-    "filnamn": "nya-danderydspartiet"
+    "filnamn": "nya-danderydspartiet",
+    "omrade": "Danderyd"
   },
   {
     "uuid": "6478af88-eab1-4246-9933-bc32486557d7",
@@ -3149,6 +3351,7 @@
     "uuid": "6639e412-737a-4308-992f-76b4f021910e",
     "beteckning": "Nya Kirunapartiet",
     "filnamn": "nya-kirunapartiet",
+    "omrade": "Kiruna",
     "forkortning": "NKP",
     "partisymbol": {
       "filnamn": "1326-nya-kirunapartiet.png",
@@ -3162,12 +3365,14 @@
     "uuid": "98e02aed-bbc7-410e-ae7e-77e2a9109fe7",
     "beteckning": "Nya Kommunpartiet Eslöv",
     "filnamn": "nya-kommunpartiet-eslov",
+    "omrade": "Eslöv",
     "forkortning": "NKE"
   },
   {
     "uuid": "b5a8367b-9763-49e6-942b-49a342ac0736",
     "beteckning": "Nya Listan i Vellinge",
-    "filnamn": "nya-listan-i-vellinge"
+    "filnamn": "nya-listan-i-vellinge",
+    "omrade": "Vellinge"
   },
   {
     "uuid": "b4a0631c-8576-4bb6-880e-05972a7f952b",
@@ -3188,6 +3393,7 @@
     "uuid": "2def9db4-ffba-4858-a406-b76008c36853",
     "beteckning": "Nya Ulricehamn",
     "filnamn": "nya-ulricehamn",
+    "omrade": "Ulricehamn",
     "forkortning": "NU",
     "partisymbol": {
       "filnamn": "1157-nya-ulricehamn.png",
@@ -3204,6 +3410,7 @@
     "tidigare_filnamn": [
       "nybro-landsbygds----stadsparti"
     ],
+    "omrade": "Nybro",
     "forkortning": "NLS",
     "partisymbol": {
       "filnamn": "1800-nybro-landsbygds----stadsparti.png",
@@ -3217,6 +3424,7 @@
     "uuid": "8f5f1ddd-b111-4ae5-a327-4b7d367ca142",
     "beteckning": "Nybyggarpartiet",
     "filnamn": "nybyggarpartiet",
+    "omrade": "Valdemarsvik",
     "forkortning": "NB"
   },
   {
@@ -3226,6 +3434,7 @@
     "tidigare_filnamn": [
       "medborgarnas-politiska-parti-i-sverige"
     ],
+    "omrade": "Borlänge",
     "forkortning": "NyF",
     "partisymbol": {
       "filnamn": "1367-nyframtid.png",
@@ -3239,6 +3448,7 @@
     "uuid": "d8c7d408-37c1-439c-a48d-805e00b4af49",
     "beteckning": "Nykvarnspartiet",
     "filnamn": "nykvarnspartiet",
+    "omrade": "Nykvarn",
     "forkortning": "NP",
     "partisymbol": {
       "filnamn": "0123-nykvarnspartiet.png",
@@ -3252,6 +3462,7 @@
     "uuid": "f4f9b691-9eea-4cd7-906a-bbebb07a9c42",
     "beteckning": "Nystart Enköping (NE)",
     "filnamn": "nystart-enkoping-ne",
+    "omrade": "Enköping",
     "forkortning": "NE",
     "partisymbol": {
       "filnamn": "1143-nystart-enkoping-ne.png",
@@ -3269,12 +3480,14 @@
   {
     "uuid": "ddf9bfca-66cb-4b99-b3e3-842b817fb2a3",
     "beteckning": "Öarnasväl",
-    "filnamn": "oarnasval"
+    "filnamn": "oarnasval",
+    "omrade": "Öckerö"
   },
   {
     "uuid": "8463491f-4a86-4bfd-91d2-12d58ff5e223",
     "beteckning": "Oberoende Realister",
     "filnamn": "oberoende-realister",
+    "omrade": "Hagfors",
     "forkortning": "OR",
     "partisymbol": {
       "filnamn": "1305-oberoende-realister.png",
@@ -3288,6 +3501,7 @@
     "uuid": "42611ff0-d230-4626-9866-8b68298a61b6",
     "beteckning": "Oberoende S",
     "filnamn": "oberoende-s",
+    "omrade": "Botkyrka",
     "partisymbol": {
       "filnamn": "1698-oberoende-s.png",
       "kalla": "Valmyndigheten",
@@ -3299,7 +3513,8 @@
   {
     "uuid": "53d5ff3c-433f-4661-a696-1fc203292d8e",
     "beteckning": "Ockelbo Partiet",
-    "filnamn": "ockelbo-partiet"
+    "filnamn": "ockelbo-partiet",
+    "omrade": "Ockelbo"
   },
   {
     "uuid": "256d0bb4-3097-4941-a9f7-46db7ee59c10",
@@ -3310,6 +3525,7 @@
     "uuid": "c79c8c7f-d06b-44f2-8749-de54938de492",
     "beteckning": "Ölandspartiet",
     "filnamn": "olandspartiet",
+    "omrade": "Borgholm",
     "forkortning": "Öland",
     "partisymbol": {
       "filnamn": "0336-olandspartiet.png",
@@ -3329,12 +3545,14 @@
     "uuid": "e9db3311-ce19-432d-b10d-d0735af83af7",
     "beteckning": "Olofströmsdemokraterna",
     "filnamn": "olofstromsdemokraterna",
+    "omrade": "Olofström",
     "forkortning": "OD"
   },
   {
     "uuid": "221f498a-d6cc-457b-bba7-f65f69a9f960",
     "beteckning": "Omsorg för alla",
     "filnamn": "omsorg-for-alla",
+    "omrade": "Borlänge",
     "forkortning": "Ofa",
     "partisymbol": {
       "filnamn": "1369-omsorg-for-alla.png",
@@ -3348,6 +3566,7 @@
     "uuid": "97e7e07e-7af2-4c39-8807-c7c18d60a5d1",
     "beteckning": "Omsorgspartiet i Arboga",
     "filnamn": "omsorgspartiet-i-arboga",
+    "omrade": "Arboga",
     "forkortning": "OPA"
   },
   {
@@ -3367,12 +3586,14 @@
     "uuid": "6d796e1b-ae89-46ba-932a-be2bc09a753b",
     "beteckning": "Opinion",
     "filnamn": "opinion",
+    "omrade": "Åsele",
     "forkortning": "OPi"
   },
   {
     "uuid": "84431b6b-357a-4e02-9c28-de2c6d2b73d4",
     "beteckning": "OPiNiON Åsele",
-    "filnamn": "opinion-asele"
+    "filnamn": "opinion-asele",
+    "omrade": "Åsele"
   },
   {
     "uuid": "04322f22-a4de-432a-9a68-be4845d2e4de",
@@ -3385,12 +3606,14 @@
   {
     "uuid": "b61c947d-c5d9-481c-bedf-66ab406aac8e",
     "beteckning": "Öppna Hela Lerum",
-    "filnamn": "oppna-hela-lerum"
+    "filnamn": "oppna-hela-lerum",
+    "omrade": "Lerum"
   },
   {
     "uuid": "b2ce203d-e440-450a-a8cf-0e3878aa35b5",
     "beteckning": "Öppna Nässjö",
-    "filnamn": "oppna-nassjo"
+    "filnamn": "oppna-nassjo",
+    "omrade": "Nässjö"
   },
   {
     "uuid": "4719f829-c6f3-43b9-aaee-db26d645007d",
@@ -3420,18 +3643,21 @@
   {
     "uuid": "b55a72c9-c29f-41b4-ab02-d2671fdf132b",
     "beteckning": "ORUST FRAMTID",
-    "filnamn": "orust-framtid"
+    "filnamn": "orust-framtid",
+    "omrade": "Orust"
   },
   {
     "uuid": "2f00d90b-2195-4bb4-9575-4324dfabb7f2",
     "beteckning": "Orustpartiet (OP)",
     "filnamn": "orustpartiet-op",
+    "omrade": "Orust",
     "forkortning": "(OP)"
   },
   {
     "uuid": "5253b70b-7db5-456a-b7ac-ccae2311e657",
     "beteckning": "Oskarshamnspartiet",
     "filnamn": "oskarshamnspartiet",
+    "omrade": "Oskarshamn",
     "partisymbol": {
       "filnamn": "1664-oskarshamnspartiet.png",
       "kalla": "Valmyndigheten",
@@ -3444,18 +3670,21 @@
     "uuid": "2130f9f3-4dbe-4019-9e9d-34e06d9754a1",
     "beteckning": "Österåkerspartiet",
     "filnamn": "osterakerspartiet",
+    "omrade": "Österåker",
     "forkortning": "ÖP"
   },
   {
     "uuid": "6675260d-0e34-4c06-842e-98312374dc21",
     "beteckning": "Österlenpartiet",
     "filnamn": "osterlenpartiet",
+    "omrade": "Simrishamn",
     "forkortning": "ÖstP"
   },
   {
     "uuid": "f0162ff9-78ac-43ee-aa15-6d129e0fbd2d",
     "beteckning": "Östgötapartiet",
     "filnamn": "ostgotapartiet",
+    "omrade": "Norrköping",
     "forkortning": "ÖsP",
     "partisymbol": {
       "filnamn": "1544-ostgotapartiet.png",
@@ -3469,12 +3698,14 @@
     "uuid": "bb1a5f6d-8662-4b8c-9e1e-8cd020f451f3",
     "beteckning": "Ostkustens Framtid",
     "filnamn": "ostkustens-framtid",
+    "omrade": "Östhammar",
     "forkortning": "OF"
   },
   {
     "uuid": "3bd219fb-835a-4d0d-8d26-5f99bdb79381",
     "beteckning": "Övertorneås Fria Alternativ",
     "filnamn": "overtorneas-fria-alternativ",
+    "omrade": "Övertorneå",
     "forkortning": "ÖFA",
     "partisymbol": {
       "filnamn": "1068-overtorneas-fria-alternativ.png",
@@ -3487,7 +3718,8 @@
   {
     "uuid": "c0d5ef4b-aebb-432c-a24a-ce0b3a0b5ff9",
     "beteckning": "Palestinavänner i Falkenberg",
-    "filnamn": "palestinavanner-i-falkenberg"
+    "filnamn": "palestinavanner-i-falkenberg",
+    "omrade": "Falkenberg"
   },
   {
     "uuid": "48be121c-0c48-4153-88a0-691fc6d255b0",
@@ -3526,12 +3758,14 @@
     "uuid": "144fe5cd-0d20-4b11-bd0e-24fa1c9d4438",
     "beteckning": "Partiet för Norbergs Framtid",
     "filnamn": "partiet-for-norbergs-framtid",
+    "omrade": "Norberg",
     "forkortning": "PNF"
   },
   {
     "uuid": "9b117ca6-1074-4d9d-8a43-f25787375726",
     "beteckning": "Partiet för Systemet på söndagar",
-    "filnamn": "partiet-for-systemet-pa-sondagar"
+    "filnamn": "partiet-for-systemet-pa-sondagar",
+    "omrade": "Västerås"
   },
   {
     "uuid": "016fb2c4-6354-4ab7-ad56-86d26f67ad55",
@@ -3546,7 +3780,8 @@
   {
     "uuid": "a53d194a-f771-44b3-b9a4-2f9c22ecb230",
     "beteckning": "Partiet Horisont",
-    "filnamn": "partiet-horisont"
+    "filnamn": "partiet-horisont",
+    "omrade": "Simrishamn"
   },
   {
     "uuid": "1a5c7b71-fcb0-40eb-b23b-f3a50f70a8c5",
@@ -3565,6 +3800,7 @@
     "uuid": "bb7809a4-706c-4b84-89a0-40c67e42d4b5",
     "beteckning": "Partiet Sunt Förnuft",
     "filnamn": "partiet-sunt-fornuft",
+    "omrade": "Vänersborg",
     "partisymbol": {
       "filnamn": "1640-partiet-sunt-fornuft.png",
       "kalla": "Valmyndigheten",
@@ -3595,6 +3831,7 @@
     "uuid": "3e686571-a068-490b-b453-1b4f336bacfa",
     "beteckning": "Partiett",
     "filnamn": "partiett",
+    "omrade": "Övertorneå",
     "forkortning": "Prt"
   },
   {
@@ -3612,7 +3849,8 @@
   {
     "uuid": "d9d3c647-302c-4b4e-a6c6-070a3098f05d",
     "beteckning": "Patientfokus",
-    "filnamn": "patientfokus"
+    "filnamn": "patientfokus",
+    "omrade": "Västra Götalands län"
   },
   {
     "uuid": "4d2c82b3-0ec0-4830-98b0-6cf95a0cfbaa",
@@ -3628,6 +3866,7 @@
     "uuid": "ac2f677a-f96e-41fd-869e-0a7ab2c24745",
     "beteckning": "Pensionärspartiet i Nynäshamns kommun",
     "filnamn": "pensionarspartiet-i-nynashamns-kommun",
+    "omrade": "Nynäshamn",
     "forkortning": "PPiN"
   },
   {
@@ -3639,6 +3878,7 @@
     "uuid": "5ff928be-bd28-4662-b2f0-2037c50ca26d",
     "beteckning": "Perspektiv Värnamo",
     "filnamn": "perspektiv-varnamo",
+    "omrade": "Värnamo",
     "partisymbol": {
       "filnamn": "1752-perspektiv-varnamo.png",
       "kalla": "Valmyndigheten",
@@ -3651,6 +3891,7 @@
     "uuid": "1eee2b77-0a39-4eb9-8b98-43b9628875a9",
     "beteckning": "Perstorps Framtid",
     "filnamn": "perstorps-framtid",
+    "omrade": "Perstorp",
     "forkortning": "PF"
   },
   {
@@ -3669,12 +3910,14 @@
   {
     "uuid": "da6e4cea-0837-41b5-8ad8-145aee54013d",
     "beteckning": "Pite Demokrati",
-    "filnamn": "pite-demokrati"
+    "filnamn": "pite-demokrati",
+    "omrade": "Piteå"
   },
   {
     "uuid": "055905b5-c6cd-4f33-b148-785c73b61cc3",
     "beteckning": "PLUS55",
     "filnamn": "plus55",
+    "omrade": "Gävle",
     "forkortning": "P55",
     "partisymbol": {
       "filnamn": "1556-plus55.png",
@@ -3688,6 +3931,7 @@
     "uuid": "35c4f62f-3e79-4dbe-9ae4-b76aa4052b86",
     "beteckning": "Politiskt Alternativ",
     "filnamn": "politiskt-alternativ",
+    "omrade": "Vilhelmina",
     "forkortning": "PA"
   },
   {
@@ -3776,6 +4020,7 @@
     "uuid": "60216e40-c6de-49bd-b7c8-d102791cdd74",
     "beteckning": "RÄDDA AKUTSJUKHUSEN",
     "filnamn": "radda-akutsjukhusen",
+    "omrade": "Örebro län",
     "forkortning": "RAK"
   },
   {
@@ -3793,7 +4038,8 @@
   {
     "uuid": "e54b1823-f606-4e18-b358-4e3637af02b2",
     "beteckning": "Radikala Kanalpartiet i Lund",
-    "filnamn": "radikala-kanalpartiet-i-lund"
+    "filnamn": "radikala-kanalpartiet-i-lund",
+    "omrade": "Lund"
   },
   {
     "uuid": "10f4e511-458e-4851-a994-a304ff94e78a",
@@ -3809,23 +4055,27 @@
     "uuid": "805429e4-e3f9-4294-8d09-0b2df610886f",
     "beteckning": "RÄTT VÄG för Gullspångs kommun",
     "filnamn": "ratt-vag-for-gullspangs-kommun",
+    "omrade": "Gullspång",
     "forkortning": "Rättv"
   },
   {
     "uuid": "c31b9463-3618-48b3-8a7d-f1c5b46261e6",
     "beteckning": "Rättvis Demokrati",
     "filnamn": "rattvis-demokrati",
+    "omrade": "Strömsund",
     "forkortning": "rd"
   },
   {
     "uuid": "a6ce3f75-6751-4373-928d-3cdaeb2a0e4a",
     "beteckning": "Rättvisa i Flen",
-    "filnamn": "rattvisa-i-flen"
+    "filnamn": "rattvisa-i-flen",
+    "omrade": "Flen"
   },
   {
     "uuid": "59fbdd58-38df-4cb8-9800-628c91046ec9",
     "beteckning": "Rättvisa Rörelse Partiet",
     "filnamn": "rattvisa-rorelse-partiet",
+    "omrade": "Växjö",
     "forkortning": "RRP",
     "partisymbol": {
       "filnamn": "1362-rattvisa-rorelse-partiet.png",
@@ -3839,6 +4089,7 @@
     "uuid": "c3388f52-cd86-4212-ad8c-80c7156cc57e",
     "beteckning": "Realistpartiet",
     "filnamn": "realistpartiet",
+    "omrade": "Södertälje",
     "forkortning": "REAL",
     "partisymbol": {
       "filnamn": "1151-realistpartiet.png",
@@ -3852,6 +4103,7 @@
     "uuid": "c1bb1522-ad2f-48b4-969e-e44ded038da6",
     "beteckning": "Realistpartiet i Halmstad",
     "filnamn": "realistpartiet-i-halmstad",
+    "omrade": "Halmstad",
     "partisymbol": {
       "filnamn": "1801-realistpartiet-i-halmstad.png",
       "kalla": "Valmyndigheten",
@@ -3874,6 +4126,7 @@
     "uuid": "0ea2696f-8b09-4eed-b02a-828239729b1a",
     "beteckning": "Regionens framtid",
     "filnamn": "regionens-framtid",
+    "omrade": "Västra Götalands län",
     "forkortning": "Rf",
     "partisymbol": {
       "filnamn": "1311-regionens-framtid.png",
@@ -3937,18 +4190,21 @@
     "uuid": "d11853ce-4206-4b7a-a222-2d107200dca1",
     "beteckning": "Romelepartiet Skåne",
     "filnamn": "romelepartiet-skane",
+    "omrade": "Lund",
     "forkortning": "RoPa"
   },
   {
     "uuid": "66187f91-2cc5-4f83-b976-87ac13346da2",
     "beteckning": "Ronnebypartiet",
     "filnamn": "ronnebypartiet",
+    "omrade": "Ronneby",
     "forkortning": "ROP"
   },
   {
     "uuid": "a653fd03-0c6a-41a3-8260-24a5ca4f441c",
     "beteckning": "Rönningepartiet",
     "filnamn": "ronningepartiet",
+    "omrade": "Salem",
     "forkortning": "R",
     "partisymbol": {
       "filnamn": "1080-ronningepartiet.png",
@@ -3967,6 +4223,7 @@
     "uuid": "34fddde3-58bd-4390-8239-6b822fa7e313",
     "beteckning": "Roslagens oberoende parti",
     "filnamn": "roslagens-oberoende-parti",
+    "omrade": "Norrtälje",
     "forkortning": "ROOP",
     "partisymbol": {
       "filnamn": "1128-roslagens-oberoende-parti.png",
@@ -3980,6 +4237,7 @@
     "uuid": "be71ef20-ecb1-4702-8cdd-98686556b98b",
     "beteckning": "Roslagspartiet",
     "filnamn": "roslagspartiet",
+    "omrade": "Österåker",
     "forkortning": "ROSP",
     "partisymbol": {
       "filnamn": "0465-roslagspartiet.png",
@@ -4001,6 +4259,7 @@
     "tidigare_filnamn": [
       "solidaritet--arbete--fred--ekologi--safe"
     ],
+    "omrade": "Nässjö",
     "forkortning": "SAFE",
     "partisymbol": {
       "filnamn": "0174-safe-solidaritet-arbete-fred-ekologi.png",
@@ -4014,6 +4273,7 @@
     "uuid": "2df4b27f-d98e-4a56-9f9d-57d66afe84df",
     "beteckning": "Säffle Reformparti",
     "filnamn": "saffle-reformparti",
+    "omrade": "Säffle",
     "partisymbol": {
       "filnamn": "1796-saffle-reformparti.png",
       "kalla": "Valmyndigheten",
@@ -4026,6 +4286,7 @@
     "uuid": "7702a9bd-e385-4bb9-b344-2cabe1fe5391",
     "beteckning": "Säfflepartiet",
     "filnamn": "safflepartiet",
+    "omrade": "Säffle",
     "forkortning": "Säp"
   },
   {
@@ -4040,6 +4301,7 @@
     "tidigare_filnamn": [
       "ahuspartiet"
     ],
+    "omrade": "Kristianstad",
     "forkortning": "Sak",
     "partisymbol": {
       "filnamn": "0205-sakpolitikerna.png",
@@ -4053,18 +4315,21 @@
     "uuid": "121acbe1-ec5f-4964-bd94-6f4c94a52302",
     "beteckning": "Salas bästa",
     "filnamn": "salas-basta",
+    "omrade": "Sala",
     "forkortning": "SBÄ"
   },
   {
     "uuid": "13bf33dd-7b58-4757-893a-47ea5a12e399",
     "beteckning": "Sámelistu/Samelistan Partipolitiskt obunden",
     "filnamn": "samelistu-samelistan-partipolitiskt-obunden",
+    "omrade": "Kiruna",
     "forkortning": "SL"
   },
   {
     "uuid": "b77b63e0-84fa-4a87-97bb-8d72146ae208",
     "beteckning": "Samernas Väl",
     "filnamn": "samernas-val",
+    "omrade": "Jokkmokk",
     "forkortning": "SV"
   },
   {
@@ -4075,12 +4340,14 @@
   {
     "uuid": "436e693c-e6ee-4b3e-8eec-6964710d1970",
     "beteckning": "Samverkan Sandhem Mullsjö (SSM)",
-    "filnamn": "samverkan-sandhem-mullsjo-ssm"
+    "filnamn": "samverkan-sandhem-mullsjo-ssm",
+    "omrade": "Mullsjö"
   },
   {
     "uuid": "380344b3-0c02-4d8d-af0a-a12763525232",
     "beteckning": "Sans o Balans",
     "filnamn": "sans-o-balans",
+    "omrade": "Hammarö",
     "forkortning": "SoB",
     "partisymbol": {
       "filnamn": "1441-sans-o-balans.png",
@@ -4105,24 +4372,28 @@
   {
     "uuid": "8ab621eb-f774-4428-a3d8-d8dbe713a448",
     "beteckning": "Seniorpartiet",
-    "filnamn": "seniorpartiet"
+    "filnamn": "seniorpartiet",
+    "omrade": "Göteborg"
   },
   {
     "uuid": "18b7efcb-527c-4886-8b8a-9ae9d68de88f",
     "beteckning": "Sigtunapartiet Samling för Sigtuna",
     "filnamn": "sigtunapartiet-samling-for-sigtuna",
+    "omrade": "Sigtuna",
     "forkortning": "SFS"
   },
   {
     "uuid": "57a2224c-71dd-4d74-aae4-b53e097cdc20",
     "beteckning": "Sjöbopartiet",
     "filnamn": "sjobopartiet",
+    "omrade": "Sjöbo",
     "forkortning": "SJP"
   },
   {
     "uuid": "394593f1-a26f-4271-a0ff-e3e9c5df8b86",
     "beteckning": "Sjukvårdspartiet",
     "filnamn": "sjukvardspartiet",
+    "omrade": "Norrbottens län",
     "forkortning": "SJV",
     "partisymbol": {
       "filnamn": "0193-sjukvardspartiet.png",
@@ -4136,12 +4407,14 @@
     "uuid": "488e603e-503c-4acf-88b0-e2e903cca577",
     "beteckning": "Sjukvårdspartiet Bollnäs",
     "filnamn": "sjukvardspartiet-bollnas",
+    "omrade": "Bollnäs",
     "forkortning": "SJVB"
   },
   {
     "uuid": "091e3961-b5f2-419b-8f6c-54fc7579e30c",
     "beteckning": "Sjukvårdspartiet Gävleborg",
     "filnamn": "sjukvardspartiet-gavleborg",
+    "omrade": "Bollnäs",
     "forkortning": "SJPG",
     "partisymbol": {
       "filnamn": "0249-sjukvardspartiet-gavleborg.png",
@@ -4155,6 +4428,7 @@
     "uuid": "a57335f0-563a-42f5-98d0-8ccd1b11f140",
     "beteckning": "Sjukvårdspartiet i Jönköpings län",
     "filnamn": "sjukvardspartiet-i-jonkopings-lan",
+    "omrade": "Jönköpings län",
     "forkortning": "SJPJ"
   },
   {
@@ -4164,12 +4438,14 @@
     "tidigare_filnamn": [
       "lokala-partier-i-uppsala-lan"
     ],
+    "omrade": "Uppsala län",
     "forkortning": "SVPU"
   },
   {
     "uuid": "d6511d4e-1b9d-4f3c-89ff-4533300f46fc",
     "beteckning": "Sjukvårdspartiet i Värmland",
     "filnamn": "sjukvardspartiet-i-varmland",
+    "omrade": "Värmlands län",
     "forkortning": "SjvV",
     "partisymbol": {
       "filnamn": "0250-sjukvardspartiet-i-varmland.png",
@@ -4183,6 +4459,7 @@
     "uuid": "2dde7f18-4339-490a-abaf-43e4eb53205c",
     "beteckning": "Sjukvårdspartiet - Västernorrland",
     "filnamn": "sjukvardspartiet-vasternorrland",
+    "omrade": "Västernorrlands län",
     "forkortning": "SJVP",
     "partisymbol": {
       "filnamn": "0196-sjukvardspartiet-vasternorrland.png",
@@ -4196,12 +4473,14 @@
     "uuid": "8d5a5e59-3c8d-43e8-a4c5-90957816cf12",
     "beteckning": "Sjukvårdspartiet - Västmanland",
     "filnamn": "sjukvardspartiet-vastmanland",
+    "omrade": "Fagersta",
     "forkortning": "SjvU"
   },
   {
     "uuid": "d4884d96-9160-4f1d-bb0f-b2a0efe7cbba",
     "beteckning": "Sjukvårdspartiet - Västra Götaland",
     "filnamn": "sjukvardspartiet-vastra-gotaland",
+    "omrade": "Lidköping",
     "forkortning": "SPVG",
     "partisymbol": {
       "filnamn": "0447-sjukvardspartiet-vastra-gotaland.png",
@@ -4221,6 +4500,7 @@
     "uuid": "d92f8d14-ad9d-44cc-8574-cb225414c178",
     "beteckning": "Skärgårdspartiet",
     "filnamn": "skargardspartiet",
+    "omrade": "Värmdö",
     "forkortning": "SGP",
     "partisymbol": {
       "filnamn": "1533-skargardspartiet.png",
@@ -4239,6 +4519,7 @@
     "uuid": "73d0ba2b-b024-4515-ad75-fbab558fb9ee",
     "beteckning": "Skol och Landsbygdspartiet",
     "filnamn": "skol-och-landsbygdspartiet",
+    "omrade": "Piteå",
     "forkortning": "SkolP",
     "partisymbol": {
       "filnamn": "1216-skol-och-landsbygdspartiet.png",
@@ -4257,6 +4538,7 @@
     "uuid": "1e2a8287-efc9-4918-98c6-ffd8b6f89424",
     "beteckning": "Skolföräldrar",
     "filnamn": "skolforaldrar",
+    "omrade": "Kungälv",
     "partisymbol": {
       "filnamn": "1754-skolforaldrar.png",
       "kalla": "Valmyndigheten",
@@ -4274,12 +4556,14 @@
     "uuid": "06a5f81d-ae11-496f-b222-2145e509d257",
     "beteckning": "Skolpartiet i Österåker",
     "filnamn": "skolpartiet-i-osteraker",
+    "omrade": "Österåker",
     "forkortning": "SPÖ"
   },
   {
     "uuid": "b4f6236c-9bc3-4f59-85c8-4033a9ee8170",
     "beteckning": "Skövdepartiet",
     "filnamn": "skovdepartiet",
+    "omrade": "Skövde",
     "forkortning": "SköP",
     "partisymbol": {
       "filnamn": "1585-skovdepartiet.png",
@@ -4312,12 +4596,14 @@
     "uuid": "cc204154-12cf-416e-9269-289400cb7334",
     "beteckning": "SkurupsPartiet",
     "filnamn": "skurupspartiet",
+    "omrade": "Skurup",
     "forkortning": "SkuP"
   },
   {
     "uuid": "97fde72d-4c8d-4240-9ef5-5d1337b3ccbc",
     "beteckning": "Snöfall",
-    "filnamn": "snofall"
+    "filnamn": "snofall",
+    "omrade": "Örebro"
   },
   {
     "uuid": "640f040a-56c2-4b75-a240-733fa0eefd94",
@@ -4328,6 +4614,7 @@
     "uuid": "9897ef04-abc4-4226-b74b-016a2f9e56a0",
     "beteckning": "Socialisterna-Välfärdspartiet",
     "filnamn": "socialisterna-valfardspartiet",
+    "omrade": "Västervik",
     "forkortning": "S-V"
   },
   {
@@ -4343,6 +4630,7 @@
     "tidigare_filnamn": [
       "rattvisepartiet-socialisterna"
     ],
+    "omrade": "Luleå",
     "forkortning": "SA",
     "partisymbol": {
       "filnamn": "0131-socialistiskt-alternativ-tidigare-rattvisepartiet-socialisterna.png",
@@ -4371,12 +4659,14 @@
     "uuid": "eea0ad04-5d4b-411b-a605-61c0b27e9c17",
     "beteckning": "Söderköpingsinitiativet",
     "filnamn": "soderkopingsinitiativet",
+    "omrade": "Söderköping",
     "forkortning": "SI"
   },
   {
     "uuid": "0d562b39-da62-425d-bd18-869277f706b4",
     "beteckning": "SoL-partiet Sölvesborg och Lister",
     "filnamn": "sol-partiet-solvesborg-och-lister",
+    "omrade": "Sölvesborg",
     "forkortning": "SoL",
     "partisymbol": {
       "filnamn": "1257-sol-partiet-solvesborg-och-lister.png",
@@ -4401,7 +4691,8 @@
   {
     "uuid": "7f35a5b5-3ec5-45a0-af77-54dede9ca188",
     "beteckning": "Solidaritet Linköping",
-    "filnamn": "solidaritet-linkoping"
+    "filnamn": "solidaritet-linkoping",
+    "omrade": "Linköping"
   },
   {
     "uuid": "8a4715a7-04d9-4238-8edc-5f00300089f6",
@@ -4410,12 +4701,14 @@
     "tidigare_filnamn": [
       "spi-valfarden"
     ],
+    "omrade": "Hörby",
     "forkortning": "SPI"
   },
   {
     "uuid": "284326c6-e8bd-4864-aa4c-b681444f1490",
     "beteckning": "Sollentunapartiet",
     "filnamn": "sollentunapartiet",
+    "omrade": "Sollentuna",
     "forkortning": "SPA",
     "partisymbol": {
       "filnamn": "0046-sollentunapartiet.png",
@@ -4429,6 +4722,7 @@
     "uuid": "9d142618-dec4-4780-b3a9-9261a5d9c3e1",
     "beteckning": "Solnapartiet",
     "filnamn": "solnapartiet",
+    "omrade": "Solna",
     "partisymbol": {
       "filnamn": "1286-solnapartiet.png",
       "kalla": "Valmyndigheten",
@@ -4441,6 +4735,7 @@
     "uuid": "51ed83cb-d87b-48e8-b6b2-f5a8f0491624",
     "beteckning": "Sorundanet Nynäshamns kommunparti",
     "filnamn": "sorundanet-nynashamns-kommunparti",
+    "omrade": "Nynäshamn",
     "forkortning": "SN",
     "partisymbol": {
       "filnamn": "0519-sorundanet-nynashamns-kommunparti.png",
@@ -4457,6 +4752,7 @@
     "tidigare_filnamn": [
       "sos-stall-om-sverige--soderhamnsinitiativet"
     ],
+    "omrade": "Söderhamn",
     "forkortning": "SOS"
   },
   {
@@ -4472,6 +4768,7 @@
       "kommunpartiet",
       "sport--och-kommunpartiet"
     ],
+    "omrade": "Härryda",
     "forkortning": "SOKP",
     "partisymbol": {
       "filnamn": "0546-sport--och-kommunpartiet.png",
@@ -4485,6 +4782,7 @@
     "uuid": "035eb206-2fa5-4ba4-8226-33e08a5d425d",
     "beteckning": "Sportpartiet",
     "filnamn": "sportpartiet",
+    "omrade": "Härryda",
     "forkortning": "SPP"
   },
   {
@@ -4497,6 +4795,7 @@
     "uuid": "c4592c7f-15b8-4f0b-a0a7-eea1ca935643",
     "beteckning": "Stenungsundspartiet",
     "filnamn": "stenungsundspartiet",
+    "omrade": "Stenungsund",
     "forkortning": "St",
     "partisymbol": {
       "filnamn": "1323-stenungsundspartiet.png",
@@ -4515,6 +4814,7 @@
     "uuid": "d277a599-7b11-46f5-ab22-45589fa24d60",
     "beteckning": "Stockholms Vänsterallians",
     "filnamn": "stockholms-vansterallians",
+    "omrade": "Stockholm",
     "forkortning": "StV",
     "partisymbol": {
       "filnamn": "1799-stockholms-vansterallians.png",
@@ -4527,7 +4827,8 @@
   {
     "uuid": "1ad05d4a-8c99-472c-9205-5fb65344d4ed",
     "beteckning": "Stockholmspartiet",
-    "filnamn": "stockholmspartiet"
+    "filnamn": "stockholmspartiet",
+    "omrade": "Stockholm"
   },
   {
     "uuid": "675cfe22-0c1e-4892-a278-32ac4424d4ed",
@@ -4555,6 +4856,7 @@
     "uuid": "f89fd097-d0bf-4174-8474-40e24abc9e2f",
     "beteckning": "Storforsdemokraterna",
     "filnamn": "storforsdemokraterna",
+    "omrade": "Storfors",
     "forkortning": "StDe"
   },
   {
@@ -4566,6 +4868,7 @@
     "uuid": "0c5525dc-1f2d-4825-ad75-6f43df31907a",
     "beteckning": "Sundbybergs Lokalparti (SLP)",
     "filnamn": "sundbybergs-lokalparti-slp",
+    "omrade": "Sundbyberg",
     "forkortning": "SLP",
     "partisymbol": {
       "filnamn": "1348-sundbybergs-lokalparti-slp.png",
@@ -4579,6 +4882,7 @@
     "uuid": "e75fd043-0028-4744-ae3a-57b0002c8d70",
     "beteckning": "SUNDBYBERGSPARTIET",
     "filnamn": "sundbybergspartiet",
+    "omrade": "Sundbyberg",
     "partisymbol": {
       "filnamn": "1712-sundbybergspartiet.png",
       "kalla": "Valmyndigheten",
@@ -4591,12 +4895,14 @@
     "uuid": "0651b1bc-cdc5-4bcb-871d-c6f582c3c2bd",
     "beteckning": "Sundsvallspartiet",
     "filnamn": "sundsvallspartiet",
+    "omrade": "Sundsvall",
     "forkortning": "SDL"
   },
   {
     "uuid": "522ba2a4-ce2a-43da-8c5f-a232914239bc",
     "beteckning": "Sunt Förnuft Bengtsfors",
     "filnamn": "sunt-fornuft-bengtsfors",
+    "omrade": "Bengtsfors",
     "partisymbol": {
       "filnamn": "1777-sunt-fornuft-bengtsfors.png",
       "kalla": "Valmyndigheten",
@@ -4608,7 +4914,8 @@
   {
     "uuid": "82bcd120-4c59-479d-a0ca-dc9f80beaafb",
     "beteckning": "Surahammars kommunparti",
-    "filnamn": "surahammars-kommunparti"
+    "filnamn": "surahammars-kommunparti",
+    "omrade": "Surahammar"
   },
   {
     "uuid": "1ed305e0-da39-4257-9849-11b97bc64375",
@@ -4631,6 +4938,7 @@
     "uuid": "dc43e9e9-957d-4851-900b-98461a174ffd",
     "beteckning": "Svenska Folkhemspartiet",
     "filnamn": "svenska-folkhemspartiet",
+    "omrade": "Skellefteå",
     "forkortning": "SF"
   },
   {
@@ -4641,7 +4949,8 @@
   {
     "uuid": "37d84267-e7df-4a09-b50d-ffc4d221e2fc",
     "beteckning": "Svenska Skolpartiet",
-    "filnamn": "svenska-skolpartiet"
+    "filnamn": "svenska-skolpartiet",
+    "omrade": "Stockholm"
   },
   {
     "uuid": "a84223c7-2caf-4fa7-8308-b7306151065a",
@@ -4721,7 +5030,8 @@
   {
     "uuid": "d38a7d1f-c448-4033-b9d0-167cf770f6e5",
     "beteckning": "TE2002",
-    "filnamn": "te2002"
+    "filnamn": "te2002",
+    "omrade": "Västerås"
   },
   {
     "uuid": "57611daa-1330-40c1-8806-3d06a2f0f3d3",
@@ -4732,6 +5042,7 @@
     "uuid": "c0e11374-70d1-445e-b086-c1697868d021",
     "beteckning": "Telgelistan",
     "filnamn": "telgelistan",
+    "omrade": "Södertälje",
     "forkortning": "Teli"
   },
   {
@@ -4767,6 +5078,7 @@
     "uuid": "eb407cb6-8002-4128-8c49-ddad4e9cc967",
     "beteckning": "Tierpslistan",
     "filnamn": "tierpslistan",
+    "omrade": "Tierp",
     "forkortning": "TL",
     "partisymbol": {
       "filnamn": "1545-tierpslistan.png",
@@ -4780,12 +5092,14 @@
     "uuid": "e7bc5109-0e83-4aec-80d7-9df6c64b7ae0",
     "beteckning": "Tillsammans - partiet för hela Heby kommun",
     "filnamn": "tillsammans-partiet-for-hela-heby-kommun",
+    "omrade": "Heby",
     "forkortning": "TILL"
   },
   {
     "uuid": "bd67893c-6cd0-4d19-a06c-f99484952917",
     "beteckning": "Timråpartiet",
     "filnamn": "timrapartiet",
+    "omrade": "Timrå",
     "forkortning": "TimP",
     "partisymbol": {
       "filnamn": "1322-timrapartiet.png",
@@ -4802,18 +5116,21 @@
     "tidigare_filnamn": [
       "tingsrydsalternativet"
     ],
+    "omrade": "Tingsryd",
     "forkortning": "TiA"
   },
   {
     "uuid": "3f42e34b-1a4a-43df-b00a-6b38b6a297ae",
     "beteckning": "TJÖRNPARTIET",
     "filnamn": "tjornpartiet",
+    "omrade": "Tjörn",
     "forkortning": "TJÖP"
   },
   {
     "uuid": "91c0ceb7-bcaa-4407-b734-d41797998014",
     "beteckning": "tjugofyrasju",
     "filnamn": "tjugofyrasju",
+    "omrade": "Varberg",
     "forkortning": "Tfs",
     "partisymbol": {
       "filnamn": "1450-tjugofyrasju.png",
@@ -4826,7 +5143,8 @@
   {
     "uuid": "e7c098fd-bb81-4cce-a9a3-278d7b7ef6f9",
     "beteckning": "Tjustpartiet",
-    "filnamn": "tjustpartiet"
+    "filnamn": "tjustpartiet",
+    "omrade": "Västervik"
   },
   {
     "uuid": "9ff9d785-3cad-46dd-b33a-8a0ea09793c4",
@@ -4837,12 +5155,14 @@
     "uuid": "71382aa3-f2e3-4bce-85d5-eda2b31f595a",
     "beteckning": "Tomelillapartiet",
     "filnamn": "tomelillapartiet",
+    "omrade": "Tomelilla",
     "forkortning": "TomP"
   },
   {
     "uuid": "705817be-f0f1-4a3f-8852-6906a0810fa9",
     "beteckning": "Trafikpartiet i Kronoberg",
-    "filnamn": "trafikpartiet-i-kronoberg"
+    "filnamn": "trafikpartiet-i-kronoberg",
+    "omrade": "Växjö"
   },
   {
     "uuid": "e1961a27-c172-4a2a-aede-d0ebd23a281d",
@@ -4860,6 +5180,7 @@
     "uuid": "30cf6f9d-b1df-4b33-a99d-3cedf3e191b4",
     "beteckning": "Trollhättans Framtid",
     "filnamn": "trollhattans-framtid",
+    "omrade": "Trollhättan",
     "forkortning": "ThnF",
     "partisymbol": {
       "filnamn": "1278-trollhattans-framtid.png",
@@ -4873,6 +5194,7 @@
     "uuid": "40ec789b-5e10-4830-8d4a-c5a532b93501",
     "beteckning": "Trosa Vagnhärad Partiet",
     "filnamn": "trosa-vagnharad-partiet",
+    "omrade": "Trosa",
     "partisymbol": {
       "filnamn": "1896-trosa-vagnharad-partiet.png",
       "kalla": "Valmyndigheten",
@@ -4908,6 +5230,7 @@
     "uuid": "c0fec9af-ef73-43ec-9748-c82d98ab4514",
     "beteckning": "Tullingepartiet",
     "filnamn": "tullingepartiet",
+    "omrade": "Botkyrka",
     "forkortning": "TuP",
     "partisymbol": {
       "filnamn": "0711-tullingepartiet.png",
@@ -4920,12 +5243,14 @@
   {
     "uuid": "ba9b9ac7-69c2-4be8-b771-dfd78ae11858",
     "beteckning": "Tuvan",
-    "filnamn": "tuvan"
+    "filnamn": "tuvan",
+    "omrade": "Stockholms län"
   },
   {
     "uuid": "cdbb43bf-f8da-4c29-9980-7681eada9d62",
     "beteckning": "Uddevallapartiet",
     "filnamn": "uddevallapartiet",
+    "omrade": "Uddevalla",
     "forkortning": "UddP",
     "partisymbol": {
       "filnamn": "1076-uddevallapartiet.png",
@@ -4938,12 +5263,14 @@
   {
     "uuid": "410cb572-91f7-4833-87ae-f0b75dd624c4",
     "beteckning": "Ulf Liljankoski",
-    "filnamn": "ulf-liljankoski"
+    "filnamn": "ulf-liljankoski",
+    "omrade": "Åstorp"
   },
   {
     "uuid": "9c5906a6-4d2f-4be1-a103-e88372a8f12c",
     "beteckning": "Ulricehamns Bygdens Framtid UBF",
-    "filnamn": "ulricehamns-bygdens-framtid-ubf"
+    "filnamn": "ulricehamns-bygdens-framtid-ubf",
+    "omrade": "Ulricehamn"
   },
   {
     "uuid": "e1ddb322-7ef6-442b-9a8e-3b213702ee9a",
@@ -4983,6 +5310,7 @@
     "uuid": "c40146e6-4698-4c4e-9665-7cdf83290afd",
     "beteckning": "Uppsala ansvarspartiet",
     "filnamn": "uppsala-ansvarspartiet",
+    "omrade": "Uppsala",
     "partisymbol": {
       "filnamn": "1827-uppsala-ansvarspartiet.png",
       "kalla": "Valmyndigheten",
@@ -5017,6 +5345,7 @@
     "uuid": "cefdf9df-76d1-450c-8f74-f52523758486",
     "beteckning": "Utvecklingspartiet",
     "filnamn": "utvecklingspartiet",
+    "omrade": "Kungälv",
     "forkortning": "UtvP",
     "partisymbol": {
       "filnamn": "0978-utvecklingspartiet.png",
@@ -5030,6 +5359,7 @@
     "uuid": "1093db49-7ac0-4217-935b-cc42a7819307",
     "beteckning": "Utvecklingspartiet demokraterna",
     "filnamn": "utvecklingspartiet-demokraterna",
+    "omrade": "Uppsala",
     "forkortning": "UPDEM",
     "partisymbol": {
       "filnamn": "1452-utvecklingspartiet-demokraterna.png",
@@ -5055,6 +5385,7 @@
     "uuid": "b5f9ede1-0417-4690-9a7b-de05dfa745a1",
     "beteckning": "Vägval Falun",
     "filnamn": "vagval-falun",
+    "omrade": "Falun",
     "partisymbol": {
       "filnamn": "1572-vagval-falun.png",
       "kalla": "Valmyndigheten",
@@ -5066,7 +5397,8 @@
   {
     "uuid": "acad976b-214e-4912-8c5c-d8114287fe28",
     "beteckning": "Vägval Stockholm",
-    "filnamn": "vagval-stockholm"
+    "filnamn": "vagval-stockholm",
+    "omrade": "Stockholm"
   },
   {
     "uuid": "e35dbd0f-1df9-4dd5-97d8-8b82cdde0498",
@@ -5089,7 +5421,8 @@
   {
     "uuid": "ac3837f9-0183-4901-bdfb-d2e654f70ec4",
     "beteckning": "Vallentuna framåt",
-    "filnamn": "vallentuna-framat"
+    "filnamn": "vallentuna-framat",
+    "omrade": "Vallentuna"
   },
   {
     "uuid": "05cd1b5e-e1cf-4066-b5d8-f8ee476e7467",
@@ -5107,6 +5440,7 @@
     "uuid": "1d691fb8-9129-4e28-8717-d01fc064143a",
     "beteckning": "Vanligt Folk i Köpings kommun",
     "filnamn": "vanligt-folk-i-kopings-kommun",
+    "omrade": "Köping",
     "forkortning": "VFiK"
   },
   {
@@ -5129,6 +5463,7 @@
     "tidigare_filnamn": [
       "var-framtid-klippan"
     ],
+    "omrade": "Klippan",
     "forkortning": "VF",
     "partisymbol": {
       "filnamn": "1393-var-framtid.png",
@@ -5142,17 +5477,20 @@
     "uuid": "4057e1cb-59cc-4157-b34f-3fac649dc325",
     "beteckning": "Vår Framtids politiska utskott",
     "filnamn": "var-framtids-politiska-utskott",
+    "omrade": "Ånge",
     "forkortning": "VFÅ"
   },
   {
     "uuid": "40b132ea-61fb-469b-b4da-26d573fd6cee",
     "beteckning": "VÅR RÖST",
-    "filnamn": "var-rost"
+    "filnamn": "var-rost",
+    "omrade": "Skåne län"
   },
   {
     "uuid": "82ed4c88-8a8d-424c-9134-95075e22ffdb",
     "beteckning": "Varbergspartiet",
     "filnamn": "varbergspartiet",
+    "omrade": "Varberg",
     "forkortning": "VP",
     "partisymbol": {
       "filnamn": "1492-varbergspartiet.png",
@@ -5166,6 +5504,7 @@
     "uuid": "4ef9af41-d2fa-475f-834b-4d722f3c8914",
     "beteckning": "Vård för Pengarna",
     "filnamn": "vard-for-pengarna",
+    "omrade": "Södermanlands län",
     "forkortning": "VåfP",
     "partisymbol": {
       "filnamn": "1122-vard-for-pengarna.png",
@@ -5179,6 +5518,7 @@
     "uuid": "9f2ce84e-50a3-4af7-a863-31ddf53f2afa",
     "beteckning": "Vård i Kronoberg",
     "filnamn": "vard-i-kronoberg",
+    "omrade": "Kronobergs län",
     "forkortning": "ViK",
     "partisymbol": {
       "filnamn": "1785-vard-i-kronoberg.png",
@@ -5195,6 +5535,7 @@
     "tidigare_filnamn": [
       "bevara-akutsjukhusen"
     ],
+    "omrade": "Jönköpings län",
     "forkortning": "VD",
     "partisymbol": {
       "filnamn": "1355-varddemokraterna.png",
@@ -5212,7 +5553,8 @@
   {
     "uuid": "885e3cfd-d5ec-43a6-9b28-2efce02e72e4",
     "beteckning": "Vårgårdapartiet",
-    "filnamn": "vargardapartiet"
+    "filnamn": "vargardapartiet",
+    "omrade": "Vårgårda"
   },
   {
     "uuid": "3a1dae47-29de-4780-95b6-a588710e6bec",
@@ -5223,12 +5565,14 @@
     "uuid": "c432918c-5471-4750-b56e-28864d819600",
     "beteckning": "Värmlandslistan",
     "filnamn": "varmlandslistan",
+    "omrade": "Värmlands län",
     "forkortning": "Värml"
   },
   {
     "uuid": "457685a6-4bad-48bb-a5dd-907e0b7cf069",
     "beteckning": "VÅRT KIRUNA",
-    "filnamn": "vart-kiruna"
+    "filnamn": "vart-kiruna",
+    "omrade": "Kiruna"
   },
   {
     "uuid": "ddbf6667-caa6-4a38-8705-7fbae6eb9619",
@@ -5238,7 +5582,8 @@
   {
     "uuid": "5db775a3-83ab-48c0-8a68-95ed83590ad8",
     "beteckning": "VÅRT NORRBOTTEN",
-    "filnamn": "vart-norrbotten"
+    "filnamn": "vart-norrbotten",
+    "omrade": "Norrbottens län"
   },
   {
     "uuid": "e7ac6421-62bc-4ef3-aa5b-326acb0811bb",
@@ -5247,12 +5592,14 @@
     "tidigare_filnamn": [
       "soderslattspartiet"
     ],
+    "omrade": "Trelleborg",
     "forkortning": "VS"
   },
   {
     "uuid": "b00bc532-e725-4f3b-9e0a-57ff456e6de1",
     "beteckning": "Väsbys Bästa",
     "filnamn": "vasbys-basta",
+    "omrade": "Upplands Väsby",
     "forkortning": "VB",
     "partisymbol": {
       "filnamn": "1154-vasbys-basta.png",
@@ -5266,6 +5613,7 @@
     "uuid": "c102184c-f0ee-49c9-9250-ab9197f171a1",
     "beteckning": "Västjämtlands Väl",
     "filnamn": "vastjamtlands-val",
+    "omrade": "Åre",
     "forkortning": "VV",
     "partisymbol": {
       "filnamn": "0982-vastjamtlands-val.png",
@@ -5279,6 +5627,7 @@
     "uuid": "58bd344e-7f53-4c58-97f8-891bbe655d30",
     "beteckning": "Västra Initiativet",
     "filnamn": "vastra-initiativet",
+    "omrade": "Sollefteå",
     "forkortning": "VSKB",
     "partisymbol": {
       "filnamn": "1002-vastra-initiativet.png",
@@ -5292,17 +5641,20 @@
     "uuid": "d3f73210-ac6d-4361-ae22-0d7a1378ccf5",
     "beteckning": "Växjölistan",
     "filnamn": "vaxjolistan",
+    "omrade": "Växjö",
     "forkortning": "Vlist"
   },
   {
     "uuid": "5768c10d-266f-4969-96fb-c2a90adfb33a",
     "beteckning": "Växjöpartiet",
-    "filnamn": "vaxjopartiet"
+    "filnamn": "vaxjopartiet",
+    "omrade": "Växjö"
   },
   {
     "uuid": "b1411933-f220-43c1-8a4b-ab655f21d11b",
     "beteckning": "Växtbaserat Täby",
-    "filnamn": "vaxtbaserat-taby"
+    "filnamn": "vaxtbaserat-taby",
+    "omrade": "Täby"
   },
   {
     "uuid": "f35d47ba-c040-433f-b282-83253d6d6530",
@@ -5313,6 +5665,7 @@
     "uuid": "91ea834e-a512-48ba-bccc-a7e8bfd1dc75",
     "beteckning": "Vetlanda framåtanda",
     "filnamn": "vetlanda-framatanda",
+    "omrade": "Vetlanda",
     "forkortning": "VF",
     "partisymbol": {
       "filnamn": "0993-vetlanda-framatanda.png",
@@ -5325,12 +5678,14 @@
   {
     "uuid": "c82c46ff-64a0-480c-9e6f-503fb985edae",
     "beteckning": "Vi i Gullspång",
-    "filnamn": "vi-i-gullspang"
+    "filnamn": "vi-i-gullspang",
+    "omrade": "Gullspång"
   },
   {
     "uuid": "acdaaedc-d0aa-4c4d-a5be-a8a63cd3f4b5",
     "beteckning": "Vi i Perstorp",
     "filnamn": "vi-i-perstorp",
+    "omrade": "Perstorp",
     "partisymbol": {
       "filnamn": "1535-vi-i-perstorp.png",
       "kalla": "Valmyndigheten",
@@ -5343,6 +5698,7 @@
     "uuid": "321e4b97-efee-4982-9a14-3a1514b2009f",
     "beteckning": "Vi i Verkligheten Ronneby (ViV)",
     "filnamn": "vi-i-verkligheten-ronneby-viv",
+    "omrade": "Ronneby",
     "forkortning": "ViV"
   },
   {
@@ -5354,6 +5710,7 @@
     "uuid": "9601bba4-836d-43e4-88f8-c53abe3874d9",
     "beteckning": "Vi Tidaholm",
     "filnamn": "vi-tidaholm",
+    "omrade": "Tidaholm",
     "forkortning": "VT"
   },
   {
@@ -5388,6 +5745,7 @@
     "tidigare_filnamn": [
       "vingakerspartiet-vtl"
     ],
+    "omrade": "Vingåker",
     "forkortning": "ViP",
     "partisymbol": {
       "filnamn": "0301-vingakerspartiet-vip.png",
@@ -5413,6 +5771,7 @@
     "uuid": "702a0c3e-92e8-4449-a956-e49eaaa0a68e",
     "beteckning": "Vision Framåtanda",
     "filnamn": "vision-framatanda",
+    "omrade": "Jönköpings län",
     "partisymbol": {
       "filnamn": "1676-vision-framatanda.png",
       "kalla": "Valmyndigheten",
@@ -5461,6 +5820,7 @@
     "tidigare_filnamn": [
       "folkets-rost-vox-humana"
     ],
+    "omrade": "Härjedalen",
     "forkortning": "VOXH",
     "partisymbol": {
       "filnamn": "0119-vox-humana-folkets-rost.png",
@@ -5476,18 +5836,21 @@
     "filnamn": "walter-arl",
     "tidigare_filnamn": [
       "walter--arl"
-    ]
+    ],
+    "omrade": "Ängelholm"
   },
   {
     "uuid": "60c5adea-ea43-43cf-8ca7-d102a01bcad1",
     "beteckning": "Waxholmspartiet - borgerligt alternativ",
     "filnamn": "waxholmspartiet-borgerligt-alternativ",
+    "omrade": "Vaxholm",
     "forkortning": "WAX"
   },
   {
     "uuid": "e19a05b1-3db0-4f2a-8389-2c2e4d482fe8",
     "beteckning": "Westbopartiet",
     "filnamn": "westbopartiet",
+    "omrade": "Gislaved",
     "forkortning": "WeP",
     "partisymbol": {
       "filnamn": "1335-westbopartiet.png",
@@ -5500,7 +5863,8 @@
   {
     "uuid": "b28ca28d-463b-429a-b732-de43333f9096",
     "beteckning": "Westerwikspartiet",
-    "filnamn": "westerwikspartiet"
+    "filnamn": "westerwikspartiet",
+    "omrade": "Västervik"
   },
   {
     "uuid": "5a738c77-eec4-48af-8647-054164119faf",
@@ -5520,6 +5884,7 @@
   {
     "uuid": "cb011ef9-8d94-4822-ad3d-981f970f8ccc",
     "beteckning": "Ytterområdespartiet",
-    "filnamn": "ytteromradespartiet"
+    "filnamn": "ytteromradespartiet",
+    "omrade": "Norrköping"
   }
 ]

@@ -26,6 +26,7 @@ const PARTIES = [
     beteckning: 'Skånepartiet',
     filnamn: 'skanepartiet',
     forkortning: 'SKP',
+    omrade: 'Malmö',
     deltagande: {
       2022: { riksdag: false, regionLan: ['12'], kommunLan: ['12'] }
     }
@@ -66,6 +67,7 @@ test('search matches name and abbreviation without diacritics', () => {
   assert.ok(matchesQuery(ostra, '   '));
   assert.ok(!matchesQuery(ostra, 'skane'));
   assert.ok(matchesQuery(skane, 'SKP'));
+  assert.ok(matchesQuery(skane, 'malmo'));
   assert.ok(matchesQuery(PARTIES[2], 'riks'), 'a party without abbreviation is still searchable by name');
 });
 

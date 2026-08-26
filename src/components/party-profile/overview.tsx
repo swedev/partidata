@@ -39,6 +39,7 @@ export function ProfileHero ({
   code,
   abbreviation,
   profile,
+  displayName,
   symbol,
   symbolSrc,
   latestResult,
@@ -47,6 +48,7 @@ export function ProfileHero ({
   code: string;
   abbreviation?: string;
   profile: PartiProfil;
+  displayName: string;
   symbol?: Parti['partisymbol'];
   symbolSrc?: string;
   latestResult?: PartiProfilValresultatPost;
@@ -61,7 +63,7 @@ export function ProfileHero ({
       <Link href="/" className="profile-back"><span aria-hidden="true">←</span> Alla partier</Link>
       <div className={`profile-hero__grid${symbolSrc ? '' : ' profile-hero__grid--without-logo'}`}>
         <div className="profile-hero__copy">
-          <h1>{profile.namn}</h1>
+          <h1>{displayName}</h1>
           <div className="profile-hero__description">
             <p>{description}</p>
             <SourceLine source={descriptionSource} />
@@ -69,7 +71,7 @@ export function ProfileHero ({
         </div>
         {symbolSrc && symbol && (
           <figure className={`profile-logo${profile.symbolvisning === 'mark' ? ' profile-logo--mark' : ''}`}>
-            <div><Image src={symbolSrc} alt={`${profile.namn}s logotyp`} fill sizes="(max-width: 800px) 80vw, 26vw" loading="eager" unoptimized /></div>
+            <div><Image src={symbolSrc} alt={`${displayName}s logotyp`} fill sizes="(max-width: 800px) 80vw, 26vw" loading="eager" unoptimized /></div>
             <figcaption>Partisymbol från <a href={symbol.kallurl}>{symbol.kalla}</a>, återgiven för identifiering.</figcaption>
           </figure>
         )}
@@ -94,11 +96,17 @@ export function ProfileHero ({
             <dd className="profile-source">Valmyndighetens partiregister</dd>
           </div>
         )}
-        {participation && (
+        {participation ? (
           <div>
             <dt>Anmält deltagande {latestParticipation?.[0]}</dt>
             <dd>{participation.kommun.length} <span>kommuner</span></dd>
             <dd className="profile-source">{participation.region.length} regioner · Valmyndigheten</dd>
+          </div>
+        ) : (
+          <div>
+            <dt>Valdeltagande</dt>
+            <dd><span>Inget registrerat valdeltagande</span></dd>
+            <dd className="profile-source">Valmyndigheten</dd>
           </div>
         )}
       </dl>

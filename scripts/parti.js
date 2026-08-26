@@ -17,6 +17,7 @@ const PARTY_KEY_ORDER = [
   'tidigare_beteckningar',
   'filnamn',
   'tidigare_filnamn',
+  'omrade',
   'forkortning',
   'registrerad_partibeteckning',
   'valmyndigheten_registreringsdatum',
@@ -110,6 +111,53 @@ function loadYearFiles (overrides = {}) {
     };
   }
   return yearFiles;
+}
+
+/**
+ * loadAreas
+ * Names regions and municipalities from the committed area registry.
+ * @return {{ regioner: Map<String, String>, kommuner: Map<String, String> }}
+ */
+function loadAreas () {
+  const regioner = readJson(dataPath('regioner', 'index.json')) || [];
+  return {
+    regioner: new Map(regioner.map(region => [region.kod, region.namn])),
+    kommuner: new Map(regioner.flatMap(region =>
+      region.kommuner.map(kommun => [kommun.kod, kommun.namn])))
+  };
+}
+
+/**
+ * deriveArea
+ * Gives a local party its narrowest unambiguous geographic label from its
+ * latest recorded participation. National parties have no area; one
+ * municipality wins over its county, otherwise participation confined to one
+ * county gets that county.
+ * @param  {Object} deltagande Party participation by year
+ * @param  {{ regioner: Map<String, String>, kommuner: Map<String, String> }} areas
+ * @return {String|undefined}
+ */
+function deriveArea (deltagande, areas) {
+  const latestYear = Object.keys(deltagande).sort((a, b) => Number(b) - Number(a))[0];
+  if (!latestYear) {
+    return undefined;
+  }
+  const latest = deltagande[latestYear];
+  if (latest.riksdag) return undefined;
+
+  const kommunKoder = new Set(latest.kommun);
+  const lanKoder = new Set([
+    ...latest.region,
+    ...latest.kommun.map(kod => kod.slice(0, 2))
+  ]);
+
+  if (kommunKoder.size === 1 && lanKoder.size === 1) {
+    return areas.kommuner.get([...kommunKoder][0]);
+  }
+  if (lanKoder.size === 1) {
+    return areas.regioner.get([...lanKoder][0]);
+  }
+  return undefined;
 }
 
 /**
@@ -314,9 +362,10 @@ function _matchAlias (kod, kodbyten, byKod) {
  * tidigare_filnamn.
  * @param  {Object} registry From loadParties(), after any upserts
  * @param  {Object} yearFiles From loadYearFiles()
+ * @param  {Object} [areas] From loadAreas()
  * @return {{ writeSet: Object[], index: Object[], parties: Object[], renamed: Object[] }}
  */
-function buildParties (registry, yearFiles) {
+function buildParties (registry, yearFiles, areas = loadAreas()) {
   const { parties } = registry;
   _assertUniqueUuid(parties);
   const years = Object.keys(yearFiles).sort();
@@ -394,7 +443,8 @@ function buildParties (registry, yearFiles) {
       }
     }
 
-    return { party, koder, kod, beteckning, tidigareBeteckningar, forkortning, registrerad, deltagande };
+    const omrade = deriveArea(deltagande, areas);
+    return { party, koder, kod, beteckning, tidigareBeteckningar, forkortning, registrerad, deltagande, omrade };
   });
 
   const claims = [];
@@ -421,7 +471,7 @@ function buildParties (registry, yearFiles) {
   }
 
   const built = derived.map(entry => {
-    const { party, koder, kod, beteckning, tidigareBeteckningar, forkortning, registrerad, deltagande } = entry;
+    const { party, koder, kod, beteckning, tidigareBeteckningar, forkortning, registrerad, deltagande, omrade } = entry;
     return {
       uuid: party.uuid,
       filnamn: party.filnamn,
@@ -435,6 +485,7 @@ function buildParties (registry, yearFiles) {
         tidigare_beteckningar: tidigareBeteckningar,
         filnamn: party.filnamn,
         tidigare_filnamn: party.tidigare_filnamn || [],
+        omrade,
         forkortning,
         registrerad_partibeteckning: registrerad,
         valmyndigheten_registreringsdatum: party.valmyndigheten_registreringsdatum,
@@ -452,6 +503,7 @@ function buildParties (registry, yearFiles) {
       beteckning: party.data.beteckning,
       filnamn: party.data.filnamn,
       tidigare_filnamn: party.tidigare_filnamn,
+      omrade: party.data.omrade,
       forkortning: party.data.forkortning,
       partisymbol: party.data.partisymbol
     }))
@@ -688,6 +740,8 @@ function writeFiles (writeSet) {
 exports.PARTY_KEY_ORDER = PARTY_KEY_ORDER;
 exports.loadParties = loadParties;
 exports.loadYearFiles = loadYearFiles;
+exports.loadAreas = loadAreas;
+exports.deriveArea = deriveArea;
 exports.normalisePartyName = normalisePartyName;
 exports.normalisedNameCollisions = normalisedNameCollisions;
 exports.upsertParties = upsertParties;

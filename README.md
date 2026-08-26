@@ -42,6 +42,7 @@ En fil per parti. `uuid` sätts en gång och ändras aldrig — det är den iden
 | `tidigare_beteckningar` | Tidigare partibeteckningar, äldst först |
 | `filnamn` | Partiets adress på sajten |
 | `tidigare_filnamn` | Adresser partiet har haft, äldst först, som vidarebefordras till `filnamn` |
+| `omrade` | Härlett kommun- eller länsnamn när det senaste registrerade valdeltagandet ryms inom ett område |
 | `forkortning` | Partiförkortning, när Valmyndigheten anger någon |
 | `registrerad_partibeteckning` | Om partiet har registrerad partibeteckning |
 | `valmyndigheten_registreringsdatum` | Datum då partibeteckningen registrerades |

@@ -1,7 +1,7 @@
 import PartyCard from 'src/components/PartyCard';
 import type { HomeParty } from 'src/server/party-data';
 import { ChevronDownIcon, SearchXIcon } from './icons';
-import { cardMeta, cardSub, queryEcho } from './summary';
+import { cardMeta, cardSub, partyLabel, queryEcho } from './summary';
 
 const numberFormatter = new Intl.NumberFormat('sv-SE');
 
@@ -38,7 +38,7 @@ function PartyResults ({ matches, total, visible, query, onShowMore, onReset }: 
             {shown.map(party => (
               <li key={party.filnamn}>
                 <PartyCard
-                  beteckning={party.beteckning}
+                  beteckning={partyLabel(party)}
                   filnamn={party.filnamn}
                   forkortning={party.forkortning}
                   symbolSrc={party.symbolSrc}

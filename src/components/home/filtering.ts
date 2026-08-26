@@ -36,7 +36,7 @@ export function normalise (value: string): string {
 export function matchesQuery (party: HomeParty, query: string): boolean {
   const needle = normalise(query);
   if (!needle) return true;
-  const haystack = normalise(`${party.beteckning} ${party.forkortning ?? ''}`);
+  const haystack = normalise(`${party.beteckning} ${party.forkortning ?? ''} ${party.omrade ?? ''}`);
   return needle.split(' ').every(term => haystack.includes(term));
 }
 

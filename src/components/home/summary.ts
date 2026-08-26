@@ -37,6 +37,12 @@ export function cardSub (party: HomeParty): string | undefined {
   return years.length > 0 ? `Valår ${years.join(', ')}` : undefined;
 }
 
+export function partyLabel (party: Pick<HomeParty, 'beteckning' | 'duplicateName' | 'omrade'>): string {
+  return party.duplicateName && party.omrade
+    ? `${party.beteckning} (${party.omrade})`
+    : party.beteckning;
+}
+
 /**
  * Seats needed to carry a vote alone: more than half the chamber.
  */
