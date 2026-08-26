@@ -1,7 +1,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
-import type { Parti, PartiIndexEntry, PartiProfil } from '../types';
+import type { Parti, PartiIndexEntry, PartiProfil, PartiProfilKalla } from '../types';
 
 export type ElectionType = 'R' | 'L' | 'K';
 export type CandidateLists = Record<string, ElectionType[]>;
@@ -20,6 +20,66 @@ export type PartyResolution =
 export interface PartySymbolData {
   body: Buffer;
   contentType: string;
+}
+
+/**
+ * A party's participation in one election year, reduced to what the start page
+ * filters on: whether it stood for parliament, and the counties its regional
+ * and municipal ballots fall in. Municipal codes carry their county in their
+ * first two digits.
+ */
+export interface ParticipationFacet {
+  riksdag: boolean;
+  regionLan: string[];
+  kommunLan: string[];
+}
+
+export interface HomeParty {
+  uuid: string;
+  beteckning: string;
+  filnamn: string;
+  forkortning?: string;
+  symbolSrc?: string;
+  deltagande: Record<string, ParticipationFacet>;
+}
+
+export interface HomeCounty {
+  kod: string;
+  namn: string;
+}
+
+export interface ParliamentParty {
+  forkortning: string;
+  mandat: number;
+  beteckning?: string;
+  filnamn?: string;
+  symbolSrc?: string;
+}
+
+export interface ParliamentYear {
+  valar: number;
+  partier: ParliamentParty[];
+  kalla: PartiProfilKalla;
+}
+
+export interface HomeData {
+  parties: HomeParty[];
+  valar: string[];
+  lan: HomeCounty[];
+  riksdag: ParliamentYear[];
+}
+
+interface RegionFile {
+  kod: string;
+  namn: string;
+}
+
+interface ParliamentResultFile {
+  valar: number;
+  mandatfordelning?: {
+    partier: Array<{ forkortning: string; mandat: number }>;
+    kalla: PartiProfilKalla;
+  };
 }
 
 interface CandidateListFile {
@@ -46,6 +106,24 @@ function isElectionType (value: unknown): value is ElectionType {
   return value === 'R' || value === 'L' || value === 'K';
 }
 
+function symbolSource (party: Pick<Parti, 'filnamn' | 'partisymbol'>): string | undefined {
+  return party.partisymbol
+    ? `/partisymbol/${encodeURIComponent(party.filnamn)}/${encodeURIComponent(party.partisymbol.filnamn)}`
+    : undefined;
+}
+
+function facet (participation: Parti['deltagande']): Record<string, ParticipationFacet> {
+  const facets: Record<string, ParticipationFacet> = {};
+  for (const [year, entry] of Object.entries(participation ?? {})) {
+    facets[year] = {
+      riksdag: Boolean(entry.riksdag),
+      regionLan: [...new Set(entry.region ?? [])].sort(),
+      kommunLan: [...new Set((entry.kommun ?? []).map(kod => kod.slice(0, 2)))].sort(),
+    };
+  }
+  return facets;
+}
+
 async function readJson<T> (file: string): Promise<T> {
   return JSON.parse(await readFile(file, 'utf8')) as T;
 }
@@ -61,6 +139,7 @@ async function readOptionalJson<T> (file: string): Promise<T | undefined> {
 
 export function createPartyDataStore (dataRoot = path.join(process.cwd(), 'data')) {
   let partyIndexPromise: Promise<PartyIndex> | undefined;
+  let homeDataPromise: Promise<HomeData> | undefined;
 
   function getPartyIndex (): Promise<PartyIndex> {
     partyIndexPromise ??= readJson<PartiIndexEntry[]>(path.join(dataRoot, 'parti', 'index.json')).then(parties => ({
@@ -102,9 +181,7 @@ export function createPartyDataStore (dataRoot = path.join(process.cwd(), 'data'
       readOptionalJson<PartiProfil>(path.join(partyRoot, 'profil.json')),
       readCandidateLists(slug),
     ]);
-    const symbolSrc = party.partisymbol
-      ? `/partisymbol/${encodeURIComponent(slug)}/${encodeURIComponent(party.partisymbol.filnamn)}`
-      : undefined;
+    const symbolSrc = symbolSource(party);
 
     return {
       ...party,
@@ -114,7 +191,82 @@ export function createPartyDataStore (dataRoot = path.join(process.cwd(), 'data'
     };
   }
 
+  async function electionYears (): Promise<string[]> {
+    const entries = await readdir(path.join(dataRoot, 'val'), { withFileTypes: true });
+    return entries
+      .filter(entry => entry.isDirectory() && /^\d{4}$/.test(entry.name))
+      .map(entry => entry.name)
+      .sort();
+  }
+
+  async function readParliamentYears (byAbbreviation: Map<string, PartiIndexEntry | null>): Promise<ParliamentYear[]> {
+    const years = await electionYears();
+    const results = await Promise.all(years.map(year =>
+      readOptionalJson<ParliamentResultFile>(path.join(dataRoot, 'val', year, 'valresultat', 'riksdag.json'))));
+
+    return results
+      .filter((result): result is ParliamentResultFile & Required<Pick<ParliamentResultFile, 'mandatfordelning'>> =>
+        result?.mandatfordelning !== undefined)
+      .map(result => ({
+        valar: result.valar,
+        kalla: result.mandatfordelning.kalla,
+        partier: result.mandatfordelning.partier.map(entry => {
+          const party = byAbbreviation.get(entry.forkortning.toLowerCase());
+          const symbolSrc = party ? symbolSource(party) : undefined;
+          return {
+            forkortning: entry.forkortning,
+            mandat: entry.mandat,
+            ...(party ? { beteckning: party.beteckning, filnamn: party.filnamn } : {}),
+            ...(symbolSrc ? { symbolSrc } : {}),
+          };
+        }),
+      }))
+      .sort((a, b) => b.valar - a.valar);
+  }
+
+  async function buildHomeData (): Promise<HomeData> {
+    const index = await getPartyIndex();
+    const collator = new Intl.Collator('sv');
+
+    const parties: HomeParty[] = (await Promise.all(index.parties.map(async entry => {
+      const party = await readJson<Parti>(path.join(dataRoot, 'parti', entry.filnamn, 'index.json'));
+      const symbolSrc = symbolSource(entry);
+      return {
+        uuid: entry.uuid,
+        beteckning: entry.beteckning,
+        filnamn: entry.filnamn,
+        ...(entry.forkortning ? { forkortning: entry.forkortning } : {}),
+        ...(symbolSrc ? { symbolSrc } : {}),
+        deltagande: facet(party.deltagande),
+      };
+    }))).sort((a, b) => collator.compare(a.beteckning, b.beteckning));
+
+    const valar = [...new Set(parties.flatMap(party => Object.keys(party.deltagande)))].sort();
+
+    const regions = await readJson<RegionFile[]>(path.join(dataRoot, 'regioner', 'index.json'));
+    const lan = regions
+      .map(region => ({ kod: region.kod, namn: region.namn }))
+      .sort((a, b) => collator.compare(a.namn, b.namn));
+
+    // A mandate record names its party by abbreviation only, so an abbreviation
+    // that no party or several parties carry resolves to nothing rather than to
+    // a guess.
+    const byAbbreviation = new Map<string, PartiIndexEntry | null>();
+    for (const entry of index.parties) {
+      if (!entry.forkortning) continue;
+      const key = entry.forkortning.toLowerCase();
+      byAbbreviation.set(key, byAbbreviation.has(key) ? null : entry);
+    }
+
+    return { parties, valar, lan, riksdag: await readParliamentYears(byAbbreviation) };
+  }
+
   return {
+    async readHomeData (): Promise<HomeData> {
+      homeDataPromise ??= buildHomeData();
+      return await homeDataPromise;
+    },
+
     async resolveParty (slug: string): Promise<PartyResolution> {
       const index = await getPartyIndex();
       if (index.current.has(slug)) return { kind: 'party', props: await readCurrentParty(slug) };

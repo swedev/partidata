@@ -7,6 +7,8 @@ const { ROOT, toFileName } = require('./utils.js');
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
+const INDEX_KEYS_FROM_PARTY = ['beteckning', 'filnamn', 'forkortning', 'partisymbol', 'tidigare_filnamn', 'uuid'];
+
 function readJson (file) {
   try {
     return JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -211,6 +213,9 @@ function validatePartyRegistry (dataDirectory) {
 
     for (const [key, value] of Object.entries(entry)) {
       assert.deepEqual(value, party[key], `${entry.filnamn}: ${key} skiljer sig mellan index och partifil`);
+    }
+    for (const key of INDEX_KEYS_FROM_PARTY) {
+      assert.deepEqual(entry[key], party[key], `${entry.filnamn}: ${key} saknas i index.json`);
     }
 
     const baseSlug = toFileName(party.beteckning);

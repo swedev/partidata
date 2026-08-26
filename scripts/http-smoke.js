@@ -33,7 +33,9 @@ async function waitForHealth (baseUrl, child, output) {
 async function main () {
   if (!fs.existsSync(path.join(releaseRoot, 'server.js'))) throw new Error('Kör npm run build:release före npm run test:http');
   const parties = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'parti', 'index.json'), 'utf8'));
+  const chamber = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'partiprofil', 'riksdag.json'), 'utf8')).kammare;
   const current = parties.find(party => party.filnamn === 'miljopartiet-de-grona') ?? parties[0];
+  const first = parties.toSorted((a, b) => new Intl.Collator('sv').compare(a.beteckning, b.beteckning))[0];
   const previous = parties.find(party => party.tidigare_filnamn?.length > 0);
   const withSymbol = parties.find(party => party.partisymbol);
   assert.ok(current);
@@ -56,7 +58,14 @@ async function main () {
 
     const home = await fetch(`${baseUrl}/`);
     assert.equal(home.status, 200);
-    assert.match(await home.text(), /<title[^>]*>Partidata<\/title>/);
+    const homeBody = await home.text();
+    assert.match(homeBody, /<title[^>]*>Partidata<\/title>/);
+    assert.match(homeBody, new RegExp(`${parties.length}(<!-- -->)? partier`), 'startsidan räknar partierna ur datan');
+    assert.match(homeBody, /Sök parti på namn eller förkortning/);
+    assert.match(homeBody, new RegExp(`/parti/${first.filnamn}`), 'partigridet länkar till en partisida');
+    assert.match(homeBody, /Partier i riksdagen/);
+    assert.match(homeBody, new RegExp(`riksdagsvalet (<!-- -->)?${chamber.valar}`), 'riksdagssektionen anger valåret');
+    assert.match(homeBody, new RegExp(`>${chamber.partier[0].forkortning}<`), 'riksdagspartierna renderas');
 
     const profile = await fetch(`${baseUrl}/parti/${current.filnamn}/`);
     assert.equal(profile.status, 200);

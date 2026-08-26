@@ -98,6 +98,13 @@ test('validateData rejects inconsistencies with useful errors', async t => {
     assert.throws(() => validateData(root), /ska innehålla samtliga områden/);
   });
 
+  await t.test('index entries that omit a field of the party file', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, forkortning: 'TP' });
+    assert.throws(() => validateData(root), /forkortning saknas i index.json/);
+  });
+
   await t.test('invalid curated party profiles', t => {
     const root = makeData();
     t.after(() => fs.rmSync(root, { recursive: true, force: true }));
