@@ -17,16 +17,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:release": "npm run build && node scripts/build-release.js",
     "build:derived-data": "node scripts/build-derived-data.js",
     "check:derived-data": "node scripts/build-derived-data.js --check",
-    "postbuild": "node scripts/validate-export.js",
     "lint": "eslint .",
     "import-val": "node scripts/import-val.js",
     "import-partisymboler": "node scripts/import-partisymboler.js",
     "validate:data": "node scripts/validate.js",
     "typecheck": "tsc --noEmit",
+    "start": "node .release/server.js",
     "test": "node --test",
-    "precommit": "npm run lint && npm run typecheck && npm run check:derived-data && npm run validate:data && npm run build && npm test"
+    "test:http": "node scripts/http-smoke.js",
+    "precommit": "npm run lint && npm run typecheck && npm run check:derived-data && npm run validate:data && npm test && npm run build:release && npm run test:http"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

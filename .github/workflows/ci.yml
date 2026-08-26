@@ -26,6 +26,8 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run typecheck
+      - run: npm run check:derived-data
       - run: npm run validate:data
       - run: npm test
-      - run: npm run build
+      - run: npm run build:release
+      - run: npm run test:http
