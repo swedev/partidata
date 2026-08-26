@@ -14,6 +14,7 @@ const HomePage: NextPage<HomeData> = props => {
         <title>Partidata</title>
         <meta name="description" content="Öppen data om politiska partier i Sverige" />
         <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
+        <link rel="canonical" href="https://www.partidata.se/" />
       </Head>
 
       <Header />

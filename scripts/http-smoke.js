@@ -91,6 +91,7 @@ async function main () {
     assert.equal(home.status, 200);
     const homeBody = await home.text();
     assert.match(homeBody, /<title[^>]*>Partidata<\/title>/);
+    assert.match(homeBody, /<link rel="canonical" href="https:\/\/www\.partidata\.se\/"[^>]*>/);
     assert.match(homeBody, /Sök parti på namn eller förkortning/);
     assert.match(homeBody, /Alla partier/, 'partilistan har en rubrik');
     assert.match(homeBody, new RegExp(`>${parties.length}</span>`), 'rubriken räknar partierna ur datan');
