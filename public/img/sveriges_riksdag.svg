@@ -2,7 +2,7 @@
 <!-- Genererad av scripts/build-derived-data.js ur mandatfördelningen i riksdagsvalet 2022. Redigera inte för hand. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" data-valar="2022">
 <g style="transform: rotate(180deg); transform-origin: center">
-<g id="V" fill="#b00000">
+<g id="S" fill="#ed1b34">
 <circle r="6" cx="146.00" cy="250.00"/>
 <circle r="6" cx="129.25" cy="250.00"/>
 <circle r="6" cx="112.50" cy="250.00"/>
@@ -27,8 +27,6 @@
 <circle r="6" cx="64.52" cy="220.42"/>
 <circle r="6" cx="81.41" cy="220.87"/>
 <circle r="6" cx="15.85" cy="206.84"/>
-</g>
-<g id="S" fill="#ed1b34">
 <circle r="6" cx="98.48" cy="220.55"/>
 <circle r="6" cx="32.94" cy="206.56"/>
 <circle r="6" cx="115.64" cy="220.16"/>
@@ -112,6 +110,8 @@
 <circle r="6" cx="159.43" cy="122.12"/>
 <circle r="6" cx="180.31" cy="148.33"/>
 <circle r="6" cx="171.65" cy="133.91"/>
+</g>
+<g id="C" fill="#39944a">
 <circle r="6" cx="113.75" cy="51.75"/>
 <circle r="6" cx="192.57" cy="160.13"/>
 <circle r="6" cx="125.99" cy="63.62"/>
@@ -137,7 +137,7 @@
 <circle r="6" cx="164.01" cy="42.20"/>
 <circle r="6" cx="184.90" cy="87.91"/>
 </g>
-<g id="MP" fill="#00c554">
+<g id="KD" fill="#2d338e">
 <circle r="6" cx="205.80" cy="133.62"/>
 <circle r="6" cx="164.30" cy="23.89"/>
 <circle r="6" cx="177.15" cy="54.83"/>
@@ -156,9 +156,9 @@
 <circle r="6" cx="191.68" cy="14.63"/>
 <circle r="6" cx="212.55" cy="78.42"/>
 <circle r="6" cx="205.08" cy="45.75"/>
-</g>
-<g id="C" fill="#39944a">
 <circle r="6" cx="205.43" cy="28.45"/>
+</g>
+<g id="L" fill="#0069b4">
 <circle r="6" cx="226.16" cy="109.64"/>
 <circle r="6" cx="205.74" cy="11.23"/>
 <circle r="6" cx="233.62" cy="142.30"/>
@@ -175,6 +175,8 @@
 <circle r="6" cx="234.18" cy="23.80"/>
 <circle r="6" cx="241.21" cy="90.43"/>
 <circle r="6" cx="234.33" cy="6.96"/>
+</g>
+<g id="MP" fill="#00c554">
 <circle r="6" cx="241.38" cy="73.60"/>
 <circle r="6" cx="248.49" cy="140.26"/>
 <circle r="6" cx="248.63" cy="123.46"/>
@@ -182,8 +184,6 @@
 <circle r="6" cx="248.65" cy="39.63"/>
 <circle r="6" cx="248.72" cy="22.87"/>
 <circle r="6" cx="248.77" cy="6.11"/>
-</g>
-<g id="L" fill="#0069b4">
 <circle r="6" cx="256.00" cy="106.50"/>
 <circle r="6" cx="256.00" cy="89.75"/>
 <circle r="6" cx="256.00" cy="73.00"/>
@@ -195,13 +195,13 @@
 <circle r="6" cx="263.51" cy="140.26"/>
 <circle r="6" cx="270.62" cy="73.60"/>
 <circle r="6" cx="277.67" cy="6.96"/>
+</g>
+<g id="M" fill="#019cdb">
 <circle r="6" cx="270.79" cy="90.43"/>
 <circle r="6" cx="277.82" cy="23.80"/>
 <circle r="6" cx="271.00" cy="107.29"/>
 <circle r="6" cx="278.00" cy="40.65"/>
 <circle r="6" cx="278.22" cy="57.53"/>
-</g>
-<g id="KD" fill="#2d338e">
 <circle r="6" cx="292.03" cy="8.67"/>
 <circle r="6" cx="292.27" cy="25.66"/>
 <circle r="6" cx="285.13" cy="75.41"/>
@@ -221,8 +221,6 @@
 <circle r="6" cx="320.66" cy="32.14"/>
 <circle r="6" cx="292.35" cy="128.57"/>
 <circle r="6" cx="300.34" cy="113.52"/>
-</g>
-<g id="M" fill="#019cdb">
 <circle r="6" cx="321.05" cy="49.80"/>
 <circle r="6" cx="334.15" cy="18.85"/>
 <circle r="6" cx="313.47" cy="82.59"/>
@@ -267,6 +265,8 @@
 <circle r="6" cx="409.74" cy="60.53"/>
 <circle r="6" cx="384.91" cy="105.36"/>
 <circle r="6" cx="352.02" cy="143.36"/>
+</g>
+<g id="SD" fill="#fedf09">
 <circle r="6" cx="396.85" cy="93.57"/>
 <circle r="6" cx="408.78" cy="81.77"/>
 <circle r="6" cx="363.96" cy="131.57"/>
@@ -291,8 +291,6 @@
 <circle r="6" cx="449.94" cy="101.94"/>
 <circle r="6" cx="383.88" cy="153.43"/>
 <circle r="6" cx="438.12" cy="114.08"/>
-</g>
-<g id="SD" fill="#fedf09">
 <circle r="6" cx="372.09" cy="165.65"/>
 <circle r="6" cx="426.30" cy="126.27"/>
 <circle r="6" cx="414.47" cy="138.53"/>
@@ -342,6 +340,8 @@
 <circle r="6" cx="461.90" cy="206.23"/>
 <circle r="6" cx="479.06" cy="206.56"/>
 <circle r="6" cx="413.52" cy="220.55"/>
+</g>
+<g id="V" fill="#b00000">
 <circle r="6" cx="496.15" cy="206.84"/>
 <circle r="6" cx="430.59" cy="220.87"/>
 <circle r="6" cx="447.48" cy="220.42"/>

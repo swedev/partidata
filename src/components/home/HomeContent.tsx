@@ -5,6 +5,7 @@ import { PAGE_SIZE, emptyFilters, filterParties, isActive, pruneFilters } from '
 import PartyFilters from './PartyFilters';
 import PartyResults from './PartyResults';
 import RiksdagSection from './RiksdagSection';
+import OutsideParliamentSection from './OutsideParliamentSection';
 
 function availableKinds (parties: HomeParty[]): ElectionKind[] {
   const kinds = new Set<ElectionKind>();
@@ -22,7 +23,7 @@ function availableKinds (parties: HomeParty[]): ElectionKind[] {
  * Owns the filter state the controls write and the result grid reads, so the
  * parliament section can sit between them.
  */
-function HomeContent ({ parties, valar, lan, riksdag }: HomeData) {
+function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeData) {
   const [filters, setFilters] = useState<HomeFilters>(emptyFilters);
   const [visible, setVisible] = useState(PAGE_SIZE);
 
@@ -49,6 +50,7 @@ function HomeContent ({ parties, valar, lan, riksdag }: HomeData) {
       />
 
       {!isActive(filters) && <RiksdagSection years={riksdag} />}
+      {!isActive(filters) && outsideParliament && <OutsideParliamentSection data={outsideParliament} />}
 
       <PartyResults
         matches={matches}

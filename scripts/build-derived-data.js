@@ -4,7 +4,7 @@ const path = require('node:path');
 
 const { ROOT } = require('./utils.js');
 
-const DERIVED_FILE = path.join('derived', 'partiprofil', 'riksdag.json');
+const DERIVED_FILE = path.join('derived', 'riksdag.json');
 const DIAGRAM_FILE = path.join('public', 'img', 'sveriges_riksdag.svg');
 
 /**
@@ -45,38 +45,91 @@ function electionResultFiles (dataDirectory) {
 }
 
 function uniqueSources (sources) {
-  return [...new Map(sources.map(source => [`${source.namn}\0${source.url}\0${source.hamtad}`, source])).values()];
+  return [...new Map(sources.map(source => [`${source.namn}\0${source.url}\0${source.hamtad}\0${source.sha256}`, source])).values()];
 }
 
-function buildPartyProfileParliamentView (dataDirectory = path.join(ROOT, 'data')) {
+function sourceFor (result, reference) {
+  const source = result.kallor.find(source => source.id === reference);
+  assert.ok(source, `${result.valar}: källreferensen ${reference} saknas`);
+  return source;
+}
+
+function compareRatios (left, right) {
+  return left.roster * right.giltiga_roster - right.roster * left.giltiga_roster;
+}
+
+function buildParliamentView (dataDirectory = path.join(ROOT, 'data')) {
   const files = electionResultFiles(dataDirectory);
   assert.ok(files.length > 0, 'Inga riksdagsresultat hittades');
   const results = files.map(file => ({ ...file, data: readJson(file.absolutePath) }));
-  const chamberResult = results.filter(result => result.data.mandatfordelning).at(-1);
+  const chamberResult = results.filter(result => result.data.mandatfordelning?.partier.length > 0).at(-1);
   assert.ok(chamberResult, 'Ingen mandatfördelning hittades');
-  const sources = [
-    ...results.map(result => result.data.valdeltagande.kalla),
-    chamberResult.data.mandatfordelning.kalla
-  ];
+  const partyIndex = readJson(path.join(dataDirectory, 'parti', 'index.json'));
+  const partiesByUuid = new Map(partyIndex.map(party => [party.uuid, party]));
+  const currentChamber = new Set(chamberResult.data.mandatfordelning.partier.map(party => party.parti_uuid));
+
+  const bestByParty = new Map();
+  for (const result of results) {
+    for (const row of result.data.rostresultat.partier) {
+      if (currentChamber.has(row.parti_uuid) || !partiesByUuid.has(row.parti_uuid)) continue;
+      const candidate = {
+        parti_uuid: row.parti_uuid,
+        valar: result.data.valar,
+        roster: row.roster,
+        giltiga_roster: result.data.rostresultat.giltiga_roster,
+        rostandel: row.rostandel,
+        kalla: sourceFor(result.data, row.kallreferens)
+      };
+      const previous = bestByParty.get(row.parti_uuid);
+      if (!previous || compareRatios(candidate, previous) > 0 ||
+          (compareRatios(candidate, previous) === 0 && candidate.valar > previous.valar)) {
+        bestByParty.set(row.parti_uuid, candidate);
+      }
+    }
+  }
+
+  const outside = [...bestByParty.values()]
+    .toSorted((left, right) => compareRatios(right, left) || right.roster - left.roster || left.parti_uuid.localeCompare(right.parti_uuid))
+    .slice(0, 6);
+  const turnoutSources = uniqueSources(results.map(result => sourceFor(result.data, result.data.valdeltagande.kallreferens)));
+  const chamberSource = sourceFor(chamberResult.data, chamberResult.data.mandatfordelning.partier[0].kallreferens);
 
   return {
-    schema_version: 1,
+    schema_version: 2,
     genererad_fran: files.map(file => file.relativePath),
-    senast_uppdaterad: sources.map(source => source.hamtad).toSorted().at(-1),
+    senast_uppdaterad: results.flatMap(result => result.data.kallor.map(source => source.hamtad)).toSorted().at(-1),
     kammare: {
       valar: chamberResult.data.valar,
-      partier: chamberResult.data.mandatfordelning.partier,
-      kalla: chamberResult.data.mandatfordelning.kalla
+      partier: chamberResult.data.mandatfordelning.partier.map(row => {
+        const party = partiesByUuid.get(row.parti_uuid);
+        assert.ok(party, `${chamberResult.data.valar}: mandatpartiet ${row.parti_uuid} saknas i partiregistret`);
+        return {
+          parti_uuid: row.parti_uuid,
+          forkortning: party.forkortning ?? row.kallkod ?? row.partibeteckning,
+          mandat: row.mandat
+        };
+      }),
+      kalla: chamberSource
     },
     valdeltagande: {
       resultat: results.map(result => ({
         valar: result.data.valar,
         procent: result.data.valdeltagande.procent
       })),
-      kallor: uniqueSources(results.map(result => result.data.valdeltagande.kalla))
+      kallor: turnoutSources
+    },
+    storsta_utanfor_riksdagen: {
+      period: {
+        fran: results[0].data.valar,
+        till: results.at(-1).data.valar
+      },
+      metod: 'Högsta exakta andel giltiga röster per uuid bland partier i Partidatas register som saknar mandat efter periodens senaste val. Endast individuellt särredovisade och entydigt kopplade partirader rangordnas. Vid lika andel vinner senaste valår.',
+      partier: outside
     }
   };
 }
+
+const buildPartyProfileParliamentView = buildParliamentView;
 
 /**
  * seatRows
@@ -194,6 +247,7 @@ if (require.main === module) {
 }
 
 exports.SEAT_COLOURS = SEAT_COLOURS;
+exports.buildParliamentView = buildParliamentView;
 exports.buildParliamentDiagram = buildParliamentDiagram;
 exports.buildPartyProfileParliamentView = buildPartyProfileParliamentView;
 exports.checkParliamentDiagram = checkParliamentDiagram;

@@ -38,7 +38,7 @@ function RiksdagSection ({ years }: { years: ParliamentYear[] }) {
 
       <ul className="home-grid home-grid--parliament">
         {year.partier.map(party => (
-          <li key={party.forkortning}>
+          <li key={party.uuid}>
             {party.filnamn && party.beteckning ? (
               <PartyCard
                 beteckning={party.beteckning}

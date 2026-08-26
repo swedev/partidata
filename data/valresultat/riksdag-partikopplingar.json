@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kopplingar": [
+    {
+      "parti_uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476",
+      "kallbeteckningar": ["Moderata Samlingspartiet"],
+      "kallkoder": ["M"]
+    },
+    {
+      "parti_uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0",
+      "kallbeteckningar": ["Folkpartiet liberalerna"],
+      "kallkoder": ["FP", "fp"]
+    },
+    {
+      "parti_uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
+      "kallbeteckningar": ["Kristdemokratiska Samhällspartiet"],
+      "kallkoder": ["KDS", "KdS", "kds"]
+    },
+    {
+      "parti_uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
+      "kallbeteckningar": ["Miljöpartiet De Gröna", "Miljöpartiet de gröna"],
+      "kallkoder": ["MP", "mp"]
+    },
+    {
+      "parti_uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd",
+      "kallbeteckningar": ["Arbetarepartiet Socialdemokraterna"],
+      "kallkoder": ["S", "s"]
+    },
+    {
+      "parti_uuid": "611c7fae-c057-4e46-8fd9-c4507c36be62",
+      "kallbeteckningar": ["Feministiskt initiativ"],
+      "kallkoder": ["FI"]
+    }
+  ],
+  "blockerade_kallbeteckningar": [
+    "Ny Demokrati",
+    "SPI - Sveriges Pensionärers Intresseparti"
+  ]
+}

@@ -53,6 +53,7 @@ export interface HomeCounty {
 }
 
 export interface ParliamentParty {
+  uuid: string;
   forkortning: string;
   mandat: number;
   beteckning?: string;
@@ -66,11 +67,30 @@ export interface ParliamentYear {
   kalla: PartiProfilKalla;
 }
 
+export interface OutsideParliamentParty {
+  uuid: string;
+  beteckning: string;
+  filnamn: string;
+  forkortning?: string;
+  symbolSrc?: string;
+  valar: number;
+  roster: number;
+  rostandel: number;
+  kalla: PartiProfilKalla;
+}
+
+export interface OutsideParliamentData {
+  period: { fran: number; till: number };
+  metod: string;
+  partier: OutsideParliamentParty[];
+}
+
 export interface HomeData {
   parties: HomeParty[];
   valar: string[];
   lan: HomeCounty[];
   riksdag: ParliamentYear[];
+  outsideParliament?: OutsideParliamentData;
 }
 
 interface RegionFile {
@@ -79,10 +99,25 @@ interface RegionFile {
 }
 
 interface ParliamentResultFile {
+  schema_version: 2;
   valar: number;
-  mandatfordelning?: {
-    partier: Array<{ forkortning: string; mandat: number }>;
-    kalla: PartiProfilKalla;
+  kallor: Array<PartiProfilKalla & { id: string }>;
+  mandatfordelning: {
+    partier: Array<{ parti_uuid: string; kallkod?: string; partibeteckning: string; mandat: number; kallreferens: string }>;
+  };
+}
+
+interface DerivedParliamentFile {
+  storsta_utanfor_riksdagen: {
+    period: { fran: number; till: number };
+    metod: string;
+    partier: Array<{
+      parti_uuid: string;
+      valar: number;
+      roster: number;
+      rostandel: number;
+      kalla: PartiProfilKalla;
+    }>;
   };
 }
 
@@ -224,22 +259,22 @@ export function createPartyDataStore (
       .sort();
   }
 
-  async function readParliamentYears (byAbbreviation: Map<string, PartiIndexEntry | null>): Promise<ParliamentYear[]> {
+  async function readParliamentYears (byUuid: Map<string, PartiIndexEntry>): Promise<ParliamentYear[]> {
     const years = await electionYears();
     const results = await Promise.all(years.map(year =>
       readOptionalJson<ParliamentResultFile>(path.join(dataRoot, 'val', year, 'valresultat', 'riksdag.json'))));
 
     return results
-      .filter((result): result is ParliamentResultFile & Required<Pick<ParliamentResultFile, 'mandatfordelning'>> =>
-        result?.mandatfordelning !== undefined)
+      .filter((result): result is ParliamentResultFile => result?.schema_version === 2)
       .map(result => ({
         valar: result.valar,
-        kalla: result.mandatfordelning.kalla,
+        kalla: result.kallor.find(source => source.id === result.mandatfordelning.partier[0]?.kallreferens)!,
         partier: result.mandatfordelning.partier.map(entry => {
-          const party = byAbbreviation.get(entry.forkortning.toLowerCase());
+          const party = byUuid.get(entry.parti_uuid);
           const symbolSrc = party ? symbolSource(party) : undefined;
           return {
-            forkortning: entry.forkortning,
+            uuid: entry.parti_uuid,
+            forkortning: party?.forkortning ?? entry.kallkod ?? entry.partibeteckning,
             mandat: entry.mandat,
             ...(party ? { beteckning: party.beteckning, filnamn: party.filnamn } : {}),
             ...(symbolSrc ? { symbolSrc } : {}),
@@ -247,6 +282,33 @@ export function createPartyDataStore (
         }),
       }))
       .sort((a, b) => b.valar - a.valar);
+  }
+
+  async function readOutsideParliament (byUuid: Map<string, PartiIndexEntry>): Promise<OutsideParliamentData | undefined> {
+    const derived = await readOptionalJson<DerivedParliamentFile>(path.join(dataRoot, 'derived', 'riksdag.json'));
+    if (!derived?.storsta_utanfor_riksdagen?.partier.length) return undefined;
+    const partier = derived.storsta_utanfor_riksdagen.partier.map(result => {
+      const party = byUuid.get(result.parti_uuid);
+      if (!party) return undefined;
+      const symbolSrc = symbolSource(party);
+      return {
+        uuid: party.uuid,
+        beteckning: party.beteckning,
+        filnamn: party.filnamn,
+        ...(party.forkortning ? { forkortning: party.forkortning } : {}),
+        ...(symbolSrc ? { symbolSrc } : {}),
+        valar: result.valar,
+        roster: result.roster,
+        rostandel: result.rostandel,
+        kalla: result.kalla,
+      };
+    });
+    if (partier.some(party => party === undefined)) return undefined;
+    return {
+      period: derived.storsta_utanfor_riksdagen.period,
+      metod: derived.storsta_utanfor_riksdagen.metod,
+      partier: partier as OutsideParliamentParty[],
+    };
   }
 
   async function buildHomeData (): Promise<HomeData> {
@@ -274,17 +336,13 @@ export function createPartyDataStore (
       .map(region => ({ kod: region.kod, namn: region.namn }))
       .sort((a, b) => compareSv(a.namn, b.namn));
 
-    // A mandate record names its party by abbreviation only, so an abbreviation
-    // that no party or several parties carry resolves to nothing rather than to
-    // a guess.
-    const byAbbreviation = new Map<string, PartiIndexEntry | null>();
-    for (const entry of index.parties) {
-      if (!entry.forkortning) continue;
-      const key = entry.forkortning.toLowerCase();
-      byAbbreviation.set(key, byAbbreviation.has(key) ? null : entry);
-    }
+    const byUuid = new Map(index.parties.map(party => [party.uuid, party]));
+    const [riksdag, outsideParliament] = await Promise.all([
+      readParliamentYears(byUuid),
+      readOutsideParliament(byUuid),
+    ]);
 
-    return { parties, valar, lan, riksdag: await readParliamentYears(byAbbreviation) };
+    return { parties, valar, lan, riksdag, ...(outsideParliament ? { outsideParliament } : {}) };
   }
 
   return {

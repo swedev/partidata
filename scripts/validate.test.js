@@ -48,6 +48,52 @@ function makeData () {
   return root;
 }
 
+function parliamentResult (mandates = 349) {
+  const source = {
+    id: 'resultat',
+    namn: 'Valmyndigheten',
+    titel: 'Testresultat',
+    url: 'https://example.com/resultat.json',
+    version: 'Slutligt resultat',
+    format: 'application/json',
+    hamtad: '2026-08-25',
+    sha256: 'a'.repeat(64)
+  };
+  return {
+    schema_version: 2,
+    valtyp: 'riksdag',
+    valar: 2022,
+    status: 'slutligt',
+    kallor: [source],
+    valdeltagande: { procent: 84, kallreferens: 'resultat' },
+    rostresultat: {
+      giltiga_roster: 1,
+      kallreferenser: ['resultat'],
+      partier: [{
+        parti_uuid: PARTY.uuid,
+        kallkod: 'T',
+        partibeteckning: PARTY.beteckning,
+        roster: 1,
+        rostandel: 100,
+        kallreferens: 'resultat'
+      }],
+      ej_kopplade: [],
+      aggregat: []
+    },
+    mandatfordelning: {
+      antal_mandat: mandates,
+      kallreferenser: ['resultat'],
+      partier: [{
+        parti_uuid: PARTY.uuid,
+        kallkod: 'T',
+        partibeteckning: PARTY.beteckning,
+        mandat: mandates,
+        kallreferens: 'resultat'
+      }]
+    }
+  };
+}
+
 test('validateData accepts a consistent data tree', t => {
   const root = makeData();
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
@@ -136,38 +182,57 @@ test('validateData rejects inconsistencies with useful errors', async t => {
   await t.test('invalid parliamentary election result', t => {
     const root = makeData();
     t.after(() => fs.rmSync(root, { recursive: true, force: true }));
-    writeJson(root, 'val/2022/valresultat/riksdag.json', {
-      valar: 2022,
-      valdeltagande: {
-        procent: 84,
-        kalla: { namn: 'SCB', url: 'https://www.scb.se/', hamtad: '2026-08-25' }
-      },
-      mandatfordelning: {
-        partier: [{ forkortning: 'T', mandat: 1 }],
-        kalla: { namn: 'Riksdagen', url: 'https://data.riksdagen.se/', hamtad: '2026-08-25' }
-      }
+    writeJson(root, 'val/2022/valresultat/riksdag.json', parliamentResult(1));
+    assert.throws(() => validateData(root), /antal_mandat ska vara 349/);
+  });
+
+  await t.test('duplicate party identities in one result', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    const result = parliamentResult();
+    result.rostresultat.partier.push({ ...result.rostresultat.partier[0], kallkod: 'T2', roster: 0, rostandel: 0 });
+    writeJson(root, 'val/2022/valresultat/riksdag.json', result);
+    assert.throws(() => validateData(root), /dubbelt parti_uuid/);
+  });
+
+  await t.test('unknown source codes are explicit instead of fake party UUIDs', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    const result = parliamentResult();
+    result.rostresultat.giltiga_roster = 2;
+    result.rostresultat.partier[0].rostandel = 50;
+    result.rostresultat.ej_kopplade.push({
+      kallkod: 'XYZ',
+      partibeteckning: 'Historiskt parti utan koppling',
+      roster: 1,
+      rostandel: 50,
+      kallreferens: 'resultat'
     });
-    assert.throws(() => validateData(root), /ska innehålla 349 mandat/);
+    writeJson(root, 'val/2022/valresultat/riksdag.json', result);
+    writePartyProfileParliamentView(root);
+    assert.doesNotThrow(() => validateData(root));
+
+    result.rostresultat.partier.push({
+      parti_uuid: '55555555-5555-4555-8555-555555555555',
+      kallkod: 'XYZ',
+      partibeteckning: 'Historiskt parti utan koppling',
+      roster: 0,
+      rostandel: 0,
+      kallreferens: 'resultat'
+    });
+    result.rostresultat.ej_kopplade = [];
+    writeJson(root, 'val/2022/valresultat/riksdag.json', result);
+    assert.throws(() => validateData(root), /okänt parti-UUID/);
   });
 
   await t.test('stale derived parliamentary data', t => {
     const root = makeData();
     t.after(() => fs.rmSync(root, { recursive: true, force: true }));
-    writeJson(root, 'val/2022/valresultat/riksdag.json', {
-      valar: 2022,
-      valdeltagande: {
-        procent: 84,
-        kalla: { namn: 'SCB', url: 'https://www.scb.se/', hamtad: '2026-08-25' }
-      },
-      mandatfordelning: {
-        partier: [{ forkortning: 'T', mandat: 349 }],
-        kalla: { namn: 'Riksdagen', url: 'https://data.riksdagen.se/', hamtad: '2026-08-25' }
-      }
-    });
+    writeJson(root, 'val/2022/valresultat/riksdag.json', parliamentResult());
     writePartyProfileParliamentView(root);
-    const derived = readJson(root, 'derived/partiprofil/riksdag.json');
+    const derived = readJson(root, 'derived/riksdag.json');
     derived.senast_uppdaterad = '2026-08-24';
-    writeJson(root, 'derived/partiprofil/riksdag.json', derived);
+    writeJson(root, 'derived/riksdag.json', derived);
     assert.throws(() => validateData(root), /är inaktuell/);
   });
 });

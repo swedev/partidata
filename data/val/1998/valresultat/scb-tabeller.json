@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "valar": 1998,
+  "kallsidor": [29, 30],
+  "valdeltagande": 81.4,
+  "giltiga_roster": 5260109,
+  "resultat": [
+    { "kallkod": "M", "partibeteckning": "Moderata Samlingspartiet", "roster": 1204926 },
+    { "kallkod": "C", "partibeteckning": "Centerpartiet", "roster": 269762 },
+    { "kallkod": "FP", "partibeteckning": "Folkpartiet liberalerna", "roster": 248076 },
+    { "kallkod": "KD", "partibeteckning": "Kristdemokraterna", "roster": 618033 },
+    { "kallkod": "MP", "partibeteckning": "Miljöpartiet De Gröna", "roster": 236699 },
+    { "kallkod": "S", "partibeteckning": "Arbetarepartiet Socialdemokraterna", "roster": 1914426 },
+    { "kallkod": "V", "partibeteckning": "Vänsterpartiet", "roster": 631011 },
+    { "kallkod": "ÖVR", "partibeteckning": "Övriga partier", "roster": 137176 }
+  ],
+  "mandatfordelning": [
+    { "kallkod": "M", "partibeteckning": "Moderata Samlingspartiet", "mandat": 82 },
+    { "kallkod": "C", "partibeteckning": "Centerpartiet", "mandat": 18 },
+    { "kallkod": "FP", "partibeteckning": "Folkpartiet liberalerna", "mandat": 17 },
+    { "kallkod": "KD", "partibeteckning": "Kristdemokraterna", "mandat": 42 },
+    { "kallkod": "MP", "partibeteckning": "Miljöpartiet De Gröna", "mandat": 16 },
+    { "kallkod": "S", "partibeteckning": "Arbetarepartiet Socialdemokraterna", "mandat": 131 },
+    { "kallkod": "V", "partibeteckning": "Vänsterpartiet", "mandat": 43 }
+  ]
+}

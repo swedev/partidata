@@ -86,6 +86,10 @@ Läs mer på: https://www.val.se/for-partier/anmal-deltagande.html
 
 Kandidatlistor per parti i alla val för angivna året. För tillfället endast ett utkast.
 
+### val/\<år\>/valresultat/riksdag.json
+
+Slutligt riksdagsresultat 1994–2022 i en gemensam, källoberoende modell: giltiga röster, röster och andel per parti, mandat, stabilt parti-uuid samt källreferenser med SHA-256. Historiska rader som inte kan identitetskopplas säkert och aggregerade `Övriga partier` redovisas uttryckligen utan gissade uuid:n. Se [modell, källor och rankingmetod](docs/riksdagsvalresultat.md).
+
 
 ## Köra skripten
 
@@ -106,6 +110,10 @@ Körningen är idempotent: samma indata ger samma filer, oavsett i vilken ordnin
 Hämtar Valmyndighetens `partisymboler.zip` för valåret, kopplar varje PNG till partiets stabila `uuid` via partikoden och skriver symbolen i partiets katalog. `--file` läser en redan nedladdad ZIP. `--legacy-dir` kan användas för en katalog med äldre `<partikod>.png`; de fyller endast luckor och ersätter aldrig en symbol från det aktuella paketet.
 
 Valmyndigheten ska anges som källa för symbolerna. Partisymboler kan dessutom vara skyddade som varumärken och omfattas därför inte automatiskt av projektets CC0-dedikation. Se [data/partisymboler/README.md](data/partisymboler/README.md).
+
+### npm run import-riksdagsval -- \<år\> --hamtad \<datum\> --file \<käll-id\>=\<sökväg\>
+
+Importerar en lokal kopia av Valmyndighetens eller SCB:s slutliga riksdagsresultat till den gemensamma modellen. Käll-id:n och antal filer varierar med valår. Samma källfiler och argument ger identiska JSON-filer; se [importinstruktionerna](docs/riksdagsvalresultat.md#import).
 
 ### node scripts/parti.js
 

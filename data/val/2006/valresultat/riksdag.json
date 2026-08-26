@@ -1,11 +1,379 @@
 {
+  "schema_version": 2,
+  "valtyp": "riksdag",
   "valar": 2006,
-  "valdeltagande": {
-    "procent": 82.0,
-    "kalla": {
-      "namn": "SCB",
-      "url": "https://www.scb.se/",
-      "hamtad": "2026-08-25"
+  "status": "slutligt",
+  "kallor": [
+    {
+      "id": "resultat",
+      "namn": "Valmyndigheten",
+      "titel": "Riksdagsvalet 2006, hela riket",
+      "url": "https://historik.val.se/val/val2006/slutlig/R/rike/roster.html",
+      "version": "Slutligt resultat",
+      "format": "text/html",
+      "hamtad": "2026-08-26",
+      "sha256": "2bc2213db0803770e1881b157431ec1224c036174dc1f3d5a8cdaad76b33c8c7"
+    },
+    {
+      "id": "ovriga",
+      "namn": "Valmyndigheten",
+      "titel": "Riksdagsvalet 2006, övriga partier",
+      "url": "https://historik.val.se/val/val2006/slutlig/R/rike/ovriga.html",
+      "version": "Slutligt resultat",
+      "format": "text/html",
+      "hamtad": "2026-08-26",
+      "sha256": "0cc7c62f7868c28d98908a62808938226422cd9150ba902fd9fe800b80458e21"
     }
+  ],
+  "valdeltagande": {
+    "procent": 81.99,
+    "kallreferens": "resultat"
+  },
+  "rostresultat": {
+    "giltiga_roster": 5551278,
+    "kallreferenser": [
+      "resultat",
+      "ovriga"
+    ],
+    "partier": [
+      {
+        "parti_uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476",
+        "kallkod": "M",
+        "partibeteckning": "Moderata Samlingspartiet",
+        "roster": 1456014,
+        "rostandel": 26.23,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3",
+        "kallkod": "C",
+        "partibeteckning": "Centerpartiet",
+        "roster": 437389,
+        "rostandel": 7.88,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0",
+        "kallkod": "FP",
+        "partibeteckning": "Folkpartiet liberalerna",
+        "roster": 418395,
+        "rostandel": 7.54,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
+        "kallkod": "KD",
+        "partibeteckning": "Kristdemokraterna",
+        "roster": 365998,
+        "rostandel": 6.59,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd",
+        "kallkod": "S",
+        "partibeteckning": "Arbetarepartiet-Socialdemokraterna",
+        "roster": 1942625,
+        "rostandel": 34.99,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a",
+        "kallkod": "V",
+        "partibeteckning": "Vänsterpartiet",
+        "roster": 324722,
+        "rostandel": 5.85,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
+        "kallkod": "MP",
+        "partibeteckning": "Miljöpartiet de gröna",
+        "roster": 291121,
+        "rostandel": 5.24,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "b9af6417-6861-40ff-b0a5-3c1fab176496",
+        "partibeteckning": "Sverigedemokraterna",
+        "roster": 162463,
+        "rostandel": 2.93,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "611c7fae-c057-4e46-8fd9-c4507c36be62",
+        "partibeteckning": "Feministiskt initiativ",
+        "roster": 37954,
+        "rostandel": 0.68,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "e6be8b6a-9385-4918-847a-dee620802595",
+        "partibeteckning": "Piratpartiet",
+        "roster": 34918,
+        "rostandel": 0.63,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "394593f1-a26f-4271-a0ff-e3e9c5df8b86",
+        "partibeteckning": "Sjukvårdspartiet",
+        "roster": 11519,
+        "rostandel": 0.21,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "4ed338ef-bbdd-4ff9-aaa9-b86c90a01e3e",
+        "partibeteckning": "Enhet",
+        "roster": 2648,
+        "rostandel": 0.05,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "ce076c0a-bef8-401e-a65c-6882a0d384c0",
+        "partibeteckning": "Rättvisepartiet Socialisterna",
+        "roster": 1097,
+        "rostandel": 0.02,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "55cdd0ac-6e10-42df-adf7-02db7dea7607",
+        "partibeteckning": "Kommunisterna",
+        "roster": 438,
+        "rostandel": 0.01,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "6537fb90-7ac9-4385-b554-3074b9e60b1a",
+        "partibeteckning": "Klassiskt Liberala Partiet",
+        "roster": 202,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "8c7f27e0-2da5-4594-89b7-b6d402e2b3aa",
+        "partibeteckning": "Europeiska Arbetarpartiet-EAP",
+        "roster": 83,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "617f16c5-dd2f-4c10-a838-01c2b308c8a6",
+        "partibeteckning": "Sveriges Nationella Demokratiska Parti",
+        "roster": 68,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "parti_uuid": "96fa352b-a7d2-4bd0-bab9-37ab6c479d54",
+        "partibeteckning": "Skånepartiet",
+        "roster": 11,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      }
+    ],
+    "ej_kopplade": [
+      {
+        "partibeteckning": "SPI - Sveriges Pensionärers Intresseparti",
+        "roster": 28806,
+        "rostandel": 0.52,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Junilistan",
+        "roster": 26072,
+        "rostandel": 0.47,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Nationaldemokraterna",
+        "roster": 3064,
+        "rostandel": 0.06,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Nationalsocialistisk front (NSF)",
+        "roster": 1417,
+        "rostandel": 0.03,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Ny Framtid",
+        "roster": 1171,
+        "rostandel": 0.02,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Folkets Vilja",
+        "roster": 881,
+        "rostandel": 0.02,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Unika Partiet",
+        "roster": 222,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Allianspartiet",
+        "roster": 133,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Kvinnokraft",
+        "roster": 116,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "www.aktivdemokrati.se Partiet för kontinuerlig direktdemokrati",
+        "roster": 81,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Sverige ut ur EU (UT) / Frihetliga Rättvisepartiet (FRP)",
+        "roster": 75,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Partiet.se",
+        "roster": 61,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Septemberlistan",
+        "roster": 51,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Kommunistiska förbundet",
+        "roster": 30,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Nordisk Union",
+        "roster": 24,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Skattereformisterna",
+        "roster": 9,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Rikshushållarna",
+        "roster": 8,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Miata Partiet",
+        "roster": 7,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Demokratiska partiet de nya svenskarna D.P.N.S",
+        "roster": 6,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Fårgutapartiet",
+        "roster": 6,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "PALMES PARTI",
+        "roster": 5,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "Republikanerna",
+        "roster": 2,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      },
+      {
+        "partibeteckning": "VIKINGAPARTIET-VALVARUHUSET 53 PARTIER",
+        "roster": 1,
+        "rostandel": 0,
+        "kallreferens": "ovriga"
+      }
+    ],
+    "aggregat": [
+      {
+        "partibeteckning": "Övriga partier",
+        "roster": 1365,
+        "rostandel": 0.02,
+        "kallreferens": "ovriga"
+      }
+    ]
+  },
+  "mandatfordelning": {
+    "antal_mandat": 349,
+    "kallreferenser": [
+      "resultat"
+    ],
+    "partier": [
+      {
+        "parti_uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476",
+        "kallkod": "M",
+        "partibeteckning": "Moderata Samlingspartiet",
+        "mandat": 97,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3",
+        "kallkod": "C",
+        "partibeteckning": "Centerpartiet",
+        "mandat": 29,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0",
+        "kallkod": "FP",
+        "partibeteckning": "Folkpartiet liberalerna",
+        "mandat": 28,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
+        "kallkod": "KD",
+        "partibeteckning": "Kristdemokraterna",
+        "mandat": 24,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd",
+        "kallkod": "S",
+        "partibeteckning": "Arbetarepartiet-Socialdemokraterna",
+        "mandat": 130,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a",
+        "kallkod": "V",
+        "partibeteckning": "Vänsterpartiet",
+        "mandat": 22,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
+        "kallkod": "MP",
+        "partibeteckning": "Miljöpartiet de gröna",
+        "mandat": 19,
+        "kallreferens": "resultat"
+      }
+    ]
   }
 }
