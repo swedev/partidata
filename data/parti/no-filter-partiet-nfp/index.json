@@ -2,7 +2,10 @@
   "uuid": "79fea1c5-73a5-4a46-9dc6-8e26db641a70",
   "kod": "1917",
   "beteckning": "NO Filter Partiet [NFP]",
-  "filnamn": "no-filter-partiet--nfp",
+  "filnamn": "no-filter-partiet-nfp",
+  "tidigare_filnamn": [
+    "no-filter-partiet--nfp"
+  ],
   "registrerad_partibeteckning": false,
   "deltagande": {
     "2026": {

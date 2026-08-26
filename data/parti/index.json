@@ -2,7 +2,10 @@
   {
     "uuid": "ee50921a-e848-42d6-803e-9d5275ed21b6",
     "beteckning": "20% skattepartiet",
-    "filnamn": "20--skattepartiet"
+    "filnamn": "20-skattepartiet",
+    "tidigare_filnamn": [
+      "20--skattepartiet"
+    ]
   },
   {
     "uuid": "4306a81a-e3fc-4214-88f4-538fc39f7252",
@@ -664,7 +667,10 @@
   {
     "uuid": "aeeeaadd-fedc-4e40-9407-1c159619b2ff",
     "beteckning": "Demokrati, Folk och Religion (DFR)",
-    "filnamn": "demokrati--folk-och-religion-dfr",
+    "filnamn": "demokrati-folk-och-religion-dfr",
+    "tidigare_filnamn": [
+      "demokrati--folk-och-religion-dfr"
+    ],
     "forkortning": "DFR"
   },
   {
@@ -1137,9 +1143,10 @@
   {
     "uuid": "a58232ce-38c7-4991-9b96-9179e0d9b4b6",
     "beteckning": "Folk & Natur",
-    "filnamn": "folk---natur",
+    "filnamn": "folk-natur",
     "tidigare_filnamn": [
-      "odeshogs-partiet"
+      "odeshogs-partiet",
+      "folk---natur"
     ],
     "forkortning": "FN"
   },
@@ -1885,7 +1892,10 @@
   {
     "uuid": "d6046b77-aa01-44ec-94ad-14898afb571a",
     "beteckning": "iGov.Direct®",
-    "filnamn": "igov-direct-"
+    "filnamn": "igov-direct",
+    "tidigare_filnamn": [
+      "igov-direct-"
+    ]
   },
   {
     "uuid": "07b403b7-3b9b-4a22-844e-9f0fa516d57b",
@@ -1920,9 +1930,10 @@
   {
     "uuid": "1b6c72c2-6835-4066-9928-3312512cebe7",
     "beteckning": "IP - IDROTTSPARTIET - Rädda Stadshagens IP!",
-    "filnamn": "ip-idrottspartiet---radda-stadshagens-ip",
+    "filnamn": "ip-idrottspartiet-radda-stadshagens-ip",
     "tidigare_filnamn": [
-      "ip-idrottspartiet-radda-stadshagens-ip-"
+      "ip-idrottspartiet-radda-stadshagens-ip-",
+      "ip-idrottspartiet---radda-stadshagens-ip"
     ],
     "forkortning": "IP"
   },
@@ -2525,7 +2536,10 @@
   {
     "uuid": "c5514ebe-b4e2-4ee6-a875-1b2f26870bee",
     "beteckning": "Listan för Miljö och Omtanke, Örkelljunga",
-    "filnamn": "listan-for-miljo-och-omtanke--orkelljunga"
+    "filnamn": "listan-for-miljo-och-omtanke-orkelljunga",
+    "tidigare_filnamn": [
+      "listan-for-miljo-och-omtanke--orkelljunga"
+    ]
   },
   {
     "uuid": "0bbc6a13-1ce2-47be-ae8f-8ab5f8406226",
@@ -2711,7 +2725,10 @@
   {
     "uuid": "18bc4293-c7ac-4245-b5a2-8d041a9b3112",
     "beteckning": "Marks Oberoende Demokrater, MOD",
-    "filnamn": "marks-oberoende-demokrater--mod",
+    "filnamn": "marks-oberoende-demokrater-mod",
+    "tidigare_filnamn": [
+      "marks-oberoende-demokrater--mod"
+    ],
     "forkortning": "MOD"
   },
   {
@@ -2974,7 +2991,10 @@
   {
     "uuid": "79fea1c5-73a5-4a46-9dc6-8e26db641a70",
     "beteckning": "NO Filter Partiet [NFP]",
-    "filnamn": "no-filter-partiet--nfp"
+    "filnamn": "no-filter-partiet-nfp",
+    "tidigare_filnamn": [
+      "no-filter-partiet--nfp"
+    ]
   },
   {
     "uuid": "b12eba67-b1b9-416a-9256-e5677d171ed7",
@@ -3180,7 +3200,10 @@
   {
     "uuid": "9b140032-4095-4c74-ae5d-aa23f77cbff0",
     "beteckning": "Nybro Landsbygds- & Stadsparti",
-    "filnamn": "nybro-landsbygds----stadsparti",
+    "filnamn": "nybro-landsbygds-stadsparti",
+    "tidigare_filnamn": [
+      "nybro-landsbygds----stadsparti"
+    ],
     "forkortning": "NLS",
     "partisymbol": {
       "filnamn": "1800-nybro-landsbygds----stadsparti.png",
@@ -3354,7 +3377,10 @@
   {
     "uuid": "04322f22-a4de-432a-9a68-be4845d2e4de",
     "beteckning": "Öppna Göteborg!",
-    "filnamn": "oppna-goteborg-"
+    "filnamn": "oppna-goteborg",
+    "tidigare_filnamn": [
+      "oppna-goteborg-"
+    ]
   },
   {
     "uuid": "b61c947d-c5d9-481c-bedf-66ab406aac8e",
@@ -3705,9 +3731,10 @@
   {
     "uuid": "5bad196e-a83b-499d-9327-13a67dac8546",
     "beteckning": "PRJ -Partiet för Rättvisa och Jämställdhet",
-    "filnamn": "prj--partiet-for-rattvisa-och-jamstalldhet",
+    "filnamn": "prj-partiet-for-rattvisa-och-jamstalldhet",
     "tidigare_filnamn": [
-      "partiet-for-rattvisa-och-jamstalldhet"
+      "partiet-for-rattvisa-och-jamstalldhet",
+      "prj--partiet-for-rattvisa-och-jamstalldhet"
     ],
     "forkortning": "PRJ",
     "partisymbol": {
@@ -4426,7 +4453,10 @@
   {
     "uuid": "4b2c8870-d6e5-402a-a4ed-7f68d098869b",
     "beteckning": "SOS-Ställ Om Sverige, Söderhamnsinitiativet",
-    "filnamn": "sos-stall-om-sverige--soderhamnsinitiativet",
+    "filnamn": "sos-stall-om-sverige-soderhamnsinitiativet",
+    "tidigare_filnamn": [
+      "sos-stall-om-sverige--soderhamnsinitiativet"
+    ],
     "forkortning": "SOS"
   },
   {
@@ -4437,9 +4467,10 @@
   {
     "uuid": "8411e120-1d68-4435-bc7c-0f529b6d642a",
     "beteckning": "SPORT- OCH KOMMUNPARTIET",
-    "filnamn": "sport--och-kommunpartiet",
+    "filnamn": "sport-och-kommunpartiet",
     "tidigare_filnamn": [
-      "kommunpartiet"
+      "kommunpartiet",
+      "sport--och-kommunpartiet"
     ],
     "forkortning": "SOKP",
     "partisymbol": {
@@ -5345,7 +5376,10 @@
   {
     "uuid": "c00b5972-573f-4e02-bb4e-b9566fa3cab2",
     "beteckning": "Vindkraft- och Busskartor Partiet (Vi älskar AIPAC) (VBPVÄAIPAC)",
-    "filnamn": "vindkraft--och-busskartor-partiet-vi-alskar-aipac-vbpvaaipac"
+    "filnamn": "vindkraft-och-busskartor-partiet-vi-alskar-aipac-vbpvaaipac",
+    "tidigare_filnamn": [
+      "vindkraft--och-busskartor-partiet-vi-alskar-aipac-vbpvaaipac"
+    ]
   },
   {
     "uuid": "1ec14dc8-616b-4948-9f91-f739d2f59c78",
@@ -5439,7 +5473,10 @@
   {
     "uuid": "2a40f30a-d6e2-46f6-9a87-d86351f784da",
     "beteckning": "Walter Ƶarl",
-    "filnamn": "walter--arl"
+    "filnamn": "walter-arl",
+    "tidigare_filnamn": [
+      "walter--arl"
+    ]
   },
   {
     "uuid": "60c5adea-ea43-43cf-8ca7-d102a01bcad1",

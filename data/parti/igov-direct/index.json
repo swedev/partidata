@@ -2,7 +2,10 @@
   "uuid": "d6046b77-aa01-44ec-94ad-14898afb571a",
   "kod": "1316",
   "beteckning": "iGov.Direct®",
-  "filnamn": "igov-direct-",
+  "filnamn": "igov-direct",
+  "tidigare_filnamn": [
+    "igov-direct-"
+  ],
   "deltagande": {
     "2018": {
       "riksdag": true,

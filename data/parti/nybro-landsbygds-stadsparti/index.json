@@ -2,7 +2,10 @@
   "uuid": "9b140032-4095-4c74-ae5d-aa23f77cbff0",
   "kod": "1800",
   "beteckning": "Nybro Landsbygds- & Stadsparti",
-  "filnamn": "nybro-landsbygds----stadsparti",
+  "filnamn": "nybro-landsbygds-stadsparti",
+  "tidigare_filnamn": [
+    "nybro-landsbygds----stadsparti"
+  ],
   "forkortning": "NLS",
   "registrerad_partibeteckning": true,
   "partisymbol": {

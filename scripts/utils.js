@@ -63,10 +63,9 @@ function toFileName (name) {
     .replace(/[\u0300-\u036f]/g, '')
     .replace(DEBURR_PATTERN, ch => DEBURR_LETTERS[ch])
     .toLowerCase()
-    .replace(' - ', '-')
     .replace(/[)(]/g, '')
-    .replace(/[^a-z0-9]/g, '-')
-    .replace(/-+$/, '');
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 /**
