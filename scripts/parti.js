@@ -407,6 +407,7 @@ function buildParties (registry, yearFiles) {
       beteckning: party.data.beteckning,
       filnamn: party.data.filnamn,
       tidigare_filnamn: party.tidigare_filnamn,
+      forkortning: party.data.forkortning,
       partisymbol: party.data.partisymbol
     }))
     .sort((a, b) => (a.filnamn < b.filnamn ? -1 : a.filnamn > b.filnamn ? 1 : 0));

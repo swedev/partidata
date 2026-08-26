@@ -108,3 +108,147 @@ test('health fails when the party index is unavailable', async t => {
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
   await assert.rejects(createPartyDataStore(path.join(root, 'data')).assertHealthy(), /ENOENT/);
 });
+
+function makeHomeData () {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'partidata-home-'));
+  const dataRoot = path.join(root, 'data');
+  const parties = [
+    {
+      uuid: '11111111-1111-4111-8111-111111111111',
+      kod: '9001',
+      beteckning: 'Alfapartiet',
+      filnamn: 'alfapartiet',
+      forkortning: 'A',
+      partisymbol: {
+        filnamn: '9001-alfapartiet.png',
+        kalla: 'Test',
+        kallurl: 'https://example.com/symbol.png',
+        valar: 2026,
+        partikod: '9001'
+      },
+      deltagande: {
+        2022: { riksdag: true, region: ['01', '12'], kommun: ['0114', '1280', '1281'] },
+        2026: { riksdag: false, region: [], kommun: [] }
+      }
+    },
+    {
+      uuid: '22222222-2222-4222-8222-222222222222',
+      kod: '9002',
+      beteckning: 'Betapartiet',
+      filnamn: 'betapartiet',
+      forkortning: 'B',
+      deltagande: {
+        2022: { riksdag: false, region: ['14'], kommun: [] }
+      }
+    },
+    {
+      uuid: '33333333-3333-4333-8333-333333333333',
+      kod: '9003',
+      beteckning: 'Duplikatpartiet ett',
+      filnamn: 'duplikatpartiet-ett',
+      forkortning: 'D'
+    },
+    {
+      uuid: '44444444-4444-4444-8444-444444444444',
+      kod: '9004',
+      beteckning: 'Duplikatpartiet två',
+      filnamn: 'duplikatpartiet-tva',
+      forkortning: 'd'
+    },
+    {
+      uuid: '55555555-5555-4555-8555-555555555555',
+      kod: '9005',
+      beteckning: 'Östra partiet',
+      filnamn: 'ostra-partiet'
+    }
+  ];
+
+  writeJson(dataRoot, 'parti/index.json', parties.map(({ kod, deltagande, ...entry }) => entry));
+  parties.forEach(party => writeJson(dataRoot, `parti/${party.filnamn}/index.json`, party));
+  writeJson(dataRoot, 'regioner/index.json', [
+    { kod: '12', namn: 'Skåne län', uuid: '66666666-6666-4666-8666-666666666666', kommuner: [] },
+    { kod: '01', namn: 'Stockholms län', uuid: '77777777-7777-4777-8777-777777777777', kommuner: [] },
+    { kod: '14', namn: 'Västra Götalands län', uuid: '88888888-8888-4888-8888-888888888888', kommuner: [] }
+  ]);
+
+  const source = { namn: 'Riksdagen', url: 'https://data.riksdagen.se/', hamtad: '2026-08-25' };
+  writeJson(dataRoot, 'val/2018/valresultat/riksdag.json', { valar: 2018, valdeltagande: { procent: 87 } });
+  writeJson(dataRoot, 'val/2022/valresultat/riksdag.json', {
+    valar: 2022,
+    mandatfordelning: {
+      partier: [
+        { forkortning: 'A', mandat: 200 },
+        { forkortning: 'D', mandat: 100 },
+        { forkortning: 'X', mandat: 49 }
+      ],
+      kalla: source
+    }
+  });
+  writeJson(dataRoot, 'val/2026/valresultat/riksdag.json', {
+    valar: 2026,
+    mandatfordelning: { partier: [{ forkortning: 'B', mandat: 349 }], kalla: source }
+  });
+
+  return { root, dataRoot };
+}
+
+test('home data lists parties in Swedish alphabetical order with participation facets', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const home = await createPartyDataStore(dataRoot).readHomeData();
+
+  assert.deepEqual(home.parties.map(party => party.filnamn), [
+    'alfapartiet',
+    'betapartiet',
+    'duplikatpartiet-ett',
+    'duplikatpartiet-tva',
+    'ostra-partiet'
+  ]);
+  assert.deepEqual(home.parties[0], {
+    uuid: '11111111-1111-4111-8111-111111111111',
+    beteckning: 'Alfapartiet',
+    filnamn: 'alfapartiet',
+    forkortning: 'A',
+    symbolSrc: '/partisymbol/alfapartiet/9001-alfapartiet.png',
+    deltagande: {
+      2022: { riksdag: true, regionLan: ['01', '12'], kommunLan: ['01', '12'] },
+      2026: { riksdag: false, regionLan: [], kommunLan: [] }
+    }
+  });
+  assert.equal(home.parties[1].symbolSrc, undefined);
+  assert.equal(home.parties[4].forkortning, undefined);
+  assert.deepEqual(home.parties[4].deltagande, {});
+  assert.deepEqual(home.valar, ['2022', '2026']);
+  assert.deepEqual(home.lan.map(lan => lan.namn), ['Skåne län', 'Stockholms län', 'Västra Götalands län']);
+});
+
+test('mandate records resolve to a party only on an unambiguous abbreviation', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const home = await createPartyDataStore(dataRoot).readHomeData();
+
+  assert.deepEqual(home.riksdag.map(year => year.valar), [2026, 2022]);
+  const [twentyTwo] = home.riksdag.filter(year => year.valar === 2022);
+  assert.equal(twentyTwo.kalla.namn, 'Riksdagen');
+  assert.deepEqual(twentyTwo.partier, [
+    {
+      forkortning: 'A',
+      mandat: 200,
+      beteckning: 'Alfapartiet',
+      filnamn: 'alfapartiet',
+      symbolSrc: '/partisymbol/alfapartiet/9001-alfapartiet.png'
+    },
+    { forkortning: 'D', mandat: 100 },
+    { forkortning: 'X', mandat: 49 }
+  ]);
+});
+
+test('home data is read once per store', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(dataRoot);
+
+  assert.equal(await store.readHomeData(), await store.readHomeData());
+});

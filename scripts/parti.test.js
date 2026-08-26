@@ -349,6 +349,18 @@ test('index.json is sorted by filnamn and covers every party file', t => {
   assert.deepEqual(filnamn.slice().sort(), dirs.sort());
 });
 
+test('index.json carries the forkortning of the party file', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+
+  const index = readJson(dir, 'data/parti/index.json');
+  const entry = index.find(party => party.filnamn === 'testpartiet');
+  assert.equal(entry.forkortning, 'TP');
+  assert.equal(entry.forkortning, parti(dir, 'testpartiet').forkortning);
+  assert.ok(index.every(party => !('forkortning' in party) || typeof party.forkortning === 'string'));
+});
+
 test('a duplicate uuid in the registry stops the import', t => {
   const parties = PARTIER.map(party => ({ ...party, uuid: PARTIER[0].uuid }));
   const dir = makeTree({ parties });

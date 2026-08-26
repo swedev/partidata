@@ -33,7 +33,11 @@ async function waitForHealth (baseUrl, child, output) {
 async function main () {
   if (!fs.existsSync(path.join(releaseRoot, 'server.js'))) throw new Error('Kör npm run build:release före npm run test:http');
   const parties = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'parti', 'index.json'), 'utf8'));
+  const chamber = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'partiprofil', 'riksdag.json'), 'utf8')).kammare;
+  const seats = chamber.partier.reduce((total, party) => total + party.mandat, 0);
+  const majority = Math.floor(seats / 2) + 1;
   const current = parties.find(party => party.filnamn === 'miljopartiet-de-grona') ?? parties[0];
+  const first = parties.toSorted((a, b) => new Intl.Collator('sv').compare(a.beteckning, b.beteckning))[0];
   const previous = parties.find(party => party.tidigare_filnamn?.length > 0);
   const withSymbol = parties.find(party => party.partisymbol);
   assert.ok(current);
@@ -56,7 +60,21 @@ async function main () {
 
     const home = await fetch(`${baseUrl}/`);
     assert.equal(home.status, 200);
-    assert.match(await home.text(), /<title[^>]*>Partidata<\/title>/);
+    const homeBody = await home.text();
+    assert.match(homeBody, /<title[^>]*>Partidata<\/title>/);
+    assert.match(homeBody, /Sök parti på namn eller förkortning/);
+    assert.match(homeBody, /Alla partier/, 'partilistan har en rubrik');
+    assert.match(homeBody, new RegExp(`>${parties.length}</span>`), 'rubriken räknar partierna ur datan');
+    assert.match(homeBody, new RegExp(`/parti/${first.filnamn}`), 'partigridet länkar till en partisida');
+    assert.match(homeBody, /Riksdagspartier/);
+    assert.match(homeBody, new RegExp(`valet (<!-- -->)?${chamber.valar}`), 'riksdagssektionen anger valåret');
+    assert.match(homeBody, new RegExp(`${seats}(<!-- -->)? mandat`), 'faktaraden anger kammarens storlek');
+    assert.match(homeBody, new RegExp(`${majority}(<!-- -->)? för egen majoritet`), 'faktaraden anger egen majoritet');
+    assert.match(homeBody, /aria-pressed="false"/, 'valtypen renderas som en chip-grupp');
+    assert.match(homeBody, /Visa fler partier \(/, 'visa fler anger hur många som återstår');
+
+    const riksdagCards = homeBody.split('party-card--large').length - 1;
+    assert.equal(riksdagCards, chamber.partier.length, 'riksdagspartierna renderas som stora partikort');
 
     const profile = await fetch(`${baseUrl}/parti/${current.filnamn}/`);
     assert.equal(profile.status, 200);

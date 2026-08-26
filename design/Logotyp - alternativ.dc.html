@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Familjen+Grotesk:wght@400;500;600&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Poppins:wght@400;500&family=Outfit:wght@400;500;600&family=Urbanist:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#EDEAE1; }
+  * { box-sizing:border-box; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#082354; text-decoration:none; }
+  a:hover { color:#051838; text-decoration:underline; }
+</style>
+</helmet>
+
+<section style="padding:clamp(24px,4vw,48px) clamp(24px,4vw,48px) 0;font-family:'Hanken Grotesk',Helvetica,sans-serif;color:#1A1A19">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="margin-bottom:28px">
+      <p style="margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A8A80">Omgång 3 · typsnitt i 2a</p>
+      <h1 style="margin:0 0 12px;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(24px,3.2vw,34px);letter-spacing:-.02em">Fyra snitt byggda som symbolen</h1>
+      <p style="margin:0;font-size:15.5px;line-height:1.6;color:#4A4A44;max-width:74ch;text-wrap:pretty">När symbolen är ordets P blir <strong style="font-weight:600">a:et intill</strong> det avgörande: dess bål måste vara lika cirkulär som symbolens båge, och stammen lika jämntjock. Alla fyra är geometriska enkelvånings-a med låg kontrast. <a href="#3d">3d</a> har dessutom rundade avslut, exakt som symbolens linjeändar.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:clamp(36px,5vw,64px)">
+      <sc-for list="{{ fonts }}" as="o" hint-placeholder-count="4">
+        <div id="{{ o.id }}" style="flex:1 1 400px;min-width:330px;background:#FFFDF8;border:1px solid #DFDBCD;border-radius:10px;overflow:hidden">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;padding:14px 20px;border-bottom:1px solid #E9E5D9;background:#F7F4EC">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:#082354;color:#FFFDF8;border-radius:3px;padding:4px 7px">{{ o.id }}</span>
+            <span style="font-size:15px;font-weight:500;white-space:nowrap">{{ o.font }}</span>
+            <span style="margin-left:auto;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8A80">{{ o.spec }}</span>
+          </div>
+          <div style="padding:clamp(30px,3.5vw,46px) 20px;display:flex;justify-content:center">
+            <div role="img" aria-label="Partidata" style="display:inline-flex;align-items:baseline;gap:{{ o.gap }};color:#082354;font-size:clamp(40px,5vw,58px)">
+              <img src="./partidata-mark.svg" alt="" aria-hidden="true" style="display:block;width:auto;height:{{ o.markH }}" />
+              <span aria-hidden="true" style="font-family:{{ o.stack }};font-weight:{{ o.weight }};font-size:1em;letter-spacing:{{ o.tracking }};line-height:.78">artidata</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E9E5D9;border-top:1px solid #E9E5D9">
+            <div style="background:#082354;padding:22px 20px;display:flex;align-items:center;justify-content:center">
+              <div role="img" aria-label="Partidata" style="display:inline-flex;align-items:baseline;gap:{{ o.gap }};color:#FFFDF8;font-size:26px">
+                <img src="./partidata-mark-negativ.svg" alt="" aria-hidden="true" style="display:block;width:auto;height:{{ o.markH }}" />
+                <span aria-hidden="true" style="font-family:{{ o.stack }};font-weight:{{ o.weight }};font-size:1em;letter-spacing:{{ o.tracking }};line-height:.78">artidata</span>
+              </div>
+            </div>
+            <div style="background:#FFFDF8;padding:22px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+              <div role="img" aria-label="Partidata" style="display:inline-flex;align-items:baseline;gap:{{ o.gap }};color:#082354;font-size:17px">
+                <img src="./partidata-mark.svg" alt="" aria-hidden="true" style="display:block;width:auto;height:{{ o.markH }}" />
+                <span aria-hidden="true" style="font-family:{{ o.stack }};font-weight:{{ o.weight }};font-size:1em;letter-spacing:{{ o.tracking }};line-height:.78">artidata</span>
+              </div>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9A9A90">17 px</span>
+            </div>
+          </div>
+          <p style="margin:0;padding:16px 20px 20px;font-size:13.5px;line-height:1.55;color:#5C5C55;border-top:1px solid #E9E5D9;text-wrap:pretty">{{ o.note }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="border-top:1px solid #DFDBCD;padding-top:clamp(28px,4vw,44px);margin-bottom:28px">
+      <p style="margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A8A80">Omgång 2 · symbolens plats</p>
+      <h1 style="margin:0 0 12px;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(24px,3.2vw,34px);letter-spacing:-.02em">Tre sätt att slippa dubbel-P</h1>
+      <p style="margin:0;font-size:15.5px;line-height:1.6;color:#4A4A44;max-width:70ch;text-wrap:pretty">Symbolen läser som ett versalt P. Ställd omedelbart före ordet "Partidata" blir den ett extra P — problemet är inte typsnittet utan adjacensen. Antingen får symbolen <em>vara</em> ordets P, eller så måste den bort från ordets början. Alla tre satta i DM Sans Medium.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:clamp(36px,5vw,64px)">
+
+      <div id="2a" style="flex:1 1 380px;min-width:320px;background:#FFFDF8;border:2px solid #082354;border-radius:10px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;padding:14px 20px;border-bottom:1px solid #E9E5D9;background:#F7F4EC">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:#082354;color:#FFFDF8;border-radius:3px;padding:4px 7px">2a</span>
+          <span style="font-size:15px;font-weight:500;white-space:nowrap">Symbolen är P:et</span>
+          <span style="margin-left:auto;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8A80">integrerad</span>
+        </div>
+        <div style="padding:clamp(30px,3.5vw,46px) 20px;display:flex;justify-content:center">
+          <div style="display:inline-flex;align-items:baseline;gap:.045em;color:#082354;font-size:clamp(40px,5vw,58px)" role="img" aria-label="Partidata">
+            <img src="./partidata-mark.svg" alt="" aria-hidden="true" style="display:block;width:auto;height:.71em" />
+            <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.78" aria-hidden="true">artidata</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E9E5D9;border-top:1px solid #E9E5D9">
+          <div style="background:#082354;padding:22px 20px;display:flex;align-items:center;justify-content:center">
+            <div style="display:inline-flex;align-items:baseline;gap:.045em;color:#FFFDF8;font-size:26px" role="img" aria-label="Partidata">
+              <img src="./partidata-mark-negativ.svg" alt="" aria-hidden="true" style="display:block;width:auto;height:.71em" />
+              <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.78" aria-hidden="true">artidata</span>
+            </div>
+          </div>
+          <div style="background:#FFFDF8;padding:22px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+            <div style="display:inline-flex;align-items:baseline;gap:.045em;color:#082354;font-size:17px" role="img" aria-label="Partidata">
+              <img src="./partidata-mark.svg" alt="" aria-hidden="true" style="display:block;width:auto;height:.71em" />
+              <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.78" aria-hidden="true">artidata</span>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9A9A90">17 px</span>
+          </div>
+        </div>
+        <p style="margin:0;padding:16px 20px 20px;font-size:13.5px;line-height:1.55;color:#5C5C55;border-top:1px solid #E9E5D9;text-wrap:pretty">Symbolen tar P:ets plats i ordet — dubbleringen försvinner och märket blir ett odelbart ord. Kräver att symbolen alltid sitter med ordet; ensam behöver den kompletteras med hela ordmärket i närheten.</p>
+      </div>
+
+      <div id="2b" style="flex:1 1 380px;min-width:320px;background:#FFFDF8;border:1px solid #DFDBCD;border-radius:10px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;padding:14px 20px;border-bottom:1px solid #E9E5D9;background:#F7F4EC">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:#082354;color:#FFFDF8;border-radius:3px;padding:4px 7px">2b</span>
+          <span style="font-size:15px;font-weight:500;white-space:nowrap">Staplad</span>
+          <span style="margin-left:auto;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8A80">ingen adjacens</span>
+        </div>
+        <div style="padding:clamp(26px,3vw,38px) 20px;display:flex;justify-content:center">
+          <div style="display:inline-flex;flex-direction:column;align-items:flex-start;gap:.3em;color:#082354;font-size:clamp(34px,4.2vw,48px)">
+            <img src="./partidata-mark.svg" alt="" style="display:block;width:auto;height:1.05em" />
+            <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.82">Partidata</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E9E5D9;border-top:1px solid #E9E5D9">
+          <div style="background:#082354;padding:22px 20px;display:flex;align-items:center;justify-content:center">
+            <div style="display:inline-flex;flex-direction:column;align-items:flex-start;gap:.3em;color:#FFFDF8;font-size:24px">
+              <img src="./partidata-mark-negativ.svg" alt="" style="display:block;width:auto;height:1.05em" />
+              <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.82">Partidata</span>
+            </div>
+          </div>
+          <div style="background:#FFFDF8;padding:22px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+            <div style="display:inline-flex;flex-direction:column;align-items:flex-start;gap:.3em;color:#082354;font-size:17px">
+              <img src="./partidata-mark.svg" alt="" style="display:block;width:auto;height:1.05em" />
+              <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.82">Partidata</span>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9A9A90">17 px</span>
+          </div>
+        </div>
+        <p style="margin:0;padding:16px 20px 20px;font-size:13.5px;line-height:1.55;color:#5C5C55;border-top:1px solid #E9E5D9;text-wrap:pretty">Symbolen står över ordet, vänsterställd mot samma kant. Ingen läsning av två P efter varandra, och symbolen får luft att fungera som egen form. Tar mer höjd — sämre i en smal header.</p>
+      </div>
+
+      <div id="2c" style="flex:1 1 380px;min-width:320px;background:#FFFDF8;border:1px solid #DFDBCD;border-radius:10px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;padding:14px 20px;border-bottom:1px solid #E9E5D9;background:#F7F4EC">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:#082354;color:#FFFDF8;border-radius:3px;padding:4px 7px">2c</span>
+          <span style="font-size:15px;font-weight:500;white-space:nowrap">Bricka + ordmärke</span>
+          <span style="margin-left:auto;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8A80">åtskild</span>
+        </div>
+        <div style="padding:clamp(30px,3.5vw,46px) 20px;display:flex;justify-content:center">
+          <div style="display:inline-flex;align-items:center;gap:.34em;color:#082354;font-size:clamp(36px,4.6vw,52px)">
+            <span style="display:flex;align-items:center;justify-content:center;width:1.34em;height:1.34em;background:#082354;border-radius:.28em;flex:none"><img src="./partidata-mark-negativ.svg" alt="" style="display:block;width:auto;height:.72em" /></span>
+            <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.9">Partidata</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E9E5D9;border-top:1px solid #E9E5D9">
+          <div style="background:#082354;padding:22px 20px;display:flex;align-items:center;justify-content:center">
+            <div style="display:inline-flex;align-items:center;gap:.34em;color:#FFFDF8;font-size:26px">
+              <span style="display:flex;align-items:center;justify-content:center;width:1.34em;height:1.34em;background:#FFFDF8;border-radius:.28em;flex:none"><img src="./partidata-mark.svg" alt="" style="display:block;width:auto;height:.72em" /></span>
+              <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.9">Partidata</span>
+            </div>
+          </div>
+          <div style="background:#FFFDF8;padding:22px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+            <div style="display:inline-flex;align-items:center;gap:.34em;color:#082354;font-size:17px">
+              <span style="display:flex;align-items:center;justify-content:center;width:1.34em;height:1.34em;background:#082354;border-radius:.28em;flex:none"><img src="./partidata-mark-negativ.svg" alt="" style="display:block;width:auto;height:.72em" /></span>
+              <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:1em;letter-spacing:-.022em;line-height:.9">Partidata</span>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9A9A90">17 px</span>
+          </div>
+        </div>
+        <p style="margin:0;padding:16px 20px 20px;font-size:13.5px;line-height:1.55;color:#5C5C55;border-top:1px solid #E9E5D9;text-wrap:pretty">Brickan gör symbolen till en behållare istället för en bokstav — ögat läser ikon, inte P. Samma bricka fungerar direkt som app-ikon och favicon. Något mer produktlikt, mindre redaktionellt.</p>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid #DFDBCD;padding-top:clamp(28px,4vw,44px);margin-bottom:28px">
+      <p style="margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A8A80">Omgång 1 · ordmärke</p>
+      <h1 style="margin:0 0 12px;font-family:'Hanken Grotesk',Helvetica,sans-serif;font-weight:600;font-size:clamp(24px,3.2vw,34px);letter-spacing:-.02em">Fyra typsnitt mot symbolen</h1>
+      <p style="margin:0;font-size:15.5px;line-height:1.6;color:#4A4A44;max-width:70ch;text-wrap:pretty">Symbolen är monolinjär och geometrisk: en cirkel, ett rakt ben, runda ändar, jämn tjocklek. Alla fyra alternativ är därför lågkontrastsnitt med runda bokstavsformer, satta i den vikt vars stamtjocklek ligger närmast symbolens linje (11,4 % av versalhöjden). Säg <a href="#1a">1a</a>–<a href="#1d">1d</a>.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+      <sc-for list="{{ options }}" as="o" hint-placeholder-count="4">
+        <div id="{{ o.id }}" style="flex:1 1 420px;min-width:340px;background:#FFFDF8;border:1px solid #DFDBCD;border-radius:10px;overflow:hidden">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;padding:14px 20px;border-bottom:1px solid #E9E5D9;background:#F7F4EC">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:#082354;color:#FFFDF8;border-radius:3px;padding:4px 7px">{{ o.id }}</span>
+            <span style="font-size:15px;font-weight:500;white-space:nowrap">{{ o.font }}</span>
+            <span style="margin-left:auto;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8A80">{{ o.spec }}</span>
+          </div>
+
+          <div style="padding:clamp(26px,3vw,40px) 20px;display:flex;justify-content:center">
+            <div style="display:inline-flex;align-items:baseline;gap:{{ o.gap }};color:#082354;font-size:clamp(38px,5vw,58px)">
+              <img src="./partidata-mark.svg" alt="" style="display:block;width:auto;height:{{ o.markH }}" />
+              <span style="font-family:{{ o.stack }};font-weight:{{ o.weight }};font-size:1em;letter-spacing:{{ o.tracking }};line-height:.78">Partidata</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E9E5D9;border-top:1px solid #E9E5D9">
+            <div style="background:#082354;padding:22px 20px;display:flex;align-items:center;justify-content:center">
+              <div style="display:inline-flex;align-items:baseline;gap:{{ o.gap }};color:#FFFDF8;font-size:26px">
+                <img src="./partidata-mark-negativ.svg" alt="" style="display:block;width:auto;height:{{ o.markH }}" />
+                <span style="font-family:{{ o.stack }};font-weight:{{ o.weight }};font-size:1em;letter-spacing:{{ o.tracking }};line-height:.78">Partidata</span>
+              </div>
+            </div>
+            <div style="background:#FFFDF8;padding:22px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+              <div style="display:inline-flex;align-items:baseline;gap:{{ o.gap }};color:#082354;font-size:17px">
+                <img src="./partidata-mark.svg" alt="" style="display:block;width:auto;height:{{ o.markH }}" />
+                <span style="font-family:{{ o.stack }};font-weight:{{ o.weight }};font-size:1em;letter-spacing:{{ o.tracking }};line-height:.78">Partidata</span>
+              </div>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9A9A90">17 px</span>
+            </div>
+          </div>
+
+          <p style="margin:0;padding:16px 20px 20px;font-size:13.5px;line-height:1.55;color:#5C5C55;border-top:1px solid #E9E5D9;text-wrap:pretty">{{ o.note }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      fonts: [
+        { id: '3a', font: 'Poppins Medium', stack: 'Poppins, sans-serif', weight: 500, tracking: '-.03em', gap: '.05em', markH: '.7em',
+          spec: 'cirkelgeometri · stam 10,9\u00A0%',
+          note: 'Bokstäverna är ritade på cirklar med konstant tjocklek — a:ets bål är samma cirkel som symbolens båge, bara sluten. Största x-höjden i urvalet, så ordet blir brett och stabilt.' },
+        { id: '3b', font: 'Outfit Medium', stack: 'Outfit, sans-serif', weight: 500, tracking: '-.028em', gap: '.055em', markH: '.71em',
+          spec: 'geometrisk · stam 10,4\u00A0%',
+          note: 'Samma cirkelbygge men smalare och svalare, med raka avslut. Håller ihop bättre i litet format än Poppins och känns mer verktyg än varumärke.' },
+        { id: '3c', font: 'Urbanist SemiBold', stack: 'Urbanist, sans-serif', weight: 600, tracking: '-.032em', gap: '.05em', markH: '.72em',
+          spec: 'geometrisk · stam 11,7\u00A0%',
+          note: 'Tightast i tecknen och närmast symbolens linjetjocklek av alla fyra. Låga snittpunkter ger ett lugnt, nästan tekniskt intryck.' },
+        { id: '3d', font: 'Quicksand Bold', stack: 'Quicksand, sans-serif', weight: 700, tracking: '-.02em', gap: '.005em', markH: '1.08em',
+          spec: 'rundade avslut · stam 11,4\u00A0%',
+          note: 'Enda snittet med rundade linjeändar — exakt samma avslut som symbolens stroke-linecap. Vald.' }
+      ],
+      options: [
+        { id: '1a', font: 'Jost Medium', stack: 'Jost, sans-serif', weight: 500, tracking: '-.01em', gap: '.2em', markH: '.72em',
+          spec: 'geometrisk · stam 10,8 %',
+          note: 'Närmast symbolens ritning: perfekta cirklar, enhetlig linje, Futura-släkt. Ordmärket och symbolen läser som samma verktyg — risken är att det blir en aning kyligt och 1930-tal.' },
+        { id: '1b', font: 'DM Sans Medium', stack: "'DM Sans', sans-serif", weight: 500, tracking: '-.022em', gap: '.19em', markH: '.71em',
+          spec: 'geometrisk-humanist · stam 11,2 %',
+          note: 'Runda bowls men kortare extensions och lite mjukare avslut — matchar symbolens rundade ändar bäst. Neutral utan att bli anonym, och mycket läsbar nedskalad.' },
+        { id: '1c', font: 'Familjen Grotesk Medium', stack: "'Familjen Grotesk', sans-serif", weight: 500, tracking: '-.018em', gap: '.19em', markH: '.7em',
+          spec: 'svensk grotesk · stam 11,6 %',
+          note: 'Ritad i Sverige (Letters from Sweden) — subtil svensk identitet i själva bokstavsformen istället för i flaggfärger. Något stramare rundning än symbolen, mer redaktionell ton.' },
+        { id: '1d', font: 'Manrope SemiBold', stack: 'Manrope, sans-serif', weight: 600, tracking: '-.03em', gap: '.18em', markH: '.73em',
+          spec: 'halvgeometrisk · stam 12,1 %',
+          note: 'Tightaste och tyngsta alternativet: fungerar bäst i litet format och i favicon-sammanhang, men den avkapade rundningen tar ut symbolens cirkel något.' }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

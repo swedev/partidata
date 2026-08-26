@@ -1,3 +1,5 @@
+@use "./home";
+@use "./party-card";
 @use "./party-profile";
 
 :root {
@@ -7,6 +9,11 @@
   --partidata-soft: #efece3;
   --partidata-card: #fff;
   --partidata-line: #d8d5ce;
+  --partidata-divider: #e2dfd4;
+  --partidata-card-divider: #e6e2d6;
+  --partidata-control-line: #b9b4a4;
+  --partidata-chip-line: #c3cdde;
+  --partidata-chip-off-line: #cfcbbd;
   --partidata-footer: var(--partidata-soft);
   --partidata-text: #131313;
   --partidata-ink: #4e4c47;
@@ -198,36 +205,6 @@ input:focus-visible {
   text-wrap: pretty;
 }
 
-input {
-  border-color: var(--partidata-line) !important;
-  background: var(--partidata-card);
-  color: var(--partidata-text);
-  font-family: inherit;
-}
-
-.party-index {
-  display: block;
-  width: 100%;
-  columns: 4 16rem;
-  column-gap: 2rem;
-}
-
-.party-index > li {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem;
-  break-inside: avoid;
-}
-
-.party-index > li > ul > li {
-  margin-top: 0.75rem;
-  line-height: 1.2;
-}
-
-.party-index a {
-  font-weight: 600;
-}
-
 .profile-mono {
   font-family: var(--font-partidata-mono), monospace;
   letter-spacing: 0.025em;
@@ -401,9 +378,4 @@ input {
     gap: 0.5rem 1.25rem;
     font-size: 0.9rem;
   }
-
-  .party-index {
-    columns: 1;
-  }
-
 }

@@ -146,4 +146,4 @@ export interface PartiProfil {
 /**
  * An entry in `data/parti/index.json`, a subset of the full party record.
  */
-export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn' | 'partisymbol'>;
+export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn' | 'forkortning' | 'partisymbol'>;
