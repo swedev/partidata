@@ -50,7 +50,7 @@ Allow the deploy account to restart only this service. Use the absolute
 ```
 
 Install and validate nginx after the first artifact has been uploaded and the
-service responds at `http://127.0.0.1:3000/api/health`:
+service responds at `http://127.0.0.1:3000/api/health/`:
 
 ```bash
 sudo cp deploy/partidata.se.conf /etc/nginx/sites-available/partidata.se.conf
@@ -86,5 +86,5 @@ npm ci
 npm run precommit
 rsync -az --delete .release/ <deploy-account>@<deploy-host>:<absolute-target>/
 ssh <deploy-account>@<deploy-host> 'sudo systemctl restart partidata.service'
-curl --fail https://www.partidata.se/api/health
+curl --fail https://www.partidata.se/api/health/
 ```

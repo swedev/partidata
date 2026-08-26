@@ -60,9 +60,9 @@ jobs:
           USER: ${{ secrets.DEPLOY_USER }}
         run: |
           ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes "$USER@$HOST" \
-            'sudo systemctl restart partidata.service && curl --fail --silent --show-error --retry 10 --retry-delay 1 --retry-connrefused http://127.0.0.1:3000/api/health'
+            'sudo systemctl restart partidata.service && curl --fail --silent --show-error --retry 10 --retry-delay 1 --retry-connrefused http://127.0.0.1:3000/api/health/'
 
       - name: Public smoke test
         run: |
-          curl --fail --silent --show-error --retry 5 --retry-delay 1 https://www.partidata.se/api/health
+          curl --fail --silent --show-error --retry 5 --retry-delay 1 https://www.partidata.se/api/health/
           curl --fail --silent --show-error --retry 5 --retry-delay 1 https://www.partidata.se/ > /dev/null

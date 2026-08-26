@@ -89,8 +89,11 @@ async function main () {
     assert.deepEqual(await health.json(), { status: 'ok' });
     console.log('HTTP-smoke passerade');
   } finally {
-    child.kill('SIGTERM');
-    await new Promise(resolve => child.once('exit', resolve));
+    if (child.exitCode === null && child.signalCode === null) {
+      const exited = new Promise(resolve => child.once('exit', resolve));
+      child.kill('SIGTERM');
+      await exited;
+    }
   }
 }
 
