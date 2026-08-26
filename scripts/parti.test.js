@@ -5,6 +5,7 @@ const { test } = require('node:test');
 
 const {
   buildParties,
+  deriveArea,
   normalisePartyName,
   normalisedNameCollisions,
   upsertParties
@@ -52,6 +53,7 @@ function identity (dir) {
       tidigare_koder: data.tidigare_koder || [],
       beteckning: data.beteckning,
       tidigare_beteckningar: data.tidigare_beteckningar || [],
+      omrade: data.omrade,
       deltagande: data.deltagande || {}
     };
   });
@@ -186,6 +188,24 @@ test('historical-only records do not replace current registry identity', () => {
   assert.deepEqual(build.parties[0].data.deltagande, {
     2018: { riksdag: false, region: [], kommun: ['1293'] }
   });
+});
+
+test('an area is the narrowest geography containing the latest participation', () => {
+  const areas = {
+    regioner: new Map([['01', 'Stockholms län'], ['12', 'Skåne län']]),
+    kommuner: new Map([['0114', 'Upplands Väsby'], ['0115', 'Vallentuna'], ['1280', 'Malmö']])
+  };
+
+  assert.equal(deriveArea({}, areas), undefined);
+  assert.equal(deriveArea({ 2022: { riksdag: true, region: [], kommun: ['0114'] } }, areas), undefined);
+  assert.equal(deriveArea({ 2022: { riksdag: false, region: ['01'], kommun: ['0114'] } }, areas), 'Upplands Väsby');
+  assert.equal(deriveArea({ 2022: { riksdag: false, region: [], kommun: ['0114', '0115'] } }, areas), 'Stockholms län');
+  assert.equal(deriveArea({ 2022: { riksdag: false, region: ['12'], kommun: [] } }, areas), 'Skåne län');
+  assert.equal(deriveArea({ 2022: { riksdag: false, region: [], kommun: ['0114', '1280'] } }, areas), undefined);
+  assert.equal(deriveArea({
+    2018: { riksdag: false, region: [], kommun: ['0114', '1280'] },
+    2022: { riksdag: false, region: [], kommun: ['0114'] }
+  }, areas), 'Upplands Väsby');
 });
 
 test('kodbyten.json binds a re-coded party that also changed its name', t => {
@@ -457,7 +477,7 @@ test('index.json is sorted by filnamn and covers every party file', t => {
   assert.deepEqual(filnamn.slice().sort(), dirs.sort());
 });
 
-test('index.json carries the forkortning of the party file', t => {
+test('index.json carries the forkortning and omrade of the party file', t => {
   const dir = makeTree();
   t.after(() => removeTree(dir));
   assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
@@ -467,6 +487,9 @@ test('index.json carries the forkortning of the party file', t => {
   assert.equal(entry.forkortning, 'TP');
   assert.equal(entry.forkortning, parti(dir, 'testpartiet').forkortning);
   assert.ok(index.every(party => !('forkortning' in party) || typeof party.forkortning === 'string'));
+  const lokalpartiet = index.find(party => party.filnamn === 'lokalpartiet');
+  assert.equal(lokalpartiet.omrade, 'Upplands Väsby');
+  assert.equal(lokalpartiet.omrade, parti(dir, 'lokalpartiet').omrade);
 });
 
 test('a duplicate uuid in the registry stops the import', t => {

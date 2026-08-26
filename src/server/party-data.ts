@@ -9,6 +9,7 @@ export type CandidateLists = Record<string, ElectionType[]>;
 
 export interface PartyPageData extends Parti {
   candidateLists: CandidateLists;
+  duplicateName: boolean;
   profile?: PartiProfil;
   symbolSrc?: string;
 }
@@ -40,6 +41,8 @@ export interface HomeParty {
   beteckning: string;
   filnamn: string;
   forkortning?: string;
+  omrade?: string;
+  duplicateName?: boolean;
   symbolSrc?: string;
   deltagande: Record<string, ParticipationFacet>;
 }
@@ -91,6 +94,7 @@ interface CandidateListFile {
 interface PartyIndex {
   current: Map<string, PartiIndexEntry>;
   redirects: Map<string, PartiIndexEntry>;
+  duplicateNames: Set<string>;
   parties: PartiIndexEntry[];
 }
 
@@ -111,6 +115,10 @@ function symbolSource (party: Pick<Parti, 'filnamn' | 'partisymbol'>): string | 
   return party.partisymbol
     ? `/partisymbol/${encodeURIComponent(party.filnamn)}/${encodeURIComponent(party.partisymbol.filnamn)}`
     : undefined;
+}
+
+function partyNameKey (name: string): string {
+  return name.trim().toLocaleLowerCase('sv-SE').replace(/\s+/g, ' ');
 }
 
 function facet (participation: Parti['deltagande']): Record<string, ParticipationFacet> {
@@ -150,11 +158,19 @@ export function createPartyDataStore (
   let homeDataPromise: Promise<HomeData> | undefined;
 
   function getPartyIndex (): Promise<PartyIndex> {
-    partyIndexPromise ??= readJson<PartiIndexEntry[]>(path.join(dataRoot, 'parti', 'index.json')).then(parties => ({
-      parties,
-      current: new Map(parties.map(party => [party.filnamn, party])),
-      redirects: new Map(parties.flatMap(party => (party.tidigare_filnamn ?? []).map(slug => [slug, party] as const))),
-    }));
+    partyIndexPromise ??= readJson<PartiIndexEntry[]>(path.join(dataRoot, 'parti', 'index.json')).then(parties => {
+      const nameCounts = new Map<string, number>();
+      for (const party of parties) {
+        const key = partyNameKey(party.beteckning);
+        nameCounts.set(key, (nameCounts.get(key) ?? 0) + 1);
+      }
+      return {
+        parties,
+        current: new Map(parties.map(party => [party.filnamn, party])),
+        redirects: new Map(parties.flatMap(party => (party.tidigare_filnamn ?? []).map(slug => [slug, party] as const))),
+        duplicateNames: new Set([...nameCounts].filter(([, count]) => count > 1).map(([name]) => name)),
+      };
+    });
     return partyIndexPromise;
   }
 
@@ -182,7 +198,7 @@ export function createPartyDataStore (
     return Object.fromEntries(lists.filter((entry): entry is readonly [string, ElectionType[]] => entry !== undefined));
   }
 
-  async function readCurrentParty (slug: string): Promise<PartyPageData> {
+  async function readCurrentParty (slug: string, duplicateName: boolean): Promise<PartyPageData> {
     const partyRoot = path.join(dataRoot, 'parti', slug);
     const party = await readJson<Parti>(path.join(partyRoot, 'index.json'));
     const [profile, candidateLists] = await Promise.all([
@@ -194,6 +210,7 @@ export function createPartyDataStore (
     return {
       ...party,
       candidateLists,
+      duplicateName,
       ...(profile ? { profile } : {}),
       ...(symbolSrc ? { symbolSrc } : {}),
     };
@@ -243,6 +260,8 @@ export function createPartyDataStore (
         beteckning: entry.beteckning,
         filnamn: entry.filnamn,
         ...(entry.forkortning ? { forkortning: entry.forkortning } : {}),
+        ...(entry.omrade ? { omrade: entry.omrade } : {}),
+        ...(index.duplicateNames.has(partyNameKey(entry.beteckning)) ? { duplicateName: true } : {}),
         ...(symbolSrc ? { symbolSrc } : {}),
         deltagande: facet(party.deltagande),
       };
@@ -276,7 +295,13 @@ export function createPartyDataStore (
 
     async resolveParty (slug: string): Promise<PartyResolution> {
       const index = await getPartyIndex();
-      if (index.current.has(slug)) return { kind: 'party', props: await readCurrentParty(slug) };
+      const party = index.current.get(slug);
+      if (party) {
+        return {
+          kind: 'party',
+          props: await readCurrentParty(slug, index.duplicateNames.has(partyNameKey(party.beteckning))),
+        };
+      }
       const redirect = index.redirects.get(slug);
       if (redirect) return { kind: 'redirect', destination: `/parti/${redirect.filnamn}/` };
       return { kind: 'notFound' };

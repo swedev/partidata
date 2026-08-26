@@ -65,6 +65,8 @@ async function main () {
   const majority = Math.floor(seats / 2) + 1;
   assertSwedishCollation();
   const current = parties.find(party => party.filnamn === 'miljopartiet-de-grona') ?? parties[0];
+  const duplicate = parties.find(party => party.filnamn === 'kommunens-val-0503');
+  const withoutParticipation = parties.find(party => party.filnamn === 'angfarjepartiet');
   const expectedOrder = parties.toSorted(comparePartyOrder).slice(0, homePageSize).map(party => party.filnamn);
   const [first] = expectedOrder;
   const previous = parties.find(party => party.tidigare_filnamn?.length > 0);
@@ -73,6 +75,8 @@ async function main () {
   );
   const withSymbol = parties.find(party => party.partisymbol);
   assert.ok(current);
+  assert.equal(duplicate?.omrade, 'Hylte');
+  assert.ok(withoutParticipation);
   assert.ok(previous);
   assert.ok(cleanedSlug);
   assert.ok(withSymbol);
@@ -106,6 +110,8 @@ async function main () {
     assert.match(homeBody, new RegExp(`${majority}(<!-- -->)? för egen majoritet`), 'faktaraden anger egen majoritet');
     assert.match(homeBody, /aria-pressed="false"/, 'valtypen renderas som en chip-grupp');
     assert.match(homeBody, /Visa fler partier \(/, 'visa fler anger hur många som återstår');
+    assert.match(homeBody, /Alternativet \(Bromölla\)/, 'identiska partinamn får ort på korten');
+    assert.match(homeBody, /Alternativet \(Ljungby\)/, 'alla synliga namndubbletter särskiljs');
 
     const gridLinks = partyGridLinks(homeBody);
     assert.equal(gridLinks.length, Math.min(homePageSize, parties.length), 'partigridet renderar en hel sida partier');
@@ -117,6 +123,16 @@ async function main () {
     const profile = await fetch(`${baseUrl}/parti/${current.filnamn}/`);
     assert.equal(profile.status, 200);
     assert.match(await profile.text(), /<title[^>]*>[^<]+[–-] Partidata<\/title>/);
+
+    const duplicateProfile = await fetch(`${baseUrl}/parti/${duplicate.filnamn}/`);
+    assert.equal(duplicateProfile.status, 200);
+    const duplicateBody = await duplicateProfile.text();
+    assert.match(duplicateBody, /<title[^>]*>Kommunens Väl \(Hylte\) [–-] Partidata<\/title>/);
+    assert.match(duplicateBody, /<h1>Kommunens Väl \(Hylte\)<\/h1>/);
+
+    const withoutParticipationProfile = await fetch(`${baseUrl}/parti/${withoutParticipation.filnamn}/`);
+    assert.equal(withoutParticipationProfile.status, 200);
+    assert.match(await withoutParticipationProfile.text(), /Inget registrerat valdeltagande/);
 
     const redirect = await fetch(`${baseUrl}/parti/${previous.tidigare_filnamn[0]}/`, { redirect: 'manual' });
     assert.equal(redirect.status, 308);

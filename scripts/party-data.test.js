@@ -135,7 +135,8 @@ function makeHomeData () {
       uuid: '99999999-9999-4999-8999-999999999999',
       kod: '9009',
       beteckning: 'Kommunens Väl',
-      filnamn: 'kommunens-val-beta'
+      filnamn: 'kommunens-val-beta',
+      omrade: 'Hylte'
     },
     {
       uuid: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
@@ -206,7 +207,8 @@ function makeHomeData () {
       uuid: 'ffffffff-ffff-4fff-8fff-ffffffffffff',
       kod: '9015',
       beteckning: 'Kommunens Väl',
-      filnamn: 'kommunens-val-alfa'
+      filnamn: 'kommunens-val-alfa',
+      omrade: 'Skurup'
     },
     {
       uuid: '33333333-3333-4333-8333-333333333333',
@@ -282,6 +284,17 @@ test('home data lists parties in Swedish alphabetical order with participation f
   assert.equal(home.parties[1].symbolSrc, undefined);
   assert.equal(home.parties.at(-1).forkortning, undefined);
   assert.deepEqual(home.parties.at(-1).deltagande, {});
+  assert.deepEqual(
+    home.parties.filter(party => party.beteckning === 'Kommunens Väl').map(party => ({
+      filnamn: party.filnamn,
+      omrade: party.omrade,
+      duplicateName: party.duplicateName
+    })),
+    [
+      { filnamn: 'kommunens-val-alfa', omrade: 'Skurup', duplicateName: true },
+      { filnamn: 'kommunens-val-beta', omrade: 'Hylte', duplicateName: true }
+    ]
+  );
   assert.deepEqual(home.valar, ['2022', '2026']);
   assert.deepEqual(home.lan.map(lan => lan.namn), [
     'Skåne län',
@@ -290,6 +303,20 @@ test('home data lists parties in Swedish alphabetical order with participation f
     'Örebro län',
     'Östergötlands län'
   ]);
+});
+
+test('party pages know when their registered name is duplicated', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const duplicate = await createPartyDataStore(dataRoot).resolveParty('kommunens-val-alfa');
+  assert.equal(duplicate.kind, 'party');
+  assert.equal(duplicate.props.duplicateName, true);
+  assert.equal(duplicate.props.omrade, 'Skurup');
+
+  const unique = await createPartyDataStore(dataRoot).resolveParty('alfapartiet');
+  assert.equal(unique.kind, 'party');
+  assert.equal(unique.props.duplicateName, false);
 });
 
 test('mandate records resolve to a party only on an unambiguous abbreviation', async t => {

@@ -7,7 +7,7 @@ const { ROOT, toFileName } = require('./utils.js');
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-const INDEX_KEYS_FROM_PARTY = ['beteckning', 'filnamn', 'forkortning', 'partisymbol', 'tidigare_filnamn', 'uuid'];
+const INDEX_KEYS_FROM_PARTY = ['beteckning', 'filnamn', 'forkortning', 'omrade', 'partisymbol', 'tidigare_filnamn', 'uuid'];
 
 function readJson (file) {
   try {
@@ -209,6 +209,7 @@ function validatePartyRegistry (dataDirectory) {
     requireString(party.beteckning, `${entry.filnamn}.beteckning`);
     requireString(party.filnamn, `${entry.filnamn}.filnamn`);
     requireString(party.kod, `${entry.filnamn}.kod`);
+    if (party.omrade !== undefined) requireString(party.omrade, `${entry.filnamn}.omrade`);
     assert.equal(party.filnamn, entry.filnamn, `${entry.filnamn}: filnamn ska matcha katalogen`);
 
     for (const [key, value] of Object.entries(entry)) {

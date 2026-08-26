@@ -15,6 +15,8 @@ type PartyPageProps = PartyPageData;
 function PartyPage ({
   beteckning: registeredName,
   filnamn: slug,
+  omrade: area,
+  duplicateName,
   forkortning: abbreviation,
   kod: code,
   tidigare_beteckningar: previousNames,
@@ -27,6 +29,7 @@ function PartyPage ({
   symbolSrc,
 }: PartyPageProps) {
   const displayName = profile?.namn ?? registeredName;
+  const pageName = duplicateName && area ? `${displayName} (${area})` : displayName;
   const resolvedProfile: PartiProfil = profile ?? {
     namn: displayName,
     namn_kalla: { namn: 'Valmyndigheten', url: 'https://data.val.se/', hamtad: '2026-08-24' },
@@ -42,12 +45,12 @@ function PartyPage ({
       <Header />
       <main className="party-profile-v2" style={style}>
         <Head>
-          <title>{`${displayName} – Partidata`}</title>
-          <meta name="description" content={`Källhänvisad data om det politiska partiet ${displayName}.`} />
+          <title>{`${pageName} – Partidata`}</title>
+          <meta name="description" content={`Källhänvisad data om det politiska partiet ${pageName}.`} />
           <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
           <link rel="canonical" href={`https://www.partidata.se/parti/${slug}/`} />
         </Head>
-        <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} symbol={symbol} symbolSrc={symbolSrc} latestResult={latestResult} latestParticipation={participationYears[0]} />
+        <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} displayName={pageName} symbol={symbol} symbolSrc={symbolSrc} latestResult={latestResult} latestParticipation={participationYears[0]} />
         <DocumentsSection profile={resolvedProfile} abbreviation={abbreviation} />
         <RepresentativesSection profile={resolvedProfile} abbreviation={abbreviation} mandateCount={latestResult?.mandat} />
         {profile?.valresultat && <ElectionResultsSection results={profile.valresultat} partyLabel={abbreviation} />}

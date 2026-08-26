@@ -6,6 +6,7 @@ export interface Parti {
   beteckning: string;
   filnamn: string;
   tidigare_filnamn?: string[];
+  omrade?: string;
   kod: string;
   tidigare_koder?: string[];
   tidigare_beteckningar?: string[];
@@ -146,4 +147,4 @@ export interface PartiProfil {
 /**
  * An entry in `data/parti/index.json`, a subset of the full party record.
  */
-export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn' | 'forkortning' | 'partisymbol'>;
+export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn' | 'omrade' | 'forkortning' | 'partisymbol'>;

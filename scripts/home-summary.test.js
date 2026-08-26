@@ -7,6 +7,7 @@ const {
   ownMajority,
   participationLevels,
   participationYears,
+  partyLabel,
   queryEcho,
   toggleKind
 } = require('../src/components/home/summary.ts');
@@ -38,6 +39,12 @@ test('the card footer never renders empty', () => {
   assert.equal(cardMeta(NOTHING), 'Inget anmält deltagande');
   assert.equal(cardSub(ALL_LEVELS), 'Valår 2022, 2018');
   assert.equal(cardSub(NOTHING), undefined);
+});
+
+test('equal party names get an area suffix only when one is available', () => {
+  assert.equal(partyLabel({ beteckning: 'Kommunens Väl', duplicateName: true, omrade: 'Hylte' }), 'Kommunens Väl (Hylte)');
+  assert.equal(partyLabel({ beteckning: 'Kommunens Väl', duplicateName: true }), 'Kommunens Väl');
+  assert.equal(partyLabel({ beteckning: 'Eget namn', duplicateName: false, omrade: 'Hylte' }), 'Eget namn');
 });
 
 test('a chip toggles its election type off when it is already the chosen one', () => {
