@@ -127,7 +127,7 @@ test('a re-coded party is matched after harmless name normalisation', () => {
   assert.equal(normalisePartyName('Rädda! Håbo'), 'rädda håbo');
 });
 
-test('å, ä and ö stay distinct so Habo and Håbo never compare equal', () => {
+test('every diacritic stays distinct while equivalent Unicode stays equal', () => {
   const parties = [
     { filnamn: 'habodemokraterna', koder: ['1287'], beteckning: 'Habodemokraterna', tidigare_beteckningar: [], tidigare_filnamn: [] },
     { filnamn: 'habodemokraterna-1532', koder: ['1532'], beteckning: 'HåboDemokraterna', tidigare_beteckningar: [], tidigare_filnamn: [] }
@@ -142,6 +142,10 @@ test('å, ä and ö stay distinct so Habo and Håbo never compare equal', () => 
   assert.equal(result.merged[0].party.beteckning, 'Habodemokraterna');
   assert.deepEqual(parties[0].koder, ['1287', '2000']);
   assert.deepEqual(parties[1].koder, ['1532']);
+  assert.notEqual(normalisePartyName('Sámelistu'), normalisePartyName('Samelistu'));
+  assert.notEqual(normalisePartyName('Parti Ü'), normalisePartyName('Parti U'));
+  assert.notEqual(normalisePartyName('Parti Ï'), normalisePartyName('Parti I'));
+  assert.equal(normalisePartyName('Sa\u0301melistu'), normalisePartyName('Sámelistu'));
 });
 
 test('normalised ambiguity is rejected when a merge is possible', () => {

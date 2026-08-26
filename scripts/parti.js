@@ -162,21 +162,19 @@ function deriveArea (deltagande, areas) {
 
 /**
  * normalisePartyName
- * Makes harmless spelling differences comparable without treating the result
- * as an identity of its own. å, ä and ö are distinct Swedish letters rather
- * than accented variants of a and o, so their marks survive the folding —
- * otherwise two genuinely different parties (Habo/Håbo) would compare equal.
- * The caller must still reject ambiguous matches.
+ * Makes differences in case, spacing, punctuation and Unicode representation
+ * comparable without treating the result as an identity of its own. Every
+ * letter and diacritic remains significant; actual spelling changes require a
+ * reviewed alias. The caller must still reject ambiguous matches.
  * @param  {String} name
  * @return {String}
  */
 function normalisePartyName (name) {
   return name
-    .normalize('NFD')
-    .replace(/\p{Mark}/gu, mark => (mark === '\u0308' || mark === '\u030A' ? mark : ''))
     .normalize('NFC')
     .toLowerCase()
-    .replace(/[^\p{Letter}\p{Number}]+/gu, ' ')
+    .normalize('NFC')
+    .replace(/[^\p{Letter}\p{Number}\p{Mark}]+/gu, ' ')
     .trim();
 }
 
