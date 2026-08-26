@@ -7,7 +7,6 @@ import {
   countyApplies,
   electionKindLabels,
   emptyFilters,
-  filterKey,
   filterParties,
   isActive,
   pruneFilters,
@@ -33,20 +32,19 @@ function availableKinds (parties: HomeParty[]): ElectionKind[] {
 
 function PartySearch ({ parties, valar, lan }: { parties: HomeParty[]; valar: string[]; lan: HomeCounty[] }) {
   const [filters, setFilters] = useState<HomeFilters>(emptyFilters);
-  const [paging, setPaging] = useState({ key: filterKey(emptyFilters), count: PAGE_SIZE });
+  const [visible, setVisible] = useState(PAGE_SIZE);
   const fieldId = useId();
-
-  // Paging belongs to one result set: a new search or filter shows the first
-  // page again rather than carrying the previous set's reveal count over.
-  const key = filterKey(filters);
-  const visible = paging.key === key ? paging.count : PAGE_SIZE;
 
   const kinds = useMemo(() => availableKinds(parties), [parties]);
   const matches = useMemo(() => filterParties(parties, filters), [parties, filters]);
   const shown = matches.slice(0, visible);
 
+  // The reveal count belongs to the result set it was reached in, so every
+  // change of the filters starts over at the first page. Clearing the filters
+  // goes through the same path, and resets the count with them.
   function update (patch: Partial<HomeFilters>) {
     setFilters(current => pruneFilters({ ...current, ...patch }));
+    setVisible(PAGE_SIZE);
   }
 
   return (
@@ -118,7 +116,7 @@ function PartySearch ({ parties, valar, lan }: { parties: HomeParty[]; valar: st
             : `${numberFormatter.format(matches.length)} av ${numberFormatter.format(parties.length)} partier matchar, visar ${numberFormatter.format(shown.length)}`}
         </p>
         {isActive(filters) && (
-          <button type="button" className="home-button" onClick={() => setFilters(emptyFilters)}>
+          <button type="button" className="home-button" onClick={() => update(emptyFilters)}>
             Rensa sökning och filter
           </button>
         )}
@@ -152,7 +150,7 @@ function PartySearch ({ parties, valar, lan }: { parties: HomeParty[]; valar: st
         <button
           type="button"
           className="home-button home-button--more"
-          onClick={() => setPaging({ key, count: visible + PAGE_SIZE })}
+          onClick={() => setVisible(current => current + PAGE_SIZE)}
         >
           Visa fler partier
         </button>

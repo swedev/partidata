@@ -3,7 +3,6 @@ const test = require('node:test');
 
 const {
   emptyFilters,
-  filterKey,
   filterParties,
   isActive,
   matchesQuery,
@@ -111,14 +110,10 @@ test('search and filters narrow together', () => {
   assert.deepEqual(slugs({ query: 'skane', valar: '2018' }), []);
 });
 
-test('an active filter set is reported and identified', () => {
+test('an active filter set is reported', () => {
   assert.equal(isActive(emptyFilters), false);
   assert.equal(isActive({ ...emptyFilters, query: 'a' }), true);
+  assert.equal(isActive({ ...emptyFilters, valar: '2022' }), true);
   assert.equal(isActive({ ...emptyFilters, valtyp: 'kommun' }), true);
-  assert.equal(filterKey(emptyFilters), filterKey({ ...emptyFilters }));
-  assert.notEqual(filterKey(emptyFilters), filterKey({ ...emptyFilters, valar: '2022' }));
-  assert.notEqual(
-    filterKey({ ...emptyFilters, valtyp: 'kommun' }),
-    filterKey({ ...emptyFilters, valtyp: 'kommun', lan: '12' })
-  );
+  assert.equal(isActive({ ...emptyFilters, lan: '12' }), true);
 });
