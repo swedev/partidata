@@ -138,10 +138,11 @@ function runSymbolImport (dir, year, zip, legacyDir = null) {
  * runParti
  * Rebuilds the registry from the committed data in a tree.
  * @param  {String} dir Tree from makeTree()
+ * @param  {String[]} [args]
  * @return {{ status: Number, stdout: String, stderr: String }}
  */
-function runParti (dir) {
-  const result = spawnSync(process.execPath, [path.join(dir, 'scripts', 'parti.js')], { encoding: 'utf8' });
+function runParti (dir, args = []) {
+  const result = spawnSync(process.execPath, [path.join(dir, 'scripts', 'parti.js'), ...args], { encoding: 'utf8' });
   return { status: result.status, stdout: result.stdout, stderr: result.stderr };
 }
 
