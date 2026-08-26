@@ -24,7 +24,7 @@ const HomePage: NextPage<HomeData> = props => {
           <p className="description">
             Partidata samlar uppgifter från Valmyndigheten om partibeteckningar,
             tidigare namn och anmält deltagande i riksdags-, region- och kommunval.
-            Ingen värdering, ingen rangordning — bara källhänvisad data.
+            Ingen partipolitisk värdering — bara källhänvisad data.
           </p>
         </div>
 
