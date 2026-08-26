@@ -7,8 +7,8 @@
 - Partidata fortsätter använda versionshanterade JSON-filer som datakälla.
 - Tidigare partiadresser ger riktiga permanenta HTTP-redirects och okända
   adresser ger HTTP 404.
-- Produktionsartefakten är reproducerbar, självbärande och kan aktiveras eller
-  återställas utan att en halvfärdig release blir publik.
+- Produktionsartefakten är reproducerbar, självbärande och kan startas av den
+  hanterade Node-processen.
 - Miljöspecifika konton, värdnamn, sökvägar och åtkomstuppgifter stannar i den
   skyddade produktionsmiljön och dokumenteras inte i repot.
 
@@ -32,8 +32,9 @@ Modulen ska:
 - skilja aktuellt `filnamn`, `tidigare_filnamn` och okänd slug;
 - läsa `index.json`, valfri `profil.json` och kandidatlistor för ett verifierat
   aktuellt filnamn;
-- upptäcka tillgängliga valår från `data/val/` i stället för att hårdkoda
-  2018/2022/2026;
+- upptäcka endast numeriska valårskataloger under `data/val/` som faktiskt
+  innehåller `kandidatlistor/`, i stället för att hårdkoda 2018/2022/2026 eller
+  tolka exempelvis `partideltagande/` som ett valår;
 - aldrig bygga en filsökväg från en slug eller ett bildnamn innan värdet har
   matchats mot registerdatan;
 - returnera serialiserbara props och tydliga resultattyper för sida, redirect
@@ -42,42 +43,52 @@ Modulen ska:
 JSON-data och bildfiler läggs med i varje release. Processens working directory
 är release-roten, så servermodulen kan läsa `data/` utan externa mounts.
 
+Modulen ska kunna importeras direkt av befintliga `node --test` under Node 24.
+Håll därför dess runtime-beroenden till relativa filer eller `node:`-moduler och
+runtime-`fs`; använd inte `src/...`-/`data/...`-alias eller bundlade JSON-importer
+i servermodulen. Testerna importerar modulen via dess relativa filsökväg, utan en
+separat testbundler.
+
 ### 2. Partiprofil vid request
 
 Ändra `src/pages/parti/[filnamn].tsx`:
 
 - ersätt `getStaticPaths` och `getStaticProps` med `getServerSideProps`;
 - använd servermodulen direkt, utan ett internt API-anrop;
-- returnera `{ redirect: { destination, permanent: true } }` för ett tidigare
-  filnamn;
+- returnera en Next-redirect med `permanent: true` till
+  `/parti/<aktuell-slug>/` för ett tidigare filnamn, vilket ska ge HTTP 308;
 - returnera `{ notFound: true }` för en okänd slug;
 - ta bort den HTML-/meta-refresh-baserade `RedirectPage`;
+- ta bort de då oanvända `PartiRedirect`- och `isRedirect`-typerna;
 - sätt canonical-URL för den aktuella partiadressen;
 - sätt en uttrycklig delad cachepolicy för publika profilsvar.
 
-Första implementationen använder
-`Cache-Control: public, max-age=0, s-maxage=60, stale-while-revalidate=300`.
-nginx får en kort proxycache för GET/HEAD och deployflödet tömmer sidcachen vid
-releasebyte. POST, cookies, health och felstatus ska inte cachelagras.
+Inför ingen separat nginx-proxycache i första implementationen. Trafikmängden
+motiverar inte cacheinfrastruktur eller purge-rättigheter; Next renderar
+profilsidan per request. Cache kan läggas till senare om faktisk last visar ett
+behov.
 
 ### 3. Partisymboler som runtime-resurs
 
 Build-time-importen av symbolfilen fungerar inte som generell runtime-läsning.
-Skapa en Node-route, exempelvis
-`src/pages/partisymbol/[filnamn]/[bild].ts`, som:
+Skapa API-routen
+`src/pages/api/partisymbol/[filnamn]/[bild].ts` och en rewrite i
+`next.config.ts` från `/partisymbol/:filnamn/:bild` till API-routen. Routen ska:
 
-- verifierar både filnamn och bildnamn mot partiets registerpost;
-- läser endast den registrerade symbolfilen;
-- svarar med korrekt MIME-typ, `Content-Length` och en begränsad publik
+- verifiera både filnamn och bildnamn mot partiets registerpost;
+- läsa endast den registrerade symbolfilen;
+- svara med korrekt MIME-typ, `Content-Length` och en begränsad publik
   cachetid;
-- svarar 404 på fel kombination och tillåter inte path traversal.
+- stödja GET och HEAD och svara 405 med `Allow: GET, HEAD` för andra metoder;
+- svara 404 på fel kombination och aldrig tillåta path traversal.
 
 Partisidan får en URL till denna route i stället för ett webpack-genererat
 bildobjekt.
 
 ### 4. Sitemap och health
 
-- Lägg till `src/pages/sitemap.xml.tsx` med servergenererad XML.
+- Lägg till `src/pages/api/sitemap.ts` med servergenererad XML och en rewrite
+  från `/sitemap.xml` till API-routen.
 - Sitemap innehåller startsidan och aktuella partiadresser, aldrig
   `tidigare_filnamn`.
 - Bas-URL läses från en icke-hemlig runtime-konfiguration med
@@ -87,7 +98,10 @@ bildobjekt.
 - Health-svaret ska vara `no-store` och inte exponera miljö- eller
   versionsdetaljer.
 
-## Build och releaseartefakt
+Health används av deployens smoke test för att kontrollera att den omstartade
+processen kan läsa data.
+
+## Build och deployartefakt
 
 ### Next-konfiguration
 
@@ -106,8 +120,7 @@ reproducerbart releaseskript som bygger en stagingkatalog med:
 - innehållet i `.next/standalone/`;
 - `public/`;
 - `.next/static/` under rätt `.next/`-sökväg;
-- hela `data/`;
-- en manifestfil med Git-SHA/version och checksummor.
+- hela `data/`.
 
 Skriptet ska misslyckas om `server.js`, partidatan eller statiska assets saknas.
 
@@ -116,88 +129,73 @@ Skriptet ska misslyckas om `server.js`, partidatan eller statiska assets saknas.
 - Lägg till `npm start` för lokal produktionskörning.
 - Ta bort `postbuild`-beroendet på `scripts/validate-export.js` och katalogen
   `out/`.
+- Uppdatera `precommit` samtidigt så det inte indirekt förutsätter `postbuild`
+  eller `out/` och i stället kör den nya runtime-/releaseverifieringen.
 - Ersätt exportvalideringen med runtime-/HTTP-tester enligt testmatrisen.
 - Lägg releasebygget i ett separat kommando så vanlig `npm run build` fortsatt
   är snabbt och CI kan testa båda stegen uttryckligen.
 
 ## Produktionsdeploy
 
-### Release-layout
+### Målstruktur och systemprocess
 
-Deployroten kommer från den skyddade produktionsmiljön. Under den används
-generiska underkataloger:
-
-- `releases/<version>/` – kompletta, immutable releaser;
-- `current` – atomisk symlink till aktiv release;
-- `previous` – senast verifierade release för rollback;
-- `shared-next-static/` – ackumulerade, innehållsnamngivna Next-assets så klienter
-  som laddade HTML under ett releasebyte fortfarande hittar sina chunks.
-
-Behåll ett litet antal verifierade releaser och rensa endast releaser som inte
-är `current` eller `previous`.
-
-### Systemprocess
+`DEPLOY_TARGET` i den skyddade produktionsmiljön pekar på den enda katalog där
+standalone-artefakten körs. Ingen releasehistorik eller symlinkstruktur byggs på
+servern.
 
 Lägg en generell systemd-mall i `deploy/`:
 
 - dedikerat, oprivilegierat servicekonto;
-- `WorkingDirectory` pekar på `current`;
+- `WorkingDirectory` pekar på `DEPLOY_TARGET`;
 - `NODE_ENV=production`, loopback-bindning och port kommer från en skyddad
   environment-fil;
-- `ExecStart` kör standalone-artefaktens `server.js` med den installerade,
-  stödda Node-versionen;
+- `ExecStart` kör artefaktens `server.js` med den installerade Node-versionen;
 - automatisk restart vid oväntat processfel;
-- rimlig systemd-hardening utan att blockera läsning av releasefilerna.
+- `WantedBy=multi-user.target` och dokumenterad `systemctl enable` så processen
+  startar efter serveromboot.
 
-Deploykontot ska bara kunna aktivera releaser och starta om den specifika
-tjänsten; breda sudo-rättigheter ska inte dokumenteras eller krävas av
-workflowen.
+Deploykontot behöver endast skriva till `DEPLOY_TARGET` och starta om den
+specifika tjänsten. En äldre Git-tagg kan deployas om manuellt om en återgång
+behövs; automatisk rollback ingår inte.
 
 ### nginx
 
-Ersätt den statiska `try_files`-konfigurationen med en reverse proxy mot
+Ersätt den statiska `try_files`-konfigurationen med en enkel reverse proxy mot
 loopback-processen:
 
 - bevara TLS, apex-redirect och säkerhetsheaders;
 - vidarebefordra `Host`, klient-IP och protokollheaders;
-- hantera WebSocket-/keep-alive-headers på ett Next-kompatibelt sätt;
-- servera `/_next/static/` från den delade assetkatalogen med immutable cache;
-- använd kort proxycache endast för publika GET/HEAD-svar;
-- returnera 502 om appen är nere i stället för att visa en gammal statisk sida.
+- använd Next-kompatibel HTTP/1.1- och keep-alive-proxying;
+- låt Next-processen servera `public/` och `/_next/static/` från den paketerade
+  artefakten;
+- inför ingen proxycache.
 
-Validera alltid en staged nginx-konfiguration innan den ersätter den aktiva.
+Validera nginx-konfigurationen med `nginx -t` före installation.
 
 ### Workflowsekvens
 
-`.github/workflows/deploy.yaml` ska fortfarande endast kunna deploya en tagg.
-Lägg till en explicit tag guard även för `workflow_dispatch`.
+`.github/workflows/deploy.yaml` fortsätter deploya en uttryckligen vald Git-tagg:
 
-1. Checka ut taggen, installera med `npm ci` och kör hela verifieringskedjan.
-2. Bygg standalone-release och verifiera manifest/checksummor.
-3. Ladda upp till en ny stagingkatalog; ändra aldrig `current` under upload.
-4. Flytta stagingkatalogen till `releases/<version>` när uploaden är komplett.
-5. Spara befintlig `current` som rollbackmål och växla symlinken atomiskt.
-6. Starta om tjänsten och gör health check mot loopback med retries.
-7. Vid fel: återställ föregående symlink, starta om och verifiera rollback innan
-   workflowen avslutas som misslyckad.
-8. Vid godkänd lokal health: töm HTML-proxycachen och gör publik HTTPS-smoke.
-9. Markera releasen som verifierad och rensa äldre, inaktiva releaser.
+1. Checka ut taggen, installera med `npm ci` och kör verifieringskedjan.
+2. Bygg den kompletta standalone-artefakten.
+3. Rsynca artefakten med `--delete` till `DEPLOY_TARGET`.
+4. Starta om systemd-tjänsten.
+5. Kontrollera `/api/health` mot loopback och gör en publik HTTPS-smoke.
 
-Workflowloggen får inte skriva ut värdnamn, konton, sökvägar eller secrets.
+En kort driftstörning under rsync och omstart är acceptabel. Om smoke-testet
+misslyckas avslutas workflowen som misslyckad; felet rättas eller en tidigare
+tagg deployas om manuellt. Workflowloggen får inte skriva ut secrets.
 
 ## Första produktionsväxlingen
 
-Första växlingen skiljer sig från en normal deploy och görs först efter merge:
+Första växlingen görs efter merge och får innebära en kort driftstörning:
 
-1. Installera stödd Node-runtime och den granskade systemtjänsten.
-2. Ladda upp en release utan att ändra nuvarande nginx-site.
-3. Starta Next-processen på loopback och verifiera alla smoke-URL:er direkt.
-4. Staga och validera den nya nginx-konfigurationen.
-5. Växla nginx till reverse proxy och gör publik smoke test.
-6. Om publik smoke misslyckas: återställ den tidigare nginx-konfigurationen;
-   den befintliga statiska sajten ska fortfarande finnas kvar som rollback under
-   hela växlingen.
-7. Ta bort den gamla statiska webbrooten först i ett senare underhållssteg.
+1. Installera Node-runtime och systemd-tjänsten.
+2. Bygg och ladda upp standalone-artefakten till `DEPLOY_TARGET`, vilket ersätter
+   den statiska exporten.
+3. Starta processen och verifiera `/api/health` direkt mot loopback.
+4. Installera den validerade reverse-proxy-konfigurationen i nginx.
+5. Verifiera den publika sajten.
 
 Inga servermutationer görs under själva kodimplementationen eller PR-reviewn.
 
@@ -209,8 +207,11 @@ Inga servermutationer görs under själva kodimplementationen eller PR-reviewn.
 - tidigare slug ger permanent redirect till aktuell slug;
 - okänd och osäker slug ger not found utan filsystemsåtkomst utanför `data/`;
 - profilfil och kandidatlista är valfria;
-- valår upptäcks utan hårdkodad lista;
-- symbolroute accepterar endast registrerad fil och rätt MIME-typ;
+- endast numeriska valårskataloger med `kandidatlistor/` upptäcks; kataloger utan
+  kandidatlistor och icke-årskataloger ignoreras;
+- `node --test` kan importera servermodulen utan alias-loader eller bundler;
+- symbolroute accepterar endast registrerad fil och rätt MIME-typ, hanterar HEAD
+  utan body och svarar 405 på andra metoder;
 - sitemap innehåller alla aktuella slugs exakt en gång och inga tidigare slugs;
 - health ger 200 med läsbar data och 500 om datakällan saknas.
 
@@ -224,7 +225,7 @@ Inga servermutationer görs under själva kodimplementationen eller PR-reviewn.
   - `/` → 200;
   - en innehållsrik partiprofil → 200 med rätt titel och profiltext;
   - ett parti utan profilfil → 200;
-  - tidigare filnamn → permanent redirect med korrekt `Location`;
+  - tidigare filnamn → 308 med `Location: /parti/<aktuell-slug>/`;
   - okänd slug → 404;
   - registrerad partisymbol → 200 och `image/png`;
   - `/sitemap.xml` → 200 och XML;
@@ -238,12 +239,12 @@ Inga servermutationer görs under själva kodimplementationen eller PR-reviewn.
 
 ### Deploytest före produktionsväxling
 
-- testa releaseaktivering och rollback med en medvetet trasig health check i en
-  isolerad katalog/process;
-- verifiera att en avbruten upload inte påverkar `current`;
+- verifiera att artefakten innehåller `server.js`, `data/`, `public/` och
+  `.next/static/`;
+- starta artefakten i en isolerad katalog och kontrollera health och smoke-URL:er;
 - verifiera att nginx-konfigurationen underkänns före installation om syntaxen
   är fel;
-- verifiera att tidigare release åter blir frisk efter rollback.
+- verifiera att systemd-tjänsten kan startas om och svarar på health efteråt.
 
 ## Implementationsordning
 
@@ -253,7 +254,7 @@ Inga servermutationer görs under själva kodimplementationen eller PR-reviewn.
 4. Standalone-konfiguration och reproducerbart releasebygge.
 5. HTTP-smoke test som startar den byggda artefakten i CI.
 6. Generiska systemd-/nginxmallar och uppdaterad deploydokumentation.
-7. Atomiskt taggbaserat workflow med rollbacklogik.
+7. Enkelt taggbaserat workflow som rsyncar artefakten och startar om tjänsten.
 8. Full lokal verifiering och PR; serverväxling först efter grön merge.
 
 ## Referenser
@@ -261,4 +262,3 @@ Inga servermutationer görs under själva kodimplementationen eller PR-reviewn.
 - [Next.js: getServerSideProps](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props)
 - [Next.js: standalone output](https://nextjs.org/docs/pages/api-reference/config/next-config-js/output)
 - [Next.js: self-hosting and caching](https://nextjs.org/docs/pages/guides/self-hosting)
-
