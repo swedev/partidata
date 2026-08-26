@@ -45,6 +45,60 @@ function validateProfileSource (source, context) {
   assert.match(source.hamtad, /^\d{4}-\d{2}-\d{2}$/, `${context}.hamtad ska vara ÅÅÅÅ-MM-DD`);
 }
 
+function validateResultSource (source, context) {
+  validateProfileSource(source, context);
+  requireString(source.id, `${context}.id`);
+  requireString(source.titel, `${context}.titel`);
+  requireString(source.version, `${context}.version`);
+  requireString(source.format, `${context}.format`);
+  requireString(source.sha256, `${context}.sha256`);
+  assert.match(source.sha256, /^[0-9a-f]{64}$/, `${context}.sha256 ska vara en SHA-256-checksumma`);
+  if (source.transkribering_sha256 !== undefined) {
+    requireString(source.transkribering_sha256, `${context}.transkribering_sha256`);
+    assert.match(source.transkribering_sha256, /^[0-9a-f]{64}$/, `${context}.transkribering_sha256 ska vara en SHA-256-checksumma`);
+  }
+}
+
+function normalizedSourceIdentity (value) {
+  return value.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('sv-SE');
+}
+
+function validateParliamentIdentityLinks (dataDirectory, partiesByUuid) {
+  const file = path.join(dataDirectory, 'valresultat', 'riksdag-partikopplingar.json');
+  if (!fs.existsSync(file)) return;
+  const links = readJson(file);
+  assert.equal(links.schema_version, 1, 'valresultat/riksdag-partikopplingar.json.schema_version ska vara 1');
+  const mappings = requireArray(links.kopplingar, 'valresultat/riksdag-partikopplingar.json.kopplingar');
+  requireUnique(mappings, 'parti_uuid', 'valresultat/riksdag-partikopplingar.json.kopplingar');
+  const owners = { namn: new Map(), kod: new Map() };
+  const claim = (kind, value, uuid, context) => {
+    requireString(value, context);
+    const key = normalizedSourceIdentity(value);
+    const previous = owners[kind].get(key);
+    assert.ok(!previous || previous === uuid, `${context} kolliderar med en koppling till ${previous}`);
+    owners[kind].set(key, uuid);
+  };
+  for (const [index, mapping] of mappings.entries()) {
+    const context = `valresultat/riksdag-partikopplingar.json.kopplingar[${index}]`;
+    requireUuid(mapping.parti_uuid, `${context}.parti_uuid`);
+    assert.ok(partiesByUuid.has(mapping.parti_uuid), `${context} hänvisar till okänt parti-UUID ${mapping.parti_uuid}`);
+    const names = requireArray(mapping.kallbeteckningar, `${context}.kallbeteckningar`);
+    const codes = requireArray(mapping.kallkoder, `${context}.kallkoder`);
+    assert.ok(names.length + codes.length > 0, `${context} måste innehålla minst en historisk identitet`);
+    names.forEach((value, valueIndex) => claim('namn', value, mapping.parti_uuid, `${context}.kallbeteckningar[${valueIndex}]`));
+    codes.forEach((value, valueIndex) => claim('kod', value, mapping.parti_uuid, `${context}.kallkoder[${valueIndex}]`));
+  }
+  const blocked = requireArray(links.blockerade_kallbeteckningar, 'valresultat/riksdag-partikopplingar.json.blockerade_kallbeteckningar');
+  const blockedKeys = new Set();
+  blocked.forEach((value, index) => {
+    requireString(value, `valresultat/riksdag-partikopplingar.json.blockerade_kallbeteckningar[${index}]`);
+    const key = normalizedSourceIdentity(value);
+    assert.ok(!blockedKeys.has(key), `blockerade_kallbeteckningar innehåller dubbletten ${value}`);
+    assert.ok(!owners.namn.has(key), `${value} kan inte vara både kopplad och blockerad`);
+    blockedKeys.add(key);
+  });
+}
+
 function validatePartyProfile (profile, context) {
   assert.ok(profile && typeof profile === 'object' && !Array.isArray(profile), `${context} ska vara ett objekt`);
   requireString(profile.namn, `${context}.namn`);
@@ -364,7 +418,7 @@ function validateElectionYears (dataDirectory, parties, geography) {
   return { years: years.length, referenceCount, candidateListCount };
 }
 
-function validateParliamentResults (dataDirectory) {
+function validateParliamentResults (dataDirectory, partiesByUuid) {
   const electionDirectory = path.join(dataDirectory, 'val');
   const resultFiles = fs.readdirSync(electionDirectory, { withFileTypes: true })
     .filter(entry => entry.isDirectory() && /^\d{4}$/.test(entry.name))
@@ -381,20 +435,68 @@ function validateParliamentResults (dataDirectory) {
   for (const { year, file } of resultFiles) {
     const context = `${year}/valresultat/riksdag.json`;
     const result = readJson(file);
+    assert.equal(result.schema_version, 2, `${context}.schema_version ska vara 2`);
+    assert.equal(result.valtyp, 'riksdag', `${context}.valtyp ska vara riksdag`);
     assert.equal(result.valar, year, `${context}.valar ska matcha katalogens valår`);
-    assert.ok(typeof result.valdeltagande?.procent === 'number' && result.valdeltagande.procent >= 0 && result.valdeltagande.procent <= 100, `${context}.valdeltagande.procent ska vara 0–100`);
-    validateProfileSource(result.valdeltagande?.kalla, `${context}.valdeltagande.kalla`);
+    assert.equal(result.status, 'slutligt', `${context}.status ska vara slutligt`);
+    const sources = requireArray(result.kallor, `${context}.kallor`);
+    assert.ok(sources.length > 0, `${context}.kallor får inte vara tom`);
+    requireUnique(sources, 'id', `${context}.kallor`);
+    sources.forEach((source, index) => validateResultSource(source, `${context}.kallor[${index}]`));
+    const sourceIds = new Set(sources.map(source => source.id));
+    const requireReference = (reference, referenceContext) => {
+      requireString(reference, referenceContext);
+      assert.ok(sourceIds.has(reference), `${referenceContext} hänvisar till okänd källa ${reference}`);
+    };
 
-    if (result.mandatfordelning === undefined) continue;
+    assert.ok(typeof result.valdeltagande?.procent === 'number' && result.valdeltagande.procent >= 0 && result.valdeltagande.procent <= 100, `${context}.valdeltagande.procent ska vara 0–100`);
+    requireReference(result.valdeltagande.kallreferens, `${context}.valdeltagande.kallreferens`);
+
+    const voteResult = result.rostresultat;
+    assert.ok(Number.isInteger(voteResult?.giltiga_roster) && voteResult.giltiga_roster > 0, `${context}.rostresultat.giltiga_roster ska vara ett positivt heltal`);
+    requireArray(voteResult.kallreferenser, `${context}.rostresultat.kallreferenser`).forEach((reference, index) => {
+      requireReference(reference, `${context}.rostresultat.kallreferenser[${index}]`);
+    });
+    const linked = requireArray(voteResult.partier, `${context}.rostresultat.partier`);
+    const unresolved = requireArray(voteResult.ej_kopplade, `${context}.rostresultat.ej_kopplade`);
+    const aggregates = requireArray(voteResult.aggregat, `${context}.rostresultat.aggregat`);
+    requireUnique(linked, 'parti_uuid', `${context}.rostresultat.partier`);
+    const sourceRows = [...linked, ...unresolved, ...aggregates];
+    const sourceIdentities = new Set();
+    for (const [index, row] of sourceRows.entries()) {
+      const rowContext = `${context}.rostresultat.rad[${index}]`;
+      requireString(row.partibeteckning, `${rowContext}.partibeteckning`);
+      if (row.kallkod !== undefined) requireString(row.kallkod, `${rowContext}.kallkod`);
+      assert.ok(Number.isInteger(row.roster) && row.roster >= 0, `${rowContext}.roster ska vara ett positivt heltal`);
+      assert.ok(typeof row.rostandel === 'number' && row.rostandel >= 0 && row.rostandel <= 100, `${rowContext}.rostandel ska vara 0–100`);
+      assert.equal(row.rostandel, Number((row.roster * 100 / voteResult.giltiga_roster).toFixed(2)), `${rowContext}.rostandel ska härledas från röstetalet`);
+      requireReference(row.kallreferens, `${rowContext}.kallreferens`);
+      const identity = `${row.kallkod ?? ''}\0${row.partibeteckning}`;
+      assert.ok(!sourceIdentities.has(identity), `${context}.rostresultat innehåller dubblettraden ${identity.replace('\0', ' ')}`);
+      sourceIdentities.add(identity);
+    }
+    for (const row of linked) {
+      requireUuid(row.parti_uuid, `${context}.rostresultat.partier.parti_uuid`);
+      assert.ok(partiesByUuid.has(row.parti_uuid), `${context}.rostresultat hänvisar till okänt parti-UUID ${row.parti_uuid}`);
+    }
+    assert.equal(sourceRows.reduce((total, row) => total + row.roster, 0), voteResult.giltiga_roster, `${context}.rostresultat ska summera till giltiga röster`);
+
     hasChamberComposition = true;
     const parties = requireArray(result.mandatfordelning.partier, `${context}.mandatfordelning.partier`);
-    requireUnique(parties, 'forkortning', `${context}.mandatfordelning.partier`);
+    requireUnique(parties, 'parti_uuid', `${context}.mandatfordelning.partier`);
+    requireArray(result.mandatfordelning.kallreferenser, `${context}.mandatfordelning.kallreferenser`).forEach((reference, index) => {
+      requireReference(reference, `${context}.mandatfordelning.kallreferenser[${index}]`);
+    });
     for (const party of parties) {
-      requireString(party.forkortning, `${context}.mandatfordelning.partier.forkortning`);
+      requireUuid(party.parti_uuid, `${context}.mandatfordelning.partier.parti_uuid`);
+      assert.ok(partiesByUuid.has(party.parti_uuid), `${context}.mandatfordelning hänvisar till okänt parti-UUID ${party.parti_uuid}`);
+      assert.ok(linked.some(row => row.parti_uuid === party.parti_uuid), `${context}.mandatpartiet ${party.parti_uuid} saknar röstresultat`);
+      requireString(party.partibeteckning, `${context}.mandatfordelning.partier.partibeteckning`);
       assert.ok(Number.isInteger(party.mandat) && party.mandat >= 0, `${context}.mandatfordelning.partier.mandat ska vara ett positivt heltal`);
+      requireReference(party.kallreferens, `${context}.mandatfordelning.partier.kallreferens`);
     }
-    assert.equal(parties.reduce((total, party) => total + party.mandat, 0), 349, `${context}.mandatfordelning ska innehålla 349 mandat`);
-    validateProfileSource(result.mandatfordelning.kalla, `${context}.mandatfordelning.kalla`);
+    assert.equal(result.mandatfordelning.antal_mandat, 349, `${context}.mandatfordelning.antal_mandat ska vara 349`);
+    assert.equal(parties.reduce((total, party) => total + party.mandat, 0), result.mandatfordelning.antal_mandat, `${context}.mandatfordelning ska summera till antal_mandat`);
   }
 
   assert.ok(hasChamberComposition, 'Minst ett riksdagsresultat ska innehålla mandatfördelning');
@@ -414,7 +516,8 @@ function validateData (dataDirectory = path.join(ROOT, 'data')) {
     'partier, regioner och kommuner'
   );
   const elections = validateElectionYears(dataDirectory, parties, geography);
-  validateParliamentResults(dataDirectory);
+  validateParliamentIdentityLinks(dataDirectory, parties.partiesByUuid);
+  validateParliamentResults(dataDirectory, parties.partiesByUuid);
 
   return {
     parties: parties.index.length,

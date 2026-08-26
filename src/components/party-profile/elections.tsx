@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import parliamentView from 'data/derived/partiprofil/riksdag.json';
+import parliamentView from 'data/derived/riksdag.json';
 import type { PartiDeltagande, PartiProfilValresultat, PartiProfilValresultatPost } from 'src/types';
 import { SectionHeader, SourceLine } from './shared';
 

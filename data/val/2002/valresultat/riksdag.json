@@ -1,11 +1,492 @@
 {
+  "schema_version": 2,
+  "valtyp": "riksdag",
   "valar": 2002,
-  "valdeltagande": {
-    "procent": 80.1,
-    "kalla": {
-      "namn": "SCB",
-      "url": "https://www.scb.se/",
-      "hamtad": "2026-08-25"
+  "status": "slutligt",
+  "kallor": [
+    {
+      "id": "resultat",
+      "namn": "Valmyndigheten",
+      "titel": "Riksdagsvalet 2002, hela riket",
+      "url": "https://historik.val.se/val/val_02/slutresultat/00R/00.html",
+      "version": "Slutligt resultat",
+      "format": "text/html",
+      "hamtad": "2026-08-26",
+      "sha256": "9eeda5ef7731c32a9112fa97bfc0228c3a34baf392469f6656920d4327bf4303"
     }
+  ],
+  "valdeltagande": {
+    "procent": 80.11,
+    "kallreferens": "resultat"
+  },
+  "rostresultat": {
+    "giltiga_roster": 5303212,
+    "kallreferenser": [
+      "resultat"
+    ],
+    "partier": [
+      {
+        "parti_uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476",
+        "kallkod": "M",
+        "partibeteckning": "Moderata Samlingspartiet",
+        "roster": 809041,
+        "rostandel": 15.26,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3",
+        "kallkod": "C",
+        "partibeteckning": "Centerpartiet",
+        "roster": 328428,
+        "rostandel": 6.19,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0",
+        "kallkod": "FP",
+        "partibeteckning": "Folkpartiet liberalerna",
+        "roster": 710312,
+        "rostandel": 13.39,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
+        "kallkod": "KD",
+        "partibeteckning": "Kristdemokraterna",
+        "roster": 485235,
+        "rostandel": 9.15,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd",
+        "kallkod": "S",
+        "partibeteckning": "Arbetarepartiet-Socialdemokraterna",
+        "roster": 2113560,
+        "rostandel": 39.85,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a",
+        "kallkod": "V",
+        "partibeteckning": "Vänsterpartiet",
+        "roster": 444854,
+        "rostandel": 8.39,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
+        "kallkod": "MP",
+        "partibeteckning": "Miljöpartiet de gröna",
+        "roster": 246392,
+        "rostandel": 4.65,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "dc646f81-a2b4-44d3-8d5f-1e1802de6601",
+        "kallkod": "0095",
+        "partibeteckning": "Medborgarpartiet",
+        "roster": 27,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "617f16c5-dd2f-4c10-a838-01c2b308c8a6",
+        "kallkod": "0339",
+        "partibeteckning": "Sveriges Nationella Demokratiska Parti",
+        "roster": 87,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "8c7f27e0-2da5-4594-89b7-b6d402e2b3aa",
+        "kallkod": "EAP",
+        "partibeteckning": "Europeiska Arbetarpartiet-EAP",
+        "roster": 163,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "4ed338ef-bbdd-4ff9-aaa9-b86c90a01e3e",
+        "kallkod": "ENH",
+        "partibeteckning": "Enhet",
+        "roster": 603,
+        "rostandel": 0.01,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "55cdd0ac-6e10-42df-adf7-02db7dea7607",
+        "kallkod": "KOMM",
+        "partibeteckning": "Kommunisterna",
+        "roster": 1182,
+        "rostandel": 0.02,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "ce076c0a-bef8-401e-a65c-6882a0d384c0",
+        "kallkod": "RS",
+        "partibeteckning": "Rättvisepartiet Socialisterna",
+        "roster": 1519,
+        "rostandel": 0.03,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "b9af6417-6861-40ff-b0a5-3c1fab176496",
+        "kallkod": "SD",
+        "partibeteckning": "Sverigedemokraterna",
+        "roster": 76300,
+        "rostandel": 1.44,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "96fa352b-a7d2-4bd0-bab9-37ab6c479d54",
+        "kallkod": "SKÅ",
+        "partibeteckning": "Skånepartiet",
+        "roster": 4564,
+        "rostandel": 0.09,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "460d9564-c80d-4f42-a95a-518c956746c1",
+        "kallkod": "SOC.P",
+        "partibeteckning": "Socialistiska Partiet",
+        "roster": 3213,
+        "rostandel": 0.06,
+        "kallreferens": "resultat"
+      }
+    ],
+    "ej_kopplade": [
+      {
+        "kallkod": "NBP",
+        "partibeteckning": "Norrbottenspartiet",
+        "roster": 14854,
+        "rostandel": 0.28,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0020",
+        "partibeteckning": "Republikanerna",
+        "roster": 15,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0329",
+        "partibeteckning": "Skånefederalisterna",
+        "roster": 52,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0354",
+        "partibeteckning": "Förskolepartiet - Barnens Röst",
+        "roster": 6,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0365",
+        "partibeteckning": "Crisis",
+        "roster": 1,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0367",
+        "partibeteckning": "DUST-ONLINE",
+        "roster": 1,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0370",
+        "partibeteckning": "VIKINGAPARTIET-Sverige ut ur EU",
+        "roster": 2,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0376",
+        "partibeteckning": "BLANKRÖSTAR-PARTIET-En politiskt markering",
+        "roster": 7,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0378",
+        "partibeteckning": "TOMTE-PARTIET-Tomten: Barnens och djurens bästa vän",
+        "roster": 1,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0379",
+        "partibeteckning": "SINGELPARTIET-Ursäkta, men vi finns också",
+        "roster": 3,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0387",
+        "partibeteckning": "GUD-TROLL-HÄXOR-VÄSEN OCH KOSMISKA KRAFTERS-Parti",
+        "roster": 4,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0390",
+        "partibeteckning": "TANDLÄKARHÖGKOSTNADS-PARTIET",
+        "roster": 1,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0391",
+        "partibeteckning": "HUNDPARTIET-Hunden, människans bästa vän.",
+        "roster": 2,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0396",
+        "partibeteckning": "LANDET VI ÄRVDE-PARTIET",
+        "roster": 1,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0398",
+        "partibeteckning": "SHAMANENS-URBEFOLKNINGENS-PARTI",
+        "roster": 2,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0399",
+        "partibeteckning": "DEN KOKTA GRODANS-PARTI. DEN SVENSKE MANNEN I NUTID",
+        "roster": 1,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0405",
+        "partibeteckning": "ATP-PENSIONS OCH ÄNKEPENSIONS-PARTIET",
+        "roster": 4,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0409",
+        "partibeteckning": "KLONING NEJ TACK JAG ÄR EN UNIK MÄNNISKA Partiet",
+        "roster": 3,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0410",
+        "partibeteckning": "DJURSKYDDS-PARTIET-Ett kärleksfullt liv för våra djur",
+        "roster": 3,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0420",
+        "partibeteckning": "Det fria folkets, röst",
+        "roster": 207,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0421",
+        "partibeteckning": "Fria Listan www.frialistan.st",
+        "roster": 274,
+        "rostandel": 0.01,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0432",
+        "partibeteckning": "Fotbolls Partiet",
+        "roster": 1,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "0434",
+        "partibeteckning": "Kalle Anka Partiet",
+        "roster": 10,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "ALP",
+        "partibeteckning": "Allianspartiet",
+        "roster": 58,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "DPNS",
+        "partibeteckning": "De Nya Svenskarna D.P.N.S",
+        "roster": 11,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "FDEM",
+        "partibeteckning": "Folkdemokraterna",
+        "roster": 12,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "IdroP",
+        "partibeteckning": "Idrottspartiet",
+        "roster": 7,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "KommF",
+        "partibeteckning": "Kommunistiska Förbundet",
+        "roster": 46,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "ND",
+        "partibeteckning": "Nationaldemokraterna",
+        "roster": 4122,
+        "rostandel": 0.08,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "NYD",
+        "partibeteckning": "NyDemokrati",
+        "roster": 106,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "NYF",
+        "partibeteckning": "Ny Framtid",
+        "roster": 9337,
+        "rostandel": 0.18,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "POL",
+        "partibeteckning": "Kärlekspartiet The Party of Love",
+        "roster": 8,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "Pop",
+        "partibeteckning": "Populistpartiet",
+        "roster": 8,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "Riksh",
+        "partibeteckning": "Rikshushållarna",
+        "roster": 17,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "SPI",
+        "partibeteckning": "SPI - Sveriges Pensionärers Intresseparti",
+        "roster": 37573,
+        "rostandel": 0.71,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "Sref",
+        "partibeteckning": "Skattereformisterna",
+        "roster": 14,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "SSKP",
+        "partibeteckning": "Strandskyddspartiet",
+        "roster": 3,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      },
+      {
+        "kallkod": "VÄLFP",
+        "partibeteckning": "Välfärdspartiet",
+        "roster": 94,
+        "rostandel": 0,
+        "kallreferens": "resultat"
+      }
+    ],
+    "aggregat": [
+      {
+        "kallkod": "ÖVR",
+        "partibeteckning": "Övriga partier",
+        "roster": 10861,
+        "rostandel": 0.2,
+        "kallreferens": "resultat"
+      }
+    ]
+  },
+  "mandatfordelning": {
+    "antal_mandat": 349,
+    "kallreferenser": [
+      "resultat"
+    ],
+    "partier": [
+      {
+        "parti_uuid": "ce96a63c-66d7-4b63-b5db-da7a0a579476",
+        "kallkod": "M",
+        "partibeteckning": "Moderata Samlingspartiet",
+        "mandat": 55,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "b9d4e933-3b5c-4780-9802-35e8dcf87ac3",
+        "kallkod": "C",
+        "partibeteckning": "Centerpartiet",
+        "mandat": 22,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "1a60396f-4551-4842-860e-7fcf1815dbe0",
+        "kallkod": "FP",
+        "partibeteckning": "Folkpartiet liberalerna",
+        "mandat": 48,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "d4ce485f-5e0e-4479-9d11-2147f337f20a",
+        "kallkod": "KD",
+        "partibeteckning": "Kristdemokraterna",
+        "mandat": 33,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "5e14c4c7-84c5-4770-ac14-d245902dd3cd",
+        "kallkod": "S",
+        "partibeteckning": "Arbetarepartiet-Socialdemokraterna",
+        "mandat": 144,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "414d4a70-fcff-4390-9f70-5e259eb4fd0a",
+        "kallkod": "V",
+        "partibeteckning": "Vänsterpartiet",
+        "mandat": 30,
+        "kallreferens": "resultat"
+      },
+      {
+        "parti_uuid": "3de0287f-bf7c-45c4-97d9-9def4f24e133",
+        "kallkod": "MP",
+        "partibeteckning": "Miljöpartiet de gröna",
+        "mandat": 17,
+        "kallreferens": "resultat"
+      }
+    ]
   }
 }

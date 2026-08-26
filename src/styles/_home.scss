@@ -201,6 +201,14 @@
   grid-template-columns: repeat(auto-fill, minmax(max(13.75rem, calc((100% - 2.625rem) / 4)), 1fr));
 }
 
+.home-grid--outside {
+  grid-template-columns: repeat(auto-fill, minmax(max(13.125rem, calc((100% - 2.25rem) / 3)), 1fr));
+}
+
+.home-facts--sources {
+  margin: 1rem 0 0;
+}
+
 .home-more {
   display: flex;
   justify-content: center;

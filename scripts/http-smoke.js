@@ -60,7 +60,9 @@ async function waitForHealth (baseUrl, child, output) {
 async function main () {
   if (!fs.existsSync(path.join(releaseRoot, 'server.js'))) throw new Error('Kör npm run build:release före npm run test:http');
   const parties = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'parti', 'index.json'), 'utf8'));
-  const chamber = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'partiprofil', 'riksdag.json'), 'utf8')).kammare;
+  const derivedParliament = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'riksdag.json'), 'utf8'));
+  const chamber = derivedParliament.kammare;
+  const outside = derivedParliament.storsta_utanfor_riksdagen;
   const seats = chamber.partier.reduce((total, party) => total + party.mandat, 0);
   const majority = Math.floor(seats / 2) + 1;
   assertSwedishCollation();
@@ -105,6 +107,9 @@ async function main () {
     assert.match(homeBody, new RegExp(`>${parties.length}</span>`), 'rubriken räknar partierna ur datan');
     assert.match(homeBody, new RegExp(`/parti/${first}`), 'partigridet länkar till en partisida');
     assert.match(homeBody, /Riksdagspartier/);
+    assert.match(homeBody, /Största partierna utanför riksdagen/);
+    assert.match(homeBody, new RegExp(`>${outside.partier[0].rostandel.toFixed(2).replace('.', ',')}(<!-- -->)? %<`), 'utanför-rankningen visar den härledda röstandelen');
+    assert.equal(homeBody.split('party-card--medium').length - 1, outside.partier.length, 'utanför-rankningen renderar alla härledda partikort');
     assert.match(homeBody, new RegExp(`valet (<!-- -->)?${chamber.valar}`), 'riksdagssektionen anger valåret');
     assert.match(homeBody, new RegExp(`${seats}(<!-- -->)? mandat`), 'faktaraden anger kammarens storlek');
     assert.match(homeBody, new RegExp(`${majority}(<!-- -->)? för egen majoritet`), 'faktaraden anger egen majoritet');

@@ -22,6 +22,7 @@
     "check:derived-data": "node scripts/build-derived-data.js --check",
     "lint": "eslint .",
     "import-val": "node scripts/import-val.js",
+    "import-riksdagsval": "node scripts/import-riksdagsval.js",
     "import-partisymboler": "node scripts/import-partisymboler.js",
     "validate:data": "node scripts/validate.js",
     "typecheck": "tsc --noEmit",

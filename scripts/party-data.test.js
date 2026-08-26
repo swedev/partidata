@@ -229,23 +229,59 @@ function makeHomeData () {
     { kod: '01', namn: 'Stockholms län', uuid: '77777777-7777-4777-8777-777777777777', kommuner: [] }
   ]);
 
-  const source = { namn: 'Riksdagen', url: 'https://data.riksdagen.se/', hamtad: '2026-08-25' };
-  writeJson(dataRoot, 'val/2018/valresultat/riksdag.json', { valar: 2018, valdeltagande: { procent: 87 } });
-  writeJson(dataRoot, 'val/2022/valresultat/riksdag.json', {
-    valar: 2022,
-    mandatfordelning: {
-      partier: [
-        { forkortning: 'A', mandat: 200 },
-        { forkortning: 'D', mandat: 100 },
-        { forkortning: 'X', mandat: 49 }
-      ],
-      kalla: source
-    }
-  });
-  writeJson(dataRoot, 'val/2026/valresultat/riksdag.json', {
-    valar: 2026,
-    mandatfordelning: { partier: [{ forkortning: 'B', mandat: 349 }], kalla: source }
-  });
+  const source = {
+    id: 'resultat',
+    namn: 'Valmyndigheten',
+    titel: 'Testresultat',
+    url: 'https://example.com/resultat.json',
+    version: 'Slutligt resultat',
+    format: 'application/json',
+    hamtad: '2026-08-25',
+    sha256: 'a'.repeat(64)
+  };
+  function writeResult (year, mandates) {
+    writeJson(dataRoot, `val/${year}/valresultat/riksdag.json`, {
+      schema_version: 2,
+      valtyp: 'riksdag',
+      valar: year,
+      status: 'slutligt',
+      kallor: [source],
+      valdeltagande: { procent: 84, kallreferens: 'resultat' },
+      rostresultat: {
+        giltiga_roster: mandates.length,
+        kallreferenser: ['resultat'],
+        partier: mandates.map(entry => ({
+          parti_uuid: entry.uuid,
+          kallkod: entry.forkortning,
+          partibeteckning: entry.forkortning,
+          roster: 1,
+          rostandel: Number((100 / mandates.length).toFixed(2)),
+          kallreferens: 'resultat'
+        })),
+        ej_kopplade: [],
+        aggregat: []
+      },
+      mandatfordelning: {
+        antal_mandat: 349,
+        kallreferenser: ['resultat'],
+        partier: mandates.map(entry => ({
+          parti_uuid: entry.uuid,
+          kallkod: entry.forkortning,
+          partibeteckning: entry.forkortning,
+          mandat: entry.mandat,
+          kallreferens: 'resultat'
+        }))
+      }
+    });
+  }
+  writeResult(2022, [
+    { uuid: parties.find(party => party.filnamn === 'alfapartiet').uuid, forkortning: 'A', mandat: 200 },
+    { uuid: parties.find(party => party.filnamn === 'duplikatpartiet-ett').uuid, forkortning: 'D', mandat: 100 },
+    { uuid: '12121212-1212-4212-8212-121212121212', forkortning: 'X', mandat: 49 }
+  ]);
+  writeResult(2026, [
+    { uuid: parties.find(party => party.filnamn === 'betapartiet').uuid, forkortning: 'B', mandat: 349 }
+  ]);
 
   return { root, dataRoot };
 }
@@ -319,7 +355,7 @@ test('party pages know when their registered name is duplicated', async t => {
   assert.equal(unique.props.duplicateName, false);
 });
 
-test('mandate records resolve to a party only on an unambiguous abbreviation', async t => {
+test('mandate records resolve by stable uuid and leave an unknown uuid unlinked', async t => {
   const { root, dataRoot } = makeHomeData();
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
 
@@ -327,18 +363,77 @@ test('mandate records resolve to a party only on an unambiguous abbreviation', a
 
   assert.deepEqual(home.riksdag.map(year => year.valar), [2026, 2022]);
   const [twentyTwo] = home.riksdag.filter(year => year.valar === 2022);
-  assert.equal(twentyTwo.kalla.namn, 'Riksdagen');
+  assert.equal(twentyTwo.kalla.namn, 'Valmyndigheten');
   assert.deepEqual(twentyTwo.partier, [
     {
+      uuid: '11111111-1111-4111-8111-111111111111',
       forkortning: 'A',
       mandat: 200,
       beteckning: 'Alfapartiet',
       filnamn: 'alfapartiet',
       symbolSrc: '/partisymbol/alfapartiet/9001-alfapartiet.png'
     },
-    { forkortning: 'D', mandat: 100 },
-    { forkortning: 'X', mandat: 49 }
+    {
+      uuid: '33333333-3333-4333-8333-333333333333',
+      forkortning: 'D',
+      mandat: 100,
+      beteckning: 'Duplikatpartiet ett',
+      filnamn: 'duplikatpartiet-ett'
+    },
+    { uuid: '12121212-1212-4212-8212-121212121212', forkortning: 'X', mandat: 49 }
   ]);
+});
+
+test('home data enriches the derived outside-parliament ranking by stable uuid', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  writeJson(dataRoot, 'derived/riksdag.json', {
+    storsta_utanfor_riksdagen: {
+      period: { fran: 1994, till: 2026 },
+      metod: 'Exakt testmetod',
+      partier: [{
+        parti_uuid: '11111111-1111-4111-8111-111111111111',
+        valar: 2022,
+        roster: 1234,
+        rostandel: 1.23,
+        kalla: { namn: 'Valmyndigheten', url: 'https://example.com/resultat.json', hamtad: '2026-08-25' }
+      }]
+    }
+  });
+
+  const outside = (await createPartyDataStore(dataRoot).readHomeData()).outsideParliament;
+  assert.equal(outside.metod, 'Exakt testmetod');
+  assert.deepEqual(outside.partier[0], {
+    uuid: '11111111-1111-4111-8111-111111111111',
+    beteckning: 'Alfapartiet',
+    filnamn: 'alfapartiet',
+    forkortning: 'A',
+    symbolSrc: '/partisymbol/alfapartiet/9001-alfapartiet.png',
+    valar: 2022,
+    roster: 1234,
+    rostandel: 1.23,
+    kalla: { namn: 'Valmyndigheten', url: 'https://example.com/resultat.json', hamtad: '2026-08-25' }
+  });
+});
+
+test('home data omits an outside-parliament ranking with an unknown party uuid', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  writeJson(dataRoot, 'derived/riksdag.json', {
+    storsta_utanfor_riksdagen: {
+      period: { fran: 1994, till: 2026 },
+      metod: 'Exakt testmetod',
+      partier: [{
+        parti_uuid: 'abababab-abab-4bab-8bab-abababababab',
+        valar: 2022,
+        roster: 1,
+        rostandel: 0.01,
+        kalla: { namn: 'Valmyndigheten', url: 'https://example.com/resultat.json', hamtad: '2026-08-25' }
+      }]
+    }
+  });
+
+  assert.equal((await createPartyDataStore(dataRoot).readHomeData()).outsideParliament, undefined);
 });
 
 test('home data is read once per store', async t => {

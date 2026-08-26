@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "valar": 1994,
+  "kallsidor": [33, 34],
+  "valdeltagande": 86.8,
+  "giltiga_roster": 5555540,
+  "resultat": [
+    { "kallkod": "M", "partibeteckning": "Moderata Samlingspartiet", "roster": 1243253 },
+    { "kallkod": "C", "partibeteckning": "Centerpartiet", "roster": 425153 },
+    { "kallkod": "FP", "partibeteckning": "Folkpartiet liberalerna", "roster": 399556 },
+    { "kallkod": "KdS", "partibeteckning": "Kristdemokratiska Samhällspartiet", "roster": 225974 },
+    { "kallkod": "MP", "partibeteckning": "Miljöpartiet De Gröna", "roster": 279042 },
+    { "kallkod": "NyD", "partibeteckning": "Ny Demokrati", "roster": 68663 },
+    { "kallkod": "S", "partibeteckning": "Arbetarepartiet Socialdemokraterna", "roster": 2513905 },
+    { "kallkod": "V", "partibeteckning": "Vänsterpartiet", "roster": 342988 },
+    { "kallkod": "ÖVR", "partibeteckning": "Övriga partier", "roster": 57006 }
+  ],
+  "mandatfordelning": [
+    { "kallkod": "M", "partibeteckning": "Moderata Samlingspartiet", "mandat": 80 },
+    { "kallkod": "C", "partibeteckning": "Centerpartiet", "mandat": 27 },
+    { "kallkod": "FP", "partibeteckning": "Folkpartiet liberalerna", "mandat": 26 },
+    { "kallkod": "KdS", "partibeteckning": "Kristdemokratiska Samhällspartiet", "mandat": 15 },
+    { "kallkod": "MP", "partibeteckning": "Miljöpartiet De Gröna", "mandat": 18 },
+    { "kallkod": "S", "partibeteckning": "Arbetarepartiet Socialdemokraterna", "mandat": 161 },
+    { "kallkod": "V", "partibeteckning": "Vänsterpartiet", "mandat": 22 }
+  ]
+}
