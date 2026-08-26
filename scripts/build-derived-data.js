@@ -26,6 +26,21 @@ const SEAT_COLOURS = {
 };
 const NEUTRAL_COLOUR = '#d2d2d2';
 
+/**
+ * SEAT_ORDER
+ * Presentation only: the hemicycle and the chamber lists are read left to
+ * right, so the mandate rows are ordered along the political spectrum the way
+ * the chamber is conventionally drawn, not in the source file's row order. An
+ * abbreviation without an entry keeps its source order after the listed ones.
+ * @type {String[]}
+ */
+const SEAT_ORDER = ['V', 'S', 'MP', 'C', 'L', 'KD', 'M', 'SD'];
+
+function seatOrderIndex (forkortning) {
+  const index = SEAT_ORDER.indexOf(forkortning);
+  return index === -1 ? SEAT_ORDER.length : index;
+}
+
 const DIAGRAM = { width: 512, height: 256, rows: 9, innerRadius: 110, outerRadius: 244, seatRadius: 6 };
 
 function readJson (file) {
@@ -108,7 +123,7 @@ function buildParliamentView (dataDirectory = path.join(ROOT, 'data')) {
           forkortning: party.forkortning ?? row.kallkod ?? row.partibeteckning,
           mandat: row.mandat
         };
-      }),
+      }).toSorted((left, right) => seatOrderIndex(left.forkortning) - seatOrderIndex(right.forkortning)),
       kalla: chamberSource
     },
     valdeltagande: {
@@ -247,6 +262,7 @@ if (require.main === module) {
 }
 
 exports.SEAT_COLOURS = SEAT_COLOURS;
+exports.SEAT_ORDER = SEAT_ORDER;
 exports.buildParliamentView = buildParliamentView;
 exports.buildParliamentDiagram = buildParliamentDiagram;
 exports.buildPartyProfileParliamentView = buildPartyProfileParliamentView;

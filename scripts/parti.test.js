@@ -124,41 +124,88 @@ test('a re-coded party is matched after harmless name normalisation', () => {
   assert.equal(result.created.length, 0);
   assert.equal(result.merged.length, 1);
   assert.equal(result.merged[0].via, 'beteckning');
-  assert.equal(normalisePartyName('Rädda! Håbo'), 'radda habo');
+  assert.equal(normalisePartyName('Rädda! Håbo'), 'rädda håbo');
 });
 
-test('normalised ambiguity is rejected even when punctuation and accents differ', () => {
+test('every diacritic stays distinct while equivalent Unicode stays equal', () => {
   const parties = [
-    { filnamn: 'habodemokraterna', koder: ['1287'], beteckning: 'Habodemokraterna' },
-    { filnamn: 'habodemokraterna-1532', koder: ['1532'], beteckning: 'HåboDemokraterna' }
+    { filnamn: 'habodemokraterna', koder: ['1287'], beteckning: 'Habodemokraterna', tidigare_beteckningar: [], tidigare_filnamn: [] },
+    { filnamn: 'habodemokraterna-1532', koder: ['1532'], beteckning: 'HåboDemokraterna', tidigare_beteckningar: [], tidigare_filnamn: [] }
+  ];
+  const result = upsertParties(
+    { parties, kodbyten: {} },
+    '2030',
+    [{ kod: '2000', beteckning: 'HaboDemokraterna!' }]
+  );
+
+  assert.equal(result.merged.length, 1);
+  assert.equal(result.merged[0].party.beteckning, 'Habodemokraterna');
+  assert.deepEqual(parties[0].koder, ['1287', '2000']);
+  assert.deepEqual(parties[1].koder, ['1532']);
+  assert.notEqual(normalisePartyName('Sámelistu'), normalisePartyName('Samelistu'));
+  assert.notEqual(normalisePartyName('Parti Ü'), normalisePartyName('Parti U'));
+  assert.notEqual(normalisePartyName('Parti Ï'), normalisePartyName('Parti I'));
+  assert.equal(normalisePartyName('Sa\u0301melistu'), normalisePartyName('Sámelistu'));
+});
+
+test('normalised ambiguity is rejected when a merge is possible', () => {
+  const parties = [
+    { filnamn: 'kommunens-val', koder: ['1111'], beteckning: 'Kommunens Väl' },
+    { filnamn: 'kommunens-val-2222', koder: ['2222'], beteckning: 'Kommunens väl!' }
   ];
 
   assert.throws(
     () => upsertParties(
       { parties, kodbyten: {} },
       '2030',
-      [{ kod: '2000', beteckning: 'HaboDemokraterna!' }]
+      [{ kod: '3000', beteckning: 'Kommunens Väl' }]
     ),
-    /Ambiguous match for 2000 "HaboDemokraterna!".*2 registry candidate/
+    /Ambiguous match for 3000 "Kommunens Väl".*2 registry candidate/
   );
 });
 
-test('the collision report finds Habo and Håbo without changing files', t => {
+test('a new party with a recurring name is created when every namesake already has its code in the year', () => {
   const parties = [
-    { uuid: '11111111-1111-4111-8111-111111111111', kod: '1287', beteckning: 'Habodemokraterna', filnamn: 'habodemokraterna' },
-    { uuid: '22222222-2222-4222-8222-222222222222', kod: '1532', beteckning: 'HåboDemokraterna', filnamn: 'habodemokraterna-1532' }
+    { filnamn: 'kommunens-val', koder: ['1111'], beteckning: 'Kommunens Väl', tidigare_beteckningar: [], tidigare_filnamn: [] },
+    { filnamn: 'kommunens-val-2222', koder: ['2222'], beteckning: 'Kommunens väl!', tidigare_beteckningar: [], tidigare_filnamn: [] }
+  ];
+  const result = upsertParties(
+    { parties, kodbyten: {} },
+    '2030',
+    [
+      { kod: '1111', beteckning: 'Kommunens Väl' },
+      { kod: '2222', beteckning: 'Kommunens väl!' },
+      { kod: '3000', beteckning: 'Kommunens Väl' }
+    ]
+  );
+
+  assert.equal(result.merged.length, 0);
+  assert.equal(result.created.length, 1);
+  assert.equal(result.created[0].beteckning, 'Kommunens Väl');
+  assert.deepEqual(result.created[0].koder, ['3000']);
+  assert.deepEqual(parties[0].koder, ['1111']);
+  assert.deepEqual(parties[1].koder, ['2222']);
+});
+
+test('the collision report finds equal normalised names without changing files', t => {
+  const parties = [
+    { uuid: '11111111-1111-4111-8111-111111111111', kod: '1111', beteckning: 'Kommunens Väl', filnamn: 'kommunens-val' },
+    { uuid: '22222222-2222-4222-8222-222222222222', kod: '2222', beteckning: 'Kommunens väl!', filnamn: 'kommunens-val-2222' },
+    { uuid: '33333333-3333-4333-8333-333333333333', kod: '1287', beteckning: 'Habodemokraterna', filnamn: 'habodemokraterna' },
+    { uuid: '44444444-4444-4444-8444-444444444444', kod: '1532', beteckning: 'HåboDemokraterna', filnamn: 'habodemokraterna-1532' }
   ];
   const collisions = normalisedNameCollisions(parties.map(party => ({ ...party, koder: [party.kod] })));
   assert.equal(collisions.length, 1);
-  assert.equal(collisions[0].name, 'habodemokraterna');
-  assert.deepEqual(collisions[0].parties.map(party => party.koder[0]), ['1287', '1532']);
+  assert.equal(collisions[0].name, 'kommunens väl');
+  assert.deepEqual(collisions[0].parties.map(party => party.koder[0]), ['1111', '2222']);
 
   const dir = makeTree({ parties });
   t.after(() => removeTree(dir));
   const before = snapshot(dir);
   const result = runParti(dir, ['--report-name-collisions']);
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stdout, /habodemokraterna: 1287 "Habodemokraterna".*1532 "HåboDemokraterna"/);
+  assert.match(result.stdout, /kommunens väl: 1111 "Kommunens Väl".*2222 "Kommunens väl!"/);
+  assert.doesNotMatch(result.stdout, /habodemokraterna/);
   assert.deepEqual(snapshot(dir), before);
 });
 
