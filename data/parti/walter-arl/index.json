@@ -2,7 +2,10 @@
   "uuid": "2a40f30a-d6e2-46f6-9a87-d86351f784da",
   "kod": "1730",
   "beteckning": "Walter Ƶarl",
-  "filnamn": "walter--arl",
+  "filnamn": "walter-arl",
+  "tidigare_filnamn": [
+    "walter--arl"
+  ],
   "registrerad_partibeteckning": false,
   "deltagande": {
     "2026": {

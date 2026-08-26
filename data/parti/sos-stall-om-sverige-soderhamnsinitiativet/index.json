@@ -2,7 +2,10 @@
   "uuid": "4b2c8870-d6e5-402a-a4ed-7f68d098869b",
   "kod": "1360",
   "beteckning": "SOS-Ställ Om Sverige, Söderhamnsinitiativet",
-  "filnamn": "sos-stall-om-sverige--soderhamnsinitiativet",
+  "filnamn": "sos-stall-om-sverige-soderhamnsinitiativet",
+  "tidigare_filnamn": [
+    "sos-stall-om-sverige--soderhamnsinitiativet"
+  ],
   "forkortning": "SOS",
   "registrerad_partibeteckning": true,
   "valmyndigheten_registreringsdatum": "2018-03-09",

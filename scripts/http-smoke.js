@@ -68,9 +68,13 @@ async function main () {
   const expectedOrder = parties.toSorted(comparePartyOrder).slice(0, homePageSize).map(party => party.filnamn);
   const [first] = expectedOrder;
   const previous = parties.find(party => party.tidigare_filnamn?.length > 0);
+  const cleanedSlug = parties.find(party =>
+    party.filnamn === 'folk-natur' && party.tidigare_filnamn?.includes('folk---natur')
+  );
   const withSymbol = parties.find(party => party.partisymbol);
   assert.ok(current);
   assert.ok(previous);
+  assert.ok(cleanedSlug);
   assert.ok(withSymbol);
 
   const port = await freePort();
@@ -117,6 +121,10 @@ async function main () {
     const redirect = await fetch(`${baseUrl}/parti/${previous.tidigare_filnamn[0]}/`, { redirect: 'manual' });
     assert.equal(redirect.status, 308);
     assert.equal(new URL(redirect.headers.get('location'), baseUrl).pathname, `/parti/${previous.filnamn}/`);
+
+    const cleanedRedirect = await fetch(`${baseUrl}/parti/folk---natur/`, { redirect: 'manual' });
+    assert.equal(cleanedRedirect.status, 308);
+    assert.equal(new URL(cleanedRedirect.headers.get('location'), baseUrl).pathname, '/parti/folk-natur/');
 
     assert.equal((await fetch(`${baseUrl}/parti/finns-inte/`)).status, 404);
 

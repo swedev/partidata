@@ -2,7 +2,10 @@
   "uuid": "c00b5972-573f-4e02-bb4e-b9566fa3cab2",
   "kod": "1846",
   "beteckning": "Vindkraft- och Busskartor Partiet (Vi älskar AIPAC) (VBPVÄAIPAC)",
-  "filnamn": "vindkraft--och-busskartor-partiet-vi-alskar-aipac-vbpvaaipac",
+  "filnamn": "vindkraft-och-busskartor-partiet-vi-alskar-aipac-vbpvaaipac",
+  "tidigare_filnamn": [
+    "vindkraft--och-busskartor-partiet-vi-alskar-aipac-vbpvaaipac"
+  ],
   "registrerad_partibeteckning": false,
   "deltagande": {
     "2026": {

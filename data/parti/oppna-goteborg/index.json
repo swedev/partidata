@@ -2,6 +2,9 @@
   "uuid": "04322f22-a4de-432a-9a68-be4845d2e4de",
   "kod": "1130",
   "beteckning": "Öppna Göteborg!",
-  "filnamn": "oppna-goteborg-",
+  "filnamn": "oppna-goteborg",
+  "tidigare_filnamn": [
+    "oppna-goteborg-"
+  ],
   "valmyndigheten_registreringsdatum": "2014-01-09"
 }

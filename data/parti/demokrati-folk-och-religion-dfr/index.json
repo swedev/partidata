@@ -2,7 +2,10 @@
   "uuid": "aeeeaadd-fedc-4e40-9407-1c159619b2ff",
   "kod": "1808",
   "beteckning": "Demokrati, Folk och Religion (DFR)",
-  "filnamn": "demokrati--folk-och-religion-dfr",
+  "filnamn": "demokrati-folk-och-religion-dfr",
+  "tidigare_filnamn": [
+    "demokrati--folk-och-religion-dfr"
+  ],
   "forkortning": "DFR",
   "registrerad_partibeteckning": false,
   "deltagande": {

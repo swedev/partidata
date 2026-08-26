@@ -248,6 +248,22 @@ test('a renamed party moves to a new filnamn and keeps the old one as tidigare_f
   assert.match(result.stdout, /9001 Testpartiet → Nya Testpartiet \(testpartiet → nya-testpartiet\)/);
 });
 
+test('a malformed filnamn is cleaned without a name change', t => {
+  const parties = PARTIER.map(party => (party.filnamn === 'testpartiet'
+    ? { ...party, beteckning: 'Test partiet', filnamn: 'test--partiet-' }
+    : party));
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  const result = runParti(dir);
+  assert.equal(result.status, 0, result.stderr);
+
+  const testpartiet = parti(dir, 'test-partiet');
+  assert.equal(testpartiet.beteckning, 'Test partiet');
+  assert.deepEqual(testpartiet.tidigare_filnamn, ['test--partiet-']);
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/test--partiet-')), false);
+  assert.match(result.stdout, /data\/parti\/test--partiet- → data\/parti\/test-partiet/);
+});
+
 test('a name change with the same slug moves nothing', t => {
   const parties = PARTIER.map(party => (party.filnamn === 'testpartiet'
     ? { ...party, beteckning: 'nya testpartiet', filnamn: 'nya-testpartiet' }

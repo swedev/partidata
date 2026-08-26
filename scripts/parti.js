@@ -309,8 +309,9 @@ function _matchAlias (kod, kodbyten, byKod) {
  * Derives every party's current fields and participation from the year files,
  * so the result is a pure function of the committed data rather than of the
  * order the imports were run in, apart from tidigare_filnamn, which records the
- * slugs the registry has actually carried. A party whose beteckning changed is
- * given the slug of its new name; the slug it had moves to tidigare_filnamn.
+ * slugs the registry has actually carried. A party whose beteckning changed or
+ * whose slug is malformed is given a clean slug; the old one moves to
+ * tidigare_filnamn.
  * @param  {Object} registry From loadParties(), after any upserts
  * @param  {Object} yearFiles From loadYearFiles()
  * @return {{ writeSet: Object[], index: Object[], parties: Object[], renamed: Object[] }}
@@ -405,7 +406,8 @@ function buildParties (registry, yearFiles) {
     }
     const base = toFileName(beteckning);
     const slugOfCurrentName = party.filnamn === base || koder.some(other => party.filnamn === `${base}-${other}`);
-    if (beteckning !== party.beteckning && !slugOfCurrentName) {
+    const malformedFilnamn = /^-|-$|--/.test(party.filnamn);
+    if ((beteckning !== party.beteckning || malformedFilnamn) && !slugOfCurrentName) {
       claims.push({ party, beteckning, kod, from: party.filnamn });
     }
   }

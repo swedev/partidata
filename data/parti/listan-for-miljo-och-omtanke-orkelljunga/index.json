@@ -2,7 +2,10 @@
   "uuid": "c5514ebe-b4e2-4ee6-a875-1b2f26870bee",
   "kod": "1057",
   "beteckning": "Listan för Miljö och Omtanke, Örkelljunga",
-  "filnamn": "listan-for-miljo-och-omtanke--orkelljunga",
+  "filnamn": "listan-for-miljo-och-omtanke-orkelljunga",
+  "tidigare_filnamn": [
+    "listan-for-miljo-och-omtanke--orkelljunga"
+  ],
   "deltagande": {
     "2018": {
       "riksdag": false,
