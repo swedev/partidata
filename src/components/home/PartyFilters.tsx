@@ -47,6 +47,21 @@ function PartyFilters ({ filters, valar, lan, kinds, onChange, onReset }: PartyF
           </span>
         )}
 
+        {lan.length > 0 && (
+          <span className="home-select home-select--wide">
+            <select
+              aria-label="Län"
+              value={filters.lan}
+              disabled={!countyApplies(filters.valtyp)}
+              onChange={event => onChange({ lan: event.target.value })}
+            >
+              <option value="">Hela landet</option>
+              {lan.map(county => <option key={county.kod} value={county.kod}>{county.namn}</option>)}
+            </select>
+            <ChevronDownIcon className="home-select__chevron" />
+          </span>
+        )}
+
         {kinds.length > 0 && (
           <div className="home-chips" role="group" aria-label="Valtyp">
             {kinds.map(kind => {
@@ -64,20 +79,6 @@ function PartyFilters ({ filters, valar, lan, kinds, onChange, onReset }: PartyF
               );
             })}
           </div>
-        )}
-
-        {countyApplies(filters.valtyp) && lan.length > 0 && (
-          <span className="home-select home-select--wide">
-            <select
-              aria-label="Län"
-              value={filters.lan}
-              onChange={event => onChange({ lan: event.target.value })}
-            >
-              <option value="">Hela landet</option>
-              {lan.map(county => <option key={county.kod} value={county.kod}>{county.namn}</option>)}
-            </select>
-            <ChevronDownIcon className="home-select__chevron" />
-          </span>
         )}
 
         <button type="button" className="home-reset" onClick={onReset}>

@@ -71,6 +71,18 @@
   max-width: 15rem;
 }
 
+.home-select select:disabled {
+  border-color: var(--partidata-divider);
+  background: transparent;
+  color: var(--partidata-muted);
+  cursor: default;
+  opacity: 1;
+}
+
+.home-select select:disabled + .home-select__chevron {
+  color: var(--partidata-muted);
+}
+
 .home-select select:focus-visible {
   outline: 3px solid var(--partidata-yellow);
   outline-offset: 3px;

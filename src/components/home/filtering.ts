@@ -57,10 +57,6 @@ export function pruneFilters (filters: HomeFilters): HomeFilters {
   return countyApplies(filters.valtyp) ? filters : { ...filters, lan: '' };
 }
 
-export function isActive (filters: HomeFilters): boolean {
-  return Boolean(filters.query || filters.valar || filters.valtyp || filters.lan);
-}
-
 function participated (facet: ParticipationFacet): boolean {
   return facet.riksdag || facet.regionLan.length > 0 || facet.kommunLan.length > 0;
 }

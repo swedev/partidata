@@ -4,7 +4,6 @@ const test = require('node:test');
 const {
   emptyFilters,
   filterParties,
-  isActive,
   matchesQuery,
   normalise,
   pruneFilters
@@ -110,12 +109,4 @@ test('a county left over from another election type is dropped', () => {
 test('search and filters narrow together', () => {
   assert.deepEqual(slugs({ query: 'partiet', valtyp: 'region' }), ['ostra-folkpartiet', 'skanepartiet']);
   assert.deepEqual(slugs({ query: 'skane', valar: '2018' }), []);
-});
-
-test('an active filter set is reported', () => {
-  assert.equal(isActive(emptyFilters), false);
-  assert.equal(isActive({ ...emptyFilters, query: 'a' }), true);
-  assert.equal(isActive({ ...emptyFilters, valar: '2022' }), true);
-  assert.equal(isActive({ ...emptyFilters, valtyp: 'kommun' }), true);
-  assert.equal(isActive({ ...emptyFilters, lan: '12' }), true);
 });

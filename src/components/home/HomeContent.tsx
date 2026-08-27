@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { HomeData, HomeParty } from 'src/server/party-data';
 import type { ElectionKind, HomeFilters } from './filtering';
-import { PAGE_SIZE, emptyFilters, filterParties, isActive, pruneFilters } from './filtering';
+import { PAGE_SIZE, emptyFilters, filterParties, pruneFilters } from './filtering';
 import PartyFilters from './PartyFilters';
 import PartyResults from './PartyResults';
 import RiksdagSection from './RiksdagSection';
@@ -20,8 +20,7 @@ function availableKinds (parties: HomeParty[]): ElectionKind[] {
 }
 
 /**
- * Owns the filter state the controls write and the result grid reads, so the
- * overview sections above them can step aside once a filter is set.
+ * Owns the filter state the controls write and the result grid reads.
  */
 function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeData) {
   const [filters, setFilters] = useState<HomeFilters>(emptyFilters);
@@ -40,8 +39,8 @@ function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeD
 
   return (
     <>
-      {!isActive(filters) && <RiksdagSection years={riksdag} />}
-      {!isActive(filters) && outsideParliament && <OutsideParliamentSection data={outsideParliament} />}
+      <RiksdagSection years={riksdag} />
+      {outsideParliament && <OutsideParliamentSection data={outsideParliament} />}
 
       <PartyFilters
         filters={filters}
