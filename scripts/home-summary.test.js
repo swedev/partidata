@@ -4,7 +4,6 @@ const test = require('node:test');
 const {
   cardMeta,
   cardSub,
-  ownMajority,
   participationLevels,
   participationYears,
   partyLabel,
@@ -51,13 +50,6 @@ test('a chip toggles its election type off when it is already the chosen one', (
   assert.equal(toggleKind('', 'kommun'), 'kommun');
   assert.equal(toggleKind('riksdag', 'kommun'), 'kommun');
   assert.equal(toggleKind('kommun', 'kommun'), '');
-});
-
-test('own majority is more than half the chamber', () => {
-  assert.equal(ownMajority(349), 175);
-  assert.equal(ownMajority(348), 175);
-  assert.equal(ownMajority(2), 2);
-  assert.equal(ownMajority(1), 1);
 });
 
 test('the empty state echoes the search term, or the filters', () => {

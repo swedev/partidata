@@ -21,7 +21,7 @@ function availableKinds (parties: HomeParty[]): ElectionKind[] {
 
 /**
  * Owns the filter state the controls write and the result grid reads, so the
- * parliament section can sit between them.
+ * overview sections above them can step aside once a filter is set.
  */
 function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeData) {
   const [filters, setFilters] = useState<HomeFilters>(emptyFilters);
@@ -40,6 +40,9 @@ function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeD
 
   return (
     <>
+      {!isActive(filters) && <RiksdagSection years={riksdag} />}
+      {!isActive(filters) && outsideParliament && <OutsideParliamentSection data={outsideParliament} />}
+
       <PartyFilters
         filters={filters}
         valar={valar}
@@ -48,9 +51,6 @@ function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeD
         onChange={update}
         onReset={() => update(emptyFilters)}
       />
-
-      {!isActive(filters) && <RiksdagSection years={riksdag} />}
-      {!isActive(filters) && outsideParliament && <OutsideParliamentSection data={outsideParliament} />}
 
       <PartyResults
         matches={matches}

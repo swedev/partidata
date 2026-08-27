@@ -1,4 +1,5 @@
 .home-search {
+  margin-top: clamp(2.25rem, 5vw, 3.5rem);
   margin-bottom: clamp(2.25rem, 5vw, 3.5rem);
 }
 
@@ -174,19 +175,6 @@
   color: var(--partidata-muted);
 }
 
-.home-facts {
-  display: flex;
-  margin: -0.25rem 0 1.5rem;
-  gap: 0.625rem 1.625rem;
-  flex-wrap: wrap;
-  color: var(--partidata-ink);
-  font-size: 0.9375rem;
-}
-
-.home-facts a {
-  color: inherit;
-}
-
 .home-grid {
   display: grid;
   padding: 0;
@@ -203,10 +191,6 @@
 
 .home-grid--outside {
   grid-template-columns: repeat(auto-fill, minmax(max(13.125rem, calc((100% - 2.25rem) / 3)), 1fr));
-}
-
-.home-facts--sources {
-  margin: 1rem 0 0;
 }
 
 .home-more {

@@ -44,13 +44,6 @@ export function partyLabel (party: Pick<HomeParty, 'beteckning' | 'duplicateName
 }
 
 /**
- * Seats needed to carry a vote alone: more than half the chamber.
- */
-export function ownMajority (seats: number): number {
-  return Math.floor(seats / 2) + 1;
-}
-
-/**
  * The chips are a single choice shown as a group, so pressing the active one
  * clears the election type rather than leaving it stuck on.
  */

@@ -2,7 +2,6 @@ import { useId, useState } from 'react';
 import PartyCard from 'src/components/PartyCard';
 import type { ParliamentYear } from 'src/server/party-data';
 import { ChevronDownIcon } from './icons';
-import { ownMajority } from './summary';
 
 function RiksdagSection ({ years }: { years: ParliamentYear[] }) {
   const [valar, setValar] = useState(years[0]?.valar);
@@ -10,8 +9,6 @@ function RiksdagSection ({ years }: { years: ParliamentYear[] }) {
 
   const year = years.find(entry => entry.valar === valar) ?? years[0];
   if (!year) return null;
-
-  const seats = year.partier.reduce((total, party) => total + party.mandat, 0);
 
   return (
     <section className="home-section" aria-labelledby={`${fieldId}-heading`}>
@@ -28,13 +25,6 @@ function RiksdagSection ({ years }: { years: ParliamentYear[] }) {
           <p>Mandat efter valet {year.valar}</p>
         )}
       </div>
-
-      <p className="home-facts">
-        <span>{seats} mandat</span>
-        <span>{ownMajority(seats)} för egen majoritet</span>
-        <span>4 % spärr</span>
-        <span>Källa: <a href={year.kalla.url}>{year.kalla.namn}</a>, hämtat {year.kalla.hamtad}</span>
-      </p>
 
       <ul className="home-grid home-grid--parliament">
         {year.partier.map(party => (

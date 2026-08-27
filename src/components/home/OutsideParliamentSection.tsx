@@ -7,11 +7,6 @@ const percentageFormatter = new Intl.NumberFormat('sv-SE', {
 });
 
 function OutsideParliamentSection ({ data }: { data: OutsideParliamentData }) {
-  const sources = [...new Map(data.partier.map(party => [
-    `${party.kalla.url}\0${party.valar}`,
-    { ...party.kalla, valar: party.valar },
-  ])).values()].toSorted((left, right) => left.valar - right.valar);
-
   return (
     <section className="home-section" aria-labelledby="outside-parliament-heading">
       <div className="home-section__header">
@@ -34,16 +29,6 @@ function OutsideParliamentSection ({ data }: { data: OutsideParliamentData }) {
           </li>
         ))}
       </ul>
-
-      <p className="home-facts home-facts--sources">
-        <span>Endast individuellt särredovisade resultat med entydig partiidentitet.</span>
-        <span>Källor: {sources.map((source, index) => (
-          <span key={`${source.url}-${source.valar}`}>
-            {index > 0 && ', '}
-            <a href={source.url}>{source.namn} {source.valar}</a>
-          </span>
-        ))}</span>
-      </p>
     </section>
   );
 }
