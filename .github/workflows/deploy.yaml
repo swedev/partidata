@@ -32,6 +32,18 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      # The artifact reports the version from package.json, so a tag that names
+      # a different one would deploy a build that misidentifies itself.
+      - name: Verify the tag matches package.json
+        if: github.ref_type == 'tag'
+        run: |
+          version="v$(node -p "require('./package.json').version")"
+          if [ "$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match package.json $version" >&2
+            exit 1
+          fi
+
       - run: npm run precommit
 
       - name: Install deploy key

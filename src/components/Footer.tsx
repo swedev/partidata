@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+const version = process.env.PARTIDATA_VERSION;
+
 function Footer () {
   return (
     <footer id="om-tjansten" className="site-footer">
@@ -36,6 +38,11 @@ function Footer () {
           <ul>
             <li><a href="https://github.com/swedev/partidata">Källkod och data på GitHub</a></li>
             <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">Licens: CC0 1.0</a></li>
+            {version && (
+              <li>
+                <a href={`https://github.com/swedev/partidata/tree/v${version}`}>Version {version}</a>
+              </li>
+            )}
           </ul>
         </div>
 

@@ -9,13 +9,22 @@ included in the artifact and read by the Node process at request time.
 
 ## Release
 
+The version in `package.json` is what the deployed artifact reports, in
+`/api/health` and in the site footer. A release raises it and tags the same
+number; the workflow refuses to build a `v*` tag that names a different one.
+
 ```bash
 git switch main && git pull
-git tag v0.6.0
-git push origin v0.6.0
+npm version minor --no-git-tag-version   # or patch / major
+git commit -am "Släpp $(node -p "require('./package.json').version")"
+git push origin main
+git tag "v$(node -p "require('./package.json').version")"
+git push origin "v$(node -p "require('./package.json').version")"
 ```
 
-To return to older code, run the workflow manually from an earlier tag.
+To return to older code, run the workflow manually from an earlier tag. The
+version check is skipped then, so the artifact reports the version that ref
+carries.
 
 ## One-time server setup
 
