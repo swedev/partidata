@@ -12,7 +12,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
     "valar": 2026,
-    "partikod": "0126"
+    "partikod": "0126",
+    "bild": {
+      "bredd": 1027,
+      "hojd": 154
+    },
+    "bildyta": {
+      "x": 17,
+      "y": 18,
+      "bredd": 995,
+      "hojd": 112
+    }
   },
   "deltagande": {
     "2018": {

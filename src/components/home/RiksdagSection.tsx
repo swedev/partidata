@@ -35,6 +35,7 @@ function RiksdagSection ({ years }: { years: ParliamentYear[] }) {
                 filnamn={party.filnamn}
                 forkortning={party.forkortning}
                 symbolSrc={party.symbolSrc}
+                symbolFrame={party.symbolFrame}
                 variant="large"
                 meta={`${party.mandat} mandat`}
               />

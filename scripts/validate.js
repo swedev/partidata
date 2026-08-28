@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const { checkPartyProfileParliamentView } = require('./build-derived-data.js');
+const { readHeader } = require('./png.js');
 const { ROOT, toFileName } = require('./utils.js');
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -216,6 +217,48 @@ function validatePartyProfile (profile, context) {
   }
 }
 
+function requireInteger (value, context, minimum = 0) {
+  assert.ok(Number.isInteger(value) && value >= minimum, `${context} ska vara ett heltal från ${minimum}`);
+}
+
+/**
+ * validatePartySymbol
+ * The symbol file has to exist, and any measurement of it has to describe that
+ * file: a sheet of the size the file reports, and a box inside that sheet.
+ */
+function validatePartySymbol (symbol, file, context) {
+  requireString(symbol.filnamn, `${context}.filnamn`);
+  requireString(symbol.kalla, `${context}.kalla`);
+  requireUrl(symbol.kallurl, `${context}.kallurl`);
+  requireInteger(symbol.valar, `${context}.valar`, 1900);
+  requireString(symbol.partikod, `${context}.partikod`);
+  assert.ok(fs.existsSync(file), `${context}: symbolfilen ${symbol.filnamn} saknas`);
+
+  const measured = symbol.bild !== undefined || symbol.bildyta !== undefined;
+  if (!measured) return;
+  assert.ok(symbol.bild && symbol.bildyta, `${context}: bild och bildyta hör ihop`);
+  requireInteger(symbol.bild.bredd, `${context}.bild.bredd`, 1);
+  requireInteger(symbol.bild.hojd, `${context}.bild.hojd`, 1);
+  requireInteger(symbol.bildyta.x, `${context}.bildyta.x`);
+  requireInteger(symbol.bildyta.y, `${context}.bildyta.y`);
+  requireInteger(symbol.bildyta.bredd, `${context}.bildyta.bredd`, 1);
+  requireInteger(symbol.bildyta.hojd, `${context}.bildyta.hojd`, 1);
+  assert.ok(
+    symbol.bildyta.x + symbol.bildyta.bredd <= symbol.bild.bredd &&
+    symbol.bildyta.y + symbol.bildyta.hojd <= symbol.bild.hojd,
+    `${context}.bildyta ligger utanför bilden`
+  );
+
+  const header = readHeader(fs.readFileSync(file));
+  if (header) {
+    assert.deepEqual(
+      { bredd: header.bredd, hojd: header.hojd },
+      { bredd: symbol.bild.bredd, hojd: symbol.bild.hojd },
+      `${context}.bild stämmer inte med ${symbol.filnamn}`
+    );
+  }
+}
+
 function requireUnique (items, key, context) {
   const seen = new Set();
   for (const item of items) {
@@ -284,6 +327,14 @@ function validatePartyRegistry (dataDirectory) {
     );
     partiesByUuid.set(party.uuid, party);
     partySlugs.add(party.filnamn);
+
+    if (party.partisymbol !== undefined) {
+      validatePartySymbol(
+        party.partisymbol,
+        path.join(partyDirectory, entry.filnamn, party.partisymbol.filnamn || ''),
+        `${entry.filnamn}.partisymbol`
+      );
+    }
 
     const profileFile = path.join(partyDirectory, entry.filnamn, 'profil.json');
     if (fs.existsSync(profileFile)) {

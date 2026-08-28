@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
 import type { HomeData, HomeParty } from 'src/server/party-data';
 import type { ElectionKind, HomeFilters } from './filtering';
-import { PAGE_SIZE, emptyFilters, filterParties, pruneFilters } from './filtering';
+import { PAGE_SIZE, defaultFilters, filterParties, pruneFilters } from './filtering';
+import type { SortOrder } from './sorting';
+import { defaultOrder, sortParties } from './sorting';
 import PartyFilters from './PartyFilters';
 import PartyResults from './PartyResults';
 import RiksdagSection from './RiksdagSection';
@@ -13,7 +15,7 @@ function availableKinds (parties: HomeParty[]): ElectionKind[] {
     for (const facet of Object.values(party.deltagande)) {
       if (facet.riksdag) kinds.add('riksdag');
       if (facet.regionLan.length > 0) kinds.add('region');
-      if (facet.kommunLan.length > 0) kinds.add('kommun');
+      if (facet.kommunKoder.length > 0) kinds.add('kommun');
     }
   }
   return (['riksdag', 'region', 'kommun'] as const).filter(kind => kinds.has(kind));
@@ -22,12 +24,17 @@ function availableKinds (parties: HomeParty[]): ElectionKind[] {
 /**
  * Owns the filter state the controls write and the result grid reads.
  */
-function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeData) {
-  const [filters, setFilters] = useState<HomeFilters>(emptyFilters);
+function HomeContent ({ parties, valar, lan, kommuner, riksdag, outsideParliament }: HomeData) {
+  const initialFilters = useMemo(() => defaultFilters(valar), [valar]);
+  const [filters, setFilters] = useState<HomeFilters>(initialFilters);
+  const [order, setOrder] = useState<SortOrder>(defaultOrder);
   const [visible, setVisible] = useState(PAGE_SIZE);
 
   const kinds = useMemo(() => availableKinds(parties), [parties]);
-  const matches = useMemo(() => filterParties(parties, filters), [parties, filters]);
+  const matches = useMemo(
+    () => sortParties(filterParties(parties, filters), order, filters),
+    [parties, filters, order],
+  );
 
   // The reveal count belongs to the result set it was reached in, so every
   // change of the filters starts over at the first page. Clearing the filters
@@ -46,9 +53,10 @@ function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeD
         filters={filters}
         valar={valar}
         lan={lan}
+        kommuner={kommuner}
         kinds={kinds}
         onChange={update}
-        onReset={() => update(emptyFilters)}
+        onReset={() => update(initialFilters)}
       />
 
       <PartyResults
@@ -56,8 +64,11 @@ function HomeContent ({ parties, valar, lan, riksdag, outsideParliament }: HomeD
         total={parties.length}
         visible={visible}
         query={filters.query}
+        valar={filters.valar}
+        order={order}
+        onOrderChange={setOrder}
         onShowMore={() => setVisible(current => current + PAGE_SIZE)}
-        onReset={() => update(emptyFilters)}
+        onReset={() => update(initialFilters)}
       />
     </>
   );

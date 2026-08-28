@@ -1,5 +1,6 @@
 @use "./home";
 @use "./party-card";
+@use "./party-symbol";
 @use "./party-profile";
 
 :root {
@@ -13,6 +14,12 @@
   --partidata-card-divider: #e6e2d6;
   --partidata-control-line: #b9b4a4;
   --partidata-chip-line: #c3cdde;
+  --partidata-valsedel-riksdag: #fdf7dc;
+  --partidata-valsedel-riksdag-line: #eee3b6;
+  --partidata-valsedel-region: #eaf1f9;
+  --partidata-valsedel-region-line: #d5e2ef;
+  --partidata-valsedel-kommun: #fcfbf7;
+  --partidata-valsedel-kommun-line: #e4e0d4;
   --partidata-chip-off-line: #cfcbbd;
   --partidata-footer: var(--partidata-soft);
   --partidata-text: #131313;

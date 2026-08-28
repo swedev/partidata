@@ -18,7 +18,10 @@ export interface Parti {
 }
 
 /**
- * The best known symbol for a party and its provenance.
+ * The best known symbol for a party and its provenance. `bild` is the sheet the
+ * symbol file measures, and `bildyta` the box its drawing occupies inside that
+ * sheet, both in pixels; a symbol delivered in a format the importer leaves
+ * unmeasured carries neither.
  */
 export interface PartiSymbol {
   filnamn: string;
@@ -26,6 +29,20 @@ export interface PartiSymbol {
   kallurl: string;
   valar: number;
   partikod: string;
+  bild?: PartiSymbolBild;
+  bildyta?: PartiSymbolBildyta;
+}
+
+export interface PartiSymbolBild {
+  bredd: number;
+  hojd: number;
+}
+
+export interface PartiSymbolBildyta {
+  x: number;
+  y: number;
+  bredd: number;
+  hojd: number;
 }
 
 /**

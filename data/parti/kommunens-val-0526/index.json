@@ -11,7 +11,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://historik.val.se/val/ep2019/regpartier/0526.png",
     "valar": 2019,
-    "partikod": "0526"
+    "partikod": "0526",
+    "bild": {
+      "bredd": 1026,
+      "hojd": 153
+    },
+    "bildyta": {
+      "x": 82,
+      "y": 12,
+      "bredd": 863,
+      "hojd": 130
+    }
   },
   "deltagande": {
     "2022": {

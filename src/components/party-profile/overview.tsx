@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import PartySymbol from 'src/components/PartySymbol';
+import type { SymbolFrame } from 'src/server/party-data';
 import type {
   Parti,
   PartiDeltagande,
@@ -42,6 +44,7 @@ export function ProfileHero ({
   displayName,
   symbol,
   symbolSrc,
+  symbolFrame,
   latestResult,
   latestParticipation,
 }: {
@@ -51,6 +54,7 @@ export function ProfileHero ({
   displayName: string;
   symbol?: Parti['partisymbol'];
   symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
   latestResult?: PartiProfilValresultatPost;
   latestParticipation?: [string, PartiDeltagande];
 }) {
@@ -71,7 +75,16 @@ export function ProfileHero ({
         </div>
         {symbolSrc && symbol && (
           <figure className={`profile-logo${profile.symbolvisning === 'mark' ? ' profile-logo--mark' : ''}`}>
-            <div><Image src={symbolSrc} alt={`Logotyp för ${displayName}`} fill sizes="(max-width: 800px) 80vw, 26vw" loading="eager" unoptimized /></div>
+            <div>
+              <PartySymbol
+                src={symbolSrc}
+                frame={symbolFrame}
+                alt={`Logotyp för ${displayName}`}
+                sizes="(max-width: 800px) 80vw, 26vw"
+                className="profile-logo__frame"
+                priority
+              />
+            </div>
             <figcaption>Partisymbol från <a href={symbol.kallurl}>{symbol.kalla}</a>, återgiven för identifiering.</figcaption>
           </figure>
         )}

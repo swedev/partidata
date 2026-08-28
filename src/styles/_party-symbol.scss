@@ -1,0 +1,20 @@
+.party-symbol {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+/* The frame takes the drawing's own aspect ratio, and the image inside it is
+   scaled and shifted by the multiples the measurement gives, so the sheet's
+   margins fall outside the frame. */
+.party-symbol--beskuren {
+  aspect-ratio: var(--party-symbol-ratio);
+}
+
+.party-symbol--beskuren img {
+  max-width: none;
+}
+
+.party-symbol--hel img {
+  object-fit: contain;
+}

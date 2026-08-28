@@ -12,7 +12,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
     "valar": 2026,
-    "partikod": "0993"
+    "partikod": "0993",
+    "bild": {
+      "bredd": 4275,
+      "hojd": 638
+    },
+    "bildyta": {
+      "x": 25,
+      "y": 68,
+      "bredd": 4205,
+      "hojd": 518
+    }
   },
   "deltagande": {
     "2018": {

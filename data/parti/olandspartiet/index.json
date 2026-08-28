@@ -12,7 +12,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://historik.val.se/val/ep2019/regpartier/0336.png",
     "valar": 2019,
-    "partikod": "0336"
+    "partikod": "0336",
+    "bild": {
+      "bredd": 4276,
+      "hojd": 638
+    },
+    "bildyta": {
+      "x": 47,
+      "y": 56,
+      "bredd": 4050,
+      "hojd": 543
+    }
   },
   "deltagande": {
     "2018": {

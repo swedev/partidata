@@ -12,7 +12,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
     "valar": 2026,
-    "partikod": "0303"
+    "partikod": "0303",
+    "bild": {
+      "bredd": 1026,
+      "hojd": 153
+    },
+    "bildyta": {
+      "x": 246,
+      "y": 8,
+      "bredd": 453,
+      "hojd": 136
+    }
   },
   "deltagande": {
     "2018": {

@@ -10,7 +10,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://historik.val.se/val/ep2019/regpartier/1272.png",
     "valar": 2019,
-    "partikod": "1272"
+    "partikod": "1272",
+    "bild": {
+      "bredd": 1026,
+      "hojd": 153
+    },
+    "bildyta": {
+      "x": 172,
+      "y": 0,
+      "bredd": 681,
+      "hojd": 137
+    }
   },
   "deltagande": {
     "2018": {

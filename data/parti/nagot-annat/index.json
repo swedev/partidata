@@ -9,7 +9,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
     "valar": 2026,
-    "partikod": "1877"
+    "partikod": "1877",
+    "bild": {
+      "bredd": 1026,
+      "hojd": 153
+    },
+    "bildyta": {
+      "x": 62,
+      "y": 4,
+      "bredd": 887,
+      "hojd": 148
+    }
   },
   "deltagande": {
     "2026": {

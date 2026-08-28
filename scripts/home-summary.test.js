@@ -2,9 +2,8 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 
 const {
-  cardMeta,
+  ballots,
   cardSub,
-  participationLevels,
   participationYears,
   partyLabel,
   queryEcho,
@@ -16,16 +15,39 @@ function party (deltagande) {
 }
 
 const ALL_LEVELS = party({
-  2018: { riksdag: true, regionLan: [], kommunLan: [] },
-  2022: { riksdag: false, regionLan: ['01'], kommunLan: ['12'] }
+  2018: { riksdag: true, regionLan: [], kommunKoder: [] },
+  2022: { riksdag: false, regionLan: ['01'], kommunKoder: ['1214', '1230', '1231', '1233'] }
 });
 const NOTHING = party({});
 
-test('participation levels collapse every year the party stood in', () => {
-  assert.deepEqual(participationLevels(ALL_LEVELS), ['Riksdag', 'Region', 'Kommun']);
-  assert.deepEqual(participationLevels(party({ 2022: { riksdag: false, regionLan: [], kommunLan: ['12'] } })), ['Kommun']);
-  assert.deepEqual(participationLevels(party({ 2022: { riksdag: true, regionLan: [], kommunLan: [] } })), ['Riksdag']);
-  assert.deepEqual(participationLevels(NOTHING), []);
+test('the ballots collapse every year the party stood in', () => {
+  assert.deepEqual(ballots(ALL_LEVELS), [
+    { valtyp: 'riksdag' },
+    { valtyp: 'region', antal: 1 },
+    { valtyp: 'kommun', antal: 4 }
+  ]);
+  assert.deepEqual(ballots(party({ 2022: { riksdag: true, regionLan: [], kommunKoder: [] } })), [{ valtyp: 'riksdag' }]);
+  assert.deepEqual(ballots(NOTHING), []);
+});
+
+test('a chosen year is the only one the ballots count', () => {
+  assert.deepEqual(ballots(ALL_LEVELS, '2018'), [{ valtyp: 'riksdag' }]);
+  assert.deepEqual(ballots(ALL_LEVELS, '2022'), [
+    { valtyp: 'region', antal: 1 },
+    { valtyp: 'kommun', antal: 4 }
+  ]);
+  assert.deepEqual(ballots(ALL_LEVELS, '2026'), [], 'ett år partiet inte deltog i räknar ingenting');
+});
+
+test('the widest year sets the count when no year is chosen', () => {
+  const growing = party({
+    2018: { riksdag: false, regionLan: ['01'], kommunKoder: ['0114', '0115'] },
+    2022: { riksdag: false, regionLan: ['01', '12'], kommunKoder: ['0114', '0115', '0117', '0120', '0123', '0125', '0126', '0127', '0128'] }
+  });
+  assert.deepEqual(ballots(growing), [
+    { valtyp: 'region', antal: 2 },
+    { valtyp: 'kommun', antal: 9 }
+  ]);
 });
 
 test('participation years are listed newest first', () => {
@@ -34,8 +56,7 @@ test('participation years are listed newest first', () => {
 });
 
 test('the card footer never renders empty', () => {
-  assert.equal(cardMeta(ALL_LEVELS), 'Riksdag · Region · Kommun');
-  assert.equal(cardMeta(NOTHING), 'Inget anmält deltagande');
+  assert.deepEqual(ballots(NOTHING), [], 'ett parti utan valsedlar får ingen bricka');
   assert.equal(cardSub(ALL_LEVELS), 'Valår 2022, 2018');
   assert.equal(cardSub(NOTHING), undefined);
 });

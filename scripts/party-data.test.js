@@ -313,8 +313,8 @@ test('home data lists parties in Swedish alphabetical order with participation f
     forkortning: 'A',
     symbolSrc: '/partisymbol/alfapartiet/9001-alfapartiet.png',
     deltagande: {
-      2022: { riksdag: true, regionLan: ['01', '12'], kommunLan: ['01', '12'] },
-      2026: { riksdag: false, regionLan: [], kommunLan: [] }
+      2022: { riksdag: true, regionLan: ['01', '12'], kommunKoder: ['0114', '1280', '1281'] },
+      2026: { riksdag: false, regionLan: [], kommunKoder: [] }
     }
   });
   assert.equal(home.parties[1].symbolSrc, undefined);
