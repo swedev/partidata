@@ -108,6 +108,14 @@ test('validateData accepts a consistent data tree', t => {
   });
 });
 
+test('validateData accepts an extension field with a snake_case name', t => {
+  const root = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, grundad: '1988-02-04', wikidata_id: 'Q123' });
+
+  assert.equal(validateData(root).parties, 1);
+});
+
 test('validateData rejects inconsistencies with useful errors', async t => {
   await t.test('missing party files', t => {
     const root = makeData();
@@ -149,6 +157,20 @@ test('validateData rejects inconsistencies with useful errors', async t => {
     t.after(() => fs.rmSync(root, { recursive: true, force: true }));
     writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, forkortning: 'TP' });
     assert.throws(() => validateData(root), /forkortning saknas i index.json/);
+  });
+
+  await t.test('an invalid extension field name', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, 'founded-date': '1988-02-04' });
+    assert.throws(() => validateData(root), /fältet "founded-date" har inte ett giltigt fältnamn/);
+  });
+
+  await t.test('an extension field name with a capital', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, Grundad: '1988-02-04' });
+    assert.throws(() => validateData(root), /fältet "Grundad" har inte ett giltigt fältnamn/);
   });
 
   await t.test('invalid curated party profiles', t => {

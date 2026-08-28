@@ -163,3 +163,15 @@ test('a changed code or name filename replaces the previous symbol file', t => {
   assert.equal(fs.existsSync(path.join(partyDir, oldName)), false);
   assert.deepEqual(fs.readFileSync(path.join(partyDir, '9001-testpartiet.png')), PNG_A);
 });
+
+test('a hand-added field survives the symbol import', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  const zip = writeZip(dir, { '9001_Val 2026.png': PNG_A });
+  const file = path.join(dir, 'data/parti/testpartiet/index.json');
+  fs.writeFileSync(file, JSON.stringify({ ...readJson(file), grundad: '1988-02-04' }, null, 2) + '\n');
+
+  const result = runSymbolImport(dir, '2026', zip);
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(readJson(file).grundad, '1988-02-04');
+});

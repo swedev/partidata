@@ -7,6 +7,12 @@ const { ROOT, dataPath, toFileName, newUuid } = require('./utils.js');
  * PARTY_KEY_ORDER
  * Fixed key order for data/parti/<filnamn>/index.json so generated files are
  * byte-stable regardless of how the values were derived.
+ *
+ * The list is also exactly the set of keys the scripts take responsibility for:
+ * a key listed here must be read in loadParties() and written in
+ * buildParties(), or the value is dropped on the next rebuild. Every other key
+ * found in a party file is an extension field, carried through untouched and
+ * written after these, in alphabetical order.
  * @type {String[]}
  */
 const PARTY_KEY_ORDER = [
@@ -26,6 +32,16 @@ const PARTY_KEY_ORDER = [
 ];
 
 /**
+ * EXTRA_KEY_PATTERN
+ * The name an extension field must have: snake_case, opening on a letter. The
+ * pattern catches malformed names (capitals, hyphens, spaces, a leading
+ * underscore, __proto__) rather than misspellings of valid ones — the extension
+ * namespace is deliberately free-form.
+ * @type {RegExp}
+ */
+const EXTRA_KEY_PATTERN = /^[a-z][a-z0-9_]*$/;
+
+/**
  * readJson
  * @param  {String} file
  * @return {*} Parsed content, or null when the file does not exist
@@ -39,8 +55,16 @@ function readJson (file) {
 
 /**
  * loadParties
- * Reads the party files, which are the source of truth; data/parti/index.json
- * is derived from them.
+ * Reads the party files. They are the source of truth for identity (uuid,
+ * filnamn, tidigare_filnamn), for the fields kept as read
+ * (valmyndigheten_registreringsdatum, partisymbol) and for every extension
+ * field, which is carried through to the rebuilt file. The fields derived from
+ * the election data — kod, beteckning, omrade, deltagande and their history —
+ * are rebuilt from the year files on every build, so what the file holds for
+ * them is a starting point, not a value that survives.
+ *
+ * An extension key that fails EXTRA_KEY_PATTERN throws here, before anything is
+ * built, moved or written, so an invalid key leaves the data untouched.
  * @return {{ parties: Object[], kodbyten: Object }}
  */
 function loadParties () {
@@ -68,13 +92,37 @@ function loadParties () {
       forkortning: data.forkortning,
       registrerad_partibeteckning: data.registrerad_partibeteckning,
       valmyndigheten_registreringsdatum: data.valmyndigheten_registreringsdatum,
-      partisymbol: data.partisymbol
+      partisymbol: data.partisymbol,
+      extra: _extraKeys(data, file)
     };
   });
   return {
     parties,
     kodbyten: readJson(dataPath('parti', 'kodbyten.json')) || {}
   };
+}
+
+/**
+ * _extraKeys
+ * Collects the entries of a party file the scripts do not manage, so they
+ * survive the rebuild. Every key is checked before any is kept, so a file with
+ * an invalid key contributes nothing.
+ * @param  {Object} data Parsed party file
+ * @param  {String} file Path, for the error message
+ * @return {Object} Extension key to value
+ */
+function _extraKeys (data, file) {
+  const keys = Object.keys(data).filter(key => !PARTY_KEY_ORDER.includes(key));
+  for (const key of keys) {
+    if (!EXTRA_KEY_PATTERN.test(key)) {
+      throw new Error(`Party file ${file} has field "${key}", which is not a valid field name`);
+    }
+  }
+  const extra = {};
+  for (const key of keys) {
+    extra[key] = data[key];
+  }
+  return extra;
 }
 
 /**
@@ -482,6 +530,7 @@ function buildParties (registry, yearFiles, areas = loadAreas()) {
       tidigare_filnamn: party.tidigare_filnamn || [],
       koder,
       data: _orderKeys({
+        ...(party.extra || {}),
         uuid: party.uuid,
         kod,
         tidigare_koder: koder.filter(other => other !== kod).sort(),
@@ -525,7 +574,11 @@ function buildParties (registry, yearFiles, areas = loadAreas()) {
 
 /**
  * _orderKeys
- * Applies PARTY_KEY_ORDER and drops empty optional values.
+ * Applies PARTY_KEY_ORDER and drops empty optional values. Keys outside the
+ * list follow the managed ones in alphabetical order, which gives one canonical
+ * output per content regardless of where in the file the field was added. They
+ * keep their value as it stands: the scripts do not own them and do not judge
+ * an empty one.
  */
 function _orderKeys (data) {
   const ordered = {};
@@ -541,6 +594,11 @@ function _orderKeys (data) {
       continue;
     }
     ordered[key] = value;
+  }
+  for (const key of Object.keys(data).filter(other => !PARTY_KEY_ORDER.includes(other)).sort()) {
+    if (data[key] !== undefined) {
+      ordered[key] = data[key];
+    }
   }
   return ordered;
 }
@@ -742,6 +800,7 @@ function writeFiles (writeSet) {
  * Exports
  */
 exports.PARTY_KEY_ORDER = PARTY_KEY_ORDER;
+exports.EXTRA_KEY_PATTERN = EXTRA_KEY_PATTERN;
 exports.loadParties = loadParties;
 exports.loadYearFiles = loadYearFiles;
 exports.loadAreas = loadAreas;
