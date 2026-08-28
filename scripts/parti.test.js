@@ -4,6 +4,7 @@ const path = require('path');
 const { test } = require('node:test');
 
 const {
+  PARTY_KEY_ORDER,
   buildParties,
   deriveArea,
   normalisePartyName,
@@ -35,6 +36,19 @@ const CSV_TVETYDIG = fixture('val-2026-tvetydig.csv');
  */
 function parti (dir, filnamn) {
   return readJson(dir, 'data/parti', filnamn, 'index.json');
+}
+
+/**
+ * editParti
+ * Edits a party file the way a contributor would, by hand.
+ * @param  {String} dir
+ * @param  {String} filnamn
+ * @param  {Object} fields Fields to add or replace
+ */
+function editParti (dir, filnamn, fields) {
+  const file = path.join(dir, 'data/parti', filnamn, 'index.json');
+  const data = { ...readJson(file), ...fields };
+  fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
 }
 
 /**
@@ -559,4 +573,140 @@ test('a duplicate kod in the registry stops the import', t => {
   const result = runImport(dir, '2022', CSV_2022);
   assert.equal(result.status, 1);
   assert.match(result.stderr, /Duplicate kod "9001"/);
+});
+
+test('a hand-added field survives a rebuild', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  editParti(dir, 'testpartiet', { grundad: '1988-02-04' });
+
+  const result = runParti(dir);
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(parti(dir, 'testpartiet').grundad, '1988-02-04');
+});
+
+test('a hand-added field survives a re-import of the same year', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  editParti(dir, 'testpartiet', { grundad: '1988-02-04' });
+
+  const result = runImport(dir, '2022', CSV_2022);
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(parti(dir, 'testpartiet').grundad, '1988-02-04');
+});
+
+test('the first rebuild normalises a hand-added field and the next is byte-identical', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  const file = path.join(dir, 'data/parti/testpartiet/index.json');
+  const handWritten = JSON.stringify({ ...readJson(file), grundad: '1988-02-04' }, null, 4) + '\n';
+  fs.writeFileSync(file, handWritten);
+
+  assert.equal(runParti(dir).status, 0);
+  const normalised = snapshot(dir);
+  assert.notEqual(normalised['parti/testpartiet/index.json'], handWritten);
+  assert.match(normalised['parti/testpartiet/index.json'], /^ {2}"grundad": "1988-02-04"$/m);
+
+  assert.equal(runParti(dir).status, 0);
+  assert.deepEqual(snapshot(dir), normalised);
+});
+
+test('hand-added fields are written after the managed ones, in alphabetical order', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  editParti(dir, 'testpartiet', { wikidata: 'Q123', grundad: '1988-02-04', arkiv_id: 'A7' });
+
+  assert.equal(runParti(dir).status, 0);
+  const keys = Object.keys(parti(dir, 'testpartiet'));
+  const managed = keys.filter(key => PARTY_KEY_ORDER.includes(key));
+  assert.deepEqual(keys.slice(managed.length), ['arkiv_id', 'grundad', 'wikidata']);
+});
+
+test('every JSON value type is preserved in a hand-added field', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  const values = {
+    v_null: null,
+    v_false: false,
+    v_zero: 0,
+    v_tom_strang: '',
+    v_tom_array: [],
+    v_tomt_objekt: {},
+    v_nastlat: { b: [1, { c: 'två' }], a: null }
+  };
+  editParti(dir, 'testpartiet', values);
+
+  assert.equal(runParti(dir).status, 0);
+  const data = parti(dir, 'testpartiet');
+  for (const [key, value] of Object.entries(values)) {
+    assert.deepEqual(data[key], value, `${key} bevaras inte`);
+  }
+  assert.deepEqual(Object.keys(data.v_nastlat), ['b', 'a']);
+});
+
+test('index.json does not take up hand-added fields', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  editParti(dir, 'testpartiet', { grundad: '1988-02-04' });
+
+  assert.equal(runParti(dir).status, 0);
+  const entry = readJson(dir, 'data/parti/index.json').find(party => party.filnamn === 'testpartiet');
+  assert.equal('grundad' in entry, false);
+});
+
+test('a hand-edited value in a derived field is still rebuilt from the year files', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  editParti(dir, 'testpartiet', { forkortning: 'XX', grundad: '1988-02-04' });
+
+  assert.equal(runParti(dir).status, 0);
+  const data = parti(dir, 'testpartiet');
+  assert.equal(data.forkortning, 'TP');
+  assert.equal(data.grundad, '1988-02-04');
+});
+
+test('a hand-added field follows the party to its new filnamn', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  editParti(dir, 'testpartiet', { grundad: '1988-02-04' });
+
+  const result = runImport(dir, '2026', CSV_2026);
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/testpartiet')), false);
+  assert.equal(parti(dir, 'nya-testpartiet').grundad, '1988-02-04');
+});
+
+test('an invalid field name stops the rebuild and writes nothing', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
+  editParti(dir, 'testpartiet', { Grundad: '1988-02-04' });
+  const before = snapshot(dir);
+
+  const result = runParti(dir);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /has field "Grundad", which is not a valid field name/);
+  assert.deepEqual(snapshot(dir), before);
+});
+
+test('an invalid field name stops the import and writes nothing', t => {
+  const parties = PARTIER.map(party => (party.filnamn === 'testpartiet'
+    ? { ...party, 'founded-date': '1988-02-04' }
+    : party));
+  const dir = makeTree({ parties });
+  t.after(() => removeTree(dir));
+  const before = snapshot(dir);
+
+  const result = runImport(dir, '2022', CSV_2022);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /has field "founded-date", which is not a valid field name/);
+  assert.deepEqual(snapshot(dir), before);
 });

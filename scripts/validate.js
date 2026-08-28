@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const { checkPartyProfileParliamentView } = require('./build-derived-data.js');
+const { EXTRA_KEY_PATTERN, PARTY_KEY_ORDER } = require('./parti.js');
 const { readHeader } = require('./png.js');
 const { ROOT, toFileName } = require('./utils.js');
 
@@ -308,6 +309,10 @@ function validatePartyRegistry (dataDirectory) {
     requireString(party.kod, `${entry.filnamn}.kod`);
     if (party.omrade !== undefined) requireString(party.omrade, `${entry.filnamn}.omrade`);
     assert.equal(party.filnamn, entry.filnamn, `${entry.filnamn}: filnamn ska matcha katalogen`);
+
+    for (const key of Object.keys(party).filter(other => !PARTY_KEY_ORDER.includes(other))) {
+      assert.match(key, EXTRA_KEY_PATTERN, `${entry.filnamn}: fältet "${key}" har inte ett giltigt fältnamn`);
+    }
 
     for (const [key, value] of Object.entries(entry)) {
       assert.deepEqual(value, party[key], `${entry.filnamn}: ${key} skiljer sig mellan index och partifil`);

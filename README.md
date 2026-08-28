@@ -49,6 +49,8 @@ En fil per parti. `uuid` sätts en gång och ändras aldrig — det är den iden
 | `partisymbol` | Filnamn och proveniens för partiets senast kända symbol |
 | `deltagande` | Anmält deltagande per valår |
 
+Tabellen är de fält skripten hanterar. Ytterligare fält får läggas till för hand så länge namnet är snake_case (`^[a-z][a-z0-9_]*$`); de bevaras vid ombyggnad och import, med valfritt JSON-värde, och skrivs efter fälten ovan i bokstavsordning. De tas inte upp i `parti/index.json` — den som behöver ett sådant fält läser partifilen.
+
 `deltagande` har ett uppslag per valår: `{ riksdag: bool, region: [länskod], kommun: [kommunkod] }`. Från 2022 listas alla val partiet deltar i, även deltagande som följer av anmälan på högre nivå. 2018 års data är insamlad på annat sätt och speglar därför årets filer, där ett riksdagsparti inte har några region- eller kommunposter alls.
 
 När `partisymbol` finns ligger PNG-filen i samma katalog som partiets `index.json`. Filnamnet innehåller både den partikod symbolen hämtades under och en läsbar namn-slug, till exempel `0001-moderaterna.png`. Symbolen från det senaste importerade valet används. För partier som saknar symbol i 2026 års paket används i vissa fall den senast kända symbolen från Valmyndighetens arkiv för EU-valet 2019. `valar`, `partikod` och `kallurl` anger symbolens proveniens.

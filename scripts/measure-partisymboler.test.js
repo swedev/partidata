@@ -90,3 +90,24 @@ test('the script writes measurements into the committed registry', t => {
   const indexEntry = readJson(dir, 'data/parti/index.json').find(entry => entry.filnamn === 'testpartiet');
   assert.deepEqual(indexEntry.partisymbol, measured);
 });
+
+test('a hand-added field survives the symbol measurement', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  const partyDir = path.join(dir, 'data/parti/testpartiet');
+  fs.writeFileSync(path.join(partyDir, '9001-testpartiet.png'), SYMBOL);
+  const party = readJson(partyDir, 'index.json');
+  party.partisymbol = {
+    filnamn: '9001-testpartiet.png',
+    kalla: 'Valmyndigheten',
+    kallurl: 'https://data.val.se/filer/val2026/parti/partisymboler.zip',
+    valar: 2026,
+    partikod: '9001'
+  };
+  party.grundad = '1988-02-04';
+  fs.writeFileSync(path.join(partyDir, 'index.json'), JSON.stringify(party, null, 2) + '\n');
+
+  const result = runMeasureSymbols(dir);
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(readJson(partyDir, 'index.json').grundad, '1988-02-04');
+});
