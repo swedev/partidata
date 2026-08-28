@@ -16,7 +16,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1806"
+      "partikod": "1806",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 1,
+        "y": 5,
+        "bredd": 1025,
+        "hojd": 144
+      }
     }
   },
   {
@@ -40,7 +50,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1373"
+      "partikod": "1373",
+      "bild": {
+        "bredd": 2138,
+        "hojd": 320
+      },
+      "bildyta": {
+        "x": 505,
+        "y": 15,
+        "bredd": 1102,
+        "hojd": 299
+      }
     }
   },
   {
@@ -60,7 +80,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/0139.png",
       "valar": 2019,
-      "partikod": "0139"
+      "partikod": "0139",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 209,
+        "y": 12,
+        "bredd": 608,
+        "hojd": 129
+      }
     }
   },
   {
@@ -91,7 +121,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1379"
+      "partikod": "1379",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 296,
+        "y": 0,
+        "bredd": 433,
+        "hojd": 153
+      }
     }
   },
   {
@@ -116,7 +156,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1325"
+      "partikod": "1325",
+      "bild": {
+        "bredd": 2139,
+        "hojd": 320
+      },
+      "bildyta": {
+        "x": 606,
+        "y": 26,
+        "bredd": 1012,
+        "hojd": 280
+      }
     }
   },
   {
@@ -134,7 +184,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1753"
+      "partikod": "1753",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 8,
+        "y": 1,
+        "bredd": 1010,
+        "hojd": 151
+      }
     }
   },
   {
@@ -148,7 +208,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1284"
+      "partikod": "1284",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 0,
+        "bredd": 1026,
+        "hojd": 153
+      }
     }
   },
   {
@@ -169,7 +239,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0124"
+      "partikod": "0124",
+      "bild": {
+        "bredd": 2138,
+        "hojd": 320
+      },
+      "bildyta": {
+        "x": 117,
+        "y": 58,
+        "bredd": 1925,
+        "hojd": 182
+      }
     }
   },
   {
@@ -183,7 +263,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1445"
+      "partikod": "1445",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 58,
+        "y": 1,
+        "bredd": 968,
+        "hojd": 151
+      }
     }
   },
   {
@@ -195,7 +285,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1729"
+      "partikod": "1729",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 297,
+        "y": 0,
+        "bredd": 431,
+        "hojd": 153
+      }
     }
   },
   {
@@ -208,7 +308,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1662"
+      "partikod": "1662",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 1,
+        "bredd": 1026,
+        "hojd": 152
+      }
     }
   },
   {
@@ -237,7 +347,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1763"
+      "partikod": "1763",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 381,
+        "y": 2,
+        "bredd": 266,
+        "hojd": 149
+      }
     }
   },
   {
@@ -255,7 +375,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1817"
+      "partikod": "1817",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 457,
+        "y": 0,
+        "bredd": 115,
+        "hojd": 152
+      }
     }
   },
   {
@@ -273,7 +403,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0002"
+      "partikod": "0002",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 83,
+        "y": 53,
+        "bredd": 4088,
+        "hojd": 540
+      }
     }
   },
   {
@@ -292,7 +432,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1521"
+      "partikod": "1521",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 192,
+        "y": 0,
+        "bredd": 643,
+        "hojd": 153
+      }
     }
   },
   {
@@ -335,7 +485,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1738"
+      "partikod": "1738",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 338,
+        "y": 0,
+        "bredd": 350,
+        "hojd": 153
+      }
     }
   },
   {
@@ -349,7 +509,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0184"
+      "partikod": "0184",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 140,
+        "y": 12,
+        "bredd": 747,
+        "hojd": 130
+      }
     }
   },
   {
@@ -363,7 +533,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1310"
+      "partikod": "1310",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 29,
+        "y": 5,
+        "bredd": 967,
+        "hojd": 122
+      }
     }
   },
   {
@@ -398,7 +578,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1366"
+      "partikod": "1366",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 167,
+        "y": 2,
+        "bredd": 693,
+        "hojd": 150
+      }
     }
   },
   {
@@ -416,7 +606,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1708"
+      "partikod": "1708",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 118,
+        "y": 4,
+        "bredd": 789,
+        "hojd": 146
+      }
     }
   },
   {
@@ -430,7 +630,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1105.png",
       "valar": 2019,
-      "partikod": "1105"
+      "partikod": "1105",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 13,
+        "y": 20,
+        "bredd": 1000,
+        "hojd": 113
+      }
     }
   },
   {
@@ -444,7 +654,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1597"
+      "partikod": "1597",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 1023,
+        "y": 9,
+        "bredd": 2191,
+        "hojd": 623
+      }
     }
   },
   {
@@ -469,7 +689,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0163"
+      "partikod": "0163",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 0,
+        "bredd": 1026,
+        "hojd": 153
+      }
     }
   },
   {
@@ -546,7 +776,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1793"
+      "partikod": "1793",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 333,
+        "y": 0,
+        "bredd": 359,
+        "hojd": 153
+      }
     }
   },
   {
@@ -566,7 +806,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1497"
+      "partikod": "1497",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 1158,
+        "y": 6,
+        "bredd": 1997,
+        "hojd": 628
+      }
     }
   },
   {
@@ -586,7 +836,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1053"
+      "partikod": "1053",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 176,
+        "y": 0,
+        "bredd": 592,
+        "hojd": 153
+      }
     }
   },
   {
@@ -599,7 +859,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0004"
+      "partikod": "0004",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 166,
+        "y": 8,
+        "bredd": 3826,
+        "hojd": 621
+      }
     }
   },
   {
@@ -611,7 +881,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1884"
+      "partikod": "1884",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 388,
+        "y": 1,
+        "bredd": 251,
+        "hojd": 152
+      }
     }
   },
   {
@@ -631,7 +911,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1562"
+      "partikod": "1562",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 519,
+        "y": 93,
+        "bredd": 3194,
+        "hojd": 453
+      }
     }
   },
   {
@@ -670,7 +960,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1522"
+      "partikod": "1522",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 888,
+        "y": 24,
+        "bredd": 2513,
+        "hojd": 599
+      }
     }
   },
   {
@@ -684,7 +984,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1297"
+      "partikod": "1297",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 5,
+        "y": 1,
+        "bredd": 1016,
+        "hojd": 151
+      }
     }
   },
   {
@@ -736,7 +1046,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1490"
+      "partikod": "1490",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 221,
+        "y": 16,
+        "bredd": 582,
+        "hojd": 127
+      }
     }
   },
   {
@@ -755,7 +1075,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1331.png",
       "valar": 2019,
-      "partikod": "1331"
+      "partikod": "1331",
+      "bild": {
+        "bredd": 243,
+        "hojd": 38
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 0,
+        "bredd": 243,
+        "hojd": 38
+      }
     }
   },
   {
@@ -774,7 +1104,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1180"
+      "partikod": "1180",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 4,
+        "y": 0,
+        "bredd": 1018,
+        "hojd": 153
+      }
     }
   },
   {
@@ -822,7 +1162,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1748"
+      "partikod": "1748",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 309,
+        "y": 0,
+        "bredd": 413,
+        "hojd": 153
+      }
     }
   },
   {
@@ -835,7 +1185,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1150"
+      "partikod": "1150",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 86,
+        "y": 7,
+        "bredd": 848,
+        "hojd": 133
+      }
     }
   },
   {
@@ -848,7 +1208,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1136.png",
       "valar": 2019,
-      "partikod": "1136"
+      "partikod": "1136",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 148,
+        "y": 2,
+        "bredd": 716,
+        "hojd": 150
+      }
     }
   },
   {
@@ -873,7 +1243,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0187"
+      "partikod": "0187",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 56,
+        "y": 10,
+        "bredd": 914,
+        "hojd": 133
+      }
     }
   },
   {
@@ -887,7 +1267,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0122"
+      "partikod": "0122",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 44,
+        "y": 12,
+        "bredd": 938,
+        "hojd": 129
+      }
     }
   },
   {
@@ -906,7 +1296,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1552"
+      "partikod": "1552",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 905,
+        "y": 79,
+        "bredd": 2550,
+        "hojd": 504
+      }
     }
   },
   {
@@ -920,7 +1320,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1481"
+      "partikod": "1481",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 140,
+        "y": 4,
+        "bredd": 731,
+        "hojd": 144
+      }
     }
   },
   {
@@ -937,7 +1347,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1900"
+      "partikod": "1900",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 491,
+        "y": 0,
+        "bredd": 45,
+        "hojd": 152
+      }
     }
   },
   {
@@ -951,7 +1371,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1333"
+      "partikod": "1333",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 257,
+        "y": 15,
+        "bredd": 512,
+        "hojd": 124
+      }
     }
   },
   {
@@ -969,7 +1399,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1482"
+      "partikod": "1482",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 3,
+        "bredd": 1026,
+        "hojd": 148
+      }
     }
   },
   {
@@ -990,7 +1430,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0532"
+      "partikod": "0532",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 18,
+        "y": 0,
+        "bredd": 990,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1002,7 +1452,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1448"
+      "partikod": "1448",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 128,
+        "y": 0,
+        "bredd": 770,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1022,7 +1482,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0189"
+      "partikod": "0189",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 272,
+        "y": 6,
+        "bredd": 324,
+        "hojd": 141
+      }
     }
   },
   {
@@ -1055,7 +1525,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1840"
+      "partikod": "1840",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 27,
+        "bredd": 1026,
+        "hojd": 100
+      }
     }
   },
   {
@@ -1122,7 +1602,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1606"
+      "partikod": "1606",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 905,
+        "y": 23,
+        "bredd": 2384,
+        "hojd": 591
+      }
     }
   },
   {
@@ -1151,7 +1641,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1815"
+      "partikod": "1815",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 436,
+        "y": 0,
+        "bredd": 154,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1164,7 +1664,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1822"
+      "partikod": "1822",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 10,
+        "y": 1,
+        "bredd": 1006,
+        "hojd": 151
+      }
     }
   },
   {
@@ -1205,7 +1715,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1344"
+      "partikod": "1344",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 250,
+        "y": 0,
+        "bredd": 526,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1236,7 +1756,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1265"
+      "partikod": "1265",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 1260,
+        "y": 21,
+        "bredd": 1609,
+        "hojd": 595
+      }
     }
   },
   {
@@ -1250,7 +1780,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0126"
+      "partikod": "0126",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 17,
+        "y": 18,
+        "bredd": 995,
+        "hojd": 112
+      }
     }
   },
   {
@@ -1280,7 +1820,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1514"
+      "partikod": "1514",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 1668,
+        "y": 13,
+        "bredd": 806,
+        "hojd": 615
+      }
     }
   },
   {
@@ -1299,7 +1849,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1659"
+      "partikod": "1659",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 16,
+        "bredd": 1026,
+        "hojd": 121
+      }
     }
   },
   {
@@ -1316,7 +1876,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1830"
+      "partikod": "1830",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 56,
+        "y": 0,
+        "bredd": 921,
+        "hojd": 151
+      }
     }
   },
   {
@@ -1335,7 +1905,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0204"
+      "partikod": "0204",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 206,
+        "y": 8,
+        "bredd": 520,
+        "hojd": 138
+      }
     }
   },
   {
@@ -1357,7 +1937,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1510"
+      "partikod": "1510",
+      "bild": {
+        "bredd": 4275,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 4,
+        "y": 33,
+        "bredd": 4251,
+        "hojd": 548
+      }
     }
   },
   {
@@ -1377,7 +1967,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1135"
+      "partikod": "1135",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 162,
+        "y": 1,
+        "bredd": 702,
+        "hojd": 150
+      }
     }
   },
   {
@@ -1396,7 +1996,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1771"
+      "partikod": "1771",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 1,
+        "bredd": 1026,
+        "hojd": 151
+      }
     }
   },
   {
@@ -1409,7 +2019,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1915"
+      "partikod": "1915",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 179,
+        "y": 0,
+        "bredd": 668,
+        "hojd": 152
+      }
     }
   },
   {
@@ -1441,7 +2061,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1158"
+      "partikod": "1158",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 147,
+        "y": 3,
+        "bredd": 728,
+        "hojd": 147
+      }
     }
   },
   {
@@ -1462,7 +2092,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1164"
+      "partikod": "1164",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 1558,
+        "y": 18,
+        "bredd": 817,
+        "hojd": 591
+      }
     }
   },
   {
@@ -1489,7 +2129,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1142"
+      "partikod": "1142",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 232,
+        "y": 3,
+        "bredd": 563,
+        "hojd": 148
+      }
     }
   },
   {
@@ -1515,7 +2165,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1795"
+      "partikod": "1795",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 63,
+        "y": 0,
+        "bredd": 900,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1529,7 +2189,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0997"
+      "partikod": "0997",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 11,
+        "y": 93,
+        "bredd": 4248,
+        "hojd": 466
+      }
     }
   },
   {
@@ -1547,7 +2217,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1449"
+      "partikod": "1449",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 313,
+        "y": 0,
+        "bredd": 400,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1559,7 +2239,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1903"
+      "partikod": "1903",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 448,
+        "y": 0,
+        "bredd": 131,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1571,7 +2261,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1731"
+      "partikod": "1731",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 89,
+        "y": 0,
+        "bredd": 848,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1590,7 +2290,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1280.png",
       "valar": 2019,
-      "partikod": "1280"
+      "partikod": "1280",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 146,
+        "y": 0,
+        "bredd": 740,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1603,7 +2313,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1821"
+      "partikod": "1821",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 435,
+        "y": 0,
+        "bredd": 155,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1622,7 +2342,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1156.png",
       "valar": 2019,
-      "partikod": "1156"
+      "partikod": "1156",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 49,
+        "y": 1,
+        "bredd": 928,
+        "hojd": 151
+      }
     }
   },
   {
@@ -1634,7 +2364,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1548"
+      "partikod": "1548",
+      "bild": {
+        "bredd": 4275,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 183,
+        "y": 34,
+        "bredd": 3891,
+        "hojd": 586
+      }
     }
   },
   {
@@ -1646,7 +2386,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1765"
+      "partikod": "1765",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 401,
+        "y": 4,
+        "bredd": 224,
+        "hojd": 145
+      }
     }
   },
   {
@@ -1675,7 +2425,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1363.png",
       "valar": 2019,
-      "partikod": "1363"
+      "partikod": "1363",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 308,
+        "y": 1,
+        "bredd": 410,
+        "hojd": 151
+      }
     }
   },
   {
@@ -1709,7 +2469,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1653"
+      "partikod": "1653",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 228,
+        "y": 0,
+        "bredd": 570,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1729,7 +2499,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0094"
+      "partikod": "0094",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 242,
+        "y": 1,
+        "bredd": 542,
+        "hojd": 151
+      }
     }
   },
   {
@@ -1754,7 +2534,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1567"
+      "partikod": "1567",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 205,
+        "y": 77,
+        "bredd": 3747,
+        "hojd": 462
+      }
     }
   },
   {
@@ -1789,7 +2579,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1287"
+      "partikod": "1287",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 176,
+        "y": 0,
+        "bredd": 674,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1802,7 +2602,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1532"
+      "partikod": "1532",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 11,
+        "bredd": 1026,
+        "hojd": 131
+      }
     }
   },
   {
@@ -1815,7 +2625,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1860"
+      "partikod": "1860",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 167,
+        "y": 4,
+        "bredd": 693,
+        "hojd": 146
+      }
     }
   },
   {
@@ -1832,7 +2652,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1563"
+      "partikod": "1563",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 167,
+        "y": 0,
+        "bredd": 692,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1850,7 +2680,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1272.png",
       "valar": 2019,
-      "partikod": "1272"
+      "partikod": "1272",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 172,
+        "y": 0,
+        "bredd": 681,
+        "hojd": 137
+      }
     }
   },
   {
@@ -1877,7 +2717,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0160"
+      "partikod": "0160",
+      "bild": {
+        "bredd": 4275,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 300,
+        "y": 21,
+        "bredd": 3721,
+        "hojd": 588
+      }
     }
   },
   {
@@ -1904,7 +2754,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1728"
+      "partikod": "1728",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 0,
+        "bredd": 1026,
+        "hojd": 152
+      }
     }
   },
   {
@@ -1917,7 +2777,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1789"
+      "partikod": "1789",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 30,
+        "bredd": 1026,
+        "hojd": 95
+      }
     }
   },
   {
@@ -1930,7 +2800,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1797"
+      "partikod": "1797",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 3,
+        "y": 7,
+        "bredd": 1023,
+        "hojd": 139
+      }
     }
   },
   {
@@ -1972,7 +2852,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1587"
+      "partikod": "1587",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 16,
+        "y": 0,
+        "bredd": 994,
+        "hojd": 153
+      }
     }
   },
   {
@@ -1986,7 +2876,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0028"
+      "partikod": "0028",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 25,
+        "y": 7,
+        "bredd": 975,
+        "hojd": 138
+      }
     }
   },
   {
@@ -2028,7 +2928,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1374.png",
       "valar": 2019,
-      "partikod": "1374"
+      "partikod": "1374",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 304,
+        "y": 1,
+        "bredd": 418,
+        "hojd": 151
+      }
     }
   },
   {
@@ -2041,7 +2951,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1865"
+      "partikod": "1865",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 447,
+        "y": 0,
+        "bredd": 131,
+        "hojd": 153
+      }
     }
   },
   {
@@ -2071,7 +2991,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1327"
+      "partikod": "1327",
+      "bild": {
+        "bredd": 240,
+        "hojd": 35
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 0,
+        "bredd": 240,
+        "hojd": 35
+      }
     }
   },
   {
@@ -2085,7 +3015,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1312"
+      "partikod": "1312",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 36,
+        "y": 8,
+        "bredd": 956,
+        "hojd": 138
+      }
     }
   },
   {
@@ -2107,7 +3047,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1671"
+      "partikod": "1671",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 310,
+        "y": 0,
+        "bredd": 405,
+        "hojd": 153
+      }
     }
   },
   {
@@ -2159,7 +3109,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1825"
+      "partikod": "1825",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 106,
+        "y": 0,
+        "bredd": 814,
+        "hojd": 153
+      }
     }
   },
   {
@@ -2194,7 +3154,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1350"
+      "partikod": "1350",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 342,
+        "y": 0,
+        "bredd": 341,
+        "hojd": 153
+      }
     }
   },
   {
@@ -2213,7 +3183,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1764"
+      "partikod": "1764",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 303,
+        "y": 0,
+        "bredd": 420,
+        "hojd": 153
+      }
     }
   },
   {
@@ -2226,7 +3206,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0638"
+      "partikod": "0638",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 9,
+        "y": 6,
+        "bredd": 951,
+        "hojd": 142
+      }
     }
   },
   {
@@ -2245,7 +3235,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1560"
+      "partikod": "1560",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 119,
+        "y": 0,
+        "bredd": 789,
+        "hojd": 152
+      }
     }
   },
   {
@@ -2258,7 +3258,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1505"
+      "partikod": "1505",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 557,
+        "y": 17,
+        "bredd": 3077,
+        "hojd": 604
+      }
     }
   },
   {
@@ -2279,7 +3289,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0303"
+      "partikod": "0303",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 246,
+        "y": 8,
+        "bredd": 453,
+        "hojd": 136
+      }
     }
   },
   {
@@ -2305,7 +3325,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1338.png",
       "valar": 2019,
-      "partikod": "1338"
+      "partikod": "1338",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 262,
+        "y": 1,
+        "bredd": 502,
+        "hojd": 151
+      }
     }
   },
   {
@@ -2349,7 +3379,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0502"
+      "partikod": "0502",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 247,
+        "y": 12,
+        "bredd": 532,
+        "hojd": 129
+      }
     }
   },
   {
@@ -2370,7 +3410,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/0526.png",
       "valar": 2019,
-      "partikod": "0526"
+      "partikod": "0526",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 82,
+        "y": 12,
+        "bredd": 863,
+        "hojd": 130
+      }
     }
   },
   {
@@ -2389,7 +3439,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0471"
+      "partikod": "0471",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 10,
+        "y": 1,
+        "bredd": 1008,
+        "hojd": 152
+      }
     }
   },
   {
@@ -2424,7 +3484,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0593"
+      "partikod": "0593",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 167,
+        "y": 12,
+        "bredd": 693,
+        "hojd": 130
+      }
     }
   },
   {
@@ -2443,7 +3513,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1899"
+      "partikod": "1899",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 150,
+        "y": 0,
+        "bredd": 727,
+        "hojd": 152
+      }
     }
   },
   {
@@ -2457,7 +3537,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1258"
+      "partikod": "1258",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 108,
+        "y": 1,
+        "bredd": 810,
+        "hojd": 151
+      }
     }
   },
   {
@@ -2475,7 +3565,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0068"
+      "partikod": "0068",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 480,
+        "y": 18,
+        "bredd": 3258,
+        "hojd": 605
+      }
     }
   },
   {
@@ -2494,7 +3594,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1766"
+      "partikod": "1766",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 1,
+        "y": 4,
+        "bredd": 1025,
+        "hojd": 146
+      }
     }
   },
   {
@@ -2530,7 +3640,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1036"
+      "partikod": "1036",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 47,
+        "y": 12,
+        "bredd": 932,
+        "hojd": 129
+      }
     }
   },
   {
@@ -2542,7 +3662,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1781"
+      "partikod": "1781",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 237,
+        "y": 1,
+        "bredd": 549,
+        "hojd": 152
+      }
     }
   },
   {
@@ -2561,7 +3691,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1588"
+      "partikod": "1588",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 71,
+        "y": 1,
+        "bredd": 884,
+        "hojd": 152
+      }
     }
   },
   {
@@ -2581,7 +3721,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0418"
+      "partikod": "0418",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 201,
+        "y": 12,
+        "bredd": 625,
+        "hojd": 131
+      }
     }
   },
   {
@@ -2600,7 +3750,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1011"
+      "partikod": "1011",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 103,
+        "y": 12,
+        "bredd": 812,
+        "hojd": 130
+      }
     }
   },
   {
@@ -2631,7 +3791,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0003"
+      "partikod": "0003",
+      "bild": {
+        "bredd": 1004,
+        "hojd": 150
+      },
+      "bildyta": {
+        "x": 1,
+        "y": 0,
+        "bredd": 1002,
+        "hojd": 150
+      }
     }
   },
   {
@@ -2650,7 +3820,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1824"
+      "partikod": "1824",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 183,
+        "y": 1,
+        "bredd": 660,
+        "hojd": 151
+      }
     }
   },
   {
@@ -2675,7 +3855,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0019"
+      "partikod": "0019",
+      "bild": {
+        "bredd": 1024,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 1,
+        "bredd": 1024,
+        "hojd": 151
+      }
     }
   },
   {
@@ -2694,7 +3884,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1458"
+      "partikod": "1458",
+      "bild": {
+        "bredd": 4275,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 33,
+        "y": 36,
+        "bredd": 4211,
+        "hojd": 565
+      }
     }
   },
   {
@@ -2720,7 +3920,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1540"
+      "partikod": "1540",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 5,
+        "bredd": 1026,
+        "hojd": 143
+      }
     }
   },
   {
@@ -2734,7 +3944,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0535"
+      "partikod": "0535",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 140
+      },
+      "bildyta": {
+        "x": 13,
+        "y": 6,
+        "bredd": 938,
+        "hojd": 130
+      }
     }
   },
   {
@@ -2784,7 +4004,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1750"
+      "partikod": "1750",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 261,
+        "y": 0,
+        "bredd": 504,
+        "hojd": 153
+      }
     }
   },
   {
@@ -2803,7 +4033,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0248"
+      "partikod": "0248",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 414,
+        "y": 82,
+        "bredd": 3525,
+        "hojd": 488
+      }
     }
   },
   {
@@ -2815,7 +4055,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1775"
+      "partikod": "1775",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 306,
+        "y": 0,
+        "bredd": 414,
+        "hojd": 153
+      }
     }
   },
   {
@@ -2849,7 +4099,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0498"
+      "partikod": "0498",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 305,
+        "y": 0,
+        "bredd": 416,
+        "hojd": 153
+      }
     }
   },
   {
@@ -2870,7 +4130,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1459"
+      "partikod": "1459",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 1,
+        "y": 3,
+        "bredd": 1024,
+        "hojd": 147
+      }
     }
   },
   {
@@ -2934,7 +4204,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1575"
+      "partikod": "1575",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 101,
+        "y": 0,
+        "bredd": 825,
+        "hojd": 152
+      }
     }
   },
   {
@@ -2952,7 +4232,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1296"
+      "partikod": "1296",
+      "bild": {
+        "bredd": 1004,
+        "hojd": 150
+      },
+      "bildyta": {
+        "x": 71,
+        "y": 0,
+        "bredd": 862,
+        "hojd": 150
+      }
     }
   },
   {
@@ -2976,7 +4266,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0055"
+      "partikod": "0055",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 67,
+        "y": 4,
+        "bredd": 892,
+        "hojd": 144
+      }
     }
   },
   {
@@ -3016,7 +4316,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1568"
+      "partikod": "1568",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 948,
+        "y": 34,
+        "bredd": 2380,
+        "hojd": 572
+      }
     }
   },
   {
@@ -3029,7 +4339,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0001"
+      "partikod": "0001",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 100,
+        "y": 0,
+        "bredd": 826,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3047,7 +4367,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1760"
+      "partikod": "1760",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 3,
+        "bredd": 1025,
+        "hojd": 149
+      }
     }
   },
   {
@@ -3084,7 +4414,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1861"
+      "partikod": "1861",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 153,
+        "y": 1,
+        "bredd": 723,
+        "hojd": 152
+      }
     }
   },
   {
@@ -3104,7 +4444,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0543"
+      "partikod": "0543",
+      "bild": {
+        "bredd": 2139,
+        "hojd": 320
+      },
+      "bildyta": {
+        "x": 104,
+        "y": 15,
+        "bredd": 1920,
+        "hojd": 291
+      }
     }
   },
   {
@@ -3116,7 +4466,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1877"
+      "partikod": "1877",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 62,
+        "y": 4,
+        "bredd": 887,
+        "hojd": 148
+      }
     }
   },
   {
@@ -3143,7 +4503,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1281"
+      "partikod": "1281",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 303,
+        "y": 4,
+        "bredd": 425,
+        "hojd": 145
+      }
     }
   },
   {
@@ -3180,7 +4550,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1340.png",
       "valar": 2019,
-      "partikod": "1340"
+      "partikod": "1340",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 33,
+        "y": 1,
+        "bredd": 960,
+        "hojd": 151
+      }
     }
   },
   {
@@ -3208,7 +4588,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0985"
+      "partikod": "0985",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 72,
+        "y": 13,
+        "bredd": 883,
+        "hojd": 129
+      }
     }
   },
   {
@@ -3241,7 +4631,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1446"
+      "partikod": "1446",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 43,
+        "y": 75,
+        "bredd": 4182,
+        "hojd": 487
+      }
     }
   },
   {
@@ -3258,7 +4658,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1313.png",
       "valar": 2019,
-      "partikod": "1313"
+      "partikod": "1313",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 12,
+        "y": 18,
+        "bredd": 1002,
+        "hojd": 117
+      }
     }
   },
   {
@@ -3271,7 +4681,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1773"
+      "partikod": "1773",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 12,
+        "bredd": 1026,
+        "hojd": 131
+      }
     }
   },
   {
@@ -3298,7 +4718,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1720"
+      "partikod": "1720",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 283,
+        "y": 1,
+        "bredd": 462,
+        "hojd": 152
+      }
     }
   },
   {
@@ -3316,7 +4746,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1788"
+      "partikod": "1788",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 33,
+        "y": 0,
+        "bredd": 960,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3358,7 +4798,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1326.png",
       "valar": 2019,
-      "partikod": "1326"
+      "partikod": "1326",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 186,
+        "y": 7,
+        "bredd": 620,
+        "hojd": 140
+      }
     }
   },
   {
@@ -3400,7 +4850,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1157"
+      "partikod": "1157",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 12,
+        "y": 27,
+        "bredd": 1003,
+        "hojd": 111
+      }
     }
   },
   {
@@ -3417,7 +4877,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1800"
+      "partikod": "1800",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 211,
+        "y": 2,
+        "bredd": 604,
+        "hojd": 150
+      }
     }
   },
   {
@@ -3441,7 +4911,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1367"
+      "partikod": "1367",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 342,
+        "y": 27,
+        "bredd": 3559,
+        "hojd": 581
+      }
     }
   },
   {
@@ -3455,7 +4935,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0123"
+      "partikod": "0123",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 10,
+        "y": 18,
+        "bredd": 1003,
+        "hojd": 110
+      }
     }
   },
   {
@@ -3469,7 +4959,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1143"
+      "partikod": "1143",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 12,
+        "y": 17,
+        "bredd": 1006,
+        "hojd": 120
+      }
     }
   },
   {
@@ -3494,7 +4994,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1305"
+      "partikod": "1305",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 437,
+        "y": 0,
+        "bredd": 152,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3507,7 +5017,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1698"
+      "partikod": "1698",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 74,
+        "y": 0,
+        "bredd": 877,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3532,7 +5052,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/0336.png",
       "valar": 2019,
-      "partikod": "0336"
+      "partikod": "0336",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 47,
+        "y": 56,
+        "bredd": 4050,
+        "hojd": 543
+      }
     }
   },
   {
@@ -3559,7 +5089,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1369.png",
       "valar": 2019,
-      "partikod": "1369"
+      "partikod": "1369",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 370,
+        "y": 2,
+        "bredd": 286,
+        "hojd": 149
+      }
     }
   },
   {
@@ -3579,7 +5119,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1472"
+      "partikod": "1472",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 116,
+        "y": 3,
+        "bredd": 4068,
+        "hojd": 632
+      }
     }
   },
   {
@@ -3625,7 +5175,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1152"
+      "partikod": "1152",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 11,
+        "y": 2,
+        "bredd": 1004,
+        "hojd": 151
+      }
     }
   },
   {
@@ -3637,7 +5197,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1654"
+      "partikod": "1654",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 170,
+        "y": 0,
+        "bredd": 686,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3663,7 +5233,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1664"
+      "partikod": "1664",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 221,
+        "y": 4,
+        "bredd": 582,
+        "hojd": 146
+      }
     }
   },
   {
@@ -3691,7 +5271,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1544"
+      "partikod": "1544",
+      "bild": {
+        "bredd": 4275,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 450,
+        "y": 14,
+        "bredd": 3292,
+        "hojd": 618
+      }
     }
   },
   {
@@ -3712,7 +5302,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1068"
+      "partikod": "1068",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 4,
+        "y": 24,
+        "bredd": 1018,
+        "hojd": 98
+      }
     }
   },
   {
@@ -3746,7 +5346,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1787"
+      "partikod": "1787",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 3,
+        "y": 1,
+        "bredd": 1019,
+        "hojd": 152
+      }
     }
   },
   {
@@ -3793,7 +5403,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1439"
+      "partikod": "1439",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 4,
+        "y": 11,
+        "bredd": 1018,
+        "hojd": 134
+      }
     }
   },
   {
@@ -3806,7 +5426,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1640"
+      "partikod": "1640",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 1,
+        "y": 0,
+        "bredd": 1025,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3824,7 +5454,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1430"
+      "partikod": "1430",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 100,
+        "y": 3,
+        "bredd": 826,
+        "hojd": 149
+      }
     }
   },
   {
@@ -3843,7 +5483,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1823"
+      "partikod": "1823",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 140,
+        "y": 0,
+        "bredd": 704,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3884,7 +5534,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1752"
+      "partikod": "1752",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 277,
+        "y": 0,
+        "bredd": 472,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3904,7 +5564,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0524"
+      "partikod": "0524",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 107,
+        "y": 6,
+        "bredd": 821,
+        "hojd": 141
+      }
     }
   },
   {
@@ -3924,7 +5594,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1556"
+      "partikod": "1556",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 983,
+        "y": 40,
+        "bredd": 1988,
+        "hojd": 582
+      }
     }
   },
   {
@@ -3944,7 +5624,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1768"
+      "partikod": "1768",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 446,
+        "y": 0,
+        "bredd": 134,
+        "hojd": 153
+      }
     }
   },
   {
@@ -3986,7 +5676,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1571"
+      "partikod": "1571",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 1640,
+        "y": 30,
+        "bredd": 802,
+        "hojd": 583
+      }
     }
   },
   {
@@ -4013,7 +5713,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1916"
+      "partikod": "1916",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 436,
+        "y": 0,
+        "bredd": 154,
+        "hojd": 153
+      }
     }
   },
   {
@@ -4032,7 +5742,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1922"
+      "partikod": "1922",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 376,
+        "y": 2,
+        "bredd": 330,
+        "hojd": 148
+      }
     }
   },
   {
@@ -4082,7 +5802,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1362.png",
       "valar": 2019,
-      "partikod": "1362"
+      "partikod": "1362",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 235,
+        "y": 1,
+        "bredd": 556,
+        "hojd": 151
+      }
     }
   },
   {
@@ -4096,7 +5826,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1151"
+      "partikod": "1151",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 62,
+        "y": 10,
+        "bredd": 902,
+        "hojd": 134
+      }
     }
   },
   {
@@ -4109,7 +5849,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1801"
+      "partikod": "1801",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 104,
+        "y": 0,
+        "bredd": 818,
+        "hojd": 153
+      }
     }
   },
   {
@@ -4133,7 +5883,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1311.png",
       "valar": 2019,
-      "partikod": "1311"
+      "partikod": "1311",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 92,
+        "y": 12,
+        "bredd": 863,
+        "hojd": 129
+      }
     }
   },
   {
@@ -4145,7 +5905,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1881"
+      "partikod": "1881",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 23,
+        "bredd": 1026,
+        "hojd": 107
+      }
     }
   },
   {
@@ -4211,7 +5981,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1080"
+      "partikod": "1080",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 356,
+        "y": 12,
+        "bredd": 314,
+        "hojd": 130
+      }
     }
   },
   {
@@ -4230,7 +6010,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1128"
+      "partikod": "1128",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 1010,
+        "y": 97,
+        "bredd": 2295,
+        "hojd": 486
+      }
     }
   },
   {
@@ -4244,7 +6034,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0465"
+      "partikod": "0465",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 90,
+        "y": 12,
+        "bredd": 846,
+        "hojd": 129
+      }
     }
   },
   {
@@ -4266,7 +6066,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0174"
+      "partikod": "0174",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 544,
+        "y": 25,
+        "bredd": 3040,
+        "hojd": 590
+      }
     }
   },
   {
@@ -4279,7 +6089,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1796"
+      "partikod": "1796",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 255,
+        "y": 1,
+        "bredd": 515,
+        "hojd": 151
+      }
     }
   },
   {
@@ -4308,7 +6128,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0205"
+      "partikod": "0205",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 846,
+        "y": 14,
+        "bredd": 2576,
+        "hojd": 612
+      }
     }
   },
   {
@@ -4354,7 +6184,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1441"
+      "partikod": "1441",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 432,
+        "y": 41,
+        "bredd": 3535,
+        "hojd": 555
+      }
     }
   },
   {
@@ -4366,7 +6206,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1838"
+      "partikod": "1838",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 262,
+        "y": 2,
+        "bredd": 511,
+        "hojd": 149
+      }
     }
   },
   {
@@ -4400,7 +6250,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0193"
+      "partikod": "0193",
+      "bild": {
+        "bredd": 4275,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 8,
+        "y": 82,
+        "bredd": 4255,
+        "hojd": 479
+      }
     }
   },
   {
@@ -4421,7 +6281,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0249"
+      "partikod": "0249",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 72,
+        "y": 12,
+        "bredd": 882,
+        "hojd": 129
+      }
     }
   },
   {
@@ -4452,7 +6322,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0250"
+      "partikod": "0250",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 233,
+        "y": 12,
+        "bredd": 560,
+        "hojd": 129
+      }
     }
   },
   {
@@ -4466,7 +6346,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0196"
+      "partikod": "0196",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 214,
+        "y": 12,
+        "bredd": 599,
+        "hojd": 129
+      }
     }
   },
   {
@@ -4487,7 +6377,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0447"
+      "partikod": "0447",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 151,
+        "y": 0,
+        "bredd": 724,
+        "hojd": 153
+      }
     }
   },
   {
@@ -4507,7 +6407,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1533"
+      "partikod": "1533",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 134,
+        "y": 15,
+        "bredd": 3991,
+        "hojd": 606
+      }
     }
   },
   {
@@ -4526,7 +6436,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1216"
+      "partikod": "1216",
+      "bild": {
+        "bredd": 1027,
+        "hojd": 154
+      },
+      "bildyta": {
+        "x": 221,
+        "y": 3,
+        "bredd": 488,
+        "hojd": 146
+      }
     }
   },
   {
@@ -4544,7 +6464,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1754"
+      "partikod": "1754",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 60,
+        "y": 1,
+        "bredd": 907,
+        "hojd": 152
+      }
     }
   },
   {
@@ -4570,7 +6500,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1585"
+      "partikod": "1585",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 33,
+        "y": 0,
+        "bredd": 960,
+        "hojd": 153
+      }
     }
   },
   {
@@ -4589,7 +6529,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1693"
+      "partikod": "1693",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 293,
+        "y": 0,
+        "bredd": 440,
+        "hojd": 153
+      }
     }
   },
   {
@@ -4637,7 +6587,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0131"
+      "partikod": "0131",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 0,
+        "bredd": 1026,
+        "hojd": 138
+      }
     }
   },
   {
@@ -4673,7 +6633,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1257"
+      "partikod": "1257",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 110,
+        "y": 13,
+        "bredd": 806,
+        "hojd": 129
+      }
     }
   },
   {
@@ -4685,7 +6655,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1658"
+      "partikod": "1658",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 20,
+        "y": 1,
+        "bredd": 986,
+        "hojd": 151
+      }
     }
   },
   {
@@ -4715,7 +6695,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/0046.png",
       "valar": 2019,
-      "partikod": "0046"
+      "partikod": "0046",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 164,
+        "y": 2,
+        "bredd": 671,
+        "hojd": 149
+      }
     }
   },
   {
@@ -4728,7 +6718,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1286.png",
       "valar": 2019,
-      "partikod": "1286"
+      "partikod": "1286",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 151
+      },
+      "bildyta": {
+        "x": 9,
+        "y": 5,
+        "bredd": 1016,
+        "hojd": 146
+      }
     }
   },
   {
@@ -4742,7 +6742,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0519"
+      "partikod": "0519",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 1,
+        "bredd": 879,
+        "hojd": 151
+      }
     }
   },
   {
@@ -4775,7 +6785,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0546"
+      "partikod": "0546",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 6,
+        "bredd": 1026,
+        "hojd": 143
+      }
     }
   },
   {
@@ -4802,7 +6822,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1323"
+      "partikod": "1323",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 14,
+        "y": 13,
+        "bredd": 998,
+        "hojd": 129
+      }
     }
   },
   {
@@ -4821,7 +6851,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1799"
+      "partikod": "1799",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 287,
+        "y": 0,
+        "bredd": 452,
+        "hojd": 153
+      }
     }
   },
   {
@@ -4844,7 +6884,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1826"
+      "partikod": "1826",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 1,
+        "y": 4,
+        "bredd": 1024,
+        "hojd": 144
+      }
     }
   },
   {
@@ -4875,7 +6925,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1348.png",
       "valar": 2019,
-      "partikod": "1348"
+      "partikod": "1348",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 4,
+        "y": 4,
+        "bredd": 1022,
+        "hojd": 145
+      }
     }
   },
   {
@@ -4888,7 +6948,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1712"
+      "partikod": "1712",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 7,
+        "y": 0,
+        "bredd": 1013,
+        "hojd": 153
+      }
     }
   },
   {
@@ -4908,7 +6978,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1777"
+      "partikod": "1777",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 437,
+        "y": 0,
+        "bredd": 153,
+        "hojd": 153
+      }
     }
   },
   {
@@ -4926,7 +7006,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1886"
+      "partikod": "1886",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 1,
+        "bredd": 1026,
+        "hojd": 152
+      }
     }
   },
   {
@@ -4982,7 +7072,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0110"
+      "partikod": "0110",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 35,
+        "y": 1,
+        "bredd": 949,
+        "hojd": 151
+      }
     }
   },
   {
@@ -4999,7 +7099,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1920"
+      "partikod": "1920",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 26,
+        "bredd": 1024,
+        "hojd": 102
+      }
     }
   },
   {
@@ -5059,7 +7169,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1647"
+      "partikod": "1647",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 449,
+        "y": 0,
+        "bredd": 128,
+        "hojd": 153
+      }
     }
   },
   {
@@ -5071,7 +7191,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1894"
+      "partikod": "1894",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 302,
+        "y": 0,
+        "bredd": 415,
+        "hojd": 153
+      }
     }
   },
   {
@@ -5085,7 +7215,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1545"
+      "partikod": "1545",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 409,
+        "y": 4,
+        "bredd": 3454,
+        "hojd": 626
+      }
     }
   },
   {
@@ -5106,7 +7246,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1322"
+      "partikod": "1322",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 128,
+        "y": 6,
+        "bredd": 765,
+        "hojd": 141
+      }
     }
   },
   {
@@ -5137,7 +7287,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1450"
+      "partikod": "1450",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 172,
+        "y": 2,
+        "bredd": 682,
+        "hojd": 149
+      }
     }
   },
   {
@@ -5173,7 +7333,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1811"
+      "partikod": "1811",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 43,
+        "y": 1,
+        "bredd": 940,
+        "hojd": 152
+      }
     }
   },
   {
@@ -5187,7 +7357,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1278.png",
       "valar": 2019,
-      "partikod": "1278"
+      "partikod": "1278",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 68,
+        "y": 12,
+        "bredd": 867,
+        "hojd": 130
+      }
     }
   },
   {
@@ -5200,7 +7380,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1896"
+      "partikod": "1896",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 437,
+        "y": 0,
+        "bredd": 153,
+        "hojd": 153
+      }
     }
   },
   {
@@ -5223,7 +7413,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1812"
+      "partikod": "1812",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 261,
+        "y": 2,
+        "bredd": 505,
+        "hojd": 150
+      }
     }
   },
   {
@@ -5237,7 +7437,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0711"
+      "partikod": "0711",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 220,
+        "y": 12,
+        "bredd": 586,
+        "hojd": 129
+      }
     }
   },
   {
@@ -5257,7 +7467,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1076"
+      "partikod": "1076",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 81,
+        "y": 13,
+        "bredd": 864,
+        "hojd": 129
+      }
     }
   },
   {
@@ -5281,7 +7501,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1909"
+      "partikod": "1909",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 35,
+        "y": 1,
+        "bredd": 932,
+        "hojd": 152
+      }
     }
   },
   {
@@ -5316,7 +7546,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1827"
+      "partikod": "1827",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 51,
+        "bredd": 1025,
+        "hojd": 51
+      }
     }
   },
   {
@@ -5328,7 +7568,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1442.png",
       "valar": 2019,
-      "partikod": "1442"
+      "partikod": "1442",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 7,
+        "y": 0,
+        "bredd": 1016,
+        "hojd": 151
+      }
     }
   },
   {
@@ -5352,7 +7602,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0978"
+      "partikod": "0978",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 102,
+        "y": 12,
+        "bredd": 822,
+        "hojd": 129
+      }
     }
   },
   {
@@ -5366,7 +7626,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1452"
+      "partikod": "1452",
+      "bild": {
+        "bredd": 1080,
+        "hojd": 180
+      },
+      "bildyta": {
+        "x": 2,
+        "y": 2,
+        "bredd": 1077,
+        "hojd": 174
+      }
     }
   },
   {
@@ -5378,7 +7648,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1898"
+      "partikod": "1898",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 450,
+        "y": 0,
+        "bredd": 127,
+        "hojd": 153
+      }
     }
   },
   {
@@ -5391,7 +7671,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1572"
+      "partikod": "1572",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 953,
+        "y": 46,
+        "bredd": 2432,
+        "hojd": 572
+      }
     }
   },
   {
@@ -5410,7 +7700,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://historik.val.se/val/ep2019/regpartier/1138.png",
       "valar": 2019,
-      "partikod": "1138"
+      "partikod": "1138",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 193,
+        "y": 1,
+        "bredd": 640,
+        "hojd": 151
+      }
     }
   },
   {
@@ -5433,7 +7733,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1526"
+      "partikod": "1526",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 98,
+        "y": 21,
+        "bredd": 4051,
+        "hojd": 602
+      }
     }
   },
   {
@@ -5453,7 +7763,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0005"
+      "partikod": "0005",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 96,
+        "y": 1,
+        "bredd": 830,
+        "hojd": 150
+      }
     }
   },
   {
@@ -5470,7 +7790,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1393"
+      "partikod": "1393",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 58,
+        "y": 0,
+        "bredd": 911,
+        "hojd": 153
+      }
     }
   },
   {
@@ -5497,7 +7827,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1492"
+      "partikod": "1492",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 29,
+        "y": 8,
+        "bredd": 4200,
+        "hojd": 619
+      }
     }
   },
   {
@@ -5511,7 +7851,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1122"
+      "partikod": "1122",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 8,
+        "bredd": 1026,
+        "hojd": 133
+      }
     }
   },
   {
@@ -5525,7 +7875,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1785"
+      "partikod": "1785",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 6,
+        "y": 8,
+        "bredd": 1020,
+        "hojd": 140
+      }
     }
   },
   {
@@ -5542,7 +7902,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1355"
+      "partikod": "1355",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 0,
+        "y": 4,
+        "bredd": 1026,
+        "hojd": 145
+      }
     }
   },
   {
@@ -5606,7 +7976,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1154"
+      "partikod": "1154",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 97,
+        "y": 12,
+        "bredd": 832,
+        "hojd": 129
+      }
     }
   },
   {
@@ -5620,7 +8000,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0982"
+      "partikod": "0982",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 41,
+        "y": 8,
+        "bredd": 964,
+        "hojd": 138
+      }
     }
   },
   {
@@ -5634,7 +8024,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1002"
+      "partikod": "1002",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 235,
+        "y": 12,
+        "bredd": 557,
+        "hojd": 129
+      }
     }
   },
   {
@@ -5672,7 +8072,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0993"
+      "partikod": "0993",
+      "bild": {
+        "bredd": 4275,
+        "hojd": 638
+      },
+      "bildyta": {
+        "x": 25,
+        "y": 68,
+        "bredd": 4205,
+        "hojd": 518
+      }
     }
   },
   {
@@ -5691,7 +8101,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1535"
+      "partikod": "1535",
+      "bild": {
+        "bredd": 4276,
+        "hojd": 639
+      },
+      "bildyta": {
+        "x": 1396,
+        "y": 7,
+        "bredd": 1650,
+        "hojd": 621
+      }
     }
   },
   {
@@ -5722,7 +8142,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1888"
+      "partikod": "1888",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 311,
+        "y": 1,
+        "bredd": 404,
+        "hojd": 150
+      }
     }
   },
   {
@@ -5752,7 +8182,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0301"
+      "partikod": "0301",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 31,
+        "y": 1,
+        "bredd": 966,
+        "hojd": 151
+      }
     }
   },
   {
@@ -5764,7 +8204,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1468"
+      "partikod": "1468",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 422,
+        "y": 2,
+        "bredd": 182,
+        "hojd": 149
+      }
     }
   },
   {
@@ -5777,7 +8227,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1676"
+      "partikod": "1676",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 292,
+        "y": 2,
+        "bredd": 442,
+        "hojd": 150
+      }
     }
   },
   {
@@ -5794,7 +8254,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1646"
+      "partikod": "1646",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 210,
+        "y": 0,
+        "bredd": 607,
+        "hojd": 153
+      }
     }
   },
   {
@@ -5810,7 +8280,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1610"
+      "partikod": "1610",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 2,
+        "y": 9,
+        "bredd": 1023,
+        "hojd": 135
+      }
     }
   },
   {
@@ -5827,7 +8307,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "0119"
+      "partikod": "0119",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 376,
+        "y": 1,
+        "bredd": 273,
+        "hojd": 150
+      }
     }
   },
   {
@@ -5857,7 +8347,17 @@
       "kalla": "Valmyndigheten",
       "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
       "valar": 2026,
-      "partikod": "1335"
+      "partikod": "1335",
+      "bild": {
+        "bredd": 1026,
+        "hojd": 153
+      },
+      "bildyta": {
+        "x": 48,
+        "y": 11,
+        "bredd": 932,
+        "hojd": 132
+      }
     }
   },
   {

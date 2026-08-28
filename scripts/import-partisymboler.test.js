@@ -14,6 +14,7 @@ const {
   symbolFileName,
   symbolUrl
 } = require('./import-partisymboler.js');
+const { png, sheet, CLEAR } = require('./fixtures/png.js');
 const {
   makeTree,
   removeTree,
@@ -113,6 +114,23 @@ test('current symbols win and a legacy symbol fills a missing party', t => {
   const rebuilt = runParti(dir);
   assert.equal(rebuilt.status, 0, rebuilt.stderr);
   assert.deepEqual(readJson(dir, 'data/parti/testpartiet/index.json').partisymbol, current.partisymbol);
+});
+
+test('an imported symbol is measured as it is written', t => {
+  const dir = makeTree();
+  t.after(() => removeTree(dir));
+  const zip = writeZip(dir, { '9001_Val 2026.png': png(sheet(CLEAR)) });
+
+  assert.equal(runSymbolImport(dir, '2026', zip).status, 0);
+  assert.deepEqual(readJson(dir, 'data/parti/testpartiet/index.json').partisymbol, {
+    filnamn: '9001-testpartiet.png',
+    kalla: 'Valmyndigheten',
+    kallurl: symbolUrl('2026'),
+    valar: 2026,
+    partikod: '9001',
+    bild: { bredd: 10, hojd: 6 },
+    bildyta: { x: 3, y: 1, bredd: 4, hojd: 2 }
+  });
 });
 
 test('an unknown symbol code stops the import before writing', t => {

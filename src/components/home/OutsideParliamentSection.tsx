@@ -22,6 +22,7 @@ function OutsideParliamentSection ({ data }: { data: OutsideParliamentData }) {
               filnamn={party.filnamn}
               forkortning={party.forkortning}
               symbolSrc={party.symbolSrc}
+              symbolFrame={party.symbolFrame}
               variant="medium"
               meta={`${percentageFormatter.format(party.rostandel)} %`}
               sub={`Riksdagsvalet ${party.valar}`}

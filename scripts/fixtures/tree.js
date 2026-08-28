@@ -67,7 +67,7 @@ function fixture (name) {
 function makeTree ({ parties = PARTIER, kodbyten = null, kandidatlistor = [] } = {}) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'partidata-'));
   fs.mkdirSync(path.join(dir, 'scripts'));
-  for (const file of ['utils.js', 'parti.js', 'import-val.js', 'import-partisymboler.js']) {
+  for (const file of ['utils.js', 'parti.js', 'png.js', 'import-val.js', 'import-partisymboler.js', 'measure-partisymboler.js']) {
     fs.copyFileSync(path.join(SCRIPTS, file), path.join(dir, 'scripts', file));
   }
   fs.mkdirSync(path.join(dir, 'data', 'parti'), { recursive: true });
@@ -135,6 +135,21 @@ function runSymbolImport (dir, year, zip, legacyDir = null) {
 }
 
 /**
+ * runMeasureSymbols
+ * Measures the committed symbols in a tree.
+ * @param  {String} dir Tree from makeTree()
+ * @return {{ status: Number, stdout: String, stderr: String }}
+ */
+function runMeasureSymbols (dir) {
+  const result = spawnSync(
+    process.execPath,
+    [path.join(dir, 'scripts', 'measure-partisymboler.js')],
+    { encoding: 'utf8' }
+  );
+  return { status: result.status, stdout: result.stdout, stderr: result.stderr };
+}
+
+/**
  * runParti
  * Rebuilds the registry from the committed data in a tree.
  * @param  {String} dir Tree from makeTree()
@@ -187,6 +202,7 @@ exports.makeTree = makeTree;
 exports.removeTree = removeTree;
 exports.runImport = runImport;
 exports.runSymbolImport = runSymbolImport;
+exports.runMeasureSymbols = runMeasureSymbols;
 exports.runParti = runParti;
 exports.readJson = readJson;
 exports.snapshot = snapshot;

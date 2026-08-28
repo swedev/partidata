@@ -27,6 +27,7 @@ function PartyPage ({
   candidateLists = {},
   profile,
   symbolSrc,
+  symbolFrame,
 }: PartyPageProps) {
   const displayName = profile?.namn ?? registeredName;
   const pageName = duplicateName && area ? `${displayName} (${area})` : displayName;
@@ -50,7 +51,7 @@ function PartyPage ({
           <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
           <link rel="canonical" href={`https://www.partidata.se/parti/${slug}/`} />
         </Head>
-        <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} displayName={pageName} symbol={symbol} symbolSrc={symbolSrc} latestResult={latestResult} latestParticipation={participationYears[0]} />
+        <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} displayName={pageName} symbol={symbol} symbolSrc={symbolSrc} symbolFrame={symbolFrame} latestResult={latestResult} latestParticipation={participationYears[0]} />
         <DocumentsSection profile={resolvedProfile} abbreviation={abbreviation} />
         <RepresentativesSection profile={resolvedProfile} abbreviation={abbreviation} mandateCount={latestResult?.mandat} />
         {profile?.valresultat && <ElectionResultsSection results={profile.valresultat} partyLabel={abbreviation} />}

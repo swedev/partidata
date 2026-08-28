@@ -114,6 +114,16 @@
   font-size: 1rem;
 }
 
+.home-chip:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.home-chip:disabled:hover {
+  border-color: var(--partidata-chip-off-line);
+  color: var(--partidata-ink);
+}
+
 .home-chip:hover {
   border-color: var(--partidata-navy);
   color: var(--partidata-navy);

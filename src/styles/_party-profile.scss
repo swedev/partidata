@@ -103,28 +103,36 @@
 }
 
 .profile-logo {
+  --profile-logo-height: clamp(4.5rem, 7vw, 6rem);
   margin: 0;
 }
 
 .profile-logo > div {
-  position: relative;
+  display: flex;
   min-height: clamp(8rem, 12vw, 10.5rem);
+  align-items: center;
+  justify-content: center;
   padding: clamp(1.25rem, 2.2vw, 1.875rem) clamp(1.375rem, 2.4vw, 2.125rem);
   border-radius: 0.75rem;
   background: var(--profile-card);
 }
 
-.profile-logo img {
-  object-fit: contain;
-  padding: clamp(1.125rem, 1.7vw, 1.75rem);
+.profile-logo__frame.party-symbol--beskuren {
+  width: min(100%, var(--profile-logo-height) * var(--party-symbol-ratio));
+  max-height: var(--profile-logo-height);
+}
+
+.profile-logo__frame.party-symbol--hel {
+  width: 100%;
+  height: clamp(5rem, 8vw, 7rem);
+}
+
+.profile-logo--mark {
+  --profile-logo-height: clamp(4rem, 6vw, 5.25rem);
 }
 
 .profile-logo--mark > div {
   max-width: 15rem;
-}
-
-.profile-logo--mark img {
-  padding: 2rem;
 }
 
 .profile-logo figcaption {

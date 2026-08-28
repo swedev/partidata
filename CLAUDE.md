@@ -26,8 +26,12 @@ Open data about Swedish political parties. Swedish copy.
   `deltagande-partier.csv` from `data.val.se`, writes
   `data/val/<år>/partideltagande/` and reconciles `data/parti/`;
   `npm run import-partisymboler -- <år> [--file <zip>] [--legacy-dir <dir>]`
-  imports code-and-name-labelled PNG party symbols into each party directory
-  and records their provenance in `partisymbol`;
+  imports code-and-name-labelled PNG party symbols into each party directory,
+  records their provenance in `partisymbol` and measures each file into
+  `partisymbol.bild`/`partisymbol.bildyta` — the sheet the symbol was delivered
+  on and the box its drawing occupies, which is how the site shows every symbol
+  at the same optical size; `npm run measure-partisymboler` re-measures the
+  already committed symbols without re-importing them;
   `node scripts/parti.js` rebuilds the registry from `data/` alone. Results are
   committed to `data/`. Paths resolve from the repo root, so the scripts run
   from any directory. `npm run validate:data` checks the committed data tree;

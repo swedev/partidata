@@ -11,7 +11,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
     "valar": 2026,
-    "partikod": "1441"
+    "partikod": "1441",
+    "bild": {
+      "bredd": 4276,
+      "hojd": 638
+    },
+    "bildyta": {
+      "x": 432,
+      "y": 41,
+      "bredd": 3535,
+      "hojd": 555
+    }
   },
   "deltagande": {
     "2022": {

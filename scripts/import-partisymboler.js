@@ -4,6 +4,7 @@ const path = require('path');
 
 const { unzipSync } = require('fflate');
 
+const { contentBox } = require('./png.js');
 const { ROOT, dataPath, fetchBuffer, toFileName } = require('./utils.js');
 const {
   loadParties,
@@ -53,6 +54,18 @@ function assertStoredSymbolFileName (fileName) {
   if (path.basename(fileName) !== fileName || !/^\d{4}-[a-z0-9-]+\.png$/.test(fileName)) {
     throw new Error(`Invalid stored symbol filename: ${fileName}`);
   }
+}
+
+/**
+ * measurements
+ * The sheet a symbol is delivered on, and where the drawing sits inside it, so
+ * a renderer can show every symbol at the same optical size. A file this
+ * reader leaves unmeasured is stored without the fields.
+ * @param  {Buffer} data
+ * @return {Object} { bild, bildyta }, or empty
+ */
+function measurements (data) {
+  return contentBox(data) || {};
 }
 
 /**
@@ -217,7 +230,8 @@ function mapSymbols (registry, current, legacy, year) {
       kalla: 'Valmyndigheten',
       kallurl: sourceUrl,
       valar: Number(sourceYear),
-      partikod: symbol.code
+      partikod: symbol.code,
+      ...measurements(symbol.data)
     };
     imports.push({ party, data: symbol.data, previousFileName });
     return true;
@@ -288,6 +302,7 @@ exports.symbolFileName = symbolFileName;
 exports.assertStoredSymbolFileName = assertStoredSymbolFileName;
 exports.parseArgs = parseArgs;
 exports.assertPng = assertPng;
+exports.measurements = measurements;
 exports.normalizeCode = normalizeCode;
 exports.readZipSymbols = readZipSymbols;
 exports.readLegacySymbols = readLegacySymbols;

@@ -9,6 +9,16 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://historik.val.se/val/ep2019/regpartier/1340.png",
     "valar": 2019,
-    "partikod": "1340"
+    "partikod": "1340",
+    "bild": {
+      "bredd": 1026,
+      "hojd": 153
+    },
+    "bildyta": {
+      "x": 33,
+      "y": 1,
+      "bredd": 960,
+      "hojd": 151
+    }
   }
 }

@@ -9,6 +9,16 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://historik.val.se/val/ep2019/regpartier/1313.png",
     "valar": 2019,
-    "partikod": "1313"
+    "partikod": "1313",
+    "bild": {
+      "bredd": 1026,
+      "hojd": 153
+    },
+    "bildyta": {
+      "x": 12,
+      "y": 18,
+      "bredd": 1002,
+      "hojd": 117
+    }
   }
 }

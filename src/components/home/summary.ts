@@ -1,35 +1,48 @@
-import type { HomeParty } from 'src/server/party-data';
+import type { HomeParty, ParticipationFacet } from 'src/server/party-data';
 import type { ElectionKind, HomeFilters } from './filtering';
 
-const levelLabels: Record<ElectionKind, string> = {
+export const levelLabels: Record<ElectionKind, string> = {
   riksdag: 'Riksdag',
   region: 'Region',
   kommun: 'Kommun',
 };
 
+export const noBallotLabel = 'Inget anmält deltagande';
+
+export interface Ballot {
+  valtyp: ElectionKind;
+  antal?: number;
+}
+
 /**
- * The levels a party has stood in, across every year it took part in.
+ * The years a reading covers: the chosen one alone when the filters name a
+ * year, otherwise every year the party took part in.
  */
-export function participationLevels (party: HomeParty): string[] {
-  const facets = Object.values(party.deltagande);
-  const levels: string[] = [];
-  if (facets.some(facet => facet.riksdag)) levels.push(levelLabels.riksdag);
-  if (facets.some(facet => facet.regionLan.length > 0)) levels.push(levelLabels.region);
-  if (facets.some(facet => facet.kommunLan.length > 0)) levels.push(levelLabels.kommun);
-  return levels;
+export function yearFacets (party: HomeParty, valar: HomeFilters['valar']): ParticipationFacet[] {
+  return valar
+    ? [party.deltagande[valar]].filter(Boolean)
+    : Object.values(party.deltagande);
+}
+
+/**
+ * The ballots a party stands on, with the number of regions and municipalities
+ * each covers. Across several years the widest year counts.
+ */
+export function ballots (party: HomeParty, valar: HomeFilters['valar'] = ''): Ballot[] {
+  const facets = yearFacets(party, valar);
+  const widest = (read: (facet: ParticipationFacet) => number) => Math.max(0, ...facets.map(read));
+  const region = widest(facet => facet.regionLan.length);
+  const kommun = widest(facet => facet.kommunKoder.length);
+
+  return [
+    ...(facets.some(facet => facet.riksdag) ? [{ valtyp: 'riksdag' as const }] : []),
+    ...(region > 0 ? [{ valtyp: 'region' as const, antal: region }] : []),
+    ...(kommun > 0 ? [{ valtyp: 'kommun' as const, antal: kommun }] : []),
+  ];
 }
 
 export function participationYears (party: HomeParty): string[] {
   return Object.keys(party.deltagande).sort((a, b) => Number(b) - Number(a));
-}
-
-/**
- * The card footer states what the party has stood in. A party the registry
- * carries without any recorded ballot says so rather than showing an empty bar.
- */
-export function cardMeta (party: HomeParty): string {
-  const levels = participationLevels(party);
-  return levels.length > 0 ? levels.join(' · ') : 'Inget anmält deltagande';
 }
 
 export function cardSub (party: HomeParty): string | undefined {

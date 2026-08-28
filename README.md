@@ -72,19 +72,43 @@ Fyra filer per valår, skrivna av `npm run import-val`:
 | `region.json` | En post per län som har anmälda partier, med länets partier |
 | `kommun.json` | Alla 290 kommuner, med kommunens partier (tom lista när inga finns) |
 
-Partiposterna i `riksdag.json`, `region.json` och `kommun.json` har ett `grunder`-fält med Valmyndighetens `DELTAGANDEGRUND` oförändrad. Ett parti kan ha flera anmälningar för samma valområde, med olika grund och olika datum, och då listas alla: de åtta riksdagspartierna har till exempel både `R` och `K` i riksdagsvalet 2026. `R` och `K` förekommer i stort sett bara för partier med registrerad partibeteckning. Vad bokstäverna står för framgår inte av filen — se Valmyndighetens beskrivning av anmälan om deltagande nedan.
+Partiposterna i `riksdag.json`, `region.json` och `kommun.json` har ett `grunder`-fält med Valmyndighetens `DELTAGANDEGRUND` oförändrad. Ett parti kan ha flera anmälningar för samma valområde, med olika grund och olika datum, och då listas alla: de åtta riksdagspartierna har till exempel både `R` och `K` i riksdagsvalet 2026. `R` och `K` förekommer i stort sett bara för partier med registrerad partibeteckning.
+
+Bokstäverna förklaras inte i filen. Valmyndigheten beskriver dem så här:
+
+| Grund | Valmyndighetens formulering |
+|-------|------------------------------|
+| `A` | Anmält deltagande |
+| `R` | Redan representerad, anses anmält deltagande |
+| `K` | Anmält kandidater och anses genom det anmält deltagande |
+
+Alla tre betyder att partiet deltar i valet i det valområdet; de skiljer sig bara i hur partiet kvalificerade sig. Källa: [Partier som deltar i val](https://www.val.se/stalla-upp-i-val/anmalda-och-registrerade-partier/partier-som-deltar-i-kommande-val).
+
+Valmyndigheten beskriver också en anmälans räckvidd:
 
 > Om ett parti anmäler deltagande i val till riksdagen gäller anmälan också för:
 > * val till region- och kommunfullmäktige i hela landet och,
 > * nästa kommande val till Europaparlamentet.
 
-Läs mer på: https://www.val.se/for-partier/anmal-deltagande.html
+Läs mer på: https://www.val.se/stalla-upp-i-val/anmala-parti-till-val/anmal-att-partiet-vill-delta-i-val
+
+Filen låter sig inte läsas som en tillämpning av den regeln, så räkna inte med den när du tolkar raderna. I 2026 års fil har 156 partier `A` i riksdagsvalet, varav 115 finns i alla 290 kommuner och 41 i mellan 0 och 287; samtidigt finns sju partier i alla 290 kommuner utan att ha `A` i riksdagsvalet. Vänsterpartiet (285 kommuner) och Miljöpartiet (278) saknas i enskilda kommuner helt och hållet. Filen skiljer alltså inte på en egen anmälan per valområde och en anmälan som gäller vidare.
 
 2018 års filer ligger kvar som de samlades in: `landsting.json` i stället för `region.json`, inget `partier.json`, 208 av 290 kommuner i `kommun.json`, och region- och kommunfilerna listar bara partier som inte finns i `riksdag.json`.
 
 ### val/\<år\>/kandidatlistor/\<parti.filnamn\>.json
 
-Kandidatlistor per parti i alla val för angivna året. För tillfället endast ett utkast.
+Kandidatlistor per parti i alla val för angivna året. För tillfället endast ett utkast. Fältet `val` anger valtypen med `R` för riksdag, `L` för landsting (region) och `K` för kommun.
+
+### Bokstavskoder i datan
+
+Tre kodsystem möts i `data/val/`, och `R` och `K` betyder olika saker i två av dem. Läs alltid koden mot filen den står i:
+
+| Var | Koder | Betyder |
+|-----|-------|---------|
+| `partideltagande/*.json` → `grunder` | `A` `R` `K` | anmält deltagande · redan representerad · anmält kandidater |
+| `kandidatlistor/*.json` → `val` | `R` `L` `K` | riksdag · landsting (region) · kommun |
+| Källans CSV → `VALTYP` | `RD` `RF` `KF` | riksdag · regionfullmäktige · kommunfullmäktige |
 
 ### val/\<år\>/valresultat/riksdag.json
 

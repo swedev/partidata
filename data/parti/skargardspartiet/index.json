@@ -11,7 +11,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://data.val.se/filer/val2026/parti/partisymboler.zip",
     "valar": 2026,
-    "partikod": "1533"
+    "partikod": "1533",
+    "bild": {
+      "bredd": 4276,
+      "hojd": 638
+    },
+    "bildyta": {
+      "x": 134,
+      "y": 15,
+      "bredd": 3991,
+      "hojd": 606
+    }
   },
   "deltagande": {
     "2022": {

@@ -1,7 +1,7 @@
-import { useId } from 'react';
-import type { HomeCounty } from 'src/server/party-data';
+import { useId, useMemo } from 'react';
+import type { HomeCounty, HomeMunicipality } from 'src/server/party-data';
 import type { ElectionKind, HomeFilters } from './filtering';
-import { countyApplies, electionKindLabels } from './filtering';
+import { countyApplies, electionKindLabels, municipalityApplies } from './filtering';
 import { ChevronDownIcon, RotateCcwIcon, SearchIcon } from './icons';
 import { toggleKind } from './summary';
 
@@ -9,13 +9,20 @@ export interface PartyFiltersProps {
   filters: HomeFilters;
   valar: string[];
   lan: HomeCounty[];
+  kommuner: HomeMunicipality[];
   kinds: ElectionKind[];
   onChange: (patch: Partial<HomeFilters>) => void;
   onReset: () => void;
 }
 
-function PartyFilters ({ filters, valar, lan, kinds, onChange, onReset }: PartyFiltersProps) {
+function PartyFilters ({ filters, valar, lan, kommuner, kinds, onChange, onReset }: PartyFiltersProps) {
   const fieldId = useId();
+  // A chosen county is the shorter way into its municipalities; without one the
+  // whole country is on offer.
+  const municipalities = useMemo(
+    () => filters.lan ? kommuner.filter(kommun => kommun.lan === filters.lan) : kommuner,
+    [kommuner, filters.lan],
+  );
 
   return (
     <section className="home-search" aria-label="Sök och filtrera partier">
@@ -53,6 +60,7 @@ function PartyFilters ({ filters, valar, lan, kinds, onChange, onReset }: PartyF
               aria-label="Län"
               value={filters.lan}
               disabled={!countyApplies(filters.valtyp)}
+              title={countyApplies(filters.valtyp) ? undefined : 'Riksdagsvalet är rikstäckande och har inget län'}
               onChange={event => onChange({ lan: event.target.value })}
             >
               <option value="">Hela landet</option>
@@ -62,16 +70,38 @@ function PartyFilters ({ filters, valar, lan, kinds, onChange, onReset }: PartyF
           </span>
         )}
 
+        {municipalities.length > 0 && (
+          <span className="home-select home-select--wide">
+            <select
+              aria-label="Kommun"
+              value={filters.kommun}
+              disabled={!municipalityApplies(filters.valtyp)}
+              title={municipalityApplies(filters.valtyp) ? undefined : 'Bara kommunvalet gäller en enskild kommun'}
+              onChange={event => onChange({
+                kommun: event.target.value,
+                ...(event.target.value ? { lan: event.target.value.slice(0, 2) } : {}),
+              })}
+            >
+              <option value="">Alla kommuner</option>
+              {municipalities.map(kommun => <option key={kommun.kod} value={kommun.kod}>{kommun.namn}</option>)}
+            </select>
+            <ChevronDownIcon className="home-select__chevron" />
+          </span>
+        )}
+
         {kinds.length > 0 && (
           <div className="home-chips" role="group" aria-label="Valtyp">
             {kinds.map(kind => {
               const pressed = filters.valtyp === kind;
+              const locked = (kind === 'riksdag' && Boolean(filters.lan)) || (kind !== 'kommun' && Boolean(filters.kommun));
               return (
                 <button
                   key={kind}
                   type="button"
                   className={`home-chip${pressed ? ' home-chip--on' : ''}`}
                   aria-pressed={pressed}
+                  disabled={locked}
+                  title={locked ? `${electionKindLabels[kind]} gäller inte ett valt område — välj Hela landet och Alla kommuner först` : undefined}
                   onClick={() => onChange({ valtyp: toggleKind(filters.valtyp, kind) })}
                 >
                   {electionKindLabels[kind]}

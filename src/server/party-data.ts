@@ -1,9 +1,15 @@
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
-import type { Parti, PartiIndexEntry, PartiProfil, PartiProfilKalla } from '../types';
+import type { Parti, PartiIndexEntry, PartiProfil, PartiProfilKalla, PartiSymbol } from '../types';
 import { assertSwedishCollation, compareSv } from './collation.ts';
 
+/**
+ * The election a candidate list belongs to, as `val/<år>/kandidatlistor/` names
+ * it: riksdag, landsting (region) and kommun. `R` and `K` are also
+ * DELTAGANDEGRUND values in `val/<år>/partideltagande/`, where they mean
+ * something else entirely.
+ */
 export type ElectionType = 'R' | 'L' | 'K';
 export type CandidateLists = Record<string, ElectionType[]>;
 
@@ -12,12 +18,31 @@ export interface PartyPageData extends Parti {
   duplicateName: boolean;
   profile?: PartiProfil;
   symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
 }
 
 export type PartyResolution =
   | { kind: 'party'; props: PartyPageData }
   | { kind: 'redirect'; destination: string }
   | { kind: 'notFound' };
+
+/**
+ * A symbol's drawing measured in its own widths and heights: the aspect ratio
+ * of the drawing, the sheet it was delivered on as a multiple of the drawing,
+ * and the drawing's offset within that sheet. Symbols arrive on a fixed canvas
+ * with the mark placed anywhere inside it, so these are the multiples a
+ * renderer scales and shifts the file by to show every symbol at the same
+ * optical size. `bildbredd` and `bildhojd` are the sheet in pixels.
+ */
+export interface SymbolFrame {
+  ratio: number;
+  bredd: number;
+  hojd: number;
+  x: number;
+  y: number;
+  bildbredd: number;
+  bildhojd: number;
+}
 
 export interface PartySymbolData {
   body: Buffer;
@@ -26,14 +51,14 @@ export interface PartySymbolData {
 
 /**
  * A party's participation in one election year, reduced to what the start page
- * filters on: whether it stood for parliament, and the counties its regional
- * and municipal ballots fall in. Municipal codes carry their county in their
- * first two digits.
+ * filters and sorts on: whether it stood for parliament, the counties its
+ * regional ballots fall in, and the municipalities its municipal ballots cover.
+ * Municipal codes carry their county in their first two digits.
  */
 export interface ParticipationFacet {
   riksdag: boolean;
   regionLan: string[];
-  kommunLan: string[];
+  kommunKoder: string[];
 }
 
 export interface HomeParty {
@@ -44,12 +69,19 @@ export interface HomeParty {
   omrade?: string;
   duplicateName?: boolean;
   symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
   deltagande: Record<string, ParticipationFacet>;
 }
 
 export interface HomeCounty {
   kod: string;
   namn: string;
+}
+
+export interface HomeMunicipality {
+  kod: string;
+  namn: string;
+  lan: string;
 }
 
 export interface ParliamentParty {
@@ -59,6 +91,7 @@ export interface ParliamentParty {
   beteckning?: string;
   filnamn?: string;
   symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
 }
 
 export interface ParliamentYear {
@@ -73,6 +106,7 @@ export interface OutsideParliamentParty {
   filnamn: string;
   forkortning?: string;
   symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
   valar: number;
   roster: number;
   rostandel: number;
@@ -89,6 +123,7 @@ export interface HomeData {
   parties: HomeParty[];
   valar: string[];
   lan: HomeCounty[];
+  kommuner: HomeMunicipality[];
   riksdag: ParliamentYear[];
   outsideParliament?: OutsideParliamentData;
 }
@@ -96,6 +131,7 @@ export interface HomeData {
 interface RegionFile {
   kod: string;
   namn: string;
+  kommuner?: Array<{ kod: string; namn: string }>;
 }
 
 interface ParliamentResultFile {
@@ -152,6 +188,22 @@ function symbolSource (party: Pick<Parti, 'filnamn' | 'partisymbol'>): string | 
     : undefined;
 }
 
+export function symbolFrame (symbol?: PartiSymbol): SymbolFrame | undefined {
+  const { bild, bildyta } = symbol ?? {};
+  if (!bild || !bildyta || bild.bredd <= 0 || bild.hojd <= 0 || bildyta.bredd <= 0 || bildyta.hojd <= 0) {
+    return undefined;
+  }
+  return {
+    ratio: bildyta.bredd / bildyta.hojd,
+    bredd: bild.bredd / bildyta.bredd,
+    hojd: bild.hojd / bildyta.hojd,
+    x: bildyta.x / bildyta.bredd,
+    y: bildyta.y / bildyta.hojd,
+    bildbredd: bild.bredd,
+    bildhojd: bild.hojd,
+  };
+}
+
 function partyNameKey (name: string): string {
   return name.trim().toLocaleLowerCase('sv-SE').replace(/\s+/g, ' ');
 }
@@ -162,7 +214,7 @@ function facet (participation: Parti['deltagande']): Record<string, Participatio
     facets[year] = {
       riksdag: Boolean(entry.riksdag),
       regionLan: [...new Set(entry.region ?? [])].sort(),
-      kommunLan: [...new Set((entry.kommun ?? []).map(kod => kod.slice(0, 2)))].sort(),
+      kommunKoder: [...new Set(entry.kommun ?? [])].sort(),
     };
   }
   return facets;
@@ -241,6 +293,7 @@ export function createPartyDataStore (
       readCandidateLists(slug),
     ]);
     const symbolSrc = symbolSource(party);
+    const frame = symbolFrame(party.partisymbol);
 
     return {
       ...party,
@@ -248,6 +301,7 @@ export function createPartyDataStore (
       duplicateName,
       ...(profile ? { profile } : {}),
       ...(symbolSrc ? { symbolSrc } : {}),
+      ...(frame ? { symbolFrame: frame } : {}),
     };
   }
 
@@ -272,12 +326,14 @@ export function createPartyDataStore (
         partier: result.mandatfordelning.partier.map(entry => {
           const party = byUuid.get(entry.parti_uuid);
           const symbolSrc = party ? symbolSource(party) : undefined;
+          const frame = symbolFrame(party?.partisymbol);
           return {
             uuid: entry.parti_uuid,
             forkortning: party?.forkortning ?? entry.kallkod ?? entry.partibeteckning,
             mandat: entry.mandat,
             ...(party ? { beteckning: party.beteckning, filnamn: party.filnamn } : {}),
             ...(symbolSrc ? { symbolSrc } : {}),
+            ...(frame ? { symbolFrame: frame } : {}),
           };
         }),
       }))
@@ -291,12 +347,14 @@ export function createPartyDataStore (
       const party = byUuid.get(result.parti_uuid);
       if (!party) return undefined;
       const symbolSrc = symbolSource(party);
+      const frame = symbolFrame(party.partisymbol);
       return {
         uuid: party.uuid,
         beteckning: party.beteckning,
         filnamn: party.filnamn,
         ...(party.forkortning ? { forkortning: party.forkortning } : {}),
         ...(symbolSrc ? { symbolSrc } : {}),
+        ...(frame ? { symbolFrame: frame } : {}),
         valar: result.valar,
         roster: result.roster,
         rostandel: result.rostandel,
@@ -317,6 +375,7 @@ export function createPartyDataStore (
     const parties: HomeParty[] = (await Promise.all(index.parties.map(async entry => {
       const party = await readJson<Parti>(path.join(dataRoot, 'parti', entry.filnamn, 'index.json'));
       const symbolSrc = symbolSource(entry);
+      const frame = symbolFrame(entry.partisymbol);
       return {
         uuid: entry.uuid,
         beteckning: entry.beteckning,
@@ -325,6 +384,7 @@ export function createPartyDataStore (
         ...(entry.omrade ? { omrade: entry.omrade } : {}),
         ...(index.duplicateNames.has(partyNameKey(entry.beteckning)) ? { duplicateName: true } : {}),
         ...(symbolSrc ? { symbolSrc } : {}),
+        ...(frame ? { symbolFrame: frame } : {}),
         deltagande: facet(party.deltagande),
       };
     }))).sort((a, b) => compareSv(a.beteckning, b.beteckning) || compareSv(a.filnamn, b.filnamn));
@@ -335,6 +395,9 @@ export function createPartyDataStore (
     const lan = regions
       .map(region => ({ kod: region.kod, namn: region.namn }))
       .sort((a, b) => compareSv(a.namn, b.namn));
+    const kommuner = regions
+      .flatMap(region => (region.kommuner ?? []).map(kommun => ({ kod: kommun.kod, namn: kommun.namn, lan: region.kod })))
+      .sort((a, b) => compareSv(a.namn, b.namn));
 
     const byUuid = new Map(index.parties.map(party => [party.uuid, party]));
     const [riksdag, outsideParliament] = await Promise.all([
@@ -342,7 +405,7 @@ export function createPartyDataStore (
       readOutsideParliament(byUuid),
     ]);
 
-    return { parties, valar, lan, riksdag, ...(outsideParliament ? { outsideParliament } : {}) };
+    return { parties, valar, lan, kommuner, riksdag, ...(outsideParliament ? { outsideParliament } : {}) };
   }
 
   return {

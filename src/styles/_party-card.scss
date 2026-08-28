@@ -1,12 +1,13 @@
 .party-card {
   --party-card-pad: 1rem 1rem 0.875rem;
   --party-card-gap: 0.75rem;
-  --party-card-symbol-width: 8rem;
-  --party-card-symbol-height: 1.5rem;
+  --party-card-symbol-width: 13rem;
+  --party-card-symbol-height: 2rem;
   --party-card-name: 1rem;
   --party-card-meta: 0.875rem;
   --party-card-abbreviation: 0.78125rem;
   --party-card-abbreviation-pad: 0.25rem 0.5rem;
+  --party-card-ballot: 0.75rem;
   --party-card-foot-pad: 0.6875rem;
   --party-card-icon: 0.9375rem;
   --party-card-radius: 0.625rem;
@@ -34,25 +35,49 @@
 }
 
 .party-card__symbol {
-  position: relative;
-  display: block;
-  width: 100%;
-  max-width: var(--party-card-symbol-width);
-  height: var(--party-card-symbol-height);
-}
-
-.party-card__symbol img {
-  object-fit: contain;
-  object-position: left center;
-}
-
-.party-card__symbol--empty {
   display: flex;
+  height: var(--party-card-symbol-height);
   align-items: center;
 }
 
+.party-card__symbol .party-symbol--beskuren {
+  width: min(var(--party-card-symbol-width), var(--party-card-symbol-height) * var(--party-symbol-ratio));
+  max-width: var(--party-card-symbol-width);
+  max-height: 100%;
+}
+
+.party-card__symbol .party-symbol--hel {
+  width: 100%;
+  max-width: var(--party-card-symbol-width);
+  height: 100%;
+}
+
+.party-card__symbol .party-symbol--hel img {
+  object-position: left center;
+}
+
+.party-card__symbol-missing {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 0.5rem;
+  border: 1px dashed var(--partidata-line);
+  border-radius: 0.25rem;
+  color: var(--partidata-muted);
+  font-size: var(--party-card-ballot);
+  opacity: 0.6;
+}
+
+.party-card__heading {
+  display: flex;
+  gap: 0.625rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .party-card__abbreviation {
-  max-width: 100%;
+  flex: none;
+  max-width: 45%;
   padding: var(--party-card-abbreviation-pad);
   border: 1.5px solid var(--partidata-chip-line);
   border-radius: 0.25rem;
@@ -75,6 +100,7 @@
 }
 
 .party-card__name {
+  min-width: 0;
   font-size: var(--party-card-name);
   font-weight: 600;
   letter-spacing: -0.012em;
@@ -114,6 +140,50 @@
   overflow-wrap: anywhere;
 }
 
+.party-card__ballots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3125rem;
+}
+
+.party-card__ballot {
+  padding: 0.1875rem 0.4375rem;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  color: var(--partidata-ink);
+  font-size: var(--party-card-ballot);
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.party-card__ballot-count::before {
+  content: " (";
+}
+
+.party-card__ballot-count::after {
+  content: ")";
+}
+
+.party-card__ballot-count {
+  font-variant-numeric: tabular-nums;
+}
+
+.party-card__ballot--riksdag {
+  border-color: var(--partidata-valsedel-riksdag-line);
+  background: var(--partidata-valsedel-riksdag);
+}
+
+.party-card__ballot--region {
+  border-color: var(--partidata-valsedel-region-line);
+  background: var(--partidata-valsedel-region);
+}
+
+.party-card__ballot--kommun {
+  border-color: var(--partidata-valsedel-kommun-line);
+  background: var(--partidata-valsedel-kommun);
+}
+
 .party-card__arrow {
   width: var(--party-card-icon);
   height: var(--party-card-icon);
@@ -124,8 +194,8 @@
 .party-card--medium {
   --party-card-pad: 1.25rem;
   --party-card-gap: 1rem;
-  --party-card-symbol-width: 10rem;
-  --party-card-symbol-height: 1.875rem;
+  --party-card-symbol-width: 13rem;
+  --party-card-symbol-height: 2.25rem;
   --party-card-name: 1.0625rem;
   --party-card-meta: 0.9375rem;
   --party-card-abbreviation: 0.875rem;

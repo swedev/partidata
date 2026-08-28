@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 
 const {
+  defaultFilters,
   emptyFilters,
   filterParties,
   matchesQuery,
@@ -16,8 +17,8 @@ const PARTIES = [
     filnamn: 'ostra-folkpartiet',
     forkortning: 'ÖF',
     deltagande: {
-      2018: { riksdag: true, regionLan: [], kommunLan: [] },
-      2022: { riksdag: false, regionLan: ['01'], kommunLan: ['01', '12'] }
+      2018: { riksdag: true, regionLan: [], kommunKoder: [] },
+      2022: { riksdag: false, regionLan: ['01'], kommunKoder: ['0114', '1280'] }
     }
   },
   {
@@ -27,7 +28,7 @@ const PARTIES = [
     forkortning: 'SKP',
     omrade: 'Malmö',
     deltagande: {
-      2022: { riksdag: false, regionLan: ['12'], kommunLan: ['12'] }
+      2022: { riksdag: false, regionLan: ['12'], kommunKoder: ['1233', '1280'] }
     }
   },
   {
@@ -35,7 +36,7 @@ const PARTIES = [
     beteckning: 'Rikspartiet',
     filnamn: 'rikspartiet',
     deltagande: {
-      2018: { riksdag: true, regionLan: [], kommunLan: [] }
+      2018: { riksdag: true, regionLan: [], kommunKoder: [] }
     }
   },
   {
@@ -70,6 +71,12 @@ test('search matches name and abbreviation without diacritics', () => {
   assert.ok(matchesQuery(PARTIES[2], 'riks'), 'a party without abbreviation is still searchable by name');
 });
 
+test('the default filters open on the latest year the data carries', () => {
+  assert.deepEqual(defaultFilters(['2018', '2022', '2026']), { ...emptyFilters, valar: '2026' });
+  assert.deepEqual(defaultFilters([]), emptyFilters);
+  assert.deepEqual(slugs(defaultFilters(['2018', '2022'])), ['ostra-folkpartiet', 'skanepartiet']);
+});
+
 test('no filter leaves every party', () => {
   assert.deepEqual(slugs({}), PARTIES.map(party => party.filnamn));
 });
@@ -99,11 +106,34 @@ test('the county is tested against the facet of the chosen election type', () =>
   assert.deepEqual(slugs({ valar: '2018', valtyp: 'kommun', lan: '01' }), []);
 });
 
-test('a county left over from another election type is dropped', () => {
+test('a county survives every election type but the nationwide one', () => {
   assert.deepEqual(pruneFilters({ ...emptyFilters, valtyp: 'riksdag', lan: '12' }).lan, '');
-  assert.deepEqual(pruneFilters({ ...emptyFilters, lan: '12' }).lan, '');
+  assert.deepEqual(pruneFilters({ ...emptyFilters, lan: '12' }).lan, '12');
   assert.deepEqual(pruneFilters({ ...emptyFilters, valtyp: 'kommun', lan: '12' }).lan, '12');
   assert.deepEqual(slugs({ valtyp: 'riksdag', lan: '12' }), ['ostra-folkpartiet', 'rikspartiet']);
+});
+
+test('a municipality asks for the municipal ballot in that municipality alone', () => {
+  assert.deepEqual(slugs({ kommun: '1280' }), ['ostra-folkpartiet', 'skanepartiet']);
+  assert.deepEqual(slugs({ kommun: '1233' }), ['skanepartiet']);
+  assert.deepEqual(slugs({ kommun: '0114' }), ['ostra-folkpartiet']);
+  assert.deepEqual(slugs({ kommun: '1233', valar: '2018' }), [], 'året gäller före kommunen');
+});
+
+test('a municipality outside the chosen county, or under another election type, is dropped', () => {
+  assert.deepEqual(pruneFilters({ ...emptyFilters, lan: '12', kommun: '0114' }).kommun, '');
+  assert.deepEqual(pruneFilters({ ...emptyFilters, lan: '12', kommun: '1280' }).kommun, '1280');
+  assert.deepEqual(pruneFilters({ ...emptyFilters, kommun: '1280' }).kommun, '1280');
+  assert.deepEqual(pruneFilters({ ...emptyFilters, valtyp: 'region', kommun: '1280' }).kommun, '');
+  assert.deepEqual(pruneFilters({ ...emptyFilters, valtyp: 'kommun', kommun: '1280' }).kommun, '1280');
+  assert.deepEqual(pruneFilters({ ...emptyFilters, valtyp: 'riksdag', lan: '12', kommun: '1280' }), { ...emptyFilters, valtyp: 'riksdag' });
+});
+
+test('a county on its own asks for either ballot in that county', () => {
+  assert.deepEqual(slugs({ lan: '12' }), ['ostra-folkpartiet', 'skanepartiet']);
+  assert.deepEqual(slugs({ lan: '01' }), ['ostra-folkpartiet']);
+  assert.deepEqual(slugs({ lan: '14' }), []);
+  assert.deepEqual(slugs({ lan: '01', valar: '2018' }), [], 'året gäller före länet');
 });
 
 test('search and filters narrow together', () => {

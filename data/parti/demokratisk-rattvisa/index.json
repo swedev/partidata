@@ -11,7 +11,17 @@
     "kalla": "Valmyndigheten",
     "kallurl": "https://historik.val.se/val/ep2019/regpartier/1331.png",
     "valar": 2019,
-    "partikod": "1331"
+    "partikod": "1331",
+    "bild": {
+      "bredd": 243,
+      "hojd": 38
+    },
+    "bildyta": {
+      "x": 0,
+      "y": 0,
+      "bredd": 243,
+      "hojd": 38
+    }
   },
   "deltagande": {
     "2018": {

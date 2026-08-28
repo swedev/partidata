@@ -24,6 +24,7 @@
     "import-val": "node scripts/import-val.js",
     "import-riksdagsval": "node scripts/import-riksdagsval.js",
     "import-partisymboler": "node scripts/import-partisymboler.js",
+    "measure-partisymboler": "node scripts/measure-partisymboler.js",
     "validate:data": "node scripts/validate.js",
     "typecheck": "tsc --noEmit",
     "start": "node .release/server.js",

@@ -25,6 +25,25 @@ function comparePartyOrder (a, b) {
   return collator.compare(a.beteckning, b.beteckning) || collator.compare(a.filnamn, b.filnamn);
 }
 
+/**
+ * The parties the start page opens on: the ones standing in the latest election
+ * the data carries, which is the year the filters default to.
+ */
+function standingParties (projectRoot, parties) {
+  const electionRoot = path.join(projectRoot, 'data', 'val');
+  const years = fs.readdirSync(electionRoot, { withFileTypes: true })
+    .filter(entry => entry.isDirectory() && /^\d{4}$/.test(entry.name))
+    .map(entry => entry.name)
+    .toSorted();
+  const latest = years.findLast(year =>
+    fs.existsSync(path.join(electionRoot, year, 'partideltagande', 'partier.json')));
+  assert.ok(latest, 'ett valår med partideltagande hittades');
+  const participating = new Set(JSON.parse(
+    fs.readFileSync(path.join(electionRoot, latest, 'partideltagande', 'partier.json'), 'utf8')
+  ).map(party => party.uuid));
+  return { latest, standing: parties.filter(party => participating.has(party.uuid)) };
+}
+
 /** Extracts the party links of the "Alla partier" grid in document order. */
 function partyGridLinks (html) {
   const section = html.slice(html.indexOf('id="alla-partier"'));
@@ -67,7 +86,8 @@ async function main () {
   const current = parties.find(party => party.filnamn === 'miljopartiet-de-grona') ?? parties[0];
   const duplicate = parties.find(party => party.filnamn === 'kommunens-val-0503');
   const withoutParticipation = parties.find(party => party.filnamn === 'angfarjepartiet');
-  const expectedOrder = parties.toSorted(comparePartyOrder).slice(0, homePageSize).map(party => party.filnamn);
+  const { latest, standing } = standingParties(projectRoot, parties);
+  const expectedOrder = standing.toSorted(comparePartyOrder).slice(0, homePageSize).map(party => party.filnamn);
   const [first] = expectedOrder;
   const previous = parties.find(party => party.tidigare_filnamn?.length > 0);
   const cleanedSlug = parties.find(party =>
@@ -102,7 +122,14 @@ async function main () {
     assert.match(homeBody, /<link rel="canonical" href="https:\/\/www\.partidata\.se\/"[^>]*>/);
     assert.match(homeBody, /Sök parti på namn eller förkortning/);
     assert.match(homeBody, /Alla partier/, 'partilistan har en rubrik');
-    assert.match(homeBody, new RegExp(`>${parties.length}</span>`), 'rubriken räknar partierna ur datan');
+    assert.match(
+      homeBody,
+      new RegExp(`>${standing.length}(<!-- -->)? av (<!-- -->)?${parties.length}</span>`),
+      'rubriken räknar partierna i det förvalda valåret mot hela registret'
+    );
+    assert.match(homeBody, new RegExp(`<option value="${latest}" selected="">${latest}</option>`), 'valårsfiltret står på det senaste valet');
+    assert.match(homeBody, /<option value="namn" selected="">Sorterat <!-- -->A–Ö<\/option>/, 'sorteringen står på bokstavsordning');
+    assert.match(homeBody, /<option value="kommuner">Sorterat <!-- -->Flest kommuner<\/option>/, 'sorteringen kan rangordna på kommuner');
     assert.match(homeBody, new RegExp(`/parti/${first}`), 'partigridet länkar till en partisida');
     assert.match(homeBody, /Riksdagspartier/);
     assert.match(homeBody, /Största partierna utanför riksdagen/);
@@ -115,7 +142,7 @@ async function main () {
     assert.match(homeBody, /Alternativet \(Ljungby\)/, 'alla synliga namndubbletter särskiljs');
 
     const gridLinks = partyGridLinks(homeBody);
-    assert.equal(gridLinks.length, Math.min(homePageSize, parties.length), 'partigridet renderar en hel sida partier');
+    assert.equal(gridLinks.length, Math.min(homePageSize, standing.length), 'partigridet renderar en hel sida partier');
     assert.deepEqual(gridLinks, expectedOrder, 'partigridet följer svensk bokstavsordning');
 
     const riksdagCards = homeBody.split('party-card--large').length - 1;
