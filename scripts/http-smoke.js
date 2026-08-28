@@ -78,6 +78,7 @@ async function waitForHealth (baseUrl, child, output) {
 
 async function main () {
   if (!fs.existsSync(path.join(releaseRoot, 'server.js'))) throw new Error('Kör npm run build:release före npm run test:http');
+  const { version } = JSON.parse(fs.readFileSync(path.join(projectRoot, 'package.json'), 'utf8'));
   const parties = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'parti', 'index.json'), 'utf8'));
   const derivedParliament = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'riksdag.json'), 'utf8'));
   const chamber = derivedParliament.kammare;
@@ -190,7 +191,9 @@ async function main () {
     const health = await fetch(`${baseUrl}/api/health`);
     assert.equal(health.status, 200);
     assert.equal(health.headers.get('cache-control'), 'no-store');
-    assert.deepEqual(await health.json(), { status: 'ok' });
+    assert.deepEqual(await health.json(), { status: 'ok', version }, 'hälsokontrollen anger versionen som byggdes');
+
+    assert.match(homeBody, new RegExp(`Version <!-- -->${version.replace(/\./g, '\\.')}`), 'sidfoten visar versionen');
     console.log('HTTP-smoke passerade');
   } finally {
     if (child.exitCode === null && child.signalCode === null) {
