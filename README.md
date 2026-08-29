@@ -53,6 +53,10 @@ Tabellen är de fält skripten hanterar. Ytterligare fält får läggas till fö
 
 `deltagande` har ett uppslag per valår: `{ riksdag: bool, region: [länskod], kommun: [kommunkod] }`. Från 2022 listas alla val partiet deltar i, även deltagande som följer av anmälan på högre nivå. 2018 års data är insamlad på annat sätt och speglar därför årets filer, där ett riksdagsparti inte har några region- eller kommunposter alls.
 
+`wikidata` är ett sådant fält, och håller partiets post på Wikidata tillsammans med det som lästs ur den. Sektionen har tre delar: `id`, `grundat` och `hamtad`. `id` är Q-id:t för partiets post på Wikidata, till exempel `Q504069`, och käll-URL:en `https://www.wikidata.org/wiki/<id>` härleds ur det. Fältet ägs av människor: det läggs till genom en granskad pull request, först när någon har bekräftat att posten avser samma parti — etikett, beskrivning och officiell webbplats mot partiets kända uppgifter. Ingen automatisk namnmatchning kopplar ett parti till Wikidata.
+
+`grundat` och `hamtad` ägs av `npm run import-wikidata`. `grundat` är Wikidatas P571 i den precision källan anger — `"1988"`, `"1988-02"` eller `"1988-02-06"` — och utelämnas när posten inte anger något grundandedatum; ett tidigare värde tas då bort, eftersom en uppgift utan källa inte hör hemma i datan. `hamtad` är datumet för den senaste hämtningen.
+
 När `partisymbol` finns ligger PNG-filen i samma katalog som partiets `index.json`. Filnamnet innehåller både den partikod symbolen hämtades under och en läsbar namn-slug, till exempel `0001-moderaterna.png`. Symbolen från det senaste importerade valet används. För partier som saknar symbol i 2026 års paket används i vissa fall den senast kända symbolen från Valmyndighetens arkiv för EU-valet 2019. `valar`, `partikod` och `kallurl` anger symbolens proveniens.
 
 ### parti/kodbyten.json
@@ -136,6 +140,12 @@ Körningen är idempotent: samma indata ger samma filer, oavsett i vilken ordnin
 Hämtar Valmyndighetens `partisymboler.zip` för valåret, kopplar varje PNG till partiets stabila `uuid` via partikoden och skriver symbolen i partiets katalog. `--file` läser en redan nedladdad ZIP. `--legacy-dir` kan användas för en katalog med äldre `<partikod>.png`; de fyller endast luckor och ersätter aldrig en symbol från det aktuella paketet.
 
 Valmyndigheten ska anges som källa för symbolerna. Partisymboler kan dessutom vara skyddade som varumärken och omfattas därför inte automatiskt av projektets CC0-dedikation. Se [data/partisymboler/README.md](data/partisymboler/README.md).
+
+### npm run import-wikidata [-- --parti \<filnamn\>]
+
+Hämtar `https://www.wikidata.org/wiki/Special:EntityData/<id>.json` för varje parti som har ett `wikidata.id`, läser grundandedatumet (P571) och skriver `wikidata.grundat` och `wikidata.hamtad` i partifilen. Med `--parti` hämtas ett enda parti. Partier utan Q-id rörs inte, och skriptet lägger aldrig till ett Q-id självt.
+
+Datumet lagras i källans precision. Har posten flera P571-påståenden gäller preferred-rank framför normal, och deprecated läses aldrig; anger posten två olika datum på samma rang avbryts körningen — vilket som gäller avgörs på Wikidata, med rangmarkering, inte här. Ett värde i en annan kalendermodell än den proleptiskt gregorianska, ett osäkerhetsintervall eller en precision grövre än år avbryter också körningen, liksom ett Q-id som har omdirigerats eller tagits bort. Allt hämtas och valideras innan något skrivs, så en misslyckad körning lämnar `data/` orört.
 
 ### npm run import-riksdagsval -- \<år\> --hamtad \<datum\> --file \<käll-id\>=\<sökväg\>
 

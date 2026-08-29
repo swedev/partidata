@@ -11,6 +11,10 @@ const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3
 
 const INDEX_KEYS_FROM_PARTY = ['beteckning', 'filnamn', 'forkortning', 'omrade', 'partisymbol', 'tidigare_filnamn', 'uuid'];
 
+const WIKIDATA_ID_PATTERN = /^Q[1-9]\d*$/;
+const WIKIDATA_KEYS = ['id', 'grundat', 'hamtad'];
+const WIKIDATA_DATE_PATTERN = /^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/;
+
 function readJson (file) {
   try {
     return JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -269,6 +273,65 @@ function requireUnique (items, key, context) {
   }
 }
 
+/**
+ * isCalendarDate
+ * Whether the parts name a day the calendar holds: a month 01–12 and a day that
+ * month has in that year.
+ * @param  {Number} year
+ * @param  {Number} month
+ * @param  {Number} day
+ * @return {Boolean}
+ */
+function isCalendarDate (year, month, day) {
+  if (year < 1 || month < 1 || month > 12 || day < 1) {
+    return false;
+  }
+  const leap = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+  return day <= [31, leap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+}
+
+/**
+ * requireWikidataDate
+ * A date in the precision Wikidata states it: ÅÅÅÅ, ÅÅÅÅ-MM or ÅÅÅÅ-MM-DD. The
+ * parts present have to name a real day, so 1988-00 and 2026-99-99 are rejected
+ * rather than stored as a truncation of something.
+ * @param {String} value
+ * @param {String} context
+ * @param {Boolean} [full] Require the day precision
+ */
+function requireWikidataDate (value, context, full = false) {
+  requireString(value, context);
+  const match = WIKIDATA_DATE_PATTERN.exec(value);
+  assert.ok(match, `${context} ska vara ${full ? 'ÅÅÅÅ-MM-DD' : 'ÅÅÅÅ, ÅÅÅÅ-MM eller ÅÅÅÅ-MM-DD'}`);
+  const [, year, month, day] = match;
+  assert.ok(!full || day !== undefined, `${context} ska vara ÅÅÅÅ-MM-DD`);
+  assert.ok(
+    isCalendarDate(Number(year), Number(month ?? 1), Number(day ?? 1)),
+    `${context} är inte ett verkligt datum: ${value}`
+  );
+}
+
+/**
+ * validateWikidataSection
+ * The wikidata section of a party file: the Q-id a human has linked the party
+ * to, and what the import read from that entity. The key set is closed, so a
+ * misspelled key is rejected here instead of surviving as an unread value.
+ * @param {*} value
+ * @param {String} context
+ */
+function validateWikidataSection (value, context) {
+  assert.ok(value && typeof value === 'object' && !Array.isArray(value), `${context} ska vara ett objekt`);
+  for (const key of Object.keys(value)) {
+    assert.ok(WIKIDATA_KEYS.includes(key), `${context}.${key} är inte en känd nyckel`);
+  }
+  requireString(value.id, `${context}.id`);
+  assert.match(value.id, WIKIDATA_ID_PATTERN, `${context}.id ska vara ett Wikidata-id (Q…)`);
+  requireWikidataDate(value.hamtad, `${context}.hamtad`, true);
+  if (value.grundat !== undefined) {
+    requireWikidataDate(value.grundat, `${context}.grundat`);
+  }
+}
+
 function validatePartyRegistry (dataDirectory) {
   const partyDirectory = path.join(dataDirectory, 'parti');
   const index = requireArray(readJson(path.join(partyDirectory, 'index.json')), 'parti/index.json');
@@ -287,6 +350,7 @@ function validatePartyRegistry (dataDirectory) {
   const partiesByUuid = new Map();
   const partySlugs = new Set();
   const routableSlugs = new Set();
+  const wikidataOwners = new Map();
   for (const entry of index) {
     const context = `parti/index.json (${entry.filnamn || 'okänt filnamn'})`;
     requireUuid(entry.uuid, `${context}.uuid`);
@@ -339,6 +403,13 @@ function validatePartyRegistry (dataDirectory) {
         path.join(partyDirectory, entry.filnamn, party.partisymbol.filnamn || ''),
         `${entry.filnamn}.partisymbol`
       );
+    }
+
+    if (party.wikidata !== undefined) {
+      validateWikidataSection(party.wikidata, `${entry.filnamn}.wikidata`);
+      const owner = wikidataOwners.get(party.wikidata.id);
+      assert.ok(owner === undefined, `${entry.filnamn}.wikidata.id ${party.wikidata.id} används redan av ${owner}`);
+      wikidataOwners.set(party.wikidata.id, entry.filnamn);
     }
 
     const profileFile = path.join(partyDirectory, entry.filnamn, 'profil.json');
@@ -593,3 +664,5 @@ if (require.main === module) {
 }
 
 exports.validateData = validateData;
+exports.validateWikidataSection = validateWikidataSection;
+exports.WIKIDATA_KEYS = WIKIDATA_KEYS;

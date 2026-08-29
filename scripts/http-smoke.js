@@ -95,12 +95,16 @@ async function main () {
     party.filnamn === 'folk-natur' && party.tidigare_filnamn?.includes('folk---natur')
   );
   const withSymbol = parties.find(party => party.partisymbol);
+  const founded = JSON.parse(fs.readFileSync(
+    path.join(projectRoot, 'data', 'parti', current.filnamn, 'index.json'), 'utf8'
+  )).wikidata;
   assert.ok(current);
   assert.equal(duplicate?.omrade, 'Hylte');
   assert.ok(withoutParticipation);
   assert.ok(previous);
   assert.ok(cleanedSlug);
   assert.ok(withSymbol);
+  assert.ok(founded?.grundat, `${current.filnamn} har ett grundandedatum från Wikidata`);
 
   const port = await freePort();
   const baseUrl = `http://127.0.0.1:${port}`;
@@ -151,7 +155,16 @@ async function main () {
 
     const profile = await fetch(`${baseUrl}/parti/${current.filnamn}/`);
     assert.equal(profile.status, 200);
-    assert.match(await profile.text(), /<title[^>]*>[^<]+[–-] Partidata<\/title>/);
+    const profileBody = await profile.text();
+    assert.match(profileBody, /<title[^>]*>[^<]+[–-] Partidata<\/title>/);
+    assert.match(profileBody, /<dt>Grundat<\/dt>/, 'partisidan visar grundandedatumet som nyckelfakta');
+    assert.match(profileBody, new RegExp(`<time datetime="${founded.grundat}">`, 'i'), 'datumet bär källans precision');
+    assert.match(
+      profileBody,
+      new RegExp(`href="https://www\\.wikidata\\.org/wiki/${founded.id}">Wikidata <!-- -->${founded.id}</a>`),
+      'källraden länkar till Wikidata med Q-id:t synligt'
+    );
+    assert.match(profileBody, new RegExp(`hämtat <!-- -->${founded.hamtad}`), 'källraden anger hämtdatumet');
 
     const duplicateProfile = await fetch(`${baseUrl}/parti/${duplicate.filnamn}/`);
     assert.equal(duplicateProfile.status, 200);
@@ -161,7 +174,9 @@ async function main () {
 
     const withoutParticipationProfile = await fetch(`${baseUrl}/parti/${withoutParticipation.filnamn}/`);
     assert.equal(withoutParticipationProfile.status, 200);
-    assert.match(await withoutParticipationProfile.text(), /Inget registrerat deltagande/);
+    const withoutParticipationBody = await withoutParticipationProfile.text();
+    assert.match(withoutParticipationBody, /Inget registrerat deltagande/);
+    assert.doesNotMatch(withoutParticipationBody, /<dt>Grundat<\/dt>/, 'ett parti utan Wikidata-uppgift får ingen tom platshållare');
 
     const redirect = await fetch(`${baseUrl}/parti/${previous.tidigare_filnamn[0]}/`, { redirect: 'manual' });
     assert.equal(redirect.status, 308);

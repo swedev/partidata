@@ -9,8 +9,9 @@ import type {
   PartiProfilDokument,
   PartiProfilForetradare,
   PartiProfilValresultatPost,
+  PartiWikidata,
 } from 'src/types';
-import { ExternalLink, SectionHeader, SourceLine } from './shared';
+import { ExternalLink, SectionHeader, SourceLine, formatPrecisionDate } from './shared';
 
 const percentageFormatter = new Intl.NumberFormat('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
@@ -47,6 +48,7 @@ export function ProfileHero ({
   symbolFrame,
   latestResult,
   latestParticipation,
+  wikidata,
 }: {
   code: string;
   abbreviation?: string;
@@ -57,8 +59,11 @@ export function ProfileHero ({
   symbolFrame?: SymbolFrame;
   latestResult?: PartiProfilValresultatPost;
   latestParticipation?: [string, PartiDeltagande];
+  wikidata?: PartiWikidata;
 }) {
   const participation = latestParticipation?.[1];
+  const founded = formatPrecisionDate(wikidata?.grundat);
+  const keyFactCount = (latestResult ? 2 : 1) + 1 + (founded ? 1 : 0);
   const description = profile.beskrivning ?? profile.profiltext?.text ?? 'Registrerad partibeteckning och anmält valdeltagande enligt Valmyndighetens öppna data.';
   const descriptionSource = profile.profiltext?.kalla ?? profile.namn_kalla;
 
@@ -90,7 +95,7 @@ export function ProfileHero ({
         )}
       </div>
 
-      <dl className="profile-keyfacts">
+      <dl className={`profile-keyfacts${keyFactCount === 4 ? ' profile-keyfacts--four' : ''}`}>
         {latestResult ? <>
           <div>
             <dt>Mandat i riksdagen</dt>
@@ -120,6 +125,15 @@ export function ProfileHero ({
             <dt>Anmält deltagande</dt>
             <dd><span>Inget registrerat deltagande</span></dd>
             <dd className="profile-source">Valmyndigheten</dd>
+          </div>
+        )}
+        {founded && wikidata && (
+          <div>
+            <dt>Grundat</dt>
+            <dd><time dateTime={wikidata.grundat}>{founded}</time></dd>
+            <dd className="profile-source">
+              <a href={`https://www.wikidata.org/wiki/${wikidata.id}`}>Wikidata {wikidata.id}</a> · CC0 · hämtat {wikidata.hamtad}
+            </dd>
           </div>
         )}
       </dl>

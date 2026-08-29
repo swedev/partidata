@@ -259,6 +259,70 @@ test('validateData rejects inconsistencies with useful errors', async t => {
   });
 });
 
+test('validateData accepts a wikidata section in every precision', t => {
+  const root = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  for (const grundat of ['1988', '1988-02', '1988-02-29', undefined]) {
+    writeJson(root, 'parti/testpartiet/index.json', {
+      ...PARTY,
+      wikidata: { id: 'Q10613549', ...(grundat ? { grundat } : {}), hamtad: '2026-08-29' }
+    });
+    assert.equal(validateData(root).parties, 1, `grundat ${grundat ?? 'saknas'} ska passera`);
+  }
+});
+
+test('validateData rejects a malformed wikidata section', async t => {
+  const cases = [
+    ['a Q-id that is not one', { id: 'Q01', hamtad: '2026-08-29' }, /wikidata\.id ska vara ett Wikidata-id/],
+    ['an empty Q-id', { id: '', hamtad: '2026-08-29' }, /wikidata\.id får inte vara tom/],
+    ['a missing Q-id', { hamtad: '2026-08-29' }, /wikidata\.id ska vara en sträng/],
+    ['a missing hamtad', { id: 'Q1' }, /wikidata\.hamtad ska vara en sträng/],
+    ['a hamtad without day precision', { id: 'Q1', hamtad: '2026-08' }, /wikidata\.hamtad ska vara ÅÅÅÅ-MM-DD/],
+    ['a day that month does not have', { id: 'Q1', grundat: '1988-02-30', hamtad: '2026-08-29' }, /wikidata\.grundat är inte ett verkligt datum: 1988-02-30/],
+    ['month zero', { id: 'Q1', grundat: '1988-00', hamtad: '2026-08-29' }, /wikidata\.grundat är inte ett verkligt datum: 1988-00/],
+    ['an impossible date', { id: 'Q1', grundat: '2026-99-99', hamtad: '2026-08-29' }, /wikidata\.grundat är inte ett verkligt datum: 2026-99-99/],
+    ['an empty grundat', { id: 'Q1', grundat: '', hamtad: '2026-08-29' }, /wikidata\.grundat får inte vara tom/],
+    ['a misspelled key', { id: 'Q1', grundatt: '1988', hamtad: '2026-08-29' }, /wikidata\.grundatt är inte en känd nyckel/],
+    ['an array', [], /wikidata ska vara ett objekt/],
+    ['null', null, /wikidata ska vara ett objekt/]
+  ];
+
+  for (const [name, wikidata, message] of cases) {
+    await t.test(name, t => {
+      const root = makeData();
+      t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+      writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, wikidata });
+      assert.throws(() => validateData(root), message);
+    });
+  }
+});
+
+test('validateData rejects a Q-id claimed by two parties', t => {
+  const root = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const second = {
+    uuid: '55555555-5555-4555-8555-555555555555',
+    kod: '9002',
+    beteckning: 'Provpartiet',
+    filnamn: 'provpartiet'
+  };
+  writeJson(root, 'parti/index.json', [
+    { uuid: second.uuid, beteckning: second.beteckning, filnamn: second.filnamn },
+    { uuid: PARTY.uuid, beteckning: PARTY.beteckning, filnamn: PARTY.filnamn }
+  ]);
+  const wikidata = { id: 'Q10613549', grundat: '1988-02-29', hamtad: '2026-08-29' };
+  writeJson(root, 'parti/provpartiet/index.json', { ...second, wikidata });
+  writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, wikidata: { ...wikidata, id: 'Q9999' } });
+  assert.equal(validateData(root).parties, 2);
+
+  writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, wikidata });
+  assert.throws(
+    () => validateData(root),
+    /testpartiet\.wikidata\.id Q10613549 används redan av provpartiet/
+  );
+});
+
 function readJson (root, relativePath) {
   return JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'));
 }
