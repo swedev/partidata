@@ -278,6 +278,54 @@ function applyWikidata (parties, entities, today) {
 }
 
 /**
+ * FOUNDED_BEFORE_FIRST_ELECTION_YEARS
+ * How far a founding date may precede the first election we have the party in
+ * before the pairing is worth a second look. Parties that carried their
+ * designation for a decade before our election data begins are ordinary; a
+ * gap much wider than that, with nothing registered in between, is the shape
+ * a reused party name makes.
+ * @type {Number}
+ */
+const FOUNDED_BEFORE_FIRST_ELECTION_YEARS = 10;
+
+/**
+ * sanityWarnings
+ * Reads the founding date against what the party's own record says about it.
+ * Neither check can prove a mismatch, so both only warn: the registry is the
+ * one source that knows this party rather than the name it shares with
+ * others, and a Wikidata entity about a different party of the same name
+ * tends to disagree with it.
+ * @param  {Object} party The built party file, which carries deltagande
+ * @param  {String|undefined} grundat
+ * @return {String[]}
+ */
+function sanityWarnings (party, grundat) {
+  if (!grundat) {
+    return [];
+  }
+  const warnings = [];
+  const foundedYear = Number(grundat.slice(0, 4));
+  const registered = party.valmyndigheten_registreringsdatum;
+
+  if (registered && foundedYear > Number(registered.slice(0, 4))) {
+    warnings.push(`grundat ${grundat} är efter registreringen ${registered}`);
+  }
+
+  const years = Object.keys(party.deltagande ?? {}).map(Number).filter(Number.isFinite);
+  if (!registered && years.length > 0) {
+    const firstElection = Math.min(...years);
+    const gap = firstElection - foundedYear;
+    if (gap > FOUNDED_BEFORE_FIRST_ELECTION_YEARS) {
+      warnings.push(
+        `grundat ${grundat} men ingen registrerad beteckning och första valet ${firstElection}, ${gap} år senare`
+      );
+    }
+  }
+
+  return warnings;
+}
+
+/**
  * main
  */
 async function main () {
@@ -316,6 +364,19 @@ async function main () {
     console.log(`  ${marker} ${change.id} ${change.beteckning}: ${before} → ${after}`);
   }
   console.log(`Skrivna filer: ${written.length}`);
+
+  const built = new Map(build.parties.map(party => [party.filnamn, party.data]));
+  const warnings = changes.flatMap(change =>
+    sanityWarnings(built.get(change.filnamn), change.efter)
+      .map(warning => `${change.beteckning} (${change.id}): ${warning}`)
+  );
+  if (warnings.length > 0) {
+    console.log('\nAtt kontrollera:');
+    for (const warning of warnings) {
+      console.log(`  ! ${warning}`);
+    }
+    console.log('Datumet är hämtat och skrivet. Stämmer posten inte med partiet, ta bort wikidata-sektionen.');
+  }
 }
 
 /**
@@ -327,6 +388,7 @@ exports.fetchEntity = fetchEntity;
 exports.foundingDateFromEntity = foundingDateFromEntity;
 exports.wikidataTargets = wikidataTargets;
 exports.applyWikidata = applyWikidata;
+exports.sanityWarnings = sanityWarnings;
 
 if (require.main === module) {
   main().catch(error => {

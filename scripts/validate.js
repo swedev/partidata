@@ -326,6 +326,10 @@ function validateWikidataSection (value, context) {
   }
   requireString(value.id, `${context}.id`);
   assert.match(value.id, WIKIDATA_ID_PATTERN, `${context}.id ska vara ett Wikidata-id (Q…)`);
+  assert.ok(
+    value.hamtad !== undefined,
+    `${context}.hamtad saknas. Q-id:t läggs till för hand, resten hämtas: kör npm run import-wikidata -- --parti <filnamn>`
+  );
   requireWikidataDate(value.hamtad, `${context}.hamtad`, true);
   if (value.grundat !== undefined) {
     requireWikidataDate(value.grundat, `${context}.grundat`);
