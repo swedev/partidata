@@ -15,6 +15,20 @@ export interface Parti {
   valmyndigheten_registreringsdatum?: string;
   partisymbol?: PartiSymbol;
   deltagande?: Record<string, PartiDeltagande>;
+  wikidata?: PartiWikidata;
+}
+
+/**
+ * A party's link to Wikidata and what has been read from that entity. `id` is
+ * the Q-id a person confirmed refers to this party; `grundat` is P571 in the
+ * precision Wikidata states it (`"1988"`, `"1988-02"` or `"1988-02-06"`), left
+ * out when the entity states no founding date, and `hamtad` is the day it was
+ * last read.
+ */
+export interface PartiWikidata {
+  id: string;
+  grundat?: string;
+  hamtad: string;
 }
 
 /**

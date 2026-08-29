@@ -35,6 +35,9 @@ Open data about Swedish political parties. Swedish copy.
   on and the box its drawing occupies, which is how the site shows every symbol
   at the same optical size; `npm run measure-partisymboler` re-measures the
   already committed symbols without re-importing them;
+  `npm run import-wikidata [-- --parti <filnamn>]` reads the founding date (P571)
+  from Wikidata for every party whose file carries a manually reviewed
+  `wikidata.id` and writes it back as `wikidata.grundat`/`wikidata.hamtad`;
   `node scripts/parti.js` rebuilds the registry from `data/` alone. Results are
   committed to `data/`. Paths resolve from the repo root, so the scripts run
   from any directory. `npm run validate:data` checks the committed data tree;

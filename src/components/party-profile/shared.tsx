@@ -10,6 +10,21 @@ export function formatSwedishDate (iso?: string) {
   return `${String(date.getUTCDate()).padStart(2, '0')} ${shortMonthNames[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 }
 
+/**
+ * A date in the precision it is stated in: a year, a year and month, or a full
+ * date. Only the parts the source gives are rendered, so a year never turns
+ * into a day it does not claim.
+ */
+export function formatPrecisionDate (value?: string) {
+  if (!value) return undefined;
+  const match = /^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/.exec(value);
+  if (!match) return value;
+  const [, year, month, day] = match;
+  const monthName = month ? shortMonthNames[Number(month) - 1] : undefined;
+  if (!monthName) return year;
+  return day ? `${day} ${monthName} ${year}` : `${monthName} ${year}`;
+}
+
 export function ExternalLink ({ href, children, className }: { href: string; children: ReactNode; className?: string }) {
   return (
     <a href={href} className={className}>
