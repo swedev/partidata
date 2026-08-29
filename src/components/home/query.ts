@@ -28,7 +28,7 @@ function readYear (value: string, valar: string[], fallback: string): string {
 }
 
 function readKind (value: string): HomeFilters['valtyp'] {
-  return value in electionKindLabels ? value as ElectionKind : '';
+  return Object.hasOwn(electionKindLabels, value) ? value as ElectionKind : '';
 }
 
 /**

@@ -44,6 +44,12 @@ test('unknown values fall back to the defaults', () => {
   );
 });
 
+test('an inherited property name is not an election type', () => {
+  for (const value of ['constructor', 'toString', '__proto__', 'hasOwnProperty']) {
+    assert.equal(stateFromQuery({ valtyp: value }, DATA).filters.valtyp, '', `${value} är ingen valtyp`);
+  }
+});
+
 test('known values pass through', () => {
   assert.deepEqual(
     stateFromQuery({ valar: '2018', valtyp: 'region', lan: '12', sortering: 'senaste' }, DATA),
