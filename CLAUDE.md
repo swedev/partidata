@@ -19,6 +19,10 @@ Open data about Swedish political parties. Swedish copy.
   behind nginx. `next/image` optimisation remains disabled.
 - Party pages use `getServerSideProps` and read JSON through
   `src/server/party-data.ts`. Previous slugs return HTTP 308, unknown slugs 404.
+- The start page carries its filters in the query string (`valar`, `valtyp`,
+  `lan`, `kommun`, `q`, `sortering`), with the defaults left out so the
+  unfiltered page stays `/`. `src/components/home/query.ts` translates between
+  the query and the state in both directions.
 - `npm run build:release` packages `.release/`; `npm run test:http` starts that
   exact artifact and verifies the public routes locally.
 - Styling: Tailwind 3 + Bootstrap 5 tables via sass. `src/styles/base.scss` is
