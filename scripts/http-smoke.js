@@ -25,23 +25,60 @@ function comparePartyOrder (a, b) {
   return collator.compare(a.beteckning, b.beteckning) || collator.compare(a.filnamn, b.filnamn);
 }
 
-/**
- * The parties the start page opens on: the ones standing in the latest election
- * the data carries, which is the year the filters default to.
- */
-function standingParties (projectRoot, parties) {
+/** The election years the registry carries participation for, oldest first. */
+function electionYears (projectRoot) {
   const electionRoot = path.join(projectRoot, 'data', 'val');
-  const years = fs.readdirSync(electionRoot, { withFileTypes: true })
+  return fs.readdirSync(electionRoot, { withFileTypes: true })
     .filter(entry => entry.isDirectory() && /^\d{4}$/.test(entry.name))
     .map(entry => entry.name)
+    .filter(year => fs.existsSync(path.join(electionRoot, year, 'partideltagande', 'partier.json')))
     .toSorted();
-  const latest = years.findLast(year =>
-    fs.existsSync(path.join(electionRoot, year, 'partideltagande', 'partier.json')));
-  assert.ok(latest, 'ett valår med partideltagande hittades');
-  const participating = new Set(JSON.parse(
-    fs.readFileSync(path.join(electionRoot, latest, 'partideltagande', 'partier.json'), 'utf8')
-  ).map(party => party.uuid));
-  return { latest, standing: parties.filter(party => participating.has(party.uuid)) };
+}
+
+/** The parties standing in one election, which is what a chosen year narrows to. */
+function standingParties (projectRoot, parties, year) {
+  const participating = new Set(JSON.parse(fs.readFileSync(
+    path.join(projectRoot, 'data', 'val', year, 'partideltagande', 'partier.json'), 'utf8'
+  )).map(party => party.uuid));
+  return parties.filter(party => participating.has(party.uuid));
+}
+
+/**
+ * Every party's registered participation, read from the same files the site
+ * reads, so the expected result of a filtered URL can be worked out here.
+ */
+function participationByParty (projectRoot, parties) {
+  return new Map(parties.map(party => [party.filnamn, JSON.parse(fs.readFileSync(
+    path.join(projectRoot, 'data', 'parti', party.filnamn, 'index.json'), 'utf8'
+  )).deltagande ?? {}]));
+}
+
+/**
+ * The search comparison, written out here rather than imported, so the smoke
+ * test does not check the site against the very code it renders with.
+ */
+function normalise (value) {
+  return value
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+function matchesQuery (party, query) {
+  const haystack = normalise(`${party.beteckning} ${party.forkortning ?? ''} ${party.omrade ?? ''}`);
+  return normalise(query).split(' ').every(term => haystack.includes(term));
+}
+
+/** The slugs the first page of the grid is expected to link to. */
+function expectedGrid (parties) {
+  return parties.slice(0, homePageSize).map(party => party.filnamn);
+}
+
+/** The "N av M" the results heading carries, whichever way React split the text. */
+function countPattern (matched, total) {
+  return new RegExp(`>${matched}(<!-- -->)? av (<!-- -->)?${total}</span>`);
 }
 
 /** Extracts the party links of the "Alla partier" grid in document order. */
@@ -87,8 +124,14 @@ async function main () {
   const current = parties.find(party => party.filnamn === 'miljopartiet-de-grona') ?? parties[0];
   const duplicate = parties.find(party => party.filnamn === 'kommunens-val-0503');
   const withoutParticipation = parties.find(party => party.filnamn === 'angfarjepartiet');
-  const { latest, standing } = standingParties(projectRoot, parties);
-  const expectedOrder = standing.toSorted(comparePartyOrder).slice(0, homePageSize).map(party => party.filnamn);
+  const years = electionYears(projectRoot);
+  assert.ok(years.length >= 2, 'minst två valår har partideltagande');
+  const latest = years.at(-1);
+  const earlier = years.at(-2);
+  const standing = standingParties(projectRoot, parties, latest);
+  const deltagande = participationByParty(projectRoot, parties);
+  const inNameOrder = parties.toSorted(comparePartyOrder);
+  const expectedOrder = expectedGrid(standing.toSorted(comparePartyOrder));
   const [first] = expectedOrder;
   const previous = parties.find(party => party.tidigare_filnamn?.length > 0);
   const cleanedSlug = parties.find(party =>
@@ -129,7 +172,7 @@ async function main () {
     assert.match(homeBody, /Alla partier/, 'partilistan har en rubrik');
     assert.match(
       homeBody,
-      new RegExp(`>${standing.length}(<!-- -->)? av (<!-- -->)?${parties.length}</span>`),
+      countPattern(standing.length, parties.length),
       'rubriken räknar partierna i det förvalda valåret mot hela registret'
     );
     assert.match(homeBody, new RegExp(`<option value="${latest}" selected="">${latest}</option>`), 'valårsfiltret står på det senaste valet');
@@ -152,6 +195,53 @@ async function main () {
 
     const riksdagCards = homeBody.split('party-card--large').length - 1;
     assert.equal(riksdagCards, chamber.partier.length, 'riksdagspartierna renderas som stora partikort');
+
+    const parliamentary = inNameOrder.filter(party => deltagande.get(party.filnamn)[earlier]?.riksdag);
+    assert.ok(parliamentary.length > 0, `partier anmälda till riksdagsvalet ${earlier} hittades`);
+    const filtered = await fetch(`${baseUrl}/?valar=${earlier}&valtyp=riksdag`);
+    assert.equal(filtered.status, 200);
+    const filteredBody = await filtered.text();
+    assert.match(filteredBody, new RegExp(`<option value="${earlier}" selected="">${earlier}</option>`), 'valårsfiltret står på året i länken');
+    assert.match(filteredBody, /aria-pressed="true"[^>]*>Riksdagsval</, 'riksdagsvalet är den tryckta chipen');
+    assert.match(filteredBody, /<link rel="canonical" href="https:\/\/www\.partidata\.se\/"[^>]*>/, 'en filtrerad vy är samma kanoniska sida');
+    assert.match(filteredBody, countPattern(parliamentary.length, parties.length), 'rubriken räknar de filtrerade partierna');
+    assert.deepEqual(partyGridLinks(filteredBody), expectedGrid(parliamentary), 'gridet visar partierna länken filtrerar fram');
+
+    // The ranking is the widest municipal ballot that year, and the sort is
+    // stable, so parties on equally many keep Swedish name order.
+    const found = inNameOrder
+      .filter(party => matchesQuery(party, 'parti'))
+      .filter(party => {
+        const facet = deltagande.get(party.filnamn)[earlier];
+        return Boolean(facet) && (facet.riksdag || facet.region.length > 0 || facet.kommun.length > 0);
+      })
+      .toSorted((a, b) =>
+        deltagande.get(b.filnamn)[earlier].kommun.length - deltagande.get(a.filnamn)[earlier].kommun.length);
+    assert.ok(found.length > homePageSize, 'sökningen ger fler träffar än en sida');
+    const searched = await fetch(`${baseUrl}/?valar=${earlier}&sortering=kommuner&q=parti`);
+    assert.equal(searched.status, 200);
+    const searchedBody = await searched.text();
+    assert.match(searchedBody, /<option value="kommuner" selected="">Sorterat <!-- -->Flest kommuner<\/option>/, 'sorteringen står på länkens ordning');
+    assert.match(searchedBody, /<input[^>]*type="search"[^>]*value="parti"/, 'sökfältet står på länkens sökterm');
+    assert.match(searchedBody, countPattern(found.length, parties.length), 'rubriken räknar sökträffarna');
+    assert.deepEqual(partyGridLinks(searchedBody), expectedGrid(found), 'gridet är rangordnat på antal kommuner');
+
+    const everyYear = await fetch(`${baseUrl}/?valar=alla`);
+    assert.equal(everyYear.status, 200);
+    const everyYearBody = await everyYear.text();
+    assert.match(everyYearBody, /<option value="" selected="">Alla valår<\/option>/, 'valårsfiltret står på alla valår');
+    assert.match(everyYearBody, countPattern(parties.length, parties.length), 'utan valår och övriga filter matchar hela registret');
+    assert.deepEqual(partyGridLinks(everyYearBody), expectedGrid(inNameOrder), 'gridet är hela registret i bokstavsordning');
+
+    const invalid = await fetch(`${baseUrl}/?valar=1900&valtyp=eu`);
+    assert.equal(invalid.status, 200);
+    const invalidBody = await invalid.text();
+    assert.match(invalidBody, new RegExp(`<option value="${latest}" selected="">${latest}</option>`), 'ett valår datan saknar faller tillbaka på förvalet');
+    assert.doesNotMatch(invalidBody, /aria-pressed="true"/, 'en okänd valtyp lämnar chip-gruppen otryckt');
+
+    const canonicalYear = await fetch(`${baseUrl}/?valar=${latest}`);
+    assert.equal(canonicalYear.status, 200);
+    assert.deepEqual(partyGridLinks(await canonicalYear.text()), gridLinks, 'förvalet i länken ger samma vy som startsidan');
 
     const profile = await fetch(`${baseUrl}/parti/${current.filnamn}/`);
     assert.equal(profile.status, 200);
