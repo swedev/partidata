@@ -7,6 +7,7 @@ const {
   fetchEntity,
   foundingDateFromEntity,
   parseArgs,
+  sanityWarnings,
   wikidataTargets
 } = require('./import-wikidata.js');
 
@@ -297,4 +298,39 @@ test('applyWikidata stops on a value it must not interpret', () => {
   ]);
   assert.throws(() => applyWikidata(parties, entities, '2026-08-29'), /kalendermodellen/);
   assert.equal(parties[1].extra.wikidata.grundat, '1917');
+});
+
+test('sanityWarnings passes a party whose founding date fits its own record', () => {
+  const party = {
+    valmyndigheten_registreringsdatum: '1979-05-15',
+    deltagande: { 2018: {}, 2022: {} }
+  };
+  assert.deepEqual(sanityWarnings(party, '1979-03-24'), []);
+});
+
+test('sanityWarnings reports a founding date later than the registration', () => {
+  const party = { valmyndigheten_registreringsdatum: '2018-02-23', deltagande: { 2018: {} } };
+  const warnings = sanityWarnings(party, '2021');
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0], /grundat 2021 är efter registreringen 2018-02-23/);
+});
+
+test('sanityWarnings reports a long-founded party with no designation and one late election', () => {
+  const party = { valmyndigheten_registreringsdatum: undefined, deltagande: { 2018: {} } };
+  const warnings = sanityWarnings(party, '1998');
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0], /ingen registrerad beteckning och första valet 2018, 20 år senare/);
+});
+
+test('sanityWarnings leaves an old party alone once it has a registered designation', () => {
+  const party = {
+    valmyndigheten_registreringsdatum: '2018-03-16',
+    deltagande: { 2018: {}, 2026: {} }
+  };
+  assert.deepEqual(sanityWarnings(party, '1970'), []);
+});
+
+test('sanityWarnings says nothing when the entity states no founding date', () => {
+  const party = { deltagande: { 2022: {} } };
+  assert.deepEqual(sanityWarnings(party, undefined), []);
 });

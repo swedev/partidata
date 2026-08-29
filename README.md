@@ -53,7 +53,7 @@ Tabellen är de fält skripten hanterar. Ytterligare fält får läggas till fö
 
 `deltagande` har ett uppslag per valår: `{ riksdag: bool, region: [länskod], kommun: [kommunkod] }`. Från 2022 listas alla val partiet deltar i, även deltagande som följer av anmälan på högre nivå. 2018 års data är insamlad på annat sätt och speglar därför årets filer, där ett riksdagsparti inte har några region- eller kommunposter alls.
 
-`wikidata` är ett sådant fält, och håller partiets post på Wikidata tillsammans med det som lästs ur den. Sektionen har tre delar: `id`, `grundat` och `hamtad`. `id` är Q-id:t för partiets post på Wikidata, till exempel `Q504069`, och käll-URL:en `https://www.wikidata.org/wiki/<id>` härleds ur det. Fältet ägs av människor: det läggs till genom en granskad pull request, först när någon har bekräftat att posten avser samma parti — etikett, beskrivning och officiell webbplats mot partiets kända uppgifter. Ingen automatisk namnmatchning kopplar ett parti till Wikidata.
+`wikidata` är ett sådant fält, och håller partiets post på Wikidata tillsammans med det som lästs ur den. Sektionen har tre delar: `id`, `grundat` och `hamtad`. `id` är Q-id:t för partiets post på Wikidata, till exempel `Q504069`, och käll-URL:en `https://www.wikidata.org/wiki/<id>` härleds ur det. Fältet ägs av människor: det läggs till genom en granskad pull request, först när någon har bekräftat att posten avser samma parti — etikett, beskrivning och officiell webbplats mot partiets kända uppgifter. Ingen automatisk namnmatchning kopplar ett parti till Wikidata. Stegen för att lägga till en koppling står under [npm run import-wikidata](#npm-run-import-wikidata----parti-filnamn).
 
 `grundat` och `hamtad` ägs av `npm run import-wikidata`. `grundat` är Wikidatas P571 i den precision källan anger — `"1988"`, `"1988-02"` eller `"1988-02-06"` — och utelämnas när posten inte anger något grundandedatum; ett tidigare värde tas då bort, eftersom en uppgift utan källa inte hör hemma i datan. `hamtad` är datumet för den senaste hämtningen.
 
@@ -146,6 +146,24 @@ Valmyndigheten ska anges som källa för symbolerna. Partisymboler kan dessutom 
 Hämtar `https://www.wikidata.org/wiki/Special:EntityData/<id>.json` för varje parti som har ett `wikidata.id`, läser grundandedatumet (P571) och skriver `wikidata.grundat` och `wikidata.hamtad` i partifilen. Med `--parti` hämtas ett enda parti. Partier utan Q-id rörs inte, och skriptet lägger aldrig till ett Q-id självt.
 
 Datumet lagras i källans precision. Har posten flera P571-påståenden gäller preferred-rank framför normal, och deprecated läses aldrig; anger posten två olika datum på samma rang avbryts körningen — vilket som gäller avgörs på Wikidata, med rangmarkering, inte här. Ett värde i en annan kalendermodell än den proleptiskt gregorianska, ett osäkerhetsintervall eller en precision grövre än år avbryter också körningen, liksom ett Q-id som har omdirigerats eller tagits bort. Allt hämtas och valideras innan något skrivs, så en misslyckad körning lämnar `data/` orört.
+
+#### Koppla ett parti till Wikidata
+
+1. Leta upp partiets post på Wikidata och kontrollera att den avser samma parti — etikett, beskrivning och officiell webbplats mot partiets kända uppgifter, och för lokalpartier den kommun posten anger mot kommunerna i partiets `deltagande`. Flera partier delar beteckning, så namnlikhet räcker inte.
+2. Lägg till Q-id:t för hand i partiets `index.json`:
+
+   ```json
+   "wikidata": { "id": "Q504069" }
+   ```
+
+3. Kör `npm run import-wikidata -- --parti <filnamn>`. Skriptet hämtar P571 och fyller `grundat` och `hamtad`.
+4. Committa partifilen med alla tre fälten. En sektion med bara `id` underkänns av `npm run validate:data`, eftersom `hamtad` saknas.
+
+Detsamma gäller när ett Q-id ändras: hämtningen sker aldrig av sig själv, så `grundat` ligger kvar från den förra posten tills importen körts om. Valideringen kontrollerar formen, inte att datumet kommer från det id som står i filen.
+
+En körning utan `--parti` hämtar om samtliga kopplade partier och sätter deras `hamtad` till dagens datum, även för de partier vars datum är oförändrat. Då ändras alltså filer som inte har med den koppling man arbetar med att göra, och rättningar som gjorts på Wikidata sedan förra körningen följer med in. Använd `--parti` när en enskild koppling läggs till eller ändras, och en fullständig körning när avsikten är att uppdatera allt.
+
+Skriptet skriver ut `Att kontrollera:` när ett hämtat datum inte rimmar med partiets egen post — grundat efter att beteckningen registrerades, eller ett parti utan registrerad beteckning som grundades långt före det första val vi har det i. Det är en varning, inte ett fel: datumet är hämtat och skrivet, och den som kopplat partiet får avgöra om posten avser rätt parti.
 
 ### npm run import-riksdagsval -- \<år\> --hamtad \<datum\> --file \<käll-id\>=\<sökväg\>
 

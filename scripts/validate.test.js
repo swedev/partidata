@@ -5,7 +5,7 @@ const path = require('node:path');
 const test = require('node:test');
 
 const { writePartyProfileParliamentView } = require('./build-derived-data.js');
-const { validateData } = require('./validate.js');
+const { validateData, validateWikidataSection } = require('./validate.js');
 
 const PARTY = {
   uuid: '11111111-1111-4111-8111-111111111111',
@@ -277,7 +277,7 @@ test('validateData rejects a malformed wikidata section', async t => {
     ['a Q-id that is not one', { id: 'Q01', hamtad: '2026-08-29' }, /wikidata\.id ska vara ett Wikidata-id/],
     ['an empty Q-id', { id: '', hamtad: '2026-08-29' }, /wikidata\.id får inte vara tom/],
     ['a missing Q-id', { hamtad: '2026-08-29' }, /wikidata\.id ska vara en sträng/],
-    ['a missing hamtad', { id: 'Q1' }, /wikidata\.hamtad ska vara en sträng/],
+    ['a missing hamtad', { id: 'Q1' }, /wikidata\.hamtad saknas/],
     ['a hamtad without day precision', { id: 'Q1', hamtad: '2026-08' }, /wikidata\.hamtad ska vara ÅÅÅÅ-MM-DD/],
     ['a day that month does not have', { id: 'Q1', grundat: '1988-02-30', hamtad: '2026-08-29' }, /wikidata\.grundat är inte ett verkligt datum: 1988-02-30/],
     ['month zero', { id: 'Q1', grundat: '1988-00', hamtad: '2026-08-29' }, /wikidata\.grundat är inte ett verkligt datum: 1988-00/],
@@ -326,3 +326,10 @@ test('validateData rejects a Q-id claimed by two parties', t => {
 function readJson (root, relativePath) {
   return JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'));
 }
+
+test('validateWikidataSection points at the import when only the Q-id is there', () => {
+  assert.throws(
+    () => validateWikidataSection({ id: 'Q504069' }, 'sverigedemokraterna.wikidata'),
+    /hamtad saknas.*npm run import-wikidata/s
+  );
+});
