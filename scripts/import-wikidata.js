@@ -70,8 +70,8 @@ function parseArgs (argv) {
  * @return {Number}
  */
 function retryDelay (response) {
-  const header = response.headers?.get?.('Retry-After');
-  const seconds = Number(header);
+  const header = response.headers?.get?.('Retry-After')?.trim();
+  const seconds = header ? Number(header) : NaN;
   return Number.isFinite(seconds) && seconds >= 0 ? seconds * 1000 : RETRY_DELAY;
 }
 

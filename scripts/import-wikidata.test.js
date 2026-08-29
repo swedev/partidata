@@ -172,6 +172,21 @@ test('fetchEntity waits the time a 429 asks for and then retries', async () => {
   assert.deepEqual(waits, [2000]);
 });
 
+test('fetchEntity falls back to the fixed delay when Retry-After says nothing usable', async () => {
+  for (const headers of [{}, { 'Retry-After': '' }, { 'Retry-After': '   ' }, { 'Retry-After': 'Wed, 21 Oct 2026 07:28:00 GMT' }]) {
+    const waits = [];
+    let attempt = 0;
+    const fetchImpl = async () => {
+      attempt += 1;
+      return attempt === 1
+        ? response(429, '', headers)
+        : response(200, JSON.stringify({ entities: { Q1: entity('Q1') } }));
+    };
+    await fetchEntity('Q1', { fetchImpl, sleep: async ms => waits.push(ms) });
+    assert.deepEqual(waits, [5000], `Retry-After ${JSON.stringify(headers)} ska ge den fasta väntetiden`);
+  }
+});
+
 test('fetchEntity gives up after the retry limit', async () => {
   let attempts = 0;
   const fetchImpl = async () => {
