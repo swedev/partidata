@@ -209,6 +209,8 @@ async function main () {
     assert.match(homeBody, new RegExp(`>${outside.partier[0].rostandel.toFixed(2).replace('.', ',')}(<!-- -->)? %<`), 'utanför-rankningen visar den härledda röstandelen');
     assert.equal(homeBody.split('party-card--medium').length - 1, outside.partier.length, 'utanför-rankningen renderar alla härledda partikort');
     assert.match(homeBody, new RegExp(`valet (<!-- -->)?${chamber.valar}`), 'riksdagssektionen anger valåret');
+    assert.match(homeBody, /<select aria-label="Mandatfördelning efter val"/, 'riksdagssektionens val har ett eget tillgängligt namn');
+    assert.ok(!homeBody.includes('aria-label="Valår"'), 'Valår namnger bara listfiltret');
     assert.equal(checkedSegment(segmentGroup(homeBody, 'Valtyp')), '', 'valtypen står på alla');
     assert.match(homeBody, /Visa fler partier \(/, 'visa fler anger hur många som återstår');
     assert.match(homeBody, /Alternativet \(Bromölla\)/, 'identiska partinamn får ort på korten');

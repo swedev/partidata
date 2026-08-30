@@ -16,7 +16,7 @@ function RiksdagSection ({ years }: { years: ParliamentYear[] }) {
         <h2 id={`${fieldId}-heading`}>Riksdagspartier</h2>
         {years.length > 1 ? (
           <span className="home-select">
-            <select aria-label="Valår" value={year.valar} onChange={event => setValar(Number(event.target.value))}>
+            <select aria-label="Mandatfördelning efter val" value={year.valar} onChange={event => setValar(Number(event.target.value))}>
               {years.map(entry => <option key={entry.valar} value={entry.valar}>Mandat efter valet {entry.valar}</option>)}
             </select>
             <ChevronDownIcon className="home-select__chevron" />
