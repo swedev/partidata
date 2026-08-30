@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -11,6 +12,7 @@ import type {
   PartiValresultatPost,
 } from '../types';
 import { assertSwedishCollation, compareSv } from './collation.ts';
+import { classifyDataPath, dataPath, PARTICIPATION_FILES } from './data-resources.ts';
 
 /**
  * The election a candidate list belongs to, as `val/<år>/kandidatlistor/` names
@@ -34,6 +36,29 @@ export type PartyResolution =
   | { kind: 'party'; props: PartyPageData }
   | { kind: 'redirect'; destination: string }
   | { kind: 'notFound' };
+
+/**
+ * What a `/data/<sökväg>` address resolves to. `body` is the file's bytes, and
+ * `etag` carries their SHA-256 — the checksum of the very file the repository
+ * holds at the built tag. The tag is weak because the response is compressed
+ * further down the stack: identity and gzip are different bytes for the same
+ * representation, which is exactly what a weak validator states.
+ */
+export type DataResourceResolution =
+  | { kind: 'file'; body: Buffer; etag: string }
+  | { kind: 'redirect'; destination: string }
+  | { kind: 'notFound' };
+
+/**
+ * What the documentation page needs to write addresses that exist: the size of
+ * the registry, a party to build the examples from, and the files each election
+ * year actually carries.
+ */
+export interface DataCatalog {
+  antalPartier: number;
+  exempel: { filnamn: string; beteckning: string };
+  valar: Array<{ valar: string; partideltagande: string[]; valresultat: boolean }>;
+}
 
 /**
  * A symbol's drawing measured in its own widths and heights: the aspect ratio
@@ -307,6 +332,8 @@ export function createPartyDataStore (
   let partyIndexPromise: Promise<PartyIndex> | undefined;
   let homeDataPromise: Promise<HomeData> | undefined;
   let parliamentResultsPromise: Promise<ParliamentResultFile[]> | undefined;
+  let dataCatalogPromise: Promise<DataCatalog> | undefined;
+  const dataFiles = new Map<string, Promise<{ body: Buffer; etag: string } | undefined>>();
 
   function getPartyIndex (): Promise<PartyIndex> {
     partyIndexPromise ??= readJson<PartiIndexEntry[]>(path.join(dataRoot, 'derived', 'parti.json')).then(parties => {
@@ -485,6 +512,79 @@ export function createPartyDataStore (
     return { parties, valar, lan, kommuner, riksdag, ...(outsideParliament ? { outsideParliament } : {}) };
   }
 
+  /**
+   * One allowlisted file with its entity tag, read once per path. The data only
+   * changes when the process is restarted at deploy, and every allowlisted file
+   * together is a fraction of what the start page already holds parsed.
+   */
+  function readDataFile (file: string): Promise<{ body: Buffer; etag: string } | undefined> {
+    let entry = dataFiles.get(file);
+    if (!entry) {
+      entry = (async () => {
+        try {
+          const body = await readFile(file);
+          return { body, etag: `W/"${createHash('sha256').update(body).digest('hex')}"` };
+        } catch (error) {
+          if ((error as NodeJS.ErrnoException).code === 'ENOENT') return undefined;
+          dataFiles.delete(file);
+          throw error;
+        }
+      })();
+      dataFiles.set(file, entry);
+    }
+    return entry;
+  }
+
+  async function resolveDataResource (segments: string[]): Promise<DataResourceResolution> {
+    const resource = classifyDataPath(segments);
+    if (!resource) return { kind: 'notFound' };
+
+    if (resource.kind === 'party') {
+      const index = await getPartyIndex();
+      if (!index.current.has(resource.filnamn)) {
+        const redirect = index.redirects.get(resource.filnamn);
+        return redirect
+          ? { kind: 'redirect', destination: `/data/parti/${redirect.filnamn}/index.json` }
+          : { kind: 'notFound' };
+      }
+    }
+
+    const root = path.resolve(dataRoot);
+    const file = path.resolve(root, ...dataPath(resource));
+    const relative = path.relative(root, file);
+    if (relative === '' || relative.startsWith('..') || path.isAbsolute(relative)) return { kind: 'notFound' };
+
+    const entry = await readDataFile(file);
+    return entry ? { kind: 'file', body: entry.body, etag: entry.etag } : { kind: 'notFound' };
+  }
+
+  async function buildDataCatalog (): Promise<DataCatalog> {
+    const [index, years, results] = await Promise.all([getPartyIndex(), electionYears(), readParliamentResults()]);
+    const resultYears = new Set(results.map(result => String(result.valar)));
+
+    const valar = await Promise.all(years.map(async year => {
+      const files = await readdir(path.join(dataRoot, 'val', year, 'partideltagande')).catch(() => [] as string[]);
+      return {
+        valar: year,
+        partideltagande: PARTICIPATION_FILES.filter(name => files.includes(`${name}.json`)).map(String),
+        valresultat: resultYears.has(year),
+      };
+    }));
+
+    const byUuid = new Map(index.parties.map(party => [party.uuid, party]));
+    const largest = (results.at(-1)?.mandatfordelning.partier ?? [])
+      .toSorted((a, b) => b.mandat - a.mandat)
+      .map(row => byUuid.get(row.parti_uuid))
+      .find((party): party is PartiIndexEntry => party !== undefined);
+    const exempel = largest ?? index.parties[0];
+
+    return {
+      antalPartier: index.parties.length,
+      exempel: { filnamn: exempel.filnamn, beteckning: exempel.beteckning },
+      valar,
+    };
+  }
+
   return {
     async readHomeData (): Promise<HomeData> {
       homeDataPromise ??= buildHomeData();
@@ -517,6 +617,13 @@ export function createPartyDataStore (
         body: await readFile(path.join(dataRoot, 'parti', slug, party.partisymbol.filnamn)),
         contentType,
       };
+    },
+
+    resolveDataResource,
+
+    async readDataCatalog (): Promise<DataCatalog> {
+      dataCatalogPromise ??= buildDataCatalog();
+      return await dataCatalogPromise;
     },
 
     async listCurrentSlugs (): Promise<string[]> {

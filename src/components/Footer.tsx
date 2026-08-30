@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const version = process.env.PARTIDATA_VERSION;
 
@@ -36,6 +37,7 @@ function Footer () {
         <div>
           <h3>Öppenhet</h3>
           <ul>
+            <li><Link href="/data/">Data som JSON</Link></li>
             <li><a href="https://github.com/swedev/partidata">Källkod och data på GitHub</a></li>
             <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">Licens: CC0 1.0</a></li>
             {version && (

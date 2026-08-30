@@ -16,6 +16,7 @@ export default async function handler (request: NextApiRequest, response: NextAp
   const baseUrl = process.env.PARTIDATA_BASE_URL ?? 'https://www.partidata.se';
   const urls = [
     new URL('/', baseUrl).toString(),
+    new URL('/data/', baseUrl).toString(),
     ...(await partyData.listCurrentSlugs()).map(slug => new URL(`/parti/${encodeURIComponent(slug)}/`, baseUrl).toString()),
   ];
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${escapeXml(url)}</loc></url>`).join('\n')}\n</urlset>\n`;

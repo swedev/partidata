@@ -1,4 +1,5 @@
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
@@ -53,6 +54,118 @@ function makeData () {
 
   return { root, dataRoot };
 }
+
+/**
+ * Writes the files the `/data/` allowlist serves on top of makeData(), which
+ * the older tests read as a tree without election results.
+ */
+function withDataFiles (dataRoot) {
+  writeJson(dataRoot, 'val/2018/partideltagande/riksdag.json', [
+    { beteckning: 'Testpartiet', kod: '9001', uuid: '11111111-1111-4111-8111-111111111111' }
+  ]);
+  writeJson(dataRoot, 'val/2022/valresultat/riksdag.json', {
+    schema_version: 2,
+    valtyp: 'riksdag',
+    valar: 2022,
+    status: 'slutligt',
+    kallor: [{ id: 'resultat', namn: 'Valmyndigheten', url: 'https://example.com/resultat', hamtad: '2026-08-30' }],
+    rostresultat: {
+      giltiga_roster: 100,
+      partier: [{
+        parti_uuid: '11111111-1111-4111-8111-111111111111',
+        roster: 100,
+        rostandel: 100,
+        kallreferens: 'resultat'
+      }]
+    },
+    mandatfordelning: {
+      partier: [{
+        parti_uuid: '11111111-1111-4111-8111-111111111111',
+        partibeteckning: 'Testpartiet',
+        mandat: 349,
+        kallreferens: 'resultat'
+      }]
+    }
+  });
+  writeJson(dataRoot, 'regioner/index.json', [{ kod: '01', namn: 'Stockholms län', kommuner: [] }]);
+  writeJson(dataRoot, 'derived/riksdag.json', { schema_version: 2, kammare: { valar: 2022, partier: [] } });
+  return dataRoot;
+}
+
+test('the allowlisted resources are served as the bytes on disk, with a sha256 tag', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(withDataFiles(dataRoot));
+
+  const registry = await store.resolveDataResource(['derived', 'parti.json']);
+  assert.equal(registry.kind, 'file');
+  const file = fs.readFileSync(path.join(dataRoot, 'derived/parti.json'));
+  assert.ok(registry.body.equals(file), 'kroppen är filens byte');
+  assert.equal(registry.etag, `W/"${crypto.createHash('sha256').update(file).digest('hex')}"`);
+
+  assert.equal((await store.resolveDataResource(['parti', 'testpartiet', 'index.json'])).kind, 'file');
+  assert.equal((await store.resolveDataResource(['val', '2018', 'partideltagande', 'riksdag.json'])).kind, 'file');
+  assert.equal((await store.resolveDataResource(['val', '2022', 'valresultat', 'riksdag.json'])).kind, 'file');
+  assert.equal((await store.resolveDataResource(['regioner', 'index.json'])).kind, 'file');
+  assert.equal((await store.resolveDataResource(['derived', 'riksdag.json'])).kind, 'file');
+});
+
+test('a previous party filename forwards and an unknown one is not found', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(withDataFiles(dataRoot));
+
+  assert.deepEqual(await store.resolveDataResource(['parti', 'gamla-testpartiet', 'index.json']), {
+    kind: 'redirect',
+    destination: '/data/parti/testpartiet/index.json'
+  });
+  assert.deepEqual(await store.resolveDataResource(['parti', 'okant', 'index.json']), { kind: 'notFound' });
+});
+
+test('candidate lists, profiles and symbols are not served even when the file is there', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(withDataFiles(dataRoot));
+
+  assert.ok(fs.existsSync(path.join(dataRoot, 'val/2018/kandidatlistor/testpartiet.json')));
+  assert.ok(fs.existsSync(path.join(dataRoot, 'parti/testpartiet/profil.json')));
+  for (const segments of [
+    ['val', '2018', 'kandidatlistor', 'testpartiet.json'],
+    ['parti', 'testpartiet', 'profil.json'],
+    ['parti', 'testpartiet', '9001-testpartiet.png'],
+    ['parti', '..', 'kodbyten.json']
+  ]) {
+    assert.deepEqual(await store.resolveDataResource(segments), { kind: 'notFound' }, segments.join('/'));
+  }
+});
+
+test('a year without one of the participation files is not found', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(withDataFiles(dataRoot));
+
+  assert.deepEqual(await store.resolveDataResource(['val', '2022', 'partideltagande', 'landsting.json']), {
+    kind: 'notFound'
+  });
+  assert.deepEqual(await store.resolveDataResource(['val', '2018', 'valresultat', 'riksdag.json']), {
+    kind: 'notFound'
+  });
+});
+
+test('the data catalog lists the files each year carries and an example party', async t => {
+  const { root, dataRoot } = makeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(withDataFiles(dataRoot));
+
+  const catalog = await store.readDataCatalog();
+  assert.equal(catalog.antalPartier, 2);
+  assert.deepEqual(catalog.exempel, { filnamn: 'testpartiet', beteckning: 'Testpartiet' });
+  assert.deepEqual(catalog.valar, [
+    { valar: '2018', partideltagande: ['riksdag'], valresultat: false },
+    { valar: '2022', partideltagande: [], valresultat: true }
+  ]);
+  assert.equal(await store.readDataCatalog(), catalog, 'katalogen byggs en gång per lager');
+});
 
 test('party data resolves current, previous and unknown slugs', async t => {
   const { root, dataRoot } = makeData();

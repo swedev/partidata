@@ -19,6 +19,13 @@ Open data about Swedish political parties. Swedish copy.
   behind nginx. `next/image` optimisation remains disabled.
 - Party pages use `getServerSideProps` and read JSON through
   `src/server/party-data.ts`. Previous slugs return HTTP 308, unknown slugs 404.
+- `/data/<sökväg>` serves an allowlisted subset of `data/` byte for byte through
+  `src/pages/api/data/[...path].ts` (rewritten from `/data/:path+` in
+  `next.config.ts`). `src/server/data-resources.ts` holds the allowlist and is
+  the only place that decides what is handed out — candidate lists, `profil.json`
+  and the symbols are outside it. `/data/` itself is the documentation page,
+  whose field tables live in `src/components/data/fields.ts` and are checked
+  against real specimens by `scripts/data-fields.test.js`.
 - The start page carries its filters in the query string (`valar`, `valtyp`,
   `lan`, `kommun`, `q`, `sortering`), with the defaults left out so the
   unfiltered page stays `/`. `src/components/home/query.ts` translates between
