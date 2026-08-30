@@ -79,7 +79,7 @@ function buildParliamentView (dataDirectory = path.join(ROOT, 'data')) {
   const results = files.map(file => ({ ...file, data: readJson(file.absolutePath) }));
   const chamberResult = results.filter(result => result.data.mandatfordelning?.partier.length > 0).at(-1);
   assert.ok(chamberResult, 'Ingen mandatfördelning hittades');
-  const partyIndex = readJson(path.join(dataDirectory, 'parti', 'index.json'));
+  const partyIndex = readJson(path.join(dataDirectory, 'derived', 'parti.json'));
   const partiesByUuid = new Map(partyIndex.map(party => [party.uuid, party]));
   const currentChamber = new Set(chamberResult.data.mandatfordelning.partier.map(party => party.parti_uuid));
 

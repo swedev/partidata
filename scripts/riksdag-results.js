@@ -361,7 +361,7 @@ function nameKey (value) {
 }
 
 function loadIdentityResolver (dataRoot) {
-  const index = JSON.parse(fs.readFileSync(path.join(dataRoot, 'parti', 'index.json'), 'utf8'));
+  const index = JSON.parse(fs.readFileSync(path.join(dataRoot, 'derived', 'parti.json'), 'utf8'));
   const parties = index.map(entry => JSON.parse(fs.readFileSync(path.join(dataRoot, 'parti', entry.filnamn, 'index.json'), 'utf8')));
   const links = JSON.parse(fs.readFileSync(path.join(dataRoot, 'valresultat', 'riksdag-partikopplingar.json'), 'utf8'));
   const byUuid = new Map(parties.map(party => [party.uuid, party]));

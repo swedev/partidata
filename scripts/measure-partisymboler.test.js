@@ -87,7 +87,7 @@ test('the script writes measurements into the committed registry', t => {
   assert.deepEqual(measured.bild, { bredd: 10, hojd: 6 });
   assert.deepEqual(measured.bildyta, { x: 3, y: 1, bredd: 4, hojd: 2 });
 
-  const indexEntry = readJson(dir, 'data/parti/index.json').find(entry => entry.filnamn === 'testpartiet');
+  const indexEntry = readJson(dir, 'data/derived/parti.json').find(entry => entry.filnamn === 'testpartiet');
   assert.deepEqual(indexEntry.partisymbol, measured);
 });
 

@@ -108,7 +108,7 @@ test('current symbols win and a legacy symbol fills a missing party', t => {
   });
   assert.deepEqual(fs.readFileSync(path.join(dir, 'data/parti/gamla-partiet/9005-gamla-partiet.png')), PNG_B);
 
-  const indexEntry = readJson(dir, 'data/parti/index.json').find(entry => entry.uuid === current.uuid);
+  const indexEntry = readJson(dir, 'data/derived/parti.json').find(entry => entry.uuid === current.uuid);
   assert.deepEqual(indexEntry.partisymbol, current.partisymbol);
 
   const rebuilt = runParti(dir);

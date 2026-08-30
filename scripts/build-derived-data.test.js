@@ -39,7 +39,7 @@ function makeData (partier) {
     filnamn: `parti-${party.forkortning.toLowerCase()}`,
     forkortning: party.forkortning,
   }));
-  writeJson(root, 'parti/index.json', registry.map(({ kod, ...party }) => party));
+  writeJson(root, 'derived/parti.json', registry.map(({ kod, ...party }) => party));
   registry.forEach(party => writeJson(root, `parti/${party.filnamn}/index.json`, party));
   const validVotes = partier.reduce((sum, party) => sum + (party.roster ?? 1), 0);
   writeJson(root, 'val/2022/valresultat/riksdag.json', {

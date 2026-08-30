@@ -21,7 +21,7 @@ copyDirectory(path.join(projectRoot, 'public'), path.join(releaseRoot, 'public')
 copyDirectory(path.join(projectRoot, '.next', 'static'), path.join(releaseRoot, '.next', 'static'));
 copyDirectory(path.join(projectRoot, 'data'), path.join(releaseRoot, 'data'));
 
-for (const required of ['server.js', 'public/favicon.ico', '.next/static', 'data/parti/index.json']) {
+for (const required of ['server.js', 'public/favicon.ico', '.next/static', 'data/derived/parti.json']) {
   if (!fs.existsSync(path.join(releaseRoot, required))) throw new Error(`Ofullständig release: ${required} saknas`);
 }
 

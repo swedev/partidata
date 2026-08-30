@@ -36,7 +36,7 @@ function makeData () {
     filnamn: 'utan-profil'
   };
 
-  writeJson(dataRoot, 'parti/index.json', [testParty, plainParty].map(({ kod, ...party }) => party));
+  writeJson(dataRoot, 'derived/parti.json', [testParty, plainParty].map(({ kod, ...party }) => party));
   writeJson(dataRoot, 'parti/testpartiet/index.json', testParty);
   writeJson(dataRoot, 'parti/testpartiet/profil.json', {
     namn: 'Testpartiet',
@@ -219,7 +219,7 @@ function makeHomeData () {
     }
   ];
 
-  writeJson(dataRoot, 'parti/index.json', parties.map(({ kod, deltagande, ...entry }) => entry));
+  writeJson(dataRoot, 'derived/parti.json', parties.map(({ kod, deltagande, ...entry }) => entry));
   parties.forEach(party => writeJson(dataRoot, `parti/${party.filnamn}/index.json`, party));
   writeJson(dataRoot, 'regioner/index.json', [
     { kod: '18', namn: 'Örebro län', uuid: '10101010-1010-4010-8010-101010101010', kommuner: [] },

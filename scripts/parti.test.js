@@ -58,7 +58,7 @@ function editParti (dir, filnamn, fields) {
  * @return {Object[]}
  */
 function identity (dir) {
-  const index = readJson(dir, 'data/parti/index.json');
+  const index = readJson(dir, 'data/derived/parti.json');
   return index.map(entry => {
     const data = parti(dir, entry.filnamn);
     return {
@@ -323,7 +323,7 @@ test('a renamed party moves to a new filnamn and keeps the old one as tidigare_f
   assert.equal(testpartiet.forkortning, 'NTP');
   assert.equal(fs.existsSync(path.join(dir, 'data/parti/testpartiet')), false);
 
-  const entry = readJson(dir, 'data/parti/index.json').find(p => p.uuid === PARTIER[0].uuid);
+  const entry = readJson(dir, 'data/derived/parti.json').find(p => p.uuid === PARTIER[0].uuid);
   assert.equal(entry.filnamn, 'nya-testpartiet');
   assert.deepEqual(entry.tidigare_filnamn, ['testpartiet']);
   assert.match(result.stdout, /9001 Testpartiet → Nya Testpartiet \(testpartiet → nya-testpartiet\)/);
@@ -524,26 +524,27 @@ test('rebuilding from the committed data changes nothing', t => {
   assert.deepEqual(snapshot(dir), before);
 });
 
-test('index.json is sorted by filnamn and covers every party file', t => {
+test('derived/parti.json is sorted by filnamn and covers every party file', t => {
   const dir = makeTree();
   t.after(() => removeTree(dir));
   assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
 
-  const index = readJson(dir, 'data/parti/index.json');
+  const index = readJson(dir, 'data/derived/parti.json');
   const filnamn = index.map(entry => entry.filnamn);
   assert.deepEqual(filnamn, [...filnamn].sort());
   const dirs = fs.readdirSync(path.join(dir, 'data/parti'), { withFileTypes: true })
     .filter(entry => entry.isDirectory())
     .map(entry => entry.name);
   assert.deepEqual(filnamn.slice().sort(), dirs.sort());
+  assert.equal(fs.existsSync(path.join(dir, 'data/parti/index.json')), false);
 });
 
-test('index.json carries the forkortning and omrade of the party file', t => {
+test('derived/parti.json carries the forkortning and omrade of the party file', t => {
   const dir = makeTree();
   t.after(() => removeTree(dir));
   assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
 
-  const index = readJson(dir, 'data/parti/index.json');
+  const index = readJson(dir, 'data/derived/parti.json');
   const entry = index.find(party => party.filnamn === 'testpartiet');
   assert.equal(entry.forkortning, 'TP');
   assert.equal(entry.forkortning, parti(dir, 'testpartiet').forkortning);
@@ -649,14 +650,14 @@ test('every JSON value type is preserved in a hand-added field', t => {
   assert.deepEqual(Object.keys(data.v_nastlat), ['b', 'a']);
 });
 
-test('index.json does not take up hand-added fields', t => {
+test('derived/parti.json does not take up hand-added fields', t => {
   const dir = makeTree();
   t.after(() => removeTree(dir));
   assert.equal(runImport(dir, '2022', CSV_2022).status, 0);
   editParti(dir, 'testpartiet', { grundad: '1988-02-04' });
 
   assert.equal(runParti(dir).status, 0);
-  const entry = readJson(dir, 'data/parti/index.json').find(party => party.filnamn === 'testpartiet');
+  const entry = readJson(dir, 'data/derived/parti.json').find(party => party.filnamn === 'testpartiet');
   assert.equal('grundad' in entry, false);
 });
 

@@ -577,7 +577,7 @@ function buildParties (registry, yearFiles, areas = loadAreas()) {
       file: dataPath('parti', party.filnamn, 'index.json'),
       json: party.data
     }))
-    .concat([{ file: dataPath('parti', 'index.json'), json: index }]);
+    .concat([{ file: dataPath('derived', 'parti.json'), json: index }]);
 
   return { writeSet, index, parties: built, renamed };
 }
@@ -787,7 +787,9 @@ function validate (build, yearFiles) {
 
   const index = build.writeSet[build.writeSet.length - 1].json;
   if (index.length !== build.parties.length) {
-    throw new Error(`index.json has ${index.length} entries, expected ${build.parties.length}`);
+    throw new Error(
+      `derived/parti.json has ${index.length} entries, expected ${build.parties.length}`
+    );
   }
 
   validateRenames(build.renamed || []);
