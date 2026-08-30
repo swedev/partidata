@@ -7,7 +7,7 @@ Open data about Swedish political parties. Swedish copy.
 - Commit messages, GitHub issues and pull requests are written in English —
   titles, bodies and comments. The site's copy, the data and the JSON field
   names stay Swedish.
-- Branch + PR flow — never commit directly to `main`. PRs are squash-merged.
+- Branch + PR flow; PRs are squash-merged.
 - CI (`Integrate`) must be green; `npm run precommit` runs the equivalent local
   lint, typecheck, data validation, tests, standalone build and HTTP smoke.
 - Deploys happen on `v*` tags, not on merge: tag `main` and push the tag
