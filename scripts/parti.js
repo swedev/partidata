@@ -58,10 +58,20 @@ function readJson (file) {
  * Reads the party files. They are the source of truth for identity (uuid,
  * filnamn, tidigare_filnamn), for the fields kept as read
  * (valmyndigheten_registreringsdatum, partisymbol) and for every extension
- * field, which is carried through to the rebuilt file. The fields derived from
- * the election data — kod, beteckning, omrade, deltagande and their history —
- * are rebuilt from the year files on every build, so what the file holds for
- * them is a starting point, not a value that survives.
+ * field, which is carried through to the rebuilt file. A hand edit to one of
+ * those is what the next build writes back.
+ *
+ * The fields derived from the election data — kod, beteckning, omrade,
+ * deltagande and their history (tidigare_koder, tidigare_beteckningar) — are
+ * rebuilt from the year files on every build, so what the file holds for them
+ * is a starting point, not a value that survives. A hand edit to one of those
+ * is discarded.
+ *
+ * forkortning and registrerad_partibeteckning sit between the two: they are
+ * taken from the newest year whose partier.json lists the party, and kept as
+ * read only for a party no such year file covers. So a hand edit survives for
+ * a party the election data says nothing about, and is discarded for every
+ * party it does.
  *
  * An extension key that fails EXTRA_KEY_PATTERN throws here, before anything is
  * built, moved or written, so an invalid key leaves the data untouched.
