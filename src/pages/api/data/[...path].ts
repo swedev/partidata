@@ -49,7 +49,7 @@ export default async function handler (request: NextApiRequest, response: NextAp
   }
 
   response.setHeader('Cache-Control', 'public, max-age=3600');
-  // nginx gzips JSON without `gzip_vary on`, so the app states the variance.
+  // The body is compressed for a client that asks for it, so it varies.
   response.setHeader('Vary', 'Accept-Encoding');
   response.setHeader('ETag', resolution.etag);
   if (process.env.PARTIDATA_VERSION) response.setHeader('X-Partidata-Version', process.env.PARTIDATA_VERSION);

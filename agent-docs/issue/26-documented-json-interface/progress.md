@@ -48,6 +48,13 @@ Inget — implementationen ligger på `issue/26-documented-json-interface`.
   egen adress och rätteligen svarar 200.
 - `Content-Length` prövas mot okomprimerade svar: Next komprimerar när klienten ber om det och
   svarar då styckvis.
+- Etaggen är svag, `W/"<sha256>"`, inte stark som planen skrev. Next komprimerar svaret själv
+  när klienten ber om det och lämnar etaggen orörd, så samma etagg skulle annars stå för två
+  olika byteföljder — vilket en stark etagg inte får göra. Planens premiss att nginx äger
+  gzip stämmer inte heller: `deploy/partidata.se.conf` sätter inte `gzip_proxied`, och
+  förvalet `off` gör att nginx inte komprimerar vidarebefordrade svar alls. Att i stället
+  stänga av Next-komprimeringen hade därför skickat 6,9 MB okomprimerat och krävt en
+  nginx-ändring, som ligger utanför den här PR:en.
 - Minnesmätning mot `.release/server.js`: 109,3 MB efter `/api/health`, 113,7 MB efter att alla
   24 adresser på `/data/` hämtats en gång, 113,7 MB efter andra varvet. `kommun.json` (6,9 MB):
   10,3 ms första gången, 3,3 ms ur cachen.

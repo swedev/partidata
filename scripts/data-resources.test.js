@@ -52,12 +52,15 @@ test('everything outside the allowlist names no resource', () => {
   }
 });
 
-test('an entity tag matches through a weakening proxy but never unquoted', () => {
-  const etag = '"abc"';
-  for (const header of ['"abc"', 'W/"abc"', '"x", "abc"', ' "abc" ', '*']) {
-    assert.equal(matchesEtag(header, etag), true, header);
-  }
-  for (const header of [undefined, '', '"abd"', 'abc', '"ab', 'W/abc']) {
-    assert.equal(matchesEtag(header, etag), false, String(header));
+test('an entity tag is compared weakly but never unquoted', () => {
+  // The tag the route sends is weak; a client may echo it either way, and a
+  // proxy may add or drop the prefix, so both sides are normalised.
+  for (const etag of ['"abc"', 'W/"abc"']) {
+    for (const header of ['"abc"', 'W/"abc"', '"x", "abc"', ' "abc" ', 'W/"x", W/"abc"', '*']) {
+      assert.equal(matchesEtag(header, etag), true, `${header} mot ${etag}`);
+    }
+    for (const header of [undefined, '', '"abd"', 'abc', '"ab', 'W/abc']) {
+      assert.equal(matchesEtag(header, etag), false, `${header} mot ${etag}`);
+    }
   }
 });

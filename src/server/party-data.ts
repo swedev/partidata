@@ -38,9 +38,11 @@ export type PartyResolution =
   | { kind: 'notFound' };
 
 /**
- * What a `/data/<sökväg>` address resolves to. `body` is the file's bytes, so
- * `etag` — its SHA-256 — is the checksum of the very file the repository holds
- * at the built tag.
+ * What a `/data/<sökväg>` address resolves to. `body` is the file's bytes, and
+ * `etag` carries their SHA-256 — the checksum of the very file the repository
+ * holds at the built tag. The tag is weak because the response is compressed
+ * further down the stack: identity and gzip are different bytes for the same
+ * representation, which is exactly what a weak validator states.
  */
 export type DataResourceResolution =
   | { kind: 'file'; body: Buffer; etag: string }
@@ -521,7 +523,7 @@ export function createPartyDataStore (
       entry = (async () => {
         try {
           const body = await readFile(file);
-          return { body, etag: `"${createHash('sha256').update(body).digest('hex')}"` };
+          return { body, etag: `W/"${createHash('sha256').update(body).digest('hex')}"` };
         } catch (error) {
           if ((error as NodeJS.ErrnoException).code === 'ENOENT') return undefined;
           dataFiles.delete(file);

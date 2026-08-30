@@ -417,7 +417,7 @@ async function main () {
     assert.match(sitemapBody, /<loc>[^<]*\/data\/<\/loc>/, 'sitemapen tar med dokumentationssidan');
 
     const registryFile = fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'parti.json'));
-    const registryEtag = `"${crypto.createHash('sha256').update(registryFile).digest('hex')}"`;
+    const registryEtag = `W/"${crypto.createHash('sha256').update(registryFile).digest('hex')}"`;
 
     /** The full header set a JSON resource answers with, checked in one place. */
     function expectDataHeaders (response, { etag, length, body = true } = {}) {
@@ -440,15 +440,28 @@ async function main () {
     const registry = await fetch(`${baseUrl}/data/derived/parti.json`, { redirect: 'manual', headers: identity });
     assert.equal(registry.status, 200, 'registret svarar direkt, utan snedstrecksvidarebefordran');
     expectDataHeaders(registry, { etag: registryEtag, length: registryFile.length });
-    assert.match(registry.headers.get('etag'), /^"[0-9a-f]{64}"$/, 'etaggen är en sha256');
+    assert.match(registry.headers.get('etag'), /^W\/"[0-9a-f]{64}"$/, 'etaggen är en svag sha256');
     assert.ok(Buffer.from(await registry.arrayBuffer()).equals(registryFile), 'kroppen är filens byte');
 
-    for (const header of [registryEtag, `W/${registryEtag}`]) {
+    for (const header of [registryEtag, registryEtag.replace('W/', '')]) {
       const notModified = await fetch(`${baseUrl}/data/derived/parti.json`, { headers: { 'If-None-Match': header } });
       assert.equal(notModified.status, 304, `${header} ger 304`);
       expectDataHeaders(notModified, { etag: registryEtag, body: false });
       assert.equal((await notModified.text()).length, 0, 'ett 304-svar har ingen kropp');
     }
+    // The same file is served compressed and uncompressed, and both carry the
+    // same weak validator — which is what makes it correct for it to be weak.
+    const compressed = await fetch(`${baseUrl}/data/derived/parti.json`, {
+      headers: { 'Accept-Encoding': 'gzip' }
+    });
+    assert.equal(compressed.status, 200);
+    assert.equal(compressed.headers.get('content-encoding'), 'gzip', 'svaret komprimeras när klienten ber om det');
+    assert.equal(compressed.headers.get('etag'), registryEtag, 'båda kodningarna bär samma svaga etagg');
+    const compressedConditional = await fetch(`${baseUrl}/data/derived/parti.json`, {
+      headers: { 'Accept-Encoding': 'gzip', 'If-None-Match': registryEtag }
+    });
+    assert.equal(compressedConditional.status, 304, 'etaggen från det komprimerade svaret ger 304');
+
     for (const header of ['abc', `"${'0'.repeat(64)}"`]) {
       const stale = await fetch(`${baseUrl}/data/derived/parti.json`, { headers: { 'If-None-Match': header } });
       assert.equal(stale.status, 200, `${header} matchar inte etaggen`);

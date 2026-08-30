@@ -168,7 +168,7 @@ const DataPage: NextPage<DataCatalog> = ({ antalPartier, exempel, valar }) => {
           <h3>Huvuden</h3>
           <ul>
             <li><code>Cache-Control: public, max-age=3600</code> — datan ändras bara när en ny version driftsätts, så ett svar är som mest en timme gammalt.</li>
-            <li><code>ETag</code> — filens SHA-256 som stark etagg. Skicka tillbaka den i <code>If-None-Match</code> och få 304 utan kropp när filen är oförändrad. Levereras svaret komprimerat märks etaggen <code>W/</code> av servern; skicka den ändå, den matchar.</li>
+            <li><code>ETag</code> — <code>W/</code> följt av filens SHA-256. Etaggen är svag därför att samma fil levereras både komprimerad och okomprimerad; det är samma representation, och det är precis vad en svag etagg säger. Skicka tillbaka den oförändrad i <code>If-None-Match</code> och få 304 utan kropp när filen är densamma.</li>
             <li><code>Vary: Accept-Encoding</code> — kroppen varierar med komprimeringen.</li>
             <li><code>X-Partidata-Version</code> — den version som svarade, samma nummer som i sidfoten och i <code>/api/health</code>.</li>
             <li><code>Access-Control-Allow-Origin: *</code> på varje svar, och <code>Access-Control-Expose-Headers: ETag, X-Partidata-Version</code>, så att en webbläsarklient kan läsa båda.</li>

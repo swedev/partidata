@@ -87,16 +87,17 @@ export function dataPath (resource: DataResource): string[] {
 }
 
 /**
- * Whether an `If-None-Match` header carries the resource's entity tag. The tag
- * the app sends is strong, but nginx weakens it to `W/"…"` when it compresses
- * the body, so the `W/` prefix and the quotes are compared apart. An entry
- * without quotes is not an entity tag and never matches.
+ * Whether an `If-None-Match` header carries the resource's entity tag. `304`
+ * uses the weak comparison, so the `W/` prefix is stripped from both sides and
+ * only the quoted tag is compared. An entry without quotes is not an entity tag
+ * and never matches.
  */
 export function matchesEtag (header: string | undefined, etag: string): boolean {
   if (!header) return false;
   if (header.trim() === '*') return true;
+  const expected = etag.replace(/^W\//, '');
   return header.split(',').some(entry => {
     const candidate = entry.trim().replace(/^W\//, '');
-    return /^"[^"]*"$/.test(candidate) && candidate === etag;
+    return /^"[^"]*"$/.test(candidate) && candidate === expected;
   });
 }

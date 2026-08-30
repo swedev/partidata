@@ -101,7 +101,7 @@ test('the allowlisted resources are served as the bytes on disk, with a sha256 t
   assert.equal(registry.kind, 'file');
   const file = fs.readFileSync(path.join(dataRoot, 'derived/parti.json'));
   assert.ok(registry.body.equals(file), 'kroppen är filens byte');
-  assert.equal(registry.etag, `"${crypto.createHash('sha256').update(file).digest('hex')}"`);
+  assert.equal(registry.etag, `W/"${crypto.createHash('sha256').update(file).digest('hex')}"`);
 
   assert.equal((await store.resolveDataResource(['parti', 'testpartiet', 'index.json'])).kind, 'file');
   assert.equal((await store.resolveDataResource(['val', '2018', 'partideltagande', 'riksdag.json'])).kind, 'file');
