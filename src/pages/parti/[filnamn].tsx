@@ -29,6 +29,7 @@ function PartyPage ({
   profile,
   symbolSrc,
   symbolFrame,
+  valresultat,
 }: PartyPageProps) {
   const displayName = profile?.namn ?? registeredName;
   const pageName = duplicateName && area ? `${displayName} (${area})` : displayName;
@@ -39,7 +40,6 @@ function PartyPage ({
   const participationYears = Object.entries(participation ?? {})
     .filter(([, value]) => value.riksdag || value.region.length > 0 || value.kommun.length > 0)
     .sort(([a], [b]) => Number(b) - Number(a));
-  const latestResult = profile?.valresultat?.resultat.at(-1);
   const style = { '--profile-accent': profile?.accentfarg ?? '#082354' } as CSSProperties;
 
   return (
@@ -52,11 +52,11 @@ function PartyPage ({
           <link rel="icon" href="/img/partidata/mark.svg" type="image/svg+xml" />
           <link rel="canonical" href={`https://www.partidata.se/parti/${slug}/`} />
         </Head>
-        <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} displayName={pageName} symbol={symbol} symbolSrc={symbolSrc} symbolFrame={symbolFrame} latestResult={latestResult} latestParticipation={participationYears[0]} wikidata={wikidata} />
+        <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} displayName={pageName} symbol={symbol} symbolSrc={symbolSrc} symbolFrame={symbolFrame} results={valresultat} latestParticipation={participationYears[0]} wikidata={wikidata} />
         <DocumentsSection profile={resolvedProfile} abbreviation={abbreviation} />
-        <RepresentativesSection profile={resolvedProfile} abbreviation={abbreviation} mandateCount={latestResult?.mandat} />
-        {profile?.valresultat && <ElectionResultsSection results={profile.valresultat} partyLabel={abbreviation} />}
-        {profile?.valresultat && <TurnoutSection />}
+        <RepresentativesSection profile={resolvedProfile} abbreviation={abbreviation} mandateCount={valresultat?.kammare?.mandat} />
+        {valresultat && <ElectionResultsSection key={slug} results={valresultat} partyLabel={abbreviation} />}
+        {valresultat && <TurnoutSection />}
         {participationYears.length > 0 && <BallotSection participationYears={participationYears} candidateLists={candidateLists} slug={slug} partyName={displayName} />}
         <WikipediaSection profile={resolvedProfile} />
         <NewsSection profile={resolvedProfile} />

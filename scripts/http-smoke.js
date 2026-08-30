@@ -35,6 +35,17 @@ function electionYears (projectRoot) {
     .toSorted();
 }
 
+/** Every imported parliamentary result file, oldest first. */
+function parliamentResults (projectRoot) {
+  const electionRoot = path.join(projectRoot, 'data', 'val');
+  return fs.readdirSync(electionRoot, { withFileTypes: true })
+    .filter(entry => entry.isDirectory() && /^\d{4}$/.test(entry.name))
+    .map(entry => path.join(electionRoot, entry.name, 'valresultat', 'riksdag.json'))
+    .filter(file => fs.existsSync(file))
+    .map(file => JSON.parse(fs.readFileSync(file, 'utf8')))
+    .toSorted((a, b) => a.valar - b.valar);
+}
+
 /** The parties standing in one election, which is what a chosen year narrows to. */
 function standingParties (projectRoot, parties, year) {
   const participating = new Set(JSON.parse(fs.readFileSync(
@@ -79,6 +90,11 @@ function expectedGrid (parties) {
 /** The "N av M" the results heading carries, whichever way React split the text. */
 function countPattern (matched, total) {
   return new RegExp(`>${matched}(<!-- -->)? av (<!-- -->)?${total}</span>`);
+}
+
+/** The "N av 349" of the hero's seat block, whichever way React split the text. */
+function seatPattern (seats) {
+  return new RegExp(`<dt>Mandat i riksdagen</dt><dd>${seats}(<!-- -->)? <span>av 349</span></dd>`);
 }
 
 /** The markup of one segmented control, cut out by the legend that names it. */
@@ -173,6 +189,30 @@ async function main () {
   assert.ok(cleanedSlug);
   assert.ok(withSymbol);
   assert.ok(founded?.grundat, `${current.filnamn} har ett grundandedatum från Wikidata`);
+
+  const results = parliamentResults(projectRoot);
+  assert.ok(results.length > 0, 'riksdagsresultat är importerade');
+  const chamberResult = results.at(-1);
+  assert.equal(chamberResult.valar, chamber.valar, 'kammaråret är det senaste importerade valet');
+  const currentSeats = chamberResult.mandatfordelning.partier.find(party => party.parti_uuid === current.uuid);
+  assert.ok(currentSeats, `${current.filnamn} har mandat i kammaren`);
+  assert.equal(
+    currentSeats.mandat,
+    chamber.partier.find(party => party.parti_uuid === current.uuid).mandat,
+    'partisidans mandat är samma siffra som startsidans riksdagssektion'
+  );
+  const seated = new Set(chamberResult.mandatfordelning.partier.map(party => party.parti_uuid));
+  const byUuid = new Map(parties.map(party => [party.uuid, party]));
+  const withoutSeats = chamberResult.rostresultat.partier
+    .map(row => byUuid.get(row.parti_uuid))
+    .filter(party => party && !seated.has(party.uuid))
+    .toSorted((a, b) => a.filnamn < b.filnamn ? -1 : a.filnamn > b.filnamn ? 1 : 0)
+    .at(0);
+  assert.ok(withoutSeats, `valet ${chamber.valar} har ett registrerat parti utan mandat`);
+  assert.ok(
+    !results.some(result => result.rostresultat.partier.some(row => row.parti_uuid === withoutParticipation.uuid)),
+    `${withoutParticipation.filnamn} saknar röstrad i varje importerat riksdagsval`
+  );
 
   const port = await freePort();
   const baseUrl = `http://127.0.0.1:${port}`;
@@ -301,6 +341,17 @@ async function main () {
       'källraden länkar till Wikidata med Q-id:t synligt'
     );
     assert.match(profileBody, new RegExp(`hämtat <!-- -->${founded.hamtad}`), 'källraden anger hämtdatumet');
+    assert.match(profileBody, seatPattern(currentSeats.mandat), 'partisidan visar kammarmandaten från de importerade resultaten');
+    assert.match(profileBody, /<section class="profile-results"/, 'ett parti med resultat får resultatsektionen');
+    assert.match(profileBody, /id="deltagande"/, 'ett parti med resultat får valdeltagandesektionen');
+
+    const withoutSeatsProfile = await fetch(`${baseUrl}/parti/${withoutSeats.filnamn}/`);
+    assert.equal(withoutSeatsProfile.status, 200);
+    const withoutSeatsBody = await withoutSeatsProfile.text();
+    assert.match(withoutSeatsBody, /<section class="profile-results"/, 'ett parti med röstrad men utan mandat får resultatsektionen');
+    assert.match(withoutSeatsBody, /id="deltagande"/, 'ett parti med röstrad men utan mandat får valdeltagandesektionen');
+    assert.doesNotMatch(withoutSeatsBody, /<dt>Mandat i riksdagen<\/dt>/, 'ett parti utan mandat får inget mandatblock');
+    assert.doesNotMatch(withoutSeatsBody, /platser i kammaren/, 'ett parti utan mandat får inget kammarblock');
 
     const duplicateProfile = await fetch(`${baseUrl}/parti/${duplicate.filnamn}/`);
     assert.equal(duplicateProfile.status, 200);
@@ -313,6 +364,9 @@ async function main () {
     const withoutParticipationBody = await withoutParticipationProfile.text();
     assert.match(withoutParticipationBody, /Inget registrerat deltagande/);
     assert.doesNotMatch(withoutParticipationBody, /<dt>Grundat<\/dt>/, 'ett parti utan Wikidata-uppgift får ingen tom platshållare');
+    assert.doesNotMatch(withoutParticipationBody, /profile-results/, 'ett parti utan resultat får ingen resultatsektion');
+    assert.doesNotMatch(withoutParticipationBody, /id="deltagande"/, 'ett parti utan resultat får ingen valdeltagandesektion');
+    assert.doesNotMatch(withoutParticipationBody, /<dt>Mandat i riksdagen<\/dt>/, 'ett parti utan resultat får inget mandatblock');
 
     const redirect = await fetch(`${baseUrl}/parti/${previous.tidigare_filnamn[0]}/`, { redirect: 'manual' });
     assert.equal(redirect.status, 308);

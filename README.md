@@ -114,7 +114,7 @@ Tre kodsystem möts i `data/val/`, och `R` och `K` betyder olika saker i två av
 
 ### val/\<år\>/valresultat/riksdag.json
 
-Slutligt riksdagsresultat 1994–2022 i en gemensam, källoberoende modell: giltiga röster, röster och andel per parti, mandat, stabilt parti-uuid samt källreferenser med SHA-256. Historiska rader som inte kan identitetskopplas säkert och aggregerade `Övriga partier` redovisas uttryckligen utan gissade uuid:n. Se [modell, källor och rankingmetod](docs/riksdagsvalresultat.md).
+Slutligt riksdagsresultat 1994–2022 i en gemensam, källoberoende modell: giltiga röster, röster och andel per parti, mandat, stabilt parti-uuid samt källreferenser med SHA-256. Historiska rader som inte kan identitetskopplas säkert och aggregerade `Övriga partier` redovisas uttryckligen utan gissade uuid:n. Partisidans valresultat härleds ur den här filen, enligt [reglerna för partisidan](docs/riksdagsvalresultat.md#partisidan). Se [modell, källor och rankingmetod](docs/riksdagsvalresultat.md).
 
 ### derived/
 

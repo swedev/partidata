@@ -92,17 +92,33 @@ export interface PartiProfilDokument {
   delar?: PartiProfilDokumentdel[];
 }
 
-export interface PartiProfilValresultatPost {
+/**
+ * One election year of a party's parliamentary result, derived from
+ * `data/val/<år>/valresultat/riksdag.json`. A year is present only when the
+ * file carries a vote row for the party's uuid.
+ */
+export interface PartiValresultatPost {
   valar: number;
+  roster: number;
   rostandel: number;
+  /** 0 when the year's seat distribution has no row for the party. */
   mandat: number;
-  roster?: number;
+  /** Share minus the previous imported election's share, absent without one. */
+  forandring?: number;
+  kalla: PartiProfilKalla;
+  /** Only when the seat row cites another source than the vote row. */
+  mandatkalla?: PartiProfilKalla;
 }
 
-export interface PartiProfilValresultat {
+/**
+ * A party's parliamentary results across the imported election years.
+ * `kammare` means seats in the most recent election with a seat distribution,
+ * which is the chamber `data/derived/riksdag.json` describes.
+ */
+export interface PartiValresultat {
   valtyp: 'riksdag';
-  kallor: PartiProfilKalla[];
-  resultat: PartiProfilValresultatPost[];
+  resultat: PartiValresultatPost[];
+  kammare?: { valar: number; mandat: number };
 }
 
 export interface PartiProfilKanal {
@@ -171,7 +187,6 @@ export interface PartiProfil {
   foretradare?: PartiProfilForetradare[];
   nyheter?: PartiProfilNyhet[];
   wikipedia?: PartiProfilWikipedia;
-  valresultat?: PartiProfilValresultat;
   dokument?: PartiProfilDokument[];
 }
 

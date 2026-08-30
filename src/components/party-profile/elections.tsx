@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import parliamentView from 'data/derived/riksdag.json';
-import type { PartiDeltagande, PartiProfilValresultat, PartiProfilValresultatPost } from 'src/types';
+import type { PartiDeltagande, PartiValresultat, PartiValresultatPost } from 'src/types';
 import { SectionHeader, SourceLine } from './shared';
 
 export type ElectionType = 'R' | 'L' | 'K';
@@ -37,7 +37,7 @@ const chamberSeats = (() => {
   }));
 })();
 
-function ElectionChart ({ results, selected, onSelect }: { results: PartiProfilValresultatPost[]; selected: number; onSelect: (index: number) => void }) {
+function ElectionChart ({ results, selected, onSelect }: { results: PartiValresultatPost[]; selected: number; onSelect: (index: number) => void }) {
   const highestResult = Math.max(4, ...results.map(result => result.rostandel));
   const maximum = Math.max(8, Math.ceil((highestResult * 1.15) / 2) * 2);
   const thresholdPosition = (4 / maximum) * 100;
@@ -84,11 +84,14 @@ function ChamberDiagram ({ mandates, partyLabel }: { mandates: number; partyLabe
   );
 }
 
-export function ElectionResultsSection ({ results, partyLabel }: { results: PartiProfilValresultat; partyLabel?: string }) {
+export function ElectionResultsSection ({ results, partyLabel }: { results: PartiValresultat; partyLabel?: string }) {
   const [selected, setSelected] = useState(results.resultat.length - 1);
   const result = results.resultat[selected];
-  const latestResult = results.resultat.at(-1);
-  const previousResult = selected > 0 ? results.resultat[selected - 1] : undefined;
+  const firstYear = results.resultat[0]?.valar;
+  const lastYear = results.resultat.at(-1)?.valar;
+  const sourceNames = [...new Set(results.resultat.map(post => post.kalla.namn))];
+  const seriesSource = `${sourceNames.join(' och ')} · slutligt resultat`;
+  const chamber = results.kammare;
   if (!result) return null;
 
   return (
@@ -97,28 +100,30 @@ export function ElectionResultsSection ({ results, partyLabel }: { results: Part
         <SectionHeader
           id="results-heading"
           title="Vad partiet har fått i val"
-          subtitle={`Riksdagsval ${results.resultat[0]?.valar}–${latestResult?.valar}, andel av giltiga röster i hela riket`}
-          aside={<div className="profile-authority-brand"><Image src="/img/kallor/valmyndigheten.png" alt="" width={38} height={38} /><div><strong>Valmyndigheten</strong><small>valresultat · slutlig rösträkning</small></div></div>}
+          subtitle={results.resultat.length > 1
+            ? `Riksdagsval ${firstYear}–${lastYear}, andel av giltiga röster i hela riket`
+            : `Riksdagsvalet ${firstYear}, andel av giltiga röster i hela riket`}
+          aside={<div className="profile-authority-brand"><Image src="/img/kallor/valmyndigheten.png" alt="" width={38} height={38} /><div><strong>Valmyndigheten</strong><small>{seriesSource}</small></div></div>}
         />
         <div className="profile-results__top">
-          <div className="profile-results__intro"><p>Diagrammet visar partiets andel av de giltiga rösterna och antal mandat i varje riksdagsval.</p><SourceLine>Valmyndigheten · slutlig rösträkning</SourceLine></div>
+          <div className="profile-results__intro"><p>Diagrammet visar partiets andel av de giltiga rösterna och antal mandat i varje riksdagsval.</p><SourceLine>{seriesSource}</SourceLine></div>
           <div>
             <ElectionChart results={results.resultat} selected={selected} onSelect={setSelected} />
             <div className="profile-selected-result">
-              <header><strong>Riksdagsvalet {result.valar}</strong><span>Valmyndigheten · slutligt resultat</span></header>
+              <header><strong>Riksdagsvalet {result.valar}</strong><span>{result.kalla.namn} · slutligt resultat</span></header>
               <dl>
                 <div><dt>Andel giltiga röster</dt><dd>{percentageFormatter.format(result.rostandel)} %</dd></div>
-                <div><dt>Röster</dt><dd>{result.roster !== undefined ? new Intl.NumberFormat('sv-SE').format(result.roster) : '—'}</dd></div>
+                <div><dt>Röster</dt><dd>{new Intl.NumberFormat('sv-SE').format(result.roster)}</dd></div>
                 <div><dt>Mandat</dt><dd>{result.mandat}</dd></div>
-                <div><dt>Mot föregående val</dt><dd>{previousResult ? `${result.rostandel - previousResult.rostandel > 0 ? '+' : ''}${percentageFormatter.format(result.rostandel - previousResult.rostandel)}` : '—'}</dd></div>
+                <div><dt>Mot föregående val</dt><dd>{result.forandring !== undefined ? `${result.forandring > 0 ? '+' : ''}${percentageFormatter.format(result.forandring)}` : '—'}</dd></div>
               </dl>
             </div>
           </div>
         </div>
-        {latestResult && <div className="profile-results__bottom">
+        {chamber && <div className="profile-results__bottom">
           <div>
-            <h3>Partiets {latestResult.mandat} platser i kammaren</h3>
-            <ChamberDiagram mandates={latestResult.mandat} partyLabel={partyLabel} />
+            <h3>Partiets {chamber.mandat} platser i kammaren</h3>
+            <ChamberDiagram mandates={chamber.mandat} partyLabel={partyLabel} />
             <SourceLine source={parliamentView.kammare.kalla}>349 mandat efter valet {parliamentView.kammare.valar} · </SourceLine>
           </div>
           <div className="profile-composition">
@@ -126,7 +131,12 @@ export function ElectionResultsSection ({ results, partyLabel }: { results: Part
             <ul>{parliamentComposition.map(party => <li key={party.label} className={party.label === partyLabel ? 'is-current' : undefined}><span>{party.label}</span><i><b style={{ width: `${(party.seats / parliamentComposition[0].seats) * 100}%` }} /></i><strong>{party.seats}</strong></li>)}</ul>
           </div>
         </div>}
-        <div className="profile-results__sources">{results.kallor.map(source => <SourceLine source={source} key={source.url} />)}</div>
+        <div className="profile-results__sources">
+          {results.resultat.flatMap(post => [
+            <SourceLine source={post.kalla} key={`${post.valar}-${post.kalla.url}`}>Riksdagsvalet {post.valar} · </SourceLine>,
+            ...(post.mandatkalla ? [<SourceLine source={post.mandatkalla} key={`${post.valar}-${post.mandatkalla.url}`}>Riksdagsvalet {post.valar}, mandat · </SourceLine>] : []),
+          ])}
+        </div>
       </div>
     </section>
   );

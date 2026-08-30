@@ -8,7 +8,7 @@ import type {
   PartiProfil,
   PartiProfilDokument,
   PartiProfilForetradare,
-  PartiProfilValresultatPost,
+  PartiValresultat,
   PartiWikidata,
 } from 'src/types';
 import { ExternalLink, SectionHeader, SourceLine, formatPrecisionDate } from './shared';
@@ -46,7 +46,7 @@ export function ProfileHero ({
   symbol,
   symbolSrc,
   symbolFrame,
-  latestResult,
+  results,
   latestParticipation,
   wikidata,
 }: {
@@ -57,13 +57,14 @@ export function ProfileHero ({
   symbol?: Parti['partisymbol'];
   symbolSrc?: string;
   symbolFrame?: SymbolFrame;
-  latestResult?: PartiProfilValresultatPost;
+  results?: PartiValresultat;
   latestParticipation?: [string, PartiDeltagande];
   wikidata?: PartiWikidata;
 }) {
   const participation = latestParticipation?.[1];
+  const latestResult = results?.resultat.at(-1);
   const founded = formatPrecisionDate(wikidata?.grundat);
-  const keyFactCount = (latestResult ? 2 : 1) + 1 + (founded ? 1 : 0);
+  const keyFactCount = (results?.kammare || latestResult ? 2 : 1) + 1 + (founded ? 1 : 0);
   const description = profile.beskrivning ?? profile.profiltext?.text ?? 'Registrerad partibeteckning och anmält valdeltagande enligt Valmyndighetens öppna data.';
   const descriptionSource = profile.profiltext?.kalla ?? profile.namn_kalla;
 
@@ -96,22 +97,24 @@ export function ProfileHero ({
       </div>
 
       <dl className={`profile-keyfacts${keyFactCount === 4 ? ' profile-keyfacts--four' : ''}`}>
-        {latestResult ? <>
+        {results?.kammare ? (
           <div>
             <dt>Mandat i riksdagen</dt>
-            <dd>{latestResult.mandat} <span>av 349</span></dd>
-            <dd className="profile-source">Valresultat {latestResult.valar}</dd>
+            <dd>{results.kammare.mandat} <span>av 349</span></dd>
+            <dd className="profile-source">Valresultat {results.kammare.valar}</dd>
           </div>
-          <div>
-            <dt>Riksdagsvalet {latestResult.valar}</dt>
-            <dd>{percentageFormatter.format(latestResult.rostandel)} <span>%</span></dd>
-            <dd className="profile-source">Valmyndigheten · slutligt resultat</dd>
-          </div>
-        </> : (
+        ) : (
           <div>
             <dt>Partikod</dt>
             <dd className="profile-mono">{code}</dd>
             <dd className="profile-source">Valmyndighetens partiregister</dd>
+          </div>
+        )}
+        {latestResult && (
+          <div>
+            <dt>Riksdagsvalet {latestResult.valar}</dt>
+            <dd>{percentageFormatter.format(latestResult.rostandel)} <span>%</span></dd>
+            <dd className="profile-source">{latestResult.kalla.namn} · slutligt resultat</dd>
           </div>
         )}
         {participation ? (
