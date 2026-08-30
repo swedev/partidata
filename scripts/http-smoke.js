@@ -116,7 +116,7 @@ async function waitForHealth (baseUrl, child, output) {
 async function main () {
   if (!fs.existsSync(path.join(releaseRoot, 'server.js'))) throw new Error('Kör npm run build:release före npm run test:http');
   const { version } = JSON.parse(fs.readFileSync(path.join(projectRoot, 'package.json'), 'utf8'));
-  const parties = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'parti', 'index.json'), 'utf8'));
+  const parties = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'parti.json'), 'utf8'));
   const derivedParliament = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'riksdag.json'), 'utf8'));
   const chamber = derivedParliament.kammare;
   const outside = derivedParliament.storsta_utanfor_riksdagen;

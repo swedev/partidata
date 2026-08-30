@@ -31,7 +31,7 @@ function writeJson (root, relativePath, value) {
 
 function makeData () {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'partidata-validation-'));
-  writeJson(root, 'parti/index.json', [{
+  writeJson(root, 'derived/parti.json', [{
     uuid: PARTY.uuid,
     beteckning: PARTY.beteckning,
     filnamn: PARTY.filnamn
@@ -156,7 +156,7 @@ test('validateData rejects inconsistencies with useful errors', async t => {
     const root = makeData();
     t.after(() => fs.rmSync(root, { recursive: true, force: true }));
     writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, forkortning: 'TP' });
-    assert.throws(() => validateData(root), /forkortning saknas i index.json/);
+    assert.throws(() => validateData(root), /forkortning saknas i derived\/parti.json/);
   });
 
   await t.test('an invalid extension field name', t => {
@@ -171,6 +171,22 @@ test('validateData rejects inconsistencies with useful errors', async t => {
     t.after(() => fs.rmSync(root, { recursive: true, force: true }));
     writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, Grundad: '1988-02-04' });
     assert.throws(() => validateData(root), /fältet "Grundad" har inte ett giltigt fältnamn/);
+  });
+
+  await t.test('a party registry left behind at parti/index.json', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'parti/index.json', readJson(root, 'derived/parti.json'));
+    assert.throws(() => validateData(root), /parti\/index\.json ska inte finnas/);
+  });
+
+  await t.test('a registry entry with a field the generator does not write', t => {
+    const root = makeData();
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    writeJson(root, 'parti/testpartiet/index.json', { ...PARTY, grundad: '1988-02-04' });
+    const index = readJson(root, 'derived/parti.json');
+    writeJson(root, 'derived/parti.json', [{ ...index[0], grundad: '1988-02-04' }]);
+    assert.throws(() => validateData(root), /fältet "grundad" skrivs inte av scripts\/parti\.js/);
   });
 
   await t.test('invalid curated party profiles', t => {
@@ -307,7 +323,7 @@ test('validateData rejects a Q-id claimed by two parties', t => {
     beteckning: 'Provpartiet',
     filnamn: 'provpartiet'
   };
-  writeJson(root, 'parti/index.json', [
+  writeJson(root, 'derived/parti.json', [
     { uuid: second.uuid, beteckning: second.beteckning, filnamn: second.filnamn },
     { uuid: PARTY.uuid, beteckning: PARTY.beteckning, filnamn: PARTY.filnamn }
   ]);

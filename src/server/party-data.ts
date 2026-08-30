@@ -245,7 +245,7 @@ export function createPartyDataStore (
   let homeDataPromise: Promise<HomeData> | undefined;
 
   function getPartyIndex (): Promise<PartyIndex> {
-    partyIndexPromise ??= readJson<PartiIndexEntry[]>(path.join(dataRoot, 'parti', 'index.json')).then(parties => {
+    partyIndexPromise ??= readJson<PartiIndexEntry[]>(path.join(dataRoot, 'derived', 'parti.json')).then(parties => {
       const nameCounts = new Map<string, number>();
       for (const party of parties) {
         const key = partyNameKey(party.beteckning);

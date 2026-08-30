@@ -42,9 +42,13 @@ Open data about Swedish political parties. Swedish copy.
   `npm run import-wikidata [-- --parti <filnamn>]` reads the founding date (P571)
   from Wikidata for every party whose file carries a manually reviewed
   `wikidata.id` and writes it back as `wikidata.grundat`/`wikidata.hamtad`;
-  `node scripts/parti.js` rebuilds the registry from `data/` alone. Results are
-  committed to `data/`. Paths resolve from the repo root, so the scripts run
-  from any directory. `npm run validate:data` checks the committed data tree;
+  `node scripts/parti.js` rebuilds the party files and the registry
+  `data/derived/parti.json` from `data/` alone. Everything under `data/derived/`
+  is generated and is not edited by hand: `parti.json` is written by
+  `scripts/parti.js` and by every import that goes through it, and
+  `npm run build:derived-data` reads `parti.json` to write `riksdag.json`, so a
+  full rebuild runs `parti.js` first. Results are committed to `data/`. Paths
+  resolve from the repo root, so the scripts run from any directory. `npm run validate:data` checks the committed data tree;
   `npm test` runs the `node:test` suite in `scripts/`.
 
 ## Deploy

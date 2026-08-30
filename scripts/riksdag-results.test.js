@@ -25,8 +25,9 @@ function makeRegistry () {
     forkortning: 'ER'
   };
   fs.mkdirSync(path.join(root, 'parti', party.filnamn), { recursive: true });
+  fs.mkdirSync(path.join(root, 'derived'), { recursive: true });
   fs.mkdirSync(path.join(root, 'valresultat'), { recursive: true });
-  fs.writeFileSync(path.join(root, 'parti', 'index.json'), JSON.stringify([{ ...party, kod: undefined }]));
+  fs.writeFileSync(path.join(root, 'derived', 'parti.json'), JSON.stringify([{ ...party, kod: undefined }]));
   fs.writeFileSync(path.join(root, 'parti', party.filnamn, 'index.json'), JSON.stringify(party));
   fs.writeFileSync(path.join(root, 'valresultat', 'riksdag-partikopplingar.json'), JSON.stringify({
     schema_version: 1,

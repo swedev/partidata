@@ -25,10 +25,6 @@ Tillgängliggöra data om alla Sveriges politiska partier på ett öppet och tra
 
 ## Tillgänglig data
 
-### parti/index.json
-
-Register över samtliga partier, `{ uuid, beteckning, filnamn, partisymbol? }` sorterat på `filnamn`. Partier som har bytt namn har dessutom `tidigare_filnamn`, som sajten bygger sina vidarebefordringar från. Filen genereras från partifilerna och redigeras inte för hand.
-
 ### parti/\<filnamn\>/index.json
 
 En fil per parti. `uuid` sätts en gång och ändras aldrig — det är den identitet `val/`-filerna refererar till. `filnamn` är partiets adress på sajten och följer partiets `beteckning`: byter partiet namn får det ett nytt `filnamn`, katalogen flyttas dit, och den gamla adressen läggs till i `tidigare_filnamn` och serveras som en vidarebefordran till den nya. `filnamn` skapas med `toFileName` i `scripts/utils.js`, med suffixet `-<kod>` när flera partier ger samma filnamn. Ett `filnamn` som registret en gång har burit ges aldrig till ett annat parti.
@@ -49,7 +45,7 @@ En fil per parti. `uuid` sätts en gång och ändras aldrig — det är den iden
 | `partisymbol` | Filnamn och proveniens för partiets senast kända symbol |
 | `deltagande` | Anmält deltagande per valår |
 
-Tabellen är de fält skripten hanterar. Ytterligare fält får läggas till för hand så länge namnet är snake_case (`^[a-z][a-z0-9_]*$`); de bevaras vid ombyggnad och import, med valfritt JSON-värde, och skrivs efter fälten ovan i bokstavsordning. De tas inte upp i `parti/index.json` — den som behöver ett sådant fält läser partifilen.
+Tabellen är de fält skripten hanterar. Ytterligare fält får läggas till för hand så länge namnet är snake_case (`^[a-z][a-z0-9_]*$`); de bevaras vid ombyggnad och import, med valfritt JSON-värde, och skrivs efter fälten ovan i bokstavsordning. De tas inte upp i `derived/parti.json` — den som behöver ett sådant fält läser partifilen.
 
 `deltagande` har ett uppslag per valår: `{ riksdag: bool, region: [länskod], kommun: [kommunkod] }`. Från 2022 listas alla val partiet deltar i, även deltagande som följer av anmälan på högre nivå. 2018 års data är insamlad på annat sätt och speglar därför årets filer, där ett riksdagsparti inte har några region- eller kommunposter alls.
 
@@ -120,6 +116,21 @@ Tre kodsystem möts i `data/val/`, och `R` och `K` betyder olika saker i två av
 
 Slutligt riksdagsresultat 1994–2022 i en gemensam, källoberoende modell: giltiga röster, röster och andel per parti, mandat, stabilt parti-uuid samt källreferenser med SHA-256. Historiska rader som inte kan identitetskopplas säkert och aggregerade `Övriga partier` redovisas uttryckligen utan gissade uuid:n. Se [modell, källor och rankingmetod](docs/riksdagsvalresultat.md).
 
+### derived/
+
+Allt under `data/derived/` är genererat ur de övriga filerna i `data/` och redigeras inte för hand. En ändring görs i källfilerna, varefter katalogen byggs om.
+
+| Fil | Genereras av |
+|-----|--------------|
+| `derived/parti.json` | [`node scripts/parti.js`](#node-scriptspartijs), och varje importskript som bygger om partifilerna: `import-val`, `import-partisymboler`, `import-wikidata`, `measure-partisymboler` |
+| `derived/riksdag.json` | [`npm run build:derived-data`](docs/riksdagsvalresultat.md) |
+
+`derived/riksdag.json` byggs ur `derived/parti.json` och valresultaten, så ordningen vid en fullständig ombyggnad är `node scripts/parti.js` följt av `npm run build:derived-data`.
+
+### derived/parti.json
+
+Register över samtliga partier, sorterat på `filnamn`, med `uuid`, `beteckning` och `filnamn` för varje parti. Därutöver `tidigare_filnamn`, `omrade`, `forkortning` och `partisymbol` för de partier vars partifil har fälten; de har samma innebörd som i [partifilen](#partifilnamnindexjson). `tidigare_filnamn` är det sajten bygger sina vidarebefordringar från. Filen ersätter `parti/index.json` — den som hämtar registret direkt från GitHub behöver byta adress.
+
 
 ## Köra skripten
 
@@ -171,7 +182,7 @@ Importerar en lokal kopia av Valmyndighetens eller SCB:s slutliga riksdagsresult
 
 ### node scripts/parti.js
 
-Bygger om partifilerna och `data/parti/index.json` från det som redan finns i `data/`, utan att hämta något.
+Bygger om partifilerna och `data/derived/parti.json` från det som redan finns i `data/`, utan att hämta något.
 
 `node scripts/parti.js --report-name-collisions` skriver i stället en rapport över olika partier vars aktuella namn blir lika efter normalisering. Rapporten ändrar inga filer och varje träff måste bedömas manuellt.
 

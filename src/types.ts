@@ -176,6 +176,6 @@ export interface PartiProfil {
 }
 
 /**
- * An entry in `data/parti/index.json`, a subset of the full party record.
+ * An entry in `data/derived/parti.json`, a subset of the full party record.
  */
 export type PartiIndexEntry = Pick<Parti, 'uuid' | 'beteckning' | 'filnamn' | 'tidigare_filnamn' | 'omrade' | 'forkortning' | 'partisymbol'>;

@@ -338,25 +338,32 @@ function validateWikidataSection (value, context) {
 
 function validatePartyRegistry (dataDirectory) {
   const partyDirectory = path.join(dataDirectory, 'parti');
-  const index = requireArray(readJson(path.join(partyDirectory, 'index.json')), 'parti/index.json');
-  requireUnique(index, 'uuid', 'parti/index.json');
-  requireUnique(index, 'filnamn', 'parti/index.json');
+  assert.ok(
+    !fs.existsSync(path.join(partyDirectory, 'index.json')),
+    'parti/index.json ska inte finnas; registret ligger i derived/parti.json'
+  );
+  const index = requireArray(
+    readJson(path.join(dataDirectory, 'derived', 'parti.json')),
+    'derived/parti.json'
+  );
+  requireUnique(index, 'uuid', 'derived/parti.json');
+  requireUnique(index, 'filnamn', 'derived/parti.json');
 
   const sorted = index.map(party => party.filnamn).toSorted();
-  assert.deepEqual(index.map(party => party.filnamn), sorted, 'parti/index.json ska vara sorterad på filnamn');
+  assert.deepEqual(index.map(party => party.filnamn), sorted, 'derived/parti.json ska vara sorterad på filnamn');
 
   const directories = fs.readdirSync(partyDirectory, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
     .map(entry => entry.name)
     .toSorted();
-  assert.deepEqual(directories, sorted, 'Partikatalogerna ska motsvara posterna i parti/index.json');
+  assert.deepEqual(directories, sorted, 'Partikatalogerna ska motsvara posterna i derived/parti.json');
 
   const partiesByUuid = new Map();
   const partySlugs = new Set();
   const routableSlugs = new Set();
   const wikidataOwners = new Map();
   for (const entry of index) {
-    const context = `parti/index.json (${entry.filnamn || 'okänt filnamn'})`;
+    const context = `derived/parti.json (${entry.filnamn || 'okänt filnamn'})`;
     requireUuid(entry.uuid, `${context}.uuid`);
     requireString(entry.beteckning, `${context}.beteckning`);
     requireString(entry.filnamn, `${context}.filnamn`);
@@ -383,10 +390,14 @@ function validatePartyRegistry (dataDirectory) {
     }
 
     for (const [key, value] of Object.entries(entry)) {
+      assert.ok(
+        INDEX_KEYS_FROM_PARTY.includes(key),
+        `${context}: fältet "${key}" skrivs inte av scripts/parti.js`
+      );
       assert.deepEqual(value, party[key], `${entry.filnamn}: ${key} skiljer sig mellan index och partifil`);
     }
     for (const key of INDEX_KEYS_FROM_PARTY) {
-      assert.deepEqual(entry[key], party[key], `${entry.filnamn}: ${key} saknas i index.json`);
+      assert.deepEqual(entry[key], party[key], `${entry.filnamn}: ${key} saknas i derived/parti.json`);
     }
 
     const baseSlug = toFileName(party.beteckning);
