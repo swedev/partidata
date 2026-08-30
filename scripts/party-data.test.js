@@ -4,7 +4,7 @@ const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 
-const { createPartyDataStore } = require('../src/server/party-data.ts');
+const { createPartyDataStore, partyElectionResults } = require('../src/server/party-data.ts');
 
 function writeJson (root, relativePath, value) {
   const file = path.join(root, relativePath);
@@ -64,6 +64,7 @@ test('party data resolves current, previous and unknown slugs', async t => {
   assert.equal(current.props.profile.namn, 'Testpartiet');
   assert.deepEqual(current.props.candidateLists, { 2018: ['R', 'K'] });
   assert.equal(current.props.symbolSrc, '/partisymbol/testpartiet/9001-testpartiet.png');
+  assert.equal(current.props.valresultat, undefined, 'utan resultatfiler härleds inga valresultat');
   assert.deepEqual(await store.resolveParty('gamla-testpartiet'), {
     kind: 'redirect',
     destination: '/parti/testpartiet/'
@@ -78,6 +79,7 @@ test('optional profile and candidate lists may be absent', async t => {
   const result = await createPartyDataStore(dataRoot).resolveParty('utan-profil');
   assert.equal(result.kind, 'party');
   assert.equal(result.props.profile, undefined);
+  assert.equal(result.props.valresultat, undefined);
   assert.deepEqual(result.props.candidateLists, {});
 });
 
@@ -239,7 +241,8 @@ function makeHomeData () {
     hamtad: '2026-08-25',
     sha256: 'a'.repeat(64)
   };
-  function writeResult (year, mandates) {
+  // A row without `mandat` stood in the election without winning a seat.
+  function writeResult (year, rows) {
     writeJson(dataRoot, `val/${year}/valresultat/riksdag.json`, {
       schema_version: 2,
       valtyp: 'riksdag',
@@ -248,14 +251,14 @@ function makeHomeData () {
       kallor: [source],
       valdeltagande: { procent: 84, kallreferens: 'resultat' },
       rostresultat: {
-        giltiga_roster: mandates.length,
+        giltiga_roster: rows.length,
         kallreferenser: ['resultat'],
-        partier: mandates.map(entry => ({
+        partier: rows.map(entry => ({
           parti_uuid: entry.uuid,
           kallkod: entry.forkortning,
           partibeteckning: entry.forkortning,
           roster: 1,
-          rostandel: Number((100 / mandates.length).toFixed(2)),
+          rostandel: Number((100 / rows.length).toFixed(2)),
           kallreferens: 'resultat'
         })),
         ej_kopplade: [],
@@ -264,7 +267,7 @@ function makeHomeData () {
       mandatfordelning: {
         antal_mandat: 349,
         kallreferenser: ['resultat'],
-        partier: mandates.map(entry => ({
+        partier: rows.filter(entry => entry.mandat !== undefined).map(entry => ({
           parti_uuid: entry.uuid,
           kallkod: entry.forkortning,
           partibeteckning: entry.forkortning,
@@ -277,13 +280,14 @@ function makeHomeData () {
   writeResult(2022, [
     { uuid: parties.find(party => party.filnamn === 'alfapartiet').uuid, forkortning: 'A', mandat: 200 },
     { uuid: parties.find(party => party.filnamn === 'duplikatpartiet-ett').uuid, forkortning: 'D', mandat: 100 },
-    { uuid: '12121212-1212-4212-8212-121212121212', forkortning: 'X', mandat: 49 }
+    { uuid: '12121212-1212-4212-8212-121212121212', forkortning: 'X', mandat: 49 },
+    { uuid: parties.find(party => party.filnamn === 'zebrapartiet').uuid, forkortning: 'Z' }
   ]);
   writeResult(2026, [
     { uuid: parties.find(party => party.filnamn === 'betapartiet').uuid, forkortning: 'B', mandat: 349 }
   ]);
 
-  return { root, dataRoot };
+  return { root, dataRoot, source };
 }
 
 test('home data lists parties in Swedish alphabetical order with participation facets', async t => {
@@ -382,6 +386,119 @@ test('mandate records resolve by stable uuid and leave an unknown uuid unlinked'
     },
     { uuid: '12121212-1212-4212-8212-121212121212', forkortning: 'X', mandat: 49 }
   ]);
+});
+
+test('party pages derive their election results from the imported result files', async t => {
+  const { root, dataRoot, source } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const store = createPartyDataStore(dataRoot);
+
+  const chamberParty = await store.resolveParty('betapartiet');
+  assert.deepEqual(chamberParty.props.valresultat, {
+    valtyp: 'riksdag',
+    resultat: [{ valar: 2026, roster: 1, rostandel: 100, mandat: 349, kalla: source }],
+    kammare: { valar: 2026, mandat: 349 }
+  });
+
+  // Seats in 2022 but no row in the chamber year, so no chamber claim.
+  const former = await store.resolveParty('alfapartiet');
+  assert.deepEqual(former.props.valresultat.resultat, [
+    { valar: 2022, roster: 1, rostandel: 25, mandat: 200, kalla: source }
+  ]);
+  assert.equal(former.props.valresultat.kammare, undefined);
+
+  // A vote row without a seat row is a result of zero mandates, not a gap.
+  const withoutSeats = await store.resolveParty('zebrapartiet');
+  assert.deepEqual(withoutSeats.props.valresultat.resultat, [
+    { valar: 2022, roster: 1, rostandel: 25, mandat: 0, kalla: source }
+  ]);
+  assert.equal(withoutSeats.props.valresultat.kammare, undefined);
+
+  const withoutResults = await store.resolveParty('jarl');
+  assert.equal(withoutResults.props.valresultat, undefined);
+});
+
+const voteSource = { id: 'resultat', namn: 'Valmyndigheten', url: 'https://example.com/roster', hamtad: '2026-08-26' };
+const seatSource = { id: 'mandat', namn: 'Valmyndigheten', url: 'https://example.com/mandat', hamtad: '2026-08-26' };
+
+/** One result file in the shape `val/<år>/valresultat/riksdag.json` carries. */
+function resultFile (valar, rows, kallor = [voteSource]) {
+  return {
+    schema_version: 2,
+    valar,
+    status: 'slutligt',
+    kallor,
+    rostresultat: {
+      giltiga_roster: 1000,
+      partier: rows.map(row => ({
+        parti_uuid: row.uuid,
+        roster: row.roster,
+        rostandel: row.rostandel,
+        kallreferens: 'resultat'
+      }))
+    },
+    mandatfordelning: {
+      partier: rows.filter(row => row.mandat !== undefined).map(row => ({
+        parti_uuid: row.uuid,
+        partibeteckning: 'P',
+        mandat: row.mandat,
+        kallreferens: row.mandatreferens ?? 'resultat'
+      }))
+    }
+  };
+}
+
+const derivedUuid = '11111111-1111-4111-8111-111111111111';
+
+test('the derivation names the seat source separately and measures change against the previous election', () => {
+  const files = [
+    resultFile(2018, [{ uuid: derivedUuid, roster: 44, rostandel: 4.41, mandat: 16, mandatreferens: 'mandat' }], [voteSource, seatSource]),
+    resultFile(2022, [{ uuid: derivedUuid, roster: 51, rostandel: 5.08, mandat: 18 }])
+  ];
+
+  assert.deepEqual(partyElectionResults(files, derivedUuid), {
+    valtyp: 'riksdag',
+    resultat: [
+      { valar: 2018, roster: 44, rostandel: 4.41, mandat: 16, kalla: voteSource, mandatkalla: seatSource },
+      { valar: 2022, roster: 51, rostandel: 5.08, mandat: 18, forandring: 0.67, kalla: voteSource }
+    ],
+    kammare: { valar: 2022, mandat: 18 }
+  });
+});
+
+test('the derivation leaves out change across a gap in the series and reads the same in any file order', () => {
+  const files = [
+    resultFile(2018, [{ uuid: derivedUuid, roster: 44, rostandel: 4.41, mandat: 16 }]),
+    resultFile(2022, [{ uuid: 'abababab-abab-4bab-8bab-abababababab', roster: 1, rostandel: 0.01 }]),
+    resultFile(2026, [{ uuid: derivedUuid, roster: 51, rostandel: 5.08, mandat: 18 }])
+  ];
+
+  const derived = partyElectionResults(files, derivedUuid);
+  assert.deepEqual(derived.resultat.map(post => post.valar), [2018, 2026]);
+  assert.ok(!('forandring' in derived.resultat[0]), 'den första posten bär ingen förändring');
+  assert.ok(!('forandring' in derived.resultat[1]), 'ett överhoppat val ger ingen förändring');
+  assert.ok(!('mandatkalla' in derived.resultat[0]), 'en gemensam källa nämns inte två gånger');
+  assert.deepEqual(partyElectionResults(files.toReversed(), derivedUuid), derived);
+});
+
+test('the derivation claims no chamber seats when the last row is not the chamber year', () => {
+  const files = [
+    resultFile(2018, [{ uuid: derivedUuid, roster: 44, rostandel: 4.41, mandat: 16 }]),
+    resultFile(2022, [{ uuid: 'abababab-abab-4bab-8bab-abababababab', roster: 1, rostandel: 0.01, mandat: 349 }])
+  ];
+
+  const derived = partyElectionResults(files, derivedUuid);
+  assert.equal(derived.resultat.at(-1).valar, 2018);
+  assert.equal(derived.kammare, undefined);
+});
+
+test('the derivation skips a party without rows and rejects an unknown source reference', () => {
+  const files = [resultFile(2022, [{ uuid: derivedUuid, roster: 51, rostandel: 5.08, mandat: 18 }])];
+  assert.equal(partyElectionResults(files, 'abababab-abab-4bab-8bab-abababababab'), undefined);
+  assert.equal(partyElectionResults([], derivedUuid), undefined);
+
+  const broken = [resultFile(2022, [{ uuid: derivedUuid, roster: 51, rostandel: 5.08, mandat: 18, mandatreferens: 'saknas' }])];
+  assert.throws(() => partyElectionResults(broken, derivedUuid), /Riksdagsvalet 2022 saknar källan saknas/);
 });
 
 test('home data enriches the derived outside-parliament ranking by stable uuid', async t => {

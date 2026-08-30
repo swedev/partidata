@@ -182,25 +182,7 @@ function validatePartyProfile (profile, context) {
       }
     }
   }
-  if (profile.valresultat !== undefined) {
-    assert.equal(profile.valresultat.valtyp, 'riksdag', `${context}.valresultat.valtyp har ett okänt värde`);
-    requireArray(profile.valresultat.kallor, `${context}.valresultat.kallor`);
-    assert.ok(profile.valresultat.kallor.length > 0, `${context}.valresultat.kallor får inte vara tom`);
-    profile.valresultat.kallor.forEach((source, index) => {
-      validateProfileSource(source, `${context}.valresultat.kallor[${index}]`);
-    });
-    requireArray(profile.valresultat.resultat, `${context}.valresultat.resultat`);
-    assert.ok(profile.valresultat.resultat.length > 0, `${context}.valresultat.resultat får inte vara tom`);
-    requireUnique(profile.valresultat.resultat, 'valar', `${context}.valresultat.resultat`);
-    let previousYear = 0;
-    for (const result of profile.valresultat.resultat) {
-      assert.ok(Number.isInteger(result.valar) && result.valar > previousYear, `${context}.valresultat.resultat ska vara sorterat på valår`);
-      assert.ok(typeof result.rostandel === 'number' && result.rostandel >= 0 && result.rostandel <= 100, `${context}.valresultat.resultat.rostandel ska vara 0–100`);
-      assert.ok(Number.isInteger(result.mandat) && result.mandat >= 0 && result.mandat <= 349, `${context}.valresultat.resultat.mandat ska vara 0–349`);
-      if (result.roster !== undefined) assert.ok(Number.isInteger(result.roster) && result.roster >= 0, `${context}.valresultat.resultat.roster ska vara ett positivt heltal`);
-      previousYear = result.valar;
-    }
-  }
+  assert.equal(profile.valresultat, undefined, `${context}.valresultat ska inte finnas; valresultat härleds ur val/<år>/valresultat/riksdag.json`);
   if (profile.dokument !== undefined) {
     requireArray(profile.dokument, `${context}.dokument`);
     for (const [index, document] of profile.dokument.entries()) {

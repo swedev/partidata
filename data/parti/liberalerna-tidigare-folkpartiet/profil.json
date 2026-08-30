@@ -15,29 +15,6 @@
       "hamtad": "2026-08-24"
     }
   },
-  "valresultat": {
-    "valtyp": "riksdag",
-    "kallor": [
-      {
-        "namn": "Valmyndigheten – tidigare valresultat 2002–2018",
-        "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/tidigare-valresultat",
-        "hamtad": "2026-08-24"
-      },
-      {
-        "namn": "Valmyndigheten – valresultat 2022",
-        "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/valresultat-2022",
-        "hamtad": "2026-08-24"
-      }
-    ],
-    "resultat": [
-      { "valar": 2002, "rostandel": 13.39, "mandat": 48 },
-      { "valar": 2006, "rostandel": 7.54, "mandat": 28 },
-      { "valar": 2010, "rostandel": 7.06, "mandat": 24 },
-      { "valar": 2014, "rostandel": 5.42, "mandat": 19 },
-      { "valar": 2018, "rostandel": 5.49, "mandat": 20 },
-      { "valar": 2022, "rostandel": 4.61, "mandat": 16 }
-    ]
-  },
   "dokument": [
     {
       "typ": "valmanifest",

@@ -126,24 +126,6 @@
     { "namn": "Nils Seye Larsen", "uppdrag": "Riksdagsledamot för Miljöpartiet.", "url": "https://www.mp.se/om/nils-seye-larsen/", "bild": "/img/partier/miljopartiet-de-grona/representanter/nils-seye-larsen.jpg" },
     { "namn": "Mohamed Yassin", "uppdrag": "Ledamot i kommunfullmäktige och gymnasie- och vuxenutbildningsnämnden.", "url": "https://www.mp.se/om/mohamed-yassin/", "bild": "/img/partier/miljopartiet-de-grona/representanter/mohamed-yassin.jpg" }
   ],
-  "valresultat": {
-    "valtyp": "riksdag",
-    "kallor": [
-      { "namn": "SCB – historisk valstatistik 1910–2022", "url": "https://www.scb.se/hitta-statistik/statistik-efter-amne/demokrati/allmanna-val/allmanna-val-valresultat/pong/tabell-och-diagram/historisk-valstatistik/historisk-statistik-over-valaren-19102022.-procentuell-fordelning-av-giltiga-valsedlar-efter-parti-och-typ-av-val/", "hamtad": "2026-08-25" },
-      { "namn": "Valmyndigheten – tidigare valresultat 2002–2018", "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/tidigare-valresultat", "hamtad": "2026-08-24" },
-      { "namn": "Valmyndigheten – valresultat 2022", "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/valresultat-2022", "hamtad": "2026-08-24" }
-    ],
-    "resultat": [
-      { "valar": 1994, "rostandel": 5.02, "mandat": 18 },
-      { "valar": 1998, "rostandel": 4.5, "mandat": 16 },
-      { "valar": 2002, "rostandel": 4.65, "mandat": 17 },
-      { "valar": 2006, "rostandel": 5.24, "mandat": 19 },
-      { "valar": 2010, "rostandel": 7.34, "mandat": 25 },
-      { "valar": 2014, "rostandel": 6.89, "mandat": 25 },
-      { "valar": 2018, "rostandel": 4.41, "mandat": 16 },
-      { "valar": 2022, "rostandel": 5.08, "mandat": 18 }
-    ]
-  },
   "nyheter": [
     {
       "datum": "2026-08-20",

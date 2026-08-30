@@ -1,7 +1,15 @@
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
-import type { Parti, PartiIndexEntry, PartiProfil, PartiProfilKalla, PartiSymbol } from '../types';
+import type {
+  Parti,
+  PartiIndexEntry,
+  PartiProfil,
+  PartiProfilKalla,
+  PartiSymbol,
+  PartiValresultat,
+  PartiValresultatPost,
+} from '../types';
 import { assertSwedishCollation, compareSv } from './collation.ts';
 
 /**
@@ -19,6 +27,7 @@ export interface PartyPageData extends Parti {
   profile?: PartiProfil;
   symbolSrc?: string;
   symbolFrame?: SymbolFrame;
+  valresultat?: PartiValresultat;
 }
 
 export type PartyResolution =
@@ -134,10 +143,15 @@ interface RegionFile {
   kommuner?: Array<{ kod: string; namn: string }>;
 }
 
-interface ParliamentResultFile {
+export interface ParliamentResultFile {
   schema_version: 2;
   valar: number;
+  status: string;
   kallor: Array<PartiProfilKalla & { id: string }>;
+  rostresultat: {
+    giltiga_roster: number;
+    partier: Array<{ parti_uuid: string; roster: number; rostandel: number; kallreferens: string }>;
+  };
   mandatfordelning: {
     partier: Array<{ parti_uuid: string; kallkod?: string; partibeteckning: string; mandat: number; kallreferens: string }>;
   };
@@ -204,6 +218,55 @@ export function symbolFrame (symbol?: PartiSymbol): SymbolFrame | undefined {
   };
 }
 
+/** The source a result row cites, by the `id` the file's `kallor` list it under. */
+function sourceFor (file: ParliamentResultFile, reference: string): PartiProfilKalla & { id: string } {
+  const source = file.kallor.find(entry => entry.id === reference);
+  if (!source) throw new Error(`Riksdagsvalet ${file.valar} saknar källan ${reference}`);
+  return source;
+}
+
+/**
+ * A party's parliamentary results across the imported election files, one post
+ * per year the party has a vote row in. `mandat` is 0 for a year without a seat
+ * row, `forandring` is set only when the immediately preceding imported
+ * election also has a row for the party, and `kammare` only when the party
+ * holds seats in the most recent imported election.
+ */
+export function partyElectionResults (files: ParliamentResultFile[], uuid: string): PartiValresultat | undefined {
+  const ordered = files.toSorted((a, b) => a.valar - b.valar);
+  const chamberYear = ordered.at(-1);
+  if (!chamberYear) return undefined;
+
+  const resultat: PartiValresultatPost[] = [];
+  ordered.forEach((file, index) => {
+    const votes = file.rostresultat.partier.find(row => row.parti_uuid === uuid);
+    if (!votes) return;
+    const seats = file.mandatfordelning.partier.find(row => row.parti_uuid === uuid);
+    const kalla = sourceFor(file, votes.kallreferens);
+    const seatSource = seats ? sourceFor(file, seats.kallreferens) : undefined;
+    const previous = ordered[index - 1]?.rostresultat.partier.find(row => row.parti_uuid === uuid);
+    resultat.push({
+      valar: file.valar,
+      roster: votes.roster,
+      rostandel: votes.rostandel,
+      mandat: seats?.mandat ?? 0,
+      ...(previous ? { forandring: Number((votes.rostandel - previous.rostandel).toFixed(2)) } : {}),
+      kalla,
+      ...(seatSource && seatSource.id !== kalla.id ? { mandatkalla: seatSource } : {}),
+    });
+  });
+  if (resultat.length === 0) return undefined;
+
+  const chamberSeats = chamberYear.mandatfordelning.partier.find(row => row.parti_uuid === uuid);
+  return {
+    valtyp: 'riksdag',
+    resultat,
+    ...(chamberSeats && chamberSeats.mandat > 0
+      ? { kammare: { valar: chamberYear.valar, mandat: chamberSeats.mandat } }
+      : {}),
+  };
+}
+
 function partyNameKey (name: string): string {
   return name.trim().toLocaleLowerCase('sv-SE').replace(/\s+/g, ' ');
 }
@@ -243,6 +306,7 @@ export function createPartyDataStore (
 ) {
   let partyIndexPromise: Promise<PartyIndex> | undefined;
   let homeDataPromise: Promise<HomeData> | undefined;
+  let parliamentResultsPromise: Promise<ParliamentResultFile[]> | undefined;
 
   function getPartyIndex (): Promise<PartyIndex> {
     partyIndexPromise ??= readJson<PartiIndexEntry[]>(path.join(dataRoot, 'derived', 'parti.json')).then(parties => {
@@ -288,12 +352,14 @@ export function createPartyDataStore (
   async function readCurrentParty (slug: string, duplicateName: boolean): Promise<PartyPageData> {
     const partyRoot = path.join(dataRoot, 'parti', slug);
     const party = await readJson<Parti>(path.join(partyRoot, 'index.json'));
-    const [profile, candidateLists] = await Promise.all([
+    const [profile, candidateLists, results] = await Promise.all([
       readOptionalJson<PartiProfil>(path.join(partyRoot, 'profil.json')),
       readCandidateLists(slug),
+      readParliamentResults(),
     ]);
     const symbolSrc = symbolSource(party);
     const frame = symbolFrame(party.partisymbol);
+    const valresultat = partyElectionResults(results, party.uuid);
 
     return {
       ...party,
@@ -302,6 +368,7 @@ export function createPartyDataStore (
       ...(profile ? { profile } : {}),
       ...(symbolSrc ? { symbolSrc } : {}),
       ...(frame ? { symbolFrame: frame } : {}),
+      ...(valresultat ? { valresultat } : {}),
     };
   }
 
@@ -313,16 +380,26 @@ export function createPartyDataStore (
       .sort();
   }
 
+  /** Every imported parliamentary result file, oldest first, read once. */
+  function readParliamentResults (): Promise<ParliamentResultFile[]> {
+    parliamentResultsPromise ??= (async () => {
+      const years = await electionYears();
+      const results = await Promise.all(years.map(year =>
+        readOptionalJson<ParliamentResultFile>(path.join(dataRoot, 'val', year, 'valresultat', 'riksdag.json'))));
+      return results
+        .filter((result): result is ParliamentResultFile => result?.schema_version === 2)
+        .sort((a, b) => a.valar - b.valar);
+    })();
+    return parliamentResultsPromise;
+  }
+
   async function readParliamentYears (byUuid: Map<string, PartiIndexEntry>): Promise<ParliamentYear[]> {
-    const years = await electionYears();
-    const results = await Promise.all(years.map(year =>
-      readOptionalJson<ParliamentResultFile>(path.join(dataRoot, 'val', year, 'valresultat', 'riksdag.json'))));
+    const results = await readParliamentResults();
 
     return results
-      .filter((result): result is ParliamentResultFile => result?.schema_version === 2)
       .map(result => ({
         valar: result.valar,
-        kalla: result.kallor.find(source => source.id === result.mandatfordelning.partier[0]?.kallreferens)!,
+        kalla: sourceFor(result, result.mandatfordelning.partier[0]?.kallreferens),
         partier: result.mandatfordelning.partier.map(entry => {
           const party = byUuid.get(entry.parti_uuid);
           const symbolSrc = party ? symbolSource(party) : undefined;
@@ -337,7 +414,7 @@ export function createPartyDataStore (
           };
         }),
       }))
-      .sort((a, b) => b.valar - a.valar);
+      .toSorted((a, b) => b.valar - a.valar);
   }
 
   async function readOutsideParliament (byUuid: Map<string, PartiIndexEntry>): Promise<OutsideParliamentData | undefined> {

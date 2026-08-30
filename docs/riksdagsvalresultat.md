@@ -49,6 +49,18 @@ Startsidan använder den deterministiska härledningen i `data/derived/riksdag.j
 
 Avgränsningen i punkt 3 är viktig för de äldsta SCB-tabellerna, där mindre partier endast publicerades som ett gemensamt `Övriga partier`. Startsidan påstår därför inte att ett okänt parti i ett historiskt aggregat hade ett visst resultat.
 
+## Partisidan
+
+Partisidans valresultat härleds vid request ur samma filer, per parti:
+
+1. Posterna är partiets uuid-kopplade rader i `rostresultat.partier`, en per valår partiet har en rad i, i stigande ordning.
+2. Mandaten kommer ur `mandatfordelning.partier` samma år, och är 0 för ett år utan mandatrad.
+3. Förändringen mot föregående val sätts bara när partiet har en rad i både valet och det närmast föregående importerade valet.
+4. Kammarmandat redovisas bara för det senaste importerade valet. Ett parti vars senaste rad är äldre får diagrammet men inget kammarblock.
+5. Källan står per valår, och mandatkällan separat de år mandaten är hämtade från en annan sida än rösterna.
+
+Ej kopplade rader och aggregat används inte, av samma skäl som i punkt 3 ovan. Ett parti utan kopplad röstrad i något valår får varken resultatsektion eller valdeltagandesektion. `profil.json` bär inga valresultat.
+
 ## Import
 
 Importeraren läser lokala kopior av primärkällorna. Hämtdatum måste anges uttryckligen, så samma filer och argument alltid ger identiska JSON-byte.

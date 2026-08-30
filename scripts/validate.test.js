@@ -199,7 +199,7 @@ test('validateData rejects inconsistencies with useful errors', async t => {
     assert.throws(() => validateData(root), /namn_kalla.url ska vara en giltig URL/);
   });
 
-  await t.test('invalid curated election results', t => {
+  await t.test('curated election results are rejected', t => {
     const root = makeData();
     t.after(() => fs.rmSync(root, { recursive: true, force: true }));
     writeJson(root, 'parti/testpartiet/profil.json', {
@@ -208,13 +208,10 @@ test('validateData rejects inconsistencies with useful errors', async t => {
       valresultat: {
         valtyp: 'riksdag',
         kallor: [{ namn: 'Valmyndigheten', url: 'https://www.val.se', hamtad: '2026-08-24' }],
-        resultat: [
-          { valar: 2022, rostandel: 5, mandat: 18 },
-          { valar: 2018, rostandel: 4, mandat: 14 }
-        ]
+        resultat: [{ valar: 2022, rostandel: 5, mandat: 18 }]
       }
     });
-    assert.throws(() => validateData(root), /ska vara sorterat på valår/);
+    assert.throws(() => validateData(root), /valresultat ska inte finnas; valresultat härleds ur val\/<år>\/valresultat\/riksdag\.json/);
   });
 
   await t.test('invalid parliamentary election result', t => {
