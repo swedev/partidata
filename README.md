@@ -25,6 +25,10 @@ Tillgängliggöra data om alla Sveriges politiska partier på ett öppet och tra
 
 ## Tillgänglig data
 
+Registret, partifilerna, `val/<år>/partideltagande/`, `val/<år>/valresultat/riksdag.json`, `regioner/index.json` och `derived/` serveras som JSON på `https://www.partidata.se/data/<sökväg>` — samma sökväg som här under `data/`, och samma byte. Adresser, fält, huvuden, versioneringsprincip och licensvillkor står på https://www.partidata.se/data/. Kandidatlistorna och `profil.json` serveras inte.
+
+Gränsen för vad som publiceras går vid filen, inte vid fältet: varje fält i en partifil lämnas ut, extrafälten inräknade. Ett fält som inte tål att publiceras hör inte hemma i partifilen.
+
 ### parti/\<filnamn\>/index.json
 
 En fil per parti. `uuid` sätts en gång och ändras aldrig — det är den identitet `val/`-filerna refererar till. `filnamn` är partiets adress på sajten och följer partiets `beteckning`: byter partiet namn får det ett nytt `filnamn`, katalogen flyttas dit, och den gamla adressen läggs till i `tidigare_filnamn` och serveras som en vidarebefordran till den nya. `filnamn` skapas med `toFileName` i `scripts/utils.js`, med suffixet `-<kod>` när flera partier ger samma filnamn. Ett `filnamn` som registret en gång har burit ges aldrig till ett annat parti.

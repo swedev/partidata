@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { PartiDeltagande, PartiProfil } from 'src/types';
 import { ExternalLink, formatSwedishDate, SectionHeader, SourceLine } from './shared';
 
@@ -111,14 +112,15 @@ export function RegistrySection ({
 }
 
 export function ExportSection ({ slug, hasProfile }: { slug: string; hasProfile: boolean }) {
-  const dataUrl = `https://github.com/swedev/partidata/blob/main/data/parti/${slug}/index.json`;
+  const dataUrl = `/data/parti/${encodeURIComponent(slug)}/index.json`;
   const profileUrl = `https://github.com/swedev/partidata/blob/main/data/parti/${slug}/profil.json`;
 
   return (
     <section className="profile-shell profile-export" aria-labelledby="export-heading" id="export">
       <h2 id="export-heading" className="sr-only">Använd datan</h2>
-      <p>Källan står vid varje uppgift på sidan. De datafiler som finns för partiet är maskinläsbara och versionshanterade på GitHub.</p>
+      <p>Källan står vid varje uppgift på sidan. Partiets registerdata finns som JSON på Partidata; alla datafiler är versionshanterade på GitHub.</p>
       <div><a href={dataUrl} className="profile-button">Registerdata (JSON)</a>{hasProfile && <a href={profileUrl} className="profile-button">Profildata (JSON)</a>}<a href="https://github.com/swedev/partidata" className="profile-button profile-button--outline">Projektet på GitHub</a></div>
+      <p><Link href="/data/">Så använder du datan</Link></p>
     </section>
   );
 }

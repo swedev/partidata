@@ -1,5 +1,7 @@
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
 const fs = require('node:fs');
+const http = require('node:http');
 const net = require('node:net');
 const path = require('node:path');
 const { spawn } = require('node:child_process');
@@ -129,6 +131,26 @@ function partyGridLinks (html) {
   assert.ok(gridStart !== -1, 'partigridet hittades i markupen');
   const grid = section.slice(gridStart, section.indexOf('</ul>', gridStart));
   return [...grid.matchAll(/href="\/parti\/([^"/]+)\/?"/g)].map(match => match[1]);
+}
+
+/**
+ * A request `fetch` will not send: it normalises `..` out of the path before it
+ * leaves the client, and the point here is what the server does with it.
+ */
+async function rawRequest (port, requestPath) {
+  return await new Promise((resolve, reject) => {
+    const request = http.request({ host: '127.0.0.1', port, path: requestPath, method: 'GET' }, response => {
+      const chunks = [];
+      response.on('data', chunk => chunks.push(chunk));
+      response.on('end', () => resolve({
+        status: response.statusCode,
+        location: response.headers.location,
+        body: Buffer.concat(chunks)
+      }));
+    });
+    request.on('error', reject);
+    request.end();
+  });
 }
 
 async function freePort () {
@@ -392,6 +414,183 @@ async function main () {
     const sitemapBody = await sitemap.text();
     assert.match(sitemapBody, new RegExp(`/parti/${current.filnamn}/`));
     assert.doesNotMatch(sitemapBody, new RegExp(`/parti/${previous.tidigare_filnamn[0]}/`));
+    assert.match(sitemapBody, /<loc>[^<]*\/data\/<\/loc>/, 'sitemapen tar med dokumentationssidan');
+
+    const registryFile = fs.readFileSync(path.join(projectRoot, 'data', 'derived', 'parti.json'));
+    const registryEtag = `"${crypto.createHash('sha256').update(registryFile).digest('hex')}"`;
+
+    /** The full header set a JSON resource answers with, checked in one place. */
+    function expectDataHeaders (response, { etag, length, body = true } = {}) {
+      if (body) assert.equal(response.headers.get('content-type'), 'application/json; charset=utf-8');
+      else assert.equal(response.headers.get('content-type'), null, 'ett 304-svar bär ingen kroppstyp');
+      if (length !== undefined) assert.equal(response.headers.get('content-length'), String(length));
+      assert.equal(response.headers.get('cache-control'), 'public, max-age=3600');
+      assert.equal(response.headers.get('vary'), 'Accept-Encoding');
+      assert.equal(response.headers.get('etag'), etag);
+      assert.equal(response.headers.get('x-partidata-version'), version);
+      assert.equal(response.headers.get('access-control-allow-origin'), '*');
+      const exposed = response.headers.get('access-control-expose-headers');
+      assert.match(exposed, /ETag/);
+      assert.match(exposed, /X-Partidata-Version/);
+    }
+
+    // Uncompressed, so the body can be compared byte for byte and Content-Length
+    // is the file's own size; the app hands the bytes to whatever compresses them.
+    const identity = { 'Accept-Encoding': 'identity' };
+    const registry = await fetch(`${baseUrl}/data/derived/parti.json`, { redirect: 'manual', headers: identity });
+    assert.equal(registry.status, 200, 'registret svarar direkt, utan snedstrecksvidarebefordran');
+    expectDataHeaders(registry, { etag: registryEtag, length: registryFile.length });
+    assert.match(registry.headers.get('etag'), /^"[0-9a-f]{64}"$/, 'etaggen är en sha256');
+    assert.ok(Buffer.from(await registry.arrayBuffer()).equals(registryFile), 'kroppen är filens byte');
+
+    for (const header of [registryEtag, `W/${registryEtag}`]) {
+      const notModified = await fetch(`${baseUrl}/data/derived/parti.json`, { headers: { 'If-None-Match': header } });
+      assert.equal(notModified.status, 304, `${header} ger 304`);
+      expectDataHeaders(notModified, { etag: registryEtag, body: false });
+      assert.equal((await notModified.text()).length, 0, 'ett 304-svar har ingen kropp');
+    }
+    for (const header of ['abc', `"${'0'.repeat(64)}"`]) {
+      const stale = await fetch(`${baseUrl}/data/derived/parti.json`, { headers: { 'If-None-Match': header } });
+      assert.equal(stale.status, 200, `${header} matchar inte etaggen`);
+    }
+
+    const registryHead = await fetch(`${baseUrl}/data/derived/parti.json`, { method: 'HEAD', headers: identity });
+    assert.equal(registryHead.status, 200);
+    expectDataHeaders(registryHead, { etag: registryEtag, length: registryFile.length });
+    assert.equal((await registryHead.text()).length, 0, 'HEAD svarar utan kropp');
+
+    for (const method of ['POST', 'PUT', 'PATCH', 'DELETE']) {
+      const rejected = await fetch(`${baseUrl}/data/derived/parti.json`, { method });
+      assert.equal(rejected.status, 405, `${method} avvisas`);
+      assert.equal(rejected.headers.get('allow'), 'GET, HEAD, OPTIONS');
+      assert.equal(rejected.headers.get('access-control-allow-origin'), '*');
+    }
+
+    // A preflight asks about the method, not the resource, so an unknown
+    // address is answered the same way as a known one.
+    for (const target of ['/data/derived/parti.json', '/data/finns-inte.json']) {
+      const preflight = await fetch(`${baseUrl}${target}`, { method: 'OPTIONS' });
+      assert.equal(preflight.status, 204, `${target} svarar på preflight`);
+      assert.equal(preflight.headers.get('access-control-allow-origin'), '*');
+      assert.equal(preflight.headers.get('access-control-allow-methods'), 'GET, HEAD, OPTIONS');
+      assert.match(preflight.headers.get('access-control-allow-headers'), /If-None-Match/);
+      assert.equal(preflight.headers.get('access-control-max-age'), '86400');
+    }
+
+    const partyResource = await fetch(`${baseUrl}/data/parti/${current.filnamn}/index.json`);
+    assert.equal(partyResource.status, 200);
+    assert.equal((await partyResource.json()).uuid, current.uuid, 'partiets registerfil kommer ur samma register');
+
+    const movedResource = await fetch(
+      `${baseUrl}/data/parti/${previous.tidigare_filnamn[0]}/index.json`,
+      { redirect: 'manual' }
+    );
+    assert.equal(movedResource.status, 308);
+    assert.equal(
+      new URL(movedResource.headers.get('location'), baseUrl).pathname,
+      `/data/parti/${previous.filnamn}/index.json`
+    );
+    assert.equal(movedResource.headers.get('access-control-allow-origin'), '*');
+
+    const missingResource = await fetch(`${baseUrl}/data/parti/finns-inte/index.json`);
+    assert.equal(missingResource.status, 404);
+    assert.equal(missingResource.headers.get('content-type'), 'application/json; charset=utf-8');
+    assert.equal(missingResource.headers.get('access-control-allow-origin'), '*');
+    assert.deepEqual(await missingResource.json(), { fel: 'Okänd resurs' });
+
+    const candidateFile = path.join(projectRoot, 'data', 'val', '2018', 'kandidatlistor', 'gotenes-framtid.json');
+    assert.ok(
+      fs.existsSync(candidateFile),
+      'kandidatfilen finns kvar — peka provet på en annan fil under val/<år>/kandidatlistor/ om den flyttats'
+    );
+    const withProfile = parties.find(party =>
+      fs.existsSync(path.join(projectRoot, 'data', 'parti', party.filnamn, 'profil.json')));
+    assert.ok(withProfile, 'något parti har en profil.json att hålla utanför /data/');
+    for (const target of [
+      '/data/val/2018/kandidatlistor/gotenes-framtid.json',
+      `/data/parti/${withSymbol.filnamn}/${withSymbol.partisymbol.filnamn}`,
+      `/data/parti/${withProfile.filnamn}/profil.json`,
+      '/data/parti/kodbyten.json',
+      '/data/valresultat/riksdag-partikopplingar.json',
+      '/data/val/2022/valresultat/scb-tabeller.json',
+      '/data/derived/',
+      '/data/%2e%2e/package.json',
+      '/data/parti/%2e%2e/kodbyten.json',
+      '/data/derived%2fparti.json',
+      '/data/derived/parti.json%00',
+      '/data/DERIVED/parti.json'
+    ]) {
+      const forbidden = await fetch(`${baseUrl}${target}`, { redirect: 'manual' });
+      assert.equal(forbidden.status, 404, `${target} lämnas inte ut`);
+    }
+
+    // Addresses the framework normalises itself. What is locked is that nothing
+    // outside the allowlist is served, not which status Next picks: at most one
+    // redirect is followed, it stays under /data/, and a 200 can only be the
+    // resource the normalised address names.
+    for (const target of ['/data/derived', '/data/derived//parti.json', '/data/derived/parti.json/']) {
+      let normalised = await fetch(`${baseUrl}${target}`, { redirect: 'manual' });
+      if (normalised.status >= 300 && normalised.status < 400) {
+        const location = new URL(normalised.headers.get('location'), baseUrl);
+        assert.equal(location.origin, baseUrl, `${target} vidarebefordras inom sajten`);
+        assert.ok(location.pathname.startsWith('/data/'), `${target} vidarebefordras inom /data/`);
+        normalised = await fetch(location, { redirect: 'manual' });
+      }
+      assert.ok([200, 404].includes(normalised.status), `${target} slutar på 200 eller 404`);
+      if (normalised.status === 200) {
+        assert.ok(
+          Buffer.from(await normalised.arrayBuffer()).equals(registryFile),
+          `${target} kan bara nå registret`
+        );
+      }
+    }
+
+    const traversal = await rawRequest(port, '/data/../package.json');
+    assert.notEqual(traversal.status, 200, 'en rå ../-sökväg lämnar inte ut något utanför data/');
+
+    assert.equal((await fetch(`${baseUrl}/api/data/derived/parti.json`)).status, 200, 'routens egen adress fungerar');
+
+    const participationFile = JSON.parse(fs.readFileSync(
+      path.join(projectRoot, 'data', 'val', latest, 'partideltagande', 'partier.json'), 'utf8'
+    ));
+    const participation = await fetch(`${baseUrl}/data/val/${latest}/partideltagande/partier.json`);
+    assert.equal(participation.status, 200);
+    assert.equal((await participation.json()).length, participationFile.length);
+
+    const resultYear = String(chamberResult.valar);
+    assert.equal((await fetch(`${baseUrl}/data/val/${resultYear}/valresultat/riksdag.json`)).status, 200);
+    const latestResult = await fetch(`${baseUrl}/data/val/${latest}/valresultat/riksdag.json`);
+    assert.equal(
+      latestResult.status,
+      fs.existsSync(path.join(projectRoot, 'data', 'val', latest, 'valresultat', 'riksdag.json')) ? 200 : 404,
+      `valresultatet ${latest} svarar efter om filen finns`
+    );
+
+    const dataPage = await fetch(`${baseUrl}/data/`);
+    assert.equal(dataPage.status, 200);
+    const dataBody = await dataPage.text();
+    assert.match(dataBody, /<title[^>]*>Data – Partidata<\/title>/);
+    assert.match(dataBody, /<link rel="canonical" href="https:\/\/www\.partidata\.se\/data\/"[^>]*>/);
+    assert.match(dataBody, /Access-Control-Allow-Origin/, 'sidan dokumenterar CORS-huvudet');
+    assert.match(dataBody, /CC0/, 'sidan anger licensen');
+    const documented = [...new Set([...dataBody.matchAll(/href="(\/data\/[^"]+)"/g)].map(match => match[1]))];
+    assert.ok(documented.length >= 8, 'adresstabellen länkar till resurserna');
+    for (const address of documented) {
+      const linked = await fetch(`${baseUrl}${address}`, { redirect: 'manual' });
+      assert.equal(linked.status, 200, `${address} på dokumentationssidan svarar 200`);
+    }
+
+    assert.match(homeBody, /href="\/data\/"/, 'navigationen länkar till dokumentationssidan');
+    assert.match(
+      profileBody,
+      new RegExp(`href="/data/parti/${current.filnamn}/index\\.json"`),
+      'partisidans registerdata pekar på Partidata'
+    );
+    assert.doesNotMatch(
+      profileBody,
+      new RegExp(`github\\.com/swedev/partidata/blob/main/data/parti/${current.filnamn}/index\\.json`),
+      'registerdatalänken pekar inte längre på GitHub'
+    );
 
     const health = await fetch(`${baseUrl}/api/health`);
     assert.equal(health.status, 200);

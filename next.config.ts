@@ -26,6 +26,7 @@ const nextConfig: NextConfig = {
   async rewrites () {
     return [
       { source: '/partisymbol/:filnamn/:bild', destination: '/api/partisymbol/:filnamn/:bild' },
+      { source: '/data/:path+', destination: '/api/data/:path+' },
       { source: '/sitemap.xml', destination: '/api/sitemap' },
     ];
   },

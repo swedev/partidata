@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-function Header () {
+function Header ({ current = 'partier' }: { current?: 'partier' | 'data' }) {
   return (
     <header className="site-header">
       <div className="site-shell site-header__inner">
@@ -26,8 +26,8 @@ function Header () {
         </Link>
 
         <nav className="site-header__nav" aria-label="Huvudnavigation">
-          <Link href="/" className="site-header__active-link">Partier</Link>
-          <a href="https://github.com/swedev/partidata">Data på GitHub</a>
+          <Link href="/" className={current === 'partier' ? 'site-header__active-link' : undefined}>Partier</Link>
+          <Link href="/data/" className={current === 'data' ? 'site-header__active-link' : undefined}>Data</Link>
           <a href="#om-tjansten">Om tjänsten</a>
         </nav>
       </div>
