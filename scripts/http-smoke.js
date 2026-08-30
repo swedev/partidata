@@ -81,6 +81,31 @@ function countPattern (matched, total) {
   return new RegExp(`>${matched}(<!-- -->)? av (<!-- -->)?${total}</span>`);
 }
 
+/** The markup of one segmented control, cut out by the legend that names it. */
+function segmentGroup (html, legend) {
+  const group = html.match(new RegExp(
+    `<fieldset[^>]*class="home-segments"[^>]*><legend[^>]*>${legend}</legend>([\\s\\S]*?)</fieldset>`
+  ));
+  assert.ok(group, `segmentgruppen "${legend}" finns i markupen`);
+  return group[1];
+}
+
+/** The value of the one segment a group has selected, which is always exactly one. */
+function checkedSegment (groupHtml) {
+  const checked = [...groupHtml.matchAll(/<input[^>]*>/g)]
+    .map(match => match[0])
+    .filter(input => / checked=""/.test(input));
+  assert.equal(checked.length, 1, 'exakt ett segment i gruppen är valt');
+  return checked[0].match(/ value="([^"]*)"/)[1];
+}
+
+/** The radio of one segment, by the value it stands for. */
+function segmentInput (groupHtml, value) {
+  const input = groupHtml.match(new RegExp(`<input[^>]*value="${value}"[^>]*>`));
+  assert.ok(input, `segmentet "${value}" finns i gruppen`);
+  return input[0];
+}
+
 /** Extracts the party links of the "Alla partier" grid in document order. */
 function partyGridLinks (html) {
   const section = html.slice(html.indexOf('id="alla-partier"'));
@@ -175,7 +200,7 @@ async function main () {
       countPattern(standing.length, parties.length),
       'rubriken räknar partierna i det förvalda valåret mot hela registret'
     );
-    assert.match(homeBody, new RegExp(`<option value="${latest}" selected="">${latest}</option>`), 'valårsfiltret står på det senaste valet');
+    assert.equal(checkedSegment(segmentGroup(homeBody, 'Valår')), latest, 'valårsfiltret står på det senaste valet');
     assert.match(homeBody, /<option value="namn" selected="">Sorterat <!-- -->A–Ö<\/option>/, 'sorteringen står på bokstavsordning');
     assert.match(homeBody, /<option value="kommuner">Sorterat <!-- -->Flest kommuner<\/option>/, 'sorteringen kan rangordna på kommuner');
     assert.match(homeBody, new RegExp(`/parti/${first}`), 'partigridet länkar till en partisida');
@@ -184,7 +209,7 @@ async function main () {
     assert.match(homeBody, new RegExp(`>${outside.partier[0].rostandel.toFixed(2).replace('.', ',')}(<!-- -->)? %<`), 'utanför-rankningen visar den härledda röstandelen');
     assert.equal(homeBody.split('party-card--medium').length - 1, outside.partier.length, 'utanför-rankningen renderar alla härledda partikort');
     assert.match(homeBody, new RegExp(`valet (<!-- -->)?${chamber.valar}`), 'riksdagssektionen anger valåret');
-    assert.match(homeBody, /aria-pressed="false"/, 'valtypen renderas som en chip-grupp');
+    assert.equal(checkedSegment(segmentGroup(homeBody, 'Valtyp')), '', 'valtypen står på alla');
     assert.match(homeBody, /Visa fler partier \(/, 'visa fler anger hur många som återstår');
     assert.match(homeBody, /Alternativet \(Bromölla\)/, 'identiska partinamn får ort på korten');
     assert.match(homeBody, /Alternativet \(Ljungby\)/, 'alla synliga namndubbletter särskiljs');
@@ -201,11 +226,30 @@ async function main () {
     const filtered = await fetch(`${baseUrl}/?valar=${earlier}&valtyp=riksdag`);
     assert.equal(filtered.status, 200);
     const filteredBody = await filtered.text();
-    assert.match(filteredBody, new RegExp(`<option value="${earlier}" selected="">${earlier}</option>`), 'valårsfiltret står på året i länken');
-    assert.match(filteredBody, /aria-pressed="true"[^>]*>Riksdagsval</, 'riksdagsvalet är den tryckta chipen');
+    assert.equal(checkedSegment(segmentGroup(filteredBody, 'Valår')), earlier, 'valårsfiltret står på året i länken');
+    assert.equal(checkedSegment(segmentGroup(filteredBody, 'Valtyp')), 'riksdag', 'riksdagsvalet är det valda segmentet');
     assert.match(filteredBody, /<link rel="canonical" href="https:\/\/www\.partidata\.se\/"[^>]*>/, 'en filtrerad vy är samma kanoniska sida');
     assert.match(filteredBody, countPattern(parliamentary.length, parties.length), 'rubriken räknar de filtrerade partierna');
     assert.deepEqual(partyGridLinks(filteredBody), expectedGrid(parliamentary), 'gridet visar partierna länken filtrerar fram');
+
+    // A county rules out the nationwide election, which the server renders as a
+    // disabled segment carrying the reason as its description.
+    const regionCounties = new Set([...deltagande.values()].flatMap(facets => facets[earlier]?.region ?? []));
+    const county = regionCounties.has('01') ? '01' : [...regionCounties].toSorted().at(0);
+    assert.ok(county, `regionvalet ${earlier} har minst ett län`);
+    const inCounty = await fetch(`${baseUrl}/?valar=${earlier}&valtyp=region&lan=${county}`);
+    assert.equal(inCounty.status, 200);
+    const kindGroup = segmentGroup(await inCounty.text(), 'Valtyp');
+    assert.equal(checkedSegment(kindGroup), 'region', 'regionvalet är det valda segmentet');
+    const lockedInput = segmentInput(kindGroup, 'riksdag');
+    assert.match(lockedInput, / disabled=""/, 'ett valt län låser riksdagsvalet');
+    const noteId = lockedInput.match(/ aria-describedby="([^"]*)"/);
+    assert.ok(noteId, 'det låsta segmentet pekar ut sin beskrivning');
+    assert.ok(
+      kindGroup.includes(`<span id="${noteId[1]}" class="sr-only">Riksdagsval gäller inte ett valt område — välj Hela landet och Alla kommuner först</span>`),
+      'beskrivningen är låstexten i ett dolt spann'
+    );
+    assert.doesNotMatch(segmentInput(kindGroup, 'kommun'), / aria-describedby=/, 'ett olåst segment får ingen beskrivning');
 
     // The ranking is the widest municipal ballot that year, and the sort is
     // stable, so parties on equally many keep Swedish name order.
@@ -229,15 +273,15 @@ async function main () {
     const everyYear = await fetch(`${baseUrl}/?valar=alla`);
     assert.equal(everyYear.status, 200);
     const everyYearBody = await everyYear.text();
-    assert.match(everyYearBody, /<option value="" selected="">Alla valår<\/option>/, 'valårsfiltret står på alla valår');
+    assert.equal(checkedSegment(segmentGroup(everyYearBody, 'Valår')), '', 'valårsfiltret står på alla valår');
     assert.match(everyYearBody, countPattern(parties.length, parties.length), 'utan valår och övriga filter matchar hela registret');
     assert.deepEqual(partyGridLinks(everyYearBody), expectedGrid(inNameOrder), 'gridet är hela registret i bokstavsordning');
 
     const invalid = await fetch(`${baseUrl}/?valar=1900&valtyp=eu`);
     assert.equal(invalid.status, 200);
     const invalidBody = await invalid.text();
-    assert.match(invalidBody, new RegExp(`<option value="${latest}" selected="">${latest}</option>`), 'ett valår datan saknar faller tillbaka på förvalet');
-    assert.doesNotMatch(invalidBody, /aria-pressed="true"/, 'en okänd valtyp lämnar chip-gruppen otryckt');
+    assert.equal(checkedSegment(segmentGroup(invalidBody, 'Valår')), latest, 'ett valår datan saknar faller tillbaka på förvalet');
+    assert.equal(checkedSegment(segmentGroup(invalidBody, 'Valtyp')), '', 'en okänd valtyp faller tillbaka på alla');
 
     const canonicalYear = await fetch(`${baseUrl}/?valar=${latest}`);
     assert.equal(canonicalYear.status, 200);

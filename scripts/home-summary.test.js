@@ -6,8 +6,7 @@ const {
   cardSub,
   participationYears,
   partyLabel,
-  queryEcho,
-  toggleKind
+  queryEcho
 } = require('../src/components/home/summary.ts');
 
 function party (deltagande) {
@@ -65,12 +64,6 @@ test('equal party names get an area suffix only when one is available', () => {
   assert.equal(partyLabel({ beteckning: 'Kommunens Väl', duplicateName: true, omrade: 'Hylte' }), 'Kommunens Väl (Hylte)');
   assert.equal(partyLabel({ beteckning: 'Kommunens Väl', duplicateName: true }), 'Kommunens Väl');
   assert.equal(partyLabel({ beteckning: 'Eget namn', duplicateName: false, omrade: 'Hylte' }), 'Eget namn');
-});
-
-test('a chip toggles its election type off when it is already the chosen one', () => {
-  assert.equal(toggleKind('', 'kommun'), 'kommun');
-  assert.equal(toggleKind('riksdag', 'kommun'), 'kommun');
-  assert.equal(toggleKind('kommun', 'kommun'), '');
 });
 
 test('the empty state echoes the search term, or the filters', () => {

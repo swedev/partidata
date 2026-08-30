@@ -1,9 +1,10 @@
 import { useId, useMemo } from 'react';
 import type { HomeCounty, HomeMunicipality } from 'src/server/party-data';
 import type { ElectionKind, HomeFilters } from './filtering';
-import { countyApplies, electionKindLabels, municipalityApplies } from './filtering';
+import { countyApplies, municipalityApplies } from './filtering';
 import { ChevronDownIcon, RotateCcwIcon, SearchIcon } from './icons';
-import { toggleKind } from './summary';
+import SegmentedControl from './SegmentedControl';
+import { kindSegments, yearSegments } from './segments';
 
 export interface PartyFiltersProps {
   filters: HomeFilters;
@@ -41,17 +42,12 @@ function PartyFilters ({ filters, valar, lan, kommuner, kinds, onChange, onReset
 
       <div className="home-search__filters">
         {valar.length > 0 && (
-          <span className="home-select">
-            <select
-              aria-label="Valår"
-              value={filters.valar}
-              onChange={event => onChange({ valar: event.target.value })}
-            >
-              <option value="">Alla valår</option>
-              {valar.map(year => <option key={year} value={year}>{year}</option>)}
-            </select>
-            <ChevronDownIcon className="home-select__chevron" />
-          </span>
+          <SegmentedControl
+            legend="Valår"
+            value={filters.valar}
+            segments={yearSegments(valar)}
+            onChange={valar => onChange({ valar })}
+          />
         )}
 
         {lan.length > 0 && (
@@ -90,25 +86,12 @@ function PartyFilters ({ filters, valar, lan, kommuner, kinds, onChange, onReset
         )}
 
         {kinds.length > 0 && (
-          <div className="home-chips" role="group" aria-label="Valtyp">
-            {kinds.map(kind => {
-              const pressed = filters.valtyp === kind;
-              const locked = (kind === 'riksdag' && Boolean(filters.lan)) || (kind !== 'kommun' && Boolean(filters.kommun));
-              return (
-                <button
-                  key={kind}
-                  type="button"
-                  className={`home-chip${pressed ? ' home-chip--on' : ''}`}
-                  aria-pressed={pressed}
-                  disabled={locked}
-                  title={locked ? `${electionKindLabels[kind]} gäller inte ett valt område — välj Hela landet och Alla kommuner först` : undefined}
-                  onClick={() => onChange({ valtyp: toggleKind(filters.valtyp, kind) })}
-                >
-                  {electionKindLabels[kind]}
-                </button>
-              );
-            })}
-          </div>
+          <SegmentedControl
+            legend="Valtyp"
+            value={filters.valtyp}
+            segments={kindSegments(kinds, filters)}
+            onChange={valtyp => onChange({ valtyp })}
+          />
         )}
 
         <button type="button" className="home-reset" onClick={onReset}>

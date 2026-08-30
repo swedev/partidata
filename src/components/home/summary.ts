@@ -57,14 +57,6 @@ export function partyLabel (party: Pick<HomeParty, 'beteckning' | 'duplicateName
 }
 
 /**
- * The chips are a single choice shown as a group, so pressing the active one
- * clears the election type rather than leaving it stuck on.
- */
-export function toggleKind (current: HomeFilters['valtyp'], kind: ElectionKind): HomeFilters['valtyp'] {
-  return current === kind ? '' : kind;
-}
-
-/**
  * The quoted term the empty state echoes back, or the filters when the search
  * box is empty.
  */
