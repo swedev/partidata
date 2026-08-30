@@ -90,7 +90,11 @@ export function ElectionResultsSection ({ results, partyLabel }: { results: Part
   const firstYear = results.resultat[0]?.valar;
   const lastYear = results.resultat.at(-1)?.valar;
   const sourceNames = [...new Set(results.resultat.map(post => post.kalla.namn))];
-  const seriesSource = `${sourceNames.join(' och ')} · slutligt resultat`;
+  const authority = sourceNames.join(' och ');
+  const seriesSource = `${authority} · slutligt resultat`;
+  // Valmyndigheten's is the only source logo the site carries, so it stands
+  // only where Valmyndigheten is the whole series.
+  const valmyndighetenOnly = sourceNames.length === 1 && sourceNames[0] === 'Valmyndigheten';
   const chamber = results.kammare;
   if (!result) return null;
 
@@ -103,7 +107,7 @@ export function ElectionResultsSection ({ results, partyLabel }: { results: Part
           subtitle={results.resultat.length > 1
             ? `Riksdagsval ${firstYear}–${lastYear}, andel av giltiga röster i hela riket`
             : `Riksdagsvalet ${firstYear}, andel av giltiga röster i hela riket`}
-          aside={<div className="profile-authority-brand"><Image src="/img/kallor/valmyndigheten.png" alt="" width={38} height={38} /><div><strong>Valmyndigheten</strong><small>{seriesSource}</small></div></div>}
+          aside={<div className="profile-authority-brand">{valmyndighetenOnly && <Image src="/img/kallor/valmyndigheten.png" alt="" width={38} height={38} />}<div><strong>{authority}</strong><small>valresultat · slutligt resultat</small></div></div>}
         />
         <div className="profile-results__top">
           <div className="profile-results__intro"><p>Diagrammet visar partiets andel av de giltiga rösterna och antal mandat i varje riksdagsval.</p><SourceLine>{seriesSource}</SourceLine></div>
