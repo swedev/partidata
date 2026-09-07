@@ -195,7 +195,7 @@ const DataPage: NextPage<DataPageProps> = ({ antalPartier, dataCommit, exempel, 
           <ul>
             <li>Adresser och fältnamn är stabila. Nya fält kan tillkomma utan förvarning — en läsare ska ignorera fält den inte känner igen.</li>
             <li>
-              Datan publiceras från <code>main</code>: en ändring under <code>data/</code> går live när den mergas.
+              Datan publiceras från <code>main</code>, utan att en ny version av tjänsten behöver driftsättas.
               Samma filer finns på{' '}
               <a href={`${repo}/tree/${dataRef}/data/`}>GitHub under den commit som serveras</a>.
             </li>

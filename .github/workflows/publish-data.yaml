@@ -1,16 +1,11 @@
 name: Publish data
 
-# A push to main that touches data/** rsyncs data/ to production and restarts
-# the managed Node process, so a data change goes live without a release.
-# Nothing is built, and nothing here depends on the deployed code: publishing
-# data and releasing code are separate. Whatever triggered the run, it is main's
-# tip that is published.
+# Run by hand, this rsyncs data/ to production and restarts the managed Node
+# process, so a data change goes live without a release. Nothing is built, and
+# nothing here depends on the deployed code: publishing data and releasing code
+# are separate. Whichever ref the run was started from, it is main's tip that
+# is published.
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'data/**'
   workflow_dispatch:
 
 # Shared with the release, so a data publish and a deploy never interleave.

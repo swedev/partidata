@@ -4,9 +4,12 @@ partidata.se runs as a standalone Next.js process behind nginx. GitHub Actions
 builds every pushed `v*` tag, rsyncs `.release/` to the configured production
 target and restarts `partidata.service`.
 
-Data has a shorter path. `publish-data.yaml` rsyncs `data/` and restarts the
-service whenever a push to `main` touches `data/**`, so a data change goes live
-at merge, without a release.
+Data has a shorter path. `publish-data.yaml`, run by hand, rsyncs `data/` and
+restarts the service, so a data change on `main` goes live without a release:
+
+```bash
+gh workflow run publish-data.yaml
+```
 
 The service has no database. Versioned JSON and party symbols under `data/` are
 included in the artifact and read by the Node process at request time.
@@ -41,16 +44,16 @@ a single line with the 40-character hash, and `/api/health` reports it as
 commit. The release writes the tag's commit; `publish-data.yaml` writes main's
 tip.
 
-- The job always publishes main's tip, whatever triggered it. A
-  `workflow_dispatch` from a branch, a re-run of an older run and a push that
-  waited behind a release all send the same thing: what `main` is when the job
-  runs. An intentional rollback is a revert on `main`.
+- The job always publishes main's tip, whichever ref it was started from. A
+  run started from a branch, a re-run of an older run and a run that waited
+  behind a release all send the same thing: what `main` is when the job runs.
+  An intentional rollback is a revert on `main`, followed by a new run.
 - `production-deploy` holds at most one waiting run, so a third event within
   the same few minutes replaces the one already queued and cancels it. Re-run
   it manually.
-- A failed run rolls nothing back. The next push to `main` that touches `data/`,
-  or a `workflow_dispatch`, rsyncs the whole tree again and is the repair, as
-  long as the server answers `/api/health` at all — a 500 still counts.
+- A failed run rolls nothing back. The next run rsyncs the whole tree again
+  and is the repair, as long as the server answers `/api/health` at all — a
+  500 still counts.
 - A server that does not answer is restored with a manual release run on the
   current tag.
 

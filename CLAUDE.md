@@ -11,9 +11,10 @@ Open data about Swedish political parties. Swedish copy.
 - CI (`Integrate`) must be green; `npm run precommit` runs the equivalent local
   lint, typecheck, data validation, tests, standalone build and HTTP smoke.
 - Code deploys on `v*` tags: tag `main` and push the tag (see
-  `deploy/README.md`). A merge to `main` that touches `data/` publishes the data
-  by itself through `publish-data.yaml` — data and code ship independently. A
-  code change still needs a tag, and takes the data with it.
+  `deploy/README.md`). Data on `main` is published without a release by running
+  `publish-data.yaml` by hand (`gh workflow run publish-data.yaml`) — data and
+  code ship independently. A code change still needs a tag, and takes the data
+  with it.
   `data/derived/riksdag.json` and `public/img/sveriges_riksdag.svg` are built
   into the bundle, so a change to them reaches the party pages only with a
   release.
