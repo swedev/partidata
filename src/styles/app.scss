@@ -129,6 +129,8 @@ input:focus-visible {
 }
 
 .site-header {
+  position: relative;
+  z-index: 1;
   background: transparent;
 }
 
