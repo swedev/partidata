@@ -10,8 +10,13 @@ Open data about Swedish political parties. Swedish copy.
 - Branch + PR flow; PRs are squash-merged.
 - CI (`Integrate`) must be green; `npm run precommit` runs the equivalent local
   lint, typecheck, data validation, tests, standalone build and HTTP smoke.
-- Deploys happen on `v*` tags, not on merge: tag `main` and push the tag
-  (see `deploy/README.md`). Merging is not releasing.
+- Code deploys on `v*` tags: tag `main` and push the tag (see
+  `deploy/README.md`). A merge to `main` that touches `data/` publishes the data
+  by itself through `publish-data.yaml` — data and code ship independently. A
+  code change still needs a tag, and takes the data with it.
+  `data/derived/riksdag.json` and `public/img/sveriges_riksdag.svg` are built
+  into the bundle, so a change to them reaches the party pages only with a
+  release.
 
 ## Stack
 

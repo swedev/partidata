@@ -5,8 +5,12 @@ import { Fragment } from 'react';
 import { FIELD_DOCS } from 'src/components/data/fields';
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
+import { readDataCommit } from 'src/server/data-commit';
 import { partyData } from 'src/server/party-data';
 import type { DataCatalog } from 'src/server/party-data';
+
+/** The catalog the page renders, plus the commit the served data comes from. */
+type DataPageProps = DataCatalog & { dataCommit?: string };
 
 const version = process.env.PARTIDATA_VERSION;
 const ref = version ? `v${version}` : 'main';
@@ -32,9 +36,10 @@ function AddressRow ({ adress, innehall }: { adress: string; innehall: string })
   );
 }
 
-const DataPage: NextPage<DataCatalog> = ({ antalPartier, exempel, valar }) => {
+const DataPage: NextPage<DataPageProps> = ({ antalPartier, dataCommit, exempel, valar }) => {
   const exempelAdress = `/data/parti/${encodeURIComponent(exempel.filnamn)}/index.json`;
   const senasteForst = [...valar].reverse();
+  const dataRef = dataCommit ?? ref;
 
   return (
     <div className="page-shell">
@@ -167,7 +172,7 @@ const DataPage: NextPage<DataCatalog> = ({ antalPartier, exempel, valar }) => {
 
           <h3>Huvuden</h3>
           <ul>
-            <li><code>Cache-Control: public, max-age=3600</code> — datan ändras bara när en ny version driftsätts, så ett svar är som mest en timme gammalt.</li>
+            <li><code>Cache-Control: public, max-age=3600</code> — ett svar är som mest en timme äldre än filen på servern.</li>
             <li><code>ETag</code> — <code>W/</code> följt av filens SHA-256. Etaggen är svag därför att samma fil levereras både komprimerad och okomprimerad; det är samma representation, och det är precis vad en svag etagg säger. Skicka tillbaka den oförändrad i <code>If-None-Match</code> och få 304 utan kropp när filen är densamma.</li>
             <li><code>Vary: Accept-Encoding</code> — kroppen varierar med komprimeringen.</li>
             <li><code>X-Partidata-Version</code> — den version som svarade, samma nummer som i sidfoten och i <code>/api/health</code>.</li>
@@ -190,9 +195,13 @@ const DataPage: NextPage<DataCatalog> = ({ antalPartier, exempel, valar }) => {
           <ul>
             <li>Adresser och fältnamn är stabila. Nya fält kan tillkomma utan förvarning — en läsare ska ignorera fält den inte känner igen.</li>
             <li>
-              Datan ändras bara när en ny version driftsätts. Versionen står i <code>X-Partidata-Version</code>, i
-              sidfoten och i <code>/api/health</code>, och samma filer finns på{' '}
-              <a href={`${repo}/tree/${ref}/data/`}>GitHub under taggen</a>.
+              Datan publiceras från <code>main</code>: en ändring under <code>data/</code> går live när den mergas.
+              Samma filer finns på{' '}
+              <a href={`${repo}/tree/${dataRef}/data/`}>GitHub under den commit som serveras</a>.
+            </li>
+            <li>
+              Kodens version står i <code>X-Partidata-Version</code>, i sidfoten och i <code>/api/health</code>. Där
+              anges också datans commit som <code>data.commit</code> — samma commit som länken ovan pekar på.
             </li>
             <li>
               Ett fält eller en adress som tas bort eller döps om görs i en version som noteras här, och en flyttad
@@ -247,13 +256,13 @@ const DataPage: NextPage<DataCatalog> = ({ antalPartier, exempel, valar }) => {
             <li>
               <strong>Profildata</strong> — <code>parti/&lt;filnamn&gt;/profil.json</code> bär utdrag ur Wikipedia
               under CC BY-SA 4.0 och nyhetsrubriker, och finns bara på{' '}
-              <a href={`${repo}/tree/${ref}/data/parti`}>GitHub</a>.
+              <a href={`${repo}/tree/${dataRef}/data/parti`}>GitHub</a>.
             </li>
             <li>
               <strong>Kopplingstabeller</strong> — <code>parti/kodbyten.json</code>,{' '}
               <code>valresultat/riksdag-partikopplingar.json</code> och{' '}
               <code>val/&lt;år&gt;/valresultat/scb-tabeller.json</code> är arbetsmaterial för importen och finns på{' '}
-              <a href={`${repo}/tree/${ref}/data`}>GitHub</a>.
+              <a href={`${repo}/tree/${dataRef}/data`}>GitHub</a>.
             </li>
           </ul>
         </section>
@@ -266,6 +275,7 @@ const DataPage: NextPage<DataCatalog> = ({ antalPartier, exempel, valar }) => {
 
 export default DataPage;
 
-export const getServerSideProps: GetServerSideProps<DataCatalog> = async () => ({
-  props: await partyData.readDataCatalog(),
-});
+export const getServerSideProps: GetServerSideProps<DataPageProps> = async () => {
+  const [catalog, dataCommit] = await Promise.all([partyData.readDataCatalog(), readDataCommit()]);
+  return { props: { ...catalog, ...(dataCommit ? { dataCommit } : {}) } };
+};

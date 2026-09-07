@@ -609,6 +609,42 @@ async function main () {
     assert.equal(health.status, 200);
     assert.equal(health.headers.get('cache-control'), 'no-store');
     assert.deepEqual(await health.json(), { status: 'ok', version }, 'hälsokontrollen anger versionen som byggdes');
+    assert.match(
+      dataBody,
+      new RegExp(`href="https://github\\.com/swedev/partidata/tree/v${version.replace(/\./g, '\\.')}/data/"`),
+      'utan data-commit pekar datalänken på taggen'
+    );
+
+    // The data workflows write `data-commit` next to the artifact after their
+    // rsync, and the module reads it per request, so both states are reachable
+    // against the same running process.
+    const commitFile = path.join(releaseRoot, 'data-commit');
+    const commit = 'a'.repeat(7) + 'b'.repeat(33);
+    try {
+      fs.writeFileSync(commitFile, `${commit}\n`);
+      const withCommit = await fetch(`${baseUrl}/api/health`);
+      assert.equal(withCommit.status, 200);
+      assert.deepEqual(
+        await withCommit.json(),
+        { status: 'ok', version, data: { commit } },
+        'hälsokontrollen anger datans commit när filen finns'
+      );
+      const dataWithCommit = await fetch(`${baseUrl}/data/`);
+      assert.equal(dataWithCommit.status, 200);
+      assert.match(
+        await dataWithCommit.text(),
+        new RegExp(`href="https://github\\.com/swedev/partidata/tree/${commit}/data/"`),
+        'datalänken pekar på den commit som serveras'
+      );
+    } finally {
+      fs.rmSync(commitFile, { force: true });
+    }
+    const withoutCommit = await fetch(`${baseUrl}/api/health`);
+    assert.deepEqual(
+      await withoutCommit.json(),
+      { status: 'ok', version },
+      'hälsokontrollen är sig lik när filen är borta igen'
+    );
 
     assert.match(homeBody, new RegExp(`Version <!-- -->${version.replace(/\./g, '\\.')}`), 'sidfoten visar versionen');
     console.log('HTTP-smoke passerade');
