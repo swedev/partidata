@@ -231,17 +231,43 @@
   align-items: center;
 }
 
-.profile-source-brand > span {
+.profile-source-brand__mark {
+  --profile-mark-height: 2.75rem;
+  --profile-mark-inset: 0.3rem;
+  --profile-mark-max: 6.5rem;
+  --profile-mark-inner: calc(var(--profile-mark-height) - 2 * var(--profile-mark-inset) - 2px);
+
   display: flex;
-  width: 2.75rem;
-  height: 2.75rem;
+  box-sizing: border-box;
+  height: var(--profile-mark-height);
+  min-width: var(--profile-mark-height);
+  padding: var(--profile-mark-inset);
+  border: 1px solid var(--profile-line);
   border-radius: 0.5625rem;
-  color: #102e12;
+  background: var(--profile-paper);
   align-items: center;
   flex: none;
+  justify-content: center;
+}
+
+/* Only the width is set, so the measured aspect ratio decides the height: a
+   mark fills the box, and a wordmark wider than the cap gets the cap. */
+.profile-source-brand__mark .party-symbol--beskuren {
+  width: min(
+    calc(var(--profile-mark-max) - 2 * var(--profile-mark-inset) - 2px),
+    calc(var(--profile-mark-inner) * var(--party-symbol-ratio))
+  );
+}
+
+.profile-source-brand__mark .party-symbol--hel {
+  width: var(--profile-mark-inner);
+  height: var(--profile-mark-inner);
+}
+
+.profile-source-brand__mark--text {
+  color: var(--profile-ink);
   font-size: 0.875rem;
   font-weight: 700;
-  justify-content: center;
 }
 
 .profile-source-brand h2 {
@@ -255,9 +281,11 @@
   margin: 0;
 }
 
-.profile-source-brand--small > span {
-  width: 2.125rem;
-  height: 2.125rem;
+.profile-source-brand--small .profile-source-brand__mark {
+  --profile-mark-height: 2.125rem;
+  --profile-mark-inset: 0.25rem;
+  --profile-mark-max: 5rem;
+
   border-radius: 0.4375rem;
   font-size: 0.75rem;
 }

@@ -54,8 +54,8 @@ function PartyPage ({
           <link rel="canonical" href={`https://www.partidata.se/parti/${slug}/`} />
         </Head>
         <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} displayName={pageName} symbol={symbol} symbolSrc={symbolSrc} symbolFrame={symbolFrame} results={valresultat} latestParticipation={participationYears[0]} wikidata={wikidata} />
-        <DocumentsSection profile={resolvedProfile} abbreviation={abbreviation} />
-        <RepresentativesSection profile={resolvedProfile} abbreviation={abbreviation} mandateCount={valresultat?.kammare?.mandat} />
+        <DocumentsSection profile={resolvedProfile} abbreviation={abbreviation} symbolSrc={symbolSrc} symbolFrame={symbolFrame} />
+        <RepresentativesSection profile={resolvedProfile} abbreviation={abbreviation} mandateCount={valresultat?.kammare?.mandat} symbolSrc={symbolSrc} symbolFrame={symbolFrame} />
         {valresultat && <ElectionResultsSection key={slug} results={valresultat} partyLabel={abbreviation} chamber={riksdag?.kammare} />}
         {valresultat && riksdag && <TurnoutSection turnout={riksdag.valdeltagande} />}
         {participationYears.length > 0 && <BallotSection participationYears={participationYears} candidateLists={candidateLists} slug={slug} partyName={displayName} />}

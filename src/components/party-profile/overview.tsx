@@ -11,20 +11,24 @@ import type {
   PartiValresultat,
   PartiWikidata,
 } from 'src/types';
-import { ExternalLink, SectionHeader, SourceLine, formatPrecisionDate } from './shared';
+import { ExternalLink, SectionHeader, SourceBrand, SourceLine, formatPrecisionDate } from './shared';
 
 const percentageFormatter = new Intl.NumberFormat('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-function OfficialChannels ({ profile, abbreviation }: { profile: PartiProfil; abbreviation?: string }) {
+function OfficialChannels ({ profile, abbreviation, symbolSrc, symbolFrame }: {
+  profile: PartiProfil;
+  abbreviation?: string;
+  symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
+}) {
   if (!profile.kanaler?.length) return null;
 
   return (
     <section className="profile-channels" aria-labelledby="channels-heading">
       <div className="profile-channels__intro">
-        <div className="profile-source-brand">
-          <span style={{ background: profile.accentfarg }}>{abbreviation ?? profile.namn.slice(0, 2).toUpperCase()}</span>
+        <SourceBrand symbolSrc={symbolSrc} symbolFrame={symbolFrame} abbreviation={abbreviation}>
           <h2 id="channels-heading">Partiets egna kanaler</h2>
-        </div>
+        </SourceBrand>
         <p>Länkarna går till partiets egna webbplatser. Innehållet publiceras och ansvaras för av partiet.</p>
       </div>
       <div className="profile-channel-links">
@@ -141,7 +145,7 @@ export function ProfileHero ({
         )}
       </dl>
 
-      <OfficialChannels profile={profile} abbreviation={abbreviation} />
+      <OfficialChannels profile={profile} abbreviation={abbreviation} symbolSrc={symbolSrc} symbolFrame={symbolFrame} />
     </div>
   );
 }
@@ -172,7 +176,12 @@ function DocumentLink ({ document }: { document: PartiProfilDokument }) {
   );
 }
 
-export function DocumentsSection ({ profile, abbreviation }: { profile: PartiProfil; abbreviation?: string }) {
+export function DocumentsSection ({ profile, abbreviation, symbolSrc, symbolFrame }: {
+  profile: PartiProfil;
+  abbreviation?: string;
+  symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
+}) {
   if (!profile.utdrag && !profile.dokument?.length) return null;
 
   return (
@@ -200,10 +209,9 @@ export function DocumentsSection ({ profile, abbreviation }: { profile: PartiPro
         )}
         {(profile.dokument?.length ?? 0) > 0 && (
           <aside className="profile-document-list">
-            <div className="profile-source-brand profile-source-brand--small">
-              <span style={{ background: profile.accentfarg }}>{abbreviation ?? profile.namn.slice(0, 2).toUpperCase()}</span>
+            <SourceBrand small symbolSrc={symbolSrc} symbolFrame={symbolFrame} abbreviation={abbreviation}>
               <div><strong>Från partiet</strong><small>Dokument hos utgivaren</small></div>
-            </div>
+            </SourceBrand>
             <ul>{profile.dokument?.map(document => <DocumentLink document={document} key={document.url} />)}</ul>
           </aside>
         )}
@@ -234,7 +242,13 @@ function CompactRepresentative ({ person }: { person: PartiProfilForetradare }) 
   );
 }
 
-export function RepresentativesSection ({ profile, abbreviation, mandateCount }: { profile: PartiProfil; abbreviation?: string; mandateCount?: number }) {
+export function RepresentativesSection ({ profile, abbreviation, mandateCount, symbolSrc, symbolFrame }: {
+  profile: PartiProfil;
+  abbreviation?: string;
+  mandateCount?: number;
+  symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
+}) {
   if (!profile.foretradare?.length) return null;
   const featured = profile.foretradare.filter(person => person.framlyft);
   const remaining = profile.foretradare.filter(person => !person.framlyft);
@@ -249,7 +263,11 @@ export function RepresentativesSection ({ profile, abbreviation, mandateCount }:
         id="representatives-heading"
         title="Vilka som företräder partiet"
         subtitle={`${profile.namn}s företrädare${mandateCount ? ` · partiet har ${mandateCount} mandat` : ''}`}
-        aside={<div className="profile-source-brand profile-source-brand--small"><span style={{ background: profile.accentfarg }}>{abbreviation ?? profile.namn.slice(0, 2).toUpperCase()}</span><div><strong>Partiets egen webbplats</strong>{sourceHost && <small>{sourceHost}</small>}</div></div>}
+        aside={(
+          <SourceBrand small symbolSrc={symbolSrc} symbolFrame={symbolFrame} abbreviation={abbreviation}>
+            <div><strong>Partiets egen webbplats</strong>{sourceHost && <small>{sourceHost}</small>}</div>
+          </SourceBrand>
+        )}
       />
       <div className="profile-representative-lead">
         {featured.map(person => <FeaturedRepresentative key={person.url} person={person} />)}

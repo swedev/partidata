@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react';
+import PartySymbol from 'src/components/PartySymbol';
+import type { SymbolFrame } from 'src/server/party-data';
 import type { PartiProfilKalla } from 'src/types';
+import { sourceMark } from './source-mark';
 
 const shortMonthNames = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
 
@@ -40,6 +43,33 @@ export function SourceLine ({ source, children }: { source?: PartiProfilKalla; c
       {children}
       {source && <><a href={source.url}>{source.namn}</a> · hämtat {source.hamtad}</>}
     </p>
+  );
+}
+
+/**
+ * A label for content that comes from the party itself, marked with the party's
+ * own symbol. The mark is decorative: the label beside it already says whose
+ * content it is.
+ */
+export function SourceBrand ({ symbolSrc, symbolFrame, abbreviation, small, children }: {
+  symbolSrc?: string;
+  symbolFrame?: SymbolFrame;
+  abbreviation?: string;
+  small?: boolean;
+  children: ReactNode;
+}) {
+  const mark = sourceMark({ symbolSrc, abbreviation });
+
+  return (
+    <div className={`profile-source-brand${small ? ' profile-source-brand--small' : ''}`}>
+      {mark?.kind === 'symbol' && (
+        <span className="profile-source-brand__mark"><PartySymbol src={mark.src} frame={symbolFrame} sizes="96px" /></span>
+      )}
+      {mark?.kind === 'text' && (
+        <span className="profile-source-brand__mark profile-source-brand__mark--text" aria-hidden="true">{mark.text}</span>
+      )}
+      {children}
+    </div>
   );
 }
 

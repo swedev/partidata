@@ -384,6 +384,28 @@ async function main () {
       'valdeltagandediagrammet anger seriens första och sista valår'
     );
 
+    const profilePath = path.join(projectRoot, 'data', 'parti', current.filnamn, 'profil.json');
+    const currentProfile = fs.existsSync(profilePath) ? JSON.parse(fs.readFileSync(profilePath, 'utf8')) : undefined;
+    const brandedSections = ['kanaler', 'dokument', 'foretradare']
+      .filter(key => currentProfile?.[key]?.length > 0).length;
+    if (!brandedSections || !current.partisymbol) {
+      console.log(`Hoppar över källmärkena: ${current.filnamn} saknar profilsektioner med källmärke eller partisymbol`);
+    } else {
+      const badges = profileBody
+        .split(/class="profile-source-brand(?=[ "])/)
+        .slice(1)
+        .filter(part => part.includes('profile-source-brand__mark'));
+      assert.equal(badges.length, brandedSections, 'partisidan har ett källmärke per partisektion');
+      const symbolPath = `/partisymbol/${current.filnamn}/${current.partisymbol.filnamn}`;
+      for (const badge of badges) {
+        const start = badge.indexOf('profile-source-brand__mark');
+        const mark = badge.slice(start, badge.indexOf('</span>', start));
+        assert.match(mark, /class="party-symbol/, 'varje källmärke visar partisymbolen');
+        assert.ok(mark.includes(symbolPath), 'varje källmärke visar partiets egen symbolfil');
+      }
+      assert.doesNotMatch(profileBody, /profile-source-brand__mark--text/, 'källmärket visar inga bokstäver när symbolen finns');
+    }
+
     const withoutSeatsProfile = await fetch(`${baseUrl}/parti/${withoutSeats.filnamn}/`);
     assert.equal(withoutSeatsProfile.status, 200);
     const withoutSeatsBody = await withoutSeatsProfile.text();
