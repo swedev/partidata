@@ -15,9 +15,9 @@ Open data about Swedish political parties. Swedish copy.
   `publish-data.yaml` by hand (`gh workflow run publish-data.yaml`) — data and
   code ship independently. A code change still needs a tag, and takes the data
   with it.
-  `data/derived/riksdag.json` and `public/img/sveriges_riksdag.svg` are built
-  into the bundle, so a change to them reaches the party pages only with a
-  release.
+  Everything under `data/` is read from disk at request time; the one file
+  built into the bundle is `public/img/sveriges_riksdag.svg`, so a change to it
+  reaches the header only with a release.
 
 ## Stack
 

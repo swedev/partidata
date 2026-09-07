@@ -57,12 +57,10 @@ tip.
 - A server that does not answer is restored with a manual release run on the
   current tag.
 
-Two files are built into the bundle rather than read from `data/` at request
-time: `data/derived/riksdag.json`, which `src/components/party-profile/elections.tsx`
-imports statically, and `public/img/sveriges_riksdag.svg`, which
-`scripts/build-derived-data.js` generates. A change to either reaches the party
-pages only with a release. `/data/derived/riksdag.json` itself is served from
-disk and does follow a data publish.
+One file is built into the bundle rather than read from `data/` at request
+time: `public/img/sveriges_riksdag.svg`, which `scripts/build-derived-data.js`
+generates and the header shows. A change to it reaches the site only with a
+release.
 
 ## One-time server setup
 
