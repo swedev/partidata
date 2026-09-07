@@ -1,21 +1,24 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import parliamentView from 'data/derived/riksdag.json';
+import type { ParliamentChamber, ParliamentTurnout } from 'src/server/party-data';
 import type { PartiDeltagande, PartiValresultat, PartiValresultatPost } from 'src/types';
 import { SectionHeader, SourceLine } from './shared';
 
 export type ElectionType = 'R' | 'L' | 'K';
 export type CandidateLists = Record<string, ElectionType[]>;
 
-const percentageFormatter = new Intl.NumberFormat('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-const chamberComposition = parliamentView.kammare.partier.map(party => ({ label: party.forkortning, seats: party.mandat }));
-const parliamentComposition = chamberComposition.toSorted((a, b) => b.seats - a.seats);
-const nationalTurnout = parliamentView.valdeltagande.resultat.map(result => ({ year: result.valar, value: result.procent }));
-const turnoutSourceNames = [...new Set(parliamentView.valdeltagande.kallor.map(source => source.namn))];
-const turnoutFetched = parliamentView.valdeltagande.kallor.map(source => source.hamtad).toSorted().at(-1);
+interface ChamberSeat {
+  id: number;
+  party: string;
+  x: number;
+  y: number;
+}
 
-const chamberSeats = (() => {
-  const parties = chamberComposition.flatMap(party => Array.from({ length: party.seats }, () => party.label));
+const percentageFormatter = new Intl.NumberFormat('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+/** One dot per seat, laid out over nine arcs, in the order the parties are given. */
+function chamberSeatPositions (partier: ParliamentChamber['partier']): ChamberSeat[] {
+  const parties = partier.flatMap(party => Array.from({ length: party.mandat }, () => party.forkortning));
   const rows = 9;
   const radii = Array.from({ length: rows }, (_, row) => 0.4 + ((0.97 - 0.4) * row) / (rows - 1));
   const radiusTotal = radii.reduce((total, radius) => total + radius, 0);
@@ -35,7 +38,7 @@ const chamberSeats = (() => {
     x: 50 + 50 * point.radius * Math.cos(point.angle),
     y: 100 - 100 * point.radius * Math.sin(point.angle),
   }));
-})();
+}
 
 function ElectionChart ({ results, selected, onSelect }: { results: PartiValresultatPost[]; selected: number; onSelect: (index: number) => void }) {
   const highestResult = Math.max(4, ...results.map(result => result.rostandel));
@@ -76,15 +79,34 @@ function ElectionChart ({ results, selected, onSelect }: { results: PartiValresu
   );
 }
 
-function ChamberDiagram ({ mandates, partyLabel }: { mandates: number; partyLabel?: string }) {
+function ChamberDiagram ({ mandates, seats, partyLabel }: { mandates: number; seats: ChamberSeat[]; partyLabel?: string }) {
   return (
     <div className="profile-chamber" role="img" aria-label={`${mandates} av riksdagens 349 mandat`}>
-      {chamberSeats.map(seat => <span key={seat.id} style={{ left: `${seat.x}%`, top: `${seat.y}%`, background: seat.party === partyLabel ? '#f1eee4' : '#2c4a7c' }} />)}
+      {seats.map(seat => <span key={seat.id} style={{ left: `${seat.x}%`, top: `${seat.y}%`, background: seat.party === partyLabel ? '#f1eee4' : '#2c4a7c' }} />)}
     </div>
   );
 }
 
-export function ElectionResultsSection ({ results, partyLabel }: { results: PartiValresultat; partyLabel?: string }) {
+function ChamberBlock ({ chamber, mandates, partyLabel }: { chamber: ParliamentChamber; mandates: number; partyLabel?: string }) {
+  const seats = chamberSeatPositions(chamber.partier);
+  const composition = chamber.partier.toSorted((a, b) => b.mandat - a.mandat);
+
+  return (
+    <div className="profile-results__bottom">
+      <div>
+        <h3>Partiets {mandates} platser i kammaren</h3>
+        <ChamberDiagram mandates={mandates} seats={seats} partyLabel={partyLabel} />
+        <SourceLine source={chamber.kalla}>349 mandat efter valet {chamber.valar} · </SourceLine>
+      </div>
+      <div className="profile-composition">
+        <h3>Riksdagens sammansättning {chamber.valar}</h3>
+        <ul>{composition.map(party => <li key={party.forkortning} className={party.forkortning === partyLabel ? 'is-current' : undefined}><span>{party.forkortning}</span><i><b style={{ width: `${(party.mandat / composition[0].mandat) * 100}%` }} /></i><strong>{party.mandat}</strong></li>)}</ul>
+      </div>
+    </div>
+  );
+}
+
+export function ElectionResultsSection ({ results, partyLabel, chamber }: { results: PartiValresultat; partyLabel?: string; chamber?: ParliamentChamber }) {
   const [selected, setSelected] = useState(results.resultat.length - 1);
   const result = results.resultat[selected];
   const firstYear = results.resultat[0]?.valar;
@@ -95,7 +117,7 @@ export function ElectionResultsSection ({ results, partyLabel }: { results: Part
   // Valmyndigheten's is the only source logo the site carries, so it stands
   // only where Valmyndigheten is the whole series.
   const valmyndighetenOnly = sourceNames.length === 1 && sourceNames[0] === 'Valmyndigheten';
-  const chamber = results.kammare;
+  const partySeats = results.kammare;
   if (!result) return null;
 
   return (
@@ -124,17 +146,7 @@ export function ElectionResultsSection ({ results, partyLabel }: { results: Part
             </div>
           </div>
         </div>
-        {chamber && <div className="profile-results__bottom">
-          <div>
-            <h3>Partiets {chamber.mandat} platser i kammaren</h3>
-            <ChamberDiagram mandates={chamber.mandat} partyLabel={partyLabel} />
-            <SourceLine source={parliamentView.kammare.kalla}>349 mandat efter valet {parliamentView.kammare.valar} · </SourceLine>
-          </div>
-          <div className="profile-composition">
-            <h3>Riksdagens sammansättning {parliamentView.kammare.valar}</h3>
-            <ul>{parliamentComposition.map(party => <li key={party.label} className={party.label === partyLabel ? 'is-current' : undefined}><span>{party.label}</span><i><b style={{ width: `${(party.seats / parliamentComposition[0].seats) * 100}%` }} /></i><strong>{party.seats}</strong></li>)}</ul>
-          </div>
-        </div>}
+        {partySeats && chamber && <ChamberBlock chamber={chamber} mandates={partySeats.mandat} partyLabel={partyLabel} />}
         <div className="profile-results__sources">
           {results.resultat.flatMap(post => [
             <SourceLine source={post.kalla} key={`${post.valar}-${post.kalla.url}`}>Riksdagsvalet {post.valar} · </SourceLine>,
@@ -146,10 +158,13 @@ export function ElectionResultsSection ({ results, partyLabel }: { results: Part
   );
 }
 
-export function TurnoutSection () {
-  const plotPoints = nationalTurnout.map((result, index) => ({
+export function TurnoutSection ({ turnout }: { turnout: ParliamentTurnout }) {
+  const series = turnout.resultat.map(result => ({ year: result.valar, value: result.procent }));
+  const sourceNames = [...new Set(turnout.kallor.map(source => source.namn))];
+  const fetched = turnout.kallor.map(source => source.hamtad).toSorted().at(-1);
+  const plotPoints = series.map((result, index) => ({
     ...result,
-    x: (index / (nationalTurnout.length - 1)) * 100,
+    x: (index / (series.length - 1)) * 100,
     y: ((90 - result.value) / 12) * 100,
   }));
   const points = plotPoints.map(point => `${point.x},${point.y}`).join(' ');
@@ -159,18 +174,18 @@ export function TurnoutSection () {
       <div className="profile-turnout__intro">
         <h2 id="turnout-heading">Valdeltagande som jämförelse</h2>
         <p>Valdeltagandet är en egenskap hos valet, inte hos partiet. Det visas för att kunna läsa röstetalen mot antalet röstande.</p>
-        <div className="profile-source-brand profile-source-brand--small"><div><small>{turnoutSourceNames.join(' och ')} · hämtat {turnoutFetched}</small></div></div>
+        <div className="profile-source-brand profile-source-brand--small"><div><small>{sourceNames.join(' och ')} · hämtat {fetched}</small></div></div>
       </div>
       <div className="profile-turnout__chart">
         <div>
           {[90, 85, 80].map(value => <span key={value} style={{ top: `${((90 - value) / 12) * 100}%` }}>{value} %</span>)}
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-label="Valdeltagande i riksdagsval 1994 till 2022"><polyline points={points} /></svg>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-label={`Valdeltagande i riksdagsval ${series[0]?.year} till ${series.at(-1)?.year}`}><polyline points={points} /></svg>
           <ul className="profile-turnout__values">
             {plotPoints.map((point, index) => <li className={index === 0 ? 'is-first' : index === plotPoints.length - 1 ? 'is-last' : undefined} key={point.year} style={{ left: `${point.x}%`, top: `${point.y}%` }} aria-label={`${point.year}: ${point.value.toFixed(2).replace(/0$/, '').replace('.', ',')} procent`}>{point.value.toFixed(2).replace(/0$/, '').replace('.', ',')} %</li>)}
           </ul>
         </div>
-        <ol>{nationalTurnout.map(result => <li key={result.year}>{result.year}</li>)}</ol>
-        {parliamentView.valdeltagande.kallor.map(source => <SourceLine source={source} key={`${source.url}-${source.hamtad}`} />)}
+        <ol>{series.map(result => <li key={result.year}>{result.year}</li>)}</ol>
+        {turnout.kallor.map(source => <SourceLine source={source} key={`${source.url}-${source.hamtad}`} />)}
       </div>
     </section>
   );

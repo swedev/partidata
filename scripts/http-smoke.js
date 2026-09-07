@@ -366,6 +366,23 @@ async function main () {
     assert.match(profileBody, seatPattern(currentSeats.mandat), 'partisidan visar kammarmandaten från de importerade resultaten');
     assert.match(profileBody, /<section class="profile-results"/, 'ett parti med resultat får resultatsektionen');
     assert.match(profileBody, /id="deltagande"/, 'ett parti med resultat får valdeltagandesektionen');
+    assert.match(
+      profileBody,
+      new RegExp(`Riksdagens sammansättning (<!-- -->)?${chamber.valar}`),
+      'kammarblocket anger valåret ur derived/riksdag.json'
+    );
+    const turnoutSeries = derivedParliament.valdeltagande.resultat;
+    const latestTurnout = turnoutSeries.at(-1).procent.toFixed(2).replace(/0$/, '').replace('.', ',');
+    assert.match(
+      profileBody,
+      new RegExp(`${latestTurnout}(<!-- -->)? %`),
+      'valdeltagandesektionen visar det senaste värdet ur derived/riksdag.json'
+    );
+    assert.match(
+      profileBody,
+      new RegExp(`aria-label="Valdeltagande i riksdagsval ${turnoutSeries[0].valar} till ${turnoutSeries.at(-1).valar}"`),
+      'valdeltagandediagrammet anger seriens första och sista valår'
+    );
 
     const withoutSeatsProfile = await fetch(`${baseUrl}/parti/${withoutSeats.filnamn}/`);
     assert.equal(withoutSeatsProfile.status, 200);

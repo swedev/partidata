@@ -39,7 +39,7 @@ En osäker träff blir `ej_kopplade`, inte en gissad identitet. Exempelvis block
 
 ## Största partierna utanför riksdagen
 
-Startsidan använder den deterministiska härledningen i `data/derived/riksdag.json`:
+Startsidan använder den deterministiska härledningen i `data/derived/riksdag.json`, samma fil som partisidornas kammarblock och valdeltagandesektion läser:
 
 1. Perioden är 1994 till senaste importerade riksdagsval.
 2. Partier med mandat i periodens senaste val tas bort.

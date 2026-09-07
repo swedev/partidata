@@ -30,6 +30,7 @@ export interface PartyPageData extends Parti {
   symbolSrc?: string;
   symbolFrame?: SymbolFrame;
   valresultat?: PartiValresultat;
+  riksdag?: ParliamentView;
 }
 
 export type PartyResolution =
@@ -153,6 +154,28 @@ export interface OutsideParliamentData {
   partier: OutsideParliamentParty[];
 }
 
+/**
+ * The chamber as the party page draws it: the election that seated it, the
+ * source the seat count cites, and every party's abbreviation and seats in the
+ * file's order.
+ */
+export interface ParliamentChamber {
+  valar: number;
+  kalla: PartiProfilKalla;
+  partier: Array<{ forkortning: string; mandat: number }>;
+}
+
+/** National turnout per election year, with the sources the series is read from. */
+export interface ParliamentTurnout {
+  resultat: Array<{ valar: number; procent: number }>;
+  kallor: PartiProfilKalla[];
+}
+
+export interface ParliamentView {
+  kammare: ParliamentChamber;
+  valdeltagande: ParliamentTurnout;
+}
+
 export interface HomeData {
   parties: HomeParty[];
   valar: string[];
@@ -192,6 +215,22 @@ interface DerivedParliamentFile {
       roster: number;
       rostandel: number;
       kalla: PartiProfilKalla;
+    }>;
+  };
+  kammare?: {
+    valar: number;
+    kalla: PartiProfilKalla;
+    partier: Array<{ parti_uuid: string; forkortning: string; mandat: number }>;
+  };
+  valdeltagande?: {
+    resultat: Array<{ valar: number; procent: number }>;
+    kallor: Array<PartiProfilKalla & {
+      id: string;
+      titel?: string;
+      version?: string;
+      format?: string;
+      sha256?: string;
+      transkribering_sha256?: string;
     }>;
   };
 }
@@ -332,6 +371,7 @@ export function createPartyDataStore (
   let partyIndexPromise: Promise<PartyIndex> | undefined;
   let homeDataPromise: Promise<HomeData> | undefined;
   let parliamentResultsPromise: Promise<ParliamentResultFile[]> | undefined;
+  let derivedParliamentPromise: Promise<DerivedParliamentFile | undefined> | undefined;
   let dataCatalogPromise: Promise<DataCatalog> | undefined;
   const dataFiles = new Map<string, Promise<{ body: Buffer; etag: string } | undefined>>();
 
@@ -379,10 +419,11 @@ export function createPartyDataStore (
   async function readCurrentParty (slug: string, duplicateName: boolean): Promise<PartyPageData> {
     const partyRoot = path.join(dataRoot, 'parti', slug);
     const party = await readJson<Parti>(path.join(partyRoot, 'index.json'));
-    const [profile, candidateLists, results] = await Promise.all([
+    const [profile, candidateLists, results, riksdag] = await Promise.all([
       readOptionalJson<PartiProfil>(path.join(partyRoot, 'profil.json')),
       readCandidateLists(slug),
       readParliamentResults(),
+      readParliamentView(),
     ]);
     const symbolSrc = symbolSource(party);
     const frame = symbolFrame(party.partisymbol);
@@ -396,6 +437,7 @@ export function createPartyDataStore (
       ...(symbolSrc ? { symbolSrc } : {}),
       ...(frame ? { symbolFrame: frame } : {}),
       ...(valresultat ? { valresultat } : {}),
+      ...(riksdag ? { riksdag } : {}),
     };
   }
 
@@ -444,8 +486,37 @@ export function createPartyDataStore (
       .toSorted((a, b) => b.valar - a.valar);
   }
 
+  /** The derivation in `derived/riksdag.json`, read once, or undefined without the file. */
+  function readDerivedParliament (): Promise<DerivedParliamentFile | undefined> {
+    derivedParliamentPromise ??= readOptionalJson<DerivedParliamentFile>(path.join(dataRoot, 'derived', 'riksdag.json'));
+    return derivedParliamentPromise;
+  }
+
+  /**
+   * The chamber and the turnout series as the party page needs them, reduced to
+   * the fields it draws. Undefined without the file or without either part: the
+   * derivation always writes both, so half of it is a broken build rather than a
+   * page to render halfway.
+   */
+  async function readParliamentView (): Promise<ParliamentView | undefined> {
+    const derived = await readDerivedParliament();
+    const { kammare, valdeltagande } = derived ?? {};
+    if (!kammare || !valdeltagande) return undefined;
+    return {
+      kammare: {
+        valar: kammare.valar,
+        kalla: { namn: kammare.kalla.namn, url: kammare.kalla.url, hamtad: kammare.kalla.hamtad },
+        partier: kammare.partier.map(party => ({ forkortning: party.forkortning, mandat: party.mandat })),
+      },
+      valdeltagande: {
+        resultat: valdeltagande.resultat.map(result => ({ valar: result.valar, procent: result.procent })),
+        kallor: valdeltagande.kallor.map(source => ({ namn: source.namn, url: source.url, hamtad: source.hamtad })),
+      },
+    };
+  }
+
   async function readOutsideParliament (byUuid: Map<string, PartiIndexEntry>): Promise<OutsideParliamentData | undefined> {
-    const derived = await readOptionalJson<DerivedParliamentFile>(path.join(dataRoot, 'derived', 'riksdag.json'));
+    const derived = await readDerivedParliament();
     if (!derived?.storsta_utanfor_riksdagen?.partier.length) return undefined;
     const partier = derived.storsta_utanfor_riksdagen.partier.map(result => {
       const party = byUuid.get(result.parti_uuid);

@@ -30,6 +30,7 @@ function PartyPage ({
   symbolSrc,
   symbolFrame,
   valresultat,
+  riksdag,
 }: PartyPageProps) {
   const displayName = profile?.namn ?? registeredName;
   const pageName = duplicateName && area ? `${displayName} (${area})` : displayName;
@@ -55,8 +56,8 @@ function PartyPage ({
         <ProfileHero code={code} abbreviation={abbreviation} profile={resolvedProfile} displayName={pageName} symbol={symbol} symbolSrc={symbolSrc} symbolFrame={symbolFrame} results={valresultat} latestParticipation={participationYears[0]} wikidata={wikidata} />
         <DocumentsSection profile={resolvedProfile} abbreviation={abbreviation} />
         <RepresentativesSection profile={resolvedProfile} abbreviation={abbreviation} mandateCount={valresultat?.kammare?.mandat} />
-        {valresultat && <ElectionResultsSection key={slug} results={valresultat} partyLabel={abbreviation} />}
-        {valresultat && <TurnoutSection />}
+        {valresultat && <ElectionResultsSection key={slug} results={valresultat} partyLabel={abbreviation} chamber={riksdag?.kammare} />}
+        {valresultat && riksdag && <TurnoutSection turnout={riksdag.valdeltagande} />}
         {participationYears.length > 0 && <BallotSection participationYears={participationYears} candidateLists={candidateLists} slug={slug} partyName={displayName} />}
         <WikipediaSection profile={resolvedProfile} />
         <NewsSection profile={resolvedProfile} />

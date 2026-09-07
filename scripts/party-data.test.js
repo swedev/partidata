@@ -531,6 +531,108 @@ test('party pages derive their election results from the imported result files',
   assert.equal(withoutResults.props.valresultat, undefined);
 });
 
+/** The chamber and the turnout series as `derived/riksdag.json` carries them. */
+function derivedParliament () {
+  return {
+    schema_version: 2,
+    kammare: {
+      valar: 2026,
+      kalla: {
+        id: 'resultat',
+        namn: 'Valmyndigheten',
+        titel: 'Val till riksdagen 2026, riket',
+        url: 'https://example.com/kammare.json',
+        hamtad: '2026-08-26',
+        sha256: 'b'.repeat(64)
+      },
+      partier: [
+        { parti_uuid: '22222222-2222-4222-8222-222222222222', forkortning: 'B', mandat: 349 },
+        { parti_uuid: '11111111-1111-4111-8111-111111111111', forkortning: 'A', mandat: 0 }
+      ]
+    },
+    valdeltagande: {
+      resultat: [{ valar: 2022, procent: 84.21 }, { valar: 2026, procent: 85.5 }],
+      kallor: [
+        {
+          id: 'publikation',
+          namn: 'SCB',
+          titel: 'Allmänna valen 2022',
+          url: 'https://example.com/scb.pdf',
+          format: 'application/pdf',
+          hamtad: '2026-08-20',
+          sha256: 'c'.repeat(64),
+          transkribering_sha256: 'd'.repeat(64)
+        },
+        {
+          id: 'resultat',
+          namn: 'Valmyndigheten',
+          titel: 'Val till riksdagen 2026, riket',
+          url: 'https://example.com/kammare.json',
+          version: 'Slutligt valresultat',
+          hamtad: '2026-08-26',
+          sha256: 'b'.repeat(64)
+        }
+      ]
+    }
+  };
+}
+
+test('party pages carry the chamber and the turnout series from the derivation', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  writeJson(dataRoot, 'derived/riksdag.json', derivedParliament());
+
+  const party = await createPartyDataStore(dataRoot).resolveParty('betapartiet');
+  assert.deepEqual(party.props.riksdag, {
+    kammare: {
+      valar: 2026,
+      kalla: { namn: 'Valmyndigheten', url: 'https://example.com/kammare.json', hamtad: '2026-08-26' },
+      partier: [{ forkortning: 'B', mandat: 349 }, { forkortning: 'A', mandat: 0 }]
+    },
+    valdeltagande: {
+      resultat: [{ valar: 2022, procent: 84.21 }, { valar: 2026, procent: 85.5 }],
+      kallor: [
+        { namn: 'SCB', url: 'https://example.com/scb.pdf', hamtad: '2026-08-20' },
+        { namn: 'Valmyndigheten', url: 'https://example.com/kammare.json', hamtad: '2026-08-26' }
+      ]
+    }
+  });
+});
+
+test('the party page omits the chamber view when the derivation is missing or half written', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const withoutFile = createPartyDataStore(dataRoot);
+  assert.equal((await withoutFile.resolveParty('betapartiet')).props.riksdag, undefined);
+  assert.equal((await withoutFile.readHomeData()).outsideParliament, undefined, 'startsidan klarar sig utan filen');
+
+  const { kammare } = derivedParliament();
+  writeJson(dataRoot, 'derived/riksdag.json', {
+    storsta_utanfor_riksdagen: { period: { fran: 1994, till: 2026 }, metod: 'Exakt testmetod', partier: [] }
+  });
+  assert.equal((await createPartyDataStore(dataRoot).resolveParty('betapartiet')).props.riksdag, undefined);
+
+  writeJson(dataRoot, 'derived/riksdag.json', { schema_version: 2, kammare });
+  assert.equal((await createPartyDataStore(dataRoot).resolveParty('betapartiet')).props.riksdag, undefined);
+});
+
+test('the derivation is read once per store, for the start page and the party pages alike', async t => {
+  const { root, dataRoot } = makeHomeData();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  writeJson(dataRoot, 'derived/riksdag.json', derivedParliament());
+
+  const store = createPartyDataStore(dataRoot);
+  await store.readHomeData();
+
+  const changed = derivedParliament();
+  changed.kammare.valar = 2030;
+  writeJson(dataRoot, 'derived/riksdag.json', changed);
+
+  assert.equal((await store.resolveParty('betapartiet')).props.riksdag.kammare.valar, 2026, 'lagret läser filen en gång');
+  assert.equal((await createPartyDataStore(dataRoot).resolveParty('betapartiet')).props.riksdag.kammare.valar, 2030);
+});
+
 const voteSource = { id: 'resultat', namn: 'Valmyndigheten', url: 'https://example.com/roster', hamtad: '2026-08-26' };
 const seatSource = { id: 'mandat', namn: 'Valmyndigheten', url: 'https://example.com/mandat', hamtad: '2026-08-26' };
 
