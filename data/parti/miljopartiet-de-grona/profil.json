@@ -10,9 +10,6 @@
   },
   "kanaler": [
     { "etikett": "Webbplats", "detalj": "mp.se", "url": "https://www.mp.se/" },
-    { "etikett": "Partiprogram 2025", "detalj": "mp.se/om/partiprogram", "url": "https://www.mp.se/om/partiprogram/" },
-    { "etikett": "Våra politiker", "detalj": "mp.se/om/riksdagspolitiker", "url": "https://www.mp.se/om/riksdagspolitiker/" },
-    { "etikett": "Bli medlem", "detalj": "mp.se/bli-medlem", "url": "https://www.mp.se/bli-medlem/" },
     { "etikett": "Ungdomsförbund", "detalj": "gronungdom.se", "url": "https://gronungdom.se/" },
     { "etikett": "Kontakt", "detalj": "mp.se/om/kontakt", "url": "https://www.mp.se/om/kontakt/" }
   ],

@@ -208,14 +208,6 @@ export function DocumentsSection ({ profile, abbreviation }: { profile: PartiPro
           </aside>
         )}
       </div>
-      <div className="profile-riksdag-documents">
-        <div className="profile-source-brand profile-source-brand--small">
-          <span className="profile-source-brand__riksdag">R</span>
-          <div><strong>Från riksdagen</strong><small>data.riksdagen.se/dokumentlista</small></div>
-        </div>
-        <p>Riksdagsdokument från partiets ledamöter är ännu inte inlästa i profilen.</p>
-        <ExternalLink href="https://data.riksdagen.se/dokumentlista/">Sök dokument hos Riksdagen</ExternalLink>
-      </div>
     </section>
   );
 }

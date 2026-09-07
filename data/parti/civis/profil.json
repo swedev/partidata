@@ -15,11 +15,16 @@
     }
   },
   "kanaler": [
-    { "etikett": "Webbplats", "detalj": "civis.nu", "url": "https://civis.nu/" },
-    { "etikett": "Politik & partiprogram", "detalj": "civis.nu/politik", "url": "https://civis.nu/politik" },
-    { "etikett": "Valmanifest 2026", "detalj": "civis.nu/valmanifest", "url": "https://civis.nu/valmanifest" },
-    { "etikett": "Nyheter", "detalj": "civis.nu/nyheter", "url": "https://civis.nu/nyheter" },
-    { "etikett": "Kontakt", "detalj": "civis.nu/kontakt", "url": "https://civis.nu/kontakt" }
+    {
+      "etikett": "Webbplats",
+      "detalj": "civis.nu",
+      "url": "https://civis.nu/"
+    },
+    {
+      "etikett": "E-post",
+      "detalj": "info@civis.nu",
+      "url": "mailto:info@civis.nu"
+    }
   ],
   "dokument": [
     {

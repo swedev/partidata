@@ -515,27 +515,6 @@
   font-weight: 500;
 }
 
-.profile-riksdag-documents {
-  display: grid;
-  padding-top: clamp(1.125rem, 2.4vw, 1.875rem);
-  margin-top: clamp(1.125rem, 2.4vw, 1.875rem);
-  border-top: 1px solid var(--profile-line);
-  gap: 0.75rem clamp(1.5rem, 3vw, 3rem);
-  grid-template-columns: minmax(14rem, 0.8fr) minmax(18rem, 1.5fr) auto;
-  align-items: center;
-}
-
-.profile-riksdag-documents > p {
-  margin: 0;
-  color: var(--profile-copy);
-  font-size: 0.96875rem;
-}
-
-.profile-source-brand > .profile-source-brand__riksdag {
-  background: #1d4f91;
-  color: var(--profile-card);
-}
-
 .profile-representative-lead {
   display: grid;
   gap: clamp(1.5rem, 3vw, 3rem);
@@ -1698,13 +1677,6 @@
     max-width: 42rem;
   }
 
-  .profile-riksdag-documents {
-    grid-template-columns: minmax(14rem, 0.8fr) minmax(18rem, 1.2fr);
-  }
-
-  .profile-riksdag-documents > a {
-    grid-column: 2;
-  }
 }
 
 @media (max-width: 700px) {
@@ -1747,8 +1719,7 @@
 
   .profile-representative-lead,
   .profile-group-leadership,
-  .profile-other-representatives > div,
-  .profile-riksdag-documents {
+  .profile-other-representatives > div {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1759,10 +1730,6 @@
 
   .profile-featured-representative__image {
     width: 100%;
-  }
-
-  .profile-riksdag-documents > a {
-    grid-column: auto;
   }
 
   .profile-selected-result dl {
