@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Genererad av scripts/build-derived-data.js ur mandatfördelningen i riksdagsvalet 2022. Redigera inte för hand. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" data-valar="2022">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256">
 <g style="transform: rotate(180deg); transform-origin: center">
 <g id="V" fill="#b00000">
 <circle r="6" cx="146.00" cy="250.00"/>
