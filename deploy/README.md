@@ -57,11 +57,6 @@ tip.
 - A server that does not answer is restored with a manual release run on the
   current tag.
 
-One file is built into the bundle rather than read from `data/` at request
-time: `public/img/sveriges_riksdag.svg`, which `scripts/build-derived-data.js`
-generates and the header shows. A change to it reaches the site only with a
-release.
-
 ## One-time server setup
 
 Choose the deploy account, service account and target directory. The target is
