@@ -4,6 +4,10 @@ partidata.se runs as a standalone Next.js process behind nginx. GitHub Actions
 builds every pushed `v*` tag, rsyncs `.release/` to the configured production
 target and restarts `partidata.service`.
 
+Data has a shorter path. `publish-data.yaml` rsyncs `data/` and restarts the
+service whenever a push to `main` touches `data/**`, so a data change goes live
+at merge, without a release.
+
 The service has no database. Versioned JSON and party symbols under `data/` are
 included in the artifact and read by the Node process at request time.
 
@@ -22,9 +26,40 @@ git tag "v$(node -p "require('./package.json').version")"
 git push origin "v$(node -p "require('./package.json').version")"
 ```
 
-To return to older code, run the workflow manually from an earlier tag. The
-version check is skipped then, so the artifact reports the version that ref
-carries.
+A release also carries the data: `.release/` holds the `data/` tree of the
+tagged commit.
+
+To return to older code, run the workflow manually from an earlier tag. It
+builds tags only, so the version the artifact reports always names a tag whose
+tree is the deployed code.
+
+## Data
+
+Both workflows write the commit their data comes from to `<target>/data-commit`,
+a single line with the 40-character hash, and `/api/health` reports it as
+`data.commit` when the file is there. The `/data/` page links its files to that
+commit. The release writes the tag's commit; `publish-data.yaml` writes main's
+tip.
+
+- The job always publishes main's tip, whatever triggered it. A
+  `workflow_dispatch` from a branch, a re-run of an older run and a push that
+  waited behind a release all send the same thing: what `main` is when the job
+  runs. An intentional rollback is a revert on `main`.
+- `production-deploy` holds at most one waiting run, so a third event within
+  the same few minutes replaces the one already queued and cancels it. Re-run
+  it manually.
+- A failed run rolls nothing back. The next push to `main` that touches `data/`,
+  or a `workflow_dispatch`, rsyncs the whole tree again and is the repair, as
+  long as the server answers `/api/health` at all — a 500 still counts.
+- A server that does not answer is restored with a manual release run on the
+  current tag.
+
+Two files are built into the bundle rather than read from `data/` at request
+time: `data/derived/riksdag.json`, which `src/components/party-profile/elections.tsx`
+imports statically, and `public/img/sveriges_riksdag.svg`, which
+`scripts/build-derived-data.js` generates. A change to either reaches the party
+pages only with a release. `/data/derived/riksdag.json` itself is served from
+disk and does follow a data publish.
 
 ## One-time server setup
 
@@ -90,10 +125,24 @@ GitHub → repository settings → Environments → `production` → secrets:
 
 ## Manual deploy
 
+The whole artifact, from a tag checked out locally. The `--delete` removes
+`data-commit` along with the old build, so it is written back.
+
 ```bash
 npm ci
 npm run precommit
 rsync -az --delete .release/ <deploy-account>@<deploy-host>:<absolute-target>/
-ssh <deploy-account>@<deploy-host> 'sudo systemctl restart partidata.service'
+ssh <deploy-account>@<deploy-host> "printf '%s\n' '$(git rev-parse HEAD)' > '<absolute-target>/data-commit.tmp' && chmod 0644 '<absolute-target>/data-commit.tmp' && mv -f '<absolute-target>/data-commit.tmp' '<absolute-target>/data-commit' && sudo systemctl restart partidata.service"
+curl --fail https://www.partidata.se/api/health/
+```
+
+The data alone, from `main` — the same thing `publish-data.yaml` does.
+
+```bash
+npm ci
+npm run validate:data
+npm run check:derived-data
+rsync -az --delete data/ <deploy-account>@<deploy-host>:<absolute-target>/data/
+ssh <deploy-account>@<deploy-host> "printf '%s\n' '$(git rev-parse HEAD)' > '<absolute-target>/data-commit.tmp' && chmod 0644 '<absolute-target>/data-commit.tmp' && mv -f '<absolute-target>/data-commit.tmp' '<absolute-target>/data-commit' && sudo systemctl restart partidata.service"
 curl --fail https://www.partidata.se/api/health/
 ```

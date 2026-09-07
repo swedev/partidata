@@ -1,0 +1,94 @@
+name: Publish data
+
+# A push to main that touches data/** rsyncs data/ to production and restarts
+# the managed Node process, so a data change goes live without a release.
+# Nothing is built, and nothing here depends on the deployed code: publishing
+# data and releasing code are separate. Whatever triggered the run, it is main's
+# tip that is published.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**'
+  workflow_dispatch:
+
+# Shared with the release, so a data publish and a deploy never interleave.
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Validate and rsync data
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: production
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      # Every later step refers to this commit rather than to the event's sha:
+      # a dispatch from a branch, a re-run of an old run and a push that waited
+      # behind a release all publish what main is when the job runs.
+      - name: Read main's tip
+        run: echo "DATA_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run validate:data
+
+      - run: npm run check:derived-data
+
+      - name: Install deploy key
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/deploy_key ~/.ssh/known_hosts
+
+      # --delete is scoped to $TARGET/data/, which is the directory
+      # build-release.js fills from data/ and the server reads from its working
+      # directory. The rest of the artifact is untouched.
+      - name: Rsync data to server
+        env:
+          HOST: ${{ secrets.DEPLOY_HOST }}
+          USER: ${{ secrets.DEPLOY_USER }}
+          TARGET: ${{ secrets.DEPLOY_TARGET }}
+        run: |
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" \
+            data/ "$USER@$HOST:$TARGET/data/"
+
+      # The restart is what makes the module caches in party-data.ts let go of
+      # the old files. The temporary file keeps a reader from ever seeing half a
+      # line.
+      - name: Record the commit, restart and local health check
+        env:
+          HOST: ${{ secrets.DEPLOY_HOST }}
+          USER: ${{ secrets.DEPLOY_USER }}
+          TARGET: ${{ secrets.DEPLOY_TARGET }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes "$USER@$HOST" \
+            "printf '%s\n' '$DATA_COMMIT' > '$TARGET/data-commit.tmp' && chmod 0644 '$TARGET/data-commit.tmp' && mv -f '$TARGET/data-commit.tmp' '$TARGET/data-commit' && sudo systemctl restart partidata.service && curl --fail --silent --show-error --retry 10 --retry-delay 1 --retry-connrefused http://127.0.0.1:3000/api/health/"
+
+      # Requiring the commit proves both that the file landed and that the
+      # restarted process is the one answering.
+      - name: Public smoke test
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --retry 5 --retry-delay 1 https://www.partidata.se/api/health/ \
+            | jq -e --arg sha "$DATA_COMMIT" '.status == "ok" and .data.commit == $sha'
+          curl --fail --silent --show-error --retry 5 --retry-delay 1 https://www.partidata.se/ > /dev/null
