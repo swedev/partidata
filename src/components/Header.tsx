@@ -28,7 +28,6 @@ function Header ({ current = 'partier' }: { current?: 'partier' | 'data' }) {
         <nav className="site-header__nav" aria-label="Huvudnavigation">
           <Link href="/" className={current === 'partier' ? 'site-header__active-link' : undefined}>Partier</Link>
           <Link href="/data/" className={current === 'data' ? 'site-header__active-link' : undefined}>Data</Link>
-          <a href="#om-tjansten">Om tjänsten</a>
         </nav>
       </div>
     </header>
