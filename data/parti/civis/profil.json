@@ -1,0 +1,47 @@
+{
+  "namn": "CIVIS",
+  "webbplats": "https://civis.nu/",
+  "namn_kalla": {
+    "namn": "CIVIS",
+    "url": "https://civis.nu/",
+    "hamtad": "2026-09-07"
+  },
+  "profiltext": {
+    "text": "Vi planerar för nästa generation, inte nästa val.",
+    "kalla": {
+      "namn": "CIVIS",
+      "url": "https://civis.nu/",
+      "hamtad": "2026-09-07"
+    }
+  },
+  "kanaler": [
+    { "etikett": "Webbplats", "detalj": "civis.nu", "url": "https://civis.nu/" },
+    { "etikett": "Politik & partiprogram", "detalj": "civis.nu/politik", "url": "https://civis.nu/politik" },
+    { "etikett": "Valmanifest 2026", "detalj": "civis.nu/valmanifest", "url": "https://civis.nu/valmanifest" },
+    { "etikett": "Nyheter", "detalj": "civis.nu/nyheter", "url": "https://civis.nu/nyheter" },
+    { "etikett": "Kontakt", "detalj": "civis.nu/kontakt", "url": "https://civis.nu/kontakt" }
+  ],
+  "dokument": [
+    {
+      "typ": "partiprogram",
+      "titel": "Partiprogram v1.3",
+      "url": "https://civis.nu/politik",
+      "kalla": {
+        "namn": "CIVIS – Politik & partiprogram",
+        "url": "https://civis.nu/politik",
+        "hamtad": "2026-09-07"
+      }
+    },
+    {
+      "typ": "valmanifest",
+      "titel": "Valmanifest 2026",
+      "url": "https://civis.nu/valmanifest",
+      "valar": 2026,
+      "kalla": {
+        "namn": "CIVIS – Valmanifest 2026",
+        "url": "https://civis.nu/valmanifest",
+        "hamtad": "2026-09-07"
+      }
+    }
+  ]
+}
